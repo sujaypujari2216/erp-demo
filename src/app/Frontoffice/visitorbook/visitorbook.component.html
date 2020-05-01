@@ -1,0 +1,172 @@
+<div class="breadcrumbs-area">
+  <h3>Visitor Book</h3>
+  <ul>
+      <li>
+          <a href="index.html">Home</a>
+      </li>
+      <li>Visitor Book</li>
+  </ul>
+ </div>
+ <div class="card height-auto">
+  <div class="card-body">
+      <div class="heading-layout1">
+          <div class="item-title">
+              <h3>Select Criteria</h3>
+          </div>
+      </div>
+      <form class="mg-b-20">
+        <div class="row gutters-8">
+            <div class="col-3-xxxl col-xl-6 col-lg-6 col-12 form-group">
+                <input type="text" placeholder="Search by keywords" class="form-control">
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
+                <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+            </div>
+        </div>
+    </form>
+  
+    <br>
+
+  
+      <div class="table-responsive">
+        <div class="col-1-xxxl col-xl-2 col-lg-3 col-12">
+            <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
+          </div>
+        <table class="table display data-table text-nowrap">
+            <thead>
+                
+                <tr>
+                    <th>Roll</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Father Name</th>  
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Category</th>
+                    <th>Mobile No.</th>
+                    <th>Enrolled</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                   
+                    <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+  </div>
+ </div>
+
+  
+
+  <!-- Add Visitor Area Start Here -->
+ <div class="card height-auto">
+    <div class="card-body">
+       <div class="heading-layout1">
+           <div class="item-title">
+               <h3>Add Visitor</h3>
+           </div>
+       </div>
+       <form class="new-added-form">
+           <div class="row">
+                  
+           </div>
+
+           
+           <div class="row">
+
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>Purpose</label>
+                <select class="select2">
+                    <option value="">select</option>
+                    <option value="1">Marketing</option>
+                    <option value="2">Parents Teacher Meeting</option>
+                    <option value="3">Student Meeting</option>
+                    <option value="4">Staff Meeting</option>
+                    <option value="5">Principal Meeting</option>
+                   </select>
+
+
+                           
+               </div>
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                   <label>Name *</label>
+                   <input type="text" placeholder="" class="form-control" name="Name" ngModel>
+               </div>
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>Mobile no.</label>
+                <input type="text" placeholder="" class="form-control" name="mobile" ngModel>
+               </div>
+
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>ID Card</label>
+                <input type="text" placeholder="" class="form-control" name="card" ngModel>
+               </div>
+
+
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>No of Person</label>
+                <input type="text" placeholder="" class="form-control" name="person" ngModel>
+            </div>
+            
+               
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>Choose Date  *</label>
+                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
+                    data-position='bottom right' name="date" ngModel>
+                <i class="far fa-calendar-alt"></i>
+            </div>
+            
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>In time:</label>
+            <input type="time" id="appt" name="appt" class="form-control"
+             min="06:00" max="23:00">
+             <small>School hours are 9am to 6pm</small>
+            </div>
+           
+            
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="appt">Out time:</label>
+             <input type="time" id="appt" name="appt" class="form-control"
+             min="06:00" max="23:00" >
+             
+            </div>
+          
+
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label>Note *</label>
+                <input type="text" placeholder="" class="form-control" name="note" ngModel>
+            </div>
+                
+
+            
+ 
+               <div class="col-12 form-group mg-t-8">
+                   <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                   <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
+               </div>
+           </div>
+       </form>
+   </div>
