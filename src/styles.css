@@ -157,8 +157,8 @@ h6 {
 }
 /*=============== 2.3 Forms ==================*/
 .form-group .form-control {
-  height: 45px;
-  background-color: #f8f8f8;
+  height: 30px;
+  background-color:transparent;
   font-size: 14px;
   color: #111111;
   border-radius: 4px;
@@ -172,7 +172,7 @@ h6 {
 }
 .form-check {
   position: relative;
-  padding-left: 0;
+  padding-left: 0 ;
 }
 .form-check label {
   display: inline-block;
@@ -2479,7 +2479,8 @@ ul {
 }
 .new-added-form .form-group {
   position: relative;
-  margin-bottom: 2.3rem;
+  margin-bottom: 3.0rem;
+  height: 30px;
 }
 .new-added-form .form-group:last-child {
   margin-bottom: 0;
@@ -2489,12 +2490,12 @@ ul {
   display: block;
 }
 .new-added-form .form-group .form-control {
-  background-color: #f0f1f3;
-  height: 50px;
+  background-color: transparent;
+  height: 45px;
 }
 .new-added-form .form-group i {
   position: absolute;
-  top: 56px;
+  top: 20px;
   right: 34px;
   font-size: 15px;
   color: #000;
@@ -2505,6 +2506,9 @@ ul {
 .new-added-form .form-group .form-control-file {
   display: inline-block;
   width: auto;
+  position: absolute;
+  top:20px;
+  left:14px;
 }
 .new-added-form .form-group .form-control-file:focus {
   outline: none;
@@ -5087,51 +5091,3 @@ ul {
 .text-orange-red {
   color: #ff0000;
 }
-.onoffswitch {
-  position: relative; width: 69px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-}
-.onoffswitch-checkbox {
-  display: none;
-}
-.onoffswitch-label {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 2px solid #999999; border-radius: 20px;
-}
-.onoffswitch-inner {
-  display: block; width: 200%; margin-left: -100%;
-  transition: margin 0.3s ease-in 0s;
-}
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-  display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
-  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-  box-sizing: border-box;
-}
-.onoffswitch-inner:before {
-  content: "ON";
-  padding-left: 10px;
-  background-color: #355BA1; color: #FFFFFF;
-}
-.onoffswitch-inner:after {
-  content: "OFF";
-  padding-right: 10px;
-  background-color: #EEEEEE; color: #999999;
-  text-align: right;
-}
-.onoffswitch-switch {
-  display: block; width: 30px; margin: -4px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
-  right: 43px;
-  border: 2px solid #999999; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-  margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  right: 0px; 
-}
-
-
-

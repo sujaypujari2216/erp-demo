@@ -23,51 +23,72 @@
             <form class="new-added-form">
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Content Title *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Chapter Type *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Content Type *</label>
-                        <select class="select2">
-                            <option value="">Please Select *</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                        </select>
+                        <label for="slt" class="slt">
+                            <select  name="content" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected >Please Select Content *</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            </select>
+                            <span class="label">Content Type  *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Class *</label>
-                        <select class="select2">
-                            <option value="">Please Select *</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                        </select>
+                        <label for="slt" class="slt">
+                            <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected >Please Select Class *</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            </select>
+                            <span class="label">Class *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Section *</label>
-                        <select class="select2">
-                            <option value="">Please Select *</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                            <option value="3"></option>
-                        </select>
+                        <label for="slt" class="slt">
+                            <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected >Please Select Section *</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            </select>
+                            <span class="label">Section *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        
-                        <label class="control-label">Available For</label>
+                        <label for="slt" class="slt">
+                            <select  name="available" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected >Please Select *</option>
+                            <option value="1">Super Admin</option>
+                            <option value="2">Student</option>
+                            </select>
+                            <span class="label">Available For *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                        <!--<label class="control-label">Available For</label>
                         <label>
                             <input type="checkbox" class="content_available" name="content_available[]" value="Super Admin">
                              Super Admin
@@ -75,23 +96,29 @@
                         <label>
                             <input type="checkbox" class="content_available" name="content_available[]" value="student">
                             Student                                            
-                        </label>
+                        </label>-->
                             
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Upload Date *</label>
-                        <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                        data-position='bottom right' name="date" ngModel>
-                    <i class="far fa-calendar-alt"></i>                    </div>
+                        <label for="dtp" class="dtp">
+                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                data-position='bottom right' name="Upload Date " >
+                            <span class="label">Upload Date *</span>
+                            <span class="focus-bg"></span>
+                          </label>
+                          <i class="far fa-calendar-alt"></i>
+                  </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3" >
-                        <label>Description </label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" name="Description " class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Description *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group" >
-                        <form action="/action_page.php">
-                            <label>Choose Files: </label>
-                            <input type="file" id="myfile" name="myfile" multiple><br><br>
-                        </form>
+                        <label class="text-dark-medium" style="font-size: small;">Choose File</label>
+                    <input type="file" class="form-control-file" name="photo" placeholder="">
                     </div>
                     
                     <div class="col-12 form-group mg-t-8">
@@ -125,14 +152,28 @@
                     <div class="row gutters-8">
 
                         <div class="col-lg-3 col-12 form-group">
-                            <input type="text" placeholder="Search by Hostel ..." class="form-control">
+                            <label for="inp" class="inp">
+                                <input type="text" name="hostel" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Search by Hostel ... *</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                        </div>
+
+                        <div class="col-lg-3 col-12 form-group">
+                            <label for="inp" class="inp">
+                                <input type="text" name="room" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Search by Room ... *</span>
+                                <span class="focus-bg"></span>
+                            </label>
                         </div>
                         <div class="col-lg-3 col-12 form-group">
-                            <input type="text" placeholder="Search by Room ..." class="form-control">
+                            <label for="inp" class="inp">
+                                <input type="text" name="bed" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Search by Bed ... *</span>
+                                <span class="focus-bg"></span>
+                            </label>
                         </div>
-                        <div class="col-lg-3 col-12 form-group">
-                            <input type="text" placeholder="Search by Bed ..." class="form-control">
-                        </div>
+
                         <div class="col-lg-2 col-12 form-group">
                             <button type="submit"
                                 class="fw-btn-fill btn-gradient-yellow">SEARCH</button>

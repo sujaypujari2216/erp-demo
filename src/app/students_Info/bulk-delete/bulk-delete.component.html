@@ -1,6 +1,6 @@
 <!-- Student Details Area Start Here -->
 <div class="breadcrumbs-area">
-    <h3>Students</h3>
+   
     <ul>
         <li>
             <a href="index.html">Home</a>
@@ -17,39 +17,115 @@
         </div>
         <form class="new-added-form">
             <div class="row">
-                <div class="col-xl-5 col-lg-6 col-12 form-group">
-                    <label>Class <span class="req" style="color: red;">*</span></label>
-                    <select class="select2">
-                        <option value="">select</option>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                    <label for="slt" class="slt">
+                        <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select Class *</option>
+             
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                        <option value="3">6</option>
+                        </select>
+                        <span class="label">Class *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
 
-                <div class="col-xl-5 col-lg-6 col-12 form-group">
-                    <label>Section </label>
-                    <select class="select2">
-                        <option value="">select</option>
-                        <option value="1">A</option>
-                        <option value="2">B</option>
-                        <option value="3">C</option>
-                    </select>
-                                                   
-                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
 
-                <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
+                    <label for="slt" class="slt">
+                        <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select Section *</option>
+             
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                        <option value="3">6</option>
+                        </select>
+                        <span class="label">Section *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+                <div class="col-xl-2 col-lg-6 col-12 form-group">
                     <div class="form-group">
-                        <label>Search</label>
                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
                         
                     </div>
-                
-            </div>
+                </div>
 
+                <div class="table-responsive">
+                    <table class="table display data-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-check">
+                                        <input type="checkbox" cl   ass="form-check-input checkAll">
+                                        <label class="form-check-label">Roll</label>
+                                    </div>
+                                </th>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Father Name</th>  
+                                <th>Date Of Birth</th>
+                                <th>Gender</th>
+                                <th>Category</th>
+                                <th>Mobile No.</th>
+                                <th>Enrolled</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input">
+                                        <label class="form-check-label"></label>
+                                    </div>
+                                </td>
+                                
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              
+                                <td>
+                                    <div class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span class="flaticon-more-button-of-three-dots"></span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fas fa-times text-orange-red"></i>Close</a>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+ 
+                
 
                 
                 
+                             
              
             </div>
         </form>
