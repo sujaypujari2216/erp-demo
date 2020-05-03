@@ -27,7 +27,7 @@
   <!-- Date Picker CSS -->
   <link rel="stylesheet" href="/assets/css/datepicker.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link *ngIf="cssUrl" type="text/css" rel="stylesheet" href="styles.css">
   <!-- Modernize js -->
   <script src="/assets/js/modernizr-3.6.0.min.js"></script>
 
