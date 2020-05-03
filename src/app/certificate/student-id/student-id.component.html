@@ -33,39 +33,58 @@
             <form class="new-added-form">
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Background Image </label>
+                        <label style="font-size: smaller;">Background Image </label>
                         <input type="file" class="form-control-file">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Logo </label>
+                        <label style="font-size: smaller;">Logo </label>
                         <input type="file" class="form-control-file">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Signature </label>
+                        <label style="font-size: smaller;">Signature </label>
                         <input type="file" class="form-control-file">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>School Name *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">School Name *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>ID Card Title *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">ID Card Title*</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Header Color</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Header Color *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
-                    <div class="col-lg-6 col-12 form-group">
-                        <label>Address/ Phone/ Email *</label>
-                        <textarea class="textarea form-control" name="body_text" id="body_text" cols="10"
-                            rows="5"></textarea>
+
+                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp">
+                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Address / Phone / Email</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-12 form-group">
+
+                    <div class="col-xl-3 col-lg-4 col-12 form-group">
                         <!-- Rounded switch -->
-                        <label class="switch"><input type="checkbox">Photo<span class="slider round"></span></label>
+                        <label class="switch">Photo
+                            <input type="checkbox"><span class="slider round sm"></span>
+                        </label>
                     </div> 
-                    <div class="col-xl-2 col-lg-4 col-12 form-group">
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-12 form-group">
                         <label><input type="checkbox">Admission No.</label>
                     </div>
                     <div class="col-xl-2 col-lg-4 col-12 form-group">
@@ -127,7 +146,12 @@
                           <form class="mg-b-20">
                               <div class="row gutters-8">
                                   <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                                      <input type="text" placeholder="Search..." class="form-control">
+                                    <label for="inp" class="inp">
+                                        <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Search  *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                     
                                   </div>
                                   <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
                                       <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>

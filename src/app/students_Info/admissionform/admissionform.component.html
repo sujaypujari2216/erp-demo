@@ -6,6 +6,7 @@
         </li>
         <li>Student Admit Form</li>
     </ul>
+   
 </div>
 <!-- Breadcubs Area End Here -->
 <!-- Admit Form Area Start Here -->
@@ -15,14 +16,19 @@
             <div class="item-title">
                 <h3>Add New Students</h3>
             </div>
+            <div class="dropdown">
+                <button style="  background-color: #000066
+                " type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Import Student</button>
+        
+                </div>
         </div>
-
+      
         <form class="new-added-form" >
             <div class="row">
 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                         <label for="inp" class="inp">
-                            <input type="text" name="rollno" class="form-control" id="inp" placeholder="&nbsp;">
+                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
                             <span class="label">Roll No *</span>
                             <span class="focus-bg"></span>
                         </label>
@@ -30,9 +36,8 @@
 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                     <label for="slt" class="slt">
-                        <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                        <select  class="form-control" id="slt" placeholder="&nbsp;">
                         <option selected >Please Select Class *</option>
-             
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -225,7 +230,6 @@
                     <label for="dtp" class="dtp">
                         <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
                             data-position='top right' name="asondate" >
-                        <!--<i class="far fa-calendar-alt"></i>-->
                         <span class="label">As On Date *</span>
                         <span class="focus-bg"></span>
                     </label>
