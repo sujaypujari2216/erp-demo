@@ -1,6 +1,6 @@
 <!-- Student Details Area Start Here -->
 <div class="breadcrumbs-area">
-    <h3>Students</h3>
+   
     <ul>
         <li>
             <a href="index.html">Home</a>
@@ -17,46 +17,65 @@
         </div>
         <form class="new-added-form">
             <div class="row">
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label>Class <span class="req" style="color: red;">*</span></label>
-                    <select class="select2">
-                        <option value="">select</option>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                    <label for="slt" class="slt">
+                        <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select Class *</option>
+             
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
-                    <div class="col-12 form-group mg-t-8">
-                        <div class="form-group">
-                            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
-                            <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label>Section </label>
-                    <select class="select2">
-                        <option value="">select</option>
-                        <option value="1">A</option>
-                        <option value="2">B</option>
-                        <option value="3">C</option>
-                    </select>
-                               
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                        <option value="3">6</option>
+                        </select>
+                        <span class="label">Class *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
 
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                    <label for="slt" class="slt">
+                        <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select Section *</option>
+             
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                        <option value="3">6</option>
+                        </select>
+                        <span class="label">Section *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
                 
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label>Search By Key Words: *</label>
-                    <input type="text" name="search_text" class="form-control"   placeholder="Search By Student Name, Roll Number, Enroll Number, National Id, Local Id Etc.">               
-                    
-                    <div class="col-12 form-group mg-t-8">
+                
+                <div class="col-xl-2 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="search_text" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Search By Key Words: *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                    <div class="col-xl-2 col-lg-6 col-12 form-group">
                         <div class="form-group">
                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-12 form-group">
+                        <div class="form-group">
+                            
                             <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                         </div>
                     </div>
-    
-                </div>  
+ 
+                  
 
                 <div class="table-responsive">
                     <table class="table display data-table text-nowrap">

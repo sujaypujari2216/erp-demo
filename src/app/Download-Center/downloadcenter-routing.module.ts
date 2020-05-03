@@ -23,7 +23,7 @@ export const routes: Routes = [
     RouterModule.forChild(routes)
   ]
 })
-export default class DownloadRoutingModule { }
+export class DownloadRoutingModule { }
 
 
 

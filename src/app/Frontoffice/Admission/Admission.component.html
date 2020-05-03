@@ -1,3 +1,262 @@
+<style>
+    body {
+    height: 100vh;
+    display: grid;
+    font-family: Roboto;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .inp .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .inp .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .inp input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .inp input:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .inp input:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .inp input:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
+  .inp input:focus + .label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .inp input:focus + .label + .focus-bg {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+  
+
+/*******select box*********/
+.slt {
+    
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .slt .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .slt .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .slt select {
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border:none;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .slt select:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .slt select:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .slt select:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
+  .slt select:focus + .label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .slt select:focus + .label + .focus-bg {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+
+/*********datppicker****************/
+.dtp {  
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dtp .label {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.dtp .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.dtp input {  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border:none;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  color: #000;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.dtp input:hover {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.dtp input:not(:placeholder-shown) + .label {
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus {
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  box-shadow: inset 0 -2px 0 #0077FF;
+}
+.dtp input:focus + .label {
+  color: #0077FF;
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus + .label + .focus-bg {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+</style>
 
 <div class="breadcrumbs-area">
   <h3>Admission Enquiry</h3>
@@ -17,43 +276,52 @@
       </div>
       <form class="new-added-form">
           <div class="row">
-            <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label>Enquiry Date  *</label>
-                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                    data-position='bottom right' name="date" ngModel>
+            
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                        data-position='top right' name="asondate" >
+                    <span class="label">Enquiry Date*</span>
+                    <span class="focus-bg"></span>
+                </label>
                 <i class="far fa-calendar-alt"></i>
-              
               </div>
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label>Source </label>
-                  <select class="select2">
-                      <option value="">select</option>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                    <select  name="gender" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected>Please Select Source *</option>
+                    <option value="">select</option>
                       <option value="1">Front Office</option>
                       <option value="2">Advertisement</option>
                       <option value="3">Online Front Site</option>
                       <option value="4">Google Ads</option>
                       <option value="5">Admission Campaign</option>
-                     </select>
-                             
+                    </select>
+                    <span class="label">Source *</span>
+                    <span class="focus-bg"></span>
+                  </label>
                  </div>
 
                 
-                 <div class="col-xl-4 col-lg-6 col-12 form-group">
-                 <label>Status </label>
-                 <select class="select2">
-                     <option value="">select</option>
-                     <option value="1">All</option>
-                     <option value="2">Active</option>
-                     <option value="3">Passive</option>
-                     <option value="4">Dead</option>
-                     <option value="5">Won</option>
-                     <option value="5">Lost</option>
-                    </select>
-                            
-                
+                 <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                        <select  name="gender" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected>Please Select Status *</option>
+                        <option value="">select</option>
+                        <option value="1">All</option>
+                        <option value="2">Active</option>
+                        <option value="3">Passive</option>
+                        <option value="4">Dead</option>
+                        <option value="5">Won</option>
+                        <option value="5">Lost</option>
+                        </select>
+                        <span class="label">Status *</span>
+                        <span class="focus-bg"></span>
+                      </label>
                 </div>
               
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
                 </div>  
               
@@ -122,94 +390,140 @@
            </div>
        </div>
        <form class="new-added-form" >
-           <div class="row">
-                  
-           </div>
+           
            <div class="row">
                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                   <label>Name *</label>
-                   <input type="text" placeholder="" class="form-control" name="Name" ngModel>
+                <label for="inp" class="inp">
+                    <input type="text" name="Name" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Name *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+                   
                </div>
+
                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Mobile no.</label>
-                <input type="text" placeholder="" class="form-control" name="mobile" ngModel>
+                <label for="inp" class="inp">
+                    <input type="text" name="mob" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Mobile *</span>
+                    <span class="focus-bg"></span>
+                  </label>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Address *</label>
-                <input type="text" placeholder="" class="form-control" name="address" ngModel>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>E-Mail</label>
-                <input type="email" placeholder="" class="form-control" name="email" ngModel>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Description *</label>
-                <input type="text" placeholder="" class="form-control" name="Desciption" ngModel>
+                <label for="inp" class="inp">
+                    <input type="text" name="address" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Addres *</span>
+                    <span class="focus-bg"></span>
+                  </label>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Note *</label>
-                <input type="text" placeholder="" class="form-control" name="note" ngModel>
+                <label for="inp" class="inp">
+                    <input type="email" name="mail" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">E-Mail *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                    <input type="text" name="Description" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Description *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                    <input type="text" name="note" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Note *</span>
+                    <span class="focus-bg"></span>
+                  </label>
             </div>
                
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Choose Date  *</label>
-                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                    data-position='bottom right' name="date" ngModel>
-                <i class="far fa-calendar-alt"></i>
+                <label for="dtp" class="dtp">
+                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                        data-position='bottom right' name="admission" >
+                    <span class="label">Choose Date   *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+                  <i class="far fa-calendar-alt"></i>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Next Follow up Date  *</label>
-                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                    data-position='bottom right' name="ndate" ngModel>
-                <i class="far fa-calendar-alt"></i>
+                <label for="dtp" class="dtp">
+                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                        data-position='bottom right' name="admission" >
+                    <span class="label">Next Follow up Date    *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+                  <i class="far fa-calendar-alt"></i>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Assinged *</label>
-                <input type="text" placeholder="" class="form-control" name="assinged" ngModel>
+                <label for="inp" class="inp">
+                    <input type="text" name="lasAssingedtName" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Assinged*</span>
+                    <span class="focus-bg"></span>
+                  </label>
             </div>
+
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Refrence *</label>
-                   <select class="select2"  name="Refrence" ngModel>
-                       <option value="">select</option>
-                       <option value="1">Staff</option>
-                       <option value="2">Parents</option>
-                       <option value="3">Students</option>
-                       <option value="3">Parents</option>
-                       <option value="3">Partner School</option>
-                       <option value="3">Self</option>
-       
-                   </select>
+                <label for="slt" class="slt">
+                    <select  name="category" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected>Please Select  *</option>
+                        <option value="">select</option>
+                        <option value="1">Staff</option>
+                        <option value="2">Parents</option>
+                        <option value="3">Students</option>
+                        <option value="3">Parents</option>
+                        <option value="3">Partner School</option>
+                        <option value="3">Self</option>
+                    </select>
+                    <span class="label">References *</span>
+                    <span class="focus-bg"></span>
+                </label>
                </div>
 
                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Source</label>
-                <select class="select2">
-                    <option value="">select</option>
-                    <option value="1">Front Office</option>
-                    <option value="2">Advertisement</option>
-                    <option value="3">Online Front Site</option>
-                    <option value="4">Google Ads</option>
-                    <option value="5">Admission Campaign</option>
-                   </select>
-                           
+                <label for="slt" class="slt">
+                    <select  name="category" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected>Please Select  *</option>
+                        <option value="1">Front Office</option>
+                        <option value="2">Advertisement</option>
+                        <option value="3">Online Front Site</option>
+                        <option value="4">Google Ads</option>
+                        <option value="5">Admission Campaign</option>
+                    </select>
+                    <span class="label">Source *</span>
+                    <span class="focus-bg"></span>
+                </label>   
                </div>
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Class *</label>
-                   <select class="select2" name="class" ngModel>
 
-                       <option value="">select</option>
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                   </select>
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                    <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Class *</option>
+         
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    </select>
+                    <span class="label">Class *</span>
+                    <span class="focus-bg"></span>
+                </label>
                </div>
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
 
-                   <label>No of Child *</label>
-                   <input type="text" placeholder="" class="form-control" name="cast" ngModel>
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                    <input type="text" name="child" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">No of Child  *</span>
+                    <span class="focus-bg"></span>
+                  </label>
                </div>
  
                <div class="col-12 form-group mg-t-8">
