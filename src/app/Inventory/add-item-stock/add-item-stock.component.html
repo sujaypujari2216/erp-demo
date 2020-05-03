@@ -31,68 +31,101 @@
                 <form class="new-added-form" >
                     <div class="row">
                         <div class="col-4 col-lg-4 col-12 form-group">   
-                            <label>Item Name *</label>
-                            <input type="text" placeholder="" class="form-control" >
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Item Name</span>
+                                <span class="focus-bg"></span>
+                              </label>
                         </div>
                         
                         <div class="col-4 col-lg-4 col-12 form-group">                            
-                            <label>Item Category *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
+                            <label for="slt" class="slt">        
+                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                    <option selected>Please Select  *</option>
+                                     <option value="">select</option>
+                                    <option value="1">Sports</option>
+                                    <option value="2">Stationary</option>
+                                    <option value="3">Uniform</option>
+                                </select>
+                                <span class="label">Category *</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                        </div>
+                    <div class="col-4 col-lg-4 col-12 form-group"> 
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                <option value="">Select</option>
                                 <option value="1">Sports</option>
                                 <option value="2">Stationary</option>
                                 <option value="3">Uniform</option>
                             </select>
+                            <span class="label">Item *</span>
+                            <span class="focus-bg"></span>
+                        </label>                           
                         </div>
-                    <div class="col-4 col-lg-4 col-12 form-group">                            
-                        <label>Item *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
-                                <option value="1">Sports</option>
-                                <option value="2">Stationary</option>
-                                <option value="3">Uniform</option>
-                            </select>
-                        </div>
-                    <div class="col-4 col-lg-4 col-12 form-group">                             
-                        <label>Supplier *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
-                                <option value="1">Raj Store</option>
-                                <option value="2">ABC Store</option>
-                                <option value="3">Uniform Store</option>
-                            </select>
-                        </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Store *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
-                                <option value="1">Raj Store</option>
-                                <option value="2">ABC Store</option>
-                                <option value="3">Uniform Store</option>
-                            </select>
-                        </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Quantity</label> 
-                                    <!-- <select class="form-control" name="symbol" autocomplete="off">
-                                        <option value="+">+</option>
-                                        <option value="-">-</option>
-                                    </select> -->
-                                    <input type="text" placeholder="" class="form-control" >
-                            
 
+                    <div class="col-4 col-lg-4 col-12 form-group">  
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                <option value="">Please</option>
+                                <option value="1">Raj Store</option>
+                                <option value="2">ABC Store</option>
+                                <option value="3">Uniform Store</option>
+                            </select>
+                            <span class="label">Supplier *</span>
+                            <span class="focus-bg"></span>
+                        </label>                                              
                         </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Purchase Price *</label>
-                            <input type="text" placeholder="" class="form-control">
+
+                        <div class="col-4 col-lg-4 col-12 form-group">   
+                            <label for="slt" class="slt">        
+                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                    <option selected>Please Select  *</option>
+                                    <option value="">Please </option>
+                                    <option value="1">Raj Store</option>
+                                    <option value="2">ABC Store</option>
+                                    <option value="3">Uniform Store</option>
+                                </select>
+                                <span class="label">STORE *</span>
+                                <span class="focus-bg"></span>
+                            </label>                                
                         </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Date *</label>
-                            <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                            data-position='bottom right' name="date" ngModel>
-                        <i class="far fa-calendar-alt"></i>                        </div>
+                        <div class="col-4 col-lg-4 col-12 form-group">     
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Quantity</span>
+                                <span class="focus-bg"></span>
+                              </label>                        
+                        </div>
+
+                        <div class="col-4 col-lg-4 col-12 form-group"> 
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Purchase Price*</span>
+                                <span class="focus-bg"></span>
+                              </label>                            
+                            
+                        </div>
+
+                        <div class="col-4 col-lg-4 col-12 form-group">  
+                            <label for="dtp" class="dtp">
+                                <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                    data-position='bottom right' name="admission" >
+                                <span class="label"> Date *</span>
+                                <span class="focus-bg"></span>
+                              </label>
+                              <i class="far fa-calendar-alt"></i>                                       
+                          </div>
+
                         <div class="col-4 col-lg-4 col-12 form-group" row="3"> 
-                            <label>Description</label>
-                            <input type="text" placeholder="" class="form-control" >
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Description</span>
+                                <span class="focus-bg"></span>
+                              </label>
+                           
                         </div>
                         <div class="col-12 form-group mg-t-8">
                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
