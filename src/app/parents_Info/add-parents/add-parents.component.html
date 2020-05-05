@@ -1,5 +1,5 @@
 <div class="breadcrumbs-area">
-    <h3>Parents</h3>
+  
     <ul>
         <li>
             <a href="index.html">Home</a>
@@ -19,124 +19,172 @@
         <form class="new-added-form" >
             <div class="row">
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Student Roll No.*</label>
-                    <input type="text" placeholder="" class="form-control" name="RollNo" ngModel>
+                    <label for="inp" class="inp">
+                        <input type="text" name="rollno" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Student Roll No *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>                
            
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>First Name *</label>
-                    <input type="text" placeholder="" class="form-control" name="firstName" ngModel>
+                    <label for="inp" class="inp">
+                        <input type="text" name="firstname" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">firstname *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
+
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Last Name *</label>
-                    <input type="text" placeholder="" class="form-control" name="lastName" ngModel>
+                    <label for="inp" class="inp">
+                        <input type="text" name="lastname" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Last Name *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
+
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Class *</label>
-                    <select class="select2" name="class" ngModel>
-                        <option selected>Please Select Class *</option>
-                        <option value="">select</option>
-                        <option value="1">Play</option>
-                        <option value="2">Nursery</option>
-                        <option value="3">One</option>
-                        <option value="3">Two</option>
-                        <option value="3">Three</option>
-                        <option value="3">Four</option>
-                        <option value="3">Five</option>
+                    <label for="slt" class="slt">
+                    <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Class *</option>
+         
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
                     </select>
+                    <span class="label">Class *</span>
+                    <span class="focus-bg"></span>
+                </label>
                 </div>
 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Fathers Name *</label>
-                    <input type="text" placeholder="" class="form-control" name="firstName" ngModel>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Fathers Phone No. *</label>
-                    <input type="text" placeholder="" class="form-control" name="fphone" ngModel>
-                </div>
-
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Fathers Occupation *</label>
-                    <input type="text" placeholder="" class="form-control" name="foccupation" ngModel>
-                </div>
-                
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label class="text-dark-medium">Upload Father Photo(150px X 150px)</label>
-                    <input type="file" class="form-control-file" name="fatherphoto" ngModel>
-                </div>
-                
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Mothers Name *</label>
-                    <input type="text" placeholder="" class="form-control" name="firstName" ngModel>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Mothers Phone No. *</label>
-                    <input type="text" placeholder="" class="form-control" name="Mphone" ngModel>
+                    <label for="inp" class="inp">
+                        <input type="text" name="fathername" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Father Name*</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Mothers Occupation *</label>
-                    <input type="text" placeholder="" class="form-control" name="Moccupation" ngModel>
+                    <label for="inp" class="inp">
+                        <input type="text" name="fathernumber" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Father Phone No. *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="occupation" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Father Occupation:*</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
                 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label class="text-dark-medium">Upload Mother Photo(150px X 150px)</label>
-                    <input type="file" class="form-control-file" name="motherphoto" ngModel>
+                    <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
+                    <input type="file" class="form-control-file" name="photo" placeholder="Upload Student Photo (150px X 150px)">
+                </div>
+                
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="mothername" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Mother Name *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="mothernumber" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Mother Phone No. *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="m-occupation" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Mother Occupation*</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+                
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
+                    <input type="file" class="form-control-file" name="photo" placeholder="Upload Student Photo (150px X 150px)">
                 </div>
                 
 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Category *</label>
-                    <select class="select2"  name="category" ngModel>
-                        <option selected>Please Category *</option>
-                        <option value="">select</option>
-                        <option value="1">A+</option>
-                        
-                    </select>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Religion *</label>
-                    <select class="select2" name="Religion" ngModel>
-                        <option selected>Please Select Religion *</option>
-                        <option value="">select</option>
-                        <option value="1">Islam</option>
-                        <option value="2">Hindu</option>
-                        <option value="3">Christian</option>
-                        <option value="3">Buddish</option>
-                        <option value="3">Others</option>
-                    </select>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>cast *</label>
-                    <input type="text" placeholder="" class="form-control" name="cast" ngModel>
-                </div>
-                
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>E-Mail</label>
-                    <input type="email" placeholder="" class="form-control" name="email" ngModel>
-                </div>
-
-                
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Student House *</label>
-                    <select class="select2" name="bloodgroup" ngModel>
-                        <option selected>Please Select House *</option>
-                        <option value="">select</option>
+                    <label for="slt" class="slt">
+                        <select  name="category" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select Category *</option>
                         <option value="1">1</option>
-                    </select>
+                        <option value="2">2</option>
+                        </select>
+                        <span class="label">Category *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                        <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select Religion *</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        </select>
+                        <span class="label">Religion *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="cast" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Cast *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+                
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="email" name="email" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">E-Mail *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
 
                 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>As On Date  *</label>
-                    <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                        data-position='bottom right' name="asondate" ngModel>
-                    <i class="far fa-calendar-alt"></i>
+                    <label for="slt" class="slt">
+                        <select  name="House" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected >Please Select House*</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        </select>
+                        <span class="label">Houses *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="dtp" class="dtp">
+                        <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                            data-position='bottom right' name="asdate" >
+                        <span class="label">As on Date *</span>
+                        <span class="focus-bg"></span>
+                      </label>
+                      <i class="far fa-calendar-alt"></i>
                 </div>
                 
                 
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                    <label>Want To add more*</label>
+                 
                     <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">+ Add Sibling</button>
                 </div>
                 
