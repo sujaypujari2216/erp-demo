@@ -27,7 +27,8 @@
   <!-- Date Picker CSS -->
   <link rel="stylesheet" href="/assets/css/datepicker.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link *ngIf="cssUrl" type="text/css" rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <!-- Modernize js -->
   <script src="/assets/js/modernizr-3.6.0.min.js"></script>
