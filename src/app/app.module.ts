@@ -97,7 +97,7 @@ import { AddMoreComponent } from './human_resource/add-more/add-more.component';
     FormsModule,
     CertificateModule,
     ReportsModule,
-   
+    RouterModule,
     RouterModule.forRoot(
       [
         {path:'',redirectTo:'admin',pathMatch:'full'},

@@ -33,6 +33,7 @@
   <!-- Modernize js -->
   <script src="/assets/js/modernizr-3.6.0.min.js"></script>
 
+
 </head>
 <body>
     <div id="wrapper" class="wrapper bg-ash">
@@ -234,7 +235,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    
     <div class="dashboard-page-one">
         <!-- Sidebar Area Start Here -->
         <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
@@ -243,34 +244,37 @@
                     <a href="index.html"><img src="../assets/img/logo1.png" alt="logo"></a>
                 </div>
            </div>
-            <div class="sidebar-menu-content">
+            <div class="sidebar-menu-content " >
                 <ul class="nav nav-sidebar-menu sidebar-toggle-view">
-                    <li class="nav-item sidebar-nav-item">
+                    <li class="nav-item sidebar-nav-item ">
                         <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                       
                         <ul class="nav sub-group-menu">
-                            <li class="nav-item">
-                                <a  class="nav-link" href="/#/admin" ><i class="fas fa-angle-right"></i>Admin</a>
+                            <li class="nav-item" >
+                                <a class="nav-link" href="/#/admin" ><i
+                                     class="fas fa-angle-right"></i>Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link" href="/#/studentinfo" ><i
+                                <a class="nav-link " href="/#/admin" ><i
                                         class="fas fa-angle-right"></i>Students</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/#/parentinfo" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
+                                <a href="/#/admin" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/#/teacherinfo" class="nav-link"><i
-                                        class="fas fa-angle-right"></i>Teachers</a>
+                                <a href="/#/admin" class="nav-link ">
+                                    <i class="fas fa-angle-right "></i>Teachers</a>
                             </li>
                         </ul>
+                        
                     </li>
-
+                    
                     <!--Student Module here-->
-                    <li class="nav-item sidebar-nav-item">
+                    <li class="nav-item sidebar-nav-item" >
                         <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
                         <ul class="nav sub-group-menu ">
                             <li class="nav-item">
-                                <a href="/#/studentdetails" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
+                                <a  href="/#/studentdetails" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/#/admissionform" class="nav-link"><i
@@ -903,6 +907,25 @@
         
         
     </div>
+
+<!-- <script>
+        $(function(){
+            $('.list1').singlePageNav({
+        currentClass : '.menu-active'
+    });
+
+          
+        });
+    </script>-->
+ <!--<script>  
+ $(document).ready(function(){
+            $('.sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > li a').click(function(){
+                    $('.sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > li a').removeClass("menu-active");
+                    $(this).addClass("menu-active");
+            });
+        });
+    </script>-->
+        
 <!-- jquery-->
 <script src="/assets/js/jquery-3.3.1.min.js"></script>
 <!-- Plugins js -->

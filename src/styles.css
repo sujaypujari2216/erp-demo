@@ -1494,7 +1494,8 @@ ul {
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .nav-bar-header-one {
-  background: linear-gradient(to right, #ff9d01, #ffaa01);
+
+  background: linear-gradient(to right, #ffffff, #ffffff);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1502,9 +1503,11 @@ ul {
   margin-top: -5px;
   margin-bottom: -5px;
   margin-left: -1rem;
+
 }
 @media only screen and (max-width: 767px) {
   .nav-bar-header-one {
+
     display: block;
     text-align: center;
     min-width: 20rem;
@@ -1546,7 +1549,7 @@ ul {
   right: 0;
   height: 2px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: orange;
   display: block;
   opacity: 1;
   transform: rotate(0deg);
@@ -2118,6 +2121,7 @@ ul {
   position: relative;
   padding: 12px 25px;
 }
+
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item > .nav-link i:before {
   color: #ffa901;
   font-size: 18px;
