@@ -1,1 +1,113 @@
-<p>gallary works!</p>
+<div class="breadcrumbs-area">
+    <h3>Front CMS</h3>
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>Gallery</li>
+    </ul>
+</div>
+    <div class="card height-auto">
+        <div class="card-body">
+            <div class="heading-layout1">
+                <div class="item-title">
+                    <h3>Gallery List</h3>
+                </div>
+                <div class="dropdown">
+                    
+                    <button style="  background-color: #000066
+                    " type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add </button>
+                </div>
+            </div>
+            <form class="new-added-form">
+                <div class="row">
+                    <div class="col-lg-4 col-12 form-group">
+                        <input type="text" placeholder="Search..." class="form-control">
+                    </div>
+                    
+                    <div class="col-lg-2 col-12 form-group">
+                        <button type="submit"
+                            class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                            
+                    </div>
+                    <div class="col-1-xxxl col-xl-6 col-lg-3 col-12" style="margin-left: auto;">
+                        <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
+                    </div>
+                </div>
+                
+               
+            </form>
+            
+            <div class="table-responsive">
+                <table class="table display data-table text-nowrap">
+                    <thead>
+                        <tr>
+                            
+                            <th>Tile</th>
+                            <th>URL</th>
+                            <th>Action</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- Trigger the modal with a button -->
+
+
+<!-- Modal -->
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="col-12-xxxl col-12-xxxl">
+            <div class="card height-auto">
+                <div class="card-body">
+                    <form class="mg-b-20">
+                
+                        <div class="row gutters-8">
+                            <div class="col-12-xxxl col-lg-12 col-12 form-group">
+                                <label>Title *</label>
+                                <input type="text" placeholder="" class="form-control" >
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label>Venue</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label>Start Date</label>
+                                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
+                                data-position='bottom right' name="date" ngModel>
+                            <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label>End Date</label>
+                                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
+                                data-position='bottom right' name="date" ngModel>
+                            <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label>Description</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                            
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;&nbsp;&nbsp;
+                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
