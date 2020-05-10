@@ -13,9 +13,6 @@
     <div class="card height-auto">
         <div class="card-body">
             <div class="heading-layout1">
-                <div class="item-title">
-                    <h3>Select Criteria</h3>
-                </div>
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                         aria-expanded="false">...</a>
@@ -32,31 +29,52 @@
             </div>
             <form class="new-added-form">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Class *</label>
-                        <select class="select2">
-                            <option value="">Please Select Class *</option>
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="slt" class="slt">
+                            <select  class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected >Please Select Class *</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
-                        </select>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            </select>
+                            <span class="label">Class *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Section *</label>
-                        <select class="select2">
-                            <option value="">Please Select Section *</option>
-                            <option value="1">A</option>
-                            <option value="2">B</option>
-                            <option value="3">C</option>
-                            <option value="3">D</option>
-                        </select>
+    
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="slt" class="slt">
+                            <select  name="section" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected>Please Select section *</option>
+                            <option value="">select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            </select>
+                            <span class="label">Section *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Certificate *</label>
-                        <select class="select2">
+                        <label for="slt" class="slt">
+                            <select  name="section" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected>Please Select *</option>
                             <option value="">Please Select Certificate *</option>
                             <option value="1">Sample Transfer Certificate</option>
-                        </select>
+                            </select>
+                            <span class="label">Certificate *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                
                     </div>
+
                     <div class="col-12 form-group mg-t-8">
                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                             Search</button>

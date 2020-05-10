@@ -1,5 +1,5 @@
 <div class="breadcrumbs-area">
-    <h3>Students</h3>
+   
     <ul>
         <li>
             <a href="index.html">Home</a>
@@ -19,7 +19,11 @@
         <form class="mg-b-20">
             <div class="row gutters-8">
                 <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                    <input type="text" placeholder="Add Category ..." class="form-control">
+                    <label for="inp" class="inp">
+                        <input type="text" name="add_category" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Add Category: *</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
                 
                 <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
@@ -27,11 +31,7 @@
                 </div>
             </div>
         </form>
-        <div class="heading-layout1">
-            <div class="item-title">
-                <h3>Category List</h3>
-            </div>
-        </div>
+        
         <div class="table-responsive">
             <table class="table display data-table text-nowrap">
                 <thead>

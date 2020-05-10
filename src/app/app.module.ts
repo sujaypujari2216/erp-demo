@@ -35,7 +35,7 @@ import { MenusComponent } from './Frontcms/menus/menus.component';
 import { BannerImagesComponent } from './Frontcms/banner-images/banner-images.component';
 import { AdmitFormComponent } from './admit-form/admit-form.component';
 import { CertificateModule } from './certificate/certificate.module';
-import { ReportsModule } from './reports/reports.module';
+import { ReportsModule } from './Reports/reports.module';
 import { AddSComponent } from './human_resource/add-s/add-s.component';
 import { ApplyLeaveComponent } from './human_resource/apply-leave/apply-leave.component';
 import { ApproveLeaveRequestComponent } from './human_resource/approve-leave-request/approve-leave-request.component';
@@ -97,7 +97,7 @@ import { AddMoreComponent } from './human_resource/add-more/add-more.component';
     FormsModule,
     CertificateModule,
     ReportsModule,
-   
+    RouterModule,
     RouterModule.forRoot(
       [
         {path:'',redirectTo:'admin',pathMatch:'full'},

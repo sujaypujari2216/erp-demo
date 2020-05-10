@@ -25,50 +25,84 @@
                 <div class="row">
                                        
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Class</label>
-                        <select class="select2">
-                            <option value="">1</option>
+                        <label for="slt" class="slt">
+                            <select   class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select *</option>
+                                <option value="">1</option>
                             <option value="1">2</option>
                             <option value="2">3</option>
                             <option value="3">4</option>
-                        </select>
+                            </select>
+                            <span class="label">Class</span>
+                            <span class="focus-bg"></span>
+                            </label>
+                
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Section</label>
-                        <select class="select2">
-                            <option value="">A</option>
+                        <label for="slt" class="slt">
+                            <select   class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select Section*</option>
+                                <option value="">select</option>
+                                <option value="">A</option>
                             <option value="1">B</option>
                             <option value="2">C</option>
                             <option value="3">D</option>
-                        </select>
+                            </select>
+                            <span class="label">Section</span>
+                            <span class="focus-bg"></span>
+                            </label>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Subject Group</label>
-                        <select class="select2">
-                            <option value="">Please Select</option>
-                        </select>
+                        <label for="slt" class="slt">
+                            <select   class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select Subject*</option>
+                                <option value="">select</option>
+                                <option value="">A</option>
+                          
+                            </select>
+                            <span class="label">Subject Group </span>
+                            <span class="focus-bg"></span>
+                            </label>
+                       
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Subject</label>
-                        <select class="select2">
-                            <option value="">Please Select</option>
-                        </select>
+                        <label for="slt" class="slt">
+                            <select   class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select Subject*</option>
+                                <option value="">select</option>
+                                <option value="">A</option>
+                            <option value="1">B</option>
+                            <option value="2">C</option>
+                            <option value="3">D</option>
+                            </select>
+                            <span class="label">Subject</span>
+                            <span class="focus-bg"></span>
+                            </label>
+                   
                     </div>
                     
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Homework Date</label>
-                        <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                        data-position='bottom right' name="date" ngModel>
-                    <i class="far fa-calendar-alt"></i>
+                        <label for="dtp" class="dtp">
+                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                data-position='top right' name="asondate" >
+                            <span class="label">Homework Date *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                        <i class="far fa-calendar-alt"></i>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Submission Date</label>
-                        <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                    data-position='bottom right' name="date" ngModel>
-                <i class="far fa-calendar-alt"></i>
+                        <label for="dtp" class="dtp">
+                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                data-position='top right' name="asondate" >
+                            <span class="label">Submission Date *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                        <i class="far fa-calendar-alt"></i>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label class="text-dark-medium">Attach Document</label>
+                        <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
                         <input type="file" class="form-control-file" name="homeworkdoc" ngModel>
                     </div>
                     
