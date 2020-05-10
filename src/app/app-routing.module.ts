@@ -16,6 +16,8 @@ import { ReportsRoutingModule } from './Reports/reports-routing.module';
 import { HumanResourceRoutingModule } from './human_resource/human_resource-routing.module';
 import { OnlineExamRoutingModule } from './online-exam/online-exam-routing.module';
 
+import { IncomeRoutingModule } from './income/income-routing.module';
+import { ExpenseRoutingModule } from './expenses/expense-routing.module';
 
 
 
@@ -32,7 +34,7 @@ const routes: Routes = [];
     // tslint:disable-next-line: max-line-length
     DownloadRoutingModule, InventoryRoutingModule, HomeworkRoutingModule, TransportRoutingModule, FrontcmsRoutingModule, FormsRoutingModule,
     FrontofficeRoutingModule, CertificateRoutingModule,
-    ReportsRoutingModule, HumanResourceRoutingModule,OnlineExamRoutingModule
+    ReportsRoutingModule, HumanResourceRoutingModule,ExpenseRoutingModule,IncomeRoutingModule,OnlineExamRoutingModule
   ],
   exports: [RouterModule]
 })

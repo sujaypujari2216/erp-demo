@@ -12,7 +12,7 @@
     <div class="card-body">
         <form class="new-added-form">
             <div class="row">
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
 
                     <label for="slt" class="slt">
                         <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
@@ -30,7 +30,7 @@
                     </label>
                 </div>
 
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
 
                     <label for="slt" class="slt">
                         <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
@@ -49,19 +49,21 @@
                 </div>
                 
                 
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label>Search By Key Words:<span style="color: red;"> *</span></label>
-                    <input type="text" name="search_text" class="form-control"   placeholder="Search By Student Name, Roll Number, Enroll Number, National Id, Local Id Etc.">               
-                    
-                    <div class="col-12 form-group mg-t-8">
+
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text" name="search_text" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Search By Key Words: *</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                    <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
                         <div class="form-group">
                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
-                            <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                          
                         </div>
                     </div>
-    
-                </div>
-            
             </div>
         </form>
           <table  id="example" class="table display data-table text-nowrap cell-border">
