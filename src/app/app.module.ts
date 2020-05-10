@@ -49,6 +49,7 @@ import { StaffDirectoryComponent } from './human_resource/staff-directory/staff-
 import { StaffAttendanceComponent } from './human_resource/staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './human_resource/teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './human_resource/add-more/add-more.component';
+import { DatatableService } from './shared/datatableservice/datatable.service';
 
 
 
@@ -107,7 +108,7 @@ import { AddMoreComponent } from './human_resource/add-more/add-more.component';
       ],{useHash:true}
     )
   ],
-  providers: [],
+  providers: [DatatableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

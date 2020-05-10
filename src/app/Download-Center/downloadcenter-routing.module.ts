@@ -12,7 +12,7 @@ export const routes: Routes = [
   {path: 'app-upload-content', component: UploadContentComponent },
   {path: 'app-other-downloads', component: OtherDownloadsComponent },
    {path: 'app-assignment', component: AssignmentComponent },
-   {path: 'app-study material', component: StudyMaterialComponent },
+   {path: 'app-study-material', component: StudyMaterialComponent },
    {path: 'app-syllabus', component: SyllabusComponent },
   
 ];
