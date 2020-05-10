@@ -12,13 +12,6 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { ParentinfoComponent } from './dashboard/parentinfo/parentinfo.component';
 
 import { TeacherinfoComponent } from './dashboard/teacherinfo/teacherinfo.component';
-import { OnlineAdmissionComponent } from './students_Info/online-admission/online-admission.component';
-import { DisabledStudentsComponent } from './students_Info/disabled-students/disabled-students.component';
-import { BulkDeleteComponent } from './students_Info/bulk-delete/bulk-delete.component';
-import { DisableReasonComponent } from './students_Info/disable-reason/disable-reason.component';
-import { MultiClassStudentComponent } from './students_Info/multi-class-student/multi-class-student.component';
-import { StudentCategoriesComponent } from './students_Info/student-categories/student-categories.component';
-import { StudentHouseComponent } from './students_Info/student-house/student-house.component';
 import { AddParentsComponent } from './parents_Info/add-parents/add-parents.component';
 import { ParentsdetailsComponent } from './parents_Info/parentsdetails/parentsdetails.component';
 import { AddHomeworkComponent } from './Homework/add-homework/add-homework.component';
@@ -49,6 +42,10 @@ import { StaffDirectoryComponent } from './human_resource/staff-directory/staff-
 import { StaffAttendanceComponent } from './human_resource/staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './human_resource/teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './human_resource/add-more/add-more.component';
+import { AddIncomeComponent } from './income/add-income/add-income.component';
+import { AddExpensesComponent } from './expenses/add-expenses/add-expenses.component';
+import { SearchExpensesComponent } from './expenses/search-expenses/search-expenses.component';
+import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.component';
 
 
 
@@ -88,6 +85,12 @@ import { AddMoreComponent } from './human_resource/add-more/add-more.component';
     StaffDirectoryComponent,
     TeachersRatingComponent,
     AddMoreComponent,
+    
+  
+    AddIncomeComponent,
+    AddExpensesComponent,
+    SearchExpensesComponent,
+    ExpensesHeadComponent,
 
   ],
   imports: [
@@ -105,6 +108,7 @@ import { AddMoreComponent } from './human_resource/add-more/add-more.component';
         {path:'parentsdetails',component:ParentsdetailsComponent},
         {path:'addparents',component:AddParentsComponent},
       ],{useHash:true}
+      
     )
   ],
   providers: [],
