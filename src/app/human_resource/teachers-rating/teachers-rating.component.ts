@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 @Component({
   selector: 'app-teachers-rating',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeachersRatingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datatebleservice:DatatableService) { }
 
   ngOnInit(): void {
+    this.datatebleservice.initTable("Teachers' Ratings List");
   }
 
 }

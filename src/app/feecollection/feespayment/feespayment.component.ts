@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Data } from '@angular/router';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 
 @Component({
@@ -9,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeespaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
+    this.datatableservice.initTable("Search Fees Payment");
   }
 
 }
