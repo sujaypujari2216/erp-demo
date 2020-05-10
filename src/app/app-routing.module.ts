@@ -14,6 +14,7 @@ import {  FrontofficeRoutingModule } from './Frontoffice/FrontofficeRoutingModul
 import { CertificateRoutingModule } from './certificate/certificate-routing.module';
 import { ReportsRoutingModule } from './Reports/reports-routing.module';
 import { HumanResourceRoutingModule } from './human_resource/human_resource-routing.module';
+import { OnlineExamRoutingModule } from './online-exam/online-exam-routing.module';
 
 
 
@@ -31,7 +32,7 @@ const routes: Routes = [];
     // tslint:disable-next-line: max-line-length
     DownloadRoutingModule, InventoryRoutingModule, HomeworkRoutingModule, TransportRoutingModule, FrontcmsRoutingModule, FormsRoutingModule,
     FrontofficeRoutingModule, CertificateRoutingModule,
-    ReportsRoutingModule, HumanResourceRoutingModule,
+    ReportsRoutingModule, HumanResourceRoutingModule,OnlineExamRoutingModule
   ],
   exports: [RouterModule]
 })
