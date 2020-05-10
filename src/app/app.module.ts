@@ -49,6 +49,7 @@ import { StaffDirectoryComponent } from './human_resource/staff-directory/staff-
 import { StaffAttendanceComponent } from './human_resource/staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './human_resource/teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './human_resource/add-more/add-more.component';
+import { AcademicsModule } from './academics/academics.module';
 
 
 
@@ -97,7 +98,7 @@ import { AddMoreComponent } from './human_resource/add-more/add-more.component';
     FormsModule,
     CertificateModule,
     ReportsModule,
-   
+     AcademicsModule,
     RouterModule.forRoot(
       [
         {path:'',redirectTo:'admin',pathMatch:'full'},

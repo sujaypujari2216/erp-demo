@@ -16,6 +16,7 @@ import { AdmitFormComponent } from './admit-form/admit-form.component';
 import { CertificateRoutingModule } from './certificate/certificate-routing.module';
 import { ReportsRoutingModule } from './reports/reports-routing.module';
 import { HumanResourceRoutingModule } from './human_resource/human_resource-routing.module';
+import { AcademicsModule } from './academics/academics.module';
 
 
 
@@ -37,7 +38,7 @@ const routes: Routes = [];
     // tslint:disable-next-line: max-line-length
     DownloadRoutingModule, InventoryRoutingModule, HomeworkRoutingModule, TransportRoutingModule, FrontcmsRoutingModule, FormsRoutingModule,
     FrontofficeRoutingModule, CertificateRoutingModule,
-    ReportsRoutingModule, HumanResourceRoutingModule
+    ReportsRoutingModule, HumanResourceRoutingModule,AcademicsModule
   ],
   exports: [RouterModule]
 })
