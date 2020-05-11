@@ -19,7 +19,12 @@
         <form class="mg-b-20">
             <div class="row gutters-8">
                 <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                    <input type="text" placeholder="Add Category ..." class="form-control">
+                    <label for="inp" class="inp">
+                        <input type="text" name="category" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Add Name ...*</span>
+                        <span class="focus-bg"></span>
+                    </label>
+               
                 </div>
                 
                 <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
@@ -27,45 +32,39 @@
                 </div>
             </div>
         </form>
-        <div class="heading-layout1">
-            <div class="item-title">
-                <h3>Disabled Reason List</h3>
-            </div>
-        </div>
+     
         <div class="table-responsive">
-            <table class="table display data-table text-nowrap">
+            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+            <table id="example" class="table display data-table text-nowrap cell-border">
                 <thead>
                     <tr>
-                        
                         <th>Name</th>
-                        
                         <th>Action</th>  
                                                 
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        
-                        <td></td>
-                        
+                        <td>Regular Absent</td>
                         <td>
-                            <div class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <span class="flaticon-more-button-of-three-dots"></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i
-                                            class="fas fa-times text-orange-red"></i>Close</a>
-                                    <a class="dropdown-item" href="#"><i
-                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                    <a class="dropdown-item" href="#"><i
-                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                </div>
-                            </div>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
                     </tr>
-                   
+                    <tr>
+                        <td>Fees Not Paid</td>
+                        <td>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ABC</td>
+                        <td>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

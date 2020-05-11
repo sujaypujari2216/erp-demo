@@ -15,7 +15,12 @@
             <form class="new-added-form">
                 <div class="row">
                     <div class="col-lg-4 col-12 form-group">
-                        <input type="text" placeholder="Search by name..." class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Search By Name</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                       
                     </div>
                     
                     <div class="col-lg-2 col-12 form-group">
@@ -51,7 +56,6 @@
 <!-- Modal -->
 
 <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
         <div class="col-12-xxxl col-12-xxxl">
             <div class="card height-auto">
                 <div class="card-body">
@@ -59,28 +63,46 @@
                 
                         <div class="row gutters-8">
                             <div class="col-12-xxxl col-lg-12 col-12 form-group">
-                                <label>Title *</label>
-                                <input type="text" placeholder="" class="form-control" >
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Title*</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                       
                             </div>
                             <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                <label>Venue</label>
-                                <input type="text" placeholder="" class="form-control">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Venue *</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                       
                             </div>
                             <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                <label>Start Date</label>
-                                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                data-position='bottom right' name="date" ngModel>
-                            <i class="far fa-calendar-alt"></i>
+                                <label for="dtp" class="dtp">
+                                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                        data-position='bottom right' name="admission" >
+                                    <span class="label">Start Date *</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                                  <i class="far fa-calendar-alt"></i>
                             </div>
                             <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                <label>End Date</label>
-                                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                data-position='bottom right' name="date" ngModel>
-                            <i class="far fa-calendar-alt"></i>
+                                <label for="dtp" class="dtp">
+                                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                        data-position='bottom right' name="admission" >
+                                    <span class="label">End Date *</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                                  <i class="far fa-calendar-alt"></i>
                             </div>
                             <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                <label>Description</label>
-                                <input type="text" placeholder="" class="form-control">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Description</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                        
                             </div>
                             
                             <div class="col-12-xxxl col-lg-6 col-12 form-group">
@@ -92,6 +114,5 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
         

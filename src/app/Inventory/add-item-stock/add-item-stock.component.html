@@ -1,4 +1,4 @@
-   <br> <div class="breadcrumbs-area">
+    <div class="breadcrumbs-area">
             <h3>Inventory</h3>
             <ul>
                 <li>
@@ -7,7 +7,7 @@
                 </li>
                 <li>Add Item Stock</li>
             </ul>
-        </div><br>
+        </div>
         <div class="card height-auto">
             <div class="card-body">
                 <div class="heading-layout1">
@@ -31,68 +31,101 @@
                 <form class="new-added-form" >
                     <div class="row">
                         <div class="col-4 col-lg-4 col-12 form-group">   
-                            <label>Item Name *</label>
-                            <input type="text" placeholder="" class="form-control" >
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Item Name</span>
+                                <span class="focus-bg"></span>
+                              </label>
                         </div>
                         
                         <div class="col-4 col-lg-4 col-12 form-group">                            
-                            <label>Item Category *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
+                            <label for="slt" class="slt">        
+                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                    <option selected>Please Select  *</option>
+                                     <option value="">select</option>
+                                    <option value="1">Sports</option>
+                                    <option value="2">Stationary</option>
+                                    <option value="3">Uniform</option>
+                                </select>
+                                <span class="label">Category *</span>
+                                <span class="focus-bg"></span>
+                            </label>
+                        </div>
+                    <div class="col-4 col-lg-4 col-12 form-group"> 
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                <option value="">Select</option>
                                 <option value="1">Sports</option>
                                 <option value="2">Stationary</option>
                                 <option value="3">Uniform</option>
                             </select>
+                            <span class="label">Item *</span>
+                            <span class="focus-bg"></span>
+                        </label>                           
                         </div>
-                    <div class="col-4 col-lg-4 col-12 form-group">                            
-                        <label>Item *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
-                                <option value="1">Sports</option>
-                                <option value="2">Stationary</option>
-                                <option value="3">Uniform</option>
-                            </select>
-                        </div>
-                    <div class="col-4 col-lg-4 col-12 form-group">                             
-                        <label>Supplier *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
-                                <option value="1">Raj Store</option>
-                                <option value="2">ABC Store</option>
-                                <option value="3">Uniform Store</option>
-                            </select>
-                        </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Store *</label>
-                            <select class="select2">
-                                <option value="">Please Select</option>
-                                <option value="1">Raj Store</option>
-                                <option value="2">ABC Store</option>
-                                <option value="3">Uniform Store</option>
-                            </select>
-                        </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Quantity</label> 
-                                    <!-- <select class="form-control" name="symbol" autocomplete="off">
-                                        <option value="+">+</option>
-                                        <option value="-">-</option>
-                                    </select> -->
-                                    <input type="text" placeholder="" class="form-control" >
-                            
 
+                    <div class="col-4 col-lg-4 col-12 form-group">  
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                <option value="">Please</option>
+                                <option value="1">Raj Store</option>
+                                <option value="2">ABC Store</option>
+                                <option value="3">Uniform Store</option>
+                            </select>
+                            <span class="label">Supplier *</span>
+                            <span class="focus-bg"></span>
+                        </label>                                              
                         </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Purchase Price *</label>
-                            <input type="text" placeholder="" class="form-control">
+
+                        <div class="col-4 col-lg-4 col-12 form-group">   
+                            <label for="slt" class="slt">        
+                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                    <option selected>Please Select  *</option>
+                                    <option value="">Please </option>
+                                    <option value="1">Raj Store</option>
+                                    <option value="2">ABC Store</option>
+                                    <option value="3">Uniform Store</option>
+                                </select>
+                                <span class="label">STORE *</span>
+                                <span class="focus-bg"></span>
+                            </label>                                
                         </div>
-                        <div class="col-4 col-lg-4 col-12 form-group">                             
-                            <label>Date *</label>
-                            <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                            data-position='bottom right' name="date" ngModel>
-                        <i class="far fa-calendar-alt"></i>                        </div>
+                        <div class="col-4 col-lg-4 col-12 form-group">     
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Quantity</span>
+                                <span class="focus-bg"></span>
+                              </label>                        
+                        </div>
+
+                        <div class="col-4 col-lg-4 col-12 form-group"> 
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Purchase Price*</span>
+                                <span class="focus-bg"></span>
+                              </label>                            
+                            
+                        </div>
+
+                        <div class="col-4 col-lg-4 col-12 form-group">  
+                            <label for="dtp" class="dtp">
+                                <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                    data-position='bottom right' name="admission" >
+                                <span class="label"> Date *</span>
+                                <span class="focus-bg"></span>
+                              </label>
+                              <i class="far fa-calendar-alt"></i>                                       
+                          </div>
+
                         <div class="col-4 col-lg-4 col-12 form-group" row="3"> 
-                            <label>Description</label>
-                            <input type="text" placeholder="" class="form-control" >
+                            <label for="inp" class="inp">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <span class="label">Description</span>
+                                <span class="focus-bg"></span>
+                              </label>
+                           
                         </div>
                         <div class="col-12 form-group mg-t-8">
                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
@@ -100,7 +133,6 @@
                         </div>
                     </div>
                 </form>
-            </div>
             <div class="heading-layout1">
                 <div class="item-title">
                     <h3>Stock List</h3>
@@ -113,15 +145,7 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <div class="col-1-xxxl col-xl-2 col-lg-3 col-12">
-                    <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
-                  </div>
-                <table class="table display data-table text-nowrap">
+                <table id="example" class="table display data-table text-nowrap cell-border">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -138,29 +162,93 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-
-                            <td></td>
-
-                            <td></td>
-
-                            <td></td>
-
-                            <td></td>
-
-                            <td></td>
-
+                            <td>Football</td>
+                            <td>Sports</td>
+                            <td>ABC</td>
+                            <td>LMN</td>
+                            <td>11</td>
+                            <td>LKJ</td>
+                            <td>200</td>
+                            <td>01/02/2020</td>
                             <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                                 <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Football</td>
+                            <td>Sports</td>
+                            <td>ABC</td>
+                            <td>LMN</td>
+                            <td>11</td>
+                            <td>LKJ</td>
+                            <td>200</td>
+                            <td>01/02/2020</td>
+                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Football</td>
+                            <td>Sports</td>
+                            <td>ABC</td>
+                            <td>LMN</td>
+                            <td>11</td>
+                            <td>LKJ</td>
+                            <td>200</td>
+                            <td>01/02/2020</td>
+                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Football</td>
+                            <td>Sports</td>
+                            <td>ABC</td>
+                            <td>LMN</td>
+                            <td>11</td>
+                            <td>LKJ</td>
+                            <td>200</td>
+                            <td>01/02/2020</td>
+                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Football</td>
+                            <td>Sports</td>
+                            <td>ABC</td>
+                            <td>LMN</td>
+                            <td>11</td>
+                            <td>LKJ</td>
+                            <td>200</td>
+                            <td>01/02/2020</td>
+                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Football</td>
+                            <td>Sports</td>
+                            <td>ABC</td>
+                            <td>LMN</td>
+                            <td>11</td>
+                            <td>LKJ</td>
+                            <td>200</td>
+                            <td>01/02/2020</td>
+                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+     </div>
     
     <!-- Add room Area end Here -->

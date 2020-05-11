@@ -1,3 +1,263 @@
+<style>
+    body {
+    height: 100vh;
+    display: grid;
+    font-family: Roboto;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .inp .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .inp .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .inp input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .inp input:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .inp input:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .inp input:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
+  .inp input:focus + .label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .inp input:focus + .label + .focus-bg {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+  
+
+/*******select box*********/
+.slt {
+    
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .slt .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .slt .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .slt select {
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border:none;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .slt select:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .slt select:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .slt select:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
+  .slt select:focus + .label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .slt select:focus + .label + .focus-bg {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+
+/*********datppicker****************/
+.dtp {  
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dtp .label {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.dtp .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.dtp input {  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border:none;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  color: #000;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.dtp input:hover {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.dtp input:not(:placeholder-shown) + .label {
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus {
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  box-shadow: inset 0 -2px 0 #0077FF;
+}
+.dtp input:focus + .label {
+  color: #0077FF;
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus + .label + .focus-bg {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+</style>
+
 <div class="breadcrumbs-area">
   <h3>Visitor Book</h3>
   <ul>
@@ -9,70 +269,89 @@
  </div>
  <div class="card height-auto">
   <div class="card-body">
-      <div class="heading-layout1">
-          <div class="item-title">
-              <h3>Select Criteria</h3>
-          </div>
-      </div>
-      <form class="mg-b-20">
-        <div class="row gutters-8">
-            <div class="col-3-xxxl col-xl-6 col-lg-6 col-12 form-group">
-                <input type="text" placeholder="Search by keywords" class="form-control">
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
-            <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
-            </div>
-        </div>
-    </form>
-  
-    <br>
-
-  
       <div class="table-responsive">
-        <div class="col-1-xxxl col-xl-2 col-lg-3 col-12">
-            <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
-          </div>
-        <table class="table display data-table text-nowrap">
+        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+        <table id="example" class="table display data-table text-nowrap cell-border">
             <thead>
-                
                 <tr>
-                    <th>Roll</th>
+                    <th>Purpose</th>
                     <th>Name</th>
-                    <th>Class</th>
-                    <th>Father Name</th>  
-                    <th>Date Of Birth</th>
-                    <th>Gender</th>
-                    <th>Category</th>
-                    <th>Mobile No.</th>
-                    <th>Enrolled</th>
+                    <th>Phone</th>
+                    <th>Date</th>  
+                    <th>In Time</th>
+                    <th>Out Time</th>
                     <th>Action</th>
                     
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                   
+                    <td>Marketing</td>
+                    <td>XYZ</td>
+                    <td>9876543210</td>
+                    <td>06/03/2020</td>
+                    <td>10:00 AM</td>
+                    <td>10:30 AM</td>                   
                     <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
-               
+                <tr>
+                  <td>Marketing</td>
+                  <td>Test</td>
+                  <td>7896541230</td>
+                  <td>19/01/2020</td>
+                  <td>07:45 AM</td>
+                  <td>08:00 AM</td>                   
+                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+              </tr>
+              <tr>
+                <td>Marketing</td>
+                <td>XYZ</td>
+                <td>9876543210</td>
+                <td>06/03/2020</td>
+                <td>10:00 AM</td>
+                <td>10:30 AM</td>                   
+                <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+            </tr>
+            <tr>
+              <td>Marketing</td>
+              <td>Test</td>
+              <td>7896541230</td>
+              <td>19/01/2020</td>
+              <td>07:45 AM</td>
+              <td>08:00 AM</td>                   
+              <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+          </tr>
+          <tr>
+            <td>Marketing</td>
+            <td>XYZ</td>
+            <td>9876543210</td>
+            <td>06/03/2020</td>
+            <td>10:00 AM</td>
+            <td>10:30 AM</td>                   
+            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+        </tr>
+        <tr>
+          <td>Marketing</td>
+          <td>Test</td>
+          <td>7896541230</td>
+          <td>19/01/2020</td>
+          <td>07:45 AM</td>
+          <td>08:00 AM</td>                   
+          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+      </tr>
+             
             </tbody>
         </table>
     </div>
@@ -91,73 +370,91 @@
        </div>
        <form class="new-added-form">
            <div class="row">
-                  
-           </div>
-
-           
-           <div class="row">
-
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Purpose</label>
-                <select class="select2">
-                    <option value="">select</option>
-                    <option value="1">Marketing</option>
+                <label for="slt" class="slt">
+                    <select  name="category" class="form-control" id="slt" placeholder="&nbsp;">
+                        <option selected>Please Select *</option>
+                        <option value="">select</option>
+                        <option value="1">Marketing</option>
                     <option value="2">Parents Teacher Meeting</option>
                     <option value="3">Student Meeting</option>
                     <option value="4">Staff Meeting</option>
                     <option value="5">Principal Meeting</option>
-                   </select>
-
-
-                           
-               </div>
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                   <label>Name *</label>
-                   <input type="text" placeholder="" class="form-control" name="Name" ngModel>
-               </div>
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Mobile no.</label>
-                <input type="text" placeholder="" class="form-control" name="mobile" ngModel>
+                    </select>
+                    <span class="label">Purpose*</span>
+                    <span class="focus-bg"></span>
+                </label>
                </div>
 
                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>ID Card</label>
-                <input type="text" placeholder="" class="form-control" name="card" ngModel>
+                   <label for="inp" class="inp">
+                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Name *</span>
+                    <span class="focus-bg"></span>
+                </label>
+               </div>
+               
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Mobile No.*</span>
+                    <span class="focus-bg"></span>
+                </label>
+               </div>
+
+               <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">ID Card *</span>
+                    <span class="focus-bg"></span>
+                </label>
                </div>
 
 
                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>No of Person</label>
-                <input type="text" placeholder="" class="form-control" name="person" ngModel>
+                <label for="inp" class="inp">
+                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">No Of Person *</span>
+                    <span class="focus-bg"></span>
+                </label>
             </div>
             
                
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Choose Date  *</label>
-                <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                    data-position='bottom right' name="date" ngModel>
-                <i class="far fa-calendar-alt"></i>
+                <label for="dtp" class="dtp">
+                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                        data-position='bottom right' name="admission" >
+                    <span class="label">Chooose Date *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+                  <i class="far fa-calendar-alt"></i>
             </div>
             
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>In time:</label>
-            <input type="time" id="appt" name="appt" class="form-control"
-             min="06:00" max="23:00">
-             <small>School hours are 9am to 6pm</small>
+                <label for="inp" class="inp">
+                    <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
+                    <span class="label">In Time*</span>
+                    <span class="focus-bg"></span>
+                    <small>School hours are 9am to 6pm</small>
+                </label>
             </div>
            
             
             <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="appt">Out time:</label>
-             <input type="time" id="appt" name="appt" class="form-control"
-             min="06:00" max="23:00" >
-             
+                <label for="inp" class="inp">
+                    <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
+                    <span class="label">Out Time*</span>
+                    <span class="focus-bg"></span>
+                </label>
             </div>
           
 
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label>Note *</label>
-                <input type="text" placeholder="" class="form-control" name="note" ngModel>
+            <div class="col-xl-3 col-lg-6 col-12 form-group">  
+           <label for="inp" class="inp">
+                <input type="text" name="rollno" class="form-control" id="inp" placeholder="&nbsp;">
+                <span class="label">Note*</span>
+                <span class="focus-bg"></span>
+            </label>
             </div>
                 
 

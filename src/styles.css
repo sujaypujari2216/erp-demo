@@ -136,7 +136,7 @@ h6 {
   background-color: initial;
 }
 .card-body {
-  padding: 15px 30px 30px;
+  padding: 15px 15px 15px;  /*  changed from 15 30 30 to 15 15 15*/
   background-color: #ffffff;
   border-radius: 4px;
   -webkit-box-shadow: 0px 10px 20px 0px rgba(229, 229, 229, 0.75);
@@ -157,8 +157,8 @@ h6 {
 }
 /*=============== 2.3 Forms ==================*/
 .form-group .form-control {
-  height: 45px;
-  background-color: #f8f8f8;
+  height: 30px;
+  background-color:transparent;
   font-size: 14px;
   color: #111111;
   border-radius: 4px;
@@ -172,7 +172,7 @@ h6 {
 }
 .form-check {
   position: relative;
-  padding-left: 0;
+  padding-left: 0 ;
 }
 .form-check label {
   display: inline-block;
@@ -1074,7 +1074,7 @@ h6 {
 .select2-container .select2-selection--single {
   background-color: #f0f1f3;
   border-color: #f0f1f3;
-  height: 50px;
+  height: 40px; /* from 50 - 40*/
 }
 .select2-container .select2-selection--single:focus {
   outline: none;
@@ -1083,14 +1083,14 @@ h6 {
   border: 1px solid #aaaaaa;
 }
 .select2-container .select2-selection--single .select2-selection__rendered {
-  line-height: 50px;
+  line-height: 40px;   /* from 50 - 40*/
   color: #b4b4b4;
   padding-left: 20px;
   padding-right: 30px;
   font-size: 15px;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow {
-  height: 50px;
+  height: 40px;  /* from 50 - 40*/
   top: 0;
   right: 15px;
 }
@@ -1219,7 +1219,7 @@ h6 {
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 1px;
-  padding: 12px 45px;
+  padding: 8px 25px;   /* 12 50 to 8 25*/
   cursor: pointer;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1494,7 +1494,8 @@ ul {
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .nav-bar-header-one {
-  background: linear-gradient(to right, #ff9d01, #ffaa01);
+
+  background: linear-gradient(to right, #ffffff, #ffffff);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1502,9 +1503,11 @@ ul {
   margin-top: -5px;
   margin-bottom: -5px;
   margin-left: -1rem;
+
 }
 @media only screen and (max-width: 767px) {
   .nav-bar-header-one {
+
     display: block;
     text-align: center;
     min-width: 20rem;
@@ -1546,7 +1549,7 @@ ul {
   right: 0;
   height: 2px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: orange;
   display: block;
   opacity: 1;
   transform: rotate(0deg);
@@ -1651,7 +1654,7 @@ ul {
   background: transparent;
   color: #111111;
   font-size: 16px;
-  height: 60px;
+  height: 60px;   /*60 to 45*/
 }
 .header-main-menu .navbar-nav .header-search-bar .stylish-input-group .input-group-addon {
   display: flex;
@@ -2098,7 +2101,7 @@ ul {
   border: none;
   border-radius: 0;
   background-color: transparent;
-  padding-bottom: 3rem;
+  padding-bottom: 0rem;   /* 3 - 1*/
   position: fixed;
   top: 68px;
   bottom: 0;
@@ -2118,6 +2121,7 @@ ul {
   position: relative;
   padding: 12px 25px;
 }
+
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item > .nav-link i:before {
   color: #ffa901;
   font-size: 18px;
@@ -2479,7 +2483,7 @@ ul {
 }
 .new-added-form .form-group {
   position: relative;
-  margin-bottom: 2.3rem;
+  margin-bottom: 1.3rem;   /*  2.3 to 1.3*/
 }
 .new-added-form .form-group:last-child {
   margin-bottom: 0;
@@ -2490,11 +2494,11 @@ ul {
 }
 .new-added-form .form-group .form-control {
   background-color: #f0f1f3;
-  height: 50px;
+  height: 40px;   /* 50 - 30*/
 }
 .new-added-form .form-group i {
   position: absolute;
-  top: 56px;
+  top: 20px;
   right: 34px;
   font-size: 15px;
   color: #000;
@@ -2505,6 +2509,9 @@ ul {
 .new-added-form .form-group .form-control-file {
   display: inline-block;
   width: auto;
+  position: absolute;
+  top:20px;
+  left:14px;
 }
 .new-added-form .form-group .form-control-file:focus {
   outline: none;
@@ -3580,7 +3587,7 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 0 10px; /* change from 30 to 10 px*/
 }
 @media only screen and (max-width: 767px) {
   .dashboard-content-one {
@@ -3634,7 +3641,7 @@ ul {
 }
 @media only screen and (max-width: 991px) {
   .dashboard-card-one .card-body .earning-report {
-    margin-bottom: 20px;
+    margin-bottom: 10px;   /* changed from 20 to 10 */
     display: block;
   }
 }
@@ -5087,51 +5094,251 @@ ul {
 .text-orange-red {
   color: #ff0000;
 }
-.onoffswitch {
-  position: relative; width: 69px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+
+
+/****************Input******************/
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
 }
-.onoffswitch-checkbox {
-  display: none;
+.inp .label {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: none;
 }
-.onoffswitch-label {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 2px solid #999999; border-radius: 20px;
+.inp .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
-.onoffswitch-inner {
-  display: block; width: 200%; margin-left: -100%;
-  transition: margin 0.3s ease-in 0s;
+.inp input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  color: #000;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-  display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
-  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-  box-sizing: border-box;
+.inp input:hover {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
-.onoffswitch-inner:before {
-  content: "ON";
-  padding-left: 10px;
-  background-color: #355BA1; color: #FFFFFF;
+.inp input:not(:placeholder-shown) + .label {
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
 }
-.onoffswitch-inner:after {
-  content: "OFF";
-  padding-right: 10px;
-  background-color: #EEEEEE; color: #999999;
-  text-align: right;
+.inp input:focus {
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  box-shadow: inset 0 -2px 0 #0077FF;
 }
-.onoffswitch-switch {
-  display: block; width: 30px; margin: -4px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
-  right: 43px;
-  border: 2px solid #999999; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+.inp input:focus + .label {
+  color: #0077FF;
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-  margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  right: 0px; 
+.inp input:focus + .label + .focus-bg {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 
+/*******select box*********/
+.slt {
+  
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.slt .label {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+.slt .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.slt select {
+  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border:none;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  color: #000;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+.slt select:hover {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.slt select:not(:placeholder-shown) + .label {
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.slt select:focus {
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  box-shadow: inset 0 -2px 0 #0077FF;
+}
+.slt select:focus + .label {
+  color: #0077FF;
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.slt select:focus + .label + .focus-bg {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
 
+/*********datppicker****************/
+.dtp {  
+position: relative;
+margin: auto;
+width: 100%;
+max-width: 280px;
+border-radius: 3px;
+overflow: hidden;
+}
+
+.dtp .label {
+position: absolute;
+top: 20px;
+left: 12px;
+font-size: 16px;
+color: rgba(0, 0, 0, 0.5);
+font-weight: 500;
+-webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+-webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+-webkit-transition: all 0.2s ease;
+transition: all 0.2s ease;
+pointer-events: none;
+}
+
+.dtp .focus-bg {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.05);
+z-index: -1;
+-webkit-transform: scaleX(0);
+        transform: scaleX(0);
+-webkit-transform-origin: left;
+        transform-origin: left;
+}
+
+.dtp input {  
+-webkit-appearance: none;
+-moz-appearance: none;
+     appearance: none;
+width: 100%;
+border:none;
+font-family: inherit;
+padding: 16px 12px 0 12px;
+height: 45px;
+font-size: 16px;
+font-weight: 400;
+background: rgba(0, 0, 0, 0);
+box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+color: #000;
+-webkit-transition: all 0.15s ease;
+transition: all 0.15s ease;
+}
+
+.dtp input:hover {
+background: rgba(0, 0, 0, 0);
+box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.dtp input:not(:placeholder-shown) + .label {
+color: rgba(0, 0, 0, 0.5);
+-webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+        transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus {
+background: rgba(0, 0, 0, 0);
+outline: none;
+box-shadow: inset 0 -2px 0 #0077FF;
+}
+.dtp input:focus + .label {
+color: #0077FF;
+-webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+        transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus + .label + .focus-bg {
+-webkit-transform: scaleX(1);
+        transform: scaleX(1);
+-webkit-transition: all 0.1s ease;
+transition: all 0.1s ease;
+}

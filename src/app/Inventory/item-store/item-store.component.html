@@ -1,6 +1,6 @@
 
     <!-- Breadcubs Area Start Here -->
-    <br><div class="breadcrumbs-area">
+    <div class="breadcrumbs-area">
         <h3>Inventory</h3>
         <ul>
             <li>
@@ -8,7 +8,7 @@
             </li>
             <li>Add Item Store</li>
         </ul>
-    </div><br>
+    </div>
     <!-- Breadcubs Area End Here -->
     <!-- Add Item Category Area Start Here -->
     <div class="card height-auto">
@@ -30,27 +30,81 @@
             </div>
             <form class="new-added-form" >
                 <div class="row">
-                    
-                    
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <label>Item Store Name *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Item Store Name *</span>
+                            <span class="focus-bg"></span>
+                          </label>
                     </div>
+
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <label>Item Stock Code *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Itwm Stock Code *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <label> Description </label>
-                        <textarea class="form-control" id="description" name="description" placeholder="" rows="3" autocomplete="off"></textarea>
+                        <label for="inp" class="inp">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Description</span>
+                            <span class="focus-bg"></span>
+                          </label>
                     </div>
                    
-                    <div class="col-12 form-group mg-t-8">
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
-                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                    
                     </div>
                 </div>
             </form>
+            <div class="table-responsive">
+                <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+                    <table id="example" class="table display data-table text-nowrap cell-border">
+                      <thead>
+                          <tr>
+                              <th>Item Store Name</th>
+                              <th>Item Stock Code</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>Library Store</td>
+                            <td>LB2</td>
+                            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                        </tr>
+        
+                        <tr>
+                          <td>Science Store</td>
+                          <td>SC2</td>
+                          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                        </tr>
+        
+                        <tr>
+                            <td>Library Store</td>
+                            <td>LB2</td>
+                            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                        </tr>
+        
+                        <tr>
+                          <td>Science Store</td>
+                          <td>SC2</td>
+                          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                        </tr>     
+                    </tbody>
+                  </table>
+              </div>
         </div>
     </div>
     <!-- Add Item Category Area End Here -->

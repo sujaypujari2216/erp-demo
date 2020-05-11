@@ -1,3 +1,262 @@
+<style>
+    body {
+        height: 100vh;
+        display: grid;
+        font-family: Roboto;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      .inp {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        max-width: 280px;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .inp .label {
+        position: absolute;
+        top: 20px;
+        left: 12px;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 500;
+        -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        pointer-events: none;
+      }
+      .inp .focus-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: none;
+        z-index: -1;
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: left;
+                transform-origin: left;
+      }
+      .inp input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+        width: 100%;
+        border: 0;
+        font-family: inherit;
+        padding: 16px 12px 0 12px;
+        height: 45px;
+        font-size: 16px;
+        font-weight: 400;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+        color: #000;
+        -webkit-transition: all 0.15s ease;
+        transition: all 0.15s ease;
+      }
+      .inp input:hover {
+        background: rgba(0, 0, 0, 0);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+      }
+      .inp input:not(:placeholder-shown) + .label {
+        color: rgba(0, 0, 0, 0.5);
+        -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+                transform: translate3d(0, -18px, 0) scale(0.75);
+      }
+      .inp input:focus {
+        background: rgba(0, 0, 0, 0);
+        outline: none;
+        box-shadow: inset 0 -2px 0 #0077FF;
+      }
+      .inp input:focus + .label {
+        color: #0077FF;
+        -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+                transform: translate3d(0, -18px, 0) scale(0.75);
+      }
+      .inp input:focus + .label + .focus-bg {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+      }
+      
+    
+    /*******select box*********/
+    .slt {
+        
+        position: relative;
+        margin: auto;
+        width: 100%;
+        max-width: 280px;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .slt .label {
+        position: absolute;
+        top: 20px;
+        left: 12px;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 500;
+        -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        pointer-events: none;
+      }
+      .slt .focus-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        z-index: -1;
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: left;
+                transform-origin: left;
+      }
+      .slt select {
+        
+        -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+        width: 100%;
+        border:none;
+        font-family: inherit;
+        padding: 16px 12px 0 12px;
+        height: 45px;
+        font-size: 16px;
+        font-weight: 400;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+        color: #000;
+        -webkit-transition: all 0.15s ease;
+        transition: all 0.15s ease;
+      }
+      .slt select:hover {
+        background: rgba(0, 0, 0, 0);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+      }
+      .slt select:not(:placeholder-shown) + .label {
+        color: rgba(0, 0, 0, 0.5);
+        -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+                transform: translate3d(0, -18px, 0) scale(0.75);
+      }
+      .slt select:focus {
+        background: rgba(0, 0, 0, 0);
+        outline: none;
+        box-shadow: inset 0 -2px 0 #0077FF;
+      }
+      .slt select:focus + .label {
+        color: #0077FF;
+        -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+                transform: translate3d(0, -18px, 0) scale(0.75);
+      }
+      .slt select:focus + .label + .focus-bg {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transition: all 0.1s ease;
+        transition: all 0.1s ease;
+      }
+    
+    /*********datppicker****************/
+    .dtp {  
+      position: relative;
+      margin: auto;
+      width: 100%;
+      max-width: 280px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .dtp .label {
+      position: absolute;
+      top: 20px;
+      left: 12px;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 500;
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    
+    .dtp .focus-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.05);
+      z-index: -1;
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+      -webkit-transform-origin: left;
+              transform-origin: left;
+    }
+    
+    .dtp input {  
+      -webkit-appearance: none;
+      -moz-appearance: none;
+           appearance: none;
+      width: 100%;
+      border:none;
+      font-family: inherit;
+      padding: 16px 12px 0 12px;
+      height: 45px;
+      font-size: 16px;
+      font-weight: 400;
+      background: rgba(0, 0, 0, 0);
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      color: #000;
+      -webkit-transition: all 0.15s ease;
+      transition: all 0.15s ease;
+    }
+    
+    .dtp input:hover {
+      background: rgba(0, 0, 0, 0);
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+    }
+    .dtp input:not(:placeholder-shown) + .label {
+      color: rgba(0, 0, 0, 0.5);
+      -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+              transform: translate3d(0, -18px, 0) scale(0.75);
+    }
+    .dtp input:focus {
+      background: rgba(0, 0, 0, 0);
+      outline: none;
+      box-shadow: inset 0 -2px 0 #0077FF;
+    }
+    .dtp input:focus + .label {
+      color: #0077FF;
+      -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+              transform: translate3d(0, -18px, 0) scale(0.75);
+    }
+    .dtp input:focus + .label + .focus-bg {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transition: all 0.1s ease;
+      transition: all 0.1s ease;
+    }
+    </style>
 <div class="breadcrumbs-area">
   <h3>Fees Discount</h3>
   <ul>
@@ -9,73 +268,77 @@
  </div>
  <div class="card height-auto">
   <div class="card-body">
-      <div class="heading-layout1">
-          <div class="item-title">
-              <h3>Select Criteria</h3>
-          </div>
-      </div>
       <form class="mg-b-20">
         <div class="row gutters-8">
             <div class="col-3-xxxl col-xl-6 col-lg-6 col-12 form-group">
-                <input type="text" placeholder="Search by discount code
-                .." class="form-control">
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label for="inp" class="inp">
+                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                <span class="label">Search By Discount COde*</span>
+                <span class="focus-bg"></span>
+            </label>
+            </div>
             
             <div class="col-1-xl col-xl-2 col-lg-3 col-12 form-group">
                 <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
             </div>
         </div>
     </form>
-  
-    <br>
-
-  
-    <div class="table-responsive">
-        <div class="col-1-xxxl col-xl-2 col-lg-3 col-12">
-            <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
-          </div>
-        <table class="table display data-table text-nowrap">
-            <thead>
+  <div class="table-responsive">
+      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Discount Code</th>
+                <th>Amount</th>
+                <th>Action</th>
                 
-                <tr>
-                    <th>Roll</th>
-                    <th>Name</th>
-                    <th>Class</th>
-                    <th>Father Name</th>  
-                    <th>Date Of Birth</th>
-                    <th>Gender</th>
-                    <th>Category</th>
-                    <th>Mobile No.</th>
-                    <th>Enrolled</th>
-                    <th>Action</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                   
-                    <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-                </tr>
-               
-            </tbody>
-        </table>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Handicapped Discount</td>
+                <td>handicap-disc</td>
+                <td>1000</td>
+                <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                  </td>
+            </tr>
+            <tr>
+              <td>Handicapped Discount</td>
+              <td>handicap-disc</td>
+              <td>1000</td>
+              <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+            </tr>
+            <tr>
+              <td>Handicapped Discount</td>
+              <td>handicap-disc</td>
+              <td>1000</td>
+              <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+            </tr>
+            <tr>
+              <td>Handicapped Discount</td>
+              <td>handicap-disc</td>
+              <td>1000</td>
+              <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+            </tr>
+            <tr>
+              <td>Handicapped Discount</td>
+              <td>handicap-disc</td>
+              <td>1000</td>
+              <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
     </div>
   </div>
  </div>
@@ -92,34 +355,39 @@
        </div>
        <form class="new-added-form">
            <div class="row">
-                  
-           </div>
-
-           
-           <div class="row">
-
-            
-               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                   <label>Name *</label>
-                   <input type="text" placeholder="" class="form-control" name="name" ngModel>
-               </div>
-               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label>Discount Code </label>
-                <input type="text" placeholder="" class="form-control" name="no1" ngModel>
+               <div class="col-xl-4 col-lg-4 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Name *</span>
+                  <span class="focus-bg"></span>
+              </label>
                </div>
 
-               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label>Amount</label>
-                <input type="text" placeholder="" class="form-control" name="no" ngModel>
+               <div class="col-xl-4 col-lg-4 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Discount Code*</span>
+                  <span class="focus-bg"></span>
+              </label>
                </div>
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                  <label>Description </label>
-                  <input type="text" placeholder="" class="form-control" name="desc" ngModel>
+
+               <div class="col-xl-4 col-lg-4 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Amount*</span>
+                  <span class="focus-bg"></span>
+              </label>
+             </div>
+
+              <div class="col-xl-4 col-lg-4 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Description*</span>
+                  <span class="focus-bg"></span>
+                </label>
               </div>
               
-            
-
-               <div class="col-12 form-group mg-t-8">
+               <div class="col-xl-4 col-lg-4 col-12 form-group">
                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
                </div>
