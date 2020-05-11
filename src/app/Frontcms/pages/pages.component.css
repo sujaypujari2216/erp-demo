@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+.close {
+    float: right;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .8;
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+=======
 body {
     height: 100vh;
     display: grid;
@@ -254,4 +275,5 @@ body {
           transform: scaleX(1);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
+>>>>>>> master
 }
