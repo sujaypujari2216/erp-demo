@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AttendanceLinksComponent } from '../attendance-links/attendance-links.component';
 @Component({
   selector: 'app-staff-attendance-report',
   templateUrl: './staff-attendance-report.component.html',
