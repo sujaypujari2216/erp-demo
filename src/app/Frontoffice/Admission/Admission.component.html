@@ -265,15 +265,12 @@
           <a href="index.html">Home</a>
       </li>
       <li>Admission Enquiry</li>
-  </ul>
+    </ul>
 </div>
+
 <div class="card height-auto">
   <div class="card-body">
-      <div class="heading-layout1">
-          <div class="item-title">
-              <h3>Select Criteria</h3>
-          </div>
-      </div>
+    <div class="dropdown"> 
       <form class="new-added-form">
           <div class="row">
             
@@ -327,61 +324,110 @@
               
           </div>
       </form>
-      <br>
-      
-
-  
+    
       <div class="table-responsive">
-        <div class="col-1-xxxl col-xl-2 col-lg-3 col-12">
-            <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
-            <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
-          </div>
-        <table class="table display data-table text-nowrap">
+        
+      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+        <table id="example" class="table display data-table text-nowrap cell-border">
             <thead>
-                
                 <tr>
-                    <th>Roll</th>
                     <th>Name</th>
-                    <th>Class</th>
-                    <th>Father Name</th>  
-                    <th>Date Of Birth</th>
-                    <th>Gender</th>
-                    <th>Category</th>
-                    <th>Mobile No.</th>
-                    <th>Enrolled</th>
-                    <th>Action</th>
-                    
+                    <th>Phone</th>
+                    <th>Source</th>  
+                    <th>Enquiry Date</th>
+                    <th>Last Follow Up Date</th>
+                    <th>Next Follow UP Date</th>
+                    <th>Status</th>
+                    <th>Action</th> 
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                   
-                    <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                    <td>Atul Gore</td>
+                    <td>9876543210</td>
+                    <td>Front Office</td>
+                    <td>18/01/2020</td>
+                    <td>19/01/2020</td>
+                    <td>20/01/2020</td>
+                    <td>Active</td>                   
+                    <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
+                <tr>
+                  <td>Lokesh Shinde</td>
+                  <td>7896541230</td>
+                  <td>Advertisement</td>
+                  <td>28//01/2020</td>
+                  <td>29/01/2020</td>
+                  <td>30/01/2020</td>
+                  <td>Active</td>                   
+                  <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
+                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+              </tr>
+              <tr>
+                <td>XYZ</td>
+                <td>9632587410</td>
+                <td>Google Ads</td>
+                <td>18/02/2020</td>
+                <td>19/02/2020</td>
+                <td>20/02/2020</td>
+                <td>Active</td>                   
+                <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
+                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+            </tr>
+
+            <tr>
+              <td>Atul Gore</td>
+              <td>9876543210</td>
+              <td>Front Office</td>
+              <td>18/01/2020</td>
+              <td>19/01/2020</td>
+              <td>20/01/2020</td>
+              <td>Active</td>                   
+              <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
+                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+          </tr>
+          <tr>
+            <td>Lokesh Shinde</td>
+            <td>7896541230</td>
+            <td>Advertisement</td>
+            <td>28//01/2020</td>
+            <td>29/01/2020</td>
+            <td>30/01/2020</td>
+            <td>Active</td>                   
+            <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
+                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+        </tr>
+        <tr>
+          <td>XYZ</td>
+          <td>9632587410</td>
+          <td>Google Ads</td>
+          <td>18/02/2020</td>
+          <td>19/02/2020</td>
+          <td>20/02/2020</td>
+          <td>Active</td>                   
+          <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+      </tr>
                
             </tbody>
         </table>
     </div>
   </div>
  </div>
+</div>
 
   <!-- Admission Enquiry Area Start Here -->
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="col-12-xxxl col-12-xxxl">
  <div class="card height-auto">
     <div class="card-body">
        <div class="heading-layout1">
@@ -533,3 +579,78 @@
            </div>
        </form>
    </div>
+   </div>
+    
+  </div>
+</div>
+  </div>
+
+
+
+
+
+
+
+
+   <!-- <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="col-12-xxxl col-12-xxxl">
+            <div class="card height-auto">
+                <div class="card-body">
+                    <form class="mg-b-20">
+                
+                        <div class="row gutters-8">
+                            <div class="col-12-xxxl col-lg-12 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Title*</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                       
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Venue *</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                       
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label for="dtp" class="dtp">
+                                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                        data-position='bottom right' name="admission" >
+                                    <span class="label">Start Date *</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                                  <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label for="dtp" class="dtp">
+                                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                        data-position='bottom right' name="admission" >
+                                    <span class="label">End Date *</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                                  <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Description</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                        
+                            </div>
+                            
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div> -->

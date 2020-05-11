@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 @Component({
   selector: 'app-payroll',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayrollComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
+    this.datatableservice.initTable("Staff Payroll");
   }
 
 }

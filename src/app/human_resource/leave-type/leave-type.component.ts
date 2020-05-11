@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 @Component({
   selector: 'app-leave-type',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaveTypeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
+    this.datatableservice.initTable("Leave Type List");
   }
 
 }

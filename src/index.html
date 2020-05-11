@@ -27,11 +27,15 @@
   <!-- Date Picker CSS -->
   <link rel="stylesheet" href="/assets/css/datepicker.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link *ngIf="cssUrl" type="text/css" rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <!-- Modernize js -->
   <script src="/assets/js/modernizr-3.6.0.min.js"></script>
-
+ 
+  <!-- Export Table CSS -->
+  <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="assets/css/buttons.dataTables.min.css">
 
 </head>
 <body>
@@ -418,7 +422,27 @@
                         </ul>
                     </li>
                     <!--Download center end here-->
-                                 <!--fornt office module start here-->
+
+                    <!--Online Examination Module start here-->
+                    <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-bed"></i><span>Online Examinations</span></a>
+                        <ul class="nav sub-group-menu ">
+                            <li class="nav-item">
+                                <a href="/#/onlineexamination" class="nav-link"><i class="fas fa-angle-right">
+
+                                </i>Online Exam</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/#/questionbank" class="nav-link"><i
+                                        class="fas fa-angle-right">
+                                    </i>Question Bank</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <!--Online Examination module end here-->
+
+                    <!--fornt office module start here-->
 
                     <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-script"></i><span>Front office</span></a>
@@ -966,6 +990,19 @@
 <!-- Custom Js -->
 <script src="/assets/js/main.js"></script>
 
+
+<!--Export table JS-->
+<script src="assets/js/jquery-3.3.1.js"></script>
+<!-- Buttons -->
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.buttons.min.js"></script>
+
+<script src="assets/js/jszip.min.js"></script>
+<script src="assets/js/pdfmake.min.js" ></script>
+<script src="assets/js/vfs_fonts.js"></script>
+<script src="assets/js/buttons.html5.min.js"></script>
+<script src="assets/js/buttons.print.min.js"></script>
+<script src="assets/js/buttons.colVis.min.js"></script>
 </body>
 </html>
 
