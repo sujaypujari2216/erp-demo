@@ -28,8 +28,14 @@
   <link rel="stylesheet" href="/assets/css/datepicker.min.css">
   <!-- Custom CSS -->
   <link *ngIf="cssUrl" type="text/css" rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+ <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <!-- Modernize js -->
   <script src="/assets/js/modernizr-3.6.0.min.js"></script>
+ 
+  <!-- Export Table CSS -->
+  <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="assets/css/buttons.dataTables.min.css">
 
 </head>
 <body>
@@ -39,7 +45,7 @@
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
-                        <img src="../assets/img/logo.jpg" alt="logo">
+                        <img src="" alt="VISION_ERP">
                     </a>
                 </div>
                   <div class="toggle-button sidebar-toggle">
@@ -62,7 +68,7 @@
             </div>
             <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
                 <ul class="navbar-nav">
-                    <li class="navbar-item header-search-bar">
+                    <!--<li class="navbar-item header-search-bar">
                         <div class="input-group stylish-input-group">
                             <span class="input-group-addon">
                                 <button type="submit">
@@ -71,7 +77,7 @@
                             </span>
                             <input type="text" class="form-control" placeholder="Find Something . . .">
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
@@ -232,7 +238,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    
     <div class="dashboard-page-one">
         <!-- Sidebar Area Start Here -->
         <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
@@ -241,34 +247,37 @@
                     <a href="index.html"><img src="../assets/img/logo1.png" alt="logo"></a>
                 </div>
            </div>
-            <div class="sidebar-menu-content">
+            <div class="sidebar-menu-content " >
                 <ul class="nav nav-sidebar-menu sidebar-toggle-view">
-                    <li class="nav-item sidebar-nav-item">
+                    <li class="nav-item sidebar-nav-item ">
                         <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                       
                         <ul class="nav sub-group-menu">
-                            <li class="nav-item">
-                                <a  class="nav-link" href="/#/admin" ><i class="fas fa-angle-right"></i>Admin</a>
+                            <li class="nav-item" >
+                                <a class="nav-link" href="/#/admin" ><i
+                                     class="fas fa-angle-right"></i>Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link" href="/#/studentinfo" ><i
+                                <a class="nav-link " href="/#/admin" ><i
                                         class="fas fa-angle-right"></i>Students</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/#/parentinfo" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
+                                <a href="/#/admin" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/#/teacherinfo" class="nav-link"><i
-                                        class="fas fa-angle-right"></i>Teachers</a>
+                                <a href="/#/admin" class="nav-link ">
+                                    <i class="fas fa-angle-right "></i>Teachers</a>
                             </li>
                         </ul>
+                        
                     </li>
-
+                    
                     <!--Student Module here-->
-                    <li class="nav-item sidebar-nav-item">
+                    <li class="nav-item sidebar-nav-item" >
                         <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
                         <ul class="nav sub-group-menu ">
                             <li class="nav-item">
-                                <a href="/#/studentdetails" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
+                                <a  href="/#/studentdetails" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/#/admissionform" class="nav-link"><i
@@ -307,7 +316,7 @@
                     <!--Student Module end here-->
 
                     <!--Teachers Module Here-->
-                    <li class="nav-item sidebar-nav-item">
+                    <!--<li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i
                                 class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
                         <ul class="nav sub-group-menu">
@@ -328,11 +337,11 @@
                                         class="fas fa-angle-right"></i>Payment</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <!--Teacher module End here-->
 
                     <!--Parent module here-->
-                    <li class="nav-item sidebar-nav-item">
+                    <!--<li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
@@ -344,7 +353,7 @@
                                     Parent</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <!--Parent Module end here-->
 
                     <!--Library start here-->
@@ -413,7 +422,27 @@
                         </ul>
                     </li>
                     <!--Download center end here-->
-                                 <!--fornt office module start here-->
+
+                    <!--Online Examination Module start here-->
+                    <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-bed"></i><span>Online Examinations</span></a>
+                        <ul class="nav sub-group-menu ">
+                            <li class="nav-item">
+                                <a href="/#/onlineexamination" class="nav-link"><i class="fas fa-angle-right">
+
+                                </i>Online Exam</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/#/questionbank" class="nav-link"><i
+                                        class="fas fa-angle-right">
+                                    </i>Question Bank</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <!--Online Examination module end here-->
+
+                    <!--fornt office module start here-->
 
                     <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-script"></i><span>Front office</span></a>
@@ -775,8 +804,47 @@
                         </ul>
                        </li>
                        <!-- hr ends here -->
+                       <!--Income start here-->
+                       <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Income</span></a>
+                        <ul class="nav sub-group-menu"><!-- sub-group-active-->
+                            <li class="nav-item">
+                                <a href="/#/add-income" class="nav-link"><i class="fas fa-angle-right"></i>Add Income</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/#/income-head" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Income Head</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/#/search-income" class="nav-link"><!--menu-active--><i
+                                        class="fas fa-angle-right"></i>Search Income</a>
+                            </li>
+                        </ul>
+                       </li>
+                       <!--Income End Here-->
+
+                         <!--Income start here-->
+                         <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Expenses</span></a>
+                            <ul class="nav sub-group-menu"><!-- sub-group-active-->
+                                <li class="nav-item">
+                                    <a href="/#/add-expenses" class="nav-link"><i class="fas fa-angle-right"></i>Add Expenses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/#/search-expenses" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Search Expenses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/#/expenses-head" class="nav-link"><!--menu-active--><i
+                                            class="fas fa-angle-right"></i>Expeses Head</a>
+                                </li>
+                            </ul>
+                           </li>
+                           <!--Income End Here-->
+
+
                     
-                    <li class="nav-item sidebar-nav-item">
+                    <!--<li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Acconunt</span></a>
                         <ul class="nav sub-group-menu">
                             <li class="nav-item">
@@ -831,7 +899,7 @@
                                     Grades</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <!--Homework module here-->
                     <li class="nav-item sidebar-nav-item">
                         <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Transport</span></a>
@@ -891,7 +959,7 @@
                     </li>
                     
                     <!--FrontCMS end here-->
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a href="notice-board.html" class="nav-link"><i
                                 class="flaticon-script"></i><span>Notice</span></a>
                     </li>
@@ -929,10 +997,10 @@
                     <li class="nav-item">
                         <a href="map.html" class="nav-link"><i
                                 class="flaticon-planet-earth"></i><span>Map</span></a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <a href="account-settings.html" class="nav-link"><i
-                                class="flaticon-settings"></i><span>Account</span></a>
+                                class="flaticon-settings"></i><span>System Setting</span></a>
                     </li>
                 </ul>
             </div>
@@ -945,6 +1013,10 @@
         
         
     </div>
+
+
+ 
+        
 <!-- jquery-->
 <script src="/assets/js/jquery-3.3.1.min.js"></script>
 <!-- Plugins js -->
@@ -962,6 +1034,19 @@
 <!-- Custom Js -->
 <script src="/assets/js/main.js"></script>
 
+
+<!--Export table JS-->
+<script src="assets/js/jquery-3.3.1.js"></script>
+<!-- Buttons -->
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.buttons.min.js"></script>
+
+<script src="assets/js/jszip.min.js"></script>
+<script src="assets/js/pdfmake.min.js" ></script>
+<script src="assets/js/vfs_fonts.js"></script>
+<script src="assets/js/buttons.html5.min.js"></script>
+<script src="assets/js/buttons.print.min.js"></script>
+<script src="assets/js/buttons.colVis.min.js"></script>
 </body>
 </html>
 

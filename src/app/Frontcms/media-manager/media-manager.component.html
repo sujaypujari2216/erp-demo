@@ -32,12 +32,20 @@
             <div class="row">
                 
                 <div class="col-xl-6 col-lg-6 col-12 form-group" >
+<<<<<<< HEAD
                     <label>Upload File*</label>
                     <input type="file" row="4" placeholder="" name="files[]" class="form-control" id="file" multiple="" autocomplete="off">
+=======
+                    <label style="font-size: small;">Upload File*</label>
+                    <input type="file"  placeholder="upload your files" name="files[]" class="form-control" id="file" multiple="" autocomplete="off">
+>>>>>>> master
                 </div>
                <div class="col-xl-6 col-lg-6 col-12 form-group">
-                    <label>Upload Youtube URL *</label>
-                    <input type="text" placeholder="" class="form-control">
+                <label for="inp" class="inp">
+                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Upload YouTube URL</span>
+                    <span class="focus-bg"></span>
+                </label>
                 </div>
                 <div class="col-12 form-group mg-t-8">
                     <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Submit</button>
@@ -73,13 +81,16 @@
             <form class="mg-b-20">
             <div class="row">
 
-                <div class="col-12-xxxl  col-lg-6 col-12 form-group">
-                    <label>Search By File Name</label>
-                    <input type="text" placeholder="Enter Keyword.." class="form-control">
+                <div class="col-x-4  col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                        <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">search By File Name*</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
-                <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                    <label>Filter By File Type</label>
-                    <select class="select2">
+                <div class="col-x-4  col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                        <select  class="form-control" id="slt" placeholder="&nbsp;">
                         <option value="">Please Select *</option>
                         <option value="1">Image</option>
                         <option value="2">pdf</option>
@@ -89,6 +100,9 @@
                         <option value="3">RAR</option>
                         <option value="3">Video</option>
                     </select>
+                       <span class="label">Filter By File Type*</span>
+                        <span class="focus-bg"></span>
+                    </label>
                 </div>
                 
             </div>

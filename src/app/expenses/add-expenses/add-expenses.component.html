@@ -1,0 +1,159 @@
+<div class="breadcrumbs-area">
+    <h3>Expenses</h3>
+    <ul>
+        <li>
+            <a href="/#/admin">Home</a>
+
+        </li>
+        <li>Add Expenses</li>
+    </ul>
+</div>
+<div class="card height-auto">
+    <div class="card-body">
+        <div class="heading-layout1">
+            <div class="item-title">
+                <h3>Add Expenses</h3>
+            </div>
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-expanded="false">...</a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#"><i
+                            class="fas fa-times text-orange-red"></i>Close</a>
+                    <a class="dropdown-item" href="#"><i
+                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                    <a class="dropdown-item" href="#"><i
+                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                </div>
+            </div>
+        </div>
+        <form class="new-added-form" >
+            <div class="row">
+                <div class="col-4 col-lg-4 col-12 form-group">
+                    <label for="slt" class="slt">        
+                        <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected>Please Select  *</option>
+                             <option value="">select</option>
+                            <option value="1">Donation</option>
+                            <option value="2">Rent</option>
+                            <option value="3">Miscelaneous</option>
+                        </select>
+                        <span class="label">Expense Head *</span>
+                        <span class="focus-bg"></span>
+                    </label>   
+                </div>
+                
+                
+
+            <div class="col-4 col-lg-4 col-12 form-group"> 
+                <label for="inp" class="inp">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label"> Name</span>
+                    <span class="focus-bg"></span>
+                  </label>   
+               
+             </div>
+
+            <div class="col-4 col-lg-4 col-12 form-group">  
+                <label for="inp" class="inp">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                    <span class="label">Invoice Number</span>
+                    <span class="focus-bg"></span>
+                  </label>                                               
+            </div>
+
+                <div class="col-4 col-lg-4 col-12 form-group">   
+                    <label for="dtp" class="dtp">
+                        <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                            data-position='bottom right' name="admission" >
+                        <span class="label"> Date *</span>
+                        <span class="focus-bg"></span>
+                      </label>
+                      <i class="far fa-calendar-alt"></i>                                 
+                </div>
+
+                <div class="col-4 col-lg-4 col-12 form-group">     
+                    <label for="inp" class="inp">
+                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Amount</span>
+                        <span class="focus-bg"></span>
+                      </label>                        
+                </div>
+
+              
+               
+                  <div class="col-4 col-lg-4 col-12 form-group">  
+                    <label class="text-dark-medium" style="font-size: small;">Upload Doc (150px X 150px)</label>
+                    <input type="file" class="form-control-file" name="photo" placeholder="Upload Student Photo (150px X 150px)">  
+                </div>
+
+                <div class="col-4 col-lg-4 col-12 form-group" row="3"> 
+                    <label for="inp" class="inp">
+                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Description</span>
+                        <span class="focus-bg"></span>
+                      </label>
+                   
+                </div>
+                <div class="col-12 form-group mg-t-8">
+                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="heading-layout1">
+        <div class="item-title">
+            <h3>Expense List</h3>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">...</a>
+
+            
+        </div>
+    </div>
+    <div class="table-responsive">
+        <div class="col-1-xxxl col-xl-2 col-lg-3 col-12">
+            <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
+            <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
+          </div>
+        <table class="table display data-table text-nowrap">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Invoice Number</th>
+                    <th>Date</th>
+                    <th>Expense Head</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+
+                    <td></td>
+
+                    <td></td>
+
+                    <td></td>
+
+                    <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add room Area end Here -->

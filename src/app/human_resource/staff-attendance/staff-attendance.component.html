@@ -12,32 +12,39 @@
     <div class="card-body">
                 <form class="new-added-form">
                     <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-12 form-group">
-                            <label>Role<span style="color: red;">*</span> </label>
-                            <select class="select2">
-                                <option value="">select</option>
+                        <div class="col-xl-4 col-lg-6 col-12 form-group">
+                            <label for="slt" class="slt">
+                                <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                                 <option value="">select</option>
                                 <option value="1">Admin</option>
                                 <option value="2">Teacher</option>
                                 <option value="3">Accountant</option>
                                 <option value="4">Librarian</option>
                                 <option value="5">Receptionist</option>
                                 <option value="5">Super Admin</option>
-                            </select><br>
-                            
+                            </select>
+                            <span class="label">Role *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                         </div>
                                
                         
-                        <div class="col-xl-6 col-lg-6 col-12 form-group">
-                            <label>Date</label>
-                            <input type="Date" name="search_text" class="form-control"   placeholder="Pick the date">               
-                            
-                            <div class="col-12 form-group mg-t-8" style="padding: 0;">
+                        <div class="col-xl-4 col-lg-6 col-12 form-group">
+                            <label for="dtp" class="dtp">
+                                <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                    data-position='bottom right' name="admission" >
+                                <span class="label"> Date *</span>
+                                <span class="focus-bg"></span>
+                              </label>
+                              <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
                                 <div class="form-group">
                                     <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;">Search</button>
                                 </div>
                             </div>
             
-                        </div>
+                        
                       
                         
                     </div>
@@ -46,15 +53,7 @@
     
         <div class="table-responsive">
         <div>
-                <span style="float:left;"><h3>Staff List</h3></span>
-          <div class="col-1-xxxl col-xl-2 col-lg-3 col-12" style="margin-left:auto; padding: 0;">
-              <a href="#"><i class="fas fa-copy"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-file-excel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-file-csv"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-file-pdf"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-print"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-columns"></i>&nbsp;</a>
-           </div>
+            <span style="float:left;"><h3>Staff List</h3></span>
         </div>
                 <div style="clear: right;margin-bottom: 5px;">
                     <button type="submit" class="btn1 bg-blue-dark btn-hover-yellow" style="font-size: small;">Mark As Holiday</button>
@@ -62,7 +61,7 @@
                         <button type="submit" class="btn1 bg-blue-dark btn-hover-yellow" style="font-size: small;">Save Attendance</button>
                     </div>
                 </div>    
-          <table class="table display data-table text-nowrap">
+          <table id="example" class="table display data-table text-nowrap cell-border">
               <thead>
                   
                   <tr>
@@ -77,18 +76,69 @@
               <tbody>
                   <tr>
                       <td>1</td>
-                      
                       <td>123</td>
                       <td>abc</td>
                       <td>admin</td>
                       <td>
-                          <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
+                        <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
                         <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
                         <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
                         <input type="radio" value="half day"><label>half day</label>
-                    </td>
+                      </td>
                       <td><input type="text"></td>
-                      
+                  </tr>
+
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>abc</td>
+                    <td>admin</td>
+                    <td>
+                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
+                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
+                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
+                      <input type="radio" value="half day"><label>half day</label>
+                    </td>
+                    <td><input type="text"></td>
+                 </tr>
+                 <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>abc</td>
+                    <td>admin</td>
+                    <td>
+                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
+                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
+                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
+                      <input type="radio" value="half day"><label>half day</label>
+                    </td>
+                    <td><input type="text"></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>abc</td>
+                    <td>admin</td>
+                    <td>
+                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
+                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
+                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
+                      <input type="radio" value="half day"><label>half day</label>
+                    </td>
+                    <td><input type="text"></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>abc</td>
+                    <td>admin</td>
+                    <td>
+                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
+                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
+                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
+                      <input type="radio" value="half day"><label>half day</label>
+                    </td>
+                    <td><input type="text"></td>
                   </tr>
                  
               </tbody>

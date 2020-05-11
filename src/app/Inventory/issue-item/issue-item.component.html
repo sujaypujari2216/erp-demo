@@ -14,7 +14,7 @@
  
     <div class="card height-auto">
         <div class="card-body">
-            <div class="heading-layout1">
+            <!-- <div class="heading-layout1">
                 <div class="item-title">
                     <h3>Issue Item</h3>
                 </div>
@@ -32,70 +32,108 @@
             <form class="new-added-form" >
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>User Type *</label>
-                        <select class="select2">
-                            <option value="">Please Select User *</option>
-                            <option value="1">Admin</option>
-                            <option value="2">Teacher</option>
-                            <option value="3">Student</option>
-                            <option value="3">Parent</option>
-                           
-                        </select>
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                 <option value="">select</option>
+                                 <option value="1">Admin</option>
+                                 <option value="2">Teacher</option>
+                                 <option value="3">Student</option>
+                                 <option value="3">Parent</option>
+                            </select>
+                            <span class="label">User Type *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Issue To *</label>
-                        <select class="select2">
-                            <option value="">Please Select User *</option>
-                            <option value="1">Admin</option>
-                        </select>
+                        <label for="slt" class="slt">        
+                            <select   class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                 <option value="">select</option>
+                                <option value="1">Admin</option>
+                            </select>
+                            <span class="label">Issue To *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Issue By *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Issue By</span>
+                            <span class="focus-bg"></span>
+                          </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Issue Date *</label>
-                        <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                        data-position='bottom right' name="date" ngModel>
-                    <i class="far fa-calendar-alt"></i>                    </div>
+                        <label for="dtp" class="dtp">
+                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                data-position='bottom right' name="admission" >
+                            <span class="label">Issue Date *</span>
+                            <span class="focus-bg"></span>
+                          </label>
+                          <i class="far fa-calendar-alt"></i>         
+                  </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Return Date</label>
-                        <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                        data-position='bottom right' name="date" ngModel>
-                    <i class="far fa-calendar-alt"></i>                    </div>
+                        <label for="dtp" class="dtp">
+                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                data-position='bottom right' name="admission" >
+                            <span class="label">Return  Date *</span>
+                            <span class="focus-bg"></span>
+                          </label>
+                          <i class="far fa-calendar-alt"></i>               
+                 </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Note</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Note</span>
+                            <span class="focus-bg"></span>
+                          </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Item Category *</label>
-                        <select class="select2">
-                            <option value="">Please Select User *</option>
-                            <option value="1">Sports</option>
-                            <option value="2">Furniture</option>
-                            <option value="3">Stationary</option>
-                         </select>
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                 <option value="">select</option>
+                                <option value="1">Sports</option>
+                                <option value="2">Stationary</option>
+                                <option value="3">Uniform</option>
+                            </select>
+                            <span class="label">Item Category *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
+
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Item *</label>
-                        <select class="select2">
-                            <option value="">Please Select User *</option>
-                            <option value="1">Admin</option>
-                        </select>
+                        <label for="slt" class="slt">        
+                            <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select  *</option>
+                                 <option value="">select</option>
+                                <option value="1">Admin</option>
+                              
+                            </select>
+                            <span class="label">Item *</span>
+                            <span class="focus-bg"></span>
+                        </label>
                     </div>
                     
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label>Quantity *</label>
-                        <input type="text" placeholder="" class="form-control">
+                        <label for="inp" class="inp">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Quantity</span>
+                            <span class="focus-bg"></span>
+                          </label>
                     </div>
                   <div class="col-12 form-group mg-t-8">
                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
                         <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                     </div>
                 </div>
-            </form>
-        </div>
-
+            </form> -->
+       
 
         <div class="heading-layout1">
             <div class="item-title">
@@ -117,16 +155,11 @@
         </div>
 
         <div class="table-responsive">
-                
-            <table class="table display data-table text-nowrap">
+            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Issue</button>  
+            <table id="example" class="table display data-table text-nowrap cell-border">
                 <thead>
                     <tr>
-                        <th> 
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input checkAll">
-                                <label class="form-check-label">Item</label>
-                            </div>
-                        </th>
+                        <th> Item</th>
                         <th>Item Category</th>
                         <th>Issue Return</th>
                         <th>Issue To</th>
@@ -134,12 +167,60 @@
                         <th>Quantity</th>
                         <th>Status</th>
                         <th>Action</th>
-
-                        <th></th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <tr>
+                        <td>XYZ</td>
+                        <td>ABC</td>
+                        <td>06/03/2020</td>
+                        <td>LMN</td>
+                        <td>GHI</td>
+                        <td>10</td>
+                        <td>Pending</td>
+                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                    </tr>
+                    <tr>
+                        <td>XYZ</td>
+                        <td>ABC</td>
+                        <td>06/03/2020</td>
+                        <td>LMN</td>
+                        <td>GHI</td>
+                        <td>10</td>
+                        <td>Pending</td>
+                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                    </tr>
+                    <tr>
+                        <td>XYZ</td>
+                        <td>ABC</td>
+                        <td>06/03/2020</td>
+                        <td>LMN</td>
+                        <td>GHI</td>
+                        <td>10</td>
+                        <td>Pending</td>
+                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                    </tr>
+                    <tr>
+                        <td>XYZ</td>
+                        <td>ABC</td>
+                        <td>06/03/2020</td>
+                        <td>LMN</td>
+                        <td>GHI</td>
+                        <td>10</td>
+                        <td>Pending</td>
+                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
+                    </tr>
+                </tbody>
             </table>
+          </div>
         </div>
     </div>
      
