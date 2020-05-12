@@ -18,8 +18,8 @@ import { OnlineExamRoutingModule } from './online-exam/online-exam-routing.modul
 
 import { IncomeRoutingModule } from './income/income-routing.module';
 import { ExpenseRoutingModule } from './expenses/expense-routing.module';
-
-
+import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
+import { ExaminationRoutingModule } from './Examination/Examination-routing.module';
 
 
 
@@ -33,8 +33,8 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot(routes, {useHash: true}), StudentRoutingModule, CommunicateRoutingModule, LibraryRoutingModule, HostelRoutingModule,
     // tslint:disable-next-line: max-line-length
     DownloadRoutingModule, InventoryRoutingModule, HomeworkRoutingModule, TransportRoutingModule, FrontcmsRoutingModule, FormsRoutingModule,
-    FrontofficeRoutingModule, CertificateRoutingModule,
-    ReportsRoutingModule, HumanResourceRoutingModule,ExpenseRoutingModule,IncomeRoutingModule,OnlineExamRoutingModule
+    FrontofficeRoutingModule, CertificateRoutingModule,ExaminationRoutingModule,
+    ReportsRoutingModule, HumanResourceRoutingModule,ExpenseRoutingModule,IncomeRoutingModule,OnlineExamRoutingModule,DashboardRoutingModule
   ],
   exports: [RouterModule]
 })
