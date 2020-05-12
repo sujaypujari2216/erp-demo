@@ -42,15 +42,13 @@ import { StaffDirectoryComponent } from './human_resource/staff-directory/staff-
 import { StaffAttendanceComponent } from './human_resource/staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './human_resource/teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './human_resource/add-more/add-more.component';
-<<<<<<< HEAD
 import { AcademicsModule } from './academics/academics.module';
-=======
 import { DatatableService } from './shared/datatableservice/datatable.service';
 import { AddIncomeComponent } from './income/add-income/add-income.component';
 import { AddExpensesComponent } from './expenses/add-expenses/add-expenses.component';
 import { SearchExpensesComponent } from './expenses/search-expenses/search-expenses.component';
 import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.component';
->>>>>>> master
+
 
 
 
@@ -105,11 +103,8 @@ import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.co
     FormsModule,
     CertificateModule,
     ReportsModule,
-<<<<<<< HEAD
-     AcademicsModule,
-=======
+    AcademicsModule,
     RouterModule,
->>>>>>> master
     RouterModule.forRoot(
       [
         {path:'',redirectTo:'admin',pathMatch:'full'},
