@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ExamGroupComponent } from './exam-group/exam-group.component';
+import { ExamScheduleComponent } from './exam-schedule/exam-schedule.component';
+import { ExamResultComponent } from './exam-result/exam-result.component';
+import { DesignAdmitCardComponent } from './design-admit-card/design-admit-card.component';
+import { PrintAdmitCardComponent } from './print-admit-card/print-admit-card.component';
+import { DesignMarksheetComponent } from './design-marksheet/design-marksheet.component';
+import { PrintMarksheetComponent } from './print-marksheet/print-marksheet.component';
+import { MarksGradeComponent } from './marks-grade/marks-grade.component';
+
+
+
+@NgModule({
+  declarations: [ExamGroupComponent,ExamScheduleComponent,ExamResultComponent,DesignMarksheetComponent,
+    DesignAdmitCardComponent,PrintMarksheetComponent,PrintAdmitCardComponent,MarksGradeComponent],
+  imports: [
+    CommonModule
+  ]
+})
+export class ExaminationModule { }
