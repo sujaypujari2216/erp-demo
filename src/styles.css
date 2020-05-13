@@ -2509,6 +2509,7 @@ ul {
 .new-added-form .form-group .form-control-file {
   display: inline-block;
   width: auto;
+  
   position: absolute;
   top:20px;
   left:14px;
