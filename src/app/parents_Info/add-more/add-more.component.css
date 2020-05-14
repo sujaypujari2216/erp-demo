@@ -10,9 +10,19 @@ body {
     box-sizing: border-box;
   }
   
+  h3{
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+  color: #111111;
+  line-height: 1.2px;
+  }
+  
   .inp {
     position: relative;
-    margin: auto;
+    margin:auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width: 100%;
     max-width: 280px;
     border-radius: 3px;
@@ -53,8 +63,9 @@ body {
     width: 100%;
     border: 0;
     font-family: inherit;
-    padding: 16px 12px 0 12px;
-    height: 45px;
+    top: 10px;
+    padding: 5px 5px 0 5px;
+    height: 40px;
     font-size: 16px;
     font-weight: 400;
     background: rgba(0, 0, 0, 0);
@@ -95,6 +106,8 @@ body {
     
     position: relative;
     margin: auto;
+    padding-bottom: 5px;
+  
     width: 100%;
     max-width: 280px;
     border-radius: 3px;
@@ -255,37 +268,3 @@ body {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
-
-
-
-
-/*************popup************************/
-
-.container 
-{
-    height: 100%;
-    width:100%;
-   
-	background-size: cover;
-	background-repeat:no-repeat;    
-}
-.container-box
-{
-	display:inline-block; 
-	padding:10px; 
-	background: rgba(136, 82, 82, 0.8);
-	border: 1px solid #fff;	
-	position: fixed;
-  	top: 55%;
-  	left: 0;
-
-}
-
-.modal-content
-{
-        background: rgba(255, 255, 255, 1);	
-        
-}
-
-
-

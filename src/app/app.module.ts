@@ -14,6 +14,7 @@ import { ParentinfoComponent } from './dashboard/parentinfo/parentinfo.component
 import { TeacherinfoComponent } from './dashboard/teacherinfo/teacherinfo.component';
 import { AddParentsComponent } from './parents_Info/add-parents/add-parents.component';
 import { ParentsdetailsComponent } from './parents_Info/parentsdetails/parentsdetails.component';
+
 import { AddHomeworkComponent } from './Homework/add-homework/add-homework.component';
 import { SearchHomeworkComponent } from './Homework/search-homework/search-homework.component';
 import { RouteComponent } from './Transport/route/route.component';
@@ -48,6 +49,7 @@ import { AddIncomeComponent } from './income/add-income/add-income.component';
 import { AddExpensesComponent } from './expenses/add-expenses/add-expenses.component';
 import { SearchExpensesComponent } from './expenses/search-expenses/search-expenses.component';
 import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.component';
+import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component';
 
 
 
@@ -111,6 +113,7 @@ import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.co
         {path:'admin',component:HomeComponent},
         {path:'parentsdetails',component:ParentsdetailsComponent},
         {path:'addparents',component:AddParentsComponent},
+        {path:'add-more-stud',component:AddMoreStudComponent}
       ],{useHash:true}
       
     )

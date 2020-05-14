@@ -89,9 +89,9 @@ body {
     transition: all 0.1s ease;
   }
   
-
-/*******select box*********/
-.slt {
+  
+  /*******select box*********/
+  .slt {
     
     position: relative;
     margin: auto;
@@ -171,18 +171,18 @@ body {
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
-
-/*********datppicker****************/
-.dtp {  
+  
+  /*********datppicker****************/
+  .dtp {  
   position: relative;
   margin: auto;
   width: 100%;
   max-width: 280px;
   border-radius: 3px;
-  overflow: hidden;
-}
-
-.dtp .label {
+  overflow: visible;
+  }
+  
+  .dtp .label {
   position: absolute;
   top: 20px;
   left: 12px;
@@ -196,23 +196,23 @@ body {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   pointer-events: none;
-}
-
-.dtp .focus-bg {
+  }
+  
+  .dtp .focus-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.05);
-  z-index: -1;
+  
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: left;
           transform-origin: left;
-}
-
-.dtp input {  
+  }
+  
+  .dtp input {  
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
@@ -228,64 +228,38 @@ body {
   color: #000;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
-}
-
-.dtp input:hover {
+  }
+  
+  .dtp input:hover {
+  
   background: rgba(0, 0, 0, 0);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-}
-.dtp input:not(:placeholder-shown) + .label {
+  }
+  .dtp input:not(:placeholder-shown) + .label {
+          
+  
   color: rgba(0, 0, 0, 0.5);
   -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
           transform: translate3d(0, -18px, 0) scale(0.75);
-}
-.dtp input:focus {
+  }
+  .dtp input:focus {
   background: rgba(0, 0, 0, 0);
   outline: none;
   box-shadow: inset 0 -2px 0 #0077FF;
-}
-.dtp input:focus + .label {
+  
+  }
+  .dtp input:focus + .label {
+          
   color: #0077FF;
   -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
           transform: translate3d(0, -18px, 0) scale(0.75);
-}
-.dtp input:focus + .label + .focus-bg {
+  }
+  .dtp input:focus + .label + .focus-bg {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
-}
-
-
-
-
-/*************popup************************/
-
-.container 
-{
-    height: 100%;
-    width:100%;
-   
-	background-size: cover;
-	background-repeat:no-repeat;    
-}
-.container-box
-{
-	display:inline-block; 
-	padding:10px; 
-	background: rgba(136, 82, 82, 0.8);
-	border: 1px solid #fff;	
-	position: fixed;
-  	top: 55%;
-  	left: 0;
-
-}
-
-.modal-content
-{
-        background: rgba(255, 255, 255, 1);	
-        
-}
-
-
-
+  }
+  
+  
+  

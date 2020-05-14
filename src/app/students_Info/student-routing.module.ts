@@ -11,6 +11,7 @@ import { DisableReasonComponent } from './disable-reason/disable-reason.componen
 import { MultiClassStudentComponent } from './multi-class-student/multi-class-student.component';
 import { StudentCategoriesComponent } from './student-categories/student-categories.component';
 import { StudentHouseComponent } from './student-house/student-house.component';
+import { ImportStudentComponent } from './import-student/import-student.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path:'studentcategories',component:StudentCategoriesComponent},
   {path:'studenthouse',component:StudentHouseComponent},
   {path:'studentdetails',component:StudentsdetailsComponent},
-  
+  {path:'importstudent',component:ImportStudentComponent},
 ];
 
 
