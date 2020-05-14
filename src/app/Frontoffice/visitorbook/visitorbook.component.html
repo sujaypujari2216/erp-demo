@@ -256,10 +256,37 @@
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
+/*************popup************************/
+
+.container 
+{
+  
+	background-size: cover;
+	background-repeat:no-repeat;    
+}
+.container-box
+{
+	display:inline-block; 
+        padding:10px; 
+   
+	background: rgba(136, 82, 82, 0.8);
+	border: 1px solid #fff;	
+	position: fixed;
+  	top: 55%;
+  	left: 0;
+
+}
+
+.modal-content
+{
+        background: rgba(255, 255, 255, 1);	
+        height: 400px;
+        width:900px
+}
 </style>
 
 <div class="breadcrumbs-area">
-  <h3>Visitor Book</h3>
+ 
   <ul>
       <li>
           <a href="index.html">Home</a>
@@ -269,9 +296,16 @@
  </div>
  <div class="card height-auto">
   <div class="card-body">
+    <div class="heading-layout1">
+      <div class="item-title">
+          <h4>Visitor List</h4>
+      </div>
+      <div class="dropdown">
+          <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+      </div>
+ </div>
       <div class="table-responsive">
-        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-        <table id="example" class="table display data-table text-nowrap cell-border">
+         <table id="example" class="table display data-table text-nowrap cell-border">
             <thead>
                 <tr>
                     <th>Purpose</th>
@@ -358,112 +392,119 @@
   </div>
  </div>
 
-  
+ <div class="container">
 
-  <!-- Add Visitor Area Start Here -->
- <div class="card height-auto">
-    <div class="card-body">
-       <div class="heading-layout1">
-           <div class="item-title">
-               <h3>Add Visitor</h3>
-           </div>
-       </div>
-       <form class="new-added-form">
-           <div class="row">
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                    <select  name="category" class="form-control" id="slt" placeholder="&nbsp;">
-                        <option selected>Please Select *</option>
-                        <option value="">select</option>
-                        <option value="1">Marketing</option>
-                    <option value="2">Parents Teacher Meeting</option>
-                    <option value="3">Student Meeting</option>
-                    <option value="4">Staff Meeting</option>
-                    <option value="5">Principal Meeting</option>
-                    </select>
-                    <span class="label">Purpose*</span>
-                    <span class="focus-bg"></span>
-                </label>
-               </div>
-
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+               
+            </div>
+            <div class="modal-body">
+                <form role="form" method="post" id="reused_form" > 
+                  <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="slt" class="slt">
+                            <select  name="category" class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected>Please Select *</option>
+                                <option value="">select</option>
+                                <option value="1">Marketing</option>
+                            <option value="2">Parents Teacher Meeting</option>
+                            <option value="3">Student Meeting</option>
+                            <option value="4">Staff Meeting</option>
+                            <option value="5">Principal Meeting</option>
+                            </select>
+                            <span class="label">Purpose*</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                       </div>
+        
+                       <div class="col-xl-3 col-lg-6 col-12 form-group">
+                           <label for="inp" class="inp">
+                            <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Name *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                       </div>
+                       
+                       <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp">
+                            <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">Mobile No.*</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                       </div>
+        
+                       <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp">
+                            <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">ID Card *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                       </div>
+        
+        
+                       <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp">
+                            <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                            <span class="label">No Of Person *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                    </div>
+                    
+                       
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="dtp" class="dtp">
+                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                data-position='bottom right' name="admission" >
+                            <span class="label">Chooose Date *</span>
+                            <span class="focus-bg"></span>
+                          </label>
+                          <i class="far fa-calendar-alt"></i>
+                    </div>
+                    
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp">
+                            <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
+                            <span class="label">In Time*</span>
+                            <span class="focus-bg"></span>
+                            <small>School hours are 9am to 6pm</small>
+                        </label>
+                    </div>
+                   
+                    
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp">
+                            <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
+                            <span class="label">Out Time*</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                    </div>
+                  
+        
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">  
                    <label for="inp" class="inp">
-                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
-                    <span class="label">Name *</span>
-                    <span class="focus-bg"></span>
-                </label>
-               </div>
-               
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
-                    <span class="label">Mobile No.*</span>
-                    <span class="focus-bg"></span>
-                </label>
-               </div>
-
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
-                    <span class="label">ID Card *</span>
-                    <span class="focus-bg"></span>
-                </label>
-               </div>
-
-
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                    <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
-                    <span class="label">No Of Person *</span>
-                    <span class="focus-bg"></span>
-                </label>
-            </div>
-            
-               
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="dtp" class="dtp">
-                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                        data-position='bottom right' name="admission" >
-                    <span class="label">Chooose Date *</span>
-                    <span class="focus-bg"></span>
-                  </label>
-                  <i class="far fa-calendar-alt"></i>
-            </div>
-            
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                    <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
-                    <span class="label">In Time*</span>
-                    <span class="focus-bg"></span>
-                    <small>School hours are 9am to 6pm</small>
-                </label>
-            </div>
-           
-            
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                    <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
-                    <span class="label">Out Time*</span>
-                    <span class="focus-bg"></span>
-                </label>
-            </div>
-          
-
-            <div class="col-xl-3 col-lg-6 col-12 form-group">  
-           <label for="inp" class="inp">
-                <input type="text" name="rollno" class="form-control" id="inp" placeholder="&nbsp;">
-                <span class="label">Note*</span>
-                <span class="focus-bg"></span>
-            </label>
-            </div>
-                
-
-            
- 
-               <div class="col-12 form-group mg-t-8">
-                   <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                   <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
-               </div>
-           </div>
-       </form>
-   </div>
+                        <input type="text" name="rollno" class="form-control" id="inp" placeholder="&nbsp;">
+                        <span class="label">Note*</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                    </div>
+                        
+        
+                    
+         
+                       <div class="col-12 form-group mg-t-8">
+                           <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                           <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
+                       </div>
+                   </div>
+         
+     </form>
+ </div>
+ </div>
+  
+</div>
+</div>
+</div>

@@ -1,6 +1,6 @@
     <!-- Breadcubs Area Start Here -->
     <div class="breadcrumbs-area">
-        <h3>Library</h3>
+
         <ul>
             <li>
                 <a href="index.html">Home</a>
@@ -14,17 +14,10 @@
         <div class="card-body">
             <div class="heading-layout1">
                 <div class="item-title">
-                    <h3>All Books</h3>
+                    <h4>All Books</h4>
                 </div>
                <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" 
-                    data-toggle="dropdown" aria-expanded="false">...</a>
-
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                    </div>
+                <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
                 </div>
             </div>
             <form class="mg-b-20">
@@ -60,7 +53,6 @@
                 </div>
             </form>
             <div class="table-responsive">
-                <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
                 <table id="example" class="table display data-table text-nowrap cell-border">
                     <thead>
                         <tr>
@@ -178,3 +170,136 @@
     </div>
     
     <!-- Teacher Table Area End Here -->
+
+    <div class="container">
+   
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" method="post" id="reused_form" >   
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="title" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Book Title **</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="ISBN" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">ISBN No *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="author" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Author *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="rackno" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Rack No *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="bookno" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Book No *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="subject" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Subject *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                               </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="quantity" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Quantity *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="publisher" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Publisher *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="rollno" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Book Price *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                 </div>
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="slt" class="slt">
+                                        <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                                        <option selected >Please Select Class *</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5</option>
+                                        <option value="3">6</option>
+                                        </select>
+                                        <span class="label">Class *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="dtp" class="dtp">
+                                        <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                            data-position='bottom right' name="postdate" >
+                                        <span class="label">POst Date *</span>
+                                        <span class="focus-bg"></span>
+                                      </label>
+                                      <i class="far fa-calendar-alt"></i>              
+                                </div>
+            
+                                <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3" >
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Description *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                  </div>
+                                
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
