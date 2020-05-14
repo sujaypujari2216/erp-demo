@@ -13,7 +13,8 @@ import { SubjectGroupComponent } from './subject-group/subject-group.component';
 
 
 @NgModule({
-  declarations: [ClassTimetableComponent, TeachersTimetableComponent, AssignClassTeacherComponent, PromoteStudentsComponent, SubjectsComponent, ClassComponent, SectionsComponent, SubjectGroupComponent],
+  declarations: [ClassTimetableComponent, TeachersTimetableComponent, AssignClassTeacherComponent, 
+    PromoteStudentsComponent, SubjectsComponent, ClassComponent, SectionsComponent, SubjectGroupComponent],
   imports: [
     CommonModule,
     AcademicsRoutingModule
