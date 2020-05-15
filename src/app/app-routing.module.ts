@@ -21,12 +21,15 @@ import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
 import { ExaminationRoutingModule } from './Examination/Examination-routing.module';
 
 import { OnlineExamRoutingModule } from './online-exam/online-exam-routing.module';
+import { CreateComponent } from './create/create.component';
 
 
 
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"create",component:CreateComponent}
+];
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
