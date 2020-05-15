@@ -1,10 +1,10 @@
 <div class="breadcrumbs-area">
-    <h3>Add Event</h3>
+    <h3>Add Page</h3>
     <ul>
         <li>
-            <a href="/#/event">Event</a>
+            <a href="/#/pages">Pages</a>
         </li>
-        <li>Add Event</li>
+        <li>Add Page</li>
     </ul>
   </div>
 <div class="card height-auto" style="padding: 0;">
@@ -13,41 +13,39 @@
 
         <form class="new-added-form" >
             <div class="row">
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <div class="col-xl-6 col-lg-4 col-12 form-group">
                     <label for="inp" class="inp">
                         <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
                         <span class="label">Title*</span>
                         <span class="focus-bg"></span>
                     </label>
                  </div>
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label for="inp" class="inp">
-                        <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                        <span class="label">Venue</span>
-                        <span class="focus-bg"></span>
-                    </label>
-                 </div>
                        
                 
-                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label for="dtp" class="dtp">
-                        <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                            data-position='bottom right' name="admission" >
-                        <span class="label">Start</span>
-                        <span class="focus-bg"></span>
-                      </label>
-                      <i class="far fa-calendar-alt"></i>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="dtp" class="dtp">
-                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                                data-position='bottom right' name="admission" >
-                            <span class="label"> End</span>
-                            <span class="focus-bg"></span>
-                          </label>
-                          <i class="far fa-calendar-alt"></i>
-                    </div>
-                    <div class="col-xl-4 col-lg-6col-12 form-group">
+                <div class="col-xl-12 col-lg-6 col-12 form-group" style="margin-left: 55px;margin-top: 10px;">
+                        <div class="myradio custom-control-inline col-xl-2" style="margin: 0;padding: 0;">
+                            Page Type
+                        </div>
+                        <div class="myradio custom-control-inline col-xl-2" style="margin: 0;padding: 0;">
+                            <input type="radio" name="customRadio" id="customRadio1">
+                                <label for="customRadio1">Standard</label>
+                        </div>
+    
+                        <div class="myradio custom-control-inline col-xl-2" style="margin: 0;padding: 0;">
+                            <input type="radio"  name="customRadio" id="customRadio2" >
+                                <label  for="customRadio2">Events</label>
+                        </div>
+                        <div class="myradio custom-control-inline col-xl-2" style="margin: 0;padding: 0;">
+                            <input type="radio"  name="customRadio" id="customRadio2" >
+                                <label  for="customRadio2">News</label>
+                        </div>
+                        <div class="myradio custom-control-inline col-xl-2" style="margin: 0;padding: 0;">
+                            <input type="radio"  name="customRadio" id="customRadio2" >
+                                <label  for="customRadio2">Gallery</label>
+                        </div>
+
+                 </div>
+                    <div class="col-xl-6 col-lg-6col-12 form-group">
                         <label for="inp" class="inp">
                           <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
                           <span class="label">Description *</span>
@@ -55,7 +53,7 @@
                       </label>
                       </div>
                       <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <button _ngcontent-hsw-c96="" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-lg" style="background-color: #000066; position: absolute;bottom: 7; right:10;">+ Add Media</button>
+                        <button _ngcontent-hsw-c96="" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-lg" style="background-color: #000066; margin-left: 60px;margin-top: 20px;">+ Add Media</button>
                     </div>
             </div>
         </form>
