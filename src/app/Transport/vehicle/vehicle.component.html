@@ -1,90 +1,25 @@
 <!-- Add item Area Start Here -->
-      <br>
-    <div class="card height-auto">
-        <div class="card-body">
+<div class="breadcrumbs-area">
+    
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>Add Vehicle</li>
+    </ul>
+</div>
+    
+<div class="card height-auto">
+    <div class="card-body">
             <div class="heading-layout1">
-                <div class="item-title">
-                    <h3>Add Vehicles</h3>
-                </div>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                        aria-expanded="false">...</a>
-
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-times text-orange-red"></i>Close</a>
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                    </div>
-                </div>
-            </div>
-            <form class="new-added-form" >
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Vehicle Number*</span>
-                            <span class="focus-bg"></span>
-                          </label>
-                        
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Vehicle Model*</span>
-                            <span class="focus-bg"></span>
-                          </label>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Year Made</span>
-                            <span class="focus-bg"></span>
-                          </label>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Driver Name*</span>
-                            <span class="focus-bg"></span>
-                          </label>
-                      
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Driver License *</span>
-                            <span class="focus-bg"></span>
-                          </label>
-       
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Driver Contact *</span>
-                            <span class="focus-bg"></span>
-                          </label>
-   
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Note</span>
-                            <span class="focus-bg"></span>
-                          </label>
-
-                    </div>
-                    <div class="col-12 form-group mg-t-8">
-                        <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-                    </div>
-                </div>
-            </form>
-        
+                        <div class="item-title">
+                            <h3>Vehicle List</h3>
+                        </div>
+                        <div class="dropdown">
+                            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+                        </div>
+            </div>        
         <div class="table-responsive">
-            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
             <table id="example" class="table display data-table text-nowrap cell-border">
                 <thead>
                     <tr>
@@ -165,3 +100,82 @@
 </div>    
 
 <!-- Add item Area end Here -->
+<div class="container">
+   
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   
+                </div>
+                <div class="modal-body">
+                    <form role="form" method="post" id="reused_form" >  
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Vehicle Number*</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                                
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Vehicle Model*</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Year Made</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Driver Name*</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+                              
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Driver License *</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+               
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Driver Contact *</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+           
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
+                                <label for="inp" class="inp">
+                                    <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                                    <span class="label">Note</span>
+                                    <span class="focus-bg"></span>
+                                  </label>
+        
+                            </div>
+                            <div class="col-12 form-group mg-t-8">
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+    </div>
+</div>
+</div>
+</div>
+</div>

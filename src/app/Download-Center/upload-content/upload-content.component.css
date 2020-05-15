@@ -260,7 +260,6 @@ body {
 .container 
 {
   
-  position: absolute;
 	background-size: cover;
 	background-repeat:no-repeat;    
 }
@@ -280,7 +279,9 @@ body {
 .modal-content
 {
         background: rgba(255, 255, 255, 1);	
-        height: 400px;
-        width:900px;
-        position: inherit;
+        position: fixed;
+        margin-top:30%;
+
+        width:200%;
+        transform: translate(-25%,-25%);
 }

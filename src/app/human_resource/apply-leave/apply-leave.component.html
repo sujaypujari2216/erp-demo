@@ -14,10 +14,11 @@
             <div class="item-title">
                 <h3>Leaves</h3>
             </div>
+            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+
         </div>
         
         <div class="table-responsive">
-            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
             <table id="example" class="table display data-table text-nowrap cell-border">
                 <thead>
                     <tr>
@@ -100,4 +101,80 @@
                 </tbody>
             </table>
         </div>
+        
+    </div>
+    <div class="container">
+   
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" method="post" id="reused_form" >                  
+    
+                            <div class="row">
+                                <div class="col-6 col-lg-4 col-12 form-group">   
+                                    <label for="dtp" class="dtp">
+                                        <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                            data-position='bottom right' name="admission" >
+                                        <span class="label"> Apply Date *</span>
+                                        <span class="focus-bg"></span>
+                                      </label>
+                                      <i class="far fa-calendar-alt"></i>                                 
+                                </div>
+                                <div class="col-6 col-lg-4 col-12 form-group">
+                                    <label for="slt" class="slt">        
+                                        <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                            <option selected>Please Select  *</option>
+                                             <option value="">select</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                            <option value="3"></option>
+                                        </select>
+                                        <span class="label">Available Leave *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>   
+                                </div>
+                                <div class="col-6 col-lg-4 col-12 form-group">   
+                                    <label for="dtp" class="dtp">
+                                        <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                            data-position='bottom right' name="admission" >
+                                        <span class="label">Leave Date *</span>
+                                        <span class="focus-bg"></span>
+                                      </label>
+                                      <i class="far fa-calendar-alt"></i>                                 
+                                </div>
+                                <div class="col-12 col-lg-4 col-12 form-group"> 
+                                    <label for="inp" class="inp">
+                                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label"> Reason</span>
+                                        <span class="focus-bg"></span>
+                                      </label>   
+                                   
+                                 </div>
+                    
+                                      <div class="col-6 col-lg-4 col-12 form-group">  
+                                        <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
+                                        <input type="file" class="form-control-file" name="photo" placeholder="">  
+                                    </div>
+                    
+                                    
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;&nbsp;&nbsp;
+                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                            </div>
+                        </div>
+                        </form>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
