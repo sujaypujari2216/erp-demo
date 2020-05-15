@@ -1,12 +1,4 @@
-<div class="breadcrumbs-area">
-    <h3>Send Mail</h3>
-    <ul>
-        <li>
-            <a href="/#/admin">Communicate</a>
-        </li>
-        <li>Send Mail</li>
-    </ul>
-</div>
+&nbsp;
 <div class="row gutters-20">
 <!-- Add Hostel Area Start Here -->
 <div class="col-8-xxxl col-12">
@@ -14,72 +6,107 @@
         <div class="card-body">
             <div class="heading-layout1">
                 <div class="item-title">
-                    <h3>Send Mail</h3>
+                    <h4>Send Mail</h4>
                 </div>
                 
             </div>
             <form class="new-added-form" >
+                <div class="row" style=" margin-top: -25px;">
+                    <div class="col-8 col-lg-8 col-12 form-group">
+                        <label for="inp" class="inp" style="float: left;">
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" style="width: 650px;">
+                            <span class="label"> Title</span>
+                            <span class="focus-bg"></span>
+                          </label> 
+                    </div>
+                    <div class="col-4 col-lg-4 col-12 form-group"> 
+                        <label style="font-size: smaller;">Attachments </label>
+                        <input type="file" class="form-control-file">
+                    </div>
+                    <div class="col-8 col-lg-8 col-12 form-group">  
+                        <label>Message </label>   
+                            <textarea type="text" class="form-control" style="height: 100px;">
+                            </textarea>                              
+                    </div>
+                    <div class="col-4 col-lg-4 col-12 form-group" style="float: left;">   
+                          <h6 style=" margin-bottom: 40px;">Message To Group</h6>
+                          <label><input type="checkbox"> Studnet <input type="checkbox"> Admin ch&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"> Admin  </label>
+                          <label><input type="checkbox"> Parents <input type="checkbox"> Super Admin&nbsp;<input type="checkbox"> Librarian </label>
+                          <label><input type="checkbox"> Teacher <input type="checkbox"> Receptionist&nbsp;<input type="checkbox"> Accountant</label>
+                    </div>
+                    <div class="col-4 col-lg-4 col-12 form-group" style="background-color: azure;">   
+                        <h6>Message To Individual</h6>
+                    <div class="row">
+                        <div class="col-4 col-lg-4 col-12 form-group">
+                        <label for="slt" class="slt" style="float: left;width: 100px;">
+                            <select  class="form-control" id="slt" placeholder="&nbsp;">
+                            <option selected >Select</option>
+                            <option value="1">Students</option>
+                            <option value="2">Guardians</option>
+                            <option value="3">Students-Guardians</option>
+                            <option value="3">Admin</option>
+                            <option value="3">Teacher</option>
+                            <option value="3">Accountant</option>
+                            <option value="3">Librarian</option>
+                            <option value="3">Receptionist</option>
+                            <option value="3">Super Admin</option>
+                            </select>
+                            <span class="label"> To *</span>
+                            <span class="focus-bg"></span>
+                        </label>
+                        </div>
+                         <div class="col-6 col-lg-6 col-12 form-group">
+                        <label for="inp" class="inp" >
+                            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" style="width: 150px;float: right;">
+                            <span class="label">Name</span>
+                            <span class="focus-bg"></span>
+                          </label>
+                        </div> 
+                        <div class="col-2 col-lg-1 col-12 form-group">
+                          <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style=" padding:10px 10px 10px 10px; float:right;">Add</button>
+                        </div>
+                    </div>
+                        <div class="col-12 col-lg-12 col-12 form-group"style=" margin-top: -25px;">
+                            <label for="inp" class="inp" >
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;" style="width: 250px;">
+                                <span class="label">Search</span>
+                                <span class="focus-bg"></span>
+                              </label>
+                        </div> 
+                    </div>
                 
-                <div class="row">
-                    <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label>Title *</label>
-                        <input type="text" placeholder="" class="form-control">
+                    <div class="col-4 col-lg-4 col-12 form-group" >
+                        <h6>Message To Class</h6>
+                        <div class="col-12 col-lg-12 col-12 form-group">
+                            <label for="slt" class="slt" style="float: left;width: 200px;">
+                                <select  class="form-control" id="slt" placeholder="&nbsp;">
+                                <option selected >Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                </select>
+                                <span class="label"> To *</span>
+                                <span class="focus-bg"></span>
+                            </label>     
+                        </div>
                     </div>
-                    <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label >Attachment </label>
-                        <input type="file" class="form-control-file" name="photo" ngModel>
-                        <span class="text-danger"></span>
+
+                    <div class="col-4 col-lg-4 col-12 form-group" >
+                        <h6 style="margin-bottom: 10px;">Todays Birthday</h6>
+                        <textarea name="" id="" cols="25" rows="3"></textarea>
                     </div>
-                    <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label>Message</label><small class="req"> *</small>
-                       <textarea id="group_msg_text" name="group_message" class="form-control compose-textarea ckeditor" cols="35" rows="20">
-                      </textarea>
-                    </div>
+                
                     <div class="col-12 form-group mg-t-8">
-                        <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Send</button>
-                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                        <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;">Send Message</button>
+                    
                     </div>
+
+
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<div class="col-4-xxxl col-12">
-    <div class="card height-auto">
-        <div class="card-body">
-            <div class="heading-layout1">
-                <div class="item-title">
-                    <h3>Hostel  Lists</h3>
-                </div>
-                
-            </div>
-            <form class="mg-b-20">
-                <div class="row gutters-8">
-                    <div class="col-lg-3 col-12 form-group">
-                        <a type="submit" href="/#/" class="btn btn-gradient-yellow btn-hover-bluedark">Group</a>
-                    </div>
-                    <div class="col-lg-3 col-12 form-group">
-                        <a type="submit" href="/#/" class="btn btn-gradient-yellow btn-hover-bluedark">Indivisual</a>
-                    </div>
-                    <div class="col-lg-3 col-12 form-group">
-                        <a type="submit" href="/#/" class="btn btn-gradient-yellow btn-hover-bluedark">Class</a>
-                    </div>
-                    <div class="col-lg-2 col-12 form-group">
-                        <a type="submit" href="/#/" class="btn btn-gradient-yellow btn-hover-bluedark">Today's B'day</a>
-                    </div>
-                </div>
-            </form>
-            <div class="table-responsive">
-                <table class="table display data-table text-nowrap">
-           
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
 <!-- Add Hostel Area end Here -->
         
                 

@@ -5348,20 +5348,20 @@ transition: all 0.1s ease;
 
 
 
-/**************popup*******************/
+/*************popup************************/
+
 .container 
 {
-    height: 100%;
-    width:100%;
-   
+  
 	background-size: cover;
 	background-repeat:no-repeat;    
 }
 .container-box
 {
 	display:inline-block; 
-	padding:10px; 
-	background: rgba(136, 82, 82, 0.8);
+        padding:10px; 
+   
+
 	border: 1px solid #fff;	
 	position: fixed;
   	top: 55%;
@@ -5371,6 +5371,10 @@ transition: all 0.1s ease;
 
 .modal-content
 {
-	background: rgba(255, 255, 255, 1);	
-}
+        background: rgba(255, 255, 255, 1);	
+        position: fixed;
+        margin-top:30%;
 
+        width:200%;
+        transform: translate(-25%,-25%);
+}
