@@ -10,11 +10,18 @@ body {
     box-sizing: border-box;
   }
   
+  h4{
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    color: #111111;
+    line-height: 1.2px;
+    }
   .inp {
     position: relative;
     margin: auto;
     width: 100%;
-    max-width: 280px;
+    max-width: 700px;
     border-radius: 3px;
     overflow: hidden;
   }
@@ -255,9 +262,3 @@ body {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
-
-
-
-
-/*************popup************************/
-
