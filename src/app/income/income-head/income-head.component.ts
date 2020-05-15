@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 @Component({
   selector: 'income-head',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncomeHeadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
+    this.datatableservice.initTable("income");
+
   }
 
 }
