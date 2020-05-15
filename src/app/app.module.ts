@@ -50,6 +50,7 @@ import { AddExpensesComponent } from './expenses/add-expenses/add-expenses.compo
 import { SearchExpensesComponent } from './expenses/search-expenses/search-expenses.component';
 import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.component';
 import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component';
+import { CreateComponent } from './create/create.component';
 
 
 
@@ -96,6 +97,7 @@ import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component
     AddExpensesComponent,
     SearchExpensesComponent,
     ExpensesHeadComponent,
+    CreateComponent,
 
   ],
   imports: [
