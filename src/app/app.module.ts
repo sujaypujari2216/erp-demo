@@ -12,7 +12,7 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { ParentinfoComponent } from './dashboard/parentinfo/parentinfo.component';
 
 import { TeacherinfoComponent } from './dashboard/teacherinfo/teacherinfo.component';
-import { AddParentsComponent } from './parents_Info/add-parents/add-parents.component';
+
 import { ParentsdetailsComponent } from './parents_Info/parentsdetails/parentsdetails.component';
 
 import { AddHomeworkComponent } from './Homework/add-homework/add-homework.component';
@@ -49,7 +49,10 @@ import { AddIncomeComponent } from './income/add-income/add-income.component';
 import { AddExpensesComponent } from './expenses/add-expenses/add-expenses.component';
 import { SearchExpensesComponent } from './expenses/search-expenses/search-expenses.component';
 import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.component';
+import { AddParentsComponent } from './parents_Info/add-parents/add-parents.component';
 import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component';
+
+
 
 
 
@@ -62,7 +65,7 @@ import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component
     HomeComponent,
       ParentinfoComponent,
       TeacherinfoComponent,
-      AddParentsComponent,
+
     ParentsdetailsComponent,
     AddHomeworkComponent,
     SearchHomeworkComponent,
@@ -90,6 +93,8 @@ import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component
     StaffDirectoryComponent,
     TeachersRatingComponent,
     AddMoreComponent,
+    AddParentsComponent,
+    AddMoreStudComponent,
     
   
     AddIncomeComponent,

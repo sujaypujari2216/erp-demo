@@ -324,101 +324,122 @@
   </div>
  </div>
 
+
+
+
+
+<!------------------Popup start here-->
+<div class="container">
+   
+  <!-- Modal -->
+  <div id="myModal" class="modal" role="dialog" style="align-items: center;" >
+      <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content" style="width:700px;height: 350px;">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+              </div>
+              <div class="modal-body">
+                <h3>Add Fees Master : 2019-20</h3>
+                  <form  class="new-added-form" role="form" method="post" id="reused_form" >
+                      <div class="row">
+                       <div class="col-xl-3 col-lg-6 col-12 form-group">
+                         <label for="slt" class="slt">
+                           <select  class="form-control" id="slt" placeholder="&nbsp;">
+                             <option value="">select</option>
+                             <option value="1">General</option>
+                             <option value="2">Lump Sum</option>
+                             <option value="3">1st Installment</option>
+                             <option value="4">2nd Installment</option>
+                           </select>
+                           <span class="label">Fees Group *</span>
+                           <span class="focus-bg"></span>
+                       </label>
+                          </div>
+           
+                          <div class="col-xl-3 col-lg-6 col-12 form-group">
+                           <label for="slt" class="slt">
+                             <select  class="form-control" id="slt" placeholder="&nbsp;">
+                               <option value="">select</option>
+                               <option value="1">Addmission fees</option>
+                               <option value="2">1st Installment fees</option>
+                               <option value="3">2nd Installment fees</option>
+                               <option value="4">3rd Installment fees</option>
+                               <option value="5">4th Installment fees</option>
+                               <option value="6">5th Installment fees</option>
+                               <option value="7">6th Installment fees</option>
+                               <option value="8">7th Installment fees</option>
+                               <option value="9">Bus fees</option>
+                               <option value="10">Exam Installment fees</option>
+                             </select>
+                             <span class="label">Fees Type*</span>
+                             <span class="focus-bg"></span>
+                         </label>
+                          </div>
+                       
+                          
+                          <div class="col-xl-3 col-lg-6 col-12 form-group">
+                           <label for="inp" class="inp">
+                             <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
+                             <span class="label">Amount *</span>
+                             <span class="focus-bg"></span>
+                         </label>
+                          </div>
+           
+                          <div class="col-xl-3 col-lg-6 col-12 form-group">
+                           <label for="dtp" class="dtp">
+                             <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                                 data-position='bottom right' name="admission" >
+                             <span class="label">Due Date *</span>
+                             <span class="focus-bg"></span>
+                           </label>
+                           <i class="far fa-calendar-alt"></i>
+                       </div>
+           
+                       <div class="col-xl-12 col-lg-12 col-12 form-group">
+                           <div class="row">
+                                  
+                           <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
+                           
+                               <input type="radio" id="call1" name="cal" value="yes">
+                               None
+                            &nbsp;&nbsp;&nbsp; 
+                           
+                               <input type="radio" id="call1" name="cal" value="yes">
+                               Percentage                                            
+                           &nbsp;&nbsp;&nbsp;
+                           
+                               <input type="radio" id="call1" name="cal" value="yes">
+                               Fixamount                                            
+                           </label>
+                           </div>
+                       </div>
+                       
+           
+                          <div class="col-12 form-group mg-t-8">
+                              <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                              <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
+                          </div>
+                      </div>
+                  </form>
+              
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+  
+
+
+  
+
+
+
+
+
+
+
   
 
   <!-- Add Fees Master Area Start Here -->
- <div class="card height-auto">
-    <div class="card-body">
-       <div class="heading-layout1">
-           <div class="item-title">
-               <h3>Add Fees Master : 2019-20</h3>
-           </div>
-       </div>
-       <form class="new-added-form">
-           <div class="row">
-                  
-           </div>
-
-           
-           <div class="row">
-
-            <div class="col-xl-3 col-lg-6 col-12 form-group">
-              <label for="slt" class="slt">
-                <select  class="form-control" id="slt" placeholder="&nbsp;">
-                  <option value="">select</option>
-                  <option value="1">General</option>
-                  <option value="2">Lump Sum</option>
-                  <option value="3">1st Installment</option>
-                  <option value="4">2nd Installment</option>
-                </select>
-                <span class="label">Fees Group *</span>
-                <span class="focus-bg"></span>
-            </label>
-               </div>
-
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select  class="form-control" id="slt" placeholder="&nbsp;">
-                    <option value="">select</option>
-                    <option value="1">Addmission fees</option>
-                    <option value="2">1st Installment fees</option>
-                    <option value="3">2nd Installment fees</option>
-                    <option value="4">3rd Installment fees</option>
-                    <option value="5">4th Installment fees</option>
-                    <option value="6">5th Installment fees</option>
-                    <option value="7">6th Installment fees</option>
-                    <option value="8">7th Installment fees</option>
-                    <option value="9">Bus fees</option>
-                    <option value="10">Exam Installment fees</option>
-                  </select>
-                  <span class="label">Fees Type*</span>
-                  <span class="focus-bg"></span>
-              </label>
-               </div>
-            
-               
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Amount *</span>
-                  <span class="focus-bg"></span>
-              </label>
-               </div>
-
-               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="dtp" class="dtp">
-                  <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                      data-position='bottom right' name="admission" >
-                  <span class="label">Due Date *</span>
-                  <span class="focus-bg"></span>
-                </label>
-                <i class="far fa-calendar-alt"></i>
-            </div>
-
-            <div class="col-xl-6 col-lg-6 col-12 form-group">
-                <div class="row">
-                       
-                <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
-                
-                    <input type="radio" id="call1" name="cal" value="yes">
-                    None
-                 &nbsp;&nbsp;&nbsp; 
-                
-                    <input type="radio" id="call1" name="cal" value="yes">
-                    Percentage                                            
-                &nbsp;&nbsp;&nbsp;
-                
-                    <input type="radio" id="call1" name="cal" value="yes">
-                    Fixamount                                            
-                </label>
-                </div>
-            </div>
-            
-
-               <div class="col-12 form-group mg-t-8">
-                   <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                   <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
-               </div>
-           </div>
-       </form>
-   </div>

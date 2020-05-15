@@ -25,6 +25,7 @@ const routes: Routes = [
   {path:'studenthouse',component:StudentHouseComponent},
   {path:'studentdetails',component:StudentsdetailsComponent},
   {path:'importstudent',component:ImportStudentComponent},
+ 
 ];
 
 
