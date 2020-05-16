@@ -52,6 +52,9 @@ import { ExpensesHeadComponent } from './expenses/expenses-head/expenses-head.co
 import { AddParentsComponent } from './parents_Info/add-parents/add-parents.component';
 import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component';
 import { CreateComponent } from './create/create.component';
+import { AddGalleryComponent } from './add-gallery/add-gallery.component';
+import { AddNewsComponent } from './add-news/add-news.component';
+import { AddPageComponent } from './add-page/add-page.component';
 
 
 
@@ -103,6 +106,9 @@ import { CreateComponent } from './create/create.component';
     SearchExpensesComponent,
     ExpensesHeadComponent,
     CreateComponent,
+    AddGalleryComponent,
+    AddNewsComponent,
+    AddPageComponent,
 
   ],
   imports: [

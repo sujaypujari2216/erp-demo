@@ -256,6 +256,37 @@
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
+/*************popup************************/
+
+.container 
+{
+  
+	background-size: cover;
+	background-repeat:no-repeat;    
+}
+.container-box
+{
+	display:inline-block; 
+        padding:10px; 
+   
+	background: rgba(136, 82, 82, 0.8);
+	border: 1px solid #fff;	
+	position: fixed;
+  	top: 55%;
+  	left: 0;
+
+}
+
+.modal-content
+{
+        background: rgba(255, 255, 255, 1);	
+        background: rgba(255, 255, 255, 1);	
+        position: fixed;
+        margin-top:30%;
+
+        width:200%;
+        transform: translate(-25%,-25%);
+}
 </style>
 
 
@@ -313,18 +344,19 @@
     
   
     <!-- Add Settings Area Start Here -->
-   <div class="card height-auto">
-      <div class="card-body">
-         <div class="heading-layout1">
-             <div class="item-title">
-                 <h3>Add Settings</h3>
-             </div>
-         </div>
-         <form class="new-added-form" >
-             <div class="row">
-                    
-             </div>
-  
+    <div class="container">
+   
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     
+                  </div>
+                  <div class="modal-body">
+                      <form role="form" method="post" id="reused_form" > 
              
              <div class="row">
 
@@ -355,10 +387,14 @@
                 
         
                  <div class="col-xl-4 col-lg-6 col-12 form-group">
-                     <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                     <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
                      <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
                  </div>
              </div>
          </form>
+     </div>
+     </div>
+     </div>
+     </div>
      </div>
   

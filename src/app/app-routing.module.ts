@@ -22,13 +22,19 @@ import { ExaminationRoutingModule } from './Examination/Examination-routing.modu
 
 import { OnlineExamRoutingModule } from './online-exam/online-exam-routing.module';
 import { CreateComponent } from './create/create.component';
+import { AddGalleryComponent } from './add-gallery/add-gallery.component';
+import { AddNewsComponent } from './add-news/add-news.component';
+import { AddPageComponent } from './add-page/add-page.component';
 
 
 
 
 
 const routes: Routes = [
-  {path:"create",component:CreateComponent}
+  {path:"create",component:CreateComponent},
+  {path:"addGallery",component:AddGalleryComponent},
+  {path:"addNews",component:AddNewsComponent},
+  {path:"addPage",component:AddPageComponent}
 ];
 
 @NgModule({

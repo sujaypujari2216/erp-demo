@@ -266,9 +266,7 @@ transition: all 0.1s ease;
 
 .container 
 {
-    height: 100%;
-    width:100%;
-   
+  
 	background-size: cover;
 	background-repeat:no-repeat;    
 }
@@ -276,9 +274,8 @@ transition: all 0.1s ease;
 {
 	display:inline-block; 
         padding:10px; 
-        height:70px;
-        width: 100px;
-	background: rgba(136, 82, 82, 0.8);
+   
+
 	border: 1px solid #fff;	
 	position: fixed;
   	top: 55%;
@@ -289,8 +286,13 @@ transition: all 0.1s ease;
 .modal-content
 {
         background: rgba(255, 255, 255, 1);	
-        
+        position: fixed;
+        margin-top:30%;
+
+        width:200%;
+        transform: translate(-25%,-25%);
 }
+
 
 
 

@@ -280,8 +280,11 @@
 .modal-content
 {
         background: rgba(255, 255, 255, 1);	
-        height: 400px;
-        width:900px
+        position: fixed;
+        margin-top:30%;
+
+        width:200%;
+        transform: translate(-25%,-25%);
 }
 </style>
 
@@ -399,10 +402,14 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
+              <div class="item-title">
+                <h4>Add Visitor </h4>
+            </div>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                
             </div>
             <div class="modal-body">
+              
                 <form role="form" method="post" id="reused_form" > 
                   <div class="row">
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -496,8 +503,8 @@
                     
          
                        <div class="col-12 form-group mg-t-8">
-                           <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
-                           <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
+                           <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover">Save</button>&nbsp;
+                           <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover"  >Reset</button>
                        </div>
                    </div>
          

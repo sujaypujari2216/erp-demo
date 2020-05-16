@@ -1,60 +1,23 @@
-
-<div class="card height-auto">
-    <div class="card-body">
-        <div class="heading-layout1">
-            <div class="item-title">
-                <h3>Assign Vehicle</h3>
-            </div>
-           <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button" 
-                data-toggle="dropdown" aria-expanded="false">...</a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                    <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                    <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                </div>
-            </div>
-        </div>
+<div class="breadcrumbs-area">
     
-        <form class="new-added-form" >
-            <div class="row">
-                                   
-                <div class="col-xl-5 col-lg-6 col-12 form-group">
-                    <label for="slt" class="slt">
-                        <select  class="form-control" id="slt" placeholder="&nbsp;">
-                        <option selected >Please Select Route *</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="3">4</option>
-                        <option value="3">5</option>
-                        <option value="3">6</option>
-                        </select>
-                        <span class="label">Route*</span>
-                        <span class="focus-bg"></span>
-                    </label>
-                </div>
-                <div class="col-xl-5 col-lg-6 col-12 form-group">
-                        
-                    <label class="control-label">Vehicle</label>
-                    <label>
-                        <input type="checkbox" class="content_available" name="content_available[]" value="Super Admin">
-                         MH10 56789
-                    </label>  
-                       
-                </div>
-                <div class="col-xl-2 col-lg-6 col-12 form-group">
-                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                   
-                </div>
-            </div>
-        </form>
-      </div><br>
-
-        <div class="card height-auto">
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>Assign Vehicle</li>
+    </ul>
+</div>
+<div class="card height-auto">
             <div class="card-body">
-                <div class="table-responsive"><button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+                <div class="heading-layout1">
+                    <div class="item-title">
+                        <h3>Vehicle route List</h3>
+                    </div>
+                    <div class="dropdown">
+                        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
                     <table id="example" class="table display data-table text-nowrap cell-border">
                         <thead>
                             <tr>
@@ -109,4 +72,54 @@
                 </div>
             </div>
         </div>
+
+<div class="container">
+   
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   
+                </div>
+                <div class="modal-body">
+                    <form role="form" method="post" id="reused_form" >  
+                        <div class="row">
+                                   
+                            <div class="col-xl-5 col-lg-6 col-12 form-group">
+                                <label for="slt" class="slt">
+                                    <select  class="form-control" id="slt" placeholder="&nbsp;">
+                                    <option selected >Please Select Route *</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    <option value="3">6</option>
+                                    </select>
+                                    <span class="label">Route*</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                            </div>
+                            <div class="col-xl-5 col-lg-6 col-12 form-group">
+                                    
+                                <label class="control-label">Vehicle</label>
+                                <label>
+                                    <input type="checkbox" class="content_available" name="content_available[]" value="Super Admin">
+                                     MH10 56789
+                                </label>  
+                                   
+                            </div>
+                            <div class="col-xl-2 col-lg-6 col-12 form-group">
+                                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                               
+                            </div>
+                        </div>
+                    </form>
+    </div>
+</div>
+</div>
+</div>
 </div>

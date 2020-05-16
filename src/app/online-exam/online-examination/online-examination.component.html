@@ -1,6 +1,5 @@
        <!-- Breadcubs Area Start Here -->
        <div class="breadcrumbs-area">
-        <h3>Online Examinations</h3>
         <ul>
             <li>
                 <a href="index.html">Home</a>
@@ -13,6 +12,14 @@
     <!-- Online Exam Start Here -->
     <div class="card height-auto">
         <div class="card-body">
+            <div class="heading-layout1">
+                <div class="item-title">
+                    <h3>Online Exam List</h3>
+                </div>
+                <div class="dropdown">
+                    <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+                </div>
+            </div>
             <div class="table-responsive">
                 <table id="example" class="table display data-table text-nowrap cell-border">
                     <thead>
@@ -108,3 +115,90 @@
         </div>
     </div>
     <!-- Online Exam Area End Here -->
+    <div class="container">
+   
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" method="post" id="reused_form" >  
+                            <div class="row">
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Exam Title *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Exam From *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Exam to *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="time" name="search" class="form-control" id="inp" placeholder="&nbsp;"   min="06:00" max="23:00">
+                                        <span class="label">Exam Duration*</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3" >
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="Description " class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Attempt *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="Description " class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Passing Percentage *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" class="is_active" name="is_active" value="" autocomplete="off">
+                                                            Publish                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label> <input type="checkbox" class="publish_result" name="publish_result" value="">
+                                                           Publish Result                                        </label>
+                                                    </div>
+                                </div>
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3" >
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="Description " class="form-control" id="inp" placeholder="&nbsp;">
+                                        <span class="label">Description *</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                </div>
+                                               
+                            </div>
+                        </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
