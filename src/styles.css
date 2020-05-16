@@ -5356,19 +5356,6 @@ transition: all 0.1s ease;
 	background-size: cover;
 	background-repeat:no-repeat;    
 }
-.container-box
-{
-	display:inline-block; 
-        padding:10px; 
-   
-
-	border: 1px solid #fff;	
-	position: fixed;
-  	top: 55%;
-  	left: 0;
-
-}
-
 .modal-content
 {
         background: rgba(255, 255, 255, 1);	
