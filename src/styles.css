@@ -5347,3 +5347,24 @@ transition: all 0.1s ease;
 
 
 
+<<<<<<< HEAD
+=======
+
+/*************popup************************/
+
+.container 
+{
+  
+	background-size: cover;
+	background-repeat:no-repeat;    
+}
+.modal-content
+{
+        background: rgba(255, 255, 255, 1);	
+        position: fixed;
+        margin-top:30%;
+
+        width:200%;
+        transform: translate(-25%,-25%);
+}
+>>>>>>> bef1a1de35f67c3a63fe7f543bd38fd0627d6567
