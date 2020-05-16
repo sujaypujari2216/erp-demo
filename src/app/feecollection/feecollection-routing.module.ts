@@ -11,6 +11,8 @@ import { FeesgroupComponent } from './feesgroup/feesgroup.component';
 import { DuefeesComponent } from './duefees/duefees.component';
 import { FeestypeComponent } from './feestype/feestype.component';
 import { ReminderComponent } from './reminder/reminder.component';
+import { FeesGroupAssignComponent } from './fees-group-assign/fees-group-assign.component';
+
 
 
 
@@ -26,6 +28,9 @@ const routes: Routes = [
   {path :'duefees', component: DuefeesComponent},
   {path :'feestype', component: FeestypeComponent},
   {path :'reminder', component: ReminderComponent},
+  {path :'reminder', component: ReminderComponent},
+  {path :'fees-group-assign', component: FeesGroupAssignComponent},
+
 ];
 
 

@@ -26,6 +26,7 @@ import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { AddPageComponent } from './add-page/add-page.component';
 
+import { AttendanceRoutingModule } from './Attendance/Attendance-routing.module';
 
 
 
@@ -43,7 +44,8 @@ const routes: Routes = [
     // tslint:disable-next-line: max-line-length
     DownloadRoutingModule, InventoryRoutingModule, HomeworkRoutingModule, TransportRoutingModule, FrontcmsRoutingModule, FormsRoutingModule,
     FrontofficeRoutingModule, CertificateRoutingModule,ExaminationRoutingModule,AcademicsModule,
-    ReportsRoutingModule, HumanResourceRoutingModule,ExpenseRoutingModule,IncomeRoutingModule,OnlineExamRoutingModule,DashboardRoutingModule
+    ReportsRoutingModule, HumanResourceRoutingModule,ExpenseRoutingModule,IncomeRoutingModule,
+    OnlineExamRoutingModule,DashboardRoutingModule, AttendanceRoutingModule
   ],
   exports: [RouterModule]
 })

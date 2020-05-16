@@ -55,6 +55,11 @@ import { CreateComponent } from './create/create.component';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { AddPageComponent } from './add-page/add-page.component';
+import { StudentAttendanceComponent } from './Attendance/student-attendance/student-attendance.component';
+import { AttendanceByDateComponent } from './Attendance/attendance-by-date/attendance-by-date.component';
+import { ApproveLeaveComponent } from './Attendance/approve-leave/approve-leave.component';
+import { FeesGroupAssignComponent } from './feecollection/fees-group-assign/fees-group-assign.component';
+import { AddExamComponent } from './Examination/add-exam/add-exam.component';
 
 
 
@@ -109,7 +114,11 @@ import { AddPageComponent } from './add-page/add-page.component';
     AddGalleryComponent,
     AddNewsComponent,
     AddPageComponent,
-
+    StudentAttendanceComponent,
+    AttendanceByDateComponent,
+    ApproveLeaveComponent,
+    FeesGroupAssignComponent,
+    AddExamComponent
   ],
   imports: [
     BrowserModule,
