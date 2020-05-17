@@ -5,14 +5,13 @@ declare const $;
 })
 export class DatatableService {
 
-  
   initTable(fileName:String):void {
     console.log("Init");
     $(function (){ 
 
       // $('#example').append('<caption style="caption-side: bottom">Demo Table</caption>');
       $('#example').DataTable( {
-        "order": [],
+        order: [],
         "responsive": "true",
         "pagingType": "simple_numbers",
 
@@ -31,8 +30,8 @@ export class DatatableService {
 
         buttons: [
           {
-            extend:'colvis',
-            text:      '<i class="fas fa-columns"></i>',
+            extend: 'colvis',
+            text:    '<i class="fas fa-columns"></i>',
             postfixButtons: [ 'colvisRestore' ]
           },
           {
@@ -50,13 +49,13 @@ export class DatatableService {
           {
             extend: 'csv',
             title: fileName,
-            text:      '<i class="fas fa-file-csv"></i>',
+            text: '<i class="fas fa-file-csv"></i>',
             titleAttr: 'CSV'
           },
           {
             extend: 'pdf',
             title: fileName,
-            text:      '<i class="fas fa-file-pdf"></i>',
+            text: '<i class="fas fa-file-pdf"></i>',
             titleAttr: 'PDF'
           },
           {
@@ -64,7 +63,7 @@ export class DatatableService {
             title: fileName,
             text:      '<i class="fas fa-print"></i>',
             titleAttr: 'Print',
-          }          
+          } 
             //'colvis', 'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     } );

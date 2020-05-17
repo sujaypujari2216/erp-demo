@@ -25,7 +25,7 @@ import { CreateComponent } from './create/create.component';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { AddPageComponent } from './add-page/add-page.component';
-
+import { CreateTtComponent } from './create-tt/create-tt.component';
 import { AttendanceRoutingModule } from './Attendance/Attendance-routing.module';
 
 
@@ -33,6 +33,7 @@ import { AttendanceRoutingModule } from './Attendance/Attendance-routing.module'
 
 const routes: Routes = [
   {path:"create",component:CreateComponent},
+  {path:"create-tt",component:CreateTtComponent},
   {path:"addGallery",component:AddGalleryComponent},
   {path:"addNews",component:AddNewsComponent},
   {path:"addPage",component:AddPageComponent}
@@ -45,7 +46,7 @@ const routes: Routes = [
     DownloadRoutingModule, InventoryRoutingModule, HomeworkRoutingModule, TransportRoutingModule, FrontcmsRoutingModule, FormsRoutingModule,
     FrontofficeRoutingModule, CertificateRoutingModule,ExaminationRoutingModule,AcademicsModule,
     ReportsRoutingModule, HumanResourceRoutingModule,ExpenseRoutingModule,IncomeRoutingModule,
-    OnlineExamRoutingModule,DashboardRoutingModule, AttendanceRoutingModule
+    OnlineExamRoutingModule,DashboardRoutingModule, AttendanceRoutingModule, 
   ],
   exports: [RouterModule]
 })
