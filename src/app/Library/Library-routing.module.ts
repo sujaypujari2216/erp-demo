@@ -7,6 +7,8 @@ import {AddStaffComponent} from './add-staff/add-staff.component';
 import {AddStudentComponent} from './add-student/add-student.component';
 import {BookListComponent} from './book-list/book-list.component';
 import {IssueReturnComponent} from './issue-return/issue-return.component';
+import {Issue1Component} from './issue-return/issue1/issue1.component';
+
 
 
 
@@ -16,6 +18,8 @@ const routes: Routes = [
         {path: 'add-student', component: AddStudentComponent },
         {path: 'book-list', component: BookListComponent },
         {path: 'issue-return', component: IssueReturnComponent },
+        {path: 'issue1', component: Issue1Component},
+
   
 ];
 

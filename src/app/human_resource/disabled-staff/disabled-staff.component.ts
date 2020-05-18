@@ -11,7 +11,7 @@ export class DisabledStaffComponent implements OnInit {
   constructor(private datableservice:DatatableService) { }
 
   ngOnInit(): void {
-    this.datableservice.initTable("Disabled Staff");
+    this.datableservice.initTable("human_resource");
   }
 
 }

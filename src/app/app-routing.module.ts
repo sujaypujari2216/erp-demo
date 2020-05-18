@@ -27,6 +27,8 @@ import { AddNewsComponent } from './add-news/add-news.component';
 import { AddPageComponent } from './add-page/add-page.component';
 import { CreateTtComponent } from './create-tt/create-tt.component';
 import { AttendanceRoutingModule } from './Attendance/Attendance-routing.module';
+import {Issue1Component} from './Library/issue-return/issue1/issue1.component';
+
 
 
 
@@ -36,7 +38,9 @@ const routes: Routes = [
   {path:"create-tt",component:CreateTtComponent},
   {path:"addGallery",component:AddGalleryComponent},
   {path:"addNews",component:AddNewsComponent},
-  {path:"addPage",component:AddPageComponent}
+  {path:"addPage",component:AddPageComponent},
+  {path:"issue1",component:Issue1Component}
+
 ];
 
 @NgModule({

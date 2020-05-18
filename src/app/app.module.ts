@@ -61,6 +61,9 @@ import { ApproveLeaveComponent } from './Attendance/approve-leave/approve-leave.
 import { FeesGroupAssignComponent } from './feecollection/fees-group-assign/fees-group-assign.component';
 import { AddExamComponent } from './Examination/add-exam/add-exam.component';
 import { CreateTtComponent } from './create-tt/create-tt.component';
+import { Issue1Component } from './Library/issue-return/issue1/issue1.component';
+
+
 
 
 
@@ -120,7 +123,8 @@ import { CreateTtComponent } from './create-tt/create-tt.component';
     ApproveLeaveComponent,
     FeesGroupAssignComponent,
     AddExamComponent,
-    CreateTtComponent
+    CreateTtComponent,
+    Issue1Component
   ],
   imports: [
     BrowserModule,
