@@ -24,25 +24,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>General</td>
-                        <td>1</td>
+                    <tr *ngFor="let student of students">
+                        
+                        <td>{{ student.category }}</td>
+                        <td>{{ student.categoryId }}</td>
+                    
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
                     </tr>
-                    <tr>
-                        <td>Special</td>
-                        <td>2</td>
+                  
+                        <tr *ngFor="let student of students">
+                        
+                            <td>{{ student.category }}</td>
+                            <td>{{ student.categoryId }}</td>
+                        
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
+                   
                     </tr>
-                    <tr>
-                        <td>Physically Challenged</td>
-                        <td>3</td>
+                        <tr *ngFor="let student of students">
+                        
+                            <td>{{ student.category }}</td>
+                            <td>{{ student.categoryId }}</td>
+                          
+                       
+                            
+                        
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    

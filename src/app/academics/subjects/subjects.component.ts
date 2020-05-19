@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http"
 export class SubjectsComponent implements OnInit {
   url=`http://yamistha.cloudjiffy.net/subject`;
   
-  items=[];
+  subjects=[];
 
   constructor(private http:HttpClient) { }
 
@@ -21,7 +21,7 @@ export class SubjectsComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
 
-      this.items = content.map(key=>({...key}))
+      this.subjects = content.map(key=>({...key}))
 
     });
   }

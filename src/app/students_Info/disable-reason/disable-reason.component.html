@@ -26,22 +26,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Regular Absent</td>
+                    <tr *ngFor="let student of students">
+                      
+                        <td><a href="/#/studentinfo">{{ student.firstname}}</a></td>
+                    
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
                     </tr>
-                    <tr>
-                        <td>Fees Not Paid</td>
+                    <tr *ngFor="let student of students">
+                      
+                        <td><a href="/#/studentinfo">{{ student.firstname}}</a></td>
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
                     </tr>
-                    <tr>
-                        <td>ABC</td>
+                    <tr *ngFor="let student of students">
+                      
+                        <td><a href="/#/studentinfo">{{ student.firstname}}</a></td>
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    

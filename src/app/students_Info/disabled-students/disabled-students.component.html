@@ -86,14 +86,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>ABC</td>
-                                <td>1(A)</td>
-                                <td>XYZ</td>
-                                <td>Regular Absent</td>
-                                <td>Male</td>
-                                <td>9876543210</td>
+                            <tr *ngFor="let student of students">
+                                <td>{{ student.admissionNo }}</td>
+                                <td><a href="/#/studentinfo">{{ student.firstname}}</a></td>
+                                <td>{{ student.classses }}</td>
+                                <td>{{ student.fatherName }}</td>
+                                <td>{{ student.disReason }}</td>
+                                <td>{{ student.gender }}</td>
+                                <td>{{ student.mobileno }}</td>
                                 <td>
                                     <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a> 
                                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 

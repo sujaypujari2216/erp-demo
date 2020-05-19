@@ -71,21 +71,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                           
-                            <tr *ngFor="let item of items">
-                                <td>{{ item.id }}</td>
-                                <td>{{ item.name }}</td>
-                                <td>{{ item.type }}</td>
+                            <tr *ngFor="let subject of subjects">
+                                <td>{{ subject.id }}</td>
+                                <td>{{ subject.name }}</td>
+                                <td>{{ subject.type }}</td>
                                 <td>
-                                    <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                                    <i class="fas fa-align-justify "></i>&nbsp;
+                                    <i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;
+                                    <i class="fas fa-times text-orange-red"></i>&nbsp;    
                                 </td>
                             </tr>
-
-                            
                         </tbody>
-                        
                     </table>
                 </div>
             </div>
