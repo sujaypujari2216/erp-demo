@@ -32,12 +32,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>A-208</td>
-                            <td>A</td>
-                            <td>Normal</td>
-                            <td>3</td>
-                            <td>1000</td>
+                        <tr *ngFor="hostelroom class of hostelsroom">
+                            <td>{{ hostelroom.roomNo }}</td>
+                            <td>{{ hostelroom.hostelId }}</td>
+                            <td>{{ hostelroom.roomTypeId }}</td>
+                            <td>{{ hostelroom.noOfBed }}</td>
+                            <td>{{ hostelroom.costPerBed }}</td>
+
                             <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                                 <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                                 <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>

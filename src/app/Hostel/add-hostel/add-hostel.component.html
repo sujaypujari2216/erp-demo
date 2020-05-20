@@ -32,61 +32,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>A</td>
-                            <td>Boys</td>
-                            <td>Pune</td>
-                            <td>100</td>
+                        <tr *ngFor="hostel class of hostels">
+                            <td>{{ hostel.hostelName }}</td>
+                            <td>{{ hostel.type }}</td>
+                            <td>{{ hostel.address }}</td>
+                            <td>{{ hostel.intake }}</td>
+
                             <td>
                                 <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                                 <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                                 <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>Boys</td>
-                            <td>Pune</td>
-                            <td>100</td>
-                            <td>
-                                <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>Boys</td>
-                            <td>Pune</td>
-                            <td>100</td>
-                            <td>
-                                <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>Boys</td>
-                            <td>Pune</td>
-                            <td>100</td>
-                            <td>
-                                <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>Boys</td>
-                            <td>Pune</td>
-                            <td>100</td>
-                            <td>
-                                <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                            </td>
-                        </tr>
+                       
                     </tbody>
                 </table>
             
