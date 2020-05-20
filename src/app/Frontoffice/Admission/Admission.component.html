@@ -307,12 +307,12 @@
             
             <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                        data-position='top right' name="asondate" >
+                  <input type="date" id="dtp" placeholder="&nbsp;"  
+                  name="asondate" >
                     <span class="label">Enquiry Date*</span>
                     <span class="focus-bg"></span>
                 </label>
-                <i class="far fa-calendar-alt"></i>
+                
               </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -376,79 +376,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Atul Gore</td>
-                    <td>9876543210</td>
-                    <td>Front Office</td>
-                    <td>18/01/2020</td>
-                    <td>19/01/2020</td>
-                    <td>20/01/2020</td>
-                    <td>Active</td>                   
+              <tr *ngFor="let enq of enquiry">
+                <td>{{ enq.name }}</td>      
+                <td>{{ enq.contact }}</td>      
+                <td>{{ enq.source }}</td>    
+                <td>{{ enq.date }}</td>      
+                <td>{{ enq.followUpDate }}</td>      
+                <td>{{ enq.followUpDate }}</td>      
+                <td>{{ enq.isActive }}</td>      
+
                     <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
-                <tr>
-                  <td>Lokesh Shinde</td>
-                  <td>7896541230</td>
-                  <td>Advertisement</td>
-                  <td>28//01/2020</td>
-                  <td>29/01/2020</td>
-                  <td>30/01/2020</td>
-                  <td>Active</td>                   
-                  <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-              </tr>
-              <tr>
-                <td>XYZ</td>
-                <td>9632587410</td>
-                <td>Google Ads</td>
-                <td>18/02/2020</td>
-                <td>19/02/2020</td>
-                <td>20/02/2020</td>
-                <td>Active</td>                   
-                <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-            </tr>
-
-            <tr>
-              <td>Atul Gore</td>
-              <td>9876543210</td>
-              <td>Front Office</td>
-              <td>18/01/2020</td>
-              <td>19/01/2020</td>
-              <td>20/01/2020</td>
-              <td>Active</td>                   
-              <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-          </tr>
-          <tr>
-            <td>Lokesh Shinde</td>
-            <td>7896541230</td>
-            <td>Advertisement</td>
-            <td>28//01/2020</td>
-            <td>29/01/2020</td>
-            <td>30/01/2020</td>
-            <td>Active</td>                   
-            <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-        </tr>
-        <tr>
-          <td>XYZ</td>
-          <td>9632587410</td>
-          <td>Google Ads</td>
-          <td>18/02/2020</td>
-          <td>19/02/2020</td>
-          <td>20/02/2020</td>
-          <td>Active</td>                   
-          <td> <a href="#"><i class="fas fa-phone "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-      </tr>
+                
                
             </tbody>
         </table>
@@ -525,22 +466,20 @@
                
             <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                        data-position='bottom right' name="admission" >
+                  <input type="date" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
+                >
                     <span class="label">Choose Date   *</span>
                     <span class="focus-bg"></span>
                   </label>
-                  <i class="far fa-calendar-alt"></i>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                    <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                        data-position='bottom right' name="admission" >
+                  <input type="date" id="dtp" placeholder="&nbsp;" 
+                  >
                     <span class="label">Next Follow up Date    *</span>
                     <span class="focus-bg"></span>
                   </label>
-                  <i class="far fa-calendar-alt"></i>
             </div>
 
             <div class="col-xl-3 col-lg-6 col-12 form-group">

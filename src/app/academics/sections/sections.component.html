@@ -50,9 +50,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                    <tr *ngFor="let section of sections">
+                        <td>{{ section.section }}</td>
+                        <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                         </td>

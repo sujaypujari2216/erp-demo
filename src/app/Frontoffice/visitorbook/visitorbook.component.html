@@ -334,62 +334,8 @@
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
-                <tr *ngFor="let visitor of visitors">
-                  <td>{{ visitor.visitorsPurpose }}</td>
-                  <td>{{ visitor.name }}</td>
-                  <td>{{ visitor.contact }}</td>
-                  <td>{{ visitor.date }}</td>
-                  <td>{{ visitor.inTime }}</td>
-                  <td>{{ visitor.outTime }}</td>                 
-                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-              </tr>
-              <tr *ngFor="let visitor of visitors">
-                <td>{{ visitor.visitorsPurpose }}</td>
-                <td>{{ visitor.name }}</td>
-                <td>{{ visitor.contact }}</td>
-                <td>{{ visitor.date }}</td>
-                <td>{{ visitor.inTime }}</td>
-                <td>{{ visitor.outTime }}</td>      
-                <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-            </tr>
-            <tr *ngFor="let visitor of visitors">
-              <td>{{ visitor.visitorsPurpose }}</td>
-              <td>{{ visitor.name }}</td>
-              <td>{{ visitor.contact }}</td>
-              <td>{{ visitor.date }}</td>
-              <td>{{ visitor.inTime }}</td>
-              <td>{{ visitor.outTime }}</td>           
-              <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-          </tr>
-          <tr *ngFor="let visitor of visitors">
-            <td>{{ visitor.visitorsPurpose }}</td>
-            <td>{{ visitor.name }}</td>
-            <td>{{ visitor.contact }}</td>
-            <td>{{ visitor.date }}</td>
-            <td>{{ visitor.inTime }}</td>
-            <td>{{ visitor.outTime }}</td>        
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-        </tr>
-        <tr *ngFor="let visitor of visitors">
-          <td>{{ visitor.visitorsPurpose }}</td>
-          <td>{{ visitor.name }}</td>
-          <td>{{ visitor.contact }}</td>
-          <td>{{ visitor.date }}</td>
-          <td>{{ visitor.inTime }}</td>
-          <td>{{ visitor.outTime }}</td>           
-          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-      </tr>
-             
+               
+
             </tbody>
         </table>
     </div>
@@ -465,12 +411,11 @@
                        
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                         <label for="dtp" class="dtp">
-                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                                data-position='bottom right' name="admission" >
+                          <input type="date" id="dtp" placeholder="&nbsp;"  
+                          name="admission" >
                             <span class="label">Chooose Date *</span>
                             <span class="focus-bg"></span>
                           </label>
-                          <i class="far fa-calendar-alt"></i>
                     </div>
                     
                     <div class="col-xl-3 col-lg-6 col-12 form-group">

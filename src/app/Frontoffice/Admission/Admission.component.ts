@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { HttpClient } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-Frontoffice-Admission',
@@ -8,10 +10,29 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
 })
 export class AdmissionComponent implements OnInit {
 
-  constructor(private datatableservice:DatatableService) { }
+ 
+  url=`http://yamistha.cloudjiffy.net/enquiry`;
+  
+  enquiry=[];
+
+  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
-    this.datatableservice.initTable("Admission Enquiry");
+    this.http
+    .get(this.url)
+    .toPromise()
+    .then((res) =>{
+      var data = res['data'];
+      var content = data['content'];
+
+      this.enquiry = content.map(key=>({...key}))
+      this.datatableservice.initTable('Admission');
+
+
+    });
   }
 
+  
+
 }
+
