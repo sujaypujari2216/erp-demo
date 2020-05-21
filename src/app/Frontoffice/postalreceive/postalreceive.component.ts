@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { HttpClient } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-postalreceive',
@@ -9,13 +11,26 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
 })
 export class PostalreceiveComponent implements OnInit {
 
-  constructor(private datatableservice:DatatableService) { }
+  url=`http://yamistha.cloudjiffy.net/dispatch-receive`;
+  
+  postalreceive=[];
+
+  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
-    this.datatableservice.initTable("Postal Recieve");
+    this.http
+    .get(this.url)
+    .toPromise()
+    .then((res) =>{
+      var data = res['data'];
+      var content = data['content'];
+
+      this.postalreceive = content.map(key=>({...key}))
+      this.datatableservice.initTable("Posatal Receive");
+
+    });
   }
 
+  
+
 }
-
-
-

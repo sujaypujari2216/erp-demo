@@ -11,7 +11,7 @@ import {} from "@angular/forms";
 })
 export class AddHostelComponent implements OnInit {
   url = `http://yamistha.cloudjiffy.net/hostel`;
-
+  hostels = [];
   hostelForm = new FormGroup({
     hostelName: new FormControl(""),
     type: new FormControl(""),
@@ -20,7 +20,10 @@ export class AddHostelComponent implements OnInit {
     description: new FormControl(""),
   });
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private datatableservice: DatatableService
+  ) {}
 
   ngOnInit(): void {}
   formSubmit() {
@@ -40,5 +43,16 @@ export class AddHostelComponent implements OnInit {
     //       console.log(err);
     //     }
     //   );
+
+    this.http
+      .get(this.url)
+      .toPromise()
+      .then((res) => {
+        var data = res["data"];
+        var content = data["content"];
+
+        this.hostels = content.map((key) => ({ ...key }));
+        this.datatableservice.initTable("Hoatel List");
+      });
   }
 }

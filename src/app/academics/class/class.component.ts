@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { HttpClient } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-class',
@@ -8,11 +10,28 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
 })
 export class ClassComponent implements OnInit {
 
-  constructor(private datatableservice:DatatableService) { }
+ 
+  url=`http://yamistha.cloudjiffy.net/class`;
+  
+  classes=[];
+
+  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
-    this.datatableservice.initTable("academics");
+    this.http
+    .get(this.url)
+    .toPromise()
+    .then((res) =>{
+      var data = res['data'];
+      var content = data['content'];
 
+      this.classes = content.map(key=>({...key}))
+      this.datatableservice.initTable("Disable Reason");
+
+
+    });
   }
+
+  
 
 }

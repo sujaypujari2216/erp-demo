@@ -321,60 +321,18 @@
                   </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td>XYZ</td>
-                    <td>9876543210</td>
-                    <td>06/03/2020</td>
-                    <td>21/03/2020</td>
-                    <td>Incomming</td>
+                <tr *ngFor="let call of calllogs">
+                  <td>{{ call.name }}</td>      
+                  <td>{{ call.contact }}</td>      
+                  <td>{{ call.date }}</td>      
+                  <td>{{ call.followUpDate }}</td>      
+                  <td>{{ call.callType }}</td>      
                     <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
 
-                <tr>
-                  <td>XYZ</td>
-                  <td>9876543210</td>
-                  <td>06/03/2020</td>
-                  <td>21/03/2020</td>
-                  <td>Incomming</td>
-                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                </tr>
-
-                <tr>
-                  <td>XYZ</td>
-                  <td>9876543210</td>
-                  <td>06/03/2020</td>
-                  <td>21/03/2020</td>
-                  <td>Incomming</td>
-                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                </tr>
-
-                <tr>
-                  <td>XYZ</td>
-                  <td>9876543210</td>
-                  <td>06/03/2020</td>
-                  <td>21/03/2020</td>
-                  <td>Incomming</td>
-                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                 </tr>
-
-                 <tr>
-                  <td>XYZ</td>
-                  <td>9876543210</td>
-                  <td>06/03/2020</td>
-                  <td>21/03/2020</td>
-                  <td>Incomming</td>
-                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                </tr>               
+                           
             </tbody>
           </table>
       </div>
@@ -418,23 +376,22 @@
       
                       <div class="col-xl-3 col-lg-6 col-12 form-group">
                        <label for="dtp" class="dtp">
-                         <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                             data-position='bottom right' name="birthdate" >
+                        <input type="date" id="dtp" placeholder="&nbsp;"  
+ name="birthdate" >
                          <span class="label">Choose Date*</span>
                          <span class="focus-bg"></span>
                        </label>
-                       <i class="far fa-calendar-alt"></i>
                    </div>
                    
                    
                  <div class="col-xl-3 col-lg-6 col-12 form-group">
                    <label for="dtp" class="dtp">
-                     <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                         data-position='bottom right' name="birthdate" >
+                   <input type="date" id="dtp" placeholder="&nbsp;"  
+ name="birthdate" >
                      <span class="label">Next Follow Up Date *</span>
                      <span class="focus-bg"></span>
                    </label>
-                   <i class="far fa-calendar-alt"></i>
+                  
                  </div>
      
                  <div class="col-xl-3 col-lg-6 col-12 form-group">

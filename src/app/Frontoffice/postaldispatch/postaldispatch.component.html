@@ -322,51 +322,16 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>ABC</td>
-                      <td>23</td>
-                      <td>Principal</td>
-                      <td>06/03/2020</td>
+                <tr *ngFor="let disp of postaldispatch">
+                  <td>{{ disp.toTitle }}</td>
+                  <td>{{ disp.referenceNo }}</td>
+                  <td>{{ disp.fromTitle }}</td>
+                  <td>{{ disp.date }}</td>
                       <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                   </tr>
-                  <tr>
-                      <td>ABC</td>
-                      <td>23</td>
-                      <td>Principal</td>
-                      <td>06/03/2020</td>
-                      <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                  </tr>
-                  <tr>
-                      <td>ABC</td>
-                      <td>23</td>
-                      <td>Principal</td>
-                      <td>06/03/2020</td>
-                      <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                  </tr>
-                  <tr>
-                      <td>ABC</td>
-                      <td>23</td>
-                      <td>Principal</td>
-                      <td>06/03/2020</td>
-                      <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                  </tr>
-                  <tr>
-                      <td>ABC</td>
-                      <td>23</td>
-                      <td>Principal</td>
-                      <td>06/03/2020</td>
-                      <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                  </tr>
+                  
                  
               </tbody>
           </table>
@@ -433,12 +398,11 @@
       
                       <div class="col-xl-4 col-lg-6 col-12 form-group">
                           <label for="dtp" class="dtp">
-                              <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                                  data-position='bottom right' >
+                            <input type="date" id="dtp" placeholder="&nbsp;"  
+                            >
                               <span class="label">Date *</span>
                               <span class="focus-bg"></span>
                             </label>
-                            <i class="far fa-calendar-alt"></i>
                     </div>
                     
        

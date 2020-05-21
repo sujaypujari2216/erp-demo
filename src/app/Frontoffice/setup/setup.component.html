@@ -316,26 +316,13 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>Marketing</td>
+                <tr *ngFor="let setup of setupfo">
+                  <td>{{ setup.visitorsPurpose }}</td>
+                
                       <td><a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                   </tr>
-                  <tr>
-                    <td>Parent Teacher Meet</td>
-                    <td><a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                </tr>
-                <tr>
-                  <td>Student Meeting</td>
-                  <td><a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-              </tr>
-              <tr>
-                <td>Staff Meet</td>
-                <td><a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-            </tr>
+                  
               </tbody>
           </table>
       </div>

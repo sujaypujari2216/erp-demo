@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { HttpClient } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-setup',
@@ -8,12 +10,31 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
 })
 export class SetupComponent implements OnInit {
 
-  constructor(private datatableservice: DatatableService) { }
+ 
+  url=`http://yamistha.cloudjiffy.net/visitor-purpose`;
+  
+  setupfo=[];
+
+  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
-    this.datatableservice.initTable("Srtup Front Office");
+    this.http
+    .get(this.url)
+    .toPromise()
+    .then((res) =>{
+      var data = res['data'];
+      var content = data['content'];
+
+      this.setupfo = content.map(key=>({...key}))
+      this.datatableservice.initTable("Setup Front Office");
+
+
+    });
   }
 
+  
+
 }
+
 
 
