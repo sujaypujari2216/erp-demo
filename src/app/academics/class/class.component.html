@@ -1,94 +1,107 @@
 <div class="breadcrumbs-area">
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>Class</li>
-    </ul>
-  </div>
-  <div class="card height-auto">
-    <div class="card-body">
-                <form class="new-added-form">
-                    <div class="heading-layout1">
-                        <div class="item-title">
-                            <h3>Add Class</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="slt" class="slt">
-                                <select  class="form-control" id="slt" placeholder="&nbsp;">
-                                <option selected >Please Select Class *</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="3">4</option>
-                                <option value="3">5</option>
-                                <option value="3">6</option>
-                                </select>
-                                <span class="label">Class *</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                        </div>
-                       <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="slt" class="slt">
-                                <select  class="form-control" id="slt" placeholder="&nbsp;">
-                                 <option value="">select</option>
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
-                                <option value="4">D</option>
-                            </select>
-                                <span class="label">Section *</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                            
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <div class="form-group" style="float: right;">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                </div>
-                            </div>
-            
-                        </div>
-                      </form>
-    </div>
-  </div>
-  <div class="card height-auto">
-    <div class="card-body">
-        <div class="heading-layout1">
-            <div class="item-title">
-                <h3>Class List</h3>
-            </div>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>Class</li>
+  </ul>
+</div>
+<div class="card height-auto">
+  <div class="card-body">
+    <form class="new-added-form" (submit)="addClass()">
+      <div class="heading-layout1">
+        <div class="item-title">
+          <h3>Add Class</h3>
         </div>
-        <div class="table-responsive">
-            <table id="example" class="table display data-table text-nowrap cell-border">
-          
-              <thead>
-                  
-                  <tr>
-                      <th>Class</th>
-                      <th>Sections</th>
-                      <th>Action</th>  
-                      
-                  </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let class of classes">
-                    <td>{{ class.classses }}</td>
-                    <td>{{ class.section }}</td>
-                  
-                      <td>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-                  </tr>
-                 
-              </tbody>
-          </table>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select
+              class="form-control"
+              id="slt"
+              placeholder="&nbsp;"
+              [(ngModel)]="studentClass"
+            >
+              <option selected>Please Select Class *</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="3">4</option>
+              <option value="3">5</option>
+              <option value="3">6</option>
+            </select>
+            <span class="label">Class *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select
+              class="form-control"
+              id="slt"
+              placeholder="&nbsp;"
+              [(ngModel)]="studentSection"
+            >
+              <option value="">select</option>
+              <option value="1">A</option>
+              <option value="2">B</option>
+              <option value="3">C</option>
+              <option value="4">D</option>
+            </select>
+            <span class="label">Section *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <div class="form-group" style="float: right;">
+            <button
+              type="submit"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+            >
+              Save
+            </button>
           </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="card height-auto">
+  <div class="card-body">
+    <div class="heading-layout1">
+      <div class="item-title">
+        <h3>Class List</h3>
       </div>
     </div>
-  
-    <!-- Admission Enquiry Area Start Here -->
-   
-  
+    <div class="table-responsive">
+      <table
+        id="example"
+        class="table display data-table text-nowrap cell-border"
+      >
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Sections</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let class of classes">
+            <td>{{ class.classses }}</td>
+            <td>{{ class.section }}</td>
+
+            <td>
+              <a href="#"
+                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
+              >
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Admission Enquiry Area Start Here -->
