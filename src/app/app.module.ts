@@ -6,7 +6,11 @@ import { AppComponent } from "./app.component";
 
 import { HttpClientModule } from "@angular/common/http";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { FormsModule } from "@angular/forms";
+=======
+import { ReactiveFormsModule } from "@angular/forms";
+>>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
 =======
 import { ReactiveFormsModule } from "@angular/forms";
 >>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
