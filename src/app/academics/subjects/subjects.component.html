@@ -1,98 +1,110 @@
+<!-- Admission Enquiry Area Start Here -->
 
-    <!-- Admission Enquiry Area Start Here -->
-    
-    <div class="breadcrumbs-area">
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>Subjects</li>
-        </ul>
-    </div>
+<div class="breadcrumbs-area">
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>Subjects</li>
+  </ul>
+</div>
 
-    <div class="card height-auto">
-        <div class="card-body">
-            <form class="new-added-form">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                            <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Subject Name*</span>
-                                <span class="focus-bg"></span>
-                        </label>  
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                        <div class=" custom-control-inline col-xl-5">
-                            <input type="radio" name="customRadio" id="customRadio1">
-                                <label for="customRadio1">Theory</label>
-                        </div>
-
-                        <div class=" custom-control-inline col-xl-5">
-                            <input type="radio"  name="customRadio" id="customRadio2" >
-                                <label  for="customRadio2">Practical</label>
-                        </div>
-                    </div>  
-                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                        <label for="inp" class="inp">
-                        <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                            <span class="label">Subject Code*</span>
-                            <span class="focus-bg"></span>
-                        </label>
-                    </div>                       
-                    <div class="col-xl-3 col-lg-6 col-12 form-group">
-                        <div class="form-group" style="float: right;">
-                            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
-                        </div>
-                    </div>
-                            
-                </div>
-            </form>
+<div class="card height-auto">
+  <div class="card-body">
+    <form class="new-added-form">
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input
+              type="text"
+              class="form-control"
+              id="inp"
+              placeholder="&nbsp;"
+            />
+            <span class="label">Subject Name*</span>
+            <span class="focus-bg"></span>
+          </label>
         </div>
-    </div>
+        <div class="col-xl-6 col-lg-6 col-12 form-group">
+          <div class="custom-control-inline col-xl-5">
+            <input type="radio" name="customRadio" id="customRadio1" />
+            <label for="customRadio1">Theory</label>
+          </div>
 
-    <div class="col-xl-8 col-6">
-
-        <div class="card height-auto">
-            <div class="card-body">
-                <div class="heading-layout1">
-                    <div class="item-title">
-                        <h3>Subject List</h3>
-                    </div>
-                </div>
-
-                <div class="table-responsive">
-                    <table id="example" class="table display data-table text-nowrap cell-border">
-                        <thead>
-                            <tr>
-                                <th>Subject</th>
-                                <th>Subject Code</th>
-                                <th>Subject Type</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let subject of subjects">
-                                <td>{{ subject.name }}</td>
-
-                                <td>{{ subject.id }}</td>
-                                <td>{{ subject.type }}</td>
-                                <td>
-                                    <i class="fas fa-align-justify "></i>&nbsp;
-                                    <i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;
-                                    <i class="fas fa-times text-orange-red"></i>&nbsp;    
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+          <div class="custom-control-inline col-xl-5">
+            <input type="radio" name="customRadio" id="customRadio2" />
+            <label for="customRadio2">Practical</label>
+          </div>
         </div>
+        <div class="col-xl-6 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input
+              type="text"
+              class="form-control"
+              id="inp"
+              placeholder="&nbsp;"
+            />
+            <span class="label">Subject Code*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <div class="form-group" style="float: right;">
+            <button
+              type="submit"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-    <!-- Admission Enquiry Area end Here -->
-   
-  
+<div class="col-xl-8 col-6">
+  <div class="card height-auto">
+    <div class="card-body">
+      <div class="heading-layout1">
+        <div class="item-title">
+          <h3>Subject List</h3>
+        </div>
+      </div>
 
+      <div class="table-responsive">
+        <table
+          id="example"
+          class="table display data-table text-nowrap cell-border"
+        >
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Subject Code</th>
+              <th>Subject Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{ item.id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.type }}</td>
+              <td>
+                <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
+                <a href="#"
+                  ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
+                >
+                <a href="#"
+                  ><i class="fas fa-times text-orange-red"></i>&nbsp;</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-
-
-
+  <!-- Admission Enquiry Area end Here -->
+</div>

@@ -3,10 +3,7 @@ import { DatatableService } from "src/app/shared/datatableservice/datatable.serv
 import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: "app-class",
-  templateUrl: "./class.component.html",
-  styleUrls: ["./class.component.css"],
-})
+  
 export class ClassComponent implements OnInit {
   url = `http://yamistha.cloudjiffy.net/class`;
 

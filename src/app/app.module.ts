@@ -5,7 +5,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HttpClientModule } from "@angular/common/http";
+<<<<<<< HEAD
 import { FormsModule } from "@angular/forms";
+=======
+import { ReactiveFormsModule } from "@angular/forms";
+>>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
 
 import { HomeComponent } from "./dashboard/home/home.component";
 
@@ -120,11 +124,11 @@ import { Issue1Component } from "./Library/issue-return/issue1/issue1.component"
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     CertificateModule,
     ReportsModule,
     AcademicsModule,
     RouterModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       [
         { path: "", redirectTo: "admin", pathMatch: "full" },
