@@ -41,4 +41,4 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ]
 })
-export class FormsRoutingModule {}
+export class FeeCollectionRoutingModule {}

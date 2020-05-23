@@ -64,6 +64,10 @@ import { FeesGroupAssignComponent } from "./feecollection/fees-group-assign/fees
 import { AddExamComponent } from "./Examination/add-exam/add-exam.component";
 import { CreateTtComponent } from "./create-tt/create-tt.component";
 import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
+import { ComplainttypeComponent } from './Frontoffice/setup/complainttype/complainttype.component';
+import { VisitorsPurposeComponent } from './Frontoffice/setup/visitors-purpose/visitors-purpose.component';
+import { SourceComponent } from './Frontoffice/setup/source/source.component';
+import { ReferenceComponent } from './Frontoffice/setup/reference/reference.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +121,10 @@ import { Issue1Component } from "./Library/issue-return/issue1/issue1.component"
     AddExamComponent,
     CreateTtComponent,
     Issue1Component,
+    VisitorsPurposeComponent,
+    SourceComponent,
+    ReferenceComponent,
+    ComplainttypeComponent,
   ],
   imports: [
     BrowserModule,

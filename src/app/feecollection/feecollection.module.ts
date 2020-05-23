@@ -13,4 +13,4 @@ import { FeesGroupAssignComponent } from './fees-group-assign/fees-group-assign.
     CommonModule
   ]
 })
-export class FormsModule {}
+export class FeeCollectionModule {}
