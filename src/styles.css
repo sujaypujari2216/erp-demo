@@ -1203,9 +1203,9 @@ h6 {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.fw-btn-fill:hover {
+/*.fw-btn-fill:hover {
   background: #042954;
-}
+}*/
 .fw-btn-fill:focus {
   outline: none;
   box-shadow: none;
@@ -1219,7 +1219,7 @@ h6 {
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 1px;
-  padding: 8px 25px;   /* 12 50 to 8 25*/
+  padding: 5px 12px;   /* 12 50 to 8 25*/
   cursor: pointer;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1281,10 +1281,17 @@ h6 {
   border: none;
 }
 .btn-hover-bluedark:hover {
-  background: #042954;
+  background: #ff9d01;
+  font-size: 16px;
+  padding: 8px 15px; 
+ 
+  cursor: pointer;
 }
 .btn-hover-yellow:hover {
-  background: #ff9d01;
+  background: #042954;
+  font-size: 16px;
+  padding: 8px 15px;
+  cursor: pointer;
 }
 /*=======================================================================
 5. PAGE LAYOUT STYLE

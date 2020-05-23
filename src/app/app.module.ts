@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
 
 import { HomeComponent } from './dashboard/home/home.component';
 
@@ -55,14 +55,11 @@ import { CreateComponent } from './create/create.component';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { AddPageComponent } from './add-page/add-page.component';
+import { ArtcodeAPIService } from './services/artcode-api.service';
+import { CommonModule } from '@angular/common';
 
 
-
-
-
-
-
-
+import { AddHostelComponent } from './Hostel/add-hostel/add-hostel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,7 +96,6 @@ import { AddPageComponent } from './add-page/add-page.component';
     AddMoreComponent,
     AddParentsComponent,
     AddMoreStudComponent,
-    
   
     AddIncomeComponent,
     AddExpensesComponent,
@@ -116,6 +112,11 @@ import { AddPageComponent } from './add-page/add-page.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+   // FormGroup,
+   // FormBuilder,
+    CommonModule,
+    
+    ReactiveFormsModule,
     CertificateModule,
     ReportsModule,
     AcademicsModule,
@@ -131,7 +132,7 @@ import { AddPageComponent } from './add-page/add-page.component';
       
     )
   ],
-  providers: [DatatableService],
+  providers: [DatatableService,ArtcodeAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

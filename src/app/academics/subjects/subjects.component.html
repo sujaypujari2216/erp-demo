@@ -12,7 +12,8 @@
 
     <div class="card height-auto">
         <div class="card-body">
-            <form class="new-added-form">
+            <form class="new-added-form"m
+            \>
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
                         <label for="inp" class="inp">
@@ -64,14 +65,22 @@
                     <table id="example" class="table display data-table text-nowrap cell-border">
                         <thead>
                             <tr>
-                                <th>Subject</th>
-                                <th>Subject Code</th>
-                                <th>Subject Type</th>
-                                <th>Action</th>
+                                <th>id</th>
+                                <th>code</th>
+                                <th>isActive</th>
+                                <th>name</th>
+                                <th>type</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let subject of subjects">
+                                <td>{{subject.id}}</td>
+                                <td>{{subject.code}}</td>
+                                <td>{{subject.isActive}}</td>
+                                <td>{{subject.name}}</td>
+                                <td>{{subject.type}}</td>
+                            </tr>
+                           <!--<tr>
                                 <td>#001</td>
                                 <td>Sample Student Identity Card </td>
                                 <td>Sample Background Image</td>
@@ -124,7 +133,7 @@
                                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                                 </td>
-                            </tr>
+                            </tr>-->
                         </tbody>
                         
                     </table>
