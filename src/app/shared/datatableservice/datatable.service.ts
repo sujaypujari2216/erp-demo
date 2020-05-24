@@ -9,7 +9,6 @@ export class DatatableService {
     console.log("Init");
     $(function (){ 
 
-      // $('#example').append('<caption style="caption-side: bottom">Demo Table</caption>');
       $('#example').DataTable( {
         order: [],
         "responsive": "true",

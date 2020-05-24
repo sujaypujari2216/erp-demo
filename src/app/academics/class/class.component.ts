@@ -51,7 +51,10 @@ export class ClassComponent implements OnInit {
       var data = res["data"];
       var content = data["content"];
       this.classes = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable("Disable Reason");
+      this.datatableservice.initTable("class");
+
+
+      
     }, (err) => {
       console.error(err);
       console.log("there is error");
