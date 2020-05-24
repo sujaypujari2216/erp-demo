@@ -1,29 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-//import { ArtcodeAPIService } from 'src/app/services/artcode-api.service';
-//import { Subject } from '../../shared/classes/subject';
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+
 @Component({
-  selector: 'app-subjects',
-  templateUrl: './subjects.component.html',
-  styleUrls: ['./subjects.component.css']
+  selector: "app-subjects",
+  templateUrl: "./subjects.component.html",
+  styleUrls: ["./subjects.component.css"],
 })
 export class SubjectsComponent implements OnInit {
-url='http://yamistha.cloudjiffy.net/subject';
-  constructor(private http:HttpClient) { }
+  url = `http://yamistha.cloudjiffy.net/subject`;
 
-  subjects=[];
+  subjects = [];
+
+  items = [];
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.http
-    .get(this.url)
-    .toPromise()
-    .then((res)=>{
-    var data=res['data'];
-    var content=data['content'];
-      this.subjects=content.map(key=>({...key}))
-  });
+      .get(this.url)
+      .toPromise()
+      .then((res) => {
+        var data = res["data"];
+        var content = data["content"];
+
+        this.subjects = content.map((key) => ({ ...key }));
+
+        this.items = content.map((key) => ({ ...key }));
+      });
   }
-
-  
-
 }

@@ -40,6 +40,61 @@
   <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="assets/css/buttons.dataTables.min.css">
 
+
+  
+  <style type="text/css">
+    .global-loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1999;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 1;
+      transition: opacity .5s ease-in-out;
+    }
+
+    .global-loader-fade-in {
+      opacity: 0;
+    }
+
+    .global-loader-hidden {
+      display: none;
+    }
+
+    .global-loader h1 {
+      /* font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: normal; */
+      font-size: 44px;
+      letter-spacing: 0.4rem;
+      white-space: pre;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: repeating-linear-gradient(to right,
+          rgb(0, 42, 255), rgb(66, 39, 176), #FF9800, rgb(3, 23, 244), rgb(10, 6, 120), #FF9800);
+      background-size: 750% auto;
+      background-position: 0 100%;
+      animation: gradient 20s infinite;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -750% 0;
+      }
+    }
+  </style>
 </head>
 <body>
 <div id="wrapper" class="wrapper bg-ash">
@@ -269,7 +324,7 @@
                                 <a href="/#/parentinfo" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/#/techerinfo" class="nav-link ">
+                                <a href="/#/teacherinfo" class="nav-link ">
                                     <i class="fas fa-angle-right "></i>Teachers</a>
                             </li>
                         </ul>
@@ -435,6 +490,24 @@
                             </ul>
                            </li>
                            <!--expense End Here-->
+                             <!--Attendance start here-->
+                         <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Attendance</span></a>
+                            <ul class="nav sub-group-menu"><!-- sub-group-active-->
+                                <li class="nav-item">
+                                    <a href="/#/student-attendance" class="nav-link"><i class="fas fa-angle-right"></i>Student Attendance</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/#/attendance-by-date" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Attendance By Date</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/#/approve-leave" class="nav-link"><!--menu-active--><i
+                                            class="fas fa-angle-right"></i>Approve Leave</a>
+                                </li>
+                            </ul>
+                           </li>
+                           <!--Attendance End Here-->
                     <!--Examination Module start here-->
 
                             <li class="nav-item sidebar-nav-item">
@@ -830,7 +903,7 @@
                         <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Reports</span></a>
                         <ul class="nav sub-group-menu"><!-- sub-group-active-->
                             <li class="nav-item">
-                                <a href="/#/student-information" class="nav-link"><i class="fas fa-angle-right"></i>Student Information</a>
+                                <a href="/#/student-information" class="nav-link" routerLinkActive="active"><i class="fas fa-angle-right"></i>Student Information</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/#/finance" class="nav-link"><i
@@ -998,11 +1071,15 @@
         <!-- Sidebar Area End Here -->
     
             <div class="dashboard-content-one">
-                <app-root></app-root>           
+                <app-root></app-root>        
+                <div id="globalLoader" class="global-loader">
+                    <h1>LOADING...</h1>
+                  </div>   
             </div>
         
         
     </div>
+   
 
 
 

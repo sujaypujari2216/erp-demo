@@ -255,3 +255,31 @@ body {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
+/*************popup************************/
+
+.container 
+{
+  
+	background-size: cover;
+	background-repeat:no-repeat;    
+}
+.container-box
+{
+	display:inline-block; 
+        padding:10px; 
+   
+
+	border: 1px solid #fff;	
+  	top: 55%;
+
+}
+
+.modal-content
+{
+        background: rgba(255, 255, 255, 1);	
+        position: fixed;
+        margin-top:30%;
+
+        width:150%;
+        transform: translate(-25%,-25%);
+}

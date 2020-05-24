@@ -8,12 +8,13 @@ import { PrintAdmitCardComponent } from './print-admit-card/print-admit-card.com
 import { DesignMarksheetComponent } from './design-marksheet/design-marksheet.component';
 import { PrintMarksheetComponent } from './print-marksheet/print-marksheet.component';
 import { MarksGradeComponent } from './marks-grade/marks-grade.component';
+import { AddExamComponent } from './add-exam/add-exam.component';
 
 
 
 @NgModule({
   declarations: [ExamGroupComponent,ExamScheduleComponent,ExamResultComponent,DesignMarksheetComponent,
-    DesignAdmitCardComponent,PrintMarksheetComponent,PrintAdmitCardComponent,MarksGradeComponent],
+    DesignAdmitCardComponent,PrintMarksheetComponent,PrintAdmitCardComponent,MarksGradeComponent, AddExamComponent],
   imports: [
     CommonModule
   ]

@@ -11,7 +11,7 @@ export class DepartmentComponent implements OnInit {
   constructor(private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
-    this.datatableservice.initTable("Departments List");
+    this.datatableservice.initTable("human_resource");
   }
 
 }

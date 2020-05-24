@@ -75,82 +75,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let student of students">
                                 <td>
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input">
-                                        <label class="form-check-label">AC#1</label>
-                                    </div>
-                                </td>
-                                
-                                <td>ABC</td>
-                                <td>1(A)</td>
-                                <td>02/01/2001</td>
-                                <td>Male</td>
-                                <td>Special</td>
-                                <td>9876543210</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input">
-                                        <label class="form-check-label">AC#2</label>
-                                    </div>
-                                </td>
-                                
-                                <td>ABC</td>
-                                <td>1(A)</td>
-                                <td>02/01/2001</td>
-                                <td>Male</td>
-                                <td>Special</td>
-                                <td>9876543210</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input">
-                                        <label class="form-check-label">AC#3</label>
-                                    </div>
-                                </td>
-                                
-                                <td>ABC</td>
-                                <td>1(A)</td>
-                                <td>02/01/2001</td>
-                                <td>Male</td>
-                                <td>Special</td>
-                                <td>9876543210</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input">
-                                        <label class="form-check-label">AC#4</label>
-                                    </div>
-                                </td>
-                                
-                                <td>ABC</td>
-                                <td>1(A)</td>
-                                <td>02/01/2001</td>
-                                <td>Male</td>
-                                <td>Special</td>
-                                <td>9876543210</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input">
-                                        <label class="form-check-label">AC#5</label>
-                                    </div>
-                                </td>
-                                
-                                <td>ABC</td>
-                                <td>1(A)</td>
-                                <td>02/01/2001</td>
-                                <td>Male</td>
-                                <td>Special</td>
-                                <td>9876543210</td>
-                            </tr>
+                                        <input type="checkbox" class="form-check-input"><a href="/#/studentinfo">{{ student.firstname}}</a>
+                                </div>
+                                    </td>
+                                <td>{{ student.classses }}</td>
+                                <td>{{ student.dob }}</td>
+                                <td>{{ student.gender }}</td>
+                                <td>{{ student.categoryId }}</td>
+                                <td>{{ student.mobileno }}</td>
                            
+                                
+                            </tr>
+                            
                         </tbody>
                     </table>
                     <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Delete</button>

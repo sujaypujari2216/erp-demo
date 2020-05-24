@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 @Component({
   selector: 'app-disabled-staff',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisabledStaffComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datableservice:DatatableService) { }
 
   ngOnInit(): void {
+    this.datableservice.initTable("human_resource");
   }
 
 }

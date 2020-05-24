@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FeesGroupAssignComponent } from './fees-group-assign/fees-group-assign.component';
 
 
 
@@ -7,9 +8,9 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [FeesGroupAssignComponent],
   imports: [
     CommonModule
   ]
 })
-export class FormsModule {}
+export class FeeCollectionModule {}

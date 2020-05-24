@@ -322,73 +322,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Marketing</td>
-                    <td>XYZ</td>
-                    <td>9876543210</td>
-                    <td>06/03/2020</td>
-                    <td>10:00 AM</td>
-                    <td>10:30 AM</td>                   
+              <tr *ngFor="let visitor of visitors">
+                <td>{{ visitor.visitorsPurpose }}</td>
+                <td>{{ visitor.name }}</td>
+                <td>{{ visitor.contact }}</td>
+                <td>{{ visitor.date }}</td>
+                <td>{{ visitor.inTime }}</td>
+                <td>{{ visitor.outTime }}</td>
+ 
                     <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
-                <tr>
-                  <td>Marketing</td>
-                  <td>Test</td>
-                  <td>7896541230</td>
-                  <td>19/01/2020</td>
-                  <td>07:45 AM</td>
-                  <td>08:00 AM</td>                   
-                  <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-              </tr>
-              <tr>
-                <td>Marketing</td>
-                <td>XYZ</td>
-                <td>9876543210</td>
-                <td>06/03/2020</td>
-                <td>10:00 AM</td>
-                <td>10:30 AM</td>                   
-                <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-            </tr>
-            <tr>
-              <td>Marketing</td>
-              <td>Test</td>
-              <td>7896541230</td>
-              <td>19/01/2020</td>
-              <td>07:45 AM</td>
-              <td>08:00 AM</td>                   
-              <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-          </tr>
-          <tr>
-            <td>Marketing</td>
-            <td>XYZ</td>
-            <td>9876543210</td>
-            <td>06/03/2020</td>
-            <td>10:00 AM</td>
-            <td>10:30 AM</td>                   
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-        </tr>
-        <tr>
-          <td>Marketing</td>
-          <td>Test</td>
-          <td>7896541230</td>
-          <td>19/01/2020</td>
-          <td>07:45 AM</td>
-          <td>08:00 AM</td>                   
-          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-      </tr>
-             
+               
+
             </tbody>
         </table>
     </div>
@@ -464,12 +411,11 @@
                        
                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                         <label for="dtp" class="dtp">
-                            <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                                data-position='bottom right' name="admission" >
+                          <input type="date" id="dtp" placeholder="&nbsp;"  
+                          name="admission" >
                             <span class="label">Chooose Date *</span>
                             <span class="focus-bg"></span>
                           </label>
-                          <i class="far fa-calendar-alt"></i>
                     </div>
                     
                     <div class="col-xl-3 col-lg-6 col-12 form-group">

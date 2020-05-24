@@ -324,66 +324,67 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>1</td>
-                      <td>Fees</td>
-                      <td>Parent</td>
-                      <td>9876543210</td>
-                      <td>06/03/2020</td>
+                <tr *ngFor="let complain of complains">
+                  <td>{{ complain.id }}</td>
+                  <td>{{ complain.complain }}</td>
+                  <td>{{ complain.name }}</td>
+                  <td>{{ complain.contact }}</td>
+                  <td>{{ complain.date }}</td>
+   
                       <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                         <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                         <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Admission</td>
-                    <td>Parent</td>
-                    <td>9876543210</td>
-                    <td>06/03/2020</td>
+                  <!-- <tr *ngFor="let complain of complains">
+                    <td>{{ complain.id }}</td>
+                    <td>{{ complain.complain }}</td>
+                    <td>{{ complain.name }}</td>
+                    <td>{{ complain.contact }}</td>
+                    <td>{{ complain.date }}</td>
                     <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                       <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                       <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                   </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Fees</td>
-                    <td>Parent</td>
-                    <td>9876543210</td>
-                    <td>06/03/2020</td>
+                  <tr *ngFor="let complain of complains">
+                    <td>{{ complain.id }}</td>
+                    <td>{{ complain.complain }}</td>
+                    <td>{{ complain.name }}</td>
+                    <td>{{ complain.contact }}</td>
+                    <td>{{ complain.date }}</td>
                     <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                       <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                       <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Admission</td>
-                  <td>Parent</td>
-                  <td>9876543210</td>
-                  <td>06/03/2020</td>
+                <tr *ngFor="let complain of complains">
+                  <td>{{ complain.id }}</td>
+                  <td>{{ complain.complain }}</td>
+                  <td>{{ complain.name }}</td>
+                  <td>{{ complain.contact }}</td>
+                  <td>{{ complain.date }}</td>
                   <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
                 </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Fees</td>
-                  <td>Parent</td>
-                  <td>9876543210</td>
-                  <td>06/03/2020</td>
+                <tr *ngFor="let complain of complains">
+                  <td>{{ complain.id }}</td>
+                  <td>{{ complain.complain }}</td>
+                  <td>{{ complain.name }}</td>
+                  <td>{{ complain.contact }}</td>
+                  <td>{{ complain.date }}</td>
                   <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
               </tr>
-              <tr>
-                <td>6</td>
-                <td>Admission</td>
-                <td>Parent</td>
-                <td>9876543210</td>
-                <td>06/03/2020</td>
+              <tr *ngFor="let complain of complains">
+                <td>{{ complain.id }}</td>
+                <td>{{ complain.complain }}</td>
+                <td>{{ complain.name }}</td>
+                <td>{{ complain.contact }}</td>
+                <td>{{ complain.date }}</td>
                 <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
                   <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                   <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-              </tr>
+              </tr> -->
                  
               </tbody>
           </table>
@@ -402,6 +403,8 @@
               <!-- Modal content-->
               <div class="modal-content">
                   <div class="modal-header">
+                    <h5> Add Complain</h5>
+
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                      
                   </div>
@@ -465,12 +468,11 @@
           
                            <div class="col-xl-3 col-lg-6 col-12 form-group">
                             <label for="dtp" class="dtp">
-                              <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                                  data-position='bottom right'  >
+                              <input type="date" id="dtp" placeholder="&nbsp;"  
+                              >
                               <span class="label">Date *</span>
                               <span class="focus-bg"></span>
                             </label>
-                            <i class="far fa-calendar-alt"></i>
                           </div>
                            
                          

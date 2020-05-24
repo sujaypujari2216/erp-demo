@@ -24,25 +24,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>General</td>
-                        <td>1</td>
+                    <tr *ngFor="let student of students">
+                        
+                        <td>{{ student.category }}</td>
+                        <td>{{ student.categoryId }}</td>
+                    
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
                     </tr>
-                    <tr>
-                        <td>Special</td>
-                        <td>2</td>
+                  
+                        <tr *ngFor="let student of students">
+                        
+                            <td>{{ student.category }}</td>
+                            <td>{{ student.categoryId }}</td>
+                        
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
                         </td>
+                   
                     </tr>
-                    <tr>
-                        <td>Physically Challenged</td>
-                        <td>3</td>
+                        <tr *ngFor="let student of students">
+                        
+                            <td>{{ student.category }}</td>
+                            <td>{{ student.categoryId }}</td>
+                          
+                       
+                            
+                        
                         <td>
                             <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                             <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
@@ -69,7 +80,7 @@
                     
                       <form role="form" method="post" id="reused_form" > 
                         <div class="row">
-                            <div class="col-xl-8 col-lg-6 col-12 form-group">
+                            <div class="col-xl-6 col-lg-6 col-12 form-group">
                                 <label for="inp" class="inp">
                                     <input type="text" name="add_category" class="form-control" id="inp" placeholder="&nbsp;">
                                     <span class="label">Add Category: *</span>
@@ -77,8 +88,13 @@
                                 </label>
                             </div>
                             
+<<<<<<< HEAD
                             <div class="col-xl-4 col-lg-6 col-12 form-group">
                                 <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">SAVE</button>
+=======
+                            <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                <button type="submit" class="fw-btn-fill btn-gradient-yellow">SAVE</button>
+>>>>>>> ff939b6135bb0cda6e633c95993530dd6bfc7c3f
                             </div>
                          </div>
                

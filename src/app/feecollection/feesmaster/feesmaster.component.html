@@ -257,10 +257,42 @@
       transition: all 0.1s ease;
     }
     
-</style>
+
+/*************popup************************/
+
+.container 
+{
+  
+	background-size: cover;
+	background-repeat:no-repeat;    
+}
+.container-box
+{
+	display:inline-block; 
+        padding:10px; 
+   
+	background: rgba(136, 82, 82, 0.8);
+	border: 1px solid #fff;	
+	position: fixed;
+  	top: 55%;
+  	left: 0;
+
+}
+
+.modal-content
+{
+        background: rgba(255, 255, 255, 1);	
+        position: fixed;
+        margin-top:30%;
+        margin-left:30%;
+        width:200%;
+        transform: translate(-25%,-25%);
+}
+    </style>
+
+
 
 <div class="breadcrumbs-area">
-  <h3>Fees Master : 2019-20</h3>
   <ul>
       <li>
           <a href="index.html">Home</a>
@@ -270,27 +302,12 @@
  </div>
  <div class="card height-auto">
   <div class="card-body">
-      <form class="mg-b-20">
-        <div class="row gutters-8">
-            <div class="col-3-xxxl col-xl-6 col-lg-6 col-12 form-group">
-              <label for="inp" class="inp">
-                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                <span class="label">Search By Payment ID*</span>
-                <span class="focus-bg"></span>
-            </label>
+    <div class="modal-header">
                
-            </div>
-            
-            <div class="col-1-xl col-xl-2 col-lg-3 col-12 form-group">
-                <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
-            </div>
-        </div>
-    </form>
-  
-    <br>
+      <h5> Fee Master List</h5>
 
+  </div>
     <div class="table-responsive">
-      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
             <tr>
@@ -307,7 +324,7 @@
                       <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                       <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                 </td>
-                <td> <a href="#"><i class="fas fa-eye "></i>&nbsp;</a> 
+                <td> <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp; 
                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
             </tr>
             <tr>
@@ -316,7 +333,7 @@
                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
               </td>
-              <td> <a href="#"><i class="fas fa-eye "></i>&nbsp;</a> 
+              <td>  <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp; 
                   <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
             </tr>
             
@@ -339,11 +356,12 @@
           <!-- Modal content-->
           <div class="modal-content" style="width:200%">
               <div class="modal-header">
+                             
+                  <h5> Add Fee Master</h5>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   
               </div>
               <div class="modal-body">
-                <h3>Add Fees Master : 2019-20</h3>
                   <form  class="new-added-form" role="form" method="post" id="reused_form" >
                       <div class="row">
                        <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -391,12 +409,10 @@
            
                           <div class="col-xl-3 col-lg-6 col-12 form-group">
                            <label for="dtp" class="dtp">
-                             <input type="text" id="dtp" placeholder="&nbsp;" class="form-control air-datepicker"
-                                 data-position='bottom right' name="admission" >
+                            <input type="date" id="dtp" placeholder="&nbsp;" name="admission" >
                              <span class="label">Due Date *</span>
                              <span class="focus-bg"></span>
                            </label>
-                           <i class="far fa-calendar-alt"></i>
                        </div>
            
                        <div class="col-xl-12 col-lg-12 col-12 form-group">
@@ -430,7 +446,6 @@
           </div>
       </div>
   </div>
-</div>
   
 
 

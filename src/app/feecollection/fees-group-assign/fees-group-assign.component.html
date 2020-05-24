@@ -1,0 +1,505 @@
+<style>
+    body {
+    height: 100vh;
+    display: grid;
+    font-family: Roboto;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .inp .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .inp .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .inp input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .inp input:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .inp input:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .inp input:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
+  .inp input:focus + .label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .inp input:focus + .label + .focus-bg {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+  
+
+/*******select box*********/
+.slt {
+    
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .slt .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  .slt .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .slt select {
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    width: 100%;
+    border:none;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .slt select:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .slt select:not(:placeholder-shown) + .label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .slt select:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
+  .slt select:focus + .label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+            transform: translate3d(0, -18px, 0) scale(0.75);
+  }
+  .slt select:focus + .label + .focus-bg {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+
+/*********datppicker****************/
+.dtp {  
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dtp .label {
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.dtp .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.dtp input {  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border:none;
+  font-family: inherit;
+  padding: 16px 12px 0 12px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  color: #000;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.dtp input:hover {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.dtp input:not(:placeholder-shown) + .label {
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus {
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  box-shadow: inset 0 -2px 0 #0077FF;
+}
+.dtp input:focus + .label {
+  color: #0077FF;
+  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+          transform: translate3d(0, -18px, 0) scale(0.75);
+}
+.dtp input:focus + .label + .focus-bg {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+/*************popup************************/
+
+.container 
+{
+  
+	background-size: cover;
+	background-repeat:no-repeat;    
+}
+.container-box
+{
+	display:inline-block; 
+        padding:10px; 
+   
+	background: rgba(136, 82, 82, 0.8);
+	border: 1px solid #fff;	
+	position: fixed;
+  	top: 55%;
+  	left: 0;
+
+}
+
+.modal-content
+{
+        background: rgba(255, 255, 255, 1);	
+        background: rgba(255, 255, 255, 1);	
+        position: fixed;
+        margin-top:30%;
+
+        width:200%;
+        transform: translate(-25%,-25%);
+}
+
+</style>
+
+<div class="breadcrumbs-area">
+  <ul>
+      <li>
+          <a href="index.html">Home</a>
+      </li>
+
+    </ul>
+</div>
+
+<div class="card height-auto">
+  <div class="card-body">
+    <div class="dropdown"> 
+      <form class="new-added-form">
+          <div class="row">
+            
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <label for="slt" class="slt">
+                    <select  name="class" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Class *</option>
+         
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    </select>
+                    <span class="label">Class *</span>
+                    <span class="focus-bg"></span>
+                </label>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <label for="slt" class="slt">
+                    <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Section *</option>
+         
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    </select>
+                    <span class="label">Section *</span>
+                    <span class="focus-bg"></span>
+                </label>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <label for="slt" class="slt">
+                    <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Section *</option>
+         
+                    <option value="1">General</option>
+                    <option value="2">Special</option>
+                    <option value="3">Physically Challenged</option>
+                    
+                    </select>
+                    <span class="label">Category *</span>
+                    <span class="focus-bg"></span>
+                </label>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <label for="slt" class="slt">
+                    <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Section *</option>
+         
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    </select>
+                    <span class="label">Gener *</span>
+                    <span class="focus-bg"></span>
+                </label>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <label for="slt" class="slt">
+                    <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected >Please Select Section *</option>
+         
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                    </select>
+                    <span class="label">RTE *</span>
+                    <span class="focus-bg"></span>
+                </label>
+            </div>
+            
+              
+                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                        <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
+
+                      </div>  
+                      <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    </div>
+              
+          </div>
+      </form>
+    
+      <div class="table-responsive">
+        
+        <table  id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+                <tr>
+                    <th><div class="form-check">
+                        <input type="checkbox" cl   ass="form-check-input checkAll">
+                        <label class="form-check-label">Admission No.</label>
+                    </div></th>
+                    <th>Student Name</th>
+                    <th>Class</th>
+                    <th>Father Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Category</th>
+                    <th>Mobile No.</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="form-check">
+                        <input type="checkbox" cl   ass="form-check-input checkAll">
+                        <label class="form-check-label">AC#2</label>
+                    </div></td>
+                    <td>Avdhoot Gore</td>
+                    <td>1(A)</td>
+                    <td>Atul</td>
+                    <td>01/11/2001</td>
+                    <td>Male</td>
+                    <td>Special</td>
+                    <td>9876543210</td>
+                    <td><a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a> 
+                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                    </td>
+                </tr>
+                <tr>
+                    <td><div class="form-check">
+                        <input type="checkbox" cl   ass="form-check-input checkAll">
+                        <label class="form-check-label">AC#2</label>
+                    </div></td>
+                  <td>Avdhoot Gore</td>
+                  <td>1(A)</td>
+                  <td>Atul</td>
+                  <td>01/11/2001</td>
+                  <td>Male</td>
+                  <td>Special</td>
+                  <td>9876543210</td>
+                  <td><a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a> 
+                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                  </td>
+                </tr>
+
+                <tr>
+                    <td><div class="form-check">
+                        <input type="checkbox" cl   ass="form-check-input checkAll">
+                        <label class="form-check-label">AC#2</label>
+                    </div></td>
+                  <td>Avdhoot Gore</td>
+                  <td>1(A)</td>
+                  <td>Atul</td>
+                  <td>01/11/2001</td>
+                  <td>Male</td>
+                  <td>Special</td>
+                  <td>9876543210</td>
+                  <td><a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a> 
+                      <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                      <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                  </td>
+              </tr>
+              <tr>
+                <td><div class="form-check">
+                    <input type="checkbox" cl   ass="form-check-input checkAll">
+                    <label class="form-check-label">AC#2</label>
+                </div></td>
+                <td>Avdhoot Gore</td>
+                <td>1(A)</td>
+                <td>Atul</td>
+                <td>01/11/2001</td>
+                <td>Male</td>
+                <td>Special</td>
+                <td>9876543210</td>
+                <td><a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a> 
+                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
+                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    
+                </td>
+              </tr>
+                
+            </tbody>
+
+        </table>
+        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Save</button>
+
+    </div>
+  </div>
+ </div>
+</div>
+
+  <!-- Admission Enquiry Area Start Here -->
+ 
+
+
+
+
+
+
+
