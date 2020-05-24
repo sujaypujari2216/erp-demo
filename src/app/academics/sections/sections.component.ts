@@ -24,7 +24,7 @@ export class SectionsComponent implements OnInit {
 
   constructor(
     private datatableservice: DatatableService,
-    private sectionsService: SectionsService
+    private sectionsService: SectionsService,
     )
      { }
 

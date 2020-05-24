@@ -8,4 +8,24 @@ export class ReferenceService {
   url = `http://yamistha.cloudjiffy.net/reference`;
 
   constructor(private http: HttpClient) {}
+
+  saveClass(classDto): any {
+    return this.http.post(this.url, classDto);
+  }
+
+  getAllClassList(): any {
+    return this.http.get(this.url);
+  }
+
+  deleteClass(classId): any {
+    return this.http.delete(this.url + classId);
+  }
+
+  updateClass(classDto, classId): any {
+    return this.http.put(this.url + classId, classDto);
+  }
+
+  getClassById(classId): any {
+    return this.http.get(this.url + classId);
+  }
 }
