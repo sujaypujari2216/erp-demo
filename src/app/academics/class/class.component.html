@@ -19,8 +19,10 @@
 
           <label for="inp" class="inp">
             <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="classDto.classses"
-              name="studentClass">
+              name="studentClass" value="classDto.classses">
             <span class="label">Class*</span>
+            <span class="focus-bg"></span>
+          </label>
 
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">
@@ -28,10 +30,8 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.section[0].section"
               name="studentSection">
               <option value="">select</option>
-              <option value="A" [selected]="classDto.section[0].section == 'A'">A</option>
-              <option value="B" [selected]="classDto.section[0].section == 'B'">B</option>
-              <option value="C" [selected]="classDto.section[0].section == 'C'">C</option>
-              <option value="D" [selected]="classDto.section[0].section == 'D'">D</option>
+              <option *ngFor="let sections of this.sectionDto" value="sections.section"
+                [selected]="classDto.section[0].section == sections.section">{{ sectionDto.section }}</option>
             </select>
             <span class="label">Section *</span>
             <span class="focus-bg"></span>
@@ -39,22 +39,14 @@
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <div class="form-group" style="float: right;">
-            <<<<<<< HEAD <button *ngIf="!this.isUpdate" (click)="addClass()" type="button"
+            <button *ngIf="!this.isUpdate" (click)="addClass()" type="button"
               class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
               Save
-              </button>
-              <button *ngIf="this.isUpdate" (click)="updateClass(classDto.id)" type="button"
-                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                =======
-                <button *ngIf="!this.isUpdate" (click)="addClass()" type="submit"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                  Save
-                </button>
-                <button *ngIf="this.isUpdate" (click)="updateClass(classDto.id)" type="submit"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                  >>>>>>> 6f4b03b5daa45d4c206eb0176ffa7de052c1ad28
-                  Update
-                </button>
+            </button>
+            <button *ngIf="this.isUpdate" (click)="updateClass(classDto.id)" type="button"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+              Update
+            </button>
           </div>
         </div>
       </div>
