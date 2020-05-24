@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { DatatableService } from "src/app/shared/datatableservice/datatable.service";
-import { HttpClient } from "@angular/common/http";
 import { ClassService } from "./class.service";
 @Component({
   selector: "app-class",
@@ -23,51 +22,88 @@ export class ClassComponent implements OnInit {
       }
     ]
   }
+  isUpdate: boolean = false;
 
   constructor(
-    private http: HttpClient,
     private datatableservice: DatatableService,
     private classService: ClassService
   ) { }
 
   ngOnInit(): void {
-    // this.http
-    //   .get(this.url)
-    //   .toPromise()
-    //   .then((res) => {
-    //     var data = res["data"];
-    //     var content = data["content"];
 
-    //     console.log(data);
-    //     console.log(content);
+    this.getClassList();
 
-    //     this.classes = content.map((key) => ({ ...key }));
-    //     this.datatableservice.initTable("Disable Reason");
-    //   });
+  }
 
+  getClassList() {
     this.classService.getAllClassList().subscribe((res: any) => {
-      console.log("resp received gor getAllClassList=");
-      console.log(res);
       var data = res["data"];
       var content = data["content"];
       this.classes = content.map((key) => ({ ...key }));
       this.datatableservice.initTable("Disable Reason");
     }, (err) => {
+      console.log("Error while fetching all Classes");
       console.error(err);
-      console.log("there is error");
     });
   }
 
   addClass() {
-
-    console.log(this.classDto);
-
-    this.classService.saveClass(this.classDto).subscribe((data: any) => {
-      console.log("resp received addClass=");
-      console.log(data);
+    this.classService.saveClass(this.classDto).subscribe((res: any) => {
+      if (res.success == true) {
+        alert("Class Saved Successfully");
+      }
+      //destroy dataTable
+      this.getClassList();
     }, (err) => {
+      console.log("Error While Saving Class");
       console.error(err);
-      console.log("there is error");
+    });
+  }
+
+  getClassById(classId) {
+    this.classService.getClassById(classId).subscribe((res: any) => {
+      this.classDto.classses = res.data.classses;
+      this.classDto.id = res.data.id;
+      this.classDto.isActive = res.data.isActive;
+      this.classDto.section = res.data.section;
+      console.log(this.classDto);
+
+    }, (err) => {
+      console.log("Error while fetching class by Id");
+      console.error(err);
+    });
+    return this.classDto;
+  }
+
+  setUpdateFileds(classId) {
+    this.isUpdate = true;
+    this.getClassById(classId);
+  }
+  updateClass(classId) {
+
+    this.classService.updateClass(this.classDto, classId).subscribe((res: any) => {
+      if (res.success == true) {
+        alert("Class Updated Successfully");
+      }
+      //destroy dataTable
+      this.getClassList();
+    }, (err) => {
+      console.log("Error while Updating class");
+      console.error(err);
+    });
+
+  }
+
+  deleteClass(classId) {
+    this.classService.deleteClass(classId).subscribe((res: any) => {
+      if (res.success == true) {
+        alert("Class deleted Successfully");
+      }
+      //destroy dataTable
+      this.getClassList();
+    }, (err) => {
+      console.log("Error while deleting class");
+      console.error(err);
     });
 
   }
