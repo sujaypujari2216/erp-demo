@@ -1,73 +1,77 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 declare const $;
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class DatatableService {
+  destroy(): void {
+    $(function () {
+      $("#example").DataTable().clear().destroy();
+    });
+  }
 
-  initTable(fileName:String):void {
-    console.log("Init");
-    $(function (){ 
-
-      $('#example').DataTable( {
+  initTable(fileName: String): void {
+    //console.log("Init");
+    $(function () {
+      $("#example").DataTable({
         order: [],
-        "responsive": "true",
-        "pagingType": "simple_numbers",
+        responsive: "true",
+        pagingType: "simple_numbers",
 
-        "language": {
-        "searchPlaceholder": "Search...",
-        "search": ""
+        language: {
+          searchPlaceholder: "Search...",
+          search: "",
         },
-      "oLanguage": {
-        "oPaginate": {
-            "sNext": '<i class="fas fa-chevron-right" ></i>',
-            "sPrevious": '<i class="fas fa-chevron-left" ></i>'
-        }
-     },
+        oLanguage: {
+          oPaginate: {
+            sNext: '<i class="fas fa-chevron-right" ></i>',
+            sPrevious: '<i class="fas fa-chevron-left" ></i>',
+          },
+        },
 
-        dom: '<Bf<t>irp>',//'Blfrtip',
+        dom: "<Bf<t>irp>", //'Blfrtip',
 
         buttons: [
           {
-            extend: 'colvis',
-            text:    '<i class="fas fa-columns"></i>',
-            postfixButtons: [ 'colvisRestore' ]
+            extend: "colvis",
+            text: '<i class="fas fa-columns"></i>',
+            postfixButtons: ["colvisRestore"],
           },
           {
-            extend: 'copy',
+            extend: "copy",
             title: fileName,
-            text:      '<i class="fas fa-copy"></i>',
-            titleAttr: 'Copy'
+            text: '<i class="fas fa-copy"></i>',
+            titleAttr: "Copy",
           },
           {
-            extend: 'excel',
+            extend: "excel",
             title: fileName,
-            text:      '<i class="fas fa-file-excel"></i>',
-            titleAttr: 'Excel'
+            text: '<i class="fas fa-file-excel"></i>',
+            titleAttr: "Excel",
           },
           {
-            extend: 'csv',
+            extend: "csv",
             title: fileName,
             text: '<i class="fas fa-file-csv"></i>',
-            titleAttr: 'CSV'
+            titleAttr: "CSV",
           },
           {
-            extend: 'pdf',
+            extend: "pdf",
             title: fileName,
             text: '<i class="fas fa-file-pdf"></i>',
-            titleAttr: 'PDF'
+            titleAttr: "PDF",
           },
           {
-            extend: 'print',
+            extend: "print",
             title: fileName,
-            text:      '<i class="fas fa-print"></i>',
-            titleAttr: 'Print',
-          } 
-            //'colvis', 'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-    } );
+            text: '<i class="fas fa-print"></i>',
+            titleAttr: "Print",
+          },
+          //'colvis', 'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+      });
+    });
   }
 
-  constructor() { }
+  constructor() {}
 }
