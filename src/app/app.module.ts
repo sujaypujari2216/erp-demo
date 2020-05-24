@@ -126,6 +126,7 @@ import { Issue1Component } from "./Library/issue-return/issue1/issue1.component"
     ReportsModule,
     AcademicsModule,
     RouterModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
@@ -141,4 +142,4 @@ import { Issue1Component } from "./Library/issue-return/issue1/issue1.component"
   providers: [DatatableService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

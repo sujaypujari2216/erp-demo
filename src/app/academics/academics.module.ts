@@ -10,14 +10,18 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { ClassComponent } from './class/class.component';
 import { SectionsComponent } from './sections/sections.component';
 import { SubjectGroupComponent } from './subject-group/subject-group.component';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
-  declarations: [ClassTimetableComponent, TeachersTimetableComponent, AssignClassTeacherComponent, 
+  declarations: [ClassTimetableComponent, TeachersTimetableComponent, AssignClassTeacherComponent,
     PromoteStudentsComponent, SubjectsComponent, ClassComponent, SectionsComponent, SubjectGroupComponent],
   imports: [
     CommonModule,
-    AcademicsRoutingModule
+    AcademicsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AcademicsModule { }
