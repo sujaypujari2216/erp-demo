@@ -8,6 +8,12 @@ import { PostaldispatchComponent } from './postaldispatch/postaldispatch.compone
 import { PostalreceiveComponent } from './postalreceive/postalreceive.component';
 import { ComplainComponent } from './complain/complain.component';
 import { SetupComponent } from './setup/setup.component';
+import { ComplainttypeComponent } from './setup/complainttype/complainttype.component';
+import { VisitorsPurposeComponent } from './setup/visitors-purpose/visitors-purpose.component';
+import { SourceComponent } from './setup/source/source.component';
+import { ReferenceComponent } from './setup/reference/reference.component';
+
+
 
 export const routes: Routes = [
    { path: 'Admission', component: AdmissionComponent},
@@ -17,6 +23,12 @@ export const routes: Routes = [
   {path : 'postaldispatch', component: PostaldispatchComponent},
   {path : 'postalreceive', component: PostalreceiveComponent},
   {path : 'setup', component: SetupComponent},
+  { path: 'complainttype', component: ComplainttypeComponent },
+  { path: 'visitors-purpose', component: VisitorsPurposeComponent },
+  { path: 'source', component: SourceComponent },
+  { path: 'reference', component: ReferenceComponent },
+
+
 
 ];
 

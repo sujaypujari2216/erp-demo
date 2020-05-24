@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 @Component({
   selector: 'app-setup',
   templateUrl: './setup.component.html',
-  //styleUrls: ['./setup.component.scss']
+  //styleUrls: ['./setup.component.scss'],
 })
 export class SetupComponent implements OnInit {
 
@@ -26,13 +26,11 @@ export class SetupComponent implements OnInit {
       var content = data['content'];
 
       this.setupfo = content.map(key=>({...key}))
-      this.datatableservice.initTable("Setup Front Office");
+      this.datatableservice.initTable('front office');
 
 
     });
   }
-
-  
 
 }
 
