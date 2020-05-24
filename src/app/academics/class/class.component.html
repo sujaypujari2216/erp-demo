@@ -17,8 +17,13 @@
       <div class="row">
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.classses"
-              name="studentClass">
+            <select
+              class="form-control"
+              id="slt"
+              placeholder="&nbsp;"
+              [(ngModel)]="classDto.classses"
+              name="studentClass"
+            >
               <option selected>Please Select Class *</option>
               <option value="1" [selected]="classDto.classses == '1'">1</option>
               <option value="2" [selected]="classDto.classses == '2'">2</option>
@@ -33,13 +38,26 @@
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.section[0].section"
-              name="studentSection">
+            <select
+              class="form-control"
+              id="slt"
+              placeholder="&nbsp;"
+              [(ngModel)]="classDto.section[0].section"
+              name="studentSection"
+            >
               <option value="">select</option>
-              <option value="A" [selected]="classDto.section[0].section == 'A'">A</option>
-              <option value='B' [selected]="classDto.section[0].section == 'B'">B</option>
-              <option value='C' [selected]="classDto.section[0].section == 'C'">C</option>
-              <option value='D' [selected]="classDto.section[0].section == 'D'">D</option>
+              <option value="A" [selected]="classDto.section[0].section == 'A'"
+                >A</option
+              >
+              <option value="B" [selected]="classDto.section[0].section == 'B'"
+                >B</option
+              >
+              <option value="C" [selected]="classDto.section[0].section == 'C'"
+                >C</option
+              >
+              <option value="D" [selected]="classDto.section[0].section == 'D'"
+                >D</option
+              >
             </select>
             <span class="label">Section *</span>
             <span class="focus-bg"></span>
@@ -47,15 +65,22 @@
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <div class="form-group" style="float: right;">
-            <button *ngIf="!this.isUpdate" (click)="addClass()" type="submit"
-              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+            <button
+              *ngIf="!this.isUpdate"
+              (click)="addClass()"
+              type="submit"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+            >
               Save
             </button>
-            <button *ngIf="this.isUpdate" (click)="updateClass(classDto.id)" type="submit"
-              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+            <button
+              *ngIf="this.isUpdate"
+              (click)="updateClass(classDto.id)"
+              type="submit"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+            >
               Update
             </button>
-
           </div>
         </div>
       </div>
@@ -70,7 +95,10 @@
       </div>
     </div>
     <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
+      <table
+        id="example"
+        class="table display data-table text-nowrap cell-border"
+      >
         <thead>
           <tr>
             <th>Class</th>
@@ -84,9 +112,12 @@
             <td>{{ class.section[0].section }}</td>
 
             <td>
-              <a (click)="setUpdateFileds(class.id)"><i
-                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>&nbsp;&nbsp;
-              <a (click)="deleteClass(class.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(class.id)"
+                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
+              >&nbsp;&nbsp;
+              <a (click)="deleteClass(class.id)"
+                ><i class="fas fa-times text-orange-red"></i>&nbsp;</a
+              >
             </td>
           </tr>
         </tbody>
