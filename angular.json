@@ -26,9 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-           
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -126,6 +124,10 @@
   "defaultProject": "ERP",
   "cli": {
     "analytics": "66545e2d-ac02-43c6-aaf7-10feaf18e557"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "displayBlock": true
+    }
   }
-  
 }
