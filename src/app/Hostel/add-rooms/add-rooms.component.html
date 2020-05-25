@@ -32,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let hostelroom  of hostelsroom">
+                        <tr *ngFor="let hostelroom  of hostelrooms">
                             <td>{{ hostelroom.roomNo }}</td>
                             <td>{{ hostelroom.hostelId }}</td>
                             <td>{{ hostelroom.roomTypeId }}</td>
@@ -63,19 +63,19 @@
                  
               </div>
               <div class="modal-body">
-                  <form role="form" method="post" id="reused_form" > 
+                  <form class="new-added-form" name="hostelroomForm" > 
                     <div class="row">
                         <div class="col-xl-4 col-lg-6 col-12 form-group">
                             <label for="inp" class="inp">
-                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Hostel Name</span>
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="hostelroomDto.hostelId" name="hostelid">
+                                <span class="label">Hostel Id</span>
                                 <span class="focus-bg"></span>
                               </label>
                         </div>
     
                         <div class="col-xl-4 col-lg-6 col-12 form-group">
                             <label for="inp" class="inp">
-                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="hostelroomDto.roomNo" name="roomNo">
                                 <span class="label">Room Number</span>
                                 <span class="focus-bg"></span>
                               </label>
@@ -83,12 +83,11 @@
     
                         <div class="col-xl-4 col-lg-6 col-12 form-group">
                             <label for="slt" class="slt">        
-                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.roomType[0].Type" name="roomtype">
                                   <option selected>Please Select *</option>
-                                  <option value="1">Big</option>
-                                  <option value="2">Medium</option>
-                                  <option value="3">Small</option>
-                                </select>
+                                  <option *ngFor="let roomTypes of this.roomtypeDto" value="roomTypes.roomType"
+                                  [selected]="roomtypeDto.roomType[0].type == roomTypes.roomType">{{ roomtypeDto.roomType }}</option>
+                                  </select>
                                 <span class="label">Room Type*</span>
                                 <span class="focus-bg"></span>
                             </label>
@@ -96,7 +95,7 @@
                         
                         <div class="col-xl-4 col-lg-6 col-12 form-group">
                             <label for="slt" class="slt">        
-                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                                <select  name="noOfBed" class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelroomDto.noOfBed">
                                   <option selected>Please Select *</option>
                                   <option value="1">02</option>
                                   <option value="2">03</option>
@@ -110,13 +109,20 @@
     
                         <div class="col-xl-4 col-lg-6 col-12 form-group">
                             <label for="inp" class="inp">
-                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="hostelroomDto.costPerBed" name="costperbed">
                                 <span class="label">Cost Per Bed</span>
                                 <span class="focus-bg"></span>
                               </label>
                         </div>
                         <div class="col-12 form-group mg-t-8">
-                            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                            <button *ngIf="!this.isUpdate" (click)="addHostelRoom()" type="button"
+                            class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                             Save
+                            </button>
+                            <button *ngIf="this.isUpdate" (click)="updateHostelRoom(hostelroomDto.id)" type="button"
+                            class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                             Update
+                            </button>
                             <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                         </div>
                     </div>

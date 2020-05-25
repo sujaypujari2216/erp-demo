@@ -68,6 +68,7 @@ import { ComplainttypeComponent } from './Frontoffice/setup/complainttype/compla
 import { VisitorsPurposeComponent } from './Frontoffice/setup/visitors-purpose/visitors-purpose.component';
 import { SourceComponent } from './Frontoffice/setup/source/source.component';
 import { ReferenceComponent } from './Frontoffice/setup/reference/reference.component';
+import { HostelModule } from './Reports/hostel/hostel.module';
 
 @NgModule({
   declarations: [
@@ -132,6 +133,7 @@ import { ReferenceComponent } from './Frontoffice/setup/reference/reference.comp
     CertificateModule,
     ReportsModule,
     AcademicsModule,
+    HostelModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
