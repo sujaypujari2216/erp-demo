@@ -1,10 +1,5 @@
-<!-- <div class="breadcrumbs-area">
-=======
 <div class="breadcrumbs-area">
-<<<<<<< HEAD
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-=======
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
+
   <ul>
     <li>
       <a href="/#/admin">Home</a>
@@ -13,251 +8,72 @@
   </ul>
 </div>
 
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h3>Hostel Lists</h3>
+<div class="col-8-xxxl col-12">
+  <div class="card height-auto">
+    <div class="card-body">
+      <div class="heading-layout1">
+        <div class="item-title">
+          <h3>Hostel Lists</h3>
+        </div>
+        <div class="dropdown">
+          <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
+        </div>
       </div>
-      <div class="dropdown">
-        <button
-          style="
-            background-color: #000066;
-            position: relative;
-            top: 0;
-            right: 10;
-            float: right;
-          "
-          type="button"
-          class="btn btn-info btn-lg"
-          data-toggle="modal"
-          data-target="#myModal"
-        >
-          + Add
-        </button>
-      </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    </div>
 
-    <div class="table-responsive">
-      <table
-        id="example"
-        class="table display data-table text-nowrap cell-border"
-      >
-        <thead>
-          <tr>
-            <th>Hostel Name</th>
-            <th>Type</th>
-            <th>Address</th>
-            <th>Intek</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table id="example" class="table display data-table text-nowrap cell-border">
+          <thead>
+            <tr>
+              <th>Hostel Name</th>
+              <th>Type</th>
+              <th>Address</th>
+              <th>Intek</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hostel of hostels">
+              <td>{{ hostel.hostelName }}</td>
+              <td>{{ hostel.type }}</td>
+              <td>{{ hostel.address }}</td>
+              <td>{{ hostel.intake }}</td>
+
+              <td>
+                <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
     </div>
   </div>
+
 </div>
+<!-- Add Hostel Area end Here -->
+
 
 <div class="container">
+
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-=======
-    </div>
-
-=======
-    </div>
-
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-    <div class="table-responsive">
-      <table
-        id="example"
-        class="table display data-table text-nowrap cell-border"
-      >
-        <thead>
-          <tr>
-            <th>Hostel Name</th>
-            <th>Type</th>
-            <th>Address</th>
-            <th>Intek</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>Boys</td>
-            <td>Pune</td>
-            <td>100</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify"></i>&nbsp;</a>
-              <a href="#"
-                ><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a
-              >
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
- Add Hostel Area end Here 
-
-<div class="container">
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-     
-
+      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         </div>
         <div class="modal-body">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <form
-            [formGroup]="hostelForm"
-            (submit)="formSubmit()"
-            id="reused_form"
-          >
-=======
-          <form [formGroup]="hostelForm" (ngSubmit)="formSubmit()">
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-=======
-          <form [formGroup]="hostelForm" (ngSubmit)="formSubmit()">
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
+          <form role="form" method="post" id="reused_form">
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="inp"
-                    formControlName="hotelName"
-                    placeholder="&nbsp;"
-                  />
+                  <input type="text" name="hostelName" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="hostelDto.hostelName">
                   <span class="label">Hostel Name *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -265,31 +81,22 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select
-                    formControlName="type"
-                    class="form-control"
-                    id="slt"
-                    placeholder="&nbsp;"
-                  >
-                    <option value="">Please Select</option>
-                    <option value="1">Girls</option>
-                    <option value="2">Boys</option>
-                    <option value="3">Other</option>
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
+                    <option selected>Please Select Type *</option>
+                    <option value="1" [selected]="hostelDto.type == 'Girls'">Girls</option>
+                    <option value="2" [selected]="hostelDto.type == 'Boys'">Boys</option>
+                    <option value="3" [selected]="hostelDto.type == 'Other'">Other</option>
                   </select>
                   <span class="label">Type *</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
+
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input
-                    type="text"
-                    formControlName="intake"
-                    class="form-control"
-                    id="inp"
-                    placeholder="&nbsp;"
-                  />
+                  <input type="text" name="intake" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="hostelDto.intake">
                   <span class="label">Intake</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -297,52 +104,36 @@
 
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input
-                    type="text"
-                    formControlName="address"
-                    class="form-control"
-                    id="inp"
-                    placeholder="&nbsp;"
-                  />
+                  <input type="text" name="address" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="hostelDto.address">
                   <span class="label">Address</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input
-                    type="text"
-                    formControlName="description"
-                    class="form-control"
-                    id="inp"
-                    placeholder="&nbsp;"
-                  />
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="hostelDto.description">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-12 form-group mg-t-8">
-                <button
-                  type="submit"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
-                >
-                  Save</button
-                >&nbsp;
-                <button
-                  type="reset"
-                  class="btn-fill-lg bg-blue-dark btn-hover-yellow"
-                >
-                  Reset
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
                 </button>
               </div>
             </div>
           </form>
         </div>
       </div>
+
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
- -->

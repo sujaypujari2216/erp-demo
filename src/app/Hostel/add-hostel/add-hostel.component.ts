@@ -1,145 +1,123 @@
-/* import { Component, OnInit } from "@angular/core";
-import { DatatableService } from "src/app/shared/datatableservice/datatable.service";
-import { HttpClient } from "@angular/common/http";
-import { HostelService } from "../hostel.service";
-import { FormsModule } from "@angular/forms";
-=======
-import { Component, OnInit } from "@angular/core";
-import { DatatableService } from "src/app/shared/datatableservice/datatable.service";
-import { HttpClient } from "@angular/common/http";
-import { FormGroup, FormControl } from "@angular/forms";
-import {} from "@angular/forms";
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-=======
-import { Component, OnInit } from "@angular/core";
-import { DatatableService } from "src/app/shared/datatableservice/datatable.service";
-import { HttpClient } from "@angular/common/http";
-import { FormGroup, FormControl } from "@angular/forms";
-import {} from "@angular/forms";
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
+import { Component, OnInit } from '@angular/core';
+import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { AddhostelService } from './addhostel.service';
+
+
 
 @Component({
-  selector: "app-add-hostel",
-  templateUrl: "./add-hostel.component.html",
-  styleUrls: ["./add-hostel.component.css"],
+  selector: 'app-add-hostel',
+  templateUrl: './add-hostel.component.html',
+  styleUrls: ['./add-hostel.component.css']
 })
 export class AddHostelComponent implements OnInit {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  //hostelName: string = "";
+
+
+
   url = `http://yamistha.cloudjiffy.net/hostel`;
-  //hostelService: any;
 
   hostels = [];
-  hostelService: any;
-  //hostelService: any;
+  hostelDto = {
+    "address": "",
+    "description": "",
+    "hostelName": "",
+    "id": 0,
+    "intake": 0,
+    "isActive": "yes",
+    "type": ""
+  }
 
-  constructor(
-    private http: HttpClient,
-    private datatableservice: DatatableService,
-    private dataService: HostelService
-  ) {}
+  isUpdate: boolean = false;
+  constructor(private addhostelService: AddhostelService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    /* this.http
-=======
-  url = `http://yamistha.cloudjiffy.net/hostel`;
-  hostels = [];
-  hostelForm = new FormGroup({
-    hostelName: new FormControl(""),
-    type: new FormControl(""),
-    intake: new FormControl(""),
-    address: new FormControl(""),
-    description: new FormControl(""),
-  });
+    this.getList();
+  }
 
-  constructor(
-    private http: HttpClient,
-    private datatableservice: DatatableService
-  ) {}
-
-  ngOnInit(): void {}
-  formSubmit() {
-    console.log(this.hostelForm.value);
-    //making POST req. to API
-    // this.http
-    //   .post(this.url, this.hostelForm.value, {
-    //     headers: {
-    //       "Content-type": "application/x-www-form-urlencoded; charset=utf-8",
-    //     },
-    //   })
-    //   .subscribe(
-    //     (res) => {
-    //       console.log(res);
-    //     },
-    //     (err) => {
-    //       console.log(err);
-    //     }
-    //   );
-
-    this.http
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-=======
-  url = `http://yamistha.cloudjiffy.net/hostel`;
-  hostels = [];
-  hostelForm = new FormGroup({
-    hostelName: new FormControl(""),
-    type: new FormControl(""),
-    intake: new FormControl(""),
-    address: new FormControl(""),
-    description: new FormControl(""),
-  });
-
-  constructor(
-    private http: HttpClient,
-    private datatableservice: DatatableService
-  ) {}
-
-  ngOnInit(): void {}
-  formSubmit() {
-    console.log(this.hostelForm.value);
-    //making POST req. to API
-    // this.http
-    //   .post(this.url, this.hostelForm.value, {
-    //     headers: {
-    //       "Content-type": "application/x-www-form-urlencoded; charset=utf-8",
-    //     },
-    //   })
-    //   .subscribe(
-    //     (res) => {
-    //       console.log(res);
-    //     },
-    //     (err) => {
-    //       console.log(err);
-    //     }
-    //   );
-
-    this.http
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-      .get(this.url)
-      .toPromise()
-      .then((res) => {
-        var data = res["data"];
-        var content = data["content"];
-
-        this.hostels = content.map((key) => ({ ...key }));
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //this line for what?
-        //this.initTable("Hostel List");
-      }); 
-    this.hostelService.sendGetRequest().subscribe((data: any[]) => {
-      console.log(data);
-      this.hostels = data;
+  getList() {
+    this.addhostelService.getList().subscribe((res: any) => {
+      var data = res['data'];
+      var content = data['content'];
+      this.hostels = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('hostels');
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
     });
-=======
-        this.datatableservice.initTable("Hoatel List");
-      });
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
-=======
-        this.datatableservice.initTable("Hoatel List");
-      });
->>>>>>> 4bce3c824172926d7027b2ab2a26b567ad69777e
+  }
+
+  add() {
+    this.addhostelService.save(this.hostelDto).subscribe((res: any) => {
+      if (res.success == true) {
+        alert('Saved Successfully');
+      }
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
+    }, (err) => {
+      console.log('Error While Saving');
+      console.error(err);
+    });
+  }
+
+  getById(Id) {
+    this.addhostelService.getById(Id).subscribe((res: any) => {
+      this.hostelDto.hostelName = res.data.hostelName;
+      this.hostelDto.description = res.data.description;
+      this.hostelDto.address = res.data.address;
+      this.hostelDto.intake = res.data.intake;
+      this.hostelDto.id = res.data.id;
+      this.hostelDto.isActive = res.data.isActive;
+      // console.log(this.Dto);
+
+    }, (err) => {
+      console.log('Error while fetching');
+      console.error(err);
+    });
+    return this.hostelDto;
+  }
+  setUpdateFileds(Id) {
+    this.isUpdate = true;
+    this.getById(Id);
+  }
+  update(Id) {
+
+    this.addhostelService.update(this.hostelDto, Id).subscribe((res: any) => {
+      // tslint:disable-next-line: triple-equals
+      if (res.success == true) {
+        alert(' Updated Successfully');
+      }
+      this.datatableservice.destroy();
+      this.isUpdate = false;
+      this.getList();
+      this.clearData();
+    }, (err) => {
+      console.log('Error while Updating');
+      console.error(err);
+    });
+
+  }
+
+  delete(Id) {
+    this.addhostelService.delete(Id).subscribe((res: any) => {
+      if (res.success == true) {
+        alert('Deleted Successfully');
+      }
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
+    }, (err) => {
+      console.log('Error while deleting ');
+      console.error(err);
+    });
+  }
+
+  clearData() {
+    this.hostelDto.hostelName = "";
+    this.hostelDto.description = "";
+    this.hostelDto.address = "";
+    this.hostelDto.intake = 0;
+    this.hostelDto.id = 0;
+    this.hostelDto.isActive ="yes";
+    this.isUpdate = false;
   }
 }
- */

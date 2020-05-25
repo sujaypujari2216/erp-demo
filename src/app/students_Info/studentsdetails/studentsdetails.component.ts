@@ -25,10 +25,11 @@ export class StudentsdetailsComponent implements OnInit {
       var content = data['content'];
 
       this.students = content.map(key=>({...key}))
-      this.datatableservice.initTable("Student Details");
-
+      
 
     });
+    this.datatableservice.initTable("Student Details");
+
   }
 
   

@@ -9,27 +9,27 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AddRoomsComponent implements OnInit {
 
-  url=`http://yamistha.cloudjiffy.net/hostel-room`;
-  
-  hostelsroom=[];
+  url = `http://yamistha.cloudjiffy.net/hostel-room`;
 
-  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
+  hostelsroom = [];
+
+  constructor(private http: HttpClient, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
     this.http
-    .get(this.url)
-    .toPromise()
-    .then((res) =>{
-      var data = res['data'];
-      var content = data['content'];
+      .get(this.url)
+      .toPromise()
+      .then((res) => {
+        var data = res['data'];
+        var content = data['content'];
 
-      this.hostelsroom = content.map(key=>({...key}))
-      this.datatableservice.initTable("hostel rooms");
+        this.hostelsroom = content.map(key => ({ ...key }))
+        this.datatableservice.initTable("hostel rooms");
 
 
-    });
+      });
   }
 
-  
+
 
 }

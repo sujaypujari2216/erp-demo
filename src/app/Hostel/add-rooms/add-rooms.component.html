@@ -1,129 +1,175 @@
 <div class="breadcrumbs-area">
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>Add New Rooms</li>
-    </ul>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>Add New Rooms</li>
+  </ul>
 </div>
 
 <!-- All Room List Area Start Here -->
 <div class="card height-auto">
-        <div class="card-body">
-            <div class="heading-layout1">
-                <div class="item-title">
-                    <h3>Hostel Room Lists</h3>
-                </div>
-                <div class="dropdown">
-                    <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+  <div class="card-body">
+    <div class="heading-layout1">
+      <div class="item-title">
+        <h3>Hostel Room Lists</h3>
+      </div>
+      <div class="dropdown">
+        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
 
-            </div>
-            </div>
-            <div class="table-responsive">
-                <table id="example" class="table display data-table text-nowrap cell-border">
-                    <thead>
-                        <tr>
-                            <th>Room No/Name</th>
-                            <th>Hostel</th>
-                            <th>Room Type</th>
-                            <th>No Of Bed</th>
-                            <th>Cost Per Bed</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let hostelroom  of hostelsroom">
-                            <td>{{ hostelroom.roomNo }}</td>
-                            <td>{{ hostelroom.hostelId }}</td>
-                            <td>{{ hostelroom.roomTypeId }}</td>
-                            <td>{{ hostelroom.noOfBed }}</td>
-                            <td>{{ hostelroom.costPerBed }}</td>
-
-                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                            </td>
-                        </tr>
-                                                                       
-                    </tbody>
-                </table>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="table-responsive">
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
+          <tr>
+            <th>Room No/Name</th>
+            <th>Hostel</th>
+            <th>Room Type</th>
+            <th>No Of Bed</th>
+            <th>Cost Per Bed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hostelroom of hostelsroom">
+            <td>{{ hostelroom.roomNo }}</td>
+            <td>{{ hostelroom.hostelId }}</td>
+            <td>{{ hostelroom.roomTypeId }}</td>
+            <td>{{ hostelroom.noOfBed }}</td>
+            <td>{{ hostelroom.costPerBed }}</td>
+
+            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>A-208</td>
+            <td>A</td>
+            <td>Normal</td>
+            <td>3</td>
+            <td>1000</td>
+            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>A-208</td>
+            <td>A</td>
+            <td>Normal</td>
+            <td>3</td>
+            <td>1000</td>
+            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
+          <tr>
+            <td>A-208</td>
+            <td>A</td>
+            <td>Normal</td>
+            <td>3</td>
+            <td>1000</td>
+            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
+          <tr>
+            <td>A-208</td>
+            <td>A</td>
+            <td>Normal</td>
+            <td>3</td>
+            <td>1000</td>
+            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <!-- All Room List Area End Here -->
 
 <div class="container">
 
-    <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                 
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <form role="form" method="post" id="reused_form">
+            <div class="row">
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Hostel Name</span>
+                  <span class="focus-bg"></span>
+                </label>
               </div>
-              <div class="modal-body">
-                  <form role="form" method="post" id="reused_form" > 
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Hostel Name</span>
-                                <span class="focus-bg"></span>
-                              </label>
-                        </div>
-    
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Room Number</span>
-                                <span class="focus-bg"></span>
-                              </label>
-                        </div>
-    
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="slt" class="slt">        
-                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                                  <option selected>Please Select *</option>
-                                  <option value="1">Big</option>
-                                  <option value="2">Medium</option>
-                                  <option value="3">Small</option>
-                                </select>
-                                <span class="label">Room Type*</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                        </div>
-                        
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="slt" class="slt">        
-                                <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                                  <option selected>Please Select *</option>
-                                  <option value="1">02</option>
-                                  <option value="2">03</option>
-                                  <option value="3">04</option>
-                                  <option value="4">05</option>
-                                </select>
-                                <span class="label">Number Of Beds*</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                        </div>
-    
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Cost Per Bed</span>
-                                <span class="focus-bg"></span>
-                              </label>
-                        </div>
-                        <div class="col-12 form-group mg-t-8">
-                            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
-                            <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-                        </div>
-                    </div>
-                   </form>
-   </div>
-   </div>
-    
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Room Number</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected>Please Select *</option>
+                    <option value="1">Big</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Small</option>
+                  </select>
+                  <span class="label">Room Type*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected>Please Select *</option>
+                    <option value="1">02</option>
+                    <option value="2">03</option>
+                    <option value="3">04</option>
+                    <option value="4">05</option>
+                  </select>
+                  <span class="label">Number Of Beds*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <span class="label">Cost Per Bed</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-12 form-group mg-t-8">
+                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
   </div>
-  </div>
-</div>  
+</div>

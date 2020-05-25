@@ -21,7 +21,7 @@ export class ReferenceComponent implements OnInit {
   constructor(private referenceService: ReferenceService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList()
+    this.getList();
   }
 
   getList() {
