@@ -55,7 +55,7 @@ export class ClassComponent implements OnInit {
         var data = res['data'];
         var content = data['content'];
         this.classes = content.map((key) => ({ ...key }));
-        this.datatableservice.initTable('class');
+        this.datatableservice.initTable("Class List");
       },
       (err) => {
         console.log('Error while fetching all Classes');
@@ -111,6 +111,7 @@ export class ClassComponent implements OnInit {
         }
         //destroy dataTable
         this.datatableservice.destroy();
+        this.isUpdate = false;
         this.getClassList();
       },
       (err) => {
