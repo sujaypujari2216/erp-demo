@@ -111,8 +111,8 @@ export class ClassComponent implements OnInit {
         }
         //destroy dataTable
         this.datatableservice.destroy();
-        this.getClassList();
         this.isUpdate = false;
+        this.getClassList();
       },
       (err) => {
         console.log('Error while Updating class');

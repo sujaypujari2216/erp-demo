@@ -5,27 +5,29 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class ReferenceService {
-  url = `http://yamistha.cloudjiffy.net/reference`;
+  url = `http://yamistha.cloudjiffy.net/reference/`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  saveClass(classDto): any {
-    return this.http.post(this.url, classDto);
+  save(Dto): any {
+    return this.http.post(this.url, Dto);
   }
 
-  getAllClassList(): any {
+  getList(): any {
     return this.http.get(this.url);
   }
 
-  deleteClass(classId): any {
-    return this.http.delete(this.url + classId);
+  delete(Id): any {
+
+    console.log(this.url + Id);
+    return this.http.delete(this.url + Id);
   }
 
-  updateClass(classDto, classId): any {
-    return this.http.put(this.url + classId, classDto);
+  update(Dto, Id): any {
+    return this.http.put(this.url + Id, Dto);
   }
 
-  getClassById(classId): any {
-    return this.http.get(this.url + classId);
+  getById(Id): any {
+    return this.http.get(this.url + Id);
   }
 }
