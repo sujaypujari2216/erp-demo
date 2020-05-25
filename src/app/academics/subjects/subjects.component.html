@@ -22,17 +22,22 @@
           </label>
         </div>
         <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <div class="custom-control-inline col-xl-5">
-            <input type="radio" id="customRadio1" [(ngModel)]="subjectDto.type" name="subjectType1"
-              checked="!checked" />
+          <!-- <div class="custom-control-inline col-xl-5">
+            <input type="radio" id="customRadio" [(ngModel)]="subjectDto.type" name="subjectType" value="Theory"
+              checked= />
 
-            <label for="customRadio1">Theory</label>&nbsp;
+            <label for="customRadio">Theory</label>&nbsp;
           </div>
           <div class="custom-control-inline col-xl-5">
-            <input type="radio" id="customRadio2" [(ngModel)]="subjectDto.type" name="subjectType2"
-              checked="!checked" />
-            <label for="customRadio2">Practical</label>
-          </div>
+            <input type="radio" id="customRadio" [(ngModel)]="subjectDto.type" name="subjectType" value="Practical" />
+            <label for="customRadio">Practical</label>
+          </div> -->
+          <input type="radio" class="form-check-input" id="customRadio" name="subjectType" [(ngModel)]="subjectDto.type"
+            [value]="Theory">
+          <label class="form-check-label" for="Theory">Theory</label>
+          <input type="radio" class="form-check-input" id="customRadio" name="subjectType" [(ngModel)]="subjectDto.type"
+            [value]="Practicle">
+          <label class="form-check-label" for="Practicle">Practicle</label>
         </div>
 
 
