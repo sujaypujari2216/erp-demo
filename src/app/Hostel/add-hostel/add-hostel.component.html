@@ -1,5 +1,4 @@
 <div class="breadcrumbs-area">
-
   <ul>
     <li>
       <a href="/#/admin">Home</a>
@@ -17,7 +16,7 @@
         </div>
         <div class="dropdown">
           <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
+            class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
 
@@ -40,35 +39,29 @@
               <td>{{ hostel.intake }}</td>
 
               <td>
-                <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                <a (click)="setUpdateFileds(hostel.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <a (click)="delete(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
               </td>
             </tr>
-
           </tbody>
         </table>
-
       </div>
     </div>
   </div>
-
 </div>
 <!-- Add Hostel Area end Here -->
 
 
 <div class="container">
-
-  <div id="myModal" class="modal fade" role="dialog">
+  <div id="myModal" class="modal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-
         </div>
         <div class="modal-body">
-          <form role="form" id="reused_form">
+          <form name="hostelForm">
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
@@ -110,6 +103,7 @@
                   <span class="focus-bg"></span>
                 </label>
               </div>
+
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
@@ -120,14 +114,16 @@
               </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button  (click)="add()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Save
-                </button>
-                <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Update
-                </button>
+                <div class="form-group" style="float: left;">
+                    <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                      Save
+                    </button>
+                    <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
+                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                      Update
+                    </button>
+              </div>
               </div>
             </div>
           </form>
