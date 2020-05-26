@@ -31,9 +31,9 @@ export class AddRoomsComponent implements OnInit {
   'hostelId': 0,
   'id': 0,
   'noOfBed': 0,
-  'roomNo': '',
-  'roomTypeId': 0,
-  'title': ''
+  'roomNo': 0,
+  'roomTypeId': 0
+  //'title': ''
   }
   isUpdate: boolean = false;
   roomtypeDto: any;
@@ -93,11 +93,11 @@ export class AddRoomsComponent implements OnInit {
       this.hostelroomDto.id = res.data.id;
       this.hostelroomDto.description = res.data.description;
       this.hostelroomDto.hostelId = res.data.hostelId;
-      this.hostelroomDto.createdAt = res.data.createdAt;
+     // this.hostelroomDto.createdAt = res.data.createdAt;
       this.hostelroomDto.noOfBed = res.data.noOfBed;
       this.hostelroomDto.roomNo = res.data.roomNo;
       this.hostelroomDto.roomTypeId = res.data.roomTypeId;
-      this.hostelroomDto.title = res.data.title;
+     // this.hostelroomDto.title = res.data.title;
       console.log(this.hostelroomDto);
 
     }, (err) => {
@@ -140,6 +140,13 @@ export class AddRoomsComponent implements OnInit {
 
   }
 
+  clearData(){
+    this.hostelroomDto.hostelId=0,
+    this.hostelroomDto.roomNo=0,
+    this.hostelroomDto.noOfBed=0,
+    this.hostelroomDto.costPerBed=0,
+    this.hostelroomDto.description=''
+  }
   
 
 }

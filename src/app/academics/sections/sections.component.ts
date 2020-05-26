@@ -108,7 +108,6 @@ export class SectionsComponent implements OnInit {
       console.log('Error while deleting section');
       console.error(err);
     });
-
   }
 }
 

@@ -109,8 +109,15 @@ export class AddHostelComponent implements OnInit {
 
   }
 
+  clearData(){
+    this.hostelDto.hostelName="",
+    this.hostelDto.type="",
+    this.hostelDto.intake=0,
+    this.hostelDto.address="",
+    this.hostelDto.description=""
+  }
 
- }
+}
 
   
   

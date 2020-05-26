@@ -101,9 +101,11 @@ export class AddRoomTypeComponent implements OnInit {
       console.log('Error while deleting section');
       console.error(err);
     });
-
   }
-
+  clearData() {
+    this.roomtypeDto.roomType = "";
+    this.roomtypeDto.description = "";
+  }
   
 
 }

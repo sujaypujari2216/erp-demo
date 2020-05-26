@@ -31,13 +31,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let hostelroomtype of hostelsroomtype">
+                            <tr *ngFor="let hostelroomtype of roomtypes">
                                 <td>{{ hostelroomtype.roomType }}</td>
                             
                                 <td>
-                                    <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                    <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                    <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                                    <a (click)="setUpdateFileds(roomtypeDto.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                                    <a (click)="deleteRoomType(roomtypeDto.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                                 </td>
                             </tr>
                             
@@ -64,7 +63,7 @@
                             <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                 <label for="inp" class="inp">
                                     <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.roomType" 
-                                    name="roomtype" value="roomtypeDto.roomType">
+                                    name="roomtype" >
                                     <span class="label">Room Type</span>
                                     <span class="focus-bg"></span>
                                 </label>
@@ -83,12 +82,12 @@
                                 <button *ngIf="!this.isUpdate" (click)="addRoomType()" type="button"
                                 class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                                 Save
-                                </button>
+                                </button>&nbsp;
                                 <button *ngIf="this.isUpdate" (click)="updateRoomType(roomtypeDto.id)" type="button"
                                 class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                                 Update
                                 </button>&nbsp;
-                                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                <button type="reset" (click)="clearData()" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                             </div>
                         </div>
                     </form>
