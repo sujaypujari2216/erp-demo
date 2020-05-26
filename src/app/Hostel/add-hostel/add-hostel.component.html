@@ -17,7 +17,7 @@
         </div>
         <div class="dropdown">
           <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
+            class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
 
@@ -72,8 +72,7 @@
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="hostelName" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.hostelName">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
                   <span class="label">Hostel Name *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -81,11 +80,11 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
-                    <option selected>Please Select Type *</option>
-                    <option value="Girls" [selected]="hostelDto.type == 'Girls'">Girls</option>
-                    <option value="Boys" [selected]="hostelDto.type == 'Boys'">Boys</option>
-                    <option value="Other" [selected]="hostelDto.type == 'Other'">Other</option>
+                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option value="">Please Select</option>
+                    <option value="1">Girls</option>
+                    <option value="2">Boys</option>
+                    <option value="3">Other</option>
                   </select>
                   <span class="label">Type *</span>
                   <span class="focus-bg"></span>
@@ -95,8 +94,7 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="intake" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.intake">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
                   <span class="label">Intake</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -104,31 +102,22 @@
 
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="address" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.address">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
                   <span class="label">Address</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.description">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Save
-                </button>
-                <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Update
-                </button>
+              <div class="col-12 form-group mg-t-8">
+                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
               </div>
             </div>
           </form>
