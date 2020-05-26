@@ -5,26 +5,30 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RoomTypeService {
+  url = `http://yamistha.cloudjiffy.net/room-type`;
 
-  constructor(private http:HttpClient) { }
-   
-  saveRoomType(roomtypeDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/room-type', roomtypeDto);
+
+  constructor(private http: HttpClient) { }
+
+  save(roomType): any {
+    return this.http.post(this.url, roomType);
   }
 
-  getAllRoomTypeList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/room-type/');
+  getList(): any {
+    return this.http.get(this.url);
   }
 
-  deleteRoomType(roomtypeId): any {
-    return this.http.delete('http://yamistha.cloudjiffy.net/room-type/' + roomtypeId);
+  delete(Id): any {
+
+    console.log(this.url + Id);
+    return this.http.delete(this.url + Id);
   }
 
-  updateRoomType(roomtypeDto, roomtypeId): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/room-type/' + roomtypeId, roomtypeDto);
+  update(roomType, Id): any {
+    return this.http.put(this.url + Id, roomType);
   }
 
-  getRoomTypeById(roomtypeId): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/room-type/' + roomtypeId);
+  getById(Id): any {
+    return this.http.get(this.url + Id);
   }
 }

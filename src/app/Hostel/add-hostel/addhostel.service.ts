@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
 
+
 @Injectable({
   providedIn: 'root'
+  
 })
 export class AddhostelService {
   url = `http://yamistha.cloudjiffy.net/hostel`;
