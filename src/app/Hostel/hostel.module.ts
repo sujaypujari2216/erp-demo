@@ -1,5 +1,5 @@
  import { NgModule } from '@angular/core';
-<<<<<<< HEAD
+
  import { CommonModule } from '@angular/common';
  import { FormsModule } from "@angular/forms";
  import { ReactiveFormsModule } from "@angular/forms";
@@ -16,7 +16,7 @@
     FormsModule,
     ReactiveFormsModule,
     HostelRoutingModule,
-=======
+
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -32,7 +32,7 @@ import { HostelRoutingModule } from './hostel-routing.module';
 	FormsModule,
   ReactiveFormsModule,
   HostelRoutingModule
->>>>>>> master
+
   ]
 })
 export class HostelModule { }

@@ -16,6 +16,7 @@
         </div>
         <div class="dropdown">
           <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
             class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
@@ -40,15 +41,14 @@
 
               <td>
                 <a (click)="setUpdateFileds(hostel.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-<<<<<<< HEAD
                 <a (click)="deleteHostel(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-=======
                 <a (click)="delete(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
->>>>>>> master
               </td>
             </tr>
+
           </tbody>
         </table>
+
       </div>
     </div>
   </div>
@@ -57,15 +57,19 @@
 
 
 <div class="container">
+
   <div id="myModal" class="modal" role="dialog">
+
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         </div>
         <div class="modal-body">
           <form name="hostelForm">
+
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
@@ -77,19 +81,21 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-<<<<<<< HEAD
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
                     <option selected>Please Select Type *</option>
+                    <option value="Girls" [selected]="hostelDto.type == 'Girls'">Girls</option>
+                    <option value="Boys" [selected]="hostelDto.type == 'Boys'">Boys</option>
+                    <option value="Other" [selected]="hostelDto.type == 'Other'">Other</option>
+
                     <option value="1" [selected]="hostelDto.type == 'Girls'">Girls</option>
                     <option value="2" [selected]="hostelDto.type == 'Boys'">Boys</option>
                     <option value="3" [selected]="hostelDto.type == 'Other'">Other</option>
-=======
                   <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
                     <option value="">Please Select</option>
                     <option value="1">Girls</option>
                     <option value="2">Boys</option>
                     <option value="3">Other</option>
->>>>>>> 338a4efc244e1574851822c17d6e2c81ecbbe97d
+
                   </select>
                   <span class="label">Type *</span>
                   <span class="focus-bg"></span>
@@ -120,10 +126,16 @@
                 </label>
               </div>
 
-<<<<<<< HEAD
               <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
                 <div class="form-group" style="float: left;">
-<<<<<<< HEAD
                     <button *ngIf="!this.isUpdate" (click)="addHostel()" type="button"
                       class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                       Save
@@ -133,7 +145,7 @@
                       Update
                     </button>
                     <button type="reset" (click)="clearData()" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-=======
+
                     <button *ngIf="!this.isUpdate" (click)="add()" type="button"
                       class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                       Save
@@ -142,19 +154,16 @@
                       class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                       Update
                     </button>
->>>>>>> master
               </div>
-=======
               <div class="col-12 form-group mg-t-8">
                 <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
                 <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
->>>>>>> 338a4efc244e1574851822c17d6e2c81ecbbe97d
+
               </div>
             </div>
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>

@@ -14,8 +14,9 @@ export class ReferenceComponent implements OnInit {
     "description": "",
     "id": 0,
     "isActive": "yes",
+    "reference": ""
     "reference": "",
-  }
+ }
 
   isUpdate: boolean = false;
   constructor(private referenceService: ReferenceService, private datatableservice: DatatableService) { }
