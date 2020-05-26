@@ -3,9 +3,8 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { HttpClientModule } from "@angular/common/http";
-
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 
@@ -76,7 +75,7 @@ import { HostelModule } from './Reports/hostel/hostel.module';
     HomeComponent,
     ParentinfoComponent,
     TeacherinfoComponent,
-
+   
     ParentsdetailsComponent,
     AddHomeworkComponent,
     SearchHomeworkComponent,
@@ -135,6 +134,7 @@ import { HostelModule } from './Reports/hostel/hostel.module';
     AcademicsModule,
     HostelModule,
     RouterModule,
+    BsDatepickerModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(

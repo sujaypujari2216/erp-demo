@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { RoomTypeService  } from './room-type.service';
 
+import { RoomTypeService  } from './room-type.service';
+
+import { HttpClient } from "@angular/common/http";
+
+
 
 @Component({
   selector: 'app-add-room-type',
@@ -23,6 +28,55 @@ export class AddRoomTypeComponent implements OnInit {
 
   isUpdate: boolean = false;
   constructor(private roomtypeService: RoomTypeService, private datatableservice: DatatableService) { }
+
+  roomType = {
+    "description": "",
+    "id": 0,
+    "isActive": "yes",
+    "roomType": ""
+  }
+
+  isUpdate: boolean = false;
+  constructor(private roomtypeService: RoomTypeService, private datatableservice: DatatableService) { }
+
+  constructor(private http: HttpClient, private datatableservice: DatatableService) { }
+
+  ngOnInit(): void {
+    this.http
+      .get(this.url)
+      .toPromise()
+      .then((res) => {
+        var data = res['data'];
+        var content = data['content'];
+
+        this.hostelsroomtype = content.map(key => ({ ...key }))
+        this.datatableservice.initTable("Add Room");
+
+
+      });
+  }
+
+
+
+  delete(Id) {
+    this.roomtypeService.delete(Id).subscribe((res: any) => {
+      if (res.success == true) {
+        alert('Deleted Successfully');
+      }
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
+    }, (err) => {
+      console.log('Error while deleting ');
+      console.error(err);
+    });
+  }
+  clearData() {
+    this.roomType.roomType = "";
+    this.roomType.description = "";
+  }
+  
+  constructor(private roomtypeservice:RoomTypeService,private datatableservice:DatatableService) { }
 
   ngOnInit(): void {
     this.getList();
@@ -61,6 +115,13 @@ export class AddRoomTypeComponent implements OnInit {
       this.roomType.id = res.data.id;
       this.roomType.isActive = res.data.isActive;
       // console.log(this.Dto);
+  getRoomTypeById(roomtypeId) {
+    this.roomtypeservice.getRoomTypeById(roomtypeId).subscribe((res: any) => {
+      this.roomtypeDto.roomType = res.data.roomType;
+      this.roomtypeDto.id = res.data.id;
+      this.roomtypeDto.isActive = res.data.isActive;
+      this.roomtypeDto.description = res.data.description;
+      console.log(this.roomtypeDto);
 
     }, (err) => {
       console.log('Error while fetching');
@@ -69,6 +130,8 @@ export class AddRoomTypeComponent implements OnInit {
     return this.roomType;
   }
   setUpdateFileds(Id) {
+
+  setUpdateFileds(roomtypeId) {
     this.isUpdate = true;
     this.getById(Id);
   }
@@ -111,4 +174,6 @@ export class AddRoomTypeComponent implements OnInit {
     this.roomType.roomType = "";
     this.isUpdate = false;
   }
+
 }
+

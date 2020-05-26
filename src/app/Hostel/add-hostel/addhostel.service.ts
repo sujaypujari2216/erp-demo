@@ -33,4 +33,9 @@ export class AddhostelService {
   getById(Id): any {
     return this.http.get(this.url + Id);
   }
+  
+
+  constructor(private http: HttpClient) { }
+
+  
 }
