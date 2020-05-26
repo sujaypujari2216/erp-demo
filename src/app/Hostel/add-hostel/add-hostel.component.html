@@ -16,7 +16,7 @@
         </div>
         <div class="dropdown">
           <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
+            class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
 
@@ -40,13 +40,15 @@
 
               <td>
                 <a (click)="setUpdateFileds(hostel.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+<<<<<<< HEAD
                 <a (click)="deleteHostel(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+=======
+                <a (click)="delete(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+>>>>>>> master
               </td>
             </tr>
-
           </tbody>
         </table>
-
       </div>
     </div>
   </div>
@@ -117,6 +119,7 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <div class="form-group" style="float: left;">
+<<<<<<< HEAD
                     <button *ngIf="!this.isUpdate" (click)="addHostel()" type="button"
                       class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                       Save
@@ -126,6 +129,16 @@
                       Update
                     </button>
                     <button type="reset" (click)="clearData()" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+=======
+                    <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                      Save
+                    </button>
+                    <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
+                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                      Update
+                    </button>
+>>>>>>> master
               </div>
               </div>
             </div>
