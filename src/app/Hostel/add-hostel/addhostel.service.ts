@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from "@angular/common/http";
+
+
 
 @Injectable({
   providedIn: 'root'
+  
 })
-export class RoomTypeService {
-  url = `http://yamistha.cloudjiffy.net/room-type`;
-
+export class AddhostelService {
+  url = `http://yamistha.cloudjiffy.net/hostel`;
 
   constructor(private http: HttpClient) { }
 
-  save(roomType): any {
-    return this.http.post(this.url, roomType);
+  save(hostelDto): any {
+    return this.http.post(this.url, hostelDto);
   }
 
   getList(): any {
@@ -24,8 +26,8 @@ export class RoomTypeService {
     return this.http.delete(this.url + Id);
   }
 
-  update(roomType, Id): any {
-    return this.http.put(this.url + Id, roomType);
+  update(hostelDto, Id): any {
+    return this.http.put(this.url + Id, hostelDto);
   }
 
   getById(Id): any {

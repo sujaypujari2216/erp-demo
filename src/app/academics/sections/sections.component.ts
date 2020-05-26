@@ -56,6 +56,8 @@ export class SectionsComponent implements OnInit {
         alert('section Saved Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getSectionList();
     }, (err) => {
       console.log('Error While Saving Class');
@@ -89,6 +91,8 @@ export class SectionsComponent implements OnInit {
         alert('section Updated Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getSectionList();
     }, (err) => {
       console.log('Error while Updating section');
@@ -103,6 +107,8 @@ export class SectionsComponent implements OnInit {
         alert('section deleted Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getSectionList();
     }, (err) => {
       console.log('Error while deleting section');

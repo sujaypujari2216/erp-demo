@@ -16,7 +16,7 @@
         </div>
         <div class="dropdown">
           <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-            class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">+ Add</button>
+            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
 
@@ -43,8 +43,10 @@
                 <a (click)="deleteHostel(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
               </td>
             </tr>
+
           </tbody>
         </table>
+
       </div>
     </div>
   </div>
@@ -53,15 +55,19 @@
 
 
 <div class="container">
+
   <div id="myModal" class="modal" role="dialog">
+
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         </div>
         <div class="modal-body">
           <form name="hostelForm">
+
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
@@ -76,9 +82,10 @@
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
                     <option selected>Please Select Type *</option>
-                    <option value="1" [selected]="hostelDto.type == 'Girls'">Girls</option>
-                    <option value="2" [selected]="hostelDto.type == 'Boys'">Boys</option>
-                    <option value="3" [selected]="hostelDto.type == 'Other'">Other</option>
+                    <option value="Girls" [selected]="hostelDto.type == 'Girls'">Girls</option>
+                    <option value="Boys" [selected]="hostelDto.type == 'Boys'">Boys</option>
+                    <option value="Other" [selected]="hostelDto.type == 'Other'">Other</option>
+
                   </select>
                   <span class="label">Type *</span>
                   <span class="focus-bg"></span>
@@ -114,23 +121,19 @@
               </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <div class="form-group" style="float: left;">
-                    <button *ngIf="!this.isUpdate" (click)="addHostel()" type="button"
-                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                      Save
-                    </button>
-                    <button *ngIf="this.isUpdate" (click)="updateHostel(hostelDto.id)" type="button"
-                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                      Update
-                    </button>
-                    <button type="reset" (click)="clearData()" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-              </div>
+                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>

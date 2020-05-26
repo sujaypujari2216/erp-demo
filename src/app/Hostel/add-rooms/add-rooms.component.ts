@@ -48,7 +48,7 @@ export class AddRoomsComponent implements OnInit {
   }
 
   getRoomTypeList() {
-    this.roomtypeservice.getAllRoomTypeList().subscribe((res: any) => {
+    this.roomtypeservice.getList().subscribe((res: any) => {
       var data = res.data;
       this.roomtypeDto = data.content;
       console.log(this.roomtypeDto);
@@ -139,7 +139,6 @@ export class AddRoomsComponent implements OnInit {
     });
 
   }
-
   clearData(){
     this.hostelroomDto.hostelId=0,
     this.hostelroomDto.roomNo=0,
@@ -147,6 +146,4 @@ export class AddRoomsComponent implements OnInit {
     this.hostelroomDto.costPerBed=0,
     this.hostelroomDto.description=''
   }
-  
-
 }

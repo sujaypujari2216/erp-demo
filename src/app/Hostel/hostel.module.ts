@@ -1,22 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HostelRoutingModule } from './hostel-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+ import { NgModule } from '@angular/core';
+ import { CommonModule } from '@angular/common';
+ import { FormsModule } from "@angular/forms";
+ import { ReactiveFormsModule } from "@angular/forms";
+ import { AddRoomTypeComponent } from './add-room-type/add-room-type.component';
+ import { AddRoomsComponent } from './add-rooms/add-rooms.component';
+ import { AddHostelComponent } from './add-hostel/add-hostel.component';
+ import { HostelRoutingModule } from './hostel-routing.module';
 
-import {AddRoomTypeComponent} from './add-room-type/add-room-type.component';
-import {AddRoomsComponent} from './add-rooms/add-rooms.component';
-import {AddHostelComponent} from './add-hostel/add-hostel.component';
 
-
-
-@NgModule({
-  declarations: [AddRoomTypeComponent,AddRoomsComponent,AddHostelComponent],
+ @NgModule({
+  declarations: [AddHostelComponent,AddRoomTypeComponent,AddRoomsComponent],
   imports: [
     CommonModule,
-    HostelRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HostelRoutingModule,
   ]
 })
 export class HostelModule { }
- 
+

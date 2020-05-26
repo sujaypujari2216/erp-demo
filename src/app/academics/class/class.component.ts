@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { ClassService } from './class.service';
-import { SectionsService } from '../sections/sections.service'; 
+import { SectionsService } from '../sections/sections.service';
 
 @Component({
   selector: 'app-class',
@@ -22,7 +22,7 @@ export class ClassComponent implements OnInit {
       }
     ]
   }
-   sectionDto:any = [];
+  sectionDto: any = [];
 
   isUpdate: boolean = false;
 
@@ -30,7 +30,7 @@ export class ClassComponent implements OnInit {
     private datatableservice: DatatableService,
     private classService: ClassService,
     private sectionsService: SectionsService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getClassList();
@@ -55,7 +55,7 @@ export class ClassComponent implements OnInit {
         var data = res['data'];
         var content = data['content'];
         this.classes = content.map((key) => ({ ...key }));
-        this.datatableservice.initTable('class');
+        this.datatableservice.initTable("Class List");
       },
       (err) => {
         console.log('Error while fetching all Classes');
@@ -111,6 +111,7 @@ export class ClassComponent implements OnInit {
         }
         //destroy dataTable
         this.datatableservice.destroy();
+        this.isUpdate = false;
         this.getClassList();
       },
       (err) => {

@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { SubjectService } from './subject.service';
 
+
+
 @Component({
   selector: 'app-subjects',
   templateUrl: './subjects.component.html',
   styleUrls: ['./subjects.component.css'],
 })
 export class SubjectsComponent implements OnInit {
+  
+
   url = `http://yamistha.cloudjiffy.net/subject`;
 
   subjects = [];
@@ -18,18 +22,24 @@ export class SubjectsComponent implements OnInit {
     'name': '',
     'type': ''
   }
+  
   isUpdate: boolean = false;
+  
 
   constructor(
     private datatableservice: DatatableService,
     private subjectService: SubjectService,
   ) { }
+  
+
 
   ngOnInit(): void {
 
     this.getSubjectList();
-
+    
   }
+ 
+
 
   getSubjectList() {
     this.subjectService.getAllSubjectList().subscribe((res: any) => {
@@ -53,6 +63,8 @@ export class SubjectsComponent implements OnInit {
         alert('Subject Saved Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getSubjectList();
     }, (err) => {
         console.log('Error While Saving Subject');
@@ -90,6 +102,8 @@ export class SubjectsComponent implements OnInit {
         alert('Subject Updated Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getSubjectList();
     }, (err) => {
         console.log('Error while Updating Subject');
@@ -104,6 +118,8 @@ export class SubjectsComponent implements OnInit {
         alert('Subject deleted Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getSubjectList();
     }, (err) => {
         console.log('Error while deleting Subject');
@@ -111,5 +127,10 @@ export class SubjectsComponent implements OnInit {
     });
 
   }
+  Theory =false;
+  Practicle = true;
+ 
+
+  
 }
 

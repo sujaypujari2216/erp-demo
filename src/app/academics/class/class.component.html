@@ -16,22 +16,20 @@
       </div>
       <div class="row">
         <div class="col-xl-4 col-lg-6 col-12 form-group">
-
           <label for="inp" class="inp">
             <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="classDto.classses"
-              name="studentClass" value="classDto.classses">
+              name="studentClass" [value]="classDto.classses">
             <span class="label">Class*</span>
             <span class="focus-bg"></span>
           </label>
-
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.section[0].section"
               name="studentSection">
               <option value="">select</option>
-              <option *ngFor="let sections of this.sectionDto" value="sections.section"
-                [selected]="classDto.section[0].section == sections.section">{{ sectionDto.section }}</option>
+              <option *ngFor="let sections of this.sectionDto" [value]="sections.section"
+                [selected]="classDto.section[0].section == sections.section">{{ sections.section }}</option>
             </select>
             <span class="label">Section *</span>
             <span class="focus-bg"></span>
