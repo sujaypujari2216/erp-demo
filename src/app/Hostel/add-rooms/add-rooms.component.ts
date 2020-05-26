@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-import { HttpClient } from "@angular/common/http";
+
 import { RoomsService } from './rooms.service';
 import { RoomTypeService } from '../add-room-type/room-type.service';
 
