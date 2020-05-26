@@ -9,8 +9,8 @@ export class ComplainttypeService {
 
   constructor(private http: HttpClient) { }
 
-  save(Dto): any {
-    return this.http.post(this.url, Dto);
+  save(complaintType): any {
+    return this.http.post(this.url, complaintType);
   }
 
   getList(): any {

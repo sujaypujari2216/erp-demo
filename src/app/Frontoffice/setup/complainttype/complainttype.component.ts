@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { ComplainttypeService } from './complainttype.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-complainttype',
   templateUrl: './complainttype.component.html',
-  styleUrls: ['./complainttype.component.css']
+  styleUrls: ['./complainttype.component.css'],
+  providers: [DatePipe]
 })
 export class ComplainttypeComponent implements OnInit {
 
@@ -13,16 +15,16 @@ export class ComplainttypeComponent implements OnInit {
   Dto = {
     "complaintType": "string",
     "createdAt": {
-      "date": 15,
-      "day": 3,
-      "hours": 2,
-      "minutes": 30,
-      "month": 3,
-      "nanos": 12,
-      "seconds": 13,
-      "time": 10,
-      "timezoneOffset": 5,
-      "year": 2020
+      "date": 0,
+      "day": 0,
+      "hours": 0,
+      "minutes": 0,
+      "month": 0,
+      "nanos": 0,
+      "seconds": 0,
+      "time": 0,
+      "timezoneOffset": 0,
+      "year": 0
     },
     "description": "string",
     "id": 0,
@@ -30,13 +32,15 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private complainttypeService: ComplainttypeService, private datatableservice: DatatableService) { }
+  myDate = new Date();
+  constructor(private complainttypeService: ComplainttypeService, private datatableservice: DatatableService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.getList()
   }
 
   getList() {
+    console.log('getList()');
     this.complainttypeService.getList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
@@ -49,6 +53,19 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   add() {
+    console.log('add()');
+    this.Dto.createdAt.date = this.myDate.getDate();
+    this.Dto.createdAt.day = this.myDate.getDay();
+    this.Dto.createdAt.hours = this.myDate.getHours();
+    this.Dto.createdAt.minutes = this.myDate.getMinutes();
+    this.Dto.createdAt.month = this.myDate.getMonth();
+    this.Dto.createdAt.nanos = this.myDate.getMilliseconds();
+    this.Dto.createdAt.seconds = this.myDate.getSeconds();
+    this.Dto.createdAt.time = this.myDate.getTime();
+    this.Dto.createdAt.timezoneOffset = this.myDate.getTimezoneOffset();
+    this.Dto.createdAt.year = this.myDate.getFullYear();
+    console.log(this.Dto);
+
     this.complainttypeService.save(this.Dto).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
@@ -63,6 +80,7 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   getById(Id) {
+    console.log('getById()');
     this.complainttypeService.getById(Id).subscribe((res: any) => {
       this.Dto.description = res.data.description;
       this.Dto.complaintType = res.data.complaintType;
@@ -77,12 +95,13 @@ export class ComplainttypeComponent implements OnInit {
     return this.Dto;
   }
   setUpdateFileds(Id) {
+    console.log('setUpdate()');
     this.isUpdate = true;
     this.getById(Id);
   }
 
   update(Id) {
-
+    console.log('update()');
     this.complainttypeService.update(this.Dto, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
@@ -100,6 +119,7 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   delete(Id) {
+    console.log('delete()');
     this.complainttypeService.delete(Id).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
@@ -114,6 +134,7 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   clearData() {
+    console.log('cleareData()');
     this.Dto.description = "";
     this.Dto.id = 0;
     this.Dto.isActive = "yes";
