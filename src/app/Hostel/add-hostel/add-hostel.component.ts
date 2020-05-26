@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { AddhostelService } from './addhostel.service';
 
-
-
 @Component({
   selector: 'app-add-hostel',
   templateUrl: './add-hostel.component.html',
@@ -111,13 +109,19 @@ export class AddHostelComponent implements OnInit {
     });
   }
 
-  clearData() {
-    this.hostelDto.hostelName = "";
-    this.hostelDto.description = "";
-    this.hostelDto.address = "";
-    this.hostelDto.intake = 0;
-    this.hostelDto.id = 0;
-    this.hostelDto.isActive ="yes";
-    this.isUpdate = false;
+  clearData(){
+    this.hostelDto.hostelName="",
+    this.hostelDto.type="",
+    this.hostelDto.intake=0,
+    this.hostelDto.address="",
+    this.hostelDto.description=""
   }
+
 }
+
+  
+  
+
+  
+
+ 

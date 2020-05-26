@@ -55,6 +55,35 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+<<<<<<< HEAD
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="example" class="table display data-table text-nowrap cell-border">
+                        <thead>
+                            <tr>
+                                <th>Room Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hostelroomtype of roomtypes">
+                                <td>{{ hostelroomtype.roomType }}</td>
+                            
+                                <td>
+                                    <a (click)="setUpdateFileds(roomtypeDto.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                                    <a (click)="deleteRoomType(roomtypeDto.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+=======
+>>>>>>> master
         </div>
 
         <div class="modal-body">
@@ -62,23 +91,60 @@
             <div class="row">
               <div class="col-12-xxxl col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
+<<<<<<< HEAD
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="roomType.roomType"
+                    name="roomType">
+=======
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="">
+>>>>>>> master
                   <span class="label">Room Type</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Descrption</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
-                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    
+                </div>
+                <div class="modal-body">
+                    <form role="form"  name="roomtypeForm" > 
+                        <div class="row">
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.roomType" 
+                                    name="roomtype" >
+                                    <span class="label">Room Type</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                                <label for="inp" class="inp">
+                                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.description"
+                                     name="roomdescription">
+                                    <span class="label">Descrption</span>
+                                    <span class="focus-bg"></span>
+                                </label>
+                            </div>
+                                        
+                            <div class="col-12 form-group mg-t-8">
+                                <button *ngIf="!this.isUpdate" (click)="addRoomType()" type="button"
+                                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                                Save
+                                </button>&nbsp;
+                                <button *ngIf="this.isUpdate" (click)="updateRoomType(roomtypeDto.id)" type="button"
+                                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                                Update
+                                </button>&nbsp;
+                                <button type="reset" (click)="clearData()" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
               </div>
             </div>
           </form>
