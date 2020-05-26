@@ -1,6 +1,9 @@
-import { Routes } from '@angular/router';
-
-
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { AdmissionComponent } from './Admission/Admission.component';
 import { VisitorbookComponent } from './visitorbook/visitorbook.component';
 import { calllogComponent} from './calllog/calllog.component';
@@ -15,7 +18,7 @@ import { ReferenceComponent } from './setup/reference/reference.component';
 
 
 
-export const routes: Routes = [
+const routes: Routes = [
    { path: 'Admission', component: AdmissionComponent},
   { path: 'visitorbook', component: VisitorbookComponent},
   { path: 'calllog', component: calllogComponent},
@@ -28,8 +31,15 @@ export const routes: Routes = [
   { path: 'source', component: SourceComponent },
   { path: 'reference', component: ReferenceComponent },
 
-
-
 ];
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule, BrowserModule, FormsModule, ReactiveFormsModule,
+    RouterModule.forChild(routes)
+  ]
+})
+export class FrontofficeRoutingModule {
+}
 
 
