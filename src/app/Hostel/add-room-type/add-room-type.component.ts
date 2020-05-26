@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { RoomTypeService  } from './room-type.service';
 
-import { RoomTypeService } from "./room-type.service";
 
 @Component({
   selector: 'app-add-room-type',
@@ -10,101 +10,102 @@ import { RoomTypeService } from "./room-type.service";
 })
 export class AddRoomTypeComponent implements OnInit {
 
-  url=`http://yamistha.cloudjiffy.net/room-type`;
-  roomtypes=[];
-  roomtypeDto = {
-    'id': 0,
-    'isActive': 'yes',
-    'roomType': '',
-    'description':''
-  }
-  isUpdate: boolean = false;
-  
-  
+  url = `http://yamistha.cloudjiffy.net/room-type`;
 
-  constructor(private roomtypeservice:RoomTypeService,private datatableservice:DatatableService) { }
+  hostelsroomtype = [];
+
+  roomType = {
+    "description": "",
+    "id": 0,
+    "isActive": "yes",
+    "roomType": ""
+  }
+
+  isUpdate: boolean = false;
+  constructor(private roomtypeService: RoomTypeService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getRoomTypeList();
+    this.getList();
   }
 
-  getRoomTypeList() {
-    this.roomtypeservice.getAllRoomTypeList().subscribe((res: any) => {
+  getList() {
+    this.roomtypeService.getList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
-      this.roomtypes = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('section');
-
+      this.hostelsroomtype = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('References');
     }, (err) => {
-      console.log('Error while fetching all Classes');
+      console.log('Error while fetching data');
       console.error(err);
     });
   }
 
-
-  addRoomType() {
-    this.roomtypeservice.saveRoomType(this.roomtypeDto).subscribe((res: any) => {
+  add() {
+    this.roomtypeService.save(this.roomType).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section Saved Successfully');
+        alert('Saved Successfully');
       }
-      //destroy dataTable
-      this.getRoomTypeList();
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
     }, (err) => {
-      console.log('Error While Saving Class');
+      console.log('Error While Saving');
       console.error(err);
     });
   }
 
-
-  getRoomTypeById(roomtypeId) {
-    this.roomtypeservice.getRoomTypeById(roomtypeId).subscribe((res: any) => {
-      this.roomtypeDto.roomType = res.data.roomType;
-      this.roomtypeDto.id = res.data.id;
-      this.roomtypeDto.isActive = res.data.isActive;
-      this.roomtypeDto.description = res.data.description;
-      console.log(this.roomtypeDto);
+  getById(Id) {
+    this.roomtypeService.getById(Id).subscribe((res: any) => {
+      this.roomType.description = res.data.description;
+      this.roomType.roomType = res.data.roomType;
+      this.roomType.id = res.data.id;
+      this.roomType.isActive = res.data.isActive;
+      // console.log(this.Dto);
 
     }, (err) => {
-      console.log('Error while fetching class by Id');
+      console.log('Error while fetching');
       console.error(err);
     });
-    return this.roomtypeDto;
+    return this.roomType;
   }
-  setUpdateFileds(roomtypeId) {
+  setUpdateFileds(Id) {
     this.isUpdate = true;
-    this.getRoomTypeById(roomtypeId);
+    this.getById(Id);
   }
-  updateRoomType(roomtypeId) {
+  update(Id) {
 
-    this.roomtypeservice.updateRoomType(this.roomtypeDto, roomtypeId).subscribe((res: any) => {
+    this.roomtypeService.update(this.roomType, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
-        alert('section Updated Successfully');
+        alert(' Updated Successfully');
       }
-      //destroy dataTable
-      this.getRoomTypeList();
+      this.datatableservice.destroy();
+      this.isUpdate = false;
+      this.getList();
+      this.clearData();
     }, (err) => {
-      console.log('Error while Updating section');
+      console.log('Error while Updating');
       console.error(err);
     });
 
   }
 
-  deleteRoomType(roomtypeId) {
-    this.roomtypeservice.deleteRoomType(roomtypeId).subscribe((res: any) => {
+  delete(Id) {
+    this.roomtypeService.delete(Id).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section deleted Successfully');
+        alert('Deleted Successfully');
       }
-      //destroy dataTable
-      this.getRoomTypeList();
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
     }, (err) => {
-      console.log('Error while deleting section');
+      console.log('Error while deleting ');
       console.error(err);
     });
   }
   clearData() {
-    this.roomtypeDto.roomType = "";
-    this.roomtypeDto.description = "";
+    this.roomType.roomType = "";
+    this.roomType.description = "";
   }
   
 

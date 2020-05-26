@@ -1,112 +1,112 @@
 import { Component, OnInit } from '@angular/core';
-import { HostelService } from './hostel.service';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { AddhostelService } from './addhostel.service';
 
 @Component({
-  selector: "app-add-hostel",
-  templateUrl: "./add-hostel.component.html",
-  styleUrls: ["./add-hostel.component.css"],
+  selector: 'app-add-hostel',
+  templateUrl: './add-hostel.component.html',
+  styleUrls: ['./add-hostel.component.css']
 })
 export class AddHostelComponent implements OnInit {
 
-  url=`http://yamistha.cloudjiffy.net/hostel`;
-  hostels=[];
-  hostelDto = {
-    'id': 0,
-    'isActive': 'yes',
-    'address': '',
-    'description':'',
-    'hostelName':'',
-    'intake':0,
-    'type':''
-  }
-  isUpdate: boolean = false;
-  
-  
 
-  constructor(private hostelservice:HostelService,private datatableservice:DatatableService) { }
+
+  url = `http://yamistha.cloudjiffy.net/hostel`;
+
+  hostels = [];
+  hostelDto = {
+    "address": "",
+    "description": "",
+    "hostelName": "",
+    "id": 0,
+    "intake": 0,
+    "isActive": "yes",
+    "type": ""
+  }
+
+  isUpdate: boolean = false;
+  constructor(private addhostelService: AddhostelService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getHostelList();
+    this.getList();
   }
 
-  getHostelList() {
-    this.hostelservice.getAllHostelList().subscribe((res: any) => {
+  getList() {
+    this.addhostelService.getList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.hostels = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('section');
-
+      this.datatableservice.initTable('hostels');
     }, (err) => {
-      console.log('Error while fetching all Classes');
+      console.log('Error while fetching data');
       console.error(err);
     });
   }
 
-
-  addHostel() {
-    this.hostelservice.saveHostel(this.hostelDto).subscribe((res: any) => {
+  add() {
+    this.addhostelService.save(this.hostelDto).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section Saved Successfully');
+        alert('Saved Successfully');
       }
-      //destroy dataTable
-      this.getHostelList();
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
     }, (err) => {
-      console.log('Error While Saving Class');
+      console.log('Error While Saving');
       console.error(err);
     });
   }
 
-
-  getHostelById(hostelId) {
-    this.hostelservice.getHostelById(hostelId).subscribe((res: any) => {
+  getById(Id) {
+    this.addhostelService.getById(Id).subscribe((res: any) => {
       this.hostelDto.hostelName = res.data.hostelName;
+      this.hostelDto.description = res.data.description;
+      this.hostelDto.address = res.data.address;
+      this.hostelDto.intake = res.data.intake;
       this.hostelDto.id = res.data.id;
       this.hostelDto.isActive = res.data.isActive;
-      this.hostelDto.description = res.data.description;
-      this.hostelDto.intake = res.data.intake;
-      this.hostelDto.type = res.data.type;
-      this.hostelDto.address = res.data.address;
-      console.log(this.hostelDto);
+      // console.log(this.Dto);
 
     }, (err) => {
-      console.log('Error while fetching class by Id');
+      console.log('Error while fetching');
       console.error(err);
     });
     return this.hostelDto;
   }
-  setUpdateFileds(hostelId) {
+  setUpdateFileds(Id) {
     this.isUpdate = true;
-    this.getHostelById(hostelId);
+    this.getById(Id);
   }
-  updateHostel(hostelId) {
+  update(Id) {
 
-    this.hostelservice.updateHostel(this.hostelDto, hostelId).subscribe((res: any) => {
+    this.addhostelService.update(this.hostelDto, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
-        alert('section Updated Successfully');
+        alert(' Updated Successfully');
       }
-      //destroy dataTable
-      this.getHostelList();
+      this.datatableservice.destroy();
+      this.isUpdate = false;
+      this.getList();
+      this.clearData();
     }, (err) => {
-      console.log('Error while Updating section');
+      console.log('Error while Updating');
       console.error(err);
     });
 
   }
 
-  deleteHostel(hostelId) {
-    this.hostelservice.deleteHostel(hostelId).subscribe((res: any) => {
+  delete(Id) {
+    this.addhostelService.delete(Id).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section deleted Successfully');
+        alert('Deleted Successfully');
       }
-      //destroy dataTable
-      this.getHostelList();
+      this.datatableservice.destroy();
+      this.getList();
+      this.clearData();
     }, (err) => {
-      console.log('Error while deleting section');
+      console.log('Error while deleting ');
       console.error(err);
     });
-
   }
 
   clearData(){
