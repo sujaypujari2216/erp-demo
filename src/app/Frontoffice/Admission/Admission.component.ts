@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { AdmissionenqService } from './admissionenq.service';
+ //import { SetupService } from '../setup/setup.service';
+
 
 
 @Component({
@@ -19,10 +21,10 @@ export class AdmissionComponent implements OnInit {
     "assigned": "",
     "class_": 0,
     "contact": "",
-    "date": "2020-05-26T07:06:07.048Z",
+    "date": "",
     "description": "",
     "email": "",
-    "followUpDate": "2020-05-26T07:06:07.048Z",
+    "followUpDate": "",
     "id": 0,
     "isActive": "",
     "name": "",
@@ -30,10 +32,12 @@ export class AdmissionComponent implements OnInit {
     "note": "",
     "reference": "",
     "source": "",
+    
   }
 
   isUpdate: boolean = false;
-  constructor(private admissionenqService: AdmissionenqService, private datatableservice: DatatableService) { }
+  constructor(private admissionenqService: AdmissionenqService, private datatableservice: DatatableService
+    ) { }
 
   ngOnInit(): void {
     this.getList();

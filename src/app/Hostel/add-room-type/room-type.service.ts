@@ -31,7 +31,4 @@ export class RoomTypeService {
   getById(Id): any {
     return this.http.get(this.url + Id);
   }
-
-  constructor(private http: HttpClient) { }
-
 }

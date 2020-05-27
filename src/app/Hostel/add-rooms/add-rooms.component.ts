@@ -11,40 +11,40 @@ import { RoomTypeService } from '../add-room-type/room-type.service';
 })
 export class AddRoomsComponent implements OnInit {
 
-  url=`http://yamistha.cloudjiffy.net/hostel-room`;
-  hostelrooms=[];
+  url = `http://yamistha.cloudjiffy.net/hostel-room`;
+  hostelrooms = [];
   hostelroomDto = {
     'costPerBed': 0,
-  'createdAt': {
-    'date': 0,
-    'day': 0,
-    'hours': 0,
-    'minutes': 0,
-    'month': 0,
-    'nanos': 0,
-    'seconds': 0,
-    'time': 0,
-    'timezoneOffset': 0,
-    'year': 0
-  },
-  'description': '',
-  'hostelId': 0,
-  'id': 0,
-  'noOfBed': 0,
-  'roomNo': 0,
-  'roomTypeId': 0
-  //'title': ''
+    /*'createdAt': { //not in design
+      'date': 0,
+      'day': 0,
+      'hours': 0,
+      'minutes': 0,
+      'month': 0,
+      'nanos': 0,
+      'seconds': 0,
+      'time': 0,
+      'timezoneOffset': 0,
+      'year': 0
+    },*/
+    'description': '',
+    'hostelId': 0,
+    'id': 0,
+    'noOfBed': 0,
+    'roomNo': 0,
+    'roomTypeId': 0
+    //'title': '' //not in design
   }
   isUpdate: boolean = false;
   roomtypeDto: any;
- 
-  
-  constructor(private hostelroomservice:RoomsService,private datatableservice:DatatableService,private roomtypeservice:RoomTypeService) { }
+
+
+  constructor(private hostelroomservice: RoomsService, private datatableservice: DatatableService, private roomtypeservice: RoomTypeService) { }
 
 
   ngOnInit(): void {
     this.getHostelRoomList();
-    this.getRoomTypeList(); 
+    this.getRoomTypeList();
   }
 
   getRoomTypeList() {
@@ -57,10 +57,10 @@ export class AddRoomsComponent implements OnInit {
       console.error(err);
     });
   }
-  
+
 
   getHostelRoomList() {
-    this.hostelroomservice.getAllHostelRoomList().subscribe((res: any) => {
+    this.hostelroomservice.getList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.hostelrooms = content.map((key) => ({ ...key }));
@@ -74,7 +74,7 @@ export class AddRoomsComponent implements OnInit {
 
 
   addHostelRoom() {
-    this.hostelroomservice.saveHostelRoom(this.hostelroomDto).subscribe((res: any) => {
+    this.hostelroomservice.save(this.hostelroomDto).subscribe((res: any) => {
       if (res.success == true) {
         alert('section Saved Successfully');
       }
@@ -88,16 +88,16 @@ export class AddRoomsComponent implements OnInit {
 
 
   getHostelRoomById(hostelroomId) {
-    this.hostelroomservice.getHostelRoomById(hostelroomId).subscribe((res: any) => {
+    this.hostelroomservice.getById(hostelroomId).subscribe((res: any) => {
       this.hostelroomDto.costPerBed = res.data.costPerBed;
       this.hostelroomDto.id = res.data.id;
       this.hostelroomDto.description = res.data.description;
       this.hostelroomDto.hostelId = res.data.hostelId;
-     // this.hostelroomDto.createdAt = res.data.createdAt;
+      // this.hostelroomDto.createdAt = res.data.createdAt;
       this.hostelroomDto.noOfBed = res.data.noOfBed;
       this.hostelroomDto.roomNo = res.data.roomNo;
       this.hostelroomDto.roomTypeId = res.data.roomTypeId;
-     // this.hostelroomDto.title = res.data.title;
+      // this.hostelroomDto.title = res.data.title;
       console.log(this.hostelroomDto);
 
     }, (err) => {
@@ -112,7 +112,7 @@ export class AddRoomsComponent implements OnInit {
   }
   updateHostelRoom(hostelroomId) {
 
-    this.hostelroomservice.updateHostelRoom(this.hostelroomDto, hostelroomId).subscribe((res: any) => {
+    this.hostelroomservice.update(this.hostelroomDto, hostelroomId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert('section Updated Successfully');
@@ -127,7 +127,7 @@ export class AddRoomsComponent implements OnInit {
   }
 
   deleteHostelRoom(hostelroomId) {
-    this.hostelroomservice.deleteHostelRoom(hostelroomId).subscribe((res: any) => {
+    this.hostelroomservice.delete(hostelroomId).subscribe((res: any) => {
       if (res.success == true) {
         alert('section deleted Successfully');
       }
@@ -139,11 +139,11 @@ export class AddRoomsComponent implements OnInit {
     });
 
   }
-  clearData(){
-    this.hostelroomDto.hostelId=0,
-    this.hostelroomDto.roomNo=0,
-    this.hostelroomDto.noOfBed=0,
-    this.hostelroomDto.costPerBed=0,
-    this.hostelroomDto.description=''
+  clearData() {
+    this.hostelroomDto.hostelId = 0,
+      this.hostelroomDto.roomNo = 0,
+      this.hostelroomDto.noOfBed = 0,
+      this.hostelroomDto.costPerBed = 0,
+      this.hostelroomDto.description = ''
   }
 }

@@ -1,7 +1,5 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { FrontofficeRoutingModule } from './Frontoffice-routing.module';
@@ -16,12 +14,20 @@ import { ComplainttypeComponent } from './setup/complainttype/complainttype.comp
 import { VisitorsPurposeComponent } from './setup/visitors-purpose/visitors-purpose.component';
 import { SourceComponent } from './setup/source/source.component';
 import { ReferenceComponent } from './setup/reference/reference.component';
+//import { FormsModule } from "@angular/forms";
+//import { ReactiveFormsModule } from "@angular/forms";
+
 @NgModule({
     declarations: [AdmissionComponent, calllogComponent, PostaldispatchComponent,
-        PostalreceiveComponent, ComplainComponent, SetupComponent, ComplainttypeComponent,
-        VisitorsPurposeComponent, SourceComponent, ReferenceComponent, VisitorbookComponent],
+        PostalreceiveComponent, ComplainComponent, VisitorbookComponent, VisitorsPurposeComponent, 
+        SourceComponent, ReferenceComponent,SetupComponent,ComplainttypeComponent,
+        PostalreceiveComponent,],
     imports: [
-        FrontofficeRoutingModule,CommonModule, FormsModule, ReactiveFormsModule, BrowserModule
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        
+        FrontofficeRoutingModule,
     ]
 })
 export class FrontofficeModule {

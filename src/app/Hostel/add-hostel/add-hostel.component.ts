@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { AddhostelService } from './addhostel.service';
-import { HttpClient } from "@angular/common/http";
-
 
 @Component({
   selector: 'app-add-hostel',
@@ -95,29 +93,7 @@ export class AddHostelComponent implements OnInit {
       console.error(err);
     });
 
-
-  url = `http://yamistha.cloudjiffy.net/hostel`;
-
-  hostels = [];
-
-  constructor(private http: HttpClient, private datatableservice: DatatableService) { }
-
-  ngOnInit(): void {
-    this.http
-      .get(this.url)
-      .toPromise()
-      .then((res) => {
-        var data = res['data'];
-        var content = data['content'];
-
-        this.hostels = content.map(key => ({ ...key }))
-        this.datatableservice.initTable("Hoatel List");
-
-
-      });
   }
-
-
 
   delete(Id) {
     this.addhostelService.delete(Id).subscribe((res: any) => {
@@ -133,20 +109,12 @@ export class AddHostelComponent implements OnInit {
     });
   }
 
-
-  clearData(){
-    this.hostelDto.hostelName="",
-    this.hostelDto.type="",
-    this.hostelDto.intake=0,
-    this.hostelDto.address="",
-    this.hostelDto.description=""
+  clearData() {
+    this.hostelDto.hostelName = "",
+      this.hostelDto.type = "",
+      this.hostelDto.intake = 0,
+      this.hostelDto.address = "",
+      this.hostelDto.description = ""
   }
 
 }
-
-  
-  
-
-  
-
-

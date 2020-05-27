@@ -1,16 +1,16 @@
 <style>
-    body {
+  body {
     height: 100vh;
     display: grid;
     font-family: Roboto;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
   }
-  
+
   * {
     box-sizing: border-box;
   }
-  
+
   .inp {
     position: relative;
     margin: auto;
@@ -19,6 +19,7 @@
     border-radius: 3px;
     overflow: hidden;
   }
+
   .inp .label {
     position: absolute;
     top: 20px;
@@ -27,13 +28,14 @@
     color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
     -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
+    transform-origin: 0 0;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     pointer-events: none;
   }
+
   .inp .focus-bg {
     position: absolute;
     top: 0;
@@ -43,14 +45,15 @@
     background: none;
     z-index: -1;
     -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    transform: scaleX(0);
     -webkit-transform-origin: left;
-            transform-origin: left;
+    transform-origin: left;
   }
+
   .inp input {
     -webkit-appearance: none;
     -moz-appearance: none;
-         appearance: none;
+    appearance: none;
     width: 100%;
     border: 0;
     font-family: inherit;
@@ -64,36 +67,41 @@
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
   }
+
   .inp input:hover {
     background: rgba(0, 0, 0, 0);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   }
-  .inp input:not(:placeholder-shown) + .label {
+
+  .inp input:not(:placeholder-shown)+.label {
     color: rgba(0, 0, 0, 0.5);
     -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
-            transform: translate3d(0, -18px, 0) scale(0.75);
+    transform: translate3d(0, -18px, 0) scale(0.75);
   }
+
   .inp input:focus {
     background: rgba(0, 0, 0, 0);
     outline: none;
     box-shadow: inset 0 -2px 0 #0077FF;
   }
-  .inp input:focus + .label {
+
+  .inp input:focus+.label {
     color: #0077FF;
     -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
-            transform: translate3d(0, -18px, 0) scale(0.75);
+    transform: translate3d(0, -18px, 0) scale(0.75);
   }
-  .inp input:focus + .label + .focus-bg {
+
+  .inp input:focus+.label+.focus-bg {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
-  
 
-/*******select box*********/
-.slt {
-    
+
+  /*******select box*********/
+  .slt {
+
     position: relative;
     margin: auto;
     width: 100%;
@@ -101,6 +109,7 @@
     border-radius: 3px;
     overflow: hidden;
   }
+
   .slt .label {
     position: absolute;
     top: 20px;
@@ -109,13 +118,14 @@
     color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
     -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
+    transform-origin: 0 0;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     pointer-events: none;
   }
+
   .slt .focus-bg {
     position: absolute;
     top: 0;
@@ -125,17 +135,18 @@
     background: rgba(0, 0, 0, 0);
     z-index: -1;
     -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    transform: scaleX(0);
     -webkit-transform-origin: left;
-            transform-origin: left;
+    transform-origin: left;
   }
+
   .slt select {
-    
+
     -webkit-appearance: none;
     -moz-appearance: none;
-         appearance: none;
+    appearance: none;
     width: 100%;
-    border:none;
+    border: none;
     font-family: inherit;
     padding: 16px 12px 0 12px;
     height: 45px;
@@ -147,278 +158,302 @@
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
   }
+
   .slt select:hover {
     background: rgba(0, 0, 0, 0);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   }
-  .slt select:not(:placeholder-shown) + .label {
+
+  .slt select:not(:placeholder-shown)+.label {
     color: rgba(0, 0, 0, 0.5);
     -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
-            transform: translate3d(0, -18px, 0) scale(0.75);
+    transform: translate3d(0, -18px, 0) scale(0.75);
   }
+
   .slt select:focus {
     background: rgba(0, 0, 0, 0);
     outline: none;
     box-shadow: inset 0 -2px 0 #0077FF;
   }
-  .slt select:focus + .label {
+
+  .slt select:focus+.label {
     color: #0077FF;
     -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
-            transform: translate3d(0, -18px, 0) scale(0.75);
+    transform: translate3d(0, -18px, 0) scale(0.75);
   }
-  .slt select:focus + .label + .focus-bg {
+
+  .slt select:focus+.label+.focus-bg {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
 
-/*********datppicker****************/
-.dtp {  
-  position: relative;
-  margin: auto;
-  width: 100%;
-  max-width: 280px;
-  border-radius: 3px;
-  overflow: hidden;
-}
+  /*********datppicker****************/
+  .dtp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
 
-.dtp .label {
-  position: absolute;
-  top: 20px;
-  left: 12px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 500;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  pointer-events: none;
-}
+  .dtp .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
 
-.dtp .focus-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.05);
-  z-index: -1;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-}
+  .dtp .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+  }
 
-.dtp input {  
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  width: 100%;
-  border:none;
-  font-family: inherit;
-  padding: 16px 12px 0 12px;
-  height: 45px;
-  font-size: 16px;
-  font-weight: 400;
-  background: rgba(0, 0, 0, 0);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-  color: #000;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
+  .dtp input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: none;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: #000;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
 
-.dtp input:hover {
-  background: rgba(0, 0, 0, 0);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-}
-.dtp input:not(:placeholder-shown) + .label {
-  color: rgba(0, 0, 0, 0.5);
-  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
-          transform: translate3d(0, -18px, 0) scale(0.75);
-}
-.dtp input:focus {
-  background: rgba(0, 0, 0, 0);
-  outline: none;
-  box-shadow: inset 0 -2px 0 #0077FF;
-}
-.dtp input:focus + .label {
-  color: #0077FF;
-  -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
-          transform: translate3d(0, -18px, 0) scale(0.75);
-}
-.dtp input:focus + .label + .focus-bg {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-}
-/*************popup************************/
+  .dtp input:hover {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
 
-.container 
-{
-  
-	background-size: cover;
-	background-repeat:no-repeat;    
-}
-.container-box
-{
-	display:inline-block; 
-        padding:10px; 
-   
-	border: 1px solid #fff;	
-	position: fixed;
-  	top: 55%;
-  	left: 0;
+  .dtp input:not(:placeholder-shown)+.label {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+    transform: translate3d(0, -18px, 0) scale(0.75);
+  }
 
-}
+  .dtp input:focus {
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    box-shadow: inset 0 -2px 0 #0077FF;
+  }
 
-.modal-content
-{
-        background: rgba(255, 255, 255, 1);	
-        position: fixed;
-        margin-top:30%;
+  .dtp input:focus+.label {
+    color: #0077FF;
+    -webkit-transform: translate3d(0, -18px, 0) scale(0.75);
+    transform: translate3d(0, -18px, 0) scale(0.75);
+  }
 
-        width:200%;
-        transform: translate(-25%,-25%);
-}
+  .dtp input:focus+.label+.focus-bg {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+
+  /*************popup************************/
+
+  .container {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .container-box {
+    display: inline-block;
+    padding: 10px;
+
+    border: 1px solid #fff;
+    position: fixed;
+    top: 55%;
+    left: 0;
+
+  }
+
+  .modal-content {
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    margin-top: 30%;
+
+    width: 200%;
+    transform: translate(-25%, -25%);
+  }
+
 </style>
 
 
 <div class="breadcrumbs-area">
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>Postal Receive</li>
-    </ul>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>Postal Receive</li>
+  </ul>
 </div>
 <div class="card height-auto">
-    <div class="card-body">
-      <div class="heading-layout1">
-        <div class="item-title">
-            <h3>Postal List</h3>
-        </div>
-        <div class="dropdown">
-            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-        </div>
-    </div>
-        <div class="table-responsive">
-
-          <table  id="example" class="table display data-table text-nowrap cell-border">
-              <thead>
-                  
-                  <tr>
-                      <th>From Title</th>
-                      <th>Reference No.</th>
-                      <th>To Title</th>  
-                      <th>Date</th>
-                      <th>Action</th>
-                      
-                  </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let rec of postalreceive">
-                  <td>{{ rec.fromTitle }}</td>
-                  <td>{{ rec.referenceNo }}</td>
-                  <td>{{ rec.toTitle }}</td>
-                  <td>{{ rec.date }}</td>
-   
-                      <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                        <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                  </tr>
-                 
-                 
-              </tbody>
-          </table>
+  <div class="card-body">
+    <div class="heading-layout1">
+      <div class="item-title">
+        <h3>Postal List</h3>
+      </div>
+      <div class="dropdown">
+        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
       </div>
     </div>
-   </div>
-  
-    
-  
-    <!-- Add Postal Receive Area Start Here -->
-   
-     <div class="container">
-   
-      <!-- Modal -->
-      <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                  <div class="modal-header">
-                    <h5> Add Postal Receive</h5>
+    <div class="table-responsive">
 
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                     
-                  </div>
-                  <div class="modal-body">
-                      <form role="form" method="post" id="reused_form" >  
-                        <div class="row">
-  
-                          <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">To Title *</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                         </div>
-            
-                         <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Reference No. *</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                         </div>
-            
-                         <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Address *</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                        </div>
-            
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">Note*</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                        </div>
-            
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="inp" class="inp">
-                                <input type="text"  class="form-control" id="inp" placeholder="&nbsp;">
-                                <span class="label">From Title*</span>
-                                <span class="focus-bg"></span>
-                            </label>
-                       </div>
-            
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="dtp" class="dtp">
-                              <input type="date" id="dtp" placeholder="&nbsp;"  
-                              >
-                                <span class="label">Date *</span>
-                                <span class="focus-bg"></span>
-                              </label>
-                      </div>
-                      
-            
-                       
-                             <div class="col-12 form-group mg-t-8">
-                                 <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
-                                 <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow"  >Reset</button>
-                             </div>
-                         </div>
-                      </form>
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
+
+          <tr>
+            <th>From Title</th>
+            <th>Reference No.</th>
+            <th>To Title</th>
+            <th>Date</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rec of postalreceive">
+            <td>{{ rec.fromTitle }}</td>
+            <td>{{ rec.referenceNo }}</td>
+            <td>{{ rec.toTitle }}</td>
+            <td>{{ rec.date }}</td>
+
+            <td>
+              <a href=""><i class=" fas fa-align-justify "></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(dispatchReceiveDto.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="delete(dispatchReceiveDto.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Add Postal Receive Area Start Here -->
+
+<div class="container">
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5> Add Postal Receive</h5>
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <form role="form" method="post" id="reused_form">
+            <div class="row">
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="dispatchReceiveDto.toTitle" name="toTitle" />
+                  <span class="label">To Title *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="dispatchReceiveDto.referenceNo" name="referenceNo" />
+                  <span class="label">Reference No. *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="dispatchReceiveDto.address" name="address" />
+                  <span class="label">Address *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="dispatchReceiveDto.note" name="note" />
+                  <span class="label">Note*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="dispatchReceiveDto.fromTitle" name="fromTitle" />
+                  <span class="label">From Title*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="date" id="dtp" placeholder="&nbsp;">
+                  <span class="label">Date *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-lg-4 col-12 form-group mg-t-30">
+                <label class="text-dark-medium">Upload document</label>
+                <input type="file" class="form-control-file" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="dispatchReceiveDto.image" name="image">
+              </div>
+
+
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="update(dispatchReceiveDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
   </div>
-  </div>
-  </div>
-  </div>
+</div>

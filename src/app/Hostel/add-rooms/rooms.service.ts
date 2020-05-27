@@ -6,25 +6,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RoomsService {
 
-  constructor(private http:HttpClient) { }
-   
-  saveHostelRoom(hostelroomDto): any {
+  constructor(private http: HttpClient) { }
+
+  save(hostelroomDto): any {
     return this.http.post('http://yamistha.cloudjiffy.net/hostel-room', hostelroomDto);
   }
 
-  getAllHostelRoomList(): any {
+  getList(): any {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/');
   }
 
-  deleteHostelRoom(hostelroomId): any {
+  delete(hostelroomId): any {
     return this.http.delete('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId);
   }
 
-  updateHostelRoom(hostelroomDto, hostelroomId): any {
+  update(hostelroomDto, hostelroomId): any {
     return this.http.put('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId, hostelroomDto);
   }
-
-  getHostelRoomById(hostelroomId): any {
+  getById(hostelroomId): any {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId);
   }
 }

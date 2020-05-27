@@ -15,7 +15,6 @@ export class ReferenceComponent implements OnInit {
     "id": 0,
     "isActive": "yes",
     "reference": ""
-    "reference": "",
  }
 
   isUpdate: boolean = false;
