@@ -32,7 +32,6 @@ import { VisitorsPurposeComponent } from "./Frontoffice/setup/visitors-purpose/v
 import { SourceComponent } from "./Frontoffice/setup/source/source.component";
 import { ReferenceComponent } from "./Frontoffice/setup/reference/reference.component";
 import { CalllogsComponent } from './Frontoffice/calllogs/calllogs.component';
-import { CalllogsService } from './Frontoffice/Calllogs/calllogs.service';
 
 
 const routes: Routes = [
@@ -46,7 +45,7 @@ const routes: Routes = [
   { path: "visitors-purpose", component: VisitorsPurposeComponent },
   { path: "source", component: SourceComponent },
   { path: "reference", component: ReferenceComponent },
-  { path: "calllogs", component: CalllogsService },
+  { path: "calllogs", component: CalllogsComponent },
 
 ];
 
@@ -63,6 +62,7 @@ const routes: Routes = [
     FrontcmsRoutingModule,
     FeeCollectionRoutingModule,
     HostelRoutingModule,
+   
     FrontofficeRoutingModule,
     CertificateRoutingModule,
     ExaminationRoutingModule,

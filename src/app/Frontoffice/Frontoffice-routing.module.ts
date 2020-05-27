@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AdmissionComponent } from './Admission/Admission.component';
 import { VisitorbookComponent } from './visitorbook/visitorbook.component';
-import { CalllogsComponent} from './Calllogs/calllogs.component';
+import { CalllogsComponent } from './calllogs/calllogs.component';
 import { PostaldispatchComponent } from './postaldispatch/postaldispatch.component';
 import { PostalreceiveComponent } from './postalreceive/postalreceive.component';
 import { ComplainComponent } from './complain/complain.component';
@@ -17,13 +17,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
-   { path: 'Admission', component: AdmissionComponent},
-  { path: 'visitorbook', component: VisitorbookComponent},
-  { path: 'calllogs', component: CalllogsComponent},
-  {path : 'complain', component: ComplainComponent},
-  {path : 'postaldispatch', component: PostaldispatchComponent},
-  {path : 'postalreceive', component: PostalreceiveComponent},
-  {path : 'setup', component: SetupComponent},
+  { path: 'Admission', component: AdmissionComponent },
+  { path: 'visitorbook', component: VisitorbookComponent },
+  { path: 'calllogs', component: CalllogsComponent },
+  { path: 'complain', component: ComplainComponent },
+  { path: 'postaldispatch', component: PostaldispatchComponent },
+  { path: 'postalreceive', component: PostalreceiveComponent },
+  { path: 'setup', component: SetupComponent },
   //{ path: 'complainttype', component: ComplainttypeComponent },
   //{ path: 'visitors-purpose', component: VisitorsPurposeComponent },
   //{ path: 'source', component: SourceComponent },
@@ -32,19 +32,18 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [AdmissionComponent, CalllogsComponent, PostaldispatchComponent,
-        PostalreceiveComponent, ComplainComponent, VisitorbookComponent, 
-        SetupComponent,
-        PostalreceiveComponent,
-],
+    PostalreceiveComponent, ComplainComponent, VisitorbookComponent,
+    SetupComponent,
+    PostalreceiveComponent,
+  ],
   imports: [
     CommonModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
-    
+
     RouterModule.forChild(routes)
   ]
 })
 export class FrontofficeRoutingModule {
 }
-
 
