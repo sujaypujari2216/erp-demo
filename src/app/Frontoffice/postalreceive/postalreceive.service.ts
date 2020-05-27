@@ -15,7 +15,7 @@ export class PostalreceiveService {
     return this.http.post(this.url, dispatchReceiveDto);
   }
 
-  getList(): any {
+  getAllList(): any {
     return this.http.get(this.url);
   }
 

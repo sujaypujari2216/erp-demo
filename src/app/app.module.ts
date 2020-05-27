@@ -67,6 +67,8 @@ import { VisitorsPurposeComponent } from './Frontoffice/setup/visitors-purpose/v
 import { SourceComponent } from './Frontoffice/setup/source/source.component';
 import { ReferenceComponent } from './Frontoffice/setup/reference/reference.component';
 import { HostelModule } from './Reports/hostel/hostel.module';
+import { CalllogsComponent } from './Frontoffice/calllogs/calllogs.component';
+
 
 @NgModule({
   declarations: [
@@ -94,6 +96,7 @@ import { HostelModule } from './Reports/hostel/hostel.module';
     ApplyLeaveComponent,
     DepartmentComponent,
     DesignationComponent,
+    CalllogsComponent,
     DisabledStaffComponent,
     ImportStaffComponent,
     LeaveTypeComponent,

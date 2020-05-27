@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AdmissionComponent } from './Admission/Admission.component';
 import { VisitorbookComponent } from './visitorbook/visitorbook.component';
-import { calllogComponent} from './calllog/calllog.component';
+import { CalllogsComponent} from './Calllogs/calllogs.component';
 import { PostaldispatchComponent } from './postaldispatch/postaldispatch.component';
 import { PostalreceiveComponent } from './postalreceive/postalreceive.component';
 import { ComplainComponent } from './complain/complain.component';
@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
    { path: 'Admission', component: AdmissionComponent},
   { path: 'visitorbook', component: VisitorbookComponent},
-  { path: 'calllog', component: calllogComponent},
+  { path: 'calllogs', component: CalllogsComponent},
   {path : 'complain', component: ComplainComponent},
   {path : 'postaldispatch', component: PostaldispatchComponent},
   {path : 'postalreceive', component: PostalreceiveComponent},
@@ -31,7 +31,7 @@ const routes: Routes = [
 
 ];
 @NgModule({
-  declarations: [AdmissionComponent, calllogComponent, PostaldispatchComponent,
+  declarations: [AdmissionComponent, CalllogsComponent, PostaldispatchComponent,
         PostalreceiveComponent, ComplainComponent, VisitorbookComponent, 
         SetupComponent,
         PostalreceiveComponent,

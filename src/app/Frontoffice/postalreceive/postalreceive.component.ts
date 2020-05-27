@@ -26,11 +26,11 @@ export class PostalreceiveComponent implements OnInit {
   constructor(private postalService: PostalreceiveService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getAllList();
   }
 
-  getList() {
-    this.postalService.getList().subscribe((res: any) => {
+  getAllList() {
+    this.postalService.getAllList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.postalreceive = content.map((key) => ({ ...key }));
@@ -41,24 +41,24 @@ export class PostalreceiveComponent implements OnInit {
     });
   }
 
+
   add() {
-   
-this.postalService.save(this.dispatchReceiveDto).subscribe(
+ this.postalService.save(this.dispatchReceiveDto).subscribe(
   (res: any) => {
     if (res.success == true) {
-      alert('Class Saved Successfully');
+      alert(' Saved Successfully');
     }
     //destroy dataTable
     this.datatableservice.destroy();
-    this.getList();
+    this.getAllList();
     this.clearData();
   },
   (err) => {
     console.log('Error While Saving Class');
     console.error(err);
+  });
   }
-);
-  }
+
 
   getById(Id) {
     this.postalService.getById(Id).subscribe((res: any) => {
@@ -69,7 +69,10 @@ this.postalService.save(this.dispatchReceiveDto).subscribe(
       this.dispatchReceiveDto.note = res.data.note;
       this.dispatchReceiveDto.referenceNo = res.data.referenceNo;
       this.dispatchReceiveDto.toTitle = res.data.toTitle;
+      this.dispatchReceiveDto.fromTitle = res.data.fromTitle;
       this.dispatchReceiveDto.isActive = res.data.isActive;
+      this.dispatchReceiveDto.type = res.data.type;
+
       // console.log(this.dispatchReceiveDto);
 
     }, (err) => {
@@ -78,6 +81,8 @@ this.postalService.save(this.dispatchReceiveDto).subscribe(
     });
     return this.dispatchReceiveDto;
   }
+
+ 
   setUpdateFileds(Id) {
     this.isUpdate = true;
     this.getById(Id);
@@ -91,22 +96,26 @@ this.postalService.save(this.dispatchReceiveDto).subscribe(
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getAllList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error while Updating');
       console.error(err);
     });
 
   }
-
+ 
   delete(Id) {
     this.postalService.delete(Id).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
-s    }, (err) => {
+      this.getAllList();
+      this.clearData();
+
+    }, (err) => {
       console.log('Error while deleting ');
       console.error(err);
     });
@@ -121,6 +130,12 @@ s    }, (err) => {
     this.dispatchReceiveDto.referenceNo = "";
     this.dispatchReceiveDto.toTitle = "";
     this.dispatchReceiveDto.isActive = "yes";
+    this.dispatchReceiveDto.type ="";
+    this.dispatchReceiveDto.fromTitle ="";
     this.isUpdate = false;
   }
 }
+
+
+
+
