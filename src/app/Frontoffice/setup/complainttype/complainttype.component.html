@@ -30,7 +30,7 @@
     </div>
     <div class="table-responsive">
       <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-        class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+        class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
 
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
@@ -45,8 +45,9 @@
             <td>{{ complainttype.complaintType }}</td>
 
 
-            <td><a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+            <td><a (click)="setUpdateFileds(complainttype.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="delete(complainttype.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
         </tbody>
@@ -77,7 +78,8 @@
 
               <div class="col-xl-3 col-lg-3 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="complainttype" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="Dto.complaintType">
                   <span class="label">Complaint Type *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -86,7 +88,8 @@
 
               <div class="col-xl-3 col-lg-3 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="search" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="Dto.description">
                   <span class="label">Description *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -94,8 +97,16 @@
 
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
-                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
+                {{ Dto.complaintType }}
+                {{ Dto.description }}
               </div>
             </div>
           </form>

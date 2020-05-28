@@ -27,12 +27,6 @@ import { AddPageComponent } from "./add-page/add-page.component";
 import { CreateTtComponent } from "./create-tt/create-tt.component";
 import { AttendanceRoutingModule } from "./Attendance/Attendance-routing.module";
 import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
-import { ComplainttypeComponent } from "./Frontoffice/setup/complainttype/complainttype.component";
-import { VisitorsPurposeComponent } from "./Frontoffice/setup/visitors-purpose/visitors-purpose.component";
-import { SourceComponent } from "./Frontoffice/setup/source/source.component";
-import { ReferenceComponent } from "./Frontoffice/setup/reference/reference.component";
-import { CalllogsComponent } from './Frontoffice/calllogs/calllogs.component';
-
 
 const routes: Routes = [
   { path: "create", component: CreateComponent },
@@ -41,12 +35,6 @@ const routes: Routes = [
   { path: "addNews", component: AddNewsComponent },
   { path: "addPage", component: AddPageComponent },
   { path: "issue1", component: Issue1Component },
-  { path: "complainttype", component: ComplainttypeComponent },
-  { path: "visitors-purpose", component: VisitorsPurposeComponent },
-  { path: "source", component: SourceComponent },
-  { path: "reference", component: ReferenceComponent },
-  { path: "calllogs", component: CalllogsComponent },
-
 ];
 
 @NgModule({
@@ -62,7 +50,6 @@ const routes: Routes = [
     FrontcmsRoutingModule,
     FeeCollectionRoutingModule,
     HostelRoutingModule,
-   
     FrontofficeRoutingModule,
     CertificateRoutingModule,
     ExaminationRoutingModule,
@@ -77,4 +64,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

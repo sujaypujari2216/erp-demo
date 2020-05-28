@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: "root",
 })
-export class ReferenceService {
-  url = `http://yamistha.cloudjiffy.net/reference/`;
-
+export class calllogService {
   constructor(private http: HttpClient) { }
+
+  url = `http://yamistha.cloudjiffy.net/general-call/`;
 
   save(Dto): any {
     return this.http.post(this.url, Dto);

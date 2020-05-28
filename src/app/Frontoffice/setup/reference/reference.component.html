@@ -49,9 +49,11 @@
             <td>{{ reference.reference }}</td>
 
 
-            <td><a (click)="setUpdateFileds(reference.id)" data-toggle="modal" data-target="#myModal"><i
+            <td>
+              <a (click)="setUpdateFileds(reference.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(reference.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="delete(reference.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
           </tr>
 
         </tbody>
@@ -80,7 +82,7 @@
 
             <div class="row">
 
-              <div class="col-xl-3 col-lg-3 col-12 form-group">
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="reference" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="Dto.reference">
@@ -90,7 +92,7 @@
               </div>
 
 
-              <div class="col-xl-3 col-lg-3 col-12 form-group">
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="Dto.description">
