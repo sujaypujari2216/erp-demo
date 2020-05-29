@@ -7,71 +7,59 @@
   </ul>
 </div>
 
-
 <!-- Add room type Area end Here -->
-
-<div class="container">
-
-
-  <!-- Add room type Area end Here -->
-  <div class="col-8-xxxl col-12">
-    <div class="card height-auto">
-      <div class="card-body">
-        <div class="heading-layout1">
-          <div class="item-title">
-            <h3>Room Type Lists</h3>
-          </div>
-          <div class="dropdown">
-            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;"
-              type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-
-          </div>
+<div class="col-8-xxxl col-12">
+  <div class="card height-auto">
+    <div class="card-body">
+      <div class="heading-layout1">
+        <div class="item-title">
+          <h3>Room Type Lists</h3>
         </div>
-        <div class="table-responsive">
-          <table id="example" class="table display data-table text-nowrap cell-border">
-            <thead>
-              <tr>
-                <th>Room Type</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let hostelroomtype of roomtypes">
-                <td>{{ hostelroomtype.roomType }}</td>
-
-                <td>
-                  <a (click)="setUpdateFileds(roomtypeDto.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a (click)="deleteRoomType(roomtypeDto.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
+        <div class="dropdown">
+          <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+            class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="example" class="table display data-table text-nowrap cell-border">
+          <thead>
+            <tr>
+              <th>Room Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hostelroomtype of hostelsroomtype">
+              <td>{{ hostelroomtype.roomType }}</td>
+              <td>
+                <a (click)="setUpdateFileds(roomType.id)" data-toggle="modal" data-target="#myModal"><i
+                    class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <a (click)="deleteRoomType(roomType.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
 </div>
 
-
 <div class="container">
-
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-
         </div>
         <div class="modal-body">
           <form role="form" name="roomtypeForm">
             <div class="row">
               <div class="col-12-xxxl col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="roomtypeDto.roomType" name="roomtype">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="roomType.roomType"
+                    name="roomtype" [value]="roomType.roomType">
                   <span class="label">Room Type</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -80,7 +68,7 @@
               <div class="col-12-xxxl col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="roomtypeDto.description" name="roomdescription">
+                    [(ngModel)]="roomType.description" name="roomdescription" [value]="roomType.description">
                   <span class="label">Descrption</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -88,22 +76,20 @@
 
               <div class="col-12 form-group mg-t-8">
                 <button *ngIf="!this.isUpdate" (click)="addRoomType()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>&nbsp;
-                <button *ngIf="this.isUpdate" (click)="updateRoomType(roomtypeDto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                <button *ngIf="this.isUpdate" (click)="updateRoomType(roomType.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Update
                 </button>&nbsp;
-                <!-- <button type="reset" (click)="clearData()"
-                  class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>-->
+                <button type="reset" (click)="clearData()"
+                  class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>&nbsp;
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
-
-
   </div>
 </div>

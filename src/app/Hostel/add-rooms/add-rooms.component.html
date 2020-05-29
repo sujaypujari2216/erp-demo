@@ -17,36 +17,35 @@
       <div class="dropdown">
         <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
           class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-
       </div>
-    </div>
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Room No/Name</th>
-            <th>Hostel</th>
-            <th>Room Type</th>
-            <th>No Of Bed</th>
-            <th>Cost Per Bed</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let hostelroom  of hostelrooms">
-            <td>{{ hostelroom.roomNo }}</td>
-            <td>{{ hostelroom.hostelId }}</td>
-            <td>{{ hostelroom.roomTypeId }}</td>
-            <td>{{ hostelroom.noOfBed }}</td>
-            <td>{{ hostelroom.costPerBed }}</td>
+      <div class="table-responsive">
+        <table id="example" class="table display data-table text-nowrap cell-border">
+          <thead>
+            <tr>
+              <th>Room No/Name</th>
+              <th>Hostel</th>
+              <th>Room Type</th>
+              <th>No Of Bed</th>
+              <th>Cost Per Bed</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hostelroom  of hostelrooms">
+              <td>{{ hostelroom.roomNo }}</td>
+              <td>{{ hostelroom.hostelId }}</td>
+              <td>{{ hostelroom.roomTypeId }}</td>
+              <td>{{ hostelroom.noOfBed }}</td>
+              <td>{{ hostelroom.costPerBed }}</td>
 
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

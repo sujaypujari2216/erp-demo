@@ -13,7 +13,7 @@ export class SourceService {
     return this.http.post(this.url, Dto);
   }
 
-  getList(): any {
+  getAllSourceList(): any {
     return this.http.get(this.url);
   }
 

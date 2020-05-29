@@ -8,29 +8,32 @@ import { HttpClient } from "@angular/common/http";
 
 })
 export class AddhostelService {
-  url = `http://yamistha.cloudjiffy.net/hostel`;
+  url = 'http://yamistha.cloudjiffy.net/hostel';
 
   constructor(private http: HttpClient) { }
 
   save(hostelDto): any {
-    return this.http.post(this.url, hostelDto);
+    return this.http.post('http://yamistha.cloudjiffy.net/hostel', hostelDto);
   }
 
   getList(): any {
-    return this.http.get(this.url);
+    return this.http.get('http://yamistha.cloudjiffy.net/hostel');
   }
 
   delete(Id): any {
 
-    console.log(this.url + Id);
-    return this.http.delete(this.url + Id);
+    console.log('http://yamistha.cloudjiffy.net/hostel/' + Id);
+    return this.http.delete('http://yamistha.cloudjiffy.net/hostel/' + Id);
   }
 
   update(hostelDto, Id): any {
-    return this.http.put(this.url + Id, hostelDto);
+    return this.http.put('http://yamistha.cloudjiffy.net/hostel/' + Id, hostelDto);
   }
 
   getById(Id): any {
-    return this.http.get(this.url + Id);
+    return this.http.get('http://yamistha.cloudjiffy.net/hostel/' + Id);
   }
+
+
+
 }

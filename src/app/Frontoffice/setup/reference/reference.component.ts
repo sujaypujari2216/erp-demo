@@ -10,12 +10,12 @@ import { ReferenceService } from './reference.service';
 })
 export class ReferenceComponent implements OnInit {
   references = [];
-  Dto = {
+ Dto = {
     "description": "",
     "id": 0,
     "isActive": "yes",
     "reference": ""
- }
+ };
 
   isUpdate: boolean = false;
   constructor(private referenceService: ReferenceService, private datatableservice: DatatableService) { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { AddhostelService } from './addhostel.service';
+import { HttpClient } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-add-hostel',
@@ -95,6 +97,8 @@ export class AddHostelComponent implements OnInit {
 
   }
 
+
+
   delete(Id) {
     this.addhostelService.delete(Id).subscribe((res: any) => {
       if (res.success == true) {
@@ -108,6 +112,7 @@ export class AddHostelComponent implements OnInit {
       console.error(err);
     });
   }
+
 
   clearData() {
     this.hostelDto.hostelName = "",

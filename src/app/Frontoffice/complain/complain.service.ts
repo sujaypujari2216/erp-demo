@@ -1,47 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { MtxGridColumn } from '@ng-matero/extensions';
-import { serialize } from '@shared';
-
-const TAG = {
-  true: { text: 'Yes', color: 'red-100' },
-  false: { text: 'No', color: 'green-100' },
-};
-
 @Injectable()
 export class ComplainService {
-  columns: MtxGridColumn[] = [
-    {
-      title: 'Name',
-      index: 'name',
-      type: 'format',
-      format: (data: any) => `<a href="${data.html_url}" target="_blank">${data.name}</a>`,
-    },
-    { title: 'Owner', index: 'owner.login' },
-    { title: 'Owner Avatar', index: 'owner.avatar_url', type: 'img' },
-    { title: 'Description', index: 'description', width: '300px' },
-    { title: 'stars', index: 'stargazers_count' },
-    { title: 'forks', index: 'forks_count' },
-    { title: 'Score', index: 'score' },
-    { title: 'Issues', index: 'open_issues' },
-    { title: 'Language', index: 'language' },
-    { title: 'License', index: 'license.name' },
-    { title: 'Home Page', index: 'homepage', type: 'link' },
-    {
-      title: 'Is forked',
-      index: 'fork',
-      type: 'format',
-      format: (data: any) => JSON.stringify(data.fork),
-    },
-    { title: 'Archived', index: 'archived', type: 'tag', tag: TAG },
-    { title: 'Created Date', index: 'created_at' },
-    { title: 'Updated Date', index: 'updated_at' },
-  ];
 
-  constructor(private http: HttpClient) {}
+  url = `http://yamistha.cloudjiffy.net/complaint`;
+  constructor(private http: HttpClient) { }
 
-  getData(query = {}) {
-    return this.http.get('https://api.github.com/search/repositories?' + serialize(query));
+  addComplain(complaint): any {
+    return this.http.post(this.url, complaint);
   }
+
+  getAllComplainList(): any {
+    return this.http.get(this.url);
+  }
+
+  deleteComplain(complainId): any {
+
+    console.log(this.url + complainId);
+    return this.http.delete(this.url + complainId);
+  }
+
+  updateComplain(complaint, complainId): any {
+    return this.http.put(this.url + complainId, complaint);
+  }
+
+  getcomplainById(complainId): any {
+    return this.http.get(this.url + complainId);
+  }
+
+
+
 }

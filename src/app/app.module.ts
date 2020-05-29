@@ -6,15 +6,10 @@ import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
-
 import { HomeComponent } from "./dashboard/home/home.component";
-
 import { ParentinfoComponent } from "./dashboard/parentinfo/parentinfo.component";
-
 import { TeacherinfoComponent } from "./dashboard/teacherinfo/teacherinfo.component";
-
 import { ParentsdetailsComponent } from "./parents_Info/parentsdetails/parentsdetails.component";
-
 import { AddHomeworkComponent } from "./Homework/add-homework/add-homework.component";
 import { SearchHomeworkComponent } from "./Homework/search-homework/search-homework.component";
 import { RouteComponent } from "./Transport/route/route.component";
@@ -75,7 +70,6 @@ import { HostelModule } from './Reports/hostel/hostel.module';
     HomeComponent,
     ParentinfoComponent,
     TeacherinfoComponent,
-   
     ParentsdetailsComponent,
     AddHomeworkComponent,
     SearchHomeworkComponent,

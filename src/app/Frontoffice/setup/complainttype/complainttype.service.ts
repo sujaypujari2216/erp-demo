@@ -13,7 +13,7 @@ export class ComplainttypeService {
     return this.http.post(this.url, complaintType);
   }
 
-  getList(): any {
+  getAllComplaintTypeList(): any {
     return this.http.get(this.url);
   }
 

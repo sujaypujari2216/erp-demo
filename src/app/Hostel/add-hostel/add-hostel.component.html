@@ -16,7 +16,7 @@
         </div>
         <div class="dropdown">
           <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-            class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
 
@@ -37,14 +37,16 @@
               <td>{{ hostel.type }}</td>
               <td>{{ hostel.address }}</td>
               <td>{{ hostel.intake }}</td>
-
               <td>
-                <a (click)="setUpdateFileds(hostel.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <a (click)="setUpdateFileds(hostel.id)" data-toggle="modal" data-target="#myModal"><i
+                    class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
                 <a (click)="delete(hostel.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
               </td>
             </tr>
+
           </tbody>
         </table>
+
       </div>
     </div>
   </div>
@@ -53,20 +55,24 @@
 
 
 <div class="container">
+
   <div id="myModal" class="modal" role="dialog">
+
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
         </div>
         <div class="modal-body">
           <form name="hostelForm">
+
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="hostelName" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.hostelName">
+                    [(ngModel)]="hostelDto.hostelName" [value]="hostelDto.hostelName">
                   <span class="label">Hostel Name *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -76,9 +82,9 @@
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
                     <option selected>Please Select Type *</option>
-                    <option value="1" [selected]="hostelDto.type == 'Girls'">Girls</option>
-                    <option value="2" [selected]="hostelDto.type == 'Boys'">Boys</option>
-                    <option value="3" [selected]="hostelDto.type == 'Other'">Other</option>
+                    <option value="Girls" [selected]="hostelDto.type == 'Girls'">Girls</option>
+                    <option value="Boys" [selected]="hostelDto.type == 'Boys'">Boys</option>
+                    <option value="Other" [selected]="hostelDto.type == 'Other'">Other</option>
                   </select>
                   <span class="label">Type *</span>
                   <span class="focus-bg"></span>
@@ -89,7 +95,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="intake" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.intake">
+                    [(ngModel)]="hostelDto.intake" [value]="hostelDto.intake">
                   <span class="label">Intake</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -98,16 +104,15 @@
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="address" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.address">
+                    [(ngModel)]="hostelDto.address" [value]="hostelDto.address">
                   <span class="label">Address</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
               <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelDto.description">
+                    [(ngModel)]="hostelDto.description" [value]="hostelDto.description">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -115,21 +120,26 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <div class="form-group" style="float: left;">
+                  <button type="reset" (click)="clearData()"
+                    class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+
                   <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
                     Save
                   </button>
                   <button *ngIf="this.isUpdate" (click)="update(hostelDto.id)" type="button"
-                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
                     Update
                   </button>
                 </div>
+
               </div>
             </div>
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>

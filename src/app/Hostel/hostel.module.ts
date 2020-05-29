@@ -18,4 +18,3 @@ import { HostelRoutingModule } from './hostel-routing.module';
   ]
 })
 export class HostelModule { }
-

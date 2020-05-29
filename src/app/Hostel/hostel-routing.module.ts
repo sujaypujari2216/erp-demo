@@ -25,4 +25,3 @@ const routes: Routes = [
   ]
 })
 export class HostelRoutingModule { }
-

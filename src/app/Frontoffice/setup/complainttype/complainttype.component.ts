@@ -36,12 +36,12 @@ export class ComplainttypeComponent implements OnInit {
   constructor(private complainttypeService: ComplainttypeService, private datatableservice: DatatableService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
-    this.getList()
+    this.getAllComplaintTypeList()
   }
 
-  getList() {
-    console.log('getList()');
-    this.complainttypeService.getList().subscribe((res: any) => {
+  getAllComplaintTypeList() {
+    console.log('getAllComplaintTypeList()');
+    this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.complainttypes = content.map((key) => ({ ...key }));
@@ -71,7 +71,7 @@ export class ComplainttypeComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getAllComplaintTypeList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -109,7 +109,7 @@ export class ComplainttypeComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getAllComplaintTypeList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -125,7 +125,7 @@ export class ComplainttypeComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getAllComplaintTypeList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');

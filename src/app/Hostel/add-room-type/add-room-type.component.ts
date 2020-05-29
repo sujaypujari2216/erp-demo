@@ -11,62 +11,61 @@ import { RoomTypeService } from './room-type.service';
 export class AddRoomTypeComponent implements OnInit {
 
   url = `http://yamistha.cloudjiffy.net/room-type`;
-  roomtypes = [];
-  roomtypeDto = {
-    'id': 0,
-    'isActive': 'yes',
-    'roomType': '',
-    'description': ''
+
+  hostelsroomtype = [];
+
+  roomType = {
+    "description": "",
+    "id": 0,
+    "isActive": "yes",
+    "roomType": ""
   }
+
   isUpdate: boolean = false;
-
-
-
-  constructor(private roomtypeservice: RoomTypeService, private datatableservice: DatatableService) { }
+  constructor(private roomtypeService: RoomTypeService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getRoomTypeList();
+    this.getList();
   }
 
-  getRoomTypeList() {
-    this.roomtypeservice.getList().subscribe((res: any) => {
+  getList() {
+    this.roomtypeService.getList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
-      this.roomtypes = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('section');
-
+      this.hostelsroomtype = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('References');
     }, (err) => {
-      console.log('Error while fetching all Classes');
+      console.log('Error while fetching data');
       console.error(err);
     });
   }
 
 
   addRoomType() {
-    this.roomtypeservice.save(this.roomtypeDto).subscribe((res: any) => {
+    this.roomtypeService.save(this.roomType).subscribe((res: any) => {
       if (res.success == true) {
         alert('section Saved Successfully');
       }
       //destroy dataTable
-      this.getRoomTypeList();
+      this.getList();
     }, (err) => {
       console.log('Error While Saving Class');
       console.error(err);
     });
   }
   getRoomTypeById(roomtypeId) {
-    this.roomtypeservice.getById(roomtypeId).subscribe((res: any) => {
-      this.roomtypeDto.roomType = res.data.roomType;
-      this.roomtypeDto.id = res.data.id;
-      this.roomtypeDto.isActive = res.data.isActive;
-      this.roomtypeDto.description = res.data.description;
-      console.log(this.roomtypeDto);
+    this.roomtypeService.getById(roomtypeId).subscribe((res: any) => {
+      this.roomType.roomType = res.data.roomType;
+      this.roomType.id = res.data.id;
+      this.roomType.isActive = res.data.isActive;
+      this.roomType.description = res.data.description;
+      console.log(this.roomType);
 
     }, (err) => {
       console.log('Error while fetching class by Id');
       console.error(err);
     });
-    return this.roomtypeDto;
+    return this.roomType;
   }
 
   setUpdateFileds(roomtypeId) {
@@ -75,13 +74,13 @@ export class AddRoomTypeComponent implements OnInit {
   }
   updateRoomType(roomtypeId) {
 
-    this.roomtypeservice.update(this.roomtypeDto, roomtypeId).subscribe((res: any) => {
+    this.roomtypeService.update(this.roomType, roomtypeId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert('section Updated Successfully');
       }
       //destroy dataTable
-      this.getRoomTypeList();
+      this.getList();
     }, (err) => {
       console.log('Error while Updating section');
       console.error(err);
@@ -90,16 +89,21 @@ export class AddRoomTypeComponent implements OnInit {
   }
 
   deleteRoomType(roomtypeId) {
-    this.roomtypeservice.delete(roomtypeId).subscribe((res: any) => {
+    this.roomtypeService.delete(roomtypeId).subscribe((res: any) => {
       if (res.success == true) {
         alert('section deleted Successfully');
       }
       //destroy dataTable
-      this.getRoomTypeList();
+      this.getList();
     }, (err) => {
       console.log('Error while deleting section');
       console.error(err);
     });
   }
+  clearData() {
+    this.roomType.id = 0,
+      this.roomType.isActive = 'yes',
+      this.roomType.roomType = '',
+      this.roomType.description = ''
+  }
 }
-

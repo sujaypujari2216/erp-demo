@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-import { HttpClient } from "@angular/common/http";
+import { ComplainService } from './complain.service';
+//import { ComplainttypeService } from 'src/app/Frontoffice/setup/complainttype/complainttype.service';
+//import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 
 
 @Component({
@@ -10,26 +12,162 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ComplainComponent implements OnInit {
 
-  url=`http://yamistha.cloudjiffy.net/complaint`;
-  
   complains=[];
+  complaint = {
+    "actionTaken": "",
+    "assigned": "",
+    "complaintType": "",
+    "contact": "",
+    "date": "",
+    "description": "",
+    "email": "",
+    "id": 0,
+    "image": "",
+    "isActive": "yes",
+    "name": "",
+    "note": "",
+    "source": "",
+  };
+  isUpdate: boolean = false;
+ //roomtypeDto: any;
+  //sources: any;
+  //complainttypes: any;
 
-  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
+
+  constructor(private complainService: ComplainService, private datatableservice: DatatableService ) { }
+    // tslint:disable-next-line: align
+    
+
 
   ngOnInit(): void {
-    this.http
-    .get(this.url)
-    .toPromise()
-    .then((res) =>{
-      var data = res['data'];
-      var content = data['content'];
+    this.getAllComplainList();
+    //this.getAllComplaintTypeList();
+   // this.getAllSourceList();
+    
 
-      this.complains = content.map(key=>({...key}))
-      this.datatableservice.initTable("complains");
+  }
 
+ /*  getAllComplaintTypeList() {
+    this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
+      var data = res.data;
+      this.complainttypes = data.content;
+      console.log(this.complainttypes);
+    }, (err) => {
+      console.log('Error while fetching all Classes');
+      console.error(err);
     });
   }
 
-  
 
+  getAllSourceList() {
+    this.sourceService.getAllSourceList().subscribe((res: any) => {
+      var data = res['data'];
+      var content = data['content'];
+      this.sources = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('section');
+
+    }, (err) => {
+      console.log('Error while fetching all Classes');
+      console.error(err);
+    });
+  } */
+  getAllComplainList() {
+    this.complainService.getAllComplainList().subscribe((res: any) => {
+      var data = res.data;
+      this.complains = data.content;
+      console.log(this.complains);
+    }, (err) => {
+      console.log('Error while fetching all Classes');
+      console.error(err);
+    });
+  }
+
+  addComplain() {
+    this.complainService.addComplain(this.complaint).subscribe((res: any) => {
+      if (res.success == true) {
+        alert('section Saved Successfully');
+      }
+      //destroy dataTable
+      this.getAllComplainList();
+    }, (err) => {
+      console.log('Error While Saving Class');
+      console.error(err);
+    });
+  }
+
+
+  getcomplainById(complainId) {
+    this.complainService.getcomplainById(complainId).subscribe((res: any) => {
+      this.complaint.actionTaken = res.data.actionTaken;
+      this.complaint.id = res.data.id;
+      this.complaint.description = res.data.description;
+      this.complaint.assigned = res.data.assigned;
+      // this.hostelroomDto.createdAt = res.data.createdAt;
+      this.complaint.complaintType = res.data.complaintType;
+      this.complaint.contact = res.data.contact;
+      this.complaint.email = res.data.email;
+      this.complaint.image = res.data.image;
+      this.complaint.isActive = res.data.isActive;
+      this.complaint.name = res.data.name;
+      this.complaint.note = res.data.note;
+      this.complaint.source = res.data.source;
+      this.complaint.date = res.data.date;
+      // this.hostelroomDto.title = res.data.title;
+      console.log(this.complaint);
+
+    }, (err) => {
+      console.log('Error while fetching class by Id');
+      console.error(err);
+    });
+    return this.complaint;
+  }
+  setUpdateFileds(complainId) {
+    this.isUpdate = true;
+    this.getcomplainById(complainId);
+  }
+  updateComplain(complainId) {
+
+    this.complainService.updateComplain(this.complaint, complainId).subscribe((res: any) => {
+      // tslint:disable-next-line: triple-equals
+      if (res.success == true) {
+        alert('section Updated Successfully');
+      }
+      //destroy dataTable
+      this.getAllComplainList();
+    }, (err) => {
+      console.log('Error while Updating section');
+      console.error(err);
+    });
+
+  }
+
+  deleteComplain(complainId) {
+    this.complainService.deleteComplain(complainId).subscribe((res: any) => {
+      if (res.success == true) {
+        alert('section deleted Successfully');
+      }
+      //destroy dataTable
+      this.getAllComplainList();
+    }, (err) => {
+      console.log('Error while deleting section');
+      console.error(err);
+    });
+
+  }
+  clearData() {
+    this.complaint.actionTaken = "";
+    this.complaint.id = 0;
+    this.complaint.description = "";
+    this.complaint.assigned = "";
+    // this.hostelroomDto.createdAt = res.data.createdAt;
+    this.complaint.complaintType = "";
+    this.complaint.contact = "";
+    this.complaint.email = "";
+    this.complaint.image = "";
+    this.complaint.isActive = "yes";
+    this.complaint.name = "";
+    this.complaint.note = "";
+    this.complaint.source = "";
+    this.complaint.date = "";
+  }
 }

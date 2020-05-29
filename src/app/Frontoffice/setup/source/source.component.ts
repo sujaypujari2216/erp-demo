@@ -21,11 +21,11 @@ export class SourceComponent implements OnInit {
   constructor(private sourceService: SourceService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList()
+    this.getAllSourceList()
   }
 
-  getList() {
-    this.sourceService.getList().subscribe((res: any) => {
+  getAllSourceList() {
+    this.sourceService.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.sources = content.map((key) => ({ ...key }));
@@ -42,7 +42,7 @@ export class SourceComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getAllSourceList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -76,7 +76,7 @@ export class SourceComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getAllSourceList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -91,7 +91,7 @@ export class SourceComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getAllSourceList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
