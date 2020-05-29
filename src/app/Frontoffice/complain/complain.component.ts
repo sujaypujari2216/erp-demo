@@ -72,12 +72,14 @@ export class ComplainComponent implements OnInit {
     });
   } */
   getAllComplainList() {
-    this.complainService.getAllComplainList().subscribe((res: any) => {
-      var data = res.data;
-      this.complains = data.content;
-      console.log(this.complains);
+      console.log('getAllComplainList()');
+      this.complainService.getAllComplainList().subscribe((res: any) => {
+      var data = res['data'];
+      var content = data['content'];
+      this.complains = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('Complaint');
     }, (err) => {
-      console.log('Error while fetching all Classes');
+      console.log('Error while fetching data');
       console.error(err);
     });
   }
@@ -88,6 +90,8 @@ export class ComplainComponent implements OnInit {
         alert('section Saved Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getAllComplainList();
     }, (err) => {
       console.log('Error While Saving Class');
@@ -116,7 +120,7 @@ export class ComplainComponent implements OnInit {
       console.log(this.complaint);
 
     }, (err) => {
-      console.log('Error while fetching class by Id');
+      console.log('Error while fetching Id');
       console.error(err);
     });
     return this.complaint;
@@ -130,30 +134,34 @@ export class ComplainComponent implements OnInit {
     this.complainService.updateComplain(this.complaint, complainId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
-        alert('section Updated Successfully');
+        alert(' Updated Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getAllComplainList();
     }, (err) => {
-      console.log('Error while Updating section');
+      console.log('Error while Updating');
       console.error(err);
     });
 
   }
 
   deleteComplain(complainId) {
+
     this.complainService.deleteComplain(complainId).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section deleted Successfully');
+        alert('Deleted Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getAllComplainList();
+      this.clearData();
     }, (err) => {
-      console.log('Error while deleting section');
+      console.log('Error while deleting ');
       console.error(err);
     });
-
   }
+
   clearData() {
     this.complaint.actionTaken = "";
     this.complaint.id = 0;

@@ -62,12 +62,13 @@ export class AdmissionComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.getList();
-      this.clearData();
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
     });
   }
+  
+
 
   getById(Id) {
     this.admissionenqService.getById(Id).subscribe((res: any) => {
