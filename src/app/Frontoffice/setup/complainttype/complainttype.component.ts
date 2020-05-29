@@ -33,7 +33,8 @@ export class ComplainttypeComponent implements OnInit {
 
   isUpdate: boolean = false;
   myDate = new Date();
-  constructor(private complainttypeService: ComplainttypeService, private datatableservice: DatatableService, private datePipe: DatePipe) { }
+  constructor(private complainttypeService: ComplainttypeService, 
+    private datatableservice: DatatableService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.getAllComplaintTypeList()
