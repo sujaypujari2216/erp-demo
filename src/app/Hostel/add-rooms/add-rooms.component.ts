@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 
 import { RoomsService } from './rooms.service';
-import { RoomTypeService } from '../add-room-type/room-type.service';
+//import { RoomTypeService } from '../add-room-type/room-type.service';
 
 @Component({
   selector: 'app-add-rooms',
@@ -15,39 +15,27 @@ export class AddRoomsComponent implements OnInit {
   hostelrooms = [];
   hostelroomDto = {
     'costPerBed': 0,
-    /*'createdAt': { //not in design
-      'date': 0,
-      'day': 0,
-      'hours': 0,
-      'minutes': 0,
-      'month': 0,
-      'nanos': 0,
-      'seconds': 0,
-      'time': 0,
-      'timezoneOffset': 0,
-      'year': 0
-    },*/
     'description': '',
     'hostelId': 0,
     'id': 0,
     'noOfBed': 0,
-    'roomNo': 0,
-    'roomTypeId': 0
-    //'title': '' //not in design
+    'roomNo': '',
+    'roomTypeId': 0,
+    'title': '' //not in design
   }
   isUpdate: boolean = false;
   roomtypeDto: any;
 
 
-  constructor(private hostelroomservice: RoomsService, private datatableservice: DatatableService, private roomtypeservice: RoomTypeService) { }
+  constructor(private hostelroomservice: RoomsService, private datatableservice: DatatableService/*, private roomtypeservice: RoomTypeService*/) { }
 
 
   ngOnInit(): void {
     this.getHostelRoomList();
-    this.getRoomTypeList();
+    //this.getRoomTypeList();
   }
 
-  getRoomTypeList() {
+  /*getRoomTypeList() {
     this.roomtypeservice.getList().subscribe((res: any) => {
       var data = res.data;
       this.roomtypeDto = data.content;
@@ -56,7 +44,7 @@ export class AddRoomsComponent implements OnInit {
       console.log('Error while fetching all Classes');
       console.error(err);
     });
-  }
+  }*/
 
 
   getHostelRoomList() {
@@ -76,9 +64,9 @@ export class AddRoomsComponent implements OnInit {
   addHostelRoom() {
     this.hostelroomservice.save(this.hostelroomDto).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section Saved Successfully');
+        alert('Room  Saved Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getHostelRoomList();
     }, (err) => {
       console.log('Error While Saving Class');
@@ -115,9 +103,9 @@ export class AddRoomsComponent implements OnInit {
     this.hostelroomservice.update(this.hostelroomDto, hostelroomId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
-        alert('section Updated Successfully');
+        alert('room Updated Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getHostelRoomList();
     }, (err) => {
       console.log('Error while Updating section');
@@ -129,9 +117,9 @@ export class AddRoomsComponent implements OnInit {
   deleteHostelRoom(hostelroomId) {
     this.hostelroomservice.delete(hostelroomId).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section deleted Successfully');
+        alert('room deleted Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getHostelRoomList();
     }, (err) => {
       console.log('Error while deleting section');
@@ -141,7 +129,7 @@ export class AddRoomsComponent implements OnInit {
   }
   clearData() {
     this.hostelroomDto.hostelId = 0,
-      this.hostelroomDto.roomNo = 0,
+      this.hostelroomDto.roomNo = '',
       this.hostelroomDto.noOfBed = 0,
       this.hostelroomDto.costPerBed = 0,
       this.hostelroomDto.description = ''
