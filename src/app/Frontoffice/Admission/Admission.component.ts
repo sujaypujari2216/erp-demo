@@ -13,7 +13,6 @@ import { AdmissionenqService } from './admissionenq.service';
 export class AdmissionComponent implements OnInit {
 
  
-  url=`http://yamistha.cloudjiffy.net/enquiry`;
   
   enquirys=[];
   enquiry = {
