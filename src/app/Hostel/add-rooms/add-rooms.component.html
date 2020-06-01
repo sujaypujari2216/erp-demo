@@ -16,7 +16,7 @@
       </div>
       <div class="dropdown">
         <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+          class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
       </div>
     </div>
     <div class="table-responsive">
@@ -39,9 +39,9 @@
             <td>{{ hostelroom.noOfBed }}</td>
             <td>{{ hostelroom.costPerBed }}</td>
 
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            <td><a (click)="setUpdateFileds(hostelroom.id)" data-toggle="modal" data-target="#myModal"><i
+              class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+          <a (click)="deleteHostelRoom(hostelroom.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
         </tbody>
@@ -66,7 +66,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelroomDto.hostelId" name="hostelid">
+                    [(ngModel)]="hostelroomDto.hostelId" name="hostelid" [value]="hostelroomDto.hostelId">
                   <span class="label">Hostel Id</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -75,7 +75,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelroomDto.roomNo" name="roomNo">
+                    [(ngModel)]="hostelroomDto.roomNo" name="roomNo" [value]="hostelroomDto.roomNo">
                   <span class="label">Room Number</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -84,7 +84,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.roomtype[0].type"
-                    name="roomtype">
+                    name="roomtype" [value]="roomtypeDto.type">
                     <option selected>Please Select *</option>
                     <option *ngFor="let roomTypes of this.roomtypeDto" value="roomtypes.roomtype"
                       [selected]="roomtypeDto.roomType[0].type == roomTypes.roomType">{{ roomtypeDto.roomType }}
@@ -98,7 +98,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select name="noOfBed" class="form-control" id="slt" placeholder="&nbsp;"
-                    [(ngModel)]="hostelroomDto.noOfBed">
+                    [(ngModel)]="hostelroomDto.noOfBed" [value]="hostelroomDto.noOfBed">
                     <option selected>Please Select *</option>
                     <option value="1">02</option>
                     <option value="2">03</option>
@@ -113,23 +113,27 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="hostelroomDto.costPerBed" name="costperbed">
+                    [(ngModel)]="hostelroomDto.costPerBed" name="costperbed" [value]="hostelroomDto.costPerBed">
                   <span class="label">Cost Per Bed</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
+            
               <div class="col-12 form-group mg-t-8">
-                <button (click)="addHostelRoom()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                  Save
-                </button>&nbsp;
-                <button *ngIf="this.isUpdate" (click)="updateHostelRoom(hostelroomDto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-                  Update
-                </button>&nbsp;
+                <div class="form-group" style="float: left;">
+                  <button  (click)="addHostelRoom()" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
+                    Save
+                  </button>&nbsp;
+                  <button *ngIf="this.isUpdate" (click)="updateHostelRoom(hostelroomDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
+                    Update
+                  </button>&nbsp;
+                </div>
                 <button type="reset" (click)="clearData()"
-                  class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
               </div>
             </div>
           </form>
