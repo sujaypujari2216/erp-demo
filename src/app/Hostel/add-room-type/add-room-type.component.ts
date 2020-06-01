@@ -46,7 +46,7 @@ export class AddRoomTypeComponent implements OnInit {
       if (res.success == true) {
         alert('section Saved Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getList();
     }, (err) => {
       console.log('Error While Saving Class');
@@ -79,7 +79,7 @@ export class AddRoomTypeComponent implements OnInit {
       if (res.success == true) {
         alert('section Updated Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getList();
     }, (err) => {
       console.log('Error while Updating section');
@@ -93,7 +93,7 @@ export class AddRoomTypeComponent implements OnInit {
       if (res.success == true) {
         alert('section deleted Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getList();
     }, (err) => {
       console.log('Error while deleting section');
