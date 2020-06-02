@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ComplainService {
 
   url = `http://yamistha.cloudjiffy.net/complaint`;
@@ -17,7 +19,7 @@ export class ComplainService {
 
   deleteComplain(complainId): any {
 
-    console.log(this.url + complainId);
+    //console.log(this.url + complainId);
     return this.http.delete(this.url + complainId);
   }
 

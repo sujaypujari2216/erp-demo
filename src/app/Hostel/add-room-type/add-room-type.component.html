@@ -16,7 +16,7 @@
           <h3>Room Type Lists</h3>
         </div>
         <div class="dropdown">
-          <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+          <button style=" background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
             class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
         </div>
       </div>
@@ -33,9 +33,9 @@
             <tr *ngFor="let hostelroomtype of hostelsroomtype">
               <td>{{ hostelroomtype.roomType }}</td>
               <td>
-                <a (click)="setUpdateFileds(roomType.id)" data-toggle="modal" data-target="#myModal"><i
+                <a (click)="setUpdateFileds(hostelroomtype.id)" data-toggle="modal" data-target="#myModal"><i
                     class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                <a (click)="deleteRoomType(roomType.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                <a (click)="deleteRoomType(hostelroomtype.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
               </td>
             </tr>
           </tbody>
@@ -59,7 +59,7 @@
               <div class="col-12-xxxl col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="roomType.roomType"
-                    name="roomtype" [value]="roomType.roomType">
+                    name="roomType" [value]="roomType.roomType">
                   <span class="label">Room Type</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -68,7 +68,7 @@
               <div class="col-12-xxxl col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="roomType.description" name="roomdescription" [value]="roomType.description">
+                    [(ngModel)]="roomType.description" name="description" [value]="roomType.description">
                   <span class="label">Descrption</span>
                   <span class="focus-bg"></span>
                 </label>

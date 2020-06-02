@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { ComplainService } from './complain.service';
-//import { ComplainttypeService } from 'src/app/Frontoffice/setup/complainttype/complainttype.service';
-//import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
+import { ComplainttypeService } from 'src/app/Frontoffice/setup/complainttype/complainttype.service';
+import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 
 
 @Component({
@@ -30,24 +30,25 @@ export class ComplainComponent implements OnInit {
   };
   isUpdate: boolean = false;
  //roomtypeDto: any;
-  //sources: any;
-  //complainttypes: any;
+  sources: any;
+  complainttypes: any;
 
 
-  constructor(private complainService: ComplainService, private datatableservice: DatatableService ) { }
+  constructor(private complainService: ComplainService, private datatableservice: DatatableService, 
+    private complainttypeService: ComplainttypeService, private sourceService: SourceService, ) { }
     // tslint:disable-next-line: align
     
 
 
   ngOnInit(): void {
     this.getAllComplainList();
-    //this.getAllComplaintTypeList();
-   // this.getAllSourceList();
+    this.getAllComplaintTypeList();
+   this.getAllSourceList();
     
 
   }
 
- /*  getAllComplaintTypeList() {
+  getAllComplaintTypeList() {
     this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
       var data = res.data;
       this.complainttypes = data.content;
@@ -62,22 +63,22 @@ export class ComplainComponent implements OnInit {
   getAllSourceList() {
     this.sourceService.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
-      var content = data['content'];
-      this.sources = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('section');
-
+      this.sources = data['content'];
+      console.log(this.sources);
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
     });
-  } */
+  } 
   getAllComplainList() {
-    this.complainService.getAllComplainList().subscribe((res: any) => {
-      var data = res.data;
-      this.complains = data.content;
-      console.log(this.complains);
+      console.log('getAllComplainList()');
+      this.complainService.getAllComplainList().subscribe((res: any) => {
+      var data = res['data'];
+      var content = data['content'];
+      this.complains = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('Complaint');
     }, (err) => {
-      console.log('Error while fetching all Classes');
+      console.log('Error while fetching data');
       console.error(err);
     });
   }
@@ -88,6 +89,8 @@ export class ComplainComponent implements OnInit {
         alert('section Saved Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getAllComplainList();
     }, (err) => {
       console.log('Error While Saving Class');
@@ -116,7 +119,7 @@ export class ComplainComponent implements OnInit {
       console.log(this.complaint);
 
     }, (err) => {
-      console.log('Error while fetching class by Id');
+      console.log('Error while fetching Id');
       console.error(err);
     });
     return this.complaint;
@@ -130,30 +133,34 @@ export class ComplainComponent implements OnInit {
     this.complainService.updateComplain(this.complaint, complainId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
-        alert('section Updated Successfully');
+        alert(' Updated Successfully');
       }
       //destroy dataTable
+      this.datatableservice.destroy();
+
       this.getAllComplainList();
     }, (err) => {
-      console.log('Error while Updating section');
+      console.log('Error while Updating');
       console.error(err);
     });
 
   }
 
   deleteComplain(complainId) {
+
     this.complainService.deleteComplain(complainId).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section deleted Successfully');
+        alert('Deleted Successfully');
       }
-      //destroy dataTable
+      this.datatableservice.destroy();
       this.getAllComplainList();
+      this.clearData();
     }, (err) => {
-      console.log('Error while deleting section');
+      console.log('Error while deleting ');
       console.error(err);
     });
-
   }
+
   clearData() {
     this.complaint.actionTaken = "";
     this.complaint.id = 0;
