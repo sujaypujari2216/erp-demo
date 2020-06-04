@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { AdmissionenqService } from './admissionenq.service';
- //import { SetupService } from '../setup/setup.service';
+import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
+import { ReferenceService } from 'src/app/Frontoffice/setup/reference/reference.service';
+import { ClassService } from 'src/app/academics//class/class.service';
 
 
 
@@ -35,13 +37,64 @@ export class AdmissionComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private admissionenqService: AdmissionenqService, private datatableservice: DatatableService
+  references: any;
+  sources: any;
+  classes: any;
+  //public rowID;
+  constructor(private datatableservice: DatatableService,
+              private admissionenqService: AdmissionenqService,
+              private sourceservice: SourceService,
+              private classservice: ClassService,
+              private referenceservice: ReferenceService,
     ) { }
 
   ngOnInit(): void {
     this.getList();
-  }
+    this.getAllSourceList();
+    this.getrefList();
+    this.getClassList();
 
+
+  }
+  getAllSourceList() {
+    this.sourceservice.getAllSourceList().subscribe((res: any) => {
+      var data = res['data'];
+      this.sources = data['content'];
+      this.datatableservice.initTable('sources');
+      console.log(this.sources);
+    }, (err) => {
+      console.log('Error while fetching all Classes');
+      console.error(err);
+    });
+  } 
+  getrefList() {
+    this.referenceservice.getrefList().subscribe((res: any) => {
+      var data = res['data'];
+      this.references = data['content'];
+      //this.references = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('References');
+      console.log(this.references);
+
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+    });
+  }
+  getClassList() {
+    this.classservice.getAllClassList().subscribe(
+      (res: any) => {
+        var data = res['data'];
+        this.classes = data['content'];
+        //this.classes = content.map((key) => ({ ...key }));
+        this.datatableservice.initTable("Class List");
+        console.log(this.classes);
+      },
+      (err) => {
+        console.log('Error while fetching all Classes');
+        console.error(err);
+      }
+    );
+  }
   getList() {
     this.admissionenqService.getList().subscribe((res: any) => {
       var data = res['data'];
@@ -61,6 +114,8 @@ export class AdmissionComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.getList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
@@ -148,6 +203,9 @@ export class AdmissionComponent implements OnInit {
     this.enquiry.reference = "";
     this.enquiry.source = "";
   }
+
+
 }
+
 
 

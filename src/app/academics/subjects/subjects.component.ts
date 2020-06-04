@@ -10,7 +10,7 @@ import { SubjectService } from './subject.service';
   styleUrls: ['./subjects.component.css'],
 })
 export class SubjectsComponent implements OnInit {
-  
+
 
   url = `http://yamistha.cloudjiffy.net/subject`;
 
@@ -22,23 +22,23 @@ export class SubjectsComponent implements OnInit {
     'name': '',
     'type': ''
   }
-  
+
   isUpdate: boolean = false;
-  
+
 
   constructor(
     private datatableservice: DatatableService,
     private subjectService: SubjectService,
   ) { }
-  
+
 
 
   ngOnInit(): void {
 
     this.getSubjectList();
-    
+
   }
- 
+
 
 
   getSubjectList() {
@@ -67,9 +67,9 @@ export class SubjectsComponent implements OnInit {
 
       this.getSubjectList();
     }, (err) => {
-        console.log('Error While Saving Subject');
+      console.log('Error While Saving Subject');
       console.error(err);
-        
+
     });
   }
 
@@ -81,11 +81,11 @@ export class SubjectsComponent implements OnInit {
       this.subjectDto.isActive = res.data.isActive;
       this.subjectDto.code = res.data.code;
       this.subjectDto.type = res.data.type;
-     
+
       console.log(this.subjectDto);
 
     }, (err) => {
-        console.log('Error while fetching Subject by Id');
+      console.log('Error while fetching Subject by Id');
       console.error(err);
     });
     return this.subjectDto;
@@ -106,7 +106,7 @@ export class SubjectsComponent implements OnInit {
 
       this.getSubjectList();
     }, (err) => {
-        console.log('Error while Updating Subject');
+      console.log('Error while Updating Subject');
       console.error(err);
     });
 
@@ -122,15 +122,14 @@ export class SubjectsComponent implements OnInit {
 
       this.getSubjectList();
     }, (err) => {
-        console.log('Error while deleting Subject');
+      console.log('Error while deleting Subject');
       console.error(err);
     });
 
   }
-  Theory =false;
+  Theory = false;
   Practicle = true;
- 
 
-  
+
+
 }
-

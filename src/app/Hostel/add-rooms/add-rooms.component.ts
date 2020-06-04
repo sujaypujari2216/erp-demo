@@ -43,6 +43,7 @@ export class AddRoomsComponent implements OnInit {
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
+      ]
     });
   }*/
 

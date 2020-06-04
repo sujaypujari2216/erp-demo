@@ -21,11 +21,11 @@ export class ReferenceComponent implements OnInit {
   constructor(private referenceService: ReferenceService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getrefList();
   }
 
-  getList() {
-    this.referenceService.getList().subscribe((res: any) => {
+  getrefList() {
+    this.referenceService.getrefList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.references = content.map((key) => ({ ...key }));
@@ -42,7 +42,7 @@ export class ReferenceComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getrefList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -77,7 +77,7 @@ export class ReferenceComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getrefList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -92,7 +92,7 @@ export class ReferenceComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getrefList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
