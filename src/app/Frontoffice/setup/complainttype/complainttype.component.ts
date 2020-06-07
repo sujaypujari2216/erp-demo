@@ -28,16 +28,17 @@ export class ComplainttypeComponent implements OnInit {
     },
     "description": "string",
     "id": 0,
-    "isActive": "string"
+    "isActive": "yes"
   }
 
   isUpdate: boolean = false;
   myDate = new Date();
-  constructor(private complainttypeService: ComplainttypeService, 
+  constructor(private complainttypeService: ComplainttypeService,
     private datatableservice: DatatableService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
-    this.getAllComplaintTypeList()
+    this.getAllComplaintTypeList();
+    console.log(this.myDate)
   }
 
   getAllComplaintTypeList() {
@@ -55,6 +56,7 @@ export class ComplainttypeComponent implements OnInit {
 
   add() {
     console.log('add()');
+    //this.Dto.createdAt=this.myDate;
     this.Dto.createdAt.date = this.myDate.getDate();
     this.Dto.createdAt.day = this.myDate.getDay();
     this.Dto.createdAt.hours = this.myDate.getHours();

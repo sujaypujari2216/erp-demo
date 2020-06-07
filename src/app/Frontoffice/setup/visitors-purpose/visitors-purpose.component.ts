@@ -13,6 +13,7 @@ export class VisitorsPurposeComponent implements OnInit {
   Dto = {
     "description": "string",
     "id": 0,
+    "isActive": "yes",
     "visitorsPurpose": "string"
   }
 
