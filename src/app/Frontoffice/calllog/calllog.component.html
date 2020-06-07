@@ -37,14 +37,12 @@
             <td>{{ call.date }}</td>
             <td>{{ call.followUpDate }}</td>
             <td>{{ call.callType }}</td>
-            <td> <a (click)="setUpdateFileds(call.id)" data-toggle="modal" data-target="#myModal"><i
-                  class="fas fa-align-justify "></i>&nbsp;</a>
+            <td> <a (click)="getById(call.id)" data-toggle="modal" data-target="#show"><i
+                  class="fas fa-align-justify text-blue"></i>&nbsp;</a>
               <a (click)="setUpdateFileds(call.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
               <a (click)="delete(call.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
-
-
         </tbody>
       </table>
     </div>
@@ -52,21 +50,16 @@
 </div>
 
 <div class="container">
-
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5> Add Call Log</h5>
-
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-
         </div>
         <div class="modal-body">
           <form role="form" method="post" id="reused_form">
             <div class="row">
-
-
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="name" class="form-control" id="inp" placeholder="&nbsp;"
@@ -109,7 +102,7 @@
                 <label for="inp" class="inp">
                   <input type="text" name="callDuration" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="Dto.callDureation">
-                  <span class="label">Call Duration *</span>
+                  <span class="label">Call Dureation *</span>
                   <span class="focus-bg"></span>
                 </label>
 
@@ -134,13 +127,13 @@
               </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label class="control-label">Call type
-                  <input type="radio" id="call1" name="cal" value="Incoming">
-                  Incoming
-                  <input type="radio" id="call1" name="cal" value="Outgoing">
-                  Outgoing
-                </label>
+                <label style="padding-left: 5px;padding-right: 20px;"><b>Call Type</b></label>
 
+                <input type="radio" name="call" value="Incoming" [(ngModel)]="Dto.callType">
+                <label style="padding-left: 5px;padding-right: 20px;"> Incoming</label>
+
+                <input type="radio" name="call" value="Outgoing" [(ngModel)]="Dto.callType">
+                <label style="padding-left: 5px;padding-right: 20px;"> Outgoing</label>
               </div>
 
 
@@ -158,169 +151,51 @@
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-<!-- <ul class="list-group">
-  <li class="list-group-item" *ngFor="let item of itemsList">
-    <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{item.value}}"
-      (change)="onItemChange(item)" />
-    {{item.name}}
-
-  </li>
-</ul> -->
 
 
-<!-- <div class="breadcrumbs-area">
-  <ul>
-    <li>
-      <a href="index.html">Home</a>
-    </li>
-    <li>Phone Call log</li>
-  </ul>
-</div>
-<div class="card height-auto">
-  <div class="card-body">
-
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h4>Phone Call List</h4>
-      </div>
-      <div class="dropdown">
-        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-      </div>
-    </div>
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Date</th>
-            <th>Next Follow Up Date</th>
-            <th>Call Type</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let call of calllogs">
-            <td>{{ call.name }}</td>
-            <td>{{ call.contact }}</td>
-            <td>{{ call.date }}</td>
-            <td>{{ call.followUpDate }}</td>
-            <td>{{ call.callType }}</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-
-
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 
 <div class="container">
-
-  <div id="myModal" class="modal fade" role="dialog">
+  <div id="show" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5> Add Call Log</h5>
-
+          <h5>Call Details</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-
         </div>
         <div class="modal-body">
-          <form role="form" method="post" id="reused_form">
-            <div class="row">
-
-
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Name *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Mobile*</span>
-                  <span class="focus-bg"></span>
-                </label>
-
-
-              </div>
-
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="birthdate">
-                  <span class="label">Choose Date*</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="birthdate">
-                  <span class="label">Next Follow Up Date *</span>
-                  <span class="focus-bg"></span>
-                </label>
-
-              </div>
-
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Call Duration *</span>
-                  <span class="focus-bg"></span>
-                </label>
-
-              </div>
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Note*</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Description *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-
-                <label class="control-label">Call type&nbsp;&nbsp;
-                  <input type="radio" id="call1" name="cal" value="yes">
-                  Incoming&nbsp;
-                  <input type="radio" id="call1" name="cal" value="yes">
-                  Outgoing
-                </label>
-
-              </div>
-
-
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-              </div>
-            </div>
-          </form>
+          <table class="table display data-table text-wrap cell-border">
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <td>{{ Dto.name }}</td>
+                <th>Phone</th>
+                <td>{{ Dto.contact }}</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>{{ Dto.date }}</td>
+                <th>Next Follow Up Date</th>
+                <td>{{ Dto.followUpDate }}</td>
+              </tr>
+              <tr>
+                <th>Call Dureation</th>
+                <td>{{ Dto.callDureation }}</td>
+                <th>Note</th>
+                <td>{{ Dto.note }}</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td>{{ Dto.description }}</td>
+                <th>Call Type</th>
+                <td>{{ Dto.callType }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
     </div>
   </div>
-</div> -->
+</div>
