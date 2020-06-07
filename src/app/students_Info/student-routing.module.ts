@@ -12,7 +12,7 @@ import { MultiClassStudentComponent } from './multi-class-student/multi-class-st
 import { StudentCategoriesComponent } from './student-categories/student-categories.component';
 import { StudentHouseComponent } from './student-house/student-house.component';
 import { ImportStudentComponent } from './import-student/import-student.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path:'bulkdelete',component:BulkDeleteComponent},
@@ -31,9 +31,14 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ImportStudentComponent, StudentCategoriesComponent, StudentHouseComponent, StudentsdetailsComponent,
+    AdmissionformComponent, MultiClassStudentComponent, DisableReasonComponent, BulkDeleteComponent,
+    DisabledStudentsComponent, OnlineAdmissionComponent, ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     RouterModule.forChild(routes)
   ]
 })

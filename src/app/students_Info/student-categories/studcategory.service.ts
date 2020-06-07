@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
-export class VisitorbookService {
-  url = `http://yamistha.cloudjiffy.net/visitors-book`;
+export class StudcategoryService {
+  url = `http://yamistha.cloudjiffy.net/category`;
 
   constructor(private http: HttpClient) { }
 
-  save(Dto): any {
-    return this.http.post(this.url, Dto);
+  save(categoryDto): any {
+    return this.http.post(this.url, categoryDto);
   }
 
-  getvisitorList(): any {
+  getList(): any {
     return this.http.get(this.url);
   }
 
@@ -21,8 +21,8 @@ export class VisitorbookService {
     return this.http.delete(this.url + Id);
   }
 
-  update(Dto, Id): any {
-    return this.http.put(this.url + Id, Dto);
+  update(categoryDto, Id): any {
+    return this.http.put(this.url + Id, categoryDto);
   }
 
   getById(Id): any {

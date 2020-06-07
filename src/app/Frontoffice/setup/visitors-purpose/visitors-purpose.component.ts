@@ -9,8 +9,9 @@ import { VisitorsPerposeService } from './visitors-perpose.service';
 })
 export class VisitorsPurposeComponent implements OnInit {
 
+  url = `http://yamistha.cloudjiffy.net/visitor-purpose`;
   visitors = [];
-  Dto = {
+  visitorsPurpose = {
     "description": "string",
     "id": 0,
     "isActive": "yes",
@@ -18,13 +19,15 @@ export class VisitorsPurposeComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private visitorsperposeService: VisitorsPerposeService, private datatableservice: DatatableService) { }
+  constructor(private visitorsperposeService: VisitorsPerposeService, 
+    private datatableservice: DatatableService) { }
+
   ngOnInit(): void {
-    this.getList()
+    this.getpurposeList();
   }
 
-  getList() {
-    this.visitorsperposeService.getList().subscribe((res: any) => {
+  getpurposeList() {
+    this.visitorsperposeService.getpurposeList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.visitors = content.map((key) => ({ ...key }));
@@ -36,12 +39,12 @@ export class VisitorsPurposeComponent implements OnInit {
   }
 
   add() {
-    this.visitorsperposeService.save(this.Dto).subscribe((res: any) => {
+    this.visitorsperposeService.save(this.visitorsPurpose).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getpurposeList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -51,30 +54,30 @@ export class VisitorsPurposeComponent implements OnInit {
 
   getById(Id) {
     this.visitorsperposeService.getById(Id).subscribe((res: any) => {
-      this.Dto.description = res.data.description;
-      this.Dto.visitorsPurpose = res.data.visitorsPurpose;
-      this.Dto.id = res.data.id;
-      // console.log(this.Dto);
+      this.visitorsPurpose.description = res.data.description;
+      this.visitorsPurpose.visitorsPurpose = res.data.visitorsPurpose;
+      this.visitorsPurpose.id = res.data.id;
+      console.log(this.visitorsPurpose);
 
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
     });
-    return this.Dto;
+    return this.visitorsPurpose;
   }
   setUpdateFileds(Id) {
     this.isUpdate = true;
     this.getById(Id);
   }
   update(Id) {
-    this.visitorsperposeService.update(this.Dto, Id).subscribe((res: any) => {
+    this.visitorsperposeService.update(this.visitorsPurpose, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getpurposeList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -89,7 +92,7 @@ export class VisitorsPurposeComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getpurposeList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
@@ -98,9 +101,9 @@ export class VisitorsPurposeComponent implements OnInit {
   }
 
   clearData() {
-    this.Dto.description = "";
-    this.Dto.id = 0;
-    this.Dto.visitorsPurpose = "";
+    this.visitorsPurpose.description = "";
+    this.visitorsPurpose.id = 0;
+    this.visitorsPurpose.visitorsPurpose = "";
     this.isUpdate = false;
   }
 }
