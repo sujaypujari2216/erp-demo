@@ -9,12 +9,12 @@ import { VisitorsPerposeService } from './visitors-perpose.service';
 })
 export class VisitorsPurposeComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/visitor-purpose`;
   visitors = [];
   visitorsPurpose = {
-    "description": "string",
+    "description": "",
     "id": 0,
-    "visitorsPurpose": "string"
+    "visitorsPurpose": "",
+    "isActive": "yes"
   }
 
   isUpdate: boolean = false;
@@ -56,6 +56,8 @@ export class VisitorsPurposeComponent implements OnInit {
       this.visitorsPurpose.description = res.data.description;
       this.visitorsPurpose.visitorsPurpose = res.data.visitorsPurpose;
       this.visitorsPurpose.id = res.data.id;
+      this.visitorsPurpose.isActive = res.data.isActive;
+
       console.log(this.visitorsPurpose);
 
     }, (err) => {
@@ -103,6 +105,8 @@ export class VisitorsPurposeComponent implements OnInit {
     this.visitorsPurpose.description = "";
     this.visitorsPurpose.id = 0;
     this.visitorsPurpose.visitorsPurpose = "";
+    this.visitorsPurpose.isActive = "";
+
     this.isUpdate = false;
   }
 }

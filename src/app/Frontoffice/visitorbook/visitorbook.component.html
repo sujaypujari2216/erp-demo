@@ -324,7 +324,7 @@
         <h4>Visitor List</h4>
       </div>
       <div class="dropdown">
-        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right; ;" type="button"
           class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
       </div>
     </div>
@@ -352,8 +352,9 @@
             <td>{{ visitor.outTime }}</td>
 
             <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="setUpdateFileds(visitorsBook.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="delete(visitorsBook.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
 
@@ -383,24 +384,11 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.purpose"
                     name="purpose">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let visitor of this.visitors" value="visitor.visitor" [selected]="visitorsBook.purpose ==
+                    <option *ngFor="let visitor of this.visitors" [value]="visitor.visitor" [selected]="visitorsBook.purpose ==
                     visitor.visitor">{{ visitor.visitor }}
                     </option>
                   </select>
                   <span class="label">Purpose *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.source"
-                    name="source">
-                    <option selected>Please Select *</option>
-                    <option *ngFor="let source of this.sources" value="source.source"
-                      [selected]="visitorsBook.source ==source.source">{{ source.source }}
-                    </option>
-                  </select>
-                  <span class="label">Source*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
@@ -436,7 +424,7 @@
               </div>
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                  <input type="number" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="visitorsBook.noOfPepple" name="noOfPepple" [value]="visitorsBook.noOfPepple"> <span
                     class="label">No of Person *</span>
                   <span class="focus-bg"></span>
@@ -473,6 +461,10 @@
                     name="note" [value]="visitorsBook.note"> <span class="label">Note *</span>
                   <span class="focus-bg"></span>
                 </label>
+              </div>
+              <div class="col-3 col-lg-6 col-12 form-group">
+                <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
+                <input type="file" class="form-control-file" name="file" placeholder="Attach Document">
               </div>
               <div class="col-12 form-group mg-t-8">
                 <button *ngIf="!this.isUpdate" (click)="add()" type="button"

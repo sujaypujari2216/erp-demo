@@ -15,7 +15,8 @@
       </div>
       <div class="dropdown">
         <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-          class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
+          class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+
+          Add</button>
       </div>
     </div>
     <div class="table-responsive">
@@ -134,12 +135,14 @@
               </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label class="control-label">Call type
-                  <input type="radio" id="call1" name="cal" value="Incoming">
-                  Incoming
-                  <input type="radio" id="call1" name="cal" value="Outgoing">
-                  Outgoing
-                </label>
+                <label class="form-check-label">Call Type:</label>&nbsp;&nbsp;&nbsp;
+
+                <input type="radio" class="form-check-input" id="customRadio" name="callType" [(ngModel)]="Dto.callType"
+                  value="Incoming">&nbsp;
+                <label class="form-check-label" for="Incoming">Incoming</label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" class="form-check-input" id="customRadio" name="callType" [(ngModel)]="Dto.callType"
+                  value="Outgoing">&nbsp;&nbsp;
+                <label class="form-check-label" for="Outgoing">Outgoing</label>
 
               </div>
 

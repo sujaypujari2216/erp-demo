@@ -9,9 +9,7 @@ import { calllogService } from './calllog.service';
   styleUrls: ['./calllog.component.css'],
 })
 export class calllogComponent implements OnInit {
-
-
-  url = `http://yamistha.cloudjiffy.net/general-call`;
+  constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
 
   calllogs = [];
   Dto = {
@@ -28,9 +26,10 @@ export class calllogComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
+  // tslint:disable-next-line: member-ordering
+  
   ngOnInit(): void {
-    this.getList()
+    this.getList();
   }
 
   getList() {
@@ -117,46 +116,19 @@ export class calllogComponent implements OnInit {
   }
 
   clearData() {
-    // this.Dto.callDureation = "";
-    // this.Dto.callType = "";
-    // this.Dto.contact = "";
-    // this.Dto.date = "";
-    // this.Dto.description = "";
-    // this.Dto.followUpDate = "";
-    // this.Dto.id = 0;
-    // this.Dto.isActive = "yes";
-    // this.Dto.name = "";
-    // this.Dto.note = "";
+    this.Dto.callDureation = "";
+    this.Dto.callType = "";
+    this.Dto.contact = "";
+    this.Dto.date = "";
+    this.Dto.description = "";
+    this.Dto.followUpDate = "";
+    this.Dto.id = 0;
+    this.Dto.isActive = "yes";
+    this.Dto.name = "";
+    this.Dto.note = "";
     this.isUpdate = false;
   }
 }
-
-
-// import { Component, OnInit } from '@angular/core';
-// import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-// import { calllogService } from './calllog.service';
-
-// @Component({
-//   selector: 'app-calllog',
-//   templateUrl: './calllog.component.html',
-//   styleUrls: ['./calllog.component.css'],
-// })
-// export class calllogComponent implements OnInit {
-
-
-//   url = `http://yamistha.cloudjiffy.net/general-call`;
-
-//   calllogs = [];
-
-//   constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
-
-//   ngOnInit(): void {
-//   }
-
-
-
-// }
-
 
 
 

@@ -1,86 +1,97 @@
     <!-- Breadcubs Area Start Here -->
-   <div class="breadcrumbs-area">
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>Add Staff</li>
-        </ul>
+    <div class="breadcrumbs-area">
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>Add Staff</li>
+      </ul>
     </div>
     <!-- Breadcubs Area End Here -->
     <!-- Teacher Table Area Start Here -->
     <div class="card height-auto">
-        <div class="card-body">
-            <div class="heading-layout1">
-                <div class="item-title">
-                    <h3>Add Staff</h3>
-                </div>
-               <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" 
-                    data-toggle="dropdown" aria-expanded="false">...</a>
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Add Staff</h5>
+          </div>
 
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="table-responsive">
-                <table id="example" class="table display data-table text-nowrap cell-border">
-                    <thead>
-                        <tr>
-                            <th>Member ID</th>
-                            <th>Library Card No</th>
-                            <th>Staff Name</th>
-                            <th>Email</th>
-                            <th>Date Of Birth</th>
-                            <th>Phone</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>21</td>
-                            <td>L021</td>
-                            <td>ABC</td>
-                            <td>abc@mail.com</td>
-                            <td>05/02/2001</td>
-                            <td>9876543210</td>
-                             <td>
-                                    <div>
-                                        <button data-stdid="1" class="btn btn-default btn-xs add-teacher" data-toggle="tooltip" title="" data-original-title="Add" autocomplete="off">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                    <!--<div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" autocomplete="off">×</button>
-                                            <h4 class="modal-title" id="lineModalLabel">Add Member</h4>
-                                        </div>
-                                        <div class="modal-body">
-                            
-                                            <input type="hidden" name="click_member_id" value="1" id="click_member_id">
-                                            
-                                            <form action="add-staff.component.html" id="add_member" method="post">
-                                                <input type="hidden" name="member_id" value="1" id="member_id">
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Library Card No</label>
-                                                    <input type="name" class="form-control" name="library_card_no" id="library_card_no">
-                                                    <span class="text-danger" id="library_card_no_error"></span>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-sm add-member" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Please Wait..">Add</button>
-                                            </form>
-                                        </div> 
-                                    </div>-->
-                                
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
         </div>
+
+        <div class="table-responsive">
+          <table id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+                <th>Member ID</th>
+                <th>Library Card No</th>
+                <th>Staff Name</th>
+                <th>Email</th>
+                <th>Date Of Birth</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>21</td>
+                <td>L021</td>
+                <td>ABC</td>
+                <td>abc@mail.com</td>
+                <td>05/02/2001</td>
+                <td>9876543210</td>
+                <td>
+                  <div>
+                    <button data-stdid="1" class="btn btn-default btn-xs add-teacher" data-toggle="tooltip" title=""
+                      data-original-title="Add" autocomplete="off" data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-plus"></i>
+                    </button>
+                  </div>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <!-- Teacher Table Area End Here -->
+    <div class="container">
+
+      <!-- Modal -->
+      <div id="myModal" class="modal" role="dialog" style="align-items: center;">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content" style="width:200%">
+            <div class="modal-header">
+
+              <h5>Add Card No</h5>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+              <form class="new-added-form" role="form" method="post" id="reused_form">
+                <div class="row">
+                  <div class="col-xl-3  col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" name="room" class="form-control" id="inp" placeholder="&nbsp;">
+                      <span class="label">Card No*</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <div class="form-group">
+                      <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Add</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
