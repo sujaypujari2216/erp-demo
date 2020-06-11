@@ -8,13 +8,13 @@ import { ClassService } from 'src/app/academics//class/class.service';
 @Component({
   selector: 'app-Frontoffice-Admission',
   templateUrl: './Admission.component.html',
-  //styleUrls: ['./Admission.component.css']
+  styleUrls: ['./Admission.component.css']
 })
 export class AdmissionComponent implements OnInit {
   url = `http://yamistha.cloudjiffy.net/enquiry/`;
 
-  
-  enquirys=[];
+
+  enquirys = [];
   enquiry = {
     "address": "",
     "assigned": "",
@@ -31,7 +31,7 @@ export class AdmissionComponent implements OnInit {
     "note": "",
     "reference": "",
     "source": "",
-    
+
   }
 
   isUpdate: boolean = false;
@@ -40,11 +40,11 @@ export class AdmissionComponent implements OnInit {
   classes: any;
   //public rowID;
   constructor(private datatableservice: DatatableService,
-              private admissionenqService: AdmissionenqService,
-              private sourceservice: SourceService,
-              private classservice: ClassService,
-              private referenceservice: ReferenceService,
-    ) { }
+    private admissionenqService: AdmissionenqService,
+    private sourceservice: SourceService,
+    private classservice: ClassService,
+    private referenceservice: ReferenceService,
+  ) { }
 
   ngOnInit(): void {
     this.getenqList();
@@ -53,24 +53,22 @@ export class AdmissionComponent implements OnInit {
     this.getClassList();
 
   }
-  
+
   getAllSourceList() {
     this.sourceservice.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
       this.sources = data['content'];
-      this.datatableservice.initTable('sources');
       console.log(this.sources);
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
     });
-  } 
+  }
   getrefList() {
     this.referenceservice.getrefList().subscribe((res: any) => {
       var data = res['data'];
       this.references = data['content'];
       //this.references = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('References');
       console.log(this.references);
 
     }, (err) => {
@@ -84,7 +82,6 @@ export class AdmissionComponent implements OnInit {
         var data = res['data'];
         this.classes = data['content'];
         //this.classes = content.map((key) => ({ ...key }));
-        this.datatableservice.initTable("Class List");
         console.log(this.classes);
       },
       (err) => {
@@ -105,7 +102,7 @@ export class AdmissionComponent implements OnInit {
     });
   }
 
- 
+
   addenq() {
     this.admissionenqService.save(this.enquiry).subscribe((res: any) => {
       if (res.success == true) {
@@ -167,8 +164,8 @@ export class AdmissionComponent implements OnInit {
     });
 
   }
-  
- 
+
+
   deleteenq(Id) {
     this.admissionenqService.deleteenq(Id).subscribe((res: any) => {
       if (res.success == true) {
