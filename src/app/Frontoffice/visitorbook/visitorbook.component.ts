@@ -7,12 +7,12 @@ import { VisitorsPerposeService } from 'src/app/Frontoffice/setup/visitors-purpo
 @Component({
   selector: 'app-visitorbook',
   templateUrl: './visitorbook.component.html',
-  //styleUrls: ['./visitorbook.component.scss']
+  styleUrls: ['./visitorbook.component.css']
 })
 export class VisitorbookComponent implements OnInit {
 
-  
-  visitorsbook=[];
+
+  visitorsbook = [];
   visitorsBook = {
     'contact': '',
     'date': '',
@@ -32,10 +32,11 @@ export class VisitorbookComponent implements OnInit {
   isUpdate: boolean = false;
   visitors: any;
   sources: any;
+  purposes: any;
 
   constructor(private visitorbookService: VisitorbookService,
-              private datatableservice: DatatableService,
-              private sourceservice: SourceService,
+    private datatableservice: DatatableService,
+    private sourceservice: SourceService,
     private visitorsperposeService: VisitorsPerposeService) { }
 
   ngOnInit(): void {
@@ -49,8 +50,7 @@ export class VisitorbookComponent implements OnInit {
     this.sourceservice.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
       this.sources = data['content'];
-      this.datatableservice.initTable('sources');
-      console.log(this.sources);
+      // console.log(this.sources);
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
@@ -59,10 +59,9 @@ export class VisitorbookComponent implements OnInit {
   getpurposeList() {
     this.visitorsperposeService.getpurposeList().subscribe((res: any) => {
       var data = res['data'];
-      this.visitors = data['content'];
-      //this.visitors = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('Visitors Perpose');
-      console.log(this.visitors);
+      var content = data['content'];
+      this.purposes = content.map((key) => ({ ...key }));
+      console.log(this.purposes);
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
@@ -73,7 +72,7 @@ export class VisitorbookComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.visitorsbook = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('visitorsbook');
+      this.datatableservice.initTable('Visitors Book');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);

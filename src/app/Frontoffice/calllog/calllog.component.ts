@@ -27,7 +27,7 @@ export class calllogComponent implements OnInit {
 
   isUpdate: boolean = false;
   // tslint:disable-next-line: member-ordering
-  
+
   ngOnInit(): void {
     this.getList();
   }
@@ -59,8 +59,6 @@ export class calllogComponent implements OnInit {
   }
 
   getById(Id) {
-    console.log(this.Dto);
-    console.log(this.Dto);
     this.calllogService.getById(Id).subscribe((res: any) => {
       this.Dto.callDureation = res.data.callDureation;
       this.Dto.callType = res.data.callType;
@@ -72,8 +70,6 @@ export class calllogComponent implements OnInit {
       this.Dto.isActive = res.data.isActive;
       this.Dto.name = res.data.name;
       this.Dto.note = res.data.note;
-      console.log(this.Dto);
-
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
