@@ -1,123 +1,83 @@
-
 <div class="breadcrumbs-area">
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>Staff Directory</li>
-    </ul>
-  </div>
-  <div class="card height-auto">
-    <div class="card-body">
-                <form class="new-added-form">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="slt" class="slt">
-                                <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
-                                 <option value="">select</option>
-                                <option value="1">Admin</option>
-                                <option value="2">Teacher</option>
-                                <option value="3">Accountant</option>
-                                <option value="4">Librarian</option>
-                                <option value="5">Receptionist</option>
-                                <option value="5">Super Admin</option>
-                            </select>
-                            <span class="label">Role *</span>
-                            <span class="focus-bg"></span>
-                        </label>
-                        </div>
-                               
-                        
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="dtp" class="dtp">
-                                <input type="date" id="dtp" placeholder="&nbsp;" name="admission" >
-                                <span class="label"> Date *</span>
-                                <span class="focus-bg"></span>
-                              </label>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                <div class="form-group">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;">Search</button>
-                                </div>
-                            </div>
-            
-
-                        
-                        
-                    </div>
-                </form>
-            
-  
-    
-        <div class="table-responsive">
-            <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="location.href='/#/add-s'">+ Add</button>
-          <table id="example" class="table display data-table text-nowrap cell-border">
-              <thead>
-                  
-                  <tr>
-                      <th>Staff ID</th>
-                      <th>Name</th>
-                      <th>Role</th>
-                      <th>Department</th>  
-                      <th>Designation</th>
-                      <th>Mobile No.</th>
-                      <th>Action</th>
-                      
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>900</td>
-                      <td><a href="/#/staffprofile">Super Admin</a></td>
-                      <td>Super Admin</td>
-                      <td>Admin</td>
-                      <td>Admin</td>
-                      <td>9876541230</td>
-                      <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                          <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                     </td>
-                  </tr>
-                  <tr>
-                    <td>900</td>
-                    <td><a href="/#/staffprofile">Super Admin</a></td>
-                    <td>Super Admin</td>
-                    <td>Admin</td>
-                    <td>Admin</td>
-                    <td>9876541230</td>
-                    <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                   </td>
-                  </tr>
-                  <tr>
-                    <td>900</td>
-                    <td><a href="/#/staffprofile">Super Admin</a></td>
-                    <td>Super Admin</td>
-                    <td>Admin</td>
-                    <td>Admin</td>
-                    <td>9876541230</td>
-                    <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                   </td>
-                  </tr>
-                  <tr>
-                    <td>900</td>
-                    <td><a href="/#/staffprofile">Super Admin</a></td>
-                    <td>Super Admin</td>
-                    <td>Admin</td>
-                    <td>Admin</td>
-                    <td>9876541230</td>
-                    <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                        <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                   </td>
-                  </tr>
-                 
-              </tbody>
-          </table>
-      
-        </div>
-    </div>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>Staff Directory</li>
+  </ul>
 </div>
-  
-    <!-- Admission Enquiry Area Start Here -->
-   
-  
+<div class="card height-auto">
+  <div class="card-body">
+    <form class="new-added-form">
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+              <option value="">select</option>
+              <option value="1">Admin</option>
+              <option value="2">Teacher</option>
+              <option value="3">Accountant</option>
+              <option value="4">Librarian</option>
+              <option value="5">Receptionist</option>
+              <option value="5">Super Admin</option>
+            </select>
+            <span class="label">Role *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="dtp" class="dtp">
+            <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+            <span class="label"> Date *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <div class="form-group">
+            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+              style="float: right;">Search</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="table-responsive">
+      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+        class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="location.href='/#/add-s'">+
+        Add</button>
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
+
+          <tr>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Mobile No.</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>900</td>
+            <td><a href="/#/staffprofile">Super Admin</a></td>
+            <td>Super Admin</td>
+            <td>Admin</td>
+            <td>Admin</td>
+            <td>9876541230</td>
+            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+            </td>
+
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<!-- Admission Enquiry Area Start Here -->

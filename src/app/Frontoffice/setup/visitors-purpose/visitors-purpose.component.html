@@ -5,7 +5,6 @@
     </li>
     <li>Setup Front Office</li>
   </ul>
-
 </div>
 <div class="card height-auto">
   <div class="card-body">
@@ -15,14 +14,16 @@
       </div>
       <div class="dropdown">
         <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/visitors-purpose'">+ Visitors
-          Purpose</button>
+          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/setup'"> Back To Setup
+        </button>
         <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
           type="button" class="btn btn-info btn-lg" onClick="location.href='/#/reference'">+ Reference</button>
         <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
           type="button" class="btn btn-info btn-lg" onClick="location.href='/#/source'">+ Source</button>
         <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
           type="button" class="btn btn-info btn-lg" onClick="location.href='/#/complainttype'">+ Complaint Type</button>
+
+
       </div>
     </div>
     <div class="table-responsive">
@@ -43,9 +44,9 @@
             <td>{{ visitor.visitorsPurpose }}</td>
 
 
-            <td><a (click)="setUpdateFileds(visitorsPurpose.id)" data-toggle="modal" data-target="#myModal"><i
+            <td><a (click)="setUpdateFileds(visitor.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(visitorsPurpose.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="delete(visitor.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
         </tbody>
@@ -77,7 +78,7 @@
               <div class="col-xl-3 col-lg-3 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="purpose" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="visitorsPurpose.visitorsPurpose">
+                    [(ngModel)]="Dto.visitorsPurpose">
                   <span class="label">Purpose *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -87,7 +88,7 @@
               <div class="col-xl-3 col-lg-3 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="visitorsPurpose.description">
+                    [(ngModel)]="Dto.description">
                   <span class="label">Description *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -99,7 +100,7 @@
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>
-                <button *ngIf="this.isUpdate" (click)="update(visitorsPurpose.id)" type="button"
+                <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Update
                 </button>

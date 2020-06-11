@@ -299,7 +299,8 @@
     background: rgba(255, 255, 255, 1);
     position: fixed;
     margin-top: 30%;
-
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 150%;
-    transform: translate(-25%, -25%);
+    /* transform: translate(-25%, -25%); */
   }

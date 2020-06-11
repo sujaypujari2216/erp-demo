@@ -9,9 +9,7 @@ import { calllogService } from './calllog.service';
   styleUrls: ['./calllog.component.css'],
 })
 export class calllogComponent implements OnInit {
-
-
-  url = `http://yamistha.cloudjiffy.net/general-call`;
+  constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
 
   calllogs = [];
   Dto = {
@@ -28,9 +26,10 @@ export class calllogComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
+  // tslint:disable-next-line: member-ordering
+
   ngOnInit(): void {
-    this.getList()
+    this.getList();
   }
 
   getList() {
@@ -126,7 +125,6 @@ export class calllogComponent implements OnInit {
     this.isUpdate = false;
   }
 }
-
 
 
 

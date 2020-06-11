@@ -9,9 +9,8 @@ import { VisitorsPerposeService } from './visitors-perpose.service';
 })
 export class VisitorsPurposeComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/visitor-purpose`;
   visitors = [];
-  visitorsPurpose = {
+  Dto = {
     "description": "string",
     "id": 0,
     "isActive": "yes",
@@ -19,11 +18,9 @@ export class VisitorsPurposeComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private visitorsperposeService: VisitorsPerposeService, 
-    private datatableservice: DatatableService) { }
-
+  constructor(private visitorsperposeService: VisitorsPerposeService, private datatableservice: DatatableService) { }
   ngOnInit(): void {
-    this.getpurposeList();
+    this.getpurposeList()
   }
 
   getpurposeList() {
@@ -39,7 +36,7 @@ export class VisitorsPurposeComponent implements OnInit {
   }
 
   add() {
-    this.visitorsperposeService.save(this.visitorsPurpose).subscribe((res: any) => {
+    this.visitorsperposeService.save(this.Dto).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -54,23 +51,23 @@ export class VisitorsPurposeComponent implements OnInit {
 
   getById(Id) {
     this.visitorsperposeService.getById(Id).subscribe((res: any) => {
-      this.visitorsPurpose.description = res.data.description;
-      this.visitorsPurpose.visitorsPurpose = res.data.visitorsPurpose;
-      this.visitorsPurpose.id = res.data.id;
-      console.log(this.visitorsPurpose);
+      this.Dto.description = res.data.description;
+      this.Dto.visitorsPurpose = res.data.visitorsPurpose;
+      this.Dto.id = res.data.id;
+      // console.log(this.Dto);
 
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
     });
-    return this.visitorsPurpose;
+    return this.Dto;
   }
   setUpdateFileds(Id) {
     this.isUpdate = true;
     this.getById(Id);
   }
   update(Id) {
-    this.visitorsperposeService.update(this.visitorsPurpose, Id).subscribe((res: any) => {
+    this.visitorsperposeService.update(this.Dto, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
@@ -101,10 +98,9 @@ export class VisitorsPurposeComponent implements OnInit {
   }
 
   clearData() {
-    this.visitorsPurpose.description = "";
-    this.visitorsPurpose.id = 0;
-    this.visitorsPurpose.visitorsPurpose = "";
+    this.Dto.description = "";
+    this.Dto.id = 0;
+    this.Dto.visitorsPurpose = "";
     this.isUpdate = false;
   }
 }
-

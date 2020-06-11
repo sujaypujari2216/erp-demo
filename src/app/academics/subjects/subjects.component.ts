@@ -127,9 +127,5 @@ export class SubjectsComponent implements OnInit {
     });
 
   }
-  Theory = false;
-  Practicle = true;
-
-
-
+  
 }

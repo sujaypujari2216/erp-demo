@@ -15,13 +15,12 @@ export class AdmissionenqService {
     return this.http.post(this.url, enquiry);
   }
 
-  getList(): any {
+  getenqList(): any {
     return this.http.get(this.url);
   }
 
-  delete(Id): any {
+  deleteenq(Id): any {
 
-    console.log(this.url + Id);
     return this.http.delete(this.url + Id);
   }
 

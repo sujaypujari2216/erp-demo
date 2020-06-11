@@ -318,10 +318,73 @@
 
 <div class="card height-auto">
   <div class="card-body">
+    <form role="form" method="post" id="reused_form">
+
+      <div class="row">
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="dtp" class="dtp">
+            <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="enquiry.date">
+            <input type="date" id="dtp" placeholder="&nbsp;" name="followUpDate" [(ngModel)]="enquiry.followUpDate">
+
+            <span class="label">Enquiry Date *</span>
+
+          </label>
+        </div>
+
+        <!-- <div class="col-xl-3 col-lg-6 col-12 form-group">
+            <label for="slt" class="slt">
+              <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.status" name="status">
+                <option value="">select</option>
+                <option *ngFor="let class of this.status" [value]="status.status"
+                  [selected]="enquiry.class_ == class.class">{{ class.class}}</option>
+              </select>
+              <span class="label">Class *</span>
+              <span class="focus-bg"></span>
+            </label>
+          </div> -->
 
 
-    <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-      class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.source" name="source">
+              <option selected>Please Select *</option>
+              <option *ngFor="let source of this.sources" [value]="source.source"
+                [selected]="enquiry.source ==source.source">{{ source.source }}
+              </option>
+            </select>
+            <span class="label">Source*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select class="form-control" id="slt" placeholder="&nbsp;" name="Status">
+              <option selected>Please Select Status *</option>
+              <option value="All">All</option>
+              <option value="Active">Active</option>
+              <option value="Passive">Passive</option>
+              <option value="Dead">Dead</option>
+              <option value="Won">Won</option>
+              <option value="Lost">Lost</option>
+            </select>
+            <span class="label">Status *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <button (click)="getById(enquiry.id)" type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+            data-toggle="modal" data-target="#myModal">
+            Search
+          </button>
+
+        </div>
+      </div>
+    </form>
+    <hr>
+
+    <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right; width: 7%;"
+      type="button" class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+
+      Add</button>
 
     <div class="table-responsive">
 
@@ -352,7 +415,7 @@
                   title="call"></i></a>&nbsp;
               <a (click)="setUpdateFileds(enquiry.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(enquiry.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="deleteenq(enquiry.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
         </tbody>
@@ -489,7 +552,7 @@
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.source" name="source">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let source of this.sources" value="source.source"
+                    <option *ngFor="let source of this.sources" [value]="source.source"
                       [selected]="enquiry.source ==source.source">{{ source.source }}
                     </option>
                   </select>
@@ -499,7 +562,7 @@
               </div>
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="noOfChild" class="form-control" id="inp" placeholder="&nbsp;"
+                  <input type="number" name="noOfChild" class="form-control" id="inp" min="1" placeholder="&nbsp;"
                     [(ngModel)]="enquiry.noOfChild">
                   <span class="label">No of Child *</span>
                   <span class="focus-bg"></span>
@@ -507,7 +570,7 @@
               </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                <button *ngIf="!this.isUpdate" (click)="addenq()" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>
@@ -527,10 +590,8 @@
 
 <div class="container">
 
-  <!-- Modal -->
   <div id="myModal2" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <h5>Follow Up Admission Enquiry</h5>
@@ -578,7 +639,7 @@
               </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                <button *ngIf="!this.isUpdate" (click)="addenq()" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                   Save
                 </button>

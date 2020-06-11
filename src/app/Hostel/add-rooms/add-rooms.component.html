@@ -40,8 +40,8 @@
             <td>{{ hostelroom.costPerBed }}</td>
 
             <td><a (click)="setUpdateFileds(hostelroom.id)" data-toggle="modal" data-target="#myModal"><i
-              class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-          <a (click)="deleteHostelRoom(hostelroom.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleteHostelRoom(hostelroom.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
         </tbody>
@@ -118,10 +118,10 @@
                   <span class="focus-bg"></span>
                 </label>
               </div>
-            
+
               <div class="col-12 form-group mg-t-8">
                 <div class="form-group" style="float: left;">
-                  <button  (click)="addHostelRoom()" type="button"
+                  <button (click)="addHostelRoom()" type="button"
                     class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
                     data-target="#myModal">
                     Save
@@ -132,8 +132,8 @@
                     Update
                   </button>&nbsp;
                 </div>
-                <button type="reset" (click)="clearData()"
-                class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                <!-- <button type="reset" (click)="clearData()"
+                class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button> -->
               </div>
             </div>
           </form>
