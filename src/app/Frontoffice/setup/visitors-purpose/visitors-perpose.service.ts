@@ -10,8 +10,8 @@ export class VisitorsPerposeService {
 
   constructor(private http: HttpClient) { }
 
-  save(visitorsPurpose): any {
-    return this.http.post(this.url, visitorsPurpose);
+  save(Dto): any {
+    return this.http.post(this.url, Dto);
   }
 
   getpurposeList(): any {
@@ -22,8 +22,8 @@ export class VisitorsPerposeService {
     return this.http.delete(this.url + Id);
   }
 
-  update(visitorsPurpose, Id): any {
-    return this.http.put(this.url + Id, visitorsPurpose);
+  update(Dto, Id): any {
+    return this.http.put(this.url + Id, Dto);
   }
 
   getById(Id): any {

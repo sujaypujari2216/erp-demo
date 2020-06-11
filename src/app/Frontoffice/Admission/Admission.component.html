@@ -415,7 +415,7 @@
                   title="call"></i></a>&nbsp;
               <a (click)="setUpdateFileds(enquiry.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(enquiry.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="deleteenq(enquiry.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
         </tbody>
@@ -570,7 +570,7 @@
               </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                <button *ngIf="!this.isUpdate" (click)="addenq()" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>
@@ -590,10 +590,8 @@
 
 <div class="container">
 
-  <!-- Modal -->
   <div id="myModal2" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <h5>Follow Up Admission Enquiry</h5>
@@ -641,7 +639,7 @@
               </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                <button *ngIf="!this.isUpdate" (click)="addenq()" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                   Save
                 </button>
