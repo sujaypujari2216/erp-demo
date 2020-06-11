@@ -11,6 +11,8 @@ import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
   //styleUrls: ['./complain.component.scss']
 })
 export class ComplainComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/complaint`;
+
 
   complains=[];
   complaint = {
@@ -90,8 +92,9 @@ export class ComplainComponent implements OnInit {
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
       this.getAllComplainList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error While Saving Class');
       console.error(err);
@@ -135,10 +138,12 @@ export class ComplainComponent implements OnInit {
       if (res.success == true) {
         alert(' Updated Successfully');
       }
-      //destroy dataTable
       this.datatableservice.destroy();
-
+      this.isUpdate = false;
       this.getAllComplainList();
+      this.clearData();
+      //destroy dataTable
+
     }, (err) => {
       console.log('Error while Updating');
       console.error(err);
@@ -176,5 +181,7 @@ export class ComplainComponent implements OnInit {
     this.complaint.note = "";
     this.complaint.source = "";
     this.complaint.date = "";
+    this.isUpdate = false;
+
   }
 }

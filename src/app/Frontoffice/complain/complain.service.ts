@@ -19,7 +19,6 @@ export class ComplainService {
 
   deleteComplain(complainId): any {
 
-    //console.log(this.url + complainId);
     return this.http.delete(this.url + complainId);
   }
 
