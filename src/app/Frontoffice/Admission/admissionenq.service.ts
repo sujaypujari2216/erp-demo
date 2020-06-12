@@ -19,16 +19,16 @@ export class AdmissionenqService {
     return this.http.get(this.url);
   }
 
-  deleteenq(Id): any {
+  deleteenq(EnqId): any {
 
-    return this.http.delete(this.url + Id);
+    return this.http.delete(this.url + EnqId);
   }
 
-  update(enquiry, Id): any {
-    return this.http.put(this.url + Id, enquiry);
+  update(enquiry, EnqId): any {
+    return this.http.put(this.url + EnqId, enquiry);
   }
 
-  getById(Id): any {
-    return this.http.get(this.url + Id);
+  getById(EnqId): any {
+    return this.http.get(this.url + EnqId);
   }
 }

@@ -6,7 +6,8 @@ import { ReferenceService } from 'src/app/Frontoffice/setup/reference/reference.
 import { ClassService } from 'src/app/academics//class/class.service';
 
 @Component({
-  selector: 'app-Frontoffice-Admission',
+  // tslint:disable-next-line: component-selector
+  selector: 'app-Admission',
   templateUrl: './Admission.component.html',
   styleUrls: ['./Admission.component.css']
 })
@@ -27,20 +28,20 @@ export class AdmissionComponent implements OnInit {
     "id": 0,
     "isActive": "yes",
     "name": "",
-    "noOfChild": "",
+    "noOfChild": 0,
     "note": "",
     "reference": "",
     "source": "",
 
-  }
+  };
 
   isUpdate: boolean = false;
   references: any;
   sources: any;
   classes: any;
   //public rowID;
-  constructor(private datatableservice: DatatableService,
-    private admissionenqService: AdmissionenqService,
+  constructor(private admissionenqService: AdmissionenqService,
+    private datatableservice: DatatableService,
     private sourceservice: SourceService,
     private classservice: ClassService,
     private referenceservice: ReferenceService,
@@ -58,7 +59,7 @@ export class AdmissionComponent implements OnInit {
     this.sourceservice.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
       this.sources = data['content'];
-      console.log(this.sources);
+      // console.log(this.sources);
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
@@ -69,7 +70,7 @@ export class AdmissionComponent implements OnInit {
       var data = res['data'];
       this.references = data['content'];
       //this.references = content.map((key) => ({ ...key }));
-      console.log(this.references);
+      //console.log(this.references);
 
     }, (err) => {
       console.log('Error while fetching data');
@@ -77,12 +78,11 @@ export class AdmissionComponent implements OnInit {
     });
   }
   getClassList() {
-    this.classservice.getAllClassList().subscribe(
-      (res: any) => {
+    this.classservice.getAllClassList().subscribe((res: any) => {
         var data = res['data'];
         this.classes = data['content'];
         //this.classes = content.map((key) => ({ ...key }));
-        console.log(this.classes);
+       // console.log(this.classes);
       },
       (err) => {
         console.log('Error while fetching all Classes');
@@ -101,8 +101,8 @@ export class AdmissionComponent implements OnInit {
       console.error(err);
     });
   }
-
-
+  
+  
   addenq() {
     this.admissionenqService.save(this.enquiry).subscribe((res: any) => {
       if (res.success == true) {
@@ -110,15 +110,15 @@ export class AdmissionComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.getenqList();
-
+      this.clearData();
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
     });
   }
-
-  getById(Id) {
-    this.admissionenqService.getById(Id).subscribe((res: any) => {
+     
+  getById(EnqId) {
+    this.admissionenqService.getById(EnqId).subscribe((res: any) => {
       this.enquiry.address = res.data.address;
       this.enquiry.assigned = res.data.assigned;
       this.enquiry.id = res.data.id;
@@ -134,7 +134,6 @@ export class AdmissionComponent implements OnInit {
       this.enquiry.note = res.data.note;
       this.enquiry.reference = res.data.reference;
       this.enquiry.source = res.data.source;
-
       console.log(this.enquiry);
 
     }, (err) => {
@@ -143,19 +142,19 @@ export class AdmissionComponent implements OnInit {
     });
     return this.enquiry;
   }
-  setUpdateFileds(Id) {
+  setUpdateFileds(EnqId) {
     this.isUpdate = true;
-    this.getById(Id);
+    this.getById(EnqId);
   }
-  update(Id) {
+  update(EnqId) {
 
-    this.admissionenqService.update(this.enquiry, Id).subscribe((res: any) => {
+    this.admissionenqService.update(this.enquiry, EnqId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
       }
       this.datatableservice.destroy();
-      //this.isUpdate = false;
+      this.isUpdate = false;
       this.getenqList();
       this.clearData();
     }, (err) => {
@@ -164,10 +163,9 @@ export class AdmissionComponent implements OnInit {
     });
 
   }
-
-
-  deleteenq(Id) {
-    this.admissionenqService.deleteenq(Id).subscribe((res: any) => {
+  
+  deleteenq(EnqId) {
+    this.admissionenqService.deleteenq(EnqId).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }
@@ -180,12 +178,11 @@ export class AdmissionComponent implements OnInit {
     });
   }
 
-
   clearData() {
     this.enquiry.address = "";
     this.enquiry.assigned = "";
     this.enquiry.id = 0;
-    this.enquiry.isActive = "yes";
+    //this.enquiry.isActive = "yes";
     this.enquiry.class_ = 0;
     this.enquiry.contact = "";
     this.enquiry.date = "";
@@ -193,14 +190,17 @@ export class AdmissionComponent implements OnInit {
     this.enquiry.email = "";
     this.enquiry.followUpDate = "";
     this.enquiry.name = "";
-    this.enquiry.noOfChild = "";
+    this.enquiry.noOfChild = 0;
     this.enquiry.note = "";
     this.enquiry.reference = "";
     this.enquiry.source = "";
+    this.isUpdate = false;
+
   }
 
 
 }
+
 
 
 

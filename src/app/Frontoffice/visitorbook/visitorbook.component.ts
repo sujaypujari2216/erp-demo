@@ -32,7 +32,7 @@ export class VisitorbookComponent implements OnInit {
   isUpdate: boolean = false;
   visitors: any;
   sources: any;
-  purposes: any;
+ // purposes: any;
 
   constructor(private visitorbookService: VisitorbookService,
     private datatableservice: DatatableService,
@@ -59,9 +59,9 @@ export class VisitorbookComponent implements OnInit {
   getpurposeList() {
     this.visitorsperposeService.getpurposeList().subscribe((res: any) => {
       var data = res['data'];
-      var content = data['content'];
-      this.purposes = content.map((key) => ({ ...key }));
-      console.log(this.purposes);
+      this.visitors = data['content'];
+      //this.visitors = content.map((key) => ({ ...key }));
+      //console.log(this.visitors);
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
@@ -158,7 +158,7 @@ export class VisitorbookComponent implements OnInit {
     this.visitorsBook.contact = "";
     this.visitorsBook.date = "";
     this.visitorsBook.id = 0;
-    this.visitorsBook.isActive = "";
+    this.visitorsBook.isActive = "yes";
     this.visitorsBook.idProof = "";
     this.visitorsBook.image = "";
     this.visitorsBook.inTime = "";

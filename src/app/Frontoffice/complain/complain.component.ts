@@ -52,8 +52,8 @@ export class ComplainComponent implements OnInit {
 
   getAllComplaintTypeList() {
     this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
-      var data = res.data;
-      this.complainttypes = data.content;
+      var data = res['data'];
+      this.complainttypes = data['content'];
       console.log(this.complainttypes);
     }, (err) => {
       console.log('Error while fetching all Classes');

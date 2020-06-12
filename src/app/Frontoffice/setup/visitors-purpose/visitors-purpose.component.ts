@@ -11,16 +11,16 @@ export class VisitorsPurposeComponent implements OnInit {
 
   visitors = [];
   Dto = {
-    "description": "string",
+    "description": "",
     "id": 0,
     "isActive": "yes",
-    "visitorsPurpose": "string"
+    "visitorsPurpose": ""
   }
 
   isUpdate: boolean = false;
   constructor(private visitorsperposeService: VisitorsPerposeService, private datatableservice: DatatableService) { }
   ngOnInit(): void {
-    this.getpurposeList()
+    this.getpurposeList();
   }
 
   getpurposeList() {

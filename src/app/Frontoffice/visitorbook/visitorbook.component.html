@@ -74,14 +74,15 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.purpose"
                     name="purpose">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let purpose of purposes" [value]="purpose.visitorsPurposer" [selected]="visitorsBook.purpose ==
-                    purpose.visitorsPurpose">{{ purpose.visitorsPurpose }}
+                    <option *ngFor="let visitor of visitors" [value]="visitor.visitor" [selected]="visitorsBook.purpose ==
+                    visitor.visitor">{{ visitor.visitor }}
                     </option>
                   </select>
                   <span class="label">Purpose *</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="visitorsBook.name"
