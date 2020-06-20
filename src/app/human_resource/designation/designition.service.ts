@@ -1,29 +1,30 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DesignitionService {
 
-  constructor() { }
-   /*
-  saveSection(sectionDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/section', sectionDto);
+  constructor(private http: HttpClient) { }
+  url = `http://yamistha.cloudjiffy.net/staffdesignation/`;
+  save(Dto): any {
+    return this.http.post(this.url, Dto);
   }
 
-  getAllSectionList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/section/');
+  getList(): any {
+    return this.http.get(this.url);
   }
 
-  deleteSection(sectionId): any {
-    return this.http.delete('http://yamistha.cloudjiffy.net/section/' + sectionId);
+  delete(Id): any {
+    return this.http.delete(this.url + Id);
   }
 
-  updateSection(sectionDto, sectionId): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/section/' + sectionId, sectionDto);
+  update(Dto, Id): any {
+    return this.http.put(this.url + Id, Dto);
   }
 
-  getSectionById(sectionId): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/section/' + sectionId);
-  }*/
+  getById(Id): any {
+    return this.http.get(this.url + Id);
+  }
 }
