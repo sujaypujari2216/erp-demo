@@ -53,7 +53,6 @@ import { AddPageComponent } from "./add-page/add-page.component";
 import { StudentAttendanceComponent } from "./Attendance/student-attendance/student-attendance.component";
 import { AttendanceByDateComponent } from "./Attendance/attendance-by-date/attendance-by-date.component";
 import { ApproveLeaveComponent } from "./Attendance/approve-leave/approve-leave.component";
-import { FeesGroupAssignComponent } from "./feecollection/fees-group-assign/fees-group-assign.component";
 import { AddExamComponent } from "./Examination/add-exam/add-exam.component";
 import { CreateTtComponent } from "./create-tt/create-tt.component";
 import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
@@ -62,6 +61,7 @@ import { VisitorsPurposeComponent } from './Frontoffice/setup/visitors-purpose/v
 import { SourceComponent } from './Frontoffice/setup/source/source.component';
 import { ReferenceComponent } from './Frontoffice/setup/reference/reference.component';
 import { HostelModule } from './Reports/hostel/hostel.module';
+import { FeeCollectionModule } from './feecollection/feecollection.module';
 
 
 @NgModule({
@@ -110,7 +110,6 @@ import { HostelModule } from './Reports/hostel/hostel.module';
     StudentAttendanceComponent,
     AttendanceByDateComponent,
     ApproveLeaveComponent,
-    FeesGroupAssignComponent,
     AddExamComponent,
     CreateTtComponent,
     Issue1Component,
@@ -127,8 +126,9 @@ import { HostelModule } from './Reports/hostel/hostel.module';
     ReportsModule,
     AcademicsModule,
     HostelModule,
+    FeeCollectionModule,
     RouterModule,
-     //BsDatepickerModule.forRoot(),
+    //BsDatepickerModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(

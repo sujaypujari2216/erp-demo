@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeesGroupAssignComponent } from './fees-group-assign/fees-group-assign.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FeesgroupComponent } from './feesgroup/feesgroup.component';
+import { FeeCollectionRoutingModule } from './feecollection-routing.module';
 
 
 
@@ -8,9 +10,12 @@ import { FeesGroupAssignComponent } from './fees-group-assign/fees-group-assign.
 
 
 @NgModule({
-  declarations: [FeesGroupAssignComponent],
+  declarations: [FeesgroupComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FeeCollectionRoutingModule
   ]
 })
-export class FeeCollectionModule {}
+export class FeeCollectionModule { }
