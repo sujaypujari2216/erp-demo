@@ -104,6 +104,7 @@ export class AddRoomTypeComponent implements OnInit {
     this.roomType.id = 0,
       this.roomType.isActive = 'yes',
       this.roomType.roomType = '',
-      this.roomType.description = ''
+      this.roomType.description = '',
+      this.isUpdate = false;
   }
 }

@@ -119,7 +119,8 @@ export class AddHostelComponent implements OnInit {
       this.hostelDto.type = "",
       this.hostelDto.intake = 0,
       this.hostelDto.address = "",
-      this.hostelDto.description = ""
+      this.hostelDto.description = "",
+      this.isUpdate = false;
   }
 
 }
