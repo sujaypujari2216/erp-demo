@@ -15,7 +15,7 @@
       </div>
       <div class="dropdown">
         <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right; ;" type="button"
-          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+          class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
       </div>
     </div>
     <div class="table-responsive">
@@ -34,7 +34,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let visitorb of visitorsbook">
-            <td>{{ visitorb.visitorsPurpose }}</td>
+            <td>{{ visitorb.purpose }}</td>
             <td>{{ visitorb.name }}</td>
             <td>{{ visitorb.contact }}</td>
             <td>{{ visitorb.date }}</td>
@@ -74,8 +74,8 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.purpose"
                     name="purpose">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let visitorp of visitors" [value]="visitorp.visitorp"
-                      [selected]="visitorsBook.purpose == visitorp.visitorp">{{ visitorp.visitorp }}
+                    <option *ngFor="let visitorp of visitors" [value]="visitorp.visitorsPurpose"
+                      [selected]="visitorsBook.purpose == visitorp.visitorsPurpose">{{ visitorp.visitorsPurpose }}
                     </option>
                   </select>
                   <span class="label">Purpose *</span>

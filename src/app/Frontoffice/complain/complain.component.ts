@@ -8,14 +8,14 @@ import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 @Component({
   selector: 'app-complain',
   templateUrl: './complain.component.html',
-  //styleUrls: ['./complain.component.scss']
+  styleUrls: ['./complain.component.css']
 })
 export class ComplainComponent implements OnInit {
 
   url = `http://yamistha.cloudjiffy.net/complaint`;
 
 
-  complains=[];
+  complains = [];
   complaint = {
     "actionTaken": "",
     "assigned": "",
@@ -32,26 +32,26 @@ export class ComplainComponent implements OnInit {
     "source": "",
   };
   isUpdate: boolean = false;
- roomtypeDto: any;
-sources: any;
+  roomtypeDto: any;
+  sources: any;
   complainttypes: any;
 
 
-  constructor(private complainService: ComplainService, private datatableservice: DatatableService, 
-    private complainttypeService: ComplainttypeService, private sourceService: SourceService, ) { }
-    // tslint:disable-next-line: align
-    
+  constructor(private complainService: ComplainService, private datatableservice: DatatableService,
+    private complainttypeService: ComplainttypeService, private sourceService: SourceService,) { }
+  // tslint:disable-next-line: align
+
 
 
   ngOnInit(): void {
     this.getAllComplainList();
     this.getAllComplaintTypeList();
-   this.getAllSourceList();
-    
+    this.getAllSourceList();
+
 
   }
 
-   getAllComplaintTypeList() {
+  getAllComplaintTypeList() {
     this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
       var data = res['data'];
       this.complainttypes = data['content'];
@@ -72,10 +72,10 @@ sources: any;
       console.log('Error while fetching all Classes');
       console.error(err);
     });
-  }  
+  }
   getAllComplainList() {
-      console.log('getAllComplainList()');
-      this.complainService.getAllComplainList().subscribe((res: any) => {
+    //console.log('getAllComplainList()');
+    this.complainService.getAllComplainList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.complains = content.map((key) => ({ ...key }));
