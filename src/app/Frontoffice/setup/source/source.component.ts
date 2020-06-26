@@ -56,7 +56,7 @@ export class SourceComponent implements OnInit {
       this.Dto.source = res.data.source;
       this.Dto.id = res.data.id;
       this.Dto.isActive = res.data.isActive;
-      console.log(this.Dto);
+      // console.log(this.Dto);
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);

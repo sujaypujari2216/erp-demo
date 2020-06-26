@@ -1,149 +1,92 @@
-
 <div class="breadcrumbs-area">
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>Staff Attendance</li>
-    </ul>
-  </div>
-  <div class="card height-auto">
-    <div class="card-body">
-                <form class="new-added-form">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="slt" class="slt">
-                                <select  name="Section" class="form-control" id="slt" placeholder="&nbsp;">
-                                 <option value="">select</option>
-                                <option value="1">Admin</option>
-                                <option value="2">Teacher</option>
-                                <option value="3">Accountant</option>
-                                <option value="4">Librarian</option>
-                                <option value="5">Receptionist</option>
-                                <option value="5">Super Admin</option>
-                            </select>
-                            <span class="label">Role *</span>
-                            <span class="focus-bg"></span>
-                        </label>
-                        </div>
-                               
-                        
-                        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                            <label for="dtp" class="dtp">
-                              <input type="date" id="dtp" placeholder="&nbsp;" name="admission" >
-                                <span class="label"> Date *</span>
-                                <span class="focus-bg"></span>
-                              </label>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                <div class="form-group">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;">Search</button>
-                                </div>
-                            </div>
-            
-                        
-                      
-                        
-                    </div>
-                </form>
-  
-    
-        <div class="table-responsive">
-        <div>
-            <span style="float:left;"><h3>Staff List</h3></span>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>Staff Attendance</li>
+  </ul>
+</div>
+<div class="card height-auto">
+  <div class="card-body">
+    <form class="new-added-form">
+      <div class="row">
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select name="Section" class="form-control" id="slt" placeholder="&nbsp;">
+              <option value="">select</option>
+              <option value="1">Admin</option>
+              <option value="2">Teacher</option>
+              <option value="3">Accountant</option>
+              <option value="4">Librarian</option>
+              <option value="5">Receptionist</option>
+              <option value="5">Super Admin</option>
+            </select>
+            <span class="label">Role *</span>
+            <span class="focus-bg"></span>
+          </label>
         </div>
-                <div style="clear: right;margin-bottom: 5px;">
-                    <button type="submit" class="btn1 bg-blue-dark btn-hover-yellow" style="font-size: small;">Mark As Holiday</button>
-                    <div style="float:right;">
-                        <button type="submit" class="btn1 bg-blue-dark btn-hover-yellow" style="font-size: small;">Save Attendance</button>
-                    </div>
-                </div>    
-          <table id="example" class="table display data-table text-nowrap cell-border">
-              <thead>
-                  
-                  <tr>
-                      <th>Sr.No</th>
-                      <th>Staff ID</th>
-                      <th>Name</th>
-                      <th>Role</th>
-                      <th>Attendance</th>  
-                      <th>Note</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>1</td>
-                      <td>123</td>
-                      <td>abc</td>
-                      <td>admin</td>
-                      <td>
-                        <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
-                        <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
-                        <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
-                        <input type="radio" value="half day"><label>half day</label>
-                      </td>
-                      <td><input type="text"></td>
-                  </tr>
 
-                  <tr>
-                    <td>1</td>
-                    <td>123</td>
-                    <td>abc</td>
-                    <td>admin</td>
-                    <td>
-                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
-                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
-                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
-                      <input type="radio" value="half day"><label>half day</label>
-                    </td>
-                    <td><input type="text"></td>
-                 </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>123</td>
-                    <td>abc</td>
-                    <td>admin</td>
-                    <td>
-                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
-                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
-                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
-                      <input type="radio" value="half day"><label>half day</label>
-                    </td>
-                    <td><input type="text"></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123</td>
-                    <td>abc</td>
-                    <td>admin</td>
-                    <td>
-                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
-                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
-                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
-                      <input type="radio" value="half day"><label>half day</label>
-                    </td>
-                    <td><input type="text"></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123</td>
-                    <td>abc</td>
-                    <td>admin</td>
-                    <td>
-                      <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
-                      <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
-                      <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
-                      <input type="radio" value="half day"><label>half day</label>
-                    </td>
-                    <td><input type="text"></td>
-                  </tr>
-                 
-              </tbody>
-          </table>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="dtp" class="dtp">
+            <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+            <span class="label"> Date *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
+        </div>
+
       </div>
+    </form>
+
+
+    <div class="table-responsive">
+      <div>
+        <span style="float:left;">
+          <h5>Staff List</h5>
+        </span>
+      </div><br>
+      <div style="float:left;">
+        <button type="submit" class="btn1 bg-blue-dark btn-hover-yellow" style="font-size: small;">Mark As
+          Holiday</button>
+      </div>
+      <div style="float:right;">
+        <button type="submit" class="btn1 bg-blue-dark btn-hover-yellow" style="font-size: small;">Save
+          Attendance</button>
+      </div>
+
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
+
+          <tr>
+            <th>Sr.No</th>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Attendance</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>123</td>
+            <td>abc</td>
+            <td>admin</td>
+            <td>
+              <input type="radio" value="present"><label>present</label>&nbsp;&nbsp;
+              <input type="radio" value="Late"><label>late</label>&nbsp;&nbsp;
+              <input type="radio" value="absent"><label>absent</label>&nbsp;&nbsp;
+              <input type="radio" value="half day"><label>half day</label>
+            </td>
+            <td><input type="text"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-   </div>
-  
-    <!-- Admission Enquiry Area Start Here -->
-   
-  
+  </div>
+</div>
+
+<!-- Admission Enquiry Area Start Here -->

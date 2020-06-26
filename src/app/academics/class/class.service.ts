@@ -12,7 +12,7 @@ export class ClassService {
     return this.http.post('http://yamistha.cloudjiffy.net/class', classDto);
   }
 
-  getAllClassList(): any {
+  getClassList(): any {
     return this.http.get('http://yamistha.cloudjiffy.net/class');
   }
 

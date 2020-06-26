@@ -23,6 +23,7 @@ export class ClassComponent implements OnInit {
     ]
   }
   sectionDto: any = [];
+  //selectedItems:string[];
 
   isUpdate: boolean = false;
 
@@ -35,6 +36,7 @@ export class ClassComponent implements OnInit {
   ngOnInit(): void {
     this.getClassList();
     this.getSectionList();
+    //this.selectedItems = new Array<string>();
 
   }
 
@@ -50,7 +52,7 @@ export class ClassComponent implements OnInit {
   }
 
   getClassList() {
-    this.classService.getAllClassList().subscribe(
+    this.classService.getClassList().subscribe(
       (res: any) => {
         var data = res['data'];
         var content = data['content'];
@@ -137,4 +139,21 @@ export class ClassComponent implements OnInit {
       }
     );
   }
+  /* getSectionId(e: any, section:string)
+  {
+    if(e.target.checked)
+    {
+      console.log(section+'checked');
+      this.selectedItems.push(section);
+
+
+    }
+    else{
+      console.log(section + 'unchecked');
+      this.selectedItems = this.selectedItems.filter(m=>m!=section);
+
+    }
+    console.log(this.selectedItems)
+
+  } */
 }

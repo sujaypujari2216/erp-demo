@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { ComplainService } from './complain.service';
-//import { ComplainttypeService } from 'src/app/Frontoffice/setup/complainttype/complainttype.service';
-//import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
+import { ComplainttypeService } from 'src/app/Frontoffice/setup/complainttype/complainttype.service';
+import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 
 
 @Component({
@@ -11,6 +11,9 @@ import { ComplainService } from './complain.service';
   //styleUrls: ['./complain.component.scss']
 })
 export class ComplainComponent implements OnInit {
+
+  url = `http://yamistha.cloudjiffy.net/complaint`;
+
 
   complains=[];
   complaint = {
@@ -29,28 +32,29 @@ export class ComplainComponent implements OnInit {
     "source": "",
   };
   isUpdate: boolean = false;
- //roomtypeDto: any;
-  //sources: any;
-  //complainttypes: any;
+ roomtypeDto: any;
+sources: any;
+  complainttypes: any;
 
 
-  constructor(private complainService: ComplainService, private datatableservice: DatatableService ) { }
+  constructor(private complainService: ComplainService, private datatableservice: DatatableService, 
+    private complainttypeService: ComplainttypeService, private sourceService: SourceService, ) { }
     // tslint:disable-next-line: align
     
 
 
   ngOnInit(): void {
     this.getAllComplainList();
-    //this.getAllComplaintTypeList();
-   // this.getAllSourceList();
+    this.getAllComplaintTypeList();
+   this.getAllSourceList();
     
 
   }
 
- /*  getAllComplaintTypeList() {
+   getAllComplaintTypeList() {
     this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
-      var data = res.data;
-      this.complainttypes = data.content;
+      var data = res['data'];
+      this.complainttypes = data['content'];
       console.log(this.complainttypes);
     }, (err) => {
       console.log('Error while fetching all Classes');
@@ -62,15 +66,13 @@ export class ComplainComponent implements OnInit {
   getAllSourceList() {
     this.sourceService.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
-      var content = data['content'];
-      this.sources = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('section');
-
+      this.sources = data['content'];
+      console.log(this.sources);
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
     });
-  } */
+  }  
   getAllComplainList() {
       console.log('getAllComplainList()');
       this.complainService.getAllComplainList().subscribe((res: any) => {
@@ -87,12 +89,13 @@ export class ComplainComponent implements OnInit {
   addComplain() {
     this.complainService.addComplain(this.complaint).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section Saved Successfully');
+        alert('Saved Successfully');
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
       this.getAllComplainList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error While Saving Class');
       console.error(err);
@@ -136,10 +139,12 @@ export class ComplainComponent implements OnInit {
       if (res.success == true) {
         alert(' Updated Successfully');
       }
-      //destroy dataTable
       this.datatableservice.destroy();
-
+      this.isUpdate = false;
       this.getAllComplainList();
+      this.clearData();
+      //destroy dataTable
+
     }, (err) => {
       console.log('Error while Updating');
       console.error(err);
@@ -177,5 +182,7 @@ export class ComplainComponent implements OnInit {
     this.complaint.note = "";
     this.complaint.source = "";
     this.complaint.date = "";
+    this.isUpdate = false;
+
   }
 }

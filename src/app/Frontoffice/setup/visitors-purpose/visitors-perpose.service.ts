@@ -14,7 +14,7 @@ export class VisitorsPerposeService {
     return this.http.post(this.url, Dto);
   }
 
-  getList(): any {
+  getpurposeList(): any {
     return this.http.get(this.url);
   }
 

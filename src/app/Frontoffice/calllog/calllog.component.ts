@@ -9,9 +9,7 @@ import { calllogService } from './calllog.service';
   styleUrls: ['./calllog.component.css'],
 })
 export class calllogComponent implements OnInit {
-
-
-  url = `http://yamistha.cloudjiffy.net/general-call`;
+  constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
 
   calllogs = [];
   Dto = {
@@ -28,9 +26,10 @@ export class calllogComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
+  // tslint:disable-next-line: member-ordering
+
   ngOnInit(): void {
-    this.getList()
+    this.getList();
   }
 
   getList() {
@@ -60,8 +59,6 @@ export class calllogComponent implements OnInit {
   }
 
   getById(Id) {
-    console.log(this.Dto);
-    console.log(this.Dto);
     this.calllogService.getById(Id).subscribe((res: any) => {
       this.Dto.callDureation = res.data.callDureation;
       this.Dto.callType = res.data.callType;
@@ -73,8 +70,6 @@ export class calllogComponent implements OnInit {
       this.Dto.isActive = res.data.isActive;
       this.Dto.name = res.data.name;
       this.Dto.note = res.data.note;
-      console.log(this.Dto);
-
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
@@ -117,46 +112,19 @@ export class calllogComponent implements OnInit {
   }
 
   clearData() {
-    // this.Dto.callDureation = "";
-    // this.Dto.callType = "";
-    // this.Dto.contact = "";
-    // this.Dto.date = "";
-    // this.Dto.description = "";
-    // this.Dto.followUpDate = "";
-    // this.Dto.id = 0;
-    // this.Dto.isActive = "yes";
-    // this.Dto.name = "";
-    // this.Dto.note = "";
+    this.Dto.callDureation = "";
+    this.Dto.callType = "";
+    this.Dto.contact = "";
+    this.Dto.date = "";
+    this.Dto.description = "";
+    this.Dto.followUpDate = "";
+    this.Dto.id = 0;
+    this.Dto.isActive = "yes";
+    this.Dto.name = "";
+    this.Dto.note = "";
     this.isUpdate = false;
   }
 }
-
-
-// import { Component, OnInit } from '@angular/core';
-// import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-// import { calllogService } from './calllog.service';
-
-// @Component({
-//   selector: 'app-calllog',
-//   templateUrl: './calllog.component.html',
-//   styleUrls: ['./calllog.component.css'],
-// })
-// export class calllogComponent implements OnInit {
-
-
-//   url = `http://yamistha.cloudjiffy.net/general-call`;
-
-//   calllogs = [];
-
-//   constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
-
-//   ngOnInit(): void {
-//   }
-
-
-
-// }
-
 
 
 

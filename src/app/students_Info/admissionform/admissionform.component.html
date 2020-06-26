@@ -23,67 +23,57 @@
 
       </div>
     </div>
-
     <form class="new-added-form">
       <div class="row">
-
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Roll No *</span>
+            <input type="text" name="admissionNo" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.admissionNo">
+            <span class="label">Admission No. *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="rollNo" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.rollNo">
+            <span class="label">Roll No *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Class *</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="3">4</option>
-              <option value="3">5</option>
-              <option value="3">6</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.classId" name="classId">
+              <option selected>Please Select *</option>
+              <option *ngFor="let class of this.classes" [value]="class.id" [selected]="studentDto.classId == class.id">
+                {{ class.id }}
+              </option>
             </select>
             <span class="label">Class *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
-
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select name="section" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select section *</option>
-              <option value="">select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="3">4</option>
-              <option value="3">5</option>
-              <option value="3">6</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.sectionId"
+              name="sectionId">
+              <option selected>Please Select *</option>
+              <option *ngFor="let section of this.sections" [value]="section.sectionId"
+                [selected]="studentDto.sectionId ==section.sectionId">{{ section.sectionId }}
+              </option>
             </select>
             <span class="label">Section *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <div class="dropdown">
-
-            <button style="  background-color: transparent;color: skyblue;
-                        " type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
-              data-target="#myModal">+ Add Sibling</button>
-          </div>
-        </div>
-
       </div>
-
-
 
       <div class="row">
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="firstName" class="form-control" id="inp" placeholder="&nbsp;">
+            <input type="text" name="firstname" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.firstname">
             <span class="label">First Name *</span>
             <span class="focus-bg"></span>
           </label>
@@ -91,7 +81,8 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="lastName" class="form-control" id="inp" placeholder="&nbsp;">
+            <input type="text" name="lastname" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.lastname">
             <span class="label">Last Name *</span>
             <span class="focus-bg"></span>
           </label>
@@ -99,11 +90,11 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select name="gender" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Gender *</option>
-              <option value="">select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.gender" name="gender">
+              <option selected> Select *</option>
+              <option value="Male" [selected]="studentDto.gender == 'Male'">Male</option>
+              <option value="Female" [selected]="studentDto.gender == 'Female'">Female</option>
+
             </select>
             <span class="label">Gender *</span>
             <span class="focus-bg"></span>
@@ -112,24 +103,19 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="">
+            <input type="date" id="dtp" placeholder="&nbsp;" name="dob" [(ngModel)]="studentDto.dob">
             <span class="label">Birthdate *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
-
-
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select name="category" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Category *</option>
-              <option value="">select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="3">4</option>
-              <option value="3">5</option>
-              <option value="3">6</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.categoryId"
+              name="categoryId">
+              <option selected>Please Select *</option>
+              <option *ngFor="let student of this.students" [value]="student.categoryId"
+                [selected]="studentDto.categoryId ==student.categoryId">{{ student.categoryId }}
+              </option>
             </select>
             <span class="label">Category *</span>
             <span class="focus-bg"></span>
@@ -137,16 +123,9 @@
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="slt" class="slt">
-            <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Religion *</option>
-              <option value="">select</option>
-              <option value="1">Islam</option>
-              <option value="2">Hindu</option>
-              <option value="3">Christian</option>
-              <option value="3">Buddish</option>
-              <option value="3">Others</option>
-            </select>
+          <label for="inp" class="inp">
+            <input type="text" name="religion" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.religion">
             <span class="label">Religion *</span>
             <span class="focus-bg"></span>
           </label>
@@ -154,7 +133,8 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+            <input type="text" name="cast" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.cast">
             <span class="label">Cast *</span>
             <span class="focus-bg"></span>
           </label>
@@ -162,24 +142,26 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="mobileno." class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Mobile No.:</span>
+            <input type="text" name="mobileno" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.mobileno">
+            <span class="label">Mobile No*</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="email" name="email" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">E-Mail:</span>
+            <input type="email" name="email" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.email">
+            <span class="label">E-Mail*</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="">
-
+            <input type="date" id="dtp" placeholder="&nbsp;" name="admissionDate"
+              [(ngModel)]="studentDto.admissionDate">
             <span class="label">Admission Date *</span>
             <span class="focus-bg"></span>
           </label>
@@ -187,147 +169,517 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
-          <input type="file" class="form-control-file" name="photo" placeholder="Upload Student Photo (150px X 150px)">
+          <input type="file" class="form-control-file" name="image" placeholder="Upload Student Photo (150px X 150px)"
+            [(ngModel)]="studentDto.image">
         </div>
-
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select BloodGroup *</option>
-              <option value="">select</option>
-              <option value="1">A+</option>
-              <option value="2">A-</option>
-              <option value="3">B+</option>
-              <option value="3">B-</option>
-              <option value="3">O+</option>
-              <option value="3">O-</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.bloodGroup"
+              name="bloodGroup">
+              <option selected>Please Select Class *</option>
+              <option value="O+" [selected]="studentDto.bloodGroup == 'O+'">O+</option>
+              <option value="A+" [selected]="studentDto.bloodGroup == 'A+'">A+</option>
+              <option value="B+" [selected]="studentDto.bloodGroup == 'B+'">B+</option>
+              <option value="AB+" [selected]="studentDto.bloodGroup == 'AB+'">AB+</option>
+              <option value="O-" [selected]="studentDto.bloodGroup == 'O-'">O-</option>
+              <option value="A-" [selected]="studentDto.bloodGroup == 'A-'">A-</option>
+              <option value="B-" [selected]="studentDto.bloodGroup == 'B-'">B-</option>
+              <option value="AB-" [selected]="studentDto.bloodGroup == 'AB-'">AB-</option>
             </select>
-            <span class="label">Bloodgroup</span>
+            <span class="label">BloodGroup *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
-
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select name="house" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select House *</option>
-              <option value="">select</option>
-              <option value="1">1</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.schoolHouseId"
+              name="schoolHouseId">
+              <option selected>Select *</option>
+              <option *ngFor="let house of this.houses" [value]="house.schoolHouseId"
+                [selected]="studentDto.schoolHouseId == house.schoolHouseId">{{ house.schoolHouseId }}
+              </option>
             </select>
-            <span class="label">Houses </span>
+            <span class="label">Student House *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="height" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Height:</span>
+            <input type="text" name="height" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.height">
+            <span class="label">Height *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="Weight" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Weight:</span>
+            <input type="text" name="weight" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.weight">
+            <span class="label">Weight *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="asondate">
+            <input type="date" id="dtp" placeholder="&nbsp;" name="measurementDate"
+              [(ngModel)]=" studentDto.measurementDate">
             <span class="label">As On Date *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
-
-
-
-
-        <div class="col-12 form-group mg-t-8">
-          <!--<button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>-->
-          <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
-          <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
-            onClick="location.href='/#/addparents'">+ Next</button>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="adharNo" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.adharNo">
+            <span class="label">Addhar Number *</span>
+            <span class="focus-bg"></span>
+          </label>
         </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="Weight" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.rollNo">
+            <span class="label">GRN *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <!--<button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>-->
+        <!-- <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+            <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+              onClick="location.href='/#/addparents'">+ Next</button>&nbsp;&nbsp;&nbsp; -->
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <button style="  background-color: transparent;color:#f5611d
+                        " type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+            data-target="#myModal">+ Add Sibling</button>
+
+        </div>
+      </div>
+      <hr><br>
+      <h3>Add Parent Details</h3>
+
+      <div class="row">
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="fatherName" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.fatherName">
+            <span class="label">Father Name*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="fatherPhone" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.fatherPhone">
+            <span class="label">Father Phone No. *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="fatherOccupation" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.fatherOccupation">
+            <span class="label">Father Occupation:*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
+          <input type="file" class="form-control-file" name="fatherPic"
+            placeholder="Upload Student Photo (150px X 150px)" [(ngModel)]="studentDto.fatherPic">
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="motherName" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.motherName">
+            <span class="label">Mother Name *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="motherPhone" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.motherPhone">
+            <span class="label">Mother Phone No. *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="motherOccupation" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.motherOccupation">
+            <span class="label">Mother Occupation*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
+          <input type="file" class="form-control-file" name="motherPic"
+            placeholder="Upload Student Photo (150px X 150px)" [(ngModel)]="studentDto.motherPic">
+        </div>
+      </div>
+      <hr><br>
+
+      <div class="col-xl-12 col-lg-6 col-12 form-group">
+        <div class="row">
+          &nbsp;&nbsp;<label class="form-check-label">If Guardian Is
+          </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <label class="form-check-label" for="Father">
+            <input type="radio" class="form-check-input" id="customRadio" name="guardianIs"
+              [(ngModel)]="studentDto.guardianIs" value="Father">&nbsp;
+            Father</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-check-label" for="Mother">
+            <input type="radio" class="form-check-input" id="customRadio" name="guardianIs"
+              [(ngModel)]="studentDto.guardianIs" value="Mother">&nbsp;
+            Mother</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="form-check-label" for="Other">
+            <input type="radio" class="form-check-input" id="customRadio" name="guardianIs"
+              [(ngModel)]="studentDto.guardianIs" value="Other">&nbsp;
+            Other</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="guardianName" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.guardianName">
+            <span class="label">Guardian Name*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="guardianOccupation" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.guardianOccupation">
+            <span class="label">Guardian Occupation*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="guardianPhone" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.guardianPhone">
+            <span class="label">Guardian Phone*</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" name="guardianEmail" class="form-control" id="inp" placeholder="&nbsp;"
+              [(ngModel)]="studentDto.guardianEmail">
+            <span class="label">Guardian Email *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
+          <input type="file" class="form-control-file" name="guardianPic"
+            placeholder="Upload Guardian Photo (150px X 150px)" [(ngModel)]="studentDto.guardianPic">
+        </div>
+        <br>
+
+
+
+      </div>
+      <hr><br>
+      <h3>Add More</h3>
+      <div class="dropdown">
+
+        <b><button (click)=toggleDisplay() style="  background-color: transparent;color: #f5611d; position: relative;  float: right;
+                        " type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">+</button></b>
+
       </div>
     </form>
   </div>
-  <div class="container">
+</div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          </div>
-          <div class="modal-body">
-            <form role="form" method="post" id="reused_form">
-              <div class="row">
-                <div class="col-xl-4 col-lg-12 col-12 form-group">
-                  <label for="slt" class="slt">
-                    <select class="form-control" id="slt" placeholder="&nbsp;">
-                      <option selected> Select Class *</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="3">4</option>
-                      <option value="3">5</option>
-                      <option value="3">6</option>
-                    </select>
-                    <span class="label">Class *</span>
-                    <span class="focus-bg"></span>
-                  </label>
-                </div>
+<div class="container">
 
-                <div class="col-xl-4 col-lg-12 col-12 form-group">
-                  <label for="slt" class="slt">
-                    <select name="section" class="form-control" id="slt" placeholder="&nbsp;">
-                      <option selected> Select section *</option>
-                      <option value="">select</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="3">4</option>
-                      <option value="3">5</option>
-                      <option value="3">6</option>
-                    </select>
-                    <span class="label">Section *</span>
-                    <span class="focus-bg"></span>
-                  </label>
-                </div>
+  <!-- Modal -->
+  <div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                <div class="col-xl-4 col-lg-12 col-12 form-group">
-                  <label for="slt" class="slt">
-                    <select name="section" class="form-control" id="slt" placeholder="&nbsp;">
-                      <option selected> Select Student *</option>
-                      <option value="">select</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="3">4</option>
-                      <option value="3">5</option>
-                      <option value="3">6</option>
-                    </select>
-                    <span class="label">Student *</span>
-                    <span class="focus-bg"></span>
-                  </label>
-                </div>
-
-                <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                  <button type="submit"
-                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Add</button>&nbsp;&nbsp;&nbsp;
-
-                </div>
+        </div>
+        <div class="modal-body">
+          <form role="form" method="post" id="reused_form">
+            <div class="row">
+              <div class="col-xl-4 col-lg-12 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected> Select Class *</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                  </select>
+                  <span class="label">Class *</span>
+                  <span class="focus-bg"></span>
+                </label>
               </div>
-            </form>
-          </div>
+
+              <div class="col-xl-4 col-lg-12 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select name="section" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected> Select section *</option>
+                    <option value="">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                  </select>
+                  <span class="label">Section *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-4 col-lg-12 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select name="section" class="form-control" id="slt" placeholder="&nbsp;">
+                    <option selected> Select Student *</option>
+                    <option value="">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                  </select>
+                  <span class="label">Student *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-12-xxxl col-lg-6 col-12 form-group">
+                <button type="submit"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Add</button>&nbsp;&nbsp;&nbsp;
+
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="card height-auto" [hidden]="isShow">
+  <div class="card-body">
+    <form class="new-added-form">
+      <h3>Students Address Details</h3>
+      <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;"
+        onClick="location.href='/#/admissionform'">Back</button>&nbsp;&nbsp;&nbsp; -->
+      <div class="row">
+        <div class="col-xl-6 col-lg-12 col-12 form-group">
+          <label><input type="checkbox">&nbsp;&nbsp;If Guardian Address is Current Address
+          </label>
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="currentAddress"
+              [(ngModel)]="studentDto.currentAddress">
+            <span class="label">Current Address</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-6 col-lg-12 col-12 form-group">
+          <label><input type="checkbox">&nbsp;&nbsp;If Permanent Address is Current Address
+          </label>
+
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="permanentAddress"
+              [(ngModel)]="studentDto.permanentAddress">
+            <span class="label">Permanent Address</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+      </div>
+      <hr><br>
+      <h3>Transport Details</h3>
+      <div class="row">
+        <div class="col-xl-6 col-lg-12 col-12 form-group">
+          <label for="slt" class="slt" style="float: left;">
+            <select name="House" class="form-control" id="slt" placeholder="&nbsp;">
+              <option selected>Please Select Route*</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            <span class="label">Route List *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+      </div>
+      <hr><br>
+      <h3>Hostel Details</h3>
+      <div class="row">
+        <div class="col-xl-6 col-lg-12 col-12 form-group">
+          <label for="slt" class="slt" style="float: left;">
+            <select name="House" class="form-control" id="slt" placeholder="&nbsp;">
+              <option selected>Please Select Hostel*</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            <span class="label">Hostel *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-6 col-lg-12 col-12 form-group">
+          <label for="slt" class="slt" style="float: left;">
+            <select name="House" class="form-control" id="slt" placeholder="&nbsp;">
+              <option selected>Please Select Room*</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+            <span class="label">Room *</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+      </div>
+      <hr><br>
+      <h3>Miscellaneous Details</h3>
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankAccountNo"
+              [(ngModel)]="studentDto.bankAccountNo"> <span class="label">Bank Account No.</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankName"
+              [(ngModel)]="studentDto.bankName"> <span class="label">Bank Name.</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="ifscCode"
+              [(ngModel)]="studentDto.ifscCode"> <span class="label">IFSC Code</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">National Identification Number</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">Local Identification Number</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label class="control-label">RTE&nbsp;&nbsp;<br>
+            <input type="radio" id="call1" name="rte" [(ngModel)]="studentDto.rte" value="Incoming">
+            Incoming&nbsp;
+            <input type="radio" id="call1" name="rte" [(ngModel)]="studentDto.rte" value="Outgoing">
+            Outgoing
+          </label>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">Previous School Details</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="previousSchool"
+              [(ngModel)]="studentDto.previousSchool"> <span class="label">Notes</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+
+      </div>
+      <hr>
+      <h3>Upload Content</h3>
+      <div class="row">
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">Title</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Document</label>
+          <input type="file" class="form-control-file" name="photo" placeholder="Document">
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">Title</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Document</label>
+          <input type="file" class="form-control-file" name="photo" placeholder="Document">
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">Title</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Document</label>
+          <input type="file" class="form-control-file" name="photo" placeholder="Document">
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label for="inp" class="inp" style="float: left;">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name=""
+              [(ngModel)]="studentDto.guardianEmail"> <span class="label">Title</span>
+            <span class="focus-bg"></span>
+          </label>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-12 form-group">
+          <label class="text-dark-medium" style="font-size: small;">Document</label>
+          <input type="file" class="form-control-file" name="photo" placeholder="Document">
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-6 col-12 form-group">
+        <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+              onClick="location.href='/#/admissionform'">+ Prev</button> -->
+        <button *ngIf="!this.isUpdate" (click)="addadmisssionform()" type="button"
+          class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+          Save
+        </button>
+        <button *ngIf="this.isUpdate" (click)="updateadmissionform(studentDto.id)" type="button"
+          class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+          Update
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

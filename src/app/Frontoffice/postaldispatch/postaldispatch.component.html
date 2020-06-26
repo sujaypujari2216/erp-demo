@@ -348,9 +348,12 @@
             <td>{{ disp.referenceNo }}</td>
             <td>{{ disp.fromTitle }}</td>
             <td>{{ disp.date }}</td>
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+            <td>
+              <!-- <a href=""><i class=" fas fa-align-justify "></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(disp.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleterec(disp.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> -->
+            </td>
           </tr>
 
 
@@ -419,7 +422,7 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="date">
                   <span class="label">Date *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -428,7 +431,6 @@
 
               <div class="col-12 form-group mg-t-8">
                 <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
-                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
               </div>
             </div>
           </form>

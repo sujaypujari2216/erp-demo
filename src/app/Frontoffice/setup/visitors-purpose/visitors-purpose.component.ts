@@ -11,19 +11,20 @@ export class VisitorsPurposeComponent implements OnInit {
 
   visitors = [];
   Dto = {
-    "description": "string",
+    "description": "",
     "id": 0,
-    "visitorsPurpose": "string"
+    "isActive": "yes",
+    "visitorsPurpose": ""
   }
 
   isUpdate: boolean = false;
   constructor(private visitorsperposeService: VisitorsPerposeService, private datatableservice: DatatableService) { }
   ngOnInit(): void {
-    this.getList()
+    this.getpurposeList();
   }
 
-  getList() {
-    this.visitorsperposeService.getList().subscribe((res: any) => {
+  getpurposeList() {
+    this.visitorsperposeService.getpurposeList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.visitors = content.map((key) => ({ ...key }));
@@ -40,7 +41,7 @@ export class VisitorsPurposeComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getpurposeList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -73,7 +74,7 @@ export class VisitorsPurposeComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getpurposeList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -88,7 +89,7 @@ export class VisitorsPurposeComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getpurposeList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
@@ -103,4 +104,3 @@ export class VisitorsPurposeComponent implements OnInit {
     this.isUpdate = false;
   }
 }
-

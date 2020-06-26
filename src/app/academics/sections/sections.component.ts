@@ -57,8 +57,8 @@ export class SectionsComponent implements OnInit {
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
       this.getSectionList();
+      this.clearData();
     }, (err) => {
       console.log('Error While Saving Class');
       console.error(err);
@@ -92,8 +92,10 @@ export class SectionsComponent implements OnInit {
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
+      this.isUpdate = false;
       this.getSectionList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error while Updating section');
       console.error(err);
@@ -108,12 +110,23 @@ export class SectionsComponent implements OnInit {
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
       this.getSectionList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error while deleting section');
       console.error(err);
     });
   }
+
+clearData() {
+  
+  this.sectionDto.id = 0;
+  this.sectionDto.isActive = "yes";
+  this.sectionDto.section = "";
+  this.isUpdate = false;
+
 }
 
+
+}

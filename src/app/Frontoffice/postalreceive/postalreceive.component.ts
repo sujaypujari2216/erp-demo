@@ -7,6 +7,7 @@ import { PostalreceiveService } from './postalreceive.service';
   //styleUrls: ['./postalreceive.component.scss']
 })
 export class PostalreceiveComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/dispatch-receive`;
 
    postalreceive=[];
   dispatchReceiveDto = {
@@ -40,7 +41,7 @@ export class PostalreceiveComponent implements OnInit {
       console.error(err);
     });
   }
-
+  
 
   add() {
  this.postalService.save(this.dispatchReceiveDto).subscribe(
@@ -95,7 +96,7 @@ export class PostalreceiveComponent implements OnInit {
         alert(' Updated Successfully');
       }
       this.datatableservice.destroy();
-      this.isUpdate = false;
+      //this.isUpdate = false;
       this.getAllList();
       this.clearData();
 
@@ -105,9 +106,10 @@ export class PostalreceiveComponent implements OnInit {
     });
 
   }
+  
  
-  delete(Id) {
-    this.postalService.delete(Id).subscribe((res: any) => {
+  deleterec(Id) {
+    this.postalService.deleterec(Id).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }
@@ -120,7 +122,7 @@ export class PostalreceiveComponent implements OnInit {
       console.error(err);
     });
   }
-
+  
   clearData() {
     this.dispatchReceiveDto.address = "";
     this.dispatchReceiveDto.date = "";

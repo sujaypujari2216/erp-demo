@@ -8,71 +8,15 @@
     <li>Subjects</li>
   </ul>
 </div>
-
-<div class="card height-auto">
-  <div class="card-body">
-    <form class="new-added-form">
-      <div class="row">
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="subjectDto.name"
-              name="subjectName" />
-            <span class="label">Subject Name*</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <!-- <div class="custom-control-inline col-xl-5">
-            <input type="radio" id="customRadio" [(ngModel)]="subjectDto.type" name="subjectType" value="Theory"
-              checked= />
-
-            <label for="customRadio">Theory</label>&nbsp;
-          </div>
-          <div class="custom-control-inline col-xl-5">
-            <input type="radio" id="customRadio" [(ngModel)]="subjectDto.type" name="subjectType" value="Practical" />
-            <label for="customRadio">Practical</label>
-          </div> -->
-          <input type="radio" class="form-check-input" id="customRadio" name="subjectType" [(ngModel)]="subjectDto.type"
-            [value]="Theory">
-          <label class="form-check-label" for="Theory">Theory</label>
-          <input type="radio" class="form-check-input" id="customRadio" name="subjectType" [(ngModel)]="subjectDto.type"
-            [value]="Practicle">
-          <label class="form-check-label" for="Practicle">Practicle</label>
-        </div>
-
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="subjectDto.code"
-              name="subjectCode" />
-            <span class="label">Subject Code*</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <div class="form-group" style="float: right;">
-            <button *ngIf="!this.isUpdate" (click)="addSubject()" type="button"
-              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-              Save
-            </button>
-            <button *ngIf="this.isUpdate" (click)="updateSubject(subjectDto.id)" type="button"
-              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-
 <div class="card height-auto">
   <div class="card-body">
     <div class="heading-layout1">
       <div class="item-title">
         <h3>Subject List</h3>
       </div>
+      <button style="background-color: #000066; position: relative; top:0; float: right; width: 7%; height: 10%;"
+        type="button" class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add
+      </button>
     </div>
 
     <div class="table-responsive">
@@ -91,7 +35,8 @@
             <td>{{ subject.code }}</td>
             <td>{{ subject.type }}</td>
             <td>
-              <a (click)="setUpdateFileds(subject.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(subject.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
+                  data-target="#myModal"></i>&nbsp;</a>
               <a (click)="deleteSubject(subject.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
@@ -102,3 +47,61 @@
 </div>
 
 <!-- Admission Enquiry Area end Here -->
+<div class="container">
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Add Subject</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form role="form" method="post" id="reused_form">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="subjectDto.name"
+                    name="subjectName" />
+                  <span class="label">Subject Name *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label class="form-check-label">Subject Type</label><br>
+                <input type="radio" class="form-check-input" id="customRadio" name="subjectType"
+                  [(ngModel)]="subjectDto.type" value="Theory">&nbsp;&nbsp;
+                <label class="form-check-label" for="Theory">Theory</label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" class="form-check-input" id="customRadio" name="subjectType"
+                  [(ngModel)]="subjectDto.type" value="Practicle">&nbsp;&nbsp;
+                <label class="form-check-label" for="Practicle">Practicle</label>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="subjectDto.code"
+                    name="subjectCode" />
+                  <span class="label">Subject Code*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="form-group" style="float: right;">
+                  <button *ngIf="!this.isUpdate" (click)="addSubject()" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                    Save
+                  </button>
+                  <button *ngIf="this.isUpdate" (click)="updateSubject(subjectDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                    Update
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

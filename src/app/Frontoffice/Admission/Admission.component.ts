@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-import { AdmissionenqService } from './admissionenq.service';
- //import { SetupService } from '../setup/setup.service';
-
-
+import { AdmissionService } from './admission.service';
+import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
+import { ReferenceService } from 'src/app/Frontoffice/setup/reference/reference.service';
+import { ClassService } from 'src/app/academics//class/class.service';
 
 @Component({
-  selector: 'app-Frontoffice-Admission',
+  // tslint:disable-next-line: component-selector
+  selector: 'app-Admission',
   templateUrl: './Admission.component.html',
-  //styleUrls: ['./Admission.component.css']
+  styleUrls: ['./Admission.component.css']
 })
 export class AdmissionComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/enquiry/`;
 
- 
-  url=`http://yamistha.cloudjiffy.net/enquiry`;
-  
-  enquirys=[];
+
+  enquirys = [];
   enquiry = {
     "address": "",
     "assigned": "",
@@ -26,52 +26,100 @@ export class AdmissionComponent implements OnInit {
     "email": "",
     "followUpDate": "",
     "id": 0,
-    "isActive": "",
+    "isActive": "yes",
     "name": "",
-    "noOfChild": "",
+    "noOfChild": 0,
     "note": "",
     "reference": "",
     "source": "",
-    
-  }
+
+  };
 
   isUpdate: boolean = false;
-  constructor(private admissionenqService: AdmissionenqService, private datatableservice: DatatableService
-    ) { }
+  references: any;
+  sources: any;
+  classes: any;
+  //public rowID;
+  constructor(private admissionenqService: AdmissionService,
+    private datatableservice: DatatableService,
+    private sourceservice: SourceService,
+    private classservice: ClassService,
+    private referenceservice: ReferenceService,
+  ) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getenqList();
+    this.getAllSourceList();
+   this.getrefList();
+   this.getClassList();
+
   }
 
-  getList() {
-    this.admissionenqService.getList().subscribe((res: any) => {
+  getAllSourceList() {
+    this.sourceservice.getAllSourceList().subscribe((res: any) => {
       var data = res['data'];
-      var content = data['content'];
-      this.enquirys = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('References');
+      this.sources = data['content'];
+      // console.log(this.sources);
+    }, (err) => {
+      console.log('Error while fetching all Classes');
+      console.error(err);
+    });
+  }
+  getrefList() {
+    this.referenceservice.getrefList().subscribe((res: any) => {
+      var data = res['data'];
+      this.references = data['content'];
+      //this.references = content.map((key) => ({ ...key }));
+      //console.log(this.references);
+
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
     });
   }
-
-  add() {
+  getClassList() {
+    this.classservice.getClassList().subscribe((res: any) => {
+        var data = res['data'];
+        this.classes = data['content'];
+        //this.classes = content.map((key) => ({ ...key }));
+       // console.log(this.classes);
+      },
+      (err) => {
+        console.log('Error while fetching all Classes');
+        console.error(err);
+      }
+    );
+  } 
+  getenqList() {
+    this.admissionenqService.getenqList().subscribe((res: any) => {
+      var data = res['data'];
+      var content = data['content'];
+      this.enquirys = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('admission');
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+    });
+  }
+  
+  
+  addenq() {
     this.admissionenqService.save(this.enquiry).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getenqList();
+      this.clearData();
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
     });
   }
-  
-
-
-  getById(Id) {
-    this.admissionenqService.getById(Id).subscribe((res: any) => {
+     
+  getById(EnqId) {
+    this.admissionenqService.getById(EnqId).subscribe((res: any) => {
+      //console.log(res);
       this.enquiry.address = res.data.address;
       this.enquiry.assigned = res.data.assigned;
       this.enquiry.id = res.data.id;
@@ -87,8 +135,7 @@ export class AdmissionComponent implements OnInit {
       this.enquiry.note = res.data.note;
       this.enquiry.reference = res.data.reference;
       this.enquiry.source = res.data.source;
-
-      // console.log(this.enquiry);
+      console.log(this.enquiry);
 
     }, (err) => {
       console.log('Error while fetching');
@@ -96,20 +143,22 @@ export class AdmissionComponent implements OnInit {
     });
     return this.enquiry;
   }
-  setUpdateFileds(Id) {
+  setUpdateFileds(EnqId) {
+    console.log(EnqId);
     this.isUpdate = true;
-    this.getById(Id);
+    this.getById(EnqId);
+    console.log('setup successfull');
   }
-  update(Id) {
+  update(EnqId) {
 
-    this.admissionenqService.update(this.enquiry, Id).subscribe((res: any) => {
+    this.admissionenqService.update(this.enquiry, EnqId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getenqList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -118,20 +167,20 @@ export class AdmissionComponent implements OnInit {
 
   }
 
-  delete(Id) {
-    this.admissionenqService.delete(Id).subscribe((res: any) => {
+  deleteenq(EnqId) {
+    this.admissionenqService.deleteenq(EnqId).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getenqList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
       console.error(err);
     });
   }
-
+ 
   clearData() {
     this.enquiry.address = "";
     this.enquiry.assigned = "";
@@ -144,11 +193,21 @@ export class AdmissionComponent implements OnInit {
     this.enquiry.email = "";
     this.enquiry.followUpDate = "";
     this.enquiry.name = "";
-    this.enquiry.noOfChild = "";
+    this.enquiry.noOfChild = 0;
     this.enquiry.note = "";
     this.enquiry.reference = "";
     this.enquiry.source = "";
+    this.isUpdate = false;
+
   }
+
+
 }
+
+
+
+
+
+
 
 

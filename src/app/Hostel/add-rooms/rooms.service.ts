@@ -9,11 +9,11 @@ export class RoomsService {
   constructor(private http: HttpClient) { }
 
   save(hostelroomDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/hostel-room', hostelroomDto);
+    return this.http.post('http://yamistha.cloudjiffy.net/hostel-room/', hostelroomDto);
   }
 
   getList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/hostel-room');
+    return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/');
   }
 
   delete(hostelroomId): any {

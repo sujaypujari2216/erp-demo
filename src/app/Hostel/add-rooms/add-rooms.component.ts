@@ -11,7 +11,7 @@ import { RoomsService } from './rooms.service';
 })
 export class AddRoomsComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/hostel-room`;
+  url = `http://yamistha.cloudjiffy.net/hostel-room/`;
   hostelrooms = [];
   hostelroomDto = {
     'costPerBed': 0,
@@ -43,6 +43,7 @@ export class AddRoomsComponent implements OnInit {
     }, (err) => {
       console.log('Error while fetching all Classes');
       console.error(err);
+      ]
     });
   }*/
 

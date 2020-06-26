@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ComplainService {
 
-  url = `http://yamistha.cloudjiffy.net/complaint`;
+  url = `http://yamistha.cloudjiffy.net/complaint/`;
   constructor(private http: HttpClient) { }
 
   addComplain(complaint): any {
@@ -19,7 +19,6 @@ export class ComplainService {
 
   deleteComplain(complainId): any {
 
-    //console.log(this.url + complainId);
     return this.http.delete(this.url + complainId);
   }
 

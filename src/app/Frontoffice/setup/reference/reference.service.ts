@@ -13,7 +13,7 @@ export class ReferenceService {
     return this.http.post(this.url, Dto);
   }
 
-  getList(): any {
+  getrefList(): any {
     return this.http.get(this.url);
   }
 

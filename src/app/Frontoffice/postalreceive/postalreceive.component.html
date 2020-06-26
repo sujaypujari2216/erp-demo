@@ -350,9 +350,9 @@
 
             <td>
               <a href=""><i class=" fas fa-align-justify "></i>&nbsp;</a>
-              <a (click)="setUpdateFileds(dispatchReceiveDto.id)" data-toggle="modal" data-target="#myModal"><i
+              <a (click)="setUpdateFileds(rec.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(dispatchReceiveDto.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="deleterec(rec.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
 
@@ -428,7 +428,7 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="dispatchReceiveDto.date">
                   <span class="label">Date *</span>
                   <span class="focus-bg"></span>
                 </label>

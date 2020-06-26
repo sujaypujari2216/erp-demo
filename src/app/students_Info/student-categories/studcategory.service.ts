@@ -1,32 +1,28 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
-export class AdmissionenqService {
-  url = `http://yamistha.cloudjiffy.net/enquiry/`;
+export class StudcategoryService {
+  url = `http://yamistha.cloudjiffy.net/category/`;
 
   constructor(private http: HttpClient) { }
 
-  save(enquiry): any {
-    return this.http.post(this.url, enquiry);
+  save(categoryDto): any {
+    return this.http.post(this.url, categoryDto);
   }
 
-  getList(): any {
+  getcategoryList(): any {
     return this.http.get(this.url);
   }
 
   delete(Id): any {
-
-    console.log(this.url + Id);
     return this.http.delete(this.url + Id);
   }
 
-  update(enquiry, Id): any {
-    return this.http.put(this.url + Id, enquiry);
+  update(categoryDto, Id): any {
+    return this.http.put(this.url + Id, categoryDto);
   }
 
   getById(Id): any {

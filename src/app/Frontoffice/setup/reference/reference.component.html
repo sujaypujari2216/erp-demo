@@ -13,19 +13,15 @@
         <h5>Reference List</h5>
       </div>
       <div class="dropdown">
-        <!-- <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/setup'"> Back To Setup
-        </button> -->
-
+        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
+          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/visitors-purpose'">+ Visitors
+          Purpose</button>
+        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
+          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/reference'">+ Reference</button>
         <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
           type="button" class="btn btn-info btn-lg" onClick="location.href='/#/source'">+ Source</button>
         <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
           type="button" class="btn btn-info btn-lg" onClick="location.href='/#/complainttype'">+ Complaint Type</button>
-        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/visitors-purpose'">+ Visitors
-          Purpose</button>
-
-
       </div>
     </div>
     <div class="table-responsive">
@@ -102,9 +98,9 @@
               </div>
 
 
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+              <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate" (click)="add()"
+                  type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                  data-target="#myModal">
                   Save
                 </button>
                 <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
