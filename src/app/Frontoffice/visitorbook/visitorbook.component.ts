@@ -10,7 +10,7 @@ import { VisitorsPerposeService } from 'src/app/Frontoffice/setup/visitors-purpo
   styleUrls: ['./visitorbook.component.css']
 })
 export class VisitorbookComponent implements OnInit {
-
+  url = `http://yamistha.cloudjiffy.net/visitors-book/`;
 
   visitorsbook = [];
   visitorsBook = {
@@ -52,7 +52,7 @@ export class VisitorbookComponent implements OnInit {
       this.sources = data['content'];
       // console.log(this.sources);
     }, (err) => {
-      console.log('Error while fetching all Classes');
+      console.log('Error while fetching all ');
       console.error(err);
     });
   }
@@ -93,13 +93,13 @@ export class VisitorbookComponent implements OnInit {
     });
   }
 
-  getById(Id) {
-    this.visitorbookService.getById(Id).subscribe((res: any) => {
+  getByVbId(VbId) {
+    this.visitorbookService.getByVbId(VbId).subscribe((res: any) => {
       this.visitorsBook.contact = res.data.contact;
       this.visitorsBook.date = res.data.date;
-      this.visitorsBook.id = res.data.id;
+      this.visitorsBook.id = res.data.VbId;
       this.visitorsBook.isActive = res.data.isActive;
-      this.visitorsBook.idProof = res.data.idProof;
+      this.visitorsBook.idProof = res.data.VbIdProof;
       this.visitorsBook.image = res.data.image;
       this.visitorsBook.inTime = res.data.inTime;
       this.visitorsBook.email = res.data.email;
@@ -110,7 +110,7 @@ export class VisitorbookComponent implements OnInit {
       this.visitorsBook.source = res.data.source;
       this.visitorsBook.purpose = res.data.purpose;
 
-      // console.log(this.visitorsBook);
+      console.log(this.visitorsBook);
 
     }, (err) => {
       console.log('Error while fetching');
@@ -118,13 +118,13 @@ export class VisitorbookComponent implements OnInit {
     });
     return this.visitorsBook;
   }
-  setUpdateFileds(Id) {
+  setUpdateFileds(VbId) {
     this.isUpdate = true;
-    this.getById(Id);
+    this.getByVbId(VbId);
   }
-  update(Id) {
+  updatevb(VbId) {
 
-    this.visitorbookService.update(this.visitorsBook, Id).subscribe((res: any) => {
+    this.visitorbookService.updatevb(this.visitorsBook, VbId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
@@ -140,8 +140,8 @@ export class VisitorbookComponent implements OnInit {
 
   }
 
-  delete(Id) {
-    this.visitorbookService.delete(Id).subscribe((res: any) => {
+  deletevb(VbId) {
+    this.visitorbookService.deletevb(VbId).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }

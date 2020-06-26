@@ -11,7 +11,7 @@ import { RoomsService } from './rooms.service';
 })
 export class AddRoomsComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/hostel-room`;
+  url = `http://yamistha.cloudjiffy.net/hostel-room/`;
   hostelrooms = [];
   hostelroomDto = {
     'costPerBed': 0,

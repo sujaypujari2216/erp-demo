@@ -15,7 +15,8 @@
         <h3>Subject List</h3>
       </div>
       <button style="background-color: #000066; position: relative; top:0; float: right; width: 7%; height: 10%;"
-        type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add </button>
+        type="button" class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add
+      </button>
     </div>
 
     <div class="table-responsive">
@@ -34,7 +35,8 @@
             <td>{{ subject.code }}</td>
             <td>{{ subject.type }}</td>
             <td>
-              <a (click)="setUpdateFileds(subject.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(subject.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
+                  data-target="#myModal"></i>&nbsp;</a>
               <a (click)="deleteSubject(subject.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
@@ -66,9 +68,9 @@
                   <span class="focus-bg"></span>
                 </label>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label class="form-check-label">Subject Type</label><br>
-
                 <input type="radio" class="form-check-input" id="customRadio" name="subjectType"
                   [(ngModel)]="subjectDto.type" value="Theory">&nbsp;&nbsp;
                 <label class="form-check-label" for="Theory">Theory</label>&nbsp;&nbsp;&nbsp;

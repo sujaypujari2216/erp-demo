@@ -67,15 +67,16 @@
             data-toggle="modal" data-target="#myModal">
             Search
           </button>
+          <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+            class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+
+            Add</button>
 
         </div>
       </div>
     </form>
     <hr>
 
-    <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right; width: 7%;"
-      type="button" class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+
-      Add</button>
+
 
     <div class="table-responsive">
 
@@ -102,11 +103,11 @@
             <td>{{ enq.followUpDate }}</td>
             <td>{{ enq.isActive }}</td>
 
-            <td> <a (click)="getById(enquiry.id)" data-toggle="modal" data-target="#myModal2"><i class="fa fa-tag"
+            <td> <a (click)="getById(enq.id)" data-toggle="modal" data-target="#myModal2"><i class="fa fa-tag"
                   title="call"></i></a>&nbsp;
-              <a (click)="setUpdateFileds(enquiry.id)" data-toggle="modal" data-target="#myModal"><i
+              <a (click)="setUpdateFileds(enq.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="deleteenq(enquiry.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="deleteenq(enq.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a> </td>
           </tr>
 
         </tbody>
@@ -259,9 +260,8 @@
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)=" addenq()" type="button"
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addenq()" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>
@@ -270,6 +270,8 @@
                   Update
                 </button>
               </div>
+
+
             </div>
           </form>
         </div>

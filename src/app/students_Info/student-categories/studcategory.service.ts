@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class StudcategoryService {
-  url = `http://yamistha.cloudjiffy.net/category`;
+  url = `http://yamistha.cloudjiffy.net/category/`;
 
   constructor(private http: HttpClient) { }
 
@@ -13,7 +13,7 @@ export class StudcategoryService {
     return this.http.post(this.url, categoryDto);
   }
 
-  getList(): any {
+  getcategoryList(): any {
     return this.http.get(this.url);
   }
 

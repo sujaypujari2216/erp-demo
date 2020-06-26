@@ -103,15 +103,17 @@ export class SubjectsComponent implements OnInit {
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
+      this.isUpdate = false;
       this.getSubjectList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error while Updating Subject');
       console.error(err);
     });
 
   }
-
+  
   deleteSubject(subjectId) {
     this.subjectService.deleteSubject(subjectId).subscribe((res: any) => {
       if (res.success == true) {
@@ -119,8 +121,9 @@ export class SubjectsComponent implements OnInit {
       }
       //destroy dataTable
       this.datatableservice.destroy();
-
       this.getSubjectList();
+      this.clearData();
+
     }, (err) => {
       console.log('Error while deleting Subject');
       console.error(err);
@@ -128,4 +131,15 @@ export class SubjectsComponent implements OnInit {
 
   }
   
+
+
+clearData() {
+  this.subjectDto.name = "";
+  this.subjectDto.id = 0;
+  this.subjectDto.isActive = "yes";
+  this.subjectDto.code = "";
+  this.subjectDto.type = "";
+  this.isUpdate = false;
+
+}
 }

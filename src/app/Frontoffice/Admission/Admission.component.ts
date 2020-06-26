@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-import { AdmissionenqService } from './admissionenq.service';
+import { AdmissionService } from './admission.service';
 import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 import { ReferenceService } from 'src/app/Frontoffice/setup/reference/reference.service';
 import { ClassService } from 'src/app/academics//class/class.service';
@@ -40,7 +40,7 @@ export class AdmissionComponent implements OnInit {
   sources: any;
   classes: any;
   //public rowID;
-  constructor(private admissionenqService: AdmissionenqService,
+  constructor(private admissionenqService: AdmissionService,
     private datatableservice: DatatableService,
     private sourceservice: SourceService,
     private classservice: ClassService,
@@ -50,8 +50,8 @@ export class AdmissionComponent implements OnInit {
   ngOnInit(): void {
     this.getenqList();
     this.getAllSourceList();
-    this.getrefList();
-    this.getClassList();
+   this.getrefList();
+   this.getClassList();
 
   }
 
@@ -78,7 +78,7 @@ export class AdmissionComponent implements OnInit {
     });
   }
   getClassList() {
-    this.classservice.getAllClassList().subscribe((res: any) => {
+    this.classservice.getClassList().subscribe((res: any) => {
         var data = res['data'];
         this.classes = data['content'];
         //this.classes = content.map((key) => ({ ...key }));
@@ -89,7 +89,7 @@ export class AdmissionComponent implements OnInit {
         console.error(err);
       }
     );
-  }
+  } 
   getenqList() {
     this.admissionenqService.getenqList().subscribe((res: any) => {
       var data = res['data'];
@@ -119,6 +119,7 @@ export class AdmissionComponent implements OnInit {
      
   getById(EnqId) {
     this.admissionenqService.getById(EnqId).subscribe((res: any) => {
+      //console.log(res);
       this.enquiry.address = res.data.address;
       this.enquiry.assigned = res.data.assigned;
       this.enquiry.id = res.data.id;
@@ -143,8 +144,10 @@ export class AdmissionComponent implements OnInit {
     return this.enquiry;
   }
   setUpdateFileds(EnqId) {
+    console.log(EnqId);
     this.isUpdate = true;
     this.getById(EnqId);
+    console.log('setup successfull');
   }
   update(EnqId) {
 
@@ -163,7 +166,7 @@ export class AdmissionComponent implements OnInit {
     });
 
   }
-  
+
   deleteenq(EnqId) {
     this.admissionenqService.deleteenq(EnqId).subscribe((res: any) => {
       if (res.success == true) {
@@ -177,12 +180,12 @@ export class AdmissionComponent implements OnInit {
       console.error(err);
     });
   }
-
+ 
   clearData() {
     this.enquiry.address = "";
     this.enquiry.assigned = "";
     this.enquiry.id = 0;
-    //this.enquiry.isActive = "yes";
+    this.enquiry.isActive = "yes";
     this.enquiry.class_ = 0;
     this.enquiry.contact = "";
     this.enquiry.date = "";

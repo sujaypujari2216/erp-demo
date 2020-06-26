@@ -11,6 +11,7 @@ import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
   //styleUrls: ['./complain.component.scss']
 })
 export class ComplainComponent implements OnInit {
+
   url = `http://yamistha.cloudjiffy.net/complaint`;
 
 
@@ -31,8 +32,8 @@ export class ComplainComponent implements OnInit {
     "source": "",
   };
   isUpdate: boolean = false;
- //roomtypeDto: any;
-  sources: any;
+ roomtypeDto: any;
+sources: any;
   complainttypes: any;
 
 
@@ -50,7 +51,7 @@ export class ComplainComponent implements OnInit {
 
   }
 
-  getAllComplaintTypeList() {
+   getAllComplaintTypeList() {
     this.complainttypeService.getAllComplaintTypeList().subscribe((res: any) => {
       var data = res['data'];
       this.complainttypes = data['content'];
@@ -71,7 +72,7 @@ export class ComplainComponent implements OnInit {
       console.log('Error while fetching all Classes');
       console.error(err);
     });
-  } 
+  }  
   getAllComplainList() {
       console.log('getAllComplainList()');
       this.complainService.getAllComplainList().subscribe((res: any) => {
@@ -88,7 +89,7 @@ export class ComplainComponent implements OnInit {
   addComplain() {
     this.complainService.addComplain(this.complaint).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section Saved Successfully');
+        alert('Saved Successfully');
       }
       //destroy dataTable
       this.datatableservice.destroy();

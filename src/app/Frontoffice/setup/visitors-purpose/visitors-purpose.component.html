@@ -38,13 +38,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let visitor of visitors">
-            <td>{{ visitor.visitorsPurpose }}</td>
+          <tr *ngFor="let visitorp of visitors">
+            <td>{{ visitorp.visitorsPurpose }}</td>
 
 
-            <td><a (click)="setUpdateFileds(visitor.id)" data-toggle="modal" data-target="#myModal"><i
+            <td><a (click)="setUpdateFileds(visitorp.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(visitor.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              <a (click)="delete(visitorp.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
 

@@ -6,80 +6,98 @@
     <li>Class</li>
   </ul>
 </div>
-<div class="card height-auto">
-  <div class="card-body">
-    <form class="new-added-form" name="classForm">
-      <div class="heading-layout1">
-        <div class="item-title">
-          <h3>Add Class</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="classDto.classses"
-              name="studentClass" [value]="classDto.classses">
-            <span class="label">Class*</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.section[0].section"
-              name="studentSection">
-              <option value="">select</option>
-              <option *ngFor="let sections of this.sectionDto" [value]="sections.section"
-                [selected]="classDto.section[0].section == sections.section">{{ sections.section }}</option>
-            </select>
-            <span class="label">Section *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <div class="form-group" style="float: right;">
-            <button *ngIf="!this.isUpdate" (click)="addClass()" type="button"
-              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-              Save
-            </button>
-            <button *ngIf="this.isUpdate" (click)="updateClass(classDto.id)" type="button"
-              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-              Update
-            </button>
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Add Class</h3>
           </div>
         </div>
-      </div>
-    </form>
-  </div>
-</div>
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h3>Class List</h3>
+        <form class="new-added-form">
+
+          <div class="col-xl-12 col-lg-12 col-12 form-group">
+            <label for="inp" class="inp">
+              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="classDto.classses"
+                name="studentClass" [value]="classDto.classses">
+              <span class="label">Class*</span>
+              <span class="focus-bg"></span>
+            </label>
+          </div><br>
+
+          <div class="col-xl-12 col-lg-12 col-12 form-group">
+            &nbsp;&nbsp;<span class="label">Section *</span>
+
+            <div class="" *ngFor="let sections of this.sectionDto">
+              <label>
+                &nbsp;&nbsp;<input type="checkbox" [(ngModel)]="classDto.section[0].section" [value]="sections.section"
+                  [name]="sections.section">{{ sections.section }}
+              </label>
+            </div>
+
+
+          </div>
+          <!--  <div class="col-xl-12 col-lg-12 col-12 form-group">
+            &nbsp;&nbsp;<span class="label">Section *</span>
+          
+            <div class="" *ngFor="let sections of this.sectionDto">
+              <label>
+                &nbsp;&nbsp;<input type="checkbox" [(ngModel)]="classDto.section[0].section" [value]="sections.section"
+                  [name]="sections.section" (change)="getSectionId($event,sections.section)">{{ sections.section }}
+              </label>
+            </div>
+          
+          
+          </div> -->
+          <div class="col-xl-3 col-lg-6 col-12 form-group">
+            <div class="form-group" style="float: right;">
+              <button *ngIf="!this.isUpdate" (click)="addClass()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updateClass(classDto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                Update
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Sections</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let class of classes">
-            <td>{{ class.classses }}</td>
-            <td>{{ class.section[0].section }}</td>
+  </div>
+  <div class="col-xl-8 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Class List</h3>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Sections</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let class of classes">
+                <td>{{ class.classses }}</td>
+                <td>{{ class.section[0].section }}</td>
 
-            <td>
-              <a (click)="setUpdateFileds(class.id)"><i
-                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>&nbsp;&nbsp;
-              <a (click)="deleteClass(class.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <td>
+                  <a (click)="setUpdateFileds(class.id)"><i
+                      class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>&nbsp;&nbsp;
+                  <a (click)="deleteClass(class.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

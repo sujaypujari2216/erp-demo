@@ -1,12 +1,9 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class AdmissionenqService {
+export class AdmissionService {
   url = `http://yamistha.cloudjiffy.net/enquiry/`;
 
   constructor(private http: HttpClient) { }
@@ -32,3 +29,4 @@ export class AdmissionenqService {
     return this.http.get(this.url + EnqId);
   }
 }
+

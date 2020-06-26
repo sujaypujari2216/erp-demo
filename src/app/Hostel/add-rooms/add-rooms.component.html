@@ -81,20 +81,20 @@
                 </label>
               </div>
 
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
+              <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.roomtype[0].type"
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="roomtypeDto.type"
                     name="roomtype" [value]="roomtypeDto.type">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let roomTypes of this.roomtypeDto" value="roomtypes.roomtype"
-                      [selected]="roomtypeDto.roomType[0].type == roomTypes.roomType">{{ roomtypeDto.roomType }}
+                    <option *ngFor="let roomTypes of this.roomtypeDto" [value]="roomtypes.roomtype"
+                      [selected]="roomtypeDto.type == roomTypes.roomType">{{ roomtypeDto.roomType }}
                     </option>
                   </select>
                   <span class="label">Room Type*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
+               -->
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select name="noOfBed" class="form-control" id="slt" placeholder="&nbsp;"

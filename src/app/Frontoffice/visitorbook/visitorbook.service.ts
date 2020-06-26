@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class VisitorbookService {
-  url = `http://yamistha.cloudjiffy.net/visitors-book`;
+  url = `http://yamistha.cloudjiffy.net/visitors-book/`;
 
   constructor(private http: HttpClient) { }
 
@@ -17,15 +17,15 @@ export class VisitorbookService {
     return this.http.get(this.url);
   }
 
-  delete(Id): any {
-    return this.http.delete(this.url + Id);
+  deletevb(VbId): any {
+    return this.http.delete(this.url + VbId);
   }
 
-  update(Dto, Id): any {
-    return this.http.put(this.url + Id, Dto);
+  updatevb(Dto, VbId): any {
+    return this.http.put(this.url + VbId, Dto);
   }
 
-  getById(Id): any {
-    return this.http.get(this.url + Id);
+  getByVbId(VbId): any {
+    return this.http.get(this.url + VbId);
   }
 }

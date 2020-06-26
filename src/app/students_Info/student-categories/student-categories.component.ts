@@ -8,24 +8,25 @@ import { StudcategoryService } from './studcategory.service';
   styleUrls: ['./student-categories.component.css']
 })
 export class StudentCategoriesComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/category/`;
 
-  students=[];
+  students = [];
   categoryDto = {
     
     "id": 0,
     "isActive": "yes",
-    "category": ""
+    "category": "",
   };
 
   isUpdate: boolean = false;
   constructor(private studcategoryService: StudcategoryService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getcategoryList();
   }
 
-  getList() {
-    this.studcategoryService.getList().subscribe((res: any) => {
+  getcategoryList() {
+    this.studcategoryService.getcategoryList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.students = content.map((key) => ({ ...key }));
@@ -42,20 +43,21 @@ export class StudentCategoriesComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getcategoryList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
     });
   }
+  
    
   getById(Id) {
     this.studcategoryService.getById(Id).subscribe((res: any) => {
       this.categoryDto.category = res.data.reference;
       this.categoryDto.id = res.data.id;
       this.categoryDto.isActive = res.data.isActive;
-      // console.log(this.categoryDto);
+      console.log(this.categoryDto);
 
     }, (err) => {
       console.log('Error while fetching');
@@ -65,9 +67,11 @@ export class StudentCategoriesComponent implements OnInit {
   }
   
   setUpdateFileds(Id) {
+    console.log(Id);
     this.isUpdate = true;
     this.getById(Id);
   }
+   
   update(Id) {
 
     this.studcategoryService.update(this.categoryDto, Id).subscribe((res: any) => {
@@ -77,7 +81,7 @@ export class StudentCategoriesComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getcategoryList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -85,14 +89,14 @@ export class StudentCategoriesComponent implements OnInit {
     });
 
   }
-
+  
   delete(Id) {
     this.studcategoryService.delete(Id).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getcategoryList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
@@ -101,8 +105,7 @@ export class StudentCategoriesComponent implements OnInit {
   }
 
   clearData() {
- 
-    this.categoryDto.id = 0;
+     this.categoryDto.id = 0;
     this.categoryDto.isActive = "yes";
     this.categoryDto.category = "";
     this.isUpdate = false;
