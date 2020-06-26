@@ -132,6 +132,7 @@ export class AddRoomsComponent implements OnInit {
       this.hostelroomDto.roomNo = '',
       this.hostelroomDto.noOfBed = 0,
       this.hostelroomDto.costPerBed = 0,
-      this.hostelroomDto.description = ''
+      this.hostelroomDto.description = '',
+      this.isUpdate = false;
   }
 }
