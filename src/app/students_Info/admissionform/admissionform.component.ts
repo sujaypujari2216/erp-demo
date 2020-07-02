@@ -351,5 +351,6 @@ export class AdmissionformComponent implements OnInit {
   toggleDisplay() {
     this.isShow = !this.isShow;
   }
+  
 }
 

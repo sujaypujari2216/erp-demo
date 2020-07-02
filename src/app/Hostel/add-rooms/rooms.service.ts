@@ -13,7 +13,7 @@ export class RoomsService {
   }
 
   getList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/');
+    return this.http.get('http://yamistha.cloudjiffy.net/hostel-room');
   }
 
   delete(hostelroomId): any {
