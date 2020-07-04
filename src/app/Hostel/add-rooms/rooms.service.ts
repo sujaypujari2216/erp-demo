@@ -12,8 +12,10 @@ export class RoomsService {
     return this.http.post('http://yamistha.cloudjiffy.net/hostel-room/', hostelroomDto);
   }
 
+
   getHostelRoomList(): any {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/');
+
   }
 
   deleteHostelRoom(hostelroomId): any {

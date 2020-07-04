@@ -71,8 +71,14 @@
             <div class="row">
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.purpose"
-                    name="purpose">
+                  <select 
+                  class="form-control" 
+                  id="slt" 
+                  placeholder="&nbsp;" 
+                  [(ngModel)]="visitorsBook.purpose"
+                    name="purpose"
+                    #purpose="ngModel"
+                    required>
                     <option selected>Please Select *</option>
                     <option *ngFor="let visitorp of visitors" [value]="visitorp.visitorsPurpose"
                       [selected]="visitorsBook.purpose == visitorp.visitorsPurpose">{{ visitorp.visitorsPurpose }}
@@ -81,11 +87,17 @@
                   <span class="label">Purpose *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="purpose.touched && !purpose.valid">
+                Please Select Option.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.source"
-                    name="source">
+                    name="source" #source="ngModel" required>
                     <option selected>Please Select *</option>
                     <option *ngFor="let source of this.sources" [value]="source.source"
                       [selected]="visitorsBook.source ==source.source">{{ source.source }}
@@ -94,86 +106,148 @@
                   <span class="label">Source*</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                  class="alert alert-danger" 
+                  *ngIf="source.touched && !source.valid">
+                  Please Enter Source.
+                </div>
               </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="visitorsBook.name"
-                    name="name" [value]="visitorsBook.name"> <span class="label">Name *</span>
+                    name="name" [value]="visitorsBook.name" #name="ngModel"required> 
+                    <span class="label">Name *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="name.touched && !name.valid">
+                 Please Enter Name.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="visitorsBook.contact" name="contact" [value]="visitorsBook.contact"> <span
-                    class="label">Mobile No.*</span>
+                    [(ngModel)]="visitorsBook.contact" name="contact" [value]="visitorsBook.contact" #contact="ngModel"required> 
+                    <span class="label">Mobile No.*</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="contact.touched && !contact.valid">
+                Please Enter Contact.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="visitorsBook.email"
-                    name="email" [value]="visitorsBook.email"> <span class="label">Email *</span>
+                    name="email" [value]="visitorsBook.email" #email="ngModel" required> 
+                    <span class="label">Email *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="email.touched && !email.valid">
+                Please Enter Email.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="visitorsBook.idProof" name="idProof" [value]="visitorsBook.idProof"> <span
-                    class="label">ID Card *</span>
+                    [(ngModel)]="visitorsBook.idProof" name="idProof" #idProof="ngModel" required [value]="visitorsBook.idProof">
+                     <span class="label">ID Card *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="idProof.touched && !idProof.valid">
+                 Please Enter IdProof.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="number" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="visitorsBook.noOfPepple" name="noOfPepple" [value]="visitorsBook.noOfPepple"> <span
-                    class="label">No of Person *</span>
+                    [(ngModel)]="visitorsBook.noOfPepple" name="noOfPepple" [value]="visitorsBook.noOfPepple" #noOfPepple="ngModel" required>
+                     <span class="label">No of Person *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="noOfPepple.touched && !noOfPepple.valid">
+                 Please Enter No Of People.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
                   <input type="date" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="visitorsBook.date"
-                    name="date" [value]="visitorsBook.date">
+                    name="date" [value]="visitorsBook.date" #date="ngModel" required>
                   <span class="label">Chooose Date *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="date.touched && !date.valid">
+                 Please Enter Date.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="time" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="visitorsBook.inTime" name="inTime" [value]="visitorsBook.inTime" min="06:00"
-                    max="23:00"> <span class="label">In Time *</span>
+                    max="23:00" #inTime="ngModel" required>
+                     <span class="label">In Time *</span>
                   <span class="focus-bg"></span>
                   <small>School hours are 9am to 6pm</small>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="inTime.touched && !inTime.valid">
+                 Please Enter InTime.
+                </div>
               </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="time" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="visitorsBook.outTime" name="outTime" [value]="visitorsBook.outTime" min="06:00"
-                    max="23:00"> <span class="label">Out Time *</span>
+                    max="23:00" #outTime="ngModel" required> 
+                    <span class="label">Out Time *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf="outTime.touched && !outTime.valid">
+                 Please Enter OutTime.
+                </div>
               </div>
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="visitorsBook.note"
-                    name="note" [value]="visitorsBook.note"> <span class="label">Note *</span>
+                    name="note" [value]="visitorsBook.note" #note="ngModel" required> 
+                    <span class="label">Note *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <div 
+                class="alert alert-danger" 
+                *ngIf=" note.touched && !note.valid">
+                 Please Enter Note.
+                </div>
               </div>
               <div class="col-3 col-lg-6 col-12 form-group">
                 <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
                 <input type="file" class="form-control-file" name="image" placeholder="Attach Document"
                   [(ngModel)]="visitorsBook.image" [value]="visitorsBook.image">
               </div>
-              <div class="col-12 form-group mg-t-8">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+              <div class="col-12 mg-t-8">
+                <button *ngIf="!this.isUpdate" (click)="add()" type="button" 
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark form-control" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>&nbsp;
                 <button *ngIf="this.isUpdate" (click)="updatevb(visitorsBook.id)" type="button"

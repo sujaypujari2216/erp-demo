@@ -27,24 +27,58 @@
       <div class="row">
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="admissionNo" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.admissionNo">
+            <input 
+              type="text" 
+              name="admissionNo" 
+              #admissionNo="ngModel" 
+              class="form-control" 
+              id="inp" 
+              placeholder="&nbsp;"
+              [(ngModel)]="studentDto.admissionNo" 
+              required>
             <span class="label">Admission No. *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="admissionNo.touched && admissionNo.invalid">
+           Admission no is required
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="rollNo" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.rollNo">
+            <input 
+              type="text" 
+              name="rollNo"
+              #rollNo="ngModel" 
+              class="form-control" 
+              id="inp" 
+              placeholder="&nbsp;"
+              [(ngModel)]="studentDto.rollNo" 
+              pattern="^[0-9]*$"
+              required>
             <span class="label">Roll No *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="rollNo.touched && !rollNo.valid">
+         Roll Number required.
+         Only numbers.
         </div>
+        </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.classId" name="classId">
+            <select 
+            class="form-control" 
+            id="slt" 
+            placeholder="&nbsp;" 
+            [(ngModel)]="studentDto.classId" 
+            name="classId" 
+            #classId="ngModel"
+            required>
               <option selected>Please Select *</option>
               <option *ngFor="let class of this.classes" [value]="class.classses"
                 [selected]="studentDto.classId == class.classses">
@@ -54,11 +88,17 @@
             <span class="label">Class *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="classId.touched && !classId.valid">
+           Please Select Class.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.sectionId"
-              name="sectionId">
+              name="sectionId" required>
               <option selected>Please Select *</option>
               <option *ngFor="let section of this.sections" [value]="section.section"
                 [selected]="studentDto.sectionId ==section.section">{{ section.section }}
@@ -73,25 +113,49 @@
       <div class="row">
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="firstname" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.firstname">
+            <input 
+            type="text" 
+            #firstname="ngModel"
+            name="firstname" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.firstname" 
+            required>
             <span class="label">First Name *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="firstname.touched && !firstname.valid">
+           Please Enter Firstname.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="lastname" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.lastname">
+            <input 
+            type="text"
+            #lastname="ngModel"
+            name="lastname" 
+            class="form-control"
+            id="inp"
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.lastname"
+            required>
             <span class="label">Last Name *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="lastname.touched && !lastname.valid">
+           Please Enter Lastname.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.gender" name="gender">
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.gender" name="gender" required>
               <option selected> Select *</option>
               <option value="Male" [selected]="studentDto.gender == 'Male'">Male</option>
               <option value="Female" [selected]="studentDto.gender == 'Female'">Female</option>
@@ -104,15 +168,28 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="dob" [(ngModel)]="studentDto.dob">
+            <input 
+            type="date"
+            #dob="ngModel" 
+            id="dtp" 
+            placeholder="&nbsp;" 
+            name="dob" 
+            [(ngModel)]="studentDto.dob" 
+            required>
             <span class="label">Birthdate *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="dob.touched && !dob.valid">
+           Please Select Class.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.categoryId"
-              name="categoryId">
+              name="categoryId" required>
               <option selected>Please Select *</option>
               <option *ngFor="let student of this.students" [value]="student.category"
                 [selected]="studentDto.categoryId ==student.category">{{ student.category }}
@@ -125,58 +202,118 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="religion" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.religion">
+            <input 
+            type="text"
+             name="religion" 
+             class="form-control"
+             #religion="ngModel" 
+             id="inp" 
+             placeholder="&nbsp;"
+             [(ngModel)]="studentDto.religion" 
+             required>
             <span class="label">Religion *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="religion.touched && !religion.valid">
+           Please Enter Religion.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="cast" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.cast">
+            <input 
+            type="text" 
+            name="cast" 
+            #cast="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.cast" 
+            required>
             <span class="label">Cast *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="cast.touched && !cast.valid">
+           Please Enter Cast.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="mobileno" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.mobileno">
+            <input 
+            type="text" 
+            name="mobileno" 
+            #mobileno="ngModel"
+            pattern="^[0-9]*$" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.mobileno" 
+            required>
             <span class="label">Mobile No*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="mobileno.touched && !mobileno.valid">
+           Please Enter Firstname.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="email" name="email" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.email">
+            <input 
+            type="email" 
+            name="email"
+            #email="ngModel" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.email" 
+            required>
             <span class="label">E-Mail*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="email.touched && !email.valid">
+           Please Enter Email.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="admissionDate"
-              [(ngModel)]="studentDto.admissionDate">
+            <input 
+            type="date" 
+            id="dtp" 
+            placeholder="&nbsp;" 
+            name="admissionDate"
+            #admissionDate="ngModel"
+            [(ngModel)]="studentDto.admissionDate" 
+            required>
             <span class="label">Admission Date *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="admissionDate.touched && !admissionDate.valid">
+           Please Enter admissionDate.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
           <input type="file" class="form-control-file" name="image" placeholder="Upload Student Photo (150px X 150px)"
-            [(ngModel)]="studentDto.image">
+            [(ngModel)]="studentDto.image" required>
         </div>
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.bloodGroup"
-              name="bloodGroup">
+              name="bloodGroup" required>
               <option selected>Please Select Class *</option>
               <option value="O+" [selected]="studentDto.bloodGroup == 'O+'">O+</option>
               <option value="A+" [selected]="studentDto.bloodGroup == 'A+'">A+</option>
@@ -191,10 +328,11 @@
             <span class="focus-bg"></span>
           </label>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.schoolHouseId"
-              name="schoolHouseId">
+              name="schoolHouseId" required>
               <option selected>Select *</option>
               <option *ngFor="let house of this.houses" [value]="house.houseName"
                 [selected]="studentDto.schoolHouseId == house.houseName">{{ house.houseName }}
@@ -207,45 +345,95 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="height" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.height">
+            <input 
+            type="text" 
+            name="height"
+            #height="ngModel" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.height" 
+            required>
             <span class="label">Height *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="height.touched && !height.valid">
+           Please Enter Height.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="weight" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.weight">
+            <input 
+            type="text" 
+            name="weight" 
+            #weight="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.weight" 
+            required>
             <span class="label">Weight *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="weight.touched && !weight.valid">
+           Please Enter Weight.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
             <input type="date" id="dtp" placeholder="&nbsp;" name="measurementDate"
-              [(ngModel)]=" studentDto.measurementDate">
+              [(ngModel)]=" studentDto.measurementDate" required>
             <span class="label">As On Date *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="adharNo" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.adharNo">
+            <input 
+            type="text" 
+            name="adharNo"
+            #adharNo="ngModel" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.adharNo" 
+            required>
             <span class="label">Addhar Number *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="adharNo.touched && !adharNo.valid">
+           Please Enter Adhar Number.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="Weight" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.rollNo">
+            <input 
+            type="text" 
+            name="GRN" 
+            #GRN="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+              [(ngModel)]="studentDto.rollNo" 
+              required>
             <span class="label">GRN *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="GRN.touched && !GRN.valid">
+           Please Enter GRN.
+          </div>
         </div>
         <!--<button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>-->
         <!-- <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
@@ -259,35 +447,72 @@
         </div>
       </div>
       <hr><br>
+
       <h3>Add Parent Details</h3>
 
       <div class="row">
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="fatherName" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.fatherName">
+            <input 
+            type="text" 
+            name="fatherName" 
+            #fatherName="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+              [(ngModel)]="studentDto.fatherName"
+              required>
             <span class="label">Father Name*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="fatherName.touched && !fatherName.valid">
+           Please Enter FatherName.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="fatherPhone" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.fatherPhone">
+            <input 
+            type="text" 
+            name="fatherPhone" 
+            #fatherPhone="ngModel"
+            class="form-control" 
+            id="inp"
+             placeholder="&nbsp;"
+              [(ngModel)]="studentDto.fatherPhone"
+              required>
             <span class="label">Father Phone No. *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="fatherPhone.touched && !fatherPhone.valid">
+           Please Enter Phone number.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="fatherOccupation" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.fatherOccupation">
+            <input 
+            type="text" 
+            name="fatherOccupation" 
+            #fatherOccupation="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.fatherOccupation"
+            required>
             <span class="label">Father Occupation:*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="fatherOccupation.touched && !fatherOccupation.valid">
+           Please Enter Father Occupation.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -298,29 +523,65 @@
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="motherName" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.motherName">
+            <input 
+            type="text" 
+            name="motherName"
+            #motherName="ngModel" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.motherName"
+            required>
             <span class="label">Mother Name *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="motherName.touched && !motherName.valid">
+           Please Enter MotherName.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="motherPhone" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.motherPhone">
+            <input 
+            type="text" 
+            name="motherPhone" 
+            #motherPhone="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.motherPhone"
+            required>
             <span class="label">Mother Phone No. *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="motherPhone.touched && !motherPhone.valid">
+           Please Enter MotherPhone.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="motherOccupation" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.motherOccupation">
+            <input 
+            type="text" 
+            name="motherOccupation"
+            #motherOccupation="ngModel" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+              [(ngModel)]="studentDto.motherOccupation"
+              required>
             <span class="label">Mother Occupation*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="motherOccupation.touched && !motherOccupation.valid">
+           Please Enter Mother Occupation.
+          </div>
         </div>
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -350,39 +611,92 @@
             Other</label>
         </div>
       </div>
+
       <div class="row">
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="guardianName" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.guardianName">
+            <input 
+            type="text" 
+            name="guardianName" 
+            #guardianName="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.guardianName"
+             required>
             <span class="label">Guardian Name*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="guardianName.touched && !guardianName.valid">
+           Please Enter Guardian Name.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="guardianOccupation" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.guardianOccupation">
+            <input 
+            type="text" 
+            name="guardianOccupation"
+            #guardianOccupation="ngModel" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+              [(ngModel)]="studentDto.guardianOccupation"
+              required>
             <span class="label">Guardian Occupation*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="guardianOccupation.touched && !guardianOccupation.valid">
+           Please Enter Guardian Name.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="guardianPhone" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.guardianPhone">
+            <input 
+            type="text" 
+            name="guardianPhone" 
+            #guardianPhone="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+            [(ngModel)]="studentDto.guardianPhone"
+            required>
             <span class="label">Guardian Phone*</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="guardianPhone.touched && !guardianPhone.valid">
+           Please Enter Gardian Phone.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="inp" class="inp">
-            <input type="text" name="guardianEmail" class="form-control" id="inp" placeholder="&nbsp;"
-              [(ngModel)]="studentDto.guardianEmail">
+            <input 
+            type="text" 
+            name="guardianEmail" 
+            #guardianEmail="ngModel"
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;"
+              [(ngModel)]="studentDto.guardianEmail"
+              required>
             <span class="label">Guardian Email *</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="guardianEmail.touched && !guardianEmail.valid">
+           Please Enter Guardian Email.
+          </div>
         </div>
+
         <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label class="text-dark-medium" style="font-size: small;">Upload Photo (150px X 150px)</label>
           <input type="file" class="form-control-file" name="guardianPic"
@@ -491,11 +805,23 @@
           <label><input type="checkbox">&nbsp;&nbsp;If Guardian Address is Current Address
           </label>
           <label for="inp" class="inp" style="float: left;">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="currentAddress"
-              [(ngModel)]="studentDto.currentAddress">
+            <input 
+            type="text" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;" 
+            name="currentAddress"
+            #currentAddress="ngModel"  
+            [(ngModel)]="studentDto.currentAddress"
+            required>
             <span class="label">Current Address</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="currentAddress.touched && !currentAddress.valid">
+           Please Enter currentAddress.
+          </div>
         </div>
 
         <div class="col-xl-6 col-lg-12 col-12 form-group">
@@ -503,14 +829,28 @@
           </label>
 
           <label for="inp" class="inp" style="float: left;">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="permanentAddress"
-              [(ngModel)]="studentDto.permanentAddress">
+            <input 
+            type="text" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;" 
+            name="permanentAddress"
+            #permanentAddress="ngModel"
+            [(ngModel)]="studentDto.permanentAddress"
+            required>
             <span class="label">Permanent Address</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="permanentAddress.touched && !permanentAddress.valid">
+           Please Enter PermanentAddress.
+          </div>
         </div>
       </div>
+
       <hr><br>
+
       <h3>Transport Details</h3>
       <div class="row">
         <div class="col-xl-6 col-lg-12 col-12 form-group">
@@ -525,7 +865,9 @@
           </label>
         </div>
       </div>
+
       <hr><br>
+
       <h3>Hostel Details</h3>
       <div class="row">
         <div class="col-xl-6 col-lg-12 col-12 form-group">
@@ -552,16 +894,32 @@
           </label>
         </div>
       </div>
+
       <hr><br>
+
       <h3>Miscellaneous Details</h3>
       <div class="row">
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="inp" class="inp" style="float: left;">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankAccountNo"
-              [(ngModel)]="studentDto.bankAccountNo"> <span class="label">Bank Account No.</span>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="inp" 
+            placeholder="&nbsp;" 
+            name="bankAccountNo"
+            #bankAccountNo="ngModel"
+            [(ngModel)]="studentDto.bankAccountNo"
+            required> 
+            <span class="label">Bank Account No.</span>
             <span class="focus-bg"></span>
           </label>
+          <div 
+          class="alert alert-danger" 
+          *ngIf="bankAccountNo.touched && !bankAccountNo.valid">
+           Please Enter Account Number.
+          </div>
         </div>
+
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="inp" class="inp" style="float: left;">
             <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankName"
