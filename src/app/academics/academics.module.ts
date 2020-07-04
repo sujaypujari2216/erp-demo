@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AcademicsRoutingModule } from './academics-routing.module';
 import { ClassTimetableComponent } from './class-timetable/class-timetable.component';
 import { TeachersTimetableComponent } from './teachers-timetable/teachers-timetable.component';

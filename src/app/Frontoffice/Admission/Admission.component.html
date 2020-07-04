@@ -22,7 +22,7 @@
           </label>
         </div>
 
-        <!-- <div class="col-xl-3 col-lg-6 col-12 form-group">
+        <!--  <div class="col-xl-3 col-lg-6 col-12 form-group">
             <label for="slt" class="slt">
               <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.status" name="status">
                 <option value="">select</option>
@@ -32,7 +32,7 @@
               <span class="label">Class *</span>
               <span class="focus-bg"></span>
             </label>
-          </div> -->
+          </div>  -->
 
 
         <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -231,10 +231,11 @@
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.class_" name="class_">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.classId"
+                    name="classId">
                     <option value="">select</option>
                     <option *ngFor="let class of this.classes" [value]="class.class"
-                      [selected]="enquiry.class_ == class.class">{{ class.class}}</option>
+                      [selected]="enquiry.classId == class.class">{{ class.class}}</option>
                   </select>
                   <span class="label">Class *</span>
                   <span class="focus-bg"></span>

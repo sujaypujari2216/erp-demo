@@ -25,11 +25,11 @@ export class AddRoomTypeComponent implements OnInit {
   constructor(private roomtypeService: RoomTypeService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getroomtypeList();
   }
 
-  getList() {
-    this.roomtypeService.getList().subscribe((res: any) => {
+  getroomtypeList() {
+    this.roomtypeService.getroomtypeList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.hostelsroomtype = content.map((key) => ({ ...key }));
@@ -47,7 +47,7 @@ export class AddRoomTypeComponent implements OnInit {
         alert('section Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getroomtypeList();
     }, (err) => {
       console.log('Error While Saving Class');
       console.error(err);
@@ -80,7 +80,7 @@ export class AddRoomTypeComponent implements OnInit {
         alert('section Updated Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getroomtypeList();
     }, (err) => {
       console.log('Error while Updating section');
       console.error(err);
@@ -94,7 +94,7 @@ export class AddRoomTypeComponent implements OnInit {
         alert('section deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getroomtypeList();
     }, (err) => {
       console.log('Error while deleting section');
       console.error(err);

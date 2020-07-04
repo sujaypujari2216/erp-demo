@@ -16,7 +16,7 @@ export class AddhostelService {
     return this.http.post('http://yamistha.cloudjiffy.net/hostel', hostelDto);
   }
 
-  getList(): any {
+  gethostelList(): any {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel');
   }
 

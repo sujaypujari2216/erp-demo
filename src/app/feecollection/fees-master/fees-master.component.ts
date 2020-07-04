@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-import { FeesmasterService } from './feesmaster.service';
-import { FeestypeService } from 'src/app/feecollection/feestype/feestype.service'; 
+import { FeemasterService } from './feemaster.service';
+import { FeestypeService } from 'src/app/feecollection/feestype/feestype.service';
 import { FeesGroupService } from 'src/app/feecollection/feesgroup/feesgroup.service';
-
 @Component({
-  selector: 'app-feesmaster',
-  templateUrl: './feesmaster.component.html',
-  styleUrls: ['./feesmaster.component.scss'],
+  selector: 'app-fees-master',
+  templateUrl: './fees-master.component.html',
+  styleUrls: ['./fees-master.component.css']
 })
-export class FeesmasterComponent implements OnInit {
+export class FeesMasterComponent implements OnInit {
 
   url = `http://yamistha.cloudjiffy.net/fee-master/`;
 
-  feemasters = [];
+  feesmaster = [];
   requestDto = {
     "amount": 0,
     "dueDate": "",
@@ -29,12 +28,12 @@ export class FeesmasterComponent implements OnInit {
   isUpdate: boolean = false;
   feesgroup: any;
   feetypes: any;
-  
+
   constructor(private datatableservice: DatatableService,
-    private feemasterService: FeesmasterService,
-              
-              private feetypeservice: FeestypeService,
-              private feegroupService: FeesGroupService) { }
+    private feemasterService: FeemasterService,
+
+    private feetypeservice: FeestypeService,
+    private feegroupService: FeesGroupService) { }
 
   ngOnInit(): void {
     this.getList();
@@ -57,6 +56,8 @@ export class FeesmasterComponent implements OnInit {
     this.feetypeservice.gettypeList().subscribe((res: any) => {
       var data = res['data'];
       this.feetypes = data['content'];
+      //this.visitors = content.map((key) => ({ ...key }));
+      //console.log(this.visitors);
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
@@ -66,8 +67,8 @@ export class FeesmasterComponent implements OnInit {
     this.feemasterService.getmasterList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
-      this.feemasters = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('fee master');
+      this.feesmaster = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('fees master');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
@@ -87,6 +88,7 @@ export class FeesmasterComponent implements OnInit {
       console.error(err);
     });
   }
+
   getmasterById(masterId) {
     this.feemasterService.getmasterById(masterId).subscribe((res: any) => {
       this.requestDto.amount = res.data.amount;
@@ -157,7 +159,3 @@ export class FeesmasterComponent implements OnInit {
     this.isUpdate = false;
   }
 }
-
-
-
-

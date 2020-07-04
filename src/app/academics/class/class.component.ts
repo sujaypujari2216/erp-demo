@@ -9,6 +9,7 @@ import { SectionsService } from '../sections/sections.service';
   styleUrls: ['./class.component.css'],
 })
 export class ClassComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/class/`;
   classes = [];
   classDto = {
     'classses': '',
@@ -23,7 +24,6 @@ export class ClassComponent implements OnInit {
     ]
   }
   sectionDto: any = [];
-  //selectedItems:string[];
 
   isUpdate: boolean = false;
 
@@ -36,7 +36,6 @@ export class ClassComponent implements OnInit {
   ngOnInit(): void {
     this.getClassList();
     this.getSectionList();
-    //this.selectedItems = new Array<string>();
 
   }
 
@@ -139,21 +138,12 @@ export class ClassComponent implements OnInit {
       }
     );
   }
-  /* getSectionId(e: any, section:string)
-  {
-    if(e.target.checked)
-    {
-      console.log(section+'checked');
-      this.selectedItems.push(section);
+  clearData() {
+    this.classDto.classses = '';
+    this.classDto.id = 0;
+    this.classDto.isActive = 'yes';
+    //this.classDto.section =
+    this.isUpdate = false;
 
-
-    }
-    else{
-      console.log(section + 'unchecked');
-      this.selectedItems = this.selectedItems.filter(m=>m!=section);
-
-    }
-    console.log(this.selectedItems)
-
-  } */
+  }
 }

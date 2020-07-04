@@ -14,7 +14,7 @@
         <h4>Visitor List</h4>
       </div>
       <div class="dropdown">
-        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right; ;" type="button"
+        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right; " type="button"
           class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
       </div>
     </div>
@@ -168,7 +168,8 @@
               </div>
               <div class="col-3 col-lg-6 col-12 form-group">
                 <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
-                <input type="file" class="form-control-file" name="file" placeholder="Attach Document">
+                <input type="file" class="form-control-file" name="image" placeholder="Attach Document"
+                  [(ngModel)]="visitorsBook.image" [value]="visitorsBook.image">
               </div>
               <div class="col-12 form-group mg-t-8">
                 <button *ngIf="!this.isUpdate" (click)="add()" type="button"

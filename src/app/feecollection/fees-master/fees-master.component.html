@@ -1,23 +1,22 @@
 <div class="breadcrumbs-area">
   <ul>
     <li>
-      <a href="index.html">Home</a>
+      <a href="/#/admin">Home</a>
+
     </li>
-    <li>Fees Master : 2019-20</li>
+    <li>Fees Master 2019-20</li>
   </ul>
 </div>
 <div class="card height-auto">
   <div class="card-body">
     <div class="heading-layout1">
       <div class="item-title">
-        <h5> Fee Master List</h5>
+        <h3>Fees Master List</h3>
       </div>
-      <div class="dropdown">
-        <button style="  background-color: #000066;  position: relative; top:0; right: 10; float: right; " type="button"
-          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-      </div>
+      <button style="background-color: #000066; width: 7%; height: 10%;" type="button" class="btn btn-info btn-lg"
+        data-toggle="modal" data-target="#myModal">+ Add
+      </button>
     </div>
-
     <div class="table-responsive">
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
@@ -26,27 +25,29 @@
             <th>Fees Code</th>
             <th>Amount</th>
             <th>Action</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let feemaster of feemasters">
-            <td>{{ feemaster.feeGroupId }}</td>
-            <td>{{ feemaster.feetypeId }}</td>
-            <td>{{ feemaster.amount }}</td>
-            <td><a (click)="setUpdateFileds(feemaster.id)" data-toggle="modal" data-target="#myModal"><i
-                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+          <tr *ngFor="let feemast of feesmaster">
+            <td>{{ feemast.fineType }}</td>
+            <td>{{ feemast.dueDate }}</td>
+            <td>{{ feemast.amount }}</td>
 
-              <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
-              <a (click)="deletemaster(feemaster.id)"><i class="fas fa-times text-black"></i>&nbsp;</a></td>
+            <td><i class="fas fa-align-justify "></i>&nbsp;
+              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+
           </tr>
         </tbody>
       </table>
     </div>
 
   </div>
+
 </div>
 
-<!------------------Popup start here-->
 <div class="container">
 
   <div id="myModal" class="modal fade" role="dialog">
@@ -149,17 +150,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Add Fees Master Area Start Here -->

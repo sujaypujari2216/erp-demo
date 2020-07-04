@@ -12,18 +12,18 @@ export class RoomsService {
     return this.http.post('http://yamistha.cloudjiffy.net/hostel-room/', hostelroomDto);
   }
 
-  getList(): any {
+  getHostelRoomList(): any {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/');
   }
 
-  delete(hostelroomId): any {
+  deleteHostelRoom(hostelroomId): any {
     return this.http.delete('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId);
   }
 
-  update(hostelroomDto, hostelroomId): any {
+  updateHostelRoom(hostelroomDto, hostelroomId): any {
     return this.http.put('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId, hostelroomDto);
   }
-  getById(hostelroomId): any {
+  getHostelRoomById(hostelroomId): any {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId);
   }
 }

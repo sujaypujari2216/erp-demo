@@ -19,7 +19,7 @@ export class AdmissionComponent implements OnInit {
   enquiry = {
     "address": "",
     "assigned": "",
-    "class_": 0,
+    "classId": 0,
     "contact": "",
     "date": "",
     "description": "",
@@ -124,7 +124,7 @@ export class AdmissionComponent implements OnInit {
       this.enquiry.assigned = res.data.assigned;
       this.enquiry.id = res.data.id;
       this.enquiry.isActive = res.data.isActive;
-      this.enquiry.class_ = res.data.class_;
+      this.enquiry.classId = res.data.class_;
       this.enquiry.contact = res.data.contact;
       this.enquiry.date = res.data.date;
       this.enquiry.description = res.data.description;
@@ -186,7 +186,7 @@ export class AdmissionComponent implements OnInit {
     this.enquiry.assigned = "";
     this.enquiry.id = 0;
     this.enquiry.isActive = "yes";
-    this.enquiry.class_ = 0;
+    this.enquiry.classId = 0;
     this.enquiry.contact = "";
     this.enquiry.date = "";
     this.enquiry.description = "";
