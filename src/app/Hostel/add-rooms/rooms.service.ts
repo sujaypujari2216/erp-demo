@@ -17,7 +17,6 @@ export class RoomsService {
     return this.http.get('http://yamistha.cloudjiffy.net/hostel-room/');
 
   }
-
   deleteHostelRoom(hostelroomId): any {
     return this.http.delete('http://yamistha.cloudjiffy.net/hostel-room/' + hostelroomId);
   }

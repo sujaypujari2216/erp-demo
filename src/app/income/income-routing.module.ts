@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddIncomeComponent } from './add-income/add-income.component';
 import { IncomeHeadComponent } from './income-head/income-head.component';
 import { SearchIncomeComponent } from './search-income/search-income.component';
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    //FormsModule,
+    //ReactiveFormsModule,
+    RouterModule.forChild(routes)]
+  
 })
 export class IncomeRoutingModule { }

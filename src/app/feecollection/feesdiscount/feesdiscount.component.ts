@@ -36,13 +36,13 @@ export class FeesdiscountComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.discounts = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('Fees type');
+      this.datatableservice.initTable('Fees discount');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
     });
   }
-
+ 
   adddiscount() {
     this.feesdiscountService.save(this.feeDiscountDto).subscribe((res: any) => {
       if (res.success == true) {
@@ -56,8 +56,7 @@ export class FeesdiscountComponent implements OnInit {
       console.error(err);
     });
   }
-
-  getdiscountById(discountId) {
+   getdiscountById(discountId) {
     this.feesdiscountService.getdiscountById(discountId).subscribe((res: any) => {
       this.feeDiscountDto.description = res.data.description;
       this.feeDiscountDto.id = res.data.id;
