@@ -15,7 +15,7 @@
         <h3>Expense List</h3>
       </div>
       <button style="background-color: #000066; width: 7%; height: 10%;" type="button" class="btn btn-info btn-lg"
-        data-toggle="modal" data-target="#myModal">+ Add
+        (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add
       </button>
     </div>
     <div class="table-responsive">
@@ -73,8 +73,8 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="expenseDto.expHeadId"
                     name="expHeadId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let expensehead of expenseheads" [value]="expensehead.expCategory"
-                      [selected]="expenseDto.expHeadId == expensehead.expCategory">{{ expensehead.expCategory }}
+                    <option *ngFor="let expensehead of expenseheads" [value]="expensehead.id"
+                      [selected]="expenseDto.expHeadId == expensehead.id">{{ expensehead.expCategory }}
                     </option>
                   </select>
                   <span class="label">Expense Head*</span>
@@ -156,9 +156,9 @@
                 </label>
 
               </div>
-              <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate" (click)="addexpense()"
-                  type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
-                  data-target="#myModal">
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addexpense()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>
                 <button *ngIf="this.isUpdate" (click)="updateexpense(expenseDto.id)" type="button"
