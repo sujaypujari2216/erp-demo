@@ -40,7 +40,9 @@ import { TeachersRatingComponent } from "./human_resource/teachers-rating/teache
 import { AddMoreComponent } from "./human_resource/add-more/add-more.component";
 import { AcademicsModule } from "./academics/academics.module";
 import { DatatableService } from "./shared/datatableservice/datatable.service";
+
 //import { AddIncomeComponent } from "./income/add-income/add-income.component";
+
 import { AddExpensesComponent } from "./expenses/add-expenses/add-expenses.component";
 import { SearchExpensesComponent } from "./expenses/search-expenses/search-expenses.component";
 import { ExpensesHeadComponent } from "./expenses/expenses-head/expenses-head.component";
@@ -55,13 +57,19 @@ import { AttendanceByDateComponent } from "./Attendance/attendance-by-date/atten
 import { ApproveLeaveComponent } from "./Attendance/approve-leave/approve-leave.component";
 import { AddExamComponent } from "./Examination/add-exam/add-exam.component";
 import { CreateTtComponent } from "./create-tt/create-tt.component";
+
 //import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
+
 import { ComplainttypeComponent } from './Frontoffice/setup/complainttype/complainttype.component';
 import { VisitorsPurposeComponent } from './Frontoffice/setup/visitors-purpose/visitors-purpose.component';
 import { SourceComponent } from './Frontoffice/setup/source/source.component';
 import { ReferenceComponent } from './Frontoffice/setup/reference/reference.component';
 import { HostelModule } from './Reports/hostel/hostel.module';
 import { FeeCollectionModule } from './feecollection/feecollection.module';
+import { LibraryModule } from './Library/Library.module';
+import { IncomeModule } from './income/income.module';
+import { IncomeHeadComponent } from './income/income-head/income-head.component';
+
 
 
 @NgModule({
@@ -99,7 +107,10 @@ import { FeeCollectionModule } from './feecollection/feecollection.module';
     AddMoreComponent,
     AddParentsComponent,
     AddMoreStudComponent,
+<<<<<<< HEAD
     //AddIncomeComponent,
+=======
+>>>>>>> 039a5f68148ba238612920baedbed67a3e932c1d
     AddExpensesComponent,
     SearchExpensesComponent,
     ExpensesHeadComponent,
@@ -112,11 +123,15 @@ import { FeeCollectionModule } from './feecollection/feecollection.module';
     ApproveLeaveComponent,
     AddExamComponent,
     CreateTtComponent,
+<<<<<<< HEAD
     //Issue1Component,
+=======
+>>>>>>> 039a5f68148ba238612920baedbed67a3e932c1d
     VisitorsPurposeComponent,
     SourceComponent,
     ReferenceComponent,
     ComplainttypeComponent,
+    IncomeHeadComponent
   ],
   imports: [
     BrowserModule,
@@ -128,6 +143,8 @@ import { FeeCollectionModule } from './feecollection/feecollection.module';
     HostelModule,
     FeeCollectionModule,
     RouterModule,
+    LibraryModule,
+    IncomeModule,
     //BsDatepickerModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,

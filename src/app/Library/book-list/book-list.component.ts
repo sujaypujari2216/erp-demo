@@ -61,23 +61,21 @@ export class BookListComponent implements OnInit {
   }
 
   getbookById(bookId) {
-      this.addbookService.getbookById(bookId).subscribe((res: any) => {
+    this.addbookService.getbookById(bookId).subscribe((res: any) => {
       this.Dto.author = res.data.author;
-      this.Dto.avaliable = 0;
+      this.Dto.avaliable = res.data.avaliable;
       this.Dto.bookNo = res.data.bookNo;
       this.Dto.isActive = res.data.isActive;
       this.Dto.bookTitle = res.data.bookTitle;
       this.Dto.description = res.data.description;
-      this.Dto.id = 0;
+      this.Dto.id = res.data.id;
       this.Dto.isbnNo = res.data.isbnNo;
-        this.Dto.perunitcost = 0;
+      this.Dto.perunitcost = res.data.perunitcost;
       this.Dto.postdate = res.data.postdate;
       this.Dto.publish = res.data.publish;
-        this.Dto.qty = 0;
+      this.Dto.qty = res.data.qty;
       this.Dto.rackNo = res.data.rackNo;
       this.Dto.subject = res.data.subject;
-
-
 
       // console.log(this.Dto);
 
