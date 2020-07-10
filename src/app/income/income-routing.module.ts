@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddIncomeComponent } from './add-income/add-income.component';
 import { IncomeHeadComponent } from './income-head/income-head.component';
 import { SearchIncomeComponent } from './search-income/search-income.component';
-//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -15,11 +15,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [AddIncomeComponent, IncomeHeadComponent, SearchIncomeComponent],
   imports: [
     CommonModule,
-    //FormsModule,
-    //ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)]
   
 })

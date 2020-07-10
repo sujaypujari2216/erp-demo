@@ -18,9 +18,10 @@ import { Issue1Component } from './issue-return/issue1/issue1.component';
     BookListComponent,IssueReturnComponent,Issue1Component],
   imports: [
     CommonModule,
+    LibraryRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LibraryRoutingModule,
+   
   ]
 })
 export class LibraryModule { }
