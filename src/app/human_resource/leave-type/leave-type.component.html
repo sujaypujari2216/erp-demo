@@ -7,84 +7,72 @@
   </ul>
 </div>
 <!-- Breadcubs Area End Here -->
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h5>Add Leave Type</h5>
-      </div>
-    </div>
-    <form role="form" method="post" id="reused_form">
-      <div class="row">
-        <div class="col-6 col-lg-4 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label"> Add leave Type</span>
-            <span class="focus-bg"></span>
-          </label>
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Add Leave Type</h5>
+          </div>
         </div>
-        <div class="col-6 col-lg-4 col-12 form-group">
-          <button type="submit"
-            class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;&nbsp;&nbsp;
-        </div>
+        <form class="new-added-form">
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="type" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="leaveTypeDto.type">
+              <span class="label">Leave Type</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-4 col-lg-6 col-12 form-group">
+            <div class="row">
+              <button *ngIf="!this.isUpdate" (click)="addleavetype()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updateleavetype(leaveTypeDto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
+
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-    <hr>
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h5>Leave Type List</h5>
-      </div>
-    </div>
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Medical</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Medical</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Medical</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Medical</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Medical</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
+  <div class="col-xl-8 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Leave Type List</h5>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table id="example" style="float: right;" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+
+                <th>Leave Type Name</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let leave of leaves">
+                <td>{{leave.type}}</td>
+                <td><a (click)="setUpdateFileds(leave.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleteleavetype(leave.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

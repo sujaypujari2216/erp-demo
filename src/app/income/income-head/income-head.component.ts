@@ -8,9 +8,10 @@ import { IncomeheadService } from './incomehead.service';
   styleUrls: ['./income-head.component.css']
 })
 export class IncomeHeadComponent implements OnInit {
+
   url = 'http://yamistha.cloudjiffy.net/expense-head/';
 
-  constructor(private incomeheadService: IncomeheadService, private datatableservice: DatatableService) { }
+  constructor(private datatableservice: DatatableService,private incomeheadService: IncomeheadService, ) { }
 
   incomeheads = [];
   incomeHeadDto = {
@@ -33,7 +34,7 @@ export class IncomeHeadComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.incomeheads = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable(' Expense head');
+      this.datatableservice.initTable(' income head');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);

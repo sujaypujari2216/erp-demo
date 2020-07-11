@@ -24,8 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AddBookComponent, AddStaffComponent, AddStudentComponent,
-    BookListComponent, IssueReturnComponent, Issue1Component
+  declarations: [
     
   ],
   imports: [

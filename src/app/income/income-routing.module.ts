@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AddIncomeComponent, IncomeHeadComponent, SearchIncomeComponent],
+  declarations: [IncomeHeadComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -107,10 +107,7 @@ import { IncomeHeadComponent } from './income/income-head/income-head.component'
     AddMoreComponent,
     AddParentsComponent,
     AddMoreStudComponent,
-<<<<<<< HEAD
     //AddIncomeComponent,
-=======
->>>>>>> 039a5f68148ba238612920baedbed67a3e932c1d
     AddExpensesComponent,
     SearchExpensesComponent,
     ExpensesHeadComponent,
@@ -123,15 +120,14 @@ import { IncomeHeadComponent } from './income/income-head/income-head.component'
     ApproveLeaveComponent,
     AddExamComponent,
     CreateTtComponent,
-<<<<<<< HEAD
+
     //Issue1Component,
-=======
->>>>>>> 039a5f68148ba238612920baedbed67a3e932c1d
+
     VisitorsPurposeComponent,
     SourceComponent,
     ReferenceComponent,
     ComplainttypeComponent,
-    IncomeHeadComponent
+    //IncomeHeadComponent
   ],
   imports: [
     BrowserModule,
