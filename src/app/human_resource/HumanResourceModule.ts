@@ -16,11 +16,24 @@ import { StaffDirectoryComponent } from './staff-directory/staff-directory.compo
 import { StaffAttendanceComponent } from './staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './add-more/add-more.component';
+import { StaffAttendanceTypeComponent } from './staff-attendance-type/staff-attendance-type.component';
 
 @NgModule({
-    declarations: [AddSComponent,ApproveLeaveRequestComponent,ApplyLeaveComponent,DepartmentComponent,
-    DesignationComponent,DisabledStaffComponent,ImportStaffComponent,LeaveTypeComponent,
-PayrollComponent,StaffDirectoryComponent,StaffAttendanceComponent,TeachersRatingComponent,AddMoreComponent],
+    declarations: [
+        AddSComponent,
+        ApproveLeaveRequestComponent,
+        ApplyLeaveComponent,
+        DepartmentComponent,
+        DesignationComponent,
+        DisabledStaffComponent,
+        ImportStaffComponent,
+        LeaveTypeComponent,
+        PayrollComponent,
+        StaffDirectoryComponent,
+        StaffAttendanceComponent,
+        TeachersRatingComponent,
+        AddMoreComponent,
+        StaffAttendanceTypeComponent],
     imports: [
         CommonModule,
         HumanResourceRoutingModule,

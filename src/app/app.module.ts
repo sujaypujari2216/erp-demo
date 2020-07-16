@@ -25,24 +25,8 @@ import { BannerImagesComponent } from "./Frontcms/banner-images/banner-images.co
 import { AdmitFormComponent } from "./admit-form/admit-form.component";
 import { CertificateModule } from "./certificate/certificate.module";
 import { ReportsModule } from "./Reports/ReportsModule";
-import { AddSComponent } from "./human_resource/add-s/add-s.component";
-import { ApplyLeaveComponent } from "./human_resource/apply-leave/apply-leave.component";
-import { ApproveLeaveRequestComponent } from "./human_resource/approve-leave-request/approve-leave-request.component";
-import { DepartmentComponent } from "./human_resource/department/department.component";
-import { DesignationComponent } from "./human_resource/designation/designation.component";
-import { DisabledStaffComponent } from "./human_resource/disabled-staff/disabled-staff.component";
-import { ImportStaffComponent } from "./human_resource/import-staff/import-staff.component";
-import { LeaveTypeComponent } from "./human_resource/leave-type/leave-type.component";
-import { PayrollComponent } from "./human_resource/payroll/payroll.component";
-import { StaffDirectoryComponent } from "./human_resource/staff-directory/staff-directory.component";
-import { StaffAttendanceComponent } from "./human_resource/staff-attendance/staff-attendance.component";
-import { TeachersRatingComponent } from "./human_resource/teachers-rating/teachers-rating.component";
-import { AddMoreComponent } from "./human_resource/add-more/add-more.component";
 import { AcademicsModule } from "./academics/academics.module";
 import { DatatableService } from "./shared/datatableservice/datatable.service";
-
-//import { AddIncomeComponent } from "./income/add-income/add-income.component";
-
 import { AddExpensesComponent } from "./expenses/add-expenses/add-expenses.component";
 import { SearchExpensesComponent } from "./expenses/search-expenses/search-expenses.component";
 import { ExpensesHeadComponent } from "./expenses/expenses-head/expenses-head.component";
@@ -57,9 +41,6 @@ import { AttendanceByDateComponent } from "./Attendance/attendance-by-date/atten
 import { ApproveLeaveComponent } from "./Attendance/approve-leave/approve-leave.component";
 import { AddExamComponent } from "./Examination/add-exam/add-exam.component";
 import { CreateTtComponent } from "./create-tt/create-tt.component";
-
-//import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
-
 import { ComplainttypeComponent } from './Frontoffice/setup/complainttype/complainttype.component';
 import { VisitorsPurposeComponent } from './Frontoffice/setup/visitors-purpose/visitors-purpose.component';
 import { SourceComponent } from './Frontoffice/setup/source/source.component';
@@ -68,7 +49,7 @@ import { HostelModule } from './Reports/hostel/hostel.module';
 import { FeeCollectionModule } from './feecollection/feecollection.module';
 import { LibraryModule } from './Library/Library.module';
 import { IncomeModule } from './income/income.module';
-import { IncomeHeadComponent } from './income/income-head/income-head.component';
+import { HumanResourceModule } from './human_resource/HumanResourceModule';
 
 
 
@@ -92,22 +73,8 @@ import { IncomeHeadComponent } from './income/income-head/income-head.component'
     MenusComponent,
     BannerImagesComponent,
     AdmitFormComponent,
-    AddSComponent,
-    ApproveLeaveRequestComponent,
-    ApplyLeaveComponent,
-    DepartmentComponent,
-    DesignationComponent,
-    DisabledStaffComponent,
-    ImportStaffComponent,
-    LeaveTypeComponent,
-    PayrollComponent,
-    StaffAttendanceComponent,
-    StaffDirectoryComponent,
-    TeachersRatingComponent,
-    AddMoreComponent,
     AddParentsComponent,
     AddMoreStudComponent,
-    //AddIncomeComponent,
     AddExpensesComponent,
     SearchExpensesComponent,
     ExpensesHeadComponent,
@@ -120,14 +87,10 @@ import { IncomeHeadComponent } from './income/income-head/income-head.component'
     ApproveLeaveComponent,
     AddExamComponent,
     CreateTtComponent,
-
-    //Issue1Component,
-
     VisitorsPurposeComponent,
     SourceComponent,
     ReferenceComponent,
     ComplainttypeComponent,
-    //IncomeHeadComponent
   ],
   imports: [
     BrowserModule,
@@ -141,6 +104,7 @@ import { IncomeHeadComponent } from './income/income-head/income-head.component'
     RouterModule,
     LibraryModule,
     IncomeModule,
+    HumanResourceModule,
     //BsDatepickerModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
