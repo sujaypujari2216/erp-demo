@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-
 import { StudentsdetailsComponent } from './studentsdetails/studentsdetails.component';
 import { AdmissionformComponent } from './admissionform/admissionform.component';
 import { OnlineAdmissionComponent } from './online-admission/online-admission.component';
@@ -38,7 +37,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-
     RouterModule.forChild(routes)
   ]
 })

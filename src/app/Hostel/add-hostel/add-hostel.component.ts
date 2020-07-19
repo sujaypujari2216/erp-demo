@@ -30,11 +30,11 @@ export class AddHostelComponent implements OnInit {
   constructor(private addhostelService: AddhostelService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.gethostelList();
   }
 
-  getList() {
-    this.addhostelService.getList().subscribe((res: any) => {
+  gethostelList() {
+    this.addhostelService.gethostelList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.hostels = content.map((key) => ({ ...key }));
@@ -51,7 +51,7 @@ export class AddHostelComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.gethostelList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -88,7 +88,7 @@ export class AddHostelComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.gethostelList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -105,7 +105,7 @@ export class AddHostelComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.gethostelList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');

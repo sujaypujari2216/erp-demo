@@ -1,5 +1,6 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AddSComponent } from './add-s/add-s.component';
 import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
 import { ApproveLeaveRequestComponent } from './approve-leave-request/approve-leave-request.component';
@@ -13,10 +14,7 @@ import { StaffDirectoryComponent } from './staff-directory/staff-directory.compo
 import { StaffAttendanceComponent } from './staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './add-more/add-more.component';
-
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 export const routes: Routes = [
@@ -42,6 +40,8 @@ export const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

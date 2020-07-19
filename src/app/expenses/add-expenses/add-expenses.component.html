@@ -15,7 +15,7 @@
         <h3>Expense List</h3>
       </div>
       <button style="background-color: #000066; width: 7%; height: 10%;" type="button" class="btn btn-info btn-lg"
-        data-toggle="modal" data-target="#myModal">+ Add
+        (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add
       </button>
     </div>
     <div class="table-responsive">
@@ -24,27 +24,25 @@
           <tr>
             <th>Name</th>
             <th>Invoice Number</th>
-            <th>Date</th>
             <th>Expense Head</th>
             <th>Amount</th>
+            <th>Date</th>
             <th>Action</th>
 
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let expense of expenses">
+            <td>{{ expense.name }}</td>
+            <td>{{ expense.invoiceNo }}</td>
+            <td>{{ expense.expHeadId }}</td>
+            <td>{{ expense.amount }}</td>
+            <td>{{ expense.date }}</td>
 
-            <td></td>
 
-            <td></td>
-
-            <td></td>
-
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
+            <td> <a (click)="setUpdateFileds(expense.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleteexpense(expense.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a></td>
 
           </tr>
         </tbody>
@@ -70,70 +68,103 @@
         <div class="modal-body">
           <form role="form" method="post" id="reused_form">
             <div class="row">
-              <div class="col-4 col-lg-4 col-12 form-group">
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="expenseDto.expHeadId"
+                    name="expHeadId">
                     <option selected>Please Select *</option>
-                    <option value="">select</option>
-                    <option value="1">Donation</option>
-                    <option value="2">Rent</option>
-                    <option value="3">Miscelaneous</option>
+                    <option *ngFor="let expensehead of expenseheads" [value]="expensehead.id"
+                      [selected]="expenseDto.expHeadId == expensehead.id">{{ expensehead.expCategory }}
+                    </option>
                   </select>
-                  <span class="label">Expense Head *</span>
+                  <span class="label">Expense Head*</span>
                   <span class="focus-bg"></span>
                 </label>
+                <!-- <div class="alert alert-danger" *ngIf="expHeadId.touched && !expHeadId.valid">
+                  Please Enter Expense Head.
+                </div> -->
               </div>
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="expenseDto.name"
+                    name="name" [value]="expenseDto.name">
                   <span class="label"> Name</span>
                   <span class="focus-bg"></span>
                 </label>
-
+                <!-- <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                  Please Enter Name.
+                </div> -->
               </div>
 
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="expenseDto.invoiceNo" name="invoiceNo" [value]="expenseDto.invoiceNo">
                   <span class="label">Invoice Number</span>
                   <span class="focus-bg"></span>
                 </label>
+                <!--  <div class="alert alert-danger" *ngIf="invoiceNo.touched && !invoiceNo.valid">
+                  Please Enter Invlice Number.
+                </div> -->
               </div>
 
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="expenseDto.date">
+
                   <span class="label"> Date *</span>
                   <span class="focus-bg"></span>
                 </label>
+                <!-- <div class="alert alert-danger" *ngIf="date.touched && !date.valid">
+                  Please Enter Date.
+                </div> -->
               </div>
 
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Amount</span>
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="expenseDto.amount"
+                    name="amount" [value]="expenseDto.amount"> <span class="label">Amount</span>
                   <span class="focus-bg"></span>
                 </label>
+                <!-- <div class="alert alert-danger" *ngIf="amount.touched && !amount.valid">
+                  Please Enter amount.
+                </div> -->
               </div>
 
-
-
-              <div class="col-4 col-lg-4 col-12 form-group">
+              <!--  <div class="col-4 col-lg-4 col-12 form-group">
                 <label class="text-dark-medium" style="font-size: small;">Upload Doc</label>
-                <input type="file" class="form-control-file" name="photo" placeholder="Upload Document">
-              </div>
+                <input type="file" class="form-control-file" name="document" placeholder="Upload document"
+                  [(ngModel)]="expenseDto.document" required>
 
+              </div> -->
+              <div class="col-4 col-lg-4 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="expenseDto.documents" name="documents" [value]="expenseDto.documents">
+                  <span class="label">documents</span>
+                  <span class="focus-bg"></span>
+                </label>
+                <!--  <div class="alert alert-danger" *ngIf="invoiceNo.touched && !invoiceNo.valid">
+                                Please Enter Invlice Number.
+                              </div> -->
+              </div>
               <div class="col-4 col-lg-4 col-12 form-group" row="3">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Description</span>
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="expenseDto.note"
+                    name="note" [value]="expenseDto.note"> <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
 
               </div>
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addexpense()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updateexpense(expenseDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>

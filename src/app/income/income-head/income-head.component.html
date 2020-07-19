@@ -28,12 +28,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
+          <tr *ngFor="let incomehead of incomeheads">
+            <td>{{ incomehead.incomeCategory }}</td>
+            <td>{{ incomehead.description }}</td>
+
 
             <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
+              <a (click)="setUpdateFileds(incomehead.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleteincomehead(incomehead.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
 
           </tr>
         </tbody>
@@ -61,7 +65,8 @@
             <div class="row">
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="incomeCategory" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="incomeHeadDto.incomeCategory">
                   <span class="label"> Name</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -69,15 +74,22 @@
               </div>
               <div class="col-4 col-lg-4 col-12 form-group" row="3">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="incomeHeadDto.description">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
 
               </div>
-              <div class="col-4 col-lg-4 col-12 form-group">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addincomehead()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updateincomehead(incomeHeadDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>

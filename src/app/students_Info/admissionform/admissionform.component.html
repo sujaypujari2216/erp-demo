@@ -80,8 +80,9 @@
             #classId="ngModel"
             required>
               <option selected>Please Select *</option>
-              <option *ngFor="let class of this.classes" [value]="class.id" [selected]="studentDto.classId == class.id">
-                {{ class.id }}
+              <option *ngFor="let class of this.classes" [value]="class.classses"
+                [selected]="studentDto.classId == class.classses">
+                {{ class.classses }}
               </option>
             </select>
             <span class="label">Class *</span>
@@ -99,8 +100,8 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.sectionId"
               name="sectionId" required>
               <option selected>Please Select *</option>
-              <option *ngFor="let section of this.sections" [value]="section.sectionId"
-                [selected]="studentDto.sectionId ==section.sectionId">{{ section.sectionId }}
+              <option *ngFor="let section of this.sections" [value]="section.section"
+                [selected]="studentDto.sectionId ==section.section">{{ section.section }}
               </option>
             </select>
             <span class="label">Section *</span>
@@ -190,8 +191,8 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.categoryId"
               name="categoryId" required>
               <option selected>Please Select *</option>
-              <option *ngFor="let student of this.students" [value]="student.categoryId"
-                [selected]="studentDto.categoryId ==student.categoryId">{{ student.categoryId }}
+              <option *ngFor="let student of this.students" [value]="student.category"
+                [selected]="studentDto.categoryId ==student.category">{{ student.category }}
               </option>
             </select>
             <span class="label">Category *</span>
@@ -333,8 +334,8 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.schoolHouseId"
               name="schoolHouseId" required>
               <option selected>Select *</option>
-              <option *ngFor="let house of this.houses" [value]="house.schoolHouseId"
-                [selected]="studentDto.schoolHouseId == house.schoolHouseId">{{ house.schoolHouseId }}
+              <option *ngFor="let house of this.houses" [value]="house.houseName"
+                [selected]="studentDto.schoolHouseId == house.houseName">{{ house.houseName }}
               </option>
             </select>
             <span class="label">Student House *</span>
@@ -707,13 +708,11 @@
 
       </div>
       <hr><br>
-      <h3>Add More</h3>
-      <div class="dropdown">
 
-        <b><button (click)=toggleDisplay() style="  background-color: transparent;color: #f5611d; position: relative;  float: right;
-                        " type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">+</button></b>
 
-      </div>
+      <button (click)=toggleDisplay() type="button" class="block"><b>Add More Details</b></button>
+
+
     </form>
   </div>
 </div>

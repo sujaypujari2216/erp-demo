@@ -14,7 +14,7 @@ export class RoomTypeService {
     return this.http.post(`http://yamistha.cloudjiffy.net/room-type`, roomType);
   }
 
-  getList(): any {
+  getroomtypeList(): any {
     return this.http.get(`http://yamistha.cloudjiffy.net/room-type`);
   }
 

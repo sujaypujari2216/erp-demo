@@ -337,67 +337,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Admission Fees</td>
-            <td>Admission Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1st Installment Fees</td>
-            <td>1st Installment Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>2nd Installment Fees</td>
-            <td>2nd Installment Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>3rd Installment Fees</td>
-            <td>3rd Installment Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>4th Installment Fees</td>
-            <td>4th Installment Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>5th Installment Fees</td>
-            <td>5th Installment Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>6th Installment Fees</td>
-            <td>6th Installment Fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Exam Fees</td>
-            <td>Exam-fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Bus Fees</td>
-            <td>Bus-fees</td>
-            <td> <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+          <tr *ngFor="let feetype of feetypes">
+            <td>{{ feetype.type }}</td>
+            <td>{{ feetype.code }}</td>
+            <td>
+              <a (click)="setUpdateFileds(feetype.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deletetype(feetype.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
         </tbody>
@@ -427,7 +373,8 @@
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="type" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeTypeDto.type">
                   <span class="label">Name*</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -435,26 +382,29 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="code" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeTypeDto.code">
                   <span class="label">Fees Code*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
-
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeTypeDto.description">
                   <span class="label">Desription*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
-
-
-
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addtype()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updatetype(feeTypeDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>

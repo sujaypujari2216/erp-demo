@@ -26,17 +26,17 @@
             </label>
           </div><br>
 
-          <div class="col-xl-12 col-lg-12 col-12 form-group">
-            &nbsp;&nbsp;<span class="label">Section *</span>
-
-            <div class="" *ngFor="let sections of this.sectionDto">
-              <label>
-                &nbsp;&nbsp;<input type="checkbox" [(ngModel)]="classDto.section[0].section" [value]="sections.section"
-                  [name]="sections.section">{{ sections.section }}
-              </label>
-            </div>
-
-
+          <div class="col-xl-12 col-lg-6 col-12 form-group">
+            <label for="slt" class="slt">
+              <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.section[0].section"
+                name="studentSection">
+                <option value="">select</option>
+                <option *ngFor="let sections of this.sectionDto" [value]="sections.section"
+                  [selected]="classDto.section[0].section == sections.section">{{ sections.section }}</option>
+              </select>
+              <span class="label">Section *</span>
+              <span class="focus-bg"></span>
+            </label>
           </div>
           <!--  <div class="col-xl-12 col-lg-12 col-12 form-group">
             &nbsp;&nbsp;<span class="label">Section *</span>
@@ -50,7 +50,7 @@
           
           
           </div> -->
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <div class="col-xl-4 col-lg-6 col-12 form-group">
             <div class="form-group" style="float: right;">
               <button *ngIf="!this.isUpdate" (click)="addClass()" type="button"
                 class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">

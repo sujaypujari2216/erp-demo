@@ -26,7 +26,6 @@ import { ReferenceComponent } from './setup/reference/reference.component';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-
         FrontofficeRoutingModule,
     ]
 })

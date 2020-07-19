@@ -23,16 +23,21 @@
         <thead>
           <tr>
             <th>Expense Head</th>
+            <th>Description</th>
+
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
+          <tr *ngFor="let expensehead of expenseheads">
+            <td>{{ expensehead.expCategory }}</td>
+            <td>{{ expensehead.description }}</td>
+
 
             <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
+              <a (click)="setUpdateFileds(expensehead.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleteexpensehead(expensehead.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
 
           </tr>
         </tbody>
@@ -60,7 +65,8 @@
             <div class="row">
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="expCategory" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="expenseHeadDto.expCategory">
                   <span class="label"> Name</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -68,15 +74,22 @@
               </div>
               <div class="col-4 col-lg-4 col-12 form-group" row="3">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="expenseHeadDto.description">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
 
               </div>
-              <div class="col-4 col-lg-4 col-12 form-group">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addexpensehead()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updateexpensehead(expenseHeadDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>

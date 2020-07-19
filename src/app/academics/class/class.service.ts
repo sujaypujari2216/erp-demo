@@ -9,11 +9,11 @@ export class ClassService {
   constructor(private http: HttpClient) { }
 
   saveClass(classDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/class', classDto);
+    return this.http.post('http://yamistha.cloudjiffy.net/class/', classDto);
   }
 
   getClassList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/class');
+    return this.http.get('http://yamistha.cloudjiffy.net/class/');
   }
 
   deleteClass(classId): any {

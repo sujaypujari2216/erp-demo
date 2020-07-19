@@ -289,7 +289,6 @@
     display: inline-block;
     padding: 10px;
 
-    background: rgba(136, 82, 82, 0.8);
     border: 1px solid #fff;
     position: fixed;
     top: 55%;
@@ -300,10 +299,9 @@
   .modal-content {
     background: rgba(255, 255, 255, 1);
     position: fixed;
-    margin-top: 20%;
+    margin-top: 30%;
 
     width: 200%;
-
     transform: translate(-25%, -25%);
   }
 
@@ -337,49 +335,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Handicapped Discount</td>
-            <td>handicap-disc</td>
-            <td>1000</td>
+          <tr *ngFor="let discount of discounts">
+            <td>{{ discount.name }}</td>
+            <td>{{ discount.code }}</td>
+            <td>{{ discount.amount }}</td>
             <td> <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Handicapped Discount</td>
-            <td>handicap-disc</td>
-            <td>1000</td>
-            <td> <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Handicapped Discount</td>
-            <td>handicap-disc</td>
-            <td>1000</td>
-            <td> <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Handicapped Discount</td>
-            <td>handicap-disc</td>
-            <td>1000</td>
-            <td> <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Handicapped Discount</td>
-            <td>handicap-disc</td>
-            <td>1000</td>
-            <td> <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(discount.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deletediscount(discount.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
 
@@ -410,7 +373,8 @@
             <div class="row">
               <div class="col-xl-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="name" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeDiscountDto.name">
                   <span class="label">Name *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -418,30 +382,37 @@
 
               <div class="col-xl-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Discount Code*</span>
+                  <input type="text" name="code" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeDiscountDto.code"> <span class="label">Discount Code*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
               <div class="col-xl-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Amount*</span>
+                  <input type="text" name="amount" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeDiscountDto.amount"> <span class="label">Amount*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
               <div class="col-xl-4 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Description*</span>
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="feeDiscountDto.description"> <span class="label">Description*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-xl-4 col-lg-4 col-12 form-group">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="adddiscount()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updatediscount(feeDiscountDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>

@@ -8,75 +8,73 @@
 </div>
 <!-- Breadcubs Area End Here -->
 <!-- Student Table Area Start Here -->
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="modal-header">
-      <div class="item-title">
-        <h4>Disabled Reason </h4>
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Add Reason</h5>
+          </div>
+        </div>
+        <form class="new-added-form">
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="reason" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="disableReason.reason">
+              <span class="label">Add Disabled Reason</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-4 col-lg-6 col-12 form-group">
+            <div class="row">
+              <button *ngIf="!this.isUpdate" (click)="addreason()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updatereason(disableReason.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
+
+            </div>
+          </div>
+        </form>
       </div>
-      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-        class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-    </div>
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Action</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let student of students">
-
-            <td><a href="/#/studentinfo">{{ student.firstname}}</a></td>
-
-            <td>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
     </div>
   </div>
-</div>
-<div class="container">
-
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
+  <div class="col-xl-8 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
           <div class="item-title">
-            <h4>Add Disabled Reason </h4>
+            <h5>Disabled Reason List</h5>
           </div>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
         </div>
-        <div class="modal-body">
+        <div class="table-responsive">
 
-          <form role="form" method="post" id="reused_form">
-            <div class="row">
-              <div class="col-xl-6 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" name="category" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Add Name ...*</span>
-                  <span class="focus-bg"></span>
-                </label>
+          <table id="example" style="float: right;" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
 
-              </div>
+                <th>Reason Name</th>
+                <th>Action</th>
 
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <button type="submit" class="fw-btn-fill btn-gradient-yellow">Save</button>
-              </div>
-            </div>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reason of reasons">
 
-          </form>
+                <td><a href="/#/studentinfo">{{ reason.reason}}</a></td>
+                <td><a (click)="setUpdateFileds(reason.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deletereason(reason.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
     </div>
   </div>
 </div>
