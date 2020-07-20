@@ -12,7 +12,7 @@
 
         <div class="heading-layout1">
           <div class="item-title">
-            <h3>Stock List</h3>
+            <h5>Stock List</h5>
           </div>
           <div class="dropdown">
             <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;"
@@ -25,101 +25,24 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Category</th>
-                <th>Supplier</th>
-                <th>Store</th>
+                <th>Purchase Price</th>
                 <th>Quantity</th>
-                <th>Purchase</th>
-                <th>Price</th>
                 <th>Date</th>
                 <th>Action</th>
 
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Football</td>
-                <td>Sports</td>
-                <td>ABC</td>
-                <td>LMN</td>
-                <td>11</td>
-                <td>LKJ</td>
-                <td>200</td>
-                <td>01/02/2020</td>
-                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+              <tr *ngFor="let itemstock of itemstocks">
+                <td>{{ itemstock.name }}</td>
+                <td>{{ itemstock.purchasePrice }}</td>
+                <td>{{ itemstock.quantity }}</td>
+                <td>{{ itemstock.date }}</td>
+                <td> <a (click)="setUpdateFileds(itemstock.id)" data-toggle="modal" data-target="#myModal"><i
+                      class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleteitemstock(itemstock.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a>
                 </td>
-              </tr>
-              <tr>
-                <td>Football</td>
-                <td>Sports</td>
-                <td>ABC</td>
-                <td>LMN</td>
-                <td>11</td>
-                <td>LKJ</td>
-                <td>200</td>
-                <td>01/02/2020</td>
-                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                </td>
-              </tr>
-              <tr>
-                <td>Football</td>
-                <td>Sports</td>
-                <td>ABC</td>
-                <td>LMN</td>
-                <td>11</td>
-                <td>LKJ</td>
-                <td>200</td>
-                <td>01/02/2020</td>
-                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                </td>
-              </tr>
-              <tr>
-                <td>Football</td>
-                <td>Sports</td>
-                <td>ABC</td>
-                <td>LMN</td>
-                <td>11</td>
-                <td>LKJ</td>
-                <td>200</td>
-                <td>01/02/2020</td>
-                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                </td>
-              </tr>
-              <tr>
-                <td>Football</td>
-                <td>Sports</td>
-                <td>ABC</td>
-                <td>LMN</td>
-                <td>11</td>
-                <td>LKJ</td>
-                <td>200</td>
-                <td>01/02/2020</td>
-                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                </td>
-              </tr>
-              <tr>
-                <td>Football</td>
-                <td>Sports</td>
-                <td>ABC</td>
-                <td>LMN</td>
-                <td>11</td>
-                <td>LKJ</td>
-                <td>200</td>
-                <td>01/02/2020</td>
-                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                </td>
+
               </tr>
             </tbody>
           </table>
@@ -136,6 +59,8 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
+              <h5>Add Item Stock </h5>
+
               <button type="button" class="close" data-dismiss="modal">&times;</button>
 
             </div>
@@ -145,69 +70,17 @@
                 <div class="row">
                   <div class="col-4 col-lg-4 col-12 form-group">
                     <label for="inp" class="inp">
-                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemStockDto.name" name="name" [value]="itemStockDto.name">
                       <span class="label">Item Name</span>
                       <span class="focus-bg"></span>
                     </label>
                   </div>
 
                   <div class="col-4 col-lg-4 col-12 form-group">
-                    <label for="slt" class="slt">
-                      <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                        <option selected>Please Select *</option>
-                        <option value="">select</option>
-                        <option value="1">Sports</option>
-                        <option value="2">Stationary</option>
-                        <option value="3">Uniform</option>
-                      </select>
-                      <span class="label">Category *</span>
-                      <span class="focus-bg"></span>
-                    </label>
-                  </div>
-                  <div class="col-4 col-lg-4 col-12 form-group">
-                    <label for="slt" class="slt">
-                      <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                        <option selected>Please Select *</option>
-                        <option value="">Select</option>
-                        <option value="1">Sports</option>
-                        <option value="2">Stationary</option>
-                        <option value="3">Uniform</option>
-                      </select>
-                      <span class="label">Item *</span>
-                      <span class="focus-bg"></span>
-                    </label>
-                  </div>
-
-                  <div class="col-4 col-lg-4 col-12 form-group">
-                    <label for="slt" class="slt">
-                      <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                        <option selected>Please Select *</option>
-                        <option value="">Please</option>
-                        <option value="1">Raj Store</option>
-                        <option value="2">ABC Store</option>
-                        <option value="3">Uniform Store</option>
-                      </select>
-                      <span class="label">Supplier *</span>
-                      <span class="focus-bg"></span>
-                    </label>
-                  </div>
-
-                  <div class="col-4 col-lg-4 col-12 form-group">
-                    <label for="slt" class="slt">
-                      <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                        <option selected>Please Select *</option>
-                        <option value="">Please </option>
-                        <option value="1">Raj Store</option>
-                        <option value="2">ABC Store</option>
-                        <option value="3">Uniform Store</option>
-                      </select>
-                      <span class="label">STORE *</span>
-                      <span class="focus-bg"></span>
-                    </label>
-                  </div>
-                  <div class="col-4 col-lg-4 col-12 form-group">
                     <label for="inp" class="inp">
-                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemStockDto.quantity" name="quantity" [value]="itemStockDto.quantity">
                       <span class="label">Quantity</span>
                       <span class="focus-bg"></span>
                     </label>
@@ -215,7 +88,9 @@
 
                   <div class="col-4 col-lg-4 col-12 form-group">
                     <label for="inp" class="inp">
-                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemStockDto.purchasePrice" name="purchasePrice"
+                        [value]="itemStockDto.purchasePrice">
                       <span class="label">Purchase Price*</span>
                       <span class="focus-bg"></span>
                     </label>
@@ -224,22 +99,46 @@
 
                   <div class="col-4 col-lg-4 col-12 form-group">
                     <label for="dtp" class="dtp">
-                      <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+                      <input type="date" class="form-control" id="dtp" placeholder="&nbsp;"
+                        [(ngModel)]="itemStockDto.date" name="date" [value]="itemStockDto.date">
                       <span class="label"> Date *</span>
                       <span class="focus-bg"></span>
                     </label>
                   </div>
+                  <div class="col-4 col-lg-4 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemStockDto.symbol" name="symbol" [value]="itemStockDto.symbol">
+                      <span class="label">Symbol </span>
+                      <span class="focus-bg"></span>
+                    </label>
+
+                  </div>
+                  <div class="col-4 col-lg-4 col-12 form-group">
+                    <label class="text-dark-medium" style="font-size: small;">Upload Attachment</label>
+                    <input type="file" class="form-control-file" name="attachment" placeholder="Attach Documents"
+                      [(ngModel)]="itemStockDto.attachment">
+                  </div>
 
                   <div class="col-4 col-lg-4 col-12 form-group" row="3">
                     <label for="inp" class="inp">
-                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemStockDto.description" name="description" [value]="itemStockDto.description">
                       <span class="label">Description</span>
                       <span class="focus-bg"></span>
                     </label>
 
                   </div>
-                  <div class="col-12 form-group mg-t-8">
-                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                  <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate"
+                      (click)="additemstock()" type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+                      data-toggle="modal" data-target="#myModal">
+                      Save
+                    </button>
+                    <button *ngIf="this.isUpdate" (click)="updateitemstock(itemStockDto.id)" type="button"
+                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                      data-target="#myModal">
+                      Update
+                    </button>
                   </div>
                 </div>
               </form>

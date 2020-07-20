@@ -1,104 +1,90 @@
 <div class="breadcrumbs-area">
-        <ul>
-            <li>
-                <a href="/#/admin">Home</a>
+  <ul>
+    <li>
+      <a href="/#/admin">Home</a>
 
-            </li>
-            <li>Add Item Category</li>
-        </ul>
-    </div>
-    <!-- Breadcubs Area End Here -->
-    <!-- Add Item Category Area Start Here -->
+    </li>
+    <li>Add Item Category</li>
+  </ul>
+</div>
+<!-- Breadcubs Area End Here -->
+<!-- Add Item Category Area Start Here -->
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
     <div class="card height-auto">
-        <div class="card-body">
-           
-            <div class="table-responsive">
-                <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-                    <table id="example" class="table display data-table text-nowrap cell-border">
-                      <thead>
-                          <tr>
-                              <th>Item Category</th>
-                              <th>Action</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                            <td>Sports</td>
-                            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                        </tr>
-        
-                        <tr>
-                          <td>Staff Dress</td>
-                          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                        </tr>
-        
-                        <tr>
-                          <td>Furniture</td>
-                          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                        </tr>
-        
-                        <tr>
-                          <td>Stationary</td>
-                          <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>    </td>
-                         </tr>     
-                    </tbody>
-                  </table>
-              </div>
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Add Item Category</h5>
+          </div>
         </div>
-    </div>
-    <!-- Add Item Category Area End Here -->
-    <div class="container">
-   
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                       
-                    </div>
-                    <div class="modal-body">
-                        <form role="form" method="post" id="reused_form" >                  
-    
-                            <div class="row">
-                    
-                    
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label for="inp" class="inp">
-                                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                        <span class="label">Issue</span>
-                                        <span class="focus-bg"></span>
-                                      </label>
-                                  
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label for="inp" class="inp">
-                                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                        <span class="label">Description</span>
-                                        <span class="focus-bg"></span>
-                                      </label>
-                                </div>
-                               
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                
-                                </div>
-                            </div>
-                        </form>
-                        
-                        
-                    </div>
-                </div>
+        <form class="new-added-form">
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="itemCategory" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="itemCategoryDto.itemCategory">
+              <span class="label">Item Category</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="itemCategoryDto.description">
+              <span class="label">Description</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-6 col-lg-6 col-12 form-group">
+            <div class="row">&nbsp;&nbsp;
+              <button *ngIf="!this.isUpdate" (click)="additemcategory()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updatecategory(itemCategoryDto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
+
             </div>
-        </div>
-        
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+  <div class="col-xl-8 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Item Category List</h5>
+          </div>
+        </div>
+        <div class="table-responsive">
+
+          <table id="example" style="float: right;" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+
+                <th>Item Category</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let category of categories">
+                <td>{{category.itemCategory}}</td>
+                <td><a (click)="setUpdateFileds(category.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deletecategory(category.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

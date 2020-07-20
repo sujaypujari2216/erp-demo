@@ -24,6 +24,7 @@
         <thead>
           <tr>
             <th>Income Head</th>
+            <th>Description</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -31,7 +32,6 @@
           <tr *ngFor="let incomehead of incomeheads">
             <td>{{ incomehead.incomeCategory }}</td>
             <td>{{ incomehead.description }}</td>
-
 
             <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
               <a (click)="setUpdateFileds(incomehead.id)" data-toggle="modal" data-target="#myModal"><i
