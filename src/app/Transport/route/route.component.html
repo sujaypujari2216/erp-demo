@@ -9,81 +9,104 @@
 </div>
 <!-- Add route Area Start Here -->
 
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h3>Add Route</h3>
-      </div>
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Add Route</h5>
+          </div>
+        </div>
+        <form class="new-added-form">
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="routeTitle" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="transportRouteDto.routeTitle">
+              <span class="label">Route Title</span>
+              <span class="focus-bg"></span>
+            </label>
 
+          </div>
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="noOfVehicle" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="transportRouteDto.noOfVehicle">
+              <span class="label">No of Vehicles</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="fare" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="transportRouteDto.fare">
+              <span class="label">Fare</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-12 col-lg-12 col-12 form-desig">
+            <label for="inp" class="inp">
+              <input type="text" name="note" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="transportRouteDto.note">
+              <span class="label">Note</span>
+              <span class="focus-bg"></span>
+            </label>
+
+          </div>
+          <div class="col-xl-4 col-lg-6 col-12 form-group">
+            <div class="row">
+              <button *ngIf="!this.isUpdate" (click)="addroute()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updateroute(transportRouteDto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
+
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <form class="new-added-form">
-      <div class="row">
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Route Title *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Fare *</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-        </div>
-      </div>
-    </form>
   </div>
+  <div class="col-xl-8 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
 
-  <div class="card height-auto">
-    <div class="card-body">
-
-      <div class="heading-layout1">
-        <div class="item-title">
-          <h3>Route List</h3>
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Route List</h5>
+          </div>
         </div>
+        <div class="table-responsive">
 
-      </div>
+          <table id="example" style="float: right;" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
 
-      <div class="table-responsive">
-        <table id="example" class="table display data-table text-nowrap cell-border">
-          <thead>
-            <tr>
-              <th>Route</th>
-              <th>Fare</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Rajagurunagar</td>
-              <td>500</td>
-              <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-            </tr>
-            <tr>
-              <td>Moshi</td>
-              <td>500</td>
-              <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-            </tr>
-            <tr>
-              <td>Shrikrapur</td>
-              <td>500</td>
-              <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-            </tr>
-          </tbody>
-        </table>
+                <th>Route Title</th>
+                <th>Fare</th>
+                <th>No of Vehicles</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let route of routes">
+                <td>{{route.routeTitle}}</td>
+                <td>{{route.fare}}</td>
+                <td>{{route.noOfVehicle}}</td>
+
+                <td><a (click)="setUpdateFileds(route.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleteroute(route.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

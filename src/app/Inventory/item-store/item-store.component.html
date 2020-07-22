@@ -13,45 +13,14 @@
   <div class="card-body">
     <div class="heading-layout1">
       <div class="item-title">
-        <h3>Add Item Store</h3>
+        <h5>Add Item Store</h5>
       </div>
       <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
         class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+
         Add</button>
 
     </div>
-    <form class="new-added-form">
-      <div class="row">
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Item Store Name *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
 
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Itwm Stock Code *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-            <span class="label">Description</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
-
-        </div>
-      </div>
-    </form>
     <div class="table-responsive">
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
@@ -62,37 +31,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Library Store</td>
-            <td>LB2</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+          <tr *ngFor="let store of stores">
+            <td>{{store.itemStore}}</td>
+            <td>{{store.code}}</td>
+
+            <td><a (click)="setUpdateFileds(store.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deletestore(store.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
           </tr>
 
-          <tr>
-            <td>Science Store</td>
-            <td>SC2</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-
-          <tr>
-            <td>Library Store</td>
-            <td>LB2</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-
-          <tr>
-            <td>Science Store</td>
-            <td>SC2</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -107,6 +54,9 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+          <div class="item-title">
+            <h5>Add Item Store</h5>
+          </div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
         </div>
@@ -114,18 +64,20 @@
           <form role="form" method="post" id="reused_form">
 
             <div class="row">
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="itemStore" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemStoreDto.itemStore">
                   <span class="label">Item Store Name</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
 
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="code" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemStoreDto.code">
                   <span class="label">Item Stock Code</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -133,14 +85,24 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemStoreDto.description">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-xl-2 col-lg-6 col-12 form-group">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <button *ngIf="!this.isUpdate" (click)="addstore()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updatestore(itemStoreDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
+
 
               </div>
             </div>

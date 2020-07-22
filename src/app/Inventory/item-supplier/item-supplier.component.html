@@ -13,7 +13,7 @@
   <div class="card-body">
     <div class="heading-layout1">
       <div class="item-title">
-        <h3>Add Supplier</h3>
+        <h5>Add Supplier</h5>
       </div>
       <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
         class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
@@ -30,45 +30,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>ABC</td>
-            <td>XYZ</td>
-            <td>LMN</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>ABC</td>
-            <td>XYZ</td>
-            <td>LMN</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>ABC</td>
-            <td>XYZ</td>
-            <td>LMN</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>ABC</td>
-            <td>XYZ</td>
-            <td>LMN</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>ABC</td>
-            <td>XYZ</td>
-            <td>LMN</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+          <tr *ngFor="let supplier of suppliers">
+            <td>{{supplier.itemSupplier}}</td>
+            <td>{{supplier.contactPersonName}}</td>
+            <td>{{supplier.address}}</td>
+
+            <td><a (click)="setUpdateFileds(supplier.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deletesupplier(supplier.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -84,6 +53,9 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+          <div class="item-title">
+            <h5>Add Supplier</h5>
+          </div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
         </div>
@@ -91,18 +63,19 @@
           <form role="form" method="post" id="reused_form">
             <div class="row">
 
-
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label"> Name</span>
+                  <input type="text" name="itemSupplier" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.itemSupplier">
+                  <span class="label"> Supplier Name</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="phone" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.phone">
                   <span class="label">Phone</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -110,7 +83,8 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="email" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="email" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.email">
                   <span class="label">E-Mail</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -118,7 +92,8 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="address" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.address">
                   <span class="label">Address</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -126,7 +101,8 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="contactPersonName" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.contactPersonName">
                   <span class="label">Contact Person Name</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -134,7 +110,8 @@
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="contactPersonPhone" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.contactPersonPhone">
                   <span class="label">Contact Persone Phone</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -142,7 +119,8 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="contactPersonEmail" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.contactPersonEmail">
                   <span class="label">Contact Person mail</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -150,14 +128,25 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemSupplierDto.description">
                   <span class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Add</button>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+                <button *ngIf="!this.isUpdate" (click)="addsupplier()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Save
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updatesupplier(itemSupplierDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
+
+
               </div>
             </div>
           </form>

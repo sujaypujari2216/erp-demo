@@ -1,144 +1,189 @@
     <!-- Add item Area Start Here -->
-    
-        <div class="breadcrumbs-area">
-            <ul>
-                <li>
-                    <a href="/#/admin">Home</a>
-                </li>
-                <li>Add Item</li>
-            </ul>
-        </div>
-        <div class="card height-auto">
-            <div class="card-body">
-                
-               
-            <div class="heading-layout1">
-                <div class="item-title">
-                    <h3>Item List</h3>
-                </div>
-                <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" >+ Add</button>
 
-            </div>
-    
-            <div class="table-responsive">
-                <table id="example" class="table display data-table text-nowrap cell-border">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Category</th>
-                            <th>Unit</th>
-                            <th>Available Quantity</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Football</td>
-                            <td>Sports</td>
-                            <td>No</td>
-                            <td>5</td>
-                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-                        </tr>
-                        <tr>
-                            <td>Football</td>
-                            <td>Sports</td>
-                            <td>No</td>
-                            <td>5</td>
-                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-                        </tr>
-                        <tr>
-                            <td>Football</td>
-                            <td>Sports</td>
-                            <td>No</td>
-                            <td>5</td>
-                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-                        </tr>
-                        <tr>
-                            <td>Football</td>
-                            <td>Sports</td>
-                            <td>No</td>
-                            <td>5</td>
-                            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                                <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                                <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="breadcrumbs-area">
+      <ul>
+        <li>
+          <a href="/#/admin">Home</a>
+        </li>
+        <li>Add Item</li>
+      </ul>
+    </div>
+    <div class="card height-auto">
+      <div class="card-body">
+
+
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Item List</h3>
+          </div>
+          <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+            class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
+
         </div>
+
+        <div class="table-responsive">
+          <table id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Unit</th>
+                <th>Available Quantity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              <tr *ngFor="let item of items">
+                <td>{{ item.name }}</td>
+                <td>{{ item.itemCategoryId }}</td>
+                <td>{{ item.unit }}</td>
+                <td>{{ item.incHeadId }}</td>
+                <td>{{ item.quantity }}</td>
+
+                <td> <a (click)="setUpdateFileds(item.id)" data-toggle="modal" data-target="#myModal"><i
+                      class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleteitem(item.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a></td>
+
+              </tr>
+            </tbody>
+          </table>
         </div>
-    
+      </div>
+    </div>
+
     <!-- Add item Area end Here -->
     <div class="container">
-   
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                       
-                    </div>
-                    <div class="modal-body">
-                        <form role="form" method="post" id="reused_form" >                  
-    
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label for="inp" class="inp">
-                                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                        <span class="label">Item Name</span>
-                                        <span class="focus-bg"></span>
-                                      </label>
-                                </div>
-                                
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label for="slt" class="slt">        
-                                        <select  name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                                            <option selected>Please Select  *</option>
-                                             <option value="">select</option>
-                                            <option value="1">Sports</option>
-                                            <option value="2">Stationary</option>
-                                            <option value="3">Uniform</option>
-                                        </select>
-                                        <span class="label">Category *</span>
-                                        <span class="focus-bg"></span>
-                                    </label>
-                                </div>
-        
-                                <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label for="inp" class="inp">
-                                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                        <span class="label">Unit</span>
-                                        <span class="focus-bg"></span>
-                                      </label>
-                                </div>
-        
-                                <div class="col-xl-3 col-lg-6 col-12 form-group" row="3">
-                                    <label for="inp" class="inp">
-                                        <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                                        <span class="label">Description</span>
-                                        <span class="focus-bg"></span>
-                                      </label>   
-                                </div>
-        
-                                <div class="col-12 form-group mg-t-8">
-                                    <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                              
-                                </div>
-                            </div>
-                        </form>
-                        
-                        
-                    </div>
-                </div>
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
             </div>
+            <div class="modal-body">
+              <form role="form" method="post" id="reused_form">
+
+                <div class="row">
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="itemDto.name"
+                        name="name" [value]="itemDto.name">
+                      <span class="label">Item Name</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                      <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemCategoryId"
+                        name="itemCategoryId">
+                        <option selected>Please Select *</option>
+                        <option *ngFor="let category of categories" [value]="category.itemCategory"
+                          [selected]="itemDto.itemCategoryId == category.itemCategory">
+                          {{ category.itemCategory }}
+                        </option>
+                      </select>
+                      <span class="label">Income Head *</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                      <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemStoreId"
+                        name="itemStoreId">
+                        <option selected>Please Select *</option>
+                        <option *ngFor="let store of stores" [value]="store.itemStore"
+                          [selected]="itemDto.itemStoreId == store.itemStore">
+                          {{ store.itemStore }}
+                        </option>
+                      </select>
+                      <span class="label">Item Store*</span>
+                      <span class="focus-bg"></span>
+                    </label>
+
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                      <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemSupplierId"
+                        name="itemSupplierId">
+                        <option selected>Please Select *</option>
+                        <option *ngFor="let supplier of suppliers" [value]="supplier.itemSupplier"
+                          [selected]="itemDto.itemSupplierId == supplier.itemSupplier">
+                          {{ supplier.itemSupplier }}
+                        </option>
+                      </select>
+                      <span class="label">Item Supplier*</span>
+                      <span class="focus-bg"></span>
+                    </label>
+
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemDto.itemPhoto" name="itemPhoto" [value]="itemDto.itemPhoto">
+                      <span class="label">Item Photo</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="itemDto.unit"
+                        name="unit" [value]="itemDto.unit">
+                      <span class="label">Unit</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemDto.quantity" name="quantity" [value]="itemDto.quantity">
+                      <span class="label">Available Quantity</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="itemDto.date"
+                        name="date" [value]="itemDto.date">
+                      <span class="label">Date</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                        [(ngModel)]="itemDto.description" name="description" [value]="itemDto.description">
+                      <span class="label">Description</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate" (click)="additem()"
+                      type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                      data-target="#myModal">
+                      Save
+                    </button>
+                    <button *ngIf="this.isUpdate" (click)="updateitem(itemDto.id)" type="button"
+                      class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                      data-target="#myModal">
+                      Update
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+
+
+            </div>
+          </div>
         </div>
-        
+      </div>
+
     </div>

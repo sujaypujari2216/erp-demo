@@ -35,10 +35,9 @@
           <tr *ngFor="let income of incomes">
             <td>{{ income.name }}</td>
             <td>{{ income.invoiceNo }}</td>
+            <td>{{ income.date }}</td>
             <td>{{ income.incHeadId }}</td>
             <td>{{ income.amount }}</td>
-            <td>{{ income.date }}</td>
-
 
             <td> <a (click)="setUpdateFileds(income.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
@@ -113,7 +112,6 @@
               <div class="col-4 col-lg-4 col-12 form-group">
                 <label for="dtp" class="dtp">
                   <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="incomeDto.date">
-
                   <span class="label"> Date *</span>
                   <span class="focus-bg"></span>
                 </label>

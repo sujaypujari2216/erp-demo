@@ -34,66 +34,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>MH-14-DW-1783</td>
-            <td>Bus</td>
-            <td>2017</td>
-            <td>Lokesh</td>
-            <td>MH1220100986</td>
-            <td>9876543210</td>
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+          <tr *ngFor="let veh of vehs">
+            <td>{{veh.vehicleNo}}</td>
+            <td>{{veh.vehicleModel}}</td>
+            <td>{{veh.manufactureYear}}</td>
+            <td>{{veh.driverName}}</td>
+            <td>{{veh.driverLicence}}</td>
+            <td>{{veh.driverContact}}</td>
+
+
+            <td><a (click)="setUpdateFileds(veh.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleteveh(veh.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
-          <tr>
-            <td>MH-14-DW-1783</td>
-            <td>Bus</td>
-            <td>2017</td>
-            <td>Lokesh</td>
-            <td>MH1220100986</td>
-            <td>9876543210</td>
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>MH-14-DW-1783</td>
-            <td>Bus</td>
-            <td>2017</td>
-            <td>Lokesh</td>
-            <td>MH1220100986</td>
-            <td>9876543210</td>
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>MH-14-DW-1783</td>
-            <td>Bus</td>
-            <td>2017</td>
-            <td>Lokesh</td>
-            <td>MH1220100986</td>
-            <td>9876543210</td>
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-          <tr>
-            <td>MH-14-DW-1783</td>
-            <td>Bus</td>
-            <td>2017</td>
-            <td>Lokesh</td>
-            <td>MH1220100986</td>
-            <td>9876543210</td>
-            <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
+
         </tbody>
       </table>
     </div>
@@ -109,6 +63,8 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+          <h5>Vehicle List</h5>
+
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
         </div>
@@ -117,7 +73,8 @@
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="vehicleNo" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.vehicleNo">
                   <span class="label">Vehicle Number*</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -125,21 +82,24 @@
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="vehicleModel" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.vehicleModel">
                   <span class="label">Vehicle Model*</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
-                  <span class="label">Year Made</span>
+                  <input type="text" name="manufactureYear" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.manufactureYear">
+                  <span class="label">Manufacture Year</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="driverName" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.driverName">
                   <span class="label">Driver Name*</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -147,7 +107,8 @@
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="driverLicence" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.driverLicence">
                   <span class="label">Driver License *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -155,7 +116,8 @@
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="driverContact" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.driverContact">
                   <span class="label">Driver Contact *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -163,14 +125,27 @@
               </div>
               <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="note" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="vehicleDto.note">
                   <span class="label">Note</span>
                   <span class="focus-bg"></span>
                 </label>
 
               </div>
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <div class="row">
+                  <button *ngIf="!this.isUpdate" (click)="addveh()" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
+                    Save
+                  </button>
+                  <button *ngIf="this.isUpdate" (click)="updateveh(vehicleDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
+                    Update
+                  </button>
+
+                </div>
               </div>
             </div>
           </form>

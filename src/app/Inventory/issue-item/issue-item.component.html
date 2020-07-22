@@ -28,64 +28,23 @@
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
           <tr>
-            <th> Item</th>
-            <th>Item Category</th>
-            <th>Issue Return</th>
-            <th>Issue To</th>
             <th>Issued By</th>
+            <th>Issue To</th>
             <th>Quantity</th>
-            <th>Status</th>
+            <th>Issue Type</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>XYZ</td>
-            <td>ABC</td>
-            <td>06/03/2020</td>
-            <td>LMN</td>
-            <td>GHI</td>
-            <td>10</td>
-            <td>Pending</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>XYZ</td>
-            <td>ABC</td>
-            <td>06/03/2020</td>
-            <td>LMN</td>
-            <td>GHI</td>
-            <td>10</td>
-            <td>Pending</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>XYZ</td>
-            <td>ABC</td>
-            <td>06/03/2020</td>
-            <td>LMN</td>
-            <td>GHI</td>
-            <td>10</td>
-            <td>Pending</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-          <tr>
-            <td>XYZ</td>
-            <td>ABC</td>
-            <td>06/03/2020</td>
-            <td>LMN</td>
-            <td>GHI</td>
-            <td>10</td>
-            <td>Pending</td>
-            <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+          <tr *ngFor="let issue of issues">
+            <td>{{issue.issueBy}}</td>
+            <td>{{issue.issueTo}}</td>
+            <td>{{issue.quantity}}</td>
+            <td>{{issue.issueType}}</td>
+
+            <td><a (click)="setUpdateFileds(issue.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deleteissue(issue.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -107,37 +66,12 @@
         </div>
         <div class="modal-body">
           <form role="form" method="post" id="reused_form">
-
             <div class="row">
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                    <option selected>Please Select *</option>
-                    <option value="">select</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Teacher</option>
-                    <option value="3">Student</option>
-                    <option value="3">Parent</option>
-                  </select>
-                  <span class="label">User Type *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;">
-                    <option selected>Please Select *</option>
-                    <option value="">select</option>
-                    <option value="1">Admin</option>
-                  </select>
-                  <span class="label">Issue To *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="issueBy" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.issueBy">
                   <span class="label">Issue By</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -145,64 +79,65 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+                  <input type="date" name="issueTo" class="form-control" id="dtp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.issueTo">
+                  <span class="label">Issue To *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="date" name="issueDate" class="form-control" id="dtp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.issueDate">
                   <span class="label">Issue Date *</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+                  <input type="date" name="returnDate" class="form-control" id="dtp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.returnDate">
                   <span class="label">Return Date *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" name="issueType" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.issueType">
+                  <span class="label">Issue Type</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="note" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.note">
                   <span class="label">Note</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
 
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                    <option selected>Please Select *</option>
-                    <option value="">select</option>
-                    <option value="1">Sports</option>
-                    <option value="2">Stationary</option>
-                    <option value="3">Uniform</option>
-                  </select>
-                  <span class="label">Item Category *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                    <option selected>Please Select *</option>
-                    <option value="">select</option>
-                    <option value="1">Admin</option>
-
-                  </select>
-                  <span class="label">Item *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                  <input type="text" name="quantity" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="itemIssueDto.quantity">
                   <span class="label">Quantity</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
-              <div class="col-12 form-group mg-t-8">
-                <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <button *ngIf="!this.isUpdate" (click)="addissue()" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Submit
+                </button>
+                <button *ngIf="this.isUpdate" (click)="updateissue(itemIssueDto.id)" type="button"
+                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                  Update
+                </button>
               </div>
             </div>
           </form>
