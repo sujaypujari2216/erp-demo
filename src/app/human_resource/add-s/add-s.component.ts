@@ -11,5 +11,10 @@ export class AddSComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  isShow = true;
+
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
 
 }

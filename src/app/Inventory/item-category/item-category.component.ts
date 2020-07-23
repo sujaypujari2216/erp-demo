@@ -29,7 +29,7 @@ export class ItemCategoryComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.categories = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('itemCategoryDto');
+      this.datatableservice.initTable('item category');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);

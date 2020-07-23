@@ -27,6 +27,48 @@
             </label>
 
           </div>
+          <div class="col-xl-12 col-lg-6 col-12 form-group">
+            <label for="slt" class="slt">
+              <select class="form-control" id="slt" placeholder="&nbsp;"
+                [(ngModel)]="subjectGroupDto.sections[0].subjectGroupClassSectionId" name="studentSection">
+                <option value="">select</option>
+                <option *ngFor="let sections of this.sectionDto" [value]="sections.section" [selected]="subjectGroupDto.sections[0].subjectGroupClassSectionId ==
+                  sections.section">{{ sections.section }}</option>
+              </select>
+              <span class="label">Section *</span>
+              <span class="focus-bg"></span>
+            </label>
+          </div>
+
+          <div class="col-xl-12 col-lg-6 col-12 form-group">
+            <label for="slt" class="slt">
+              <select class="form-control" id="slt" placeholder="&nbsp;"
+                [(ngModel)]="subjectGroupDto.subjects[0].subjectGroupSubjectId" name="subjectName">
+                <option value="">select</option>
+                <option *ngFor="let subjects of this.subjectDto" [value]="subjects.subject" [selected]="subjectGroupDto.subjects[0].subjectGroupSubjectId ==
+                  subjects.subject">{{ subjects.subject }}</option>
+              </select>
+              <span class="label">Subject *</span>
+              <span class="focus-bg"></span>
+            </label>
+          </div>
+
+          <div class="col-xl-12 col-lg-6 col-12 form-group">
+            <label for="slt" class="slt">
+              <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="subjectGroupDto.classId"
+                name="classId">
+                <option selected>Please Select *</option>
+                <option *ngFor="let class of classes" [value]="class.classses"
+                  [selected]="subjectGroupDto.classId == class.classses">{{ class.classses }}
+                </option>
+              </select>
+              <span class="label">Class*</span>
+              <span class="focus-bg"></span>
+            </label>
+            <!-- <div class="alert alert-danger" *ngIf="expHeadId.touched && !expHeadId.valid">
+                  Please Enter Expense Head.
+                </div> -->
+          </div>
           <div class="col-xl-12 col-lg-12 col-12 form-desig">
             <label for="inp" class="inp">
               <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
@@ -53,22 +95,21 @@
       </div>
     </div>
   </div>
+
   <div class="col-xl-8 col-6">
     <div class="card height-auto">
       <div class="card-body">
-
         <div class="heading-layout1">
           <div class="item-title">
             <h5>Subject Group List</h5>
           </div>
         </div>
         <div class="table-responsive">
-
           <table id="example" style="float: right;" class="table display data-table text-nowrap cell-border">
             <thead>
               <tr>
 
-                <th>Subject Group Name</th>
+                <th>Group Name</th>
                 <th>Description</th>
                 <th>Action</th>
 
@@ -85,6 +126,7 @@
             </tbody>
           </table>
         </div>
+
       </div>
     </div>
   </div>

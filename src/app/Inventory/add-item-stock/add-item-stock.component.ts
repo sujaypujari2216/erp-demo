@@ -44,7 +44,7 @@ export class AddItemStockComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.itemstocks = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('Expenses');
+      this.datatableservice.initTable('add item stock');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);

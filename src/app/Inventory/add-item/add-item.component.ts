@@ -21,7 +21,7 @@ export class AddItemComponent implements OnInit {
     "date": "",
     "description": "",
     "id": 0,
-    "isActive": "",
+    "isActive": "yes",
     "itemCategoryId": 0,
     "itemPhoto": "",
     "itemStoreId": 0,
@@ -37,7 +37,7 @@ export class AddItemComponent implements OnInit {
   suppliers: any;
   // purposes: any;
 
-  constructor(private AdditemService: AdditemService,
+  constructor(private additemService: AdditemService,
               private itemsuppliersService: ItemsuppliersService,
               private itemstoreService: ItemstoreService,
               private itemcategoryService: ItemcategoryService,
@@ -84,7 +84,7 @@ export class AddItemComponent implements OnInit {
     });
   }
   getitemList() {
-    this.AdditemService.getitemList().subscribe((res: any) => {
+    this.additemService.getitemList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.items = content.map((key) => ({ ...key }));
@@ -95,7 +95,7 @@ export class AddItemComponent implements OnInit {
     });
   }
   additem() {
-    this.AdditemService.save(this.itemDto).subscribe((res: any) => {
+    this.additemService.save(this.itemDto).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -108,7 +108,7 @@ export class AddItemComponent implements OnInit {
     });
   }
   getitemById(itemId) {
-      this.AdditemService.getitemById(itemId).subscribe((res: any) => {
+    this.additemService.getitemById(itemId).subscribe((res: any) => {
       this.itemDto.date = res.data.date;
       this.itemDto.id = res.data.id;
       this.itemDto.isActive = res.data.isActive;
@@ -136,7 +136,7 @@ export class AddItemComponent implements OnInit {
 
   updateitem(itemId) {
 
-    this.AdditemService.updateitem(this.itemDto, itemId).subscribe((res: any) => {
+    this.additemService.updateitem(this.itemDto, itemId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
@@ -152,7 +152,7 @@ export class AddItemComponent implements OnInit {
   }
 
   deleteitem(itemId) {
-    this.AdditemService.deleteitem(itemId).subscribe((res: any) => {
+    this.additemService.deleteitem(itemId).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }

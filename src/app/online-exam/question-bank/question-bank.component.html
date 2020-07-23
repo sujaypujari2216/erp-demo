@@ -20,57 +20,21 @@
              <table id="example" class="table display data-table text-nowrap cell-border">
                <thead>
                  <tr>
-                   <th>Subject</th>
+
                    <th>Question</th>
                    <th>Answer</th>
                    <th>Action</th>
                  </tr>
                </thead>
                <tbody>
-                 <tr>
-                   <td>Marathi</td>
-                   <td>Question 1</td>
-                   <td>C</td>
-                   <td>
-                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                   </td>
-                 </tr>
-                 <tr>
-                   <td>Marathi</td>
-                   <td>Question 2</td>
-                   <td>B</td>
-                   <td>
-                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                   </td>
-                 </tr>
-                 <tr>
-                   <td>Marathi</td>
-                   <td>Question 3</td>
-                   <td>D</td>
-                   <td>
-                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                   </td>
-                 </tr>
-                 <tr>
-                   <td>Marathi</td>
-                   <td>Question 4</td>
-                   <td>A</td>
-                   <td>
-                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                   </td>
-                 </tr>
-                 <tr>
-                   <td>Marathi</td>
-                   <td>Question 5</td>
-                   <td>C</td>
-                   <td>
-                     <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                     <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-                   </td>
+                 <tr *ngFor="let que of question">
+                   <td>{{ que.question }}</td>
+                   <td>{{ que.correct }}</td>
+
+                   <td> <a (click)="setUpdateFileds(que.id)" data-toggle="modal" data-target="#myModal"><i
+                         class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                     <a (click)="deleteque(que.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a></td>
+
                  </tr>
                </tbody>
              </table>
@@ -86,14 +50,15 @@
              <!-- Modal content-->
              <div class="modal-content">
                <div class="modal-header">
+                 <h5>Add Question</h5>
+
                  <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                </div>
                <div class="modal-body">
                  <form role="form" method="post" id="reused_form" style="position:relative;">
                    <div class="row">
-
-                     <div class="col-xl-6 col-lg-12 col-12 form-group">
+                     <!-- <div class="col-xl-6 col-lg-12 col-12 form-group">
                        <label for="slt" class="slt">
                          <select class="form-control" id="slt" placeholder="&nbsp;">
                            <option value="">select subject</option>
@@ -104,69 +69,81 @@
                          <span class="label">Subject *</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
-                     <div class="col-xl-6 col-lg-12 col-12 form-group">
-                       <label for="inp" class="inp">
-                         <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Question *</span>
+                     </div> -->
+                     <div class="col-xl-12 col-lg-12 col-12 form-group">
+                       <label for="inp" class="inp" style="width: 100%;">
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="questionDto.question" name="question" [value]="questionDto.question"> <span
+                           class="label">Question *</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
-                     <div class="col-xl-3 col-lg-6 col-12 form-group">
+                     </div><br>
+                     <div class="col-xl-12 col-lg-12 col-12 form-group">
                        <label for="inp" class="inp">
-                         <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Option A*</span>
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="questionDto.optA" name="optA" [value]="questionDto.optA"> <span
+                           class="label">Option A*</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
-                     <div class="col-xl-3 col-lg-4 col-12 form-group">
+                     </div><br>
+                     <div class="col-xl-12 col-lg-12 col-12 form-group">
                        <label for="inp" class="inp">
-                         <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Option B*</span>
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="questionDto.optB" name="optB" [value]="questionDto.optB"> <span
+                           class="label">Option B*</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
-                     <div class="col-xl-2 col-lg-4 col-12 form-group">
+                     </div><br>
+                     <div class="col-xl-12 col-lg-12 col-12 form-group">
                        <label for="inp" class="inp">
-                         <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Option C*</span>
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="questionDto.optC" name="optC" [value]="questionDto.optC"> <span
+                           class="label">Option C*</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
-                     <div class="col-xl-2 col-lg-4 col-12 form-group">
+                     </div><br>
+                     <div class="col-xl-12 col-lg-12 col-12 form-group">
                        <label for="inp" class="inp">
-                         <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Option D*</span>
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="questionDto.optD" name="optD" [value]="questionDto.optD"> <span
+                           class="label">Option D*</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
-                     <div class="col-xl-2 col-lg-4 col-12 form-group">
+                     </div><br>
+                     <div class="col-xl-12 col-lg-12 col-12 form-group">
                        <label for="inp" class="inp">
-                         <input type="text" name="chapter" class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Option E*</span>
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="questionDto.optE" name="optE" [value]="questionDto.optE"> <span
+                           class="label">Option E*</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div>
+                     </div><br>
                      <div class="col-xl-12 col-lg-12 col-12 form-group">
                        <label for="slt" class="slt">
-                         <select class="form-control" id="slt" placeholder="&nbsp;">
-                           <option value="">select Answer</option>
-                           <option value="1">A</option>
-                           <option value="2">B</option>
-                           <option value="3">C</option>
-                           <option value="3">D</option>
-                           <option value="3">E</option>
-
+                         <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="questionDto.correct"
+                           name="correct">
+                           <option selected>Please Select Class *</option>
+                           <option value="A" [selected]="questionDto.correct == 'A'">A</option>
+                           <option value="B" [selected]="questionDto.correct == 'B'">B</option>
+                           <option value="C" [selected]="questionDto.correct == 'C'">C</option>
+                           <option value="D" [selected]="questionDto.correct == 'D'">D</option>
+                           <option value="E" [selected]="questionDto.correct == 'E'">E</option>
                          </select>
                          <span class="label">Answer *</span>
                          <span class="focus-bg"></span>
                        </label>
                      </div>
-                     <div class="col-12 form-group mg-t-8">
-                       <button type="submit"
-                         class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;
+                     <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate" (click)="addque()"
+                         type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                         data-target="#myModal">
+                         Save
+                       </button>
+                       <button *ngIf="this.isUpdate" (click)="updateque(questionDto.id)" type="button"
+                         class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                         data-target="#myModal">
+                         Update
+                       </button>
                      </div>
-
                    </div>
                  </form>
                </div>

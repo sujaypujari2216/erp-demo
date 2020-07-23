@@ -63,7 +63,7 @@
         <div class="modal-body">
           <form role="form" method="post" id="reused_form">
             <div class="row">
-              <div class="col-4 col-lg-4 col-12 form-group">
+              <div class="col-xl-5 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="expCategory" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="expenseHeadDto.expCategory">
@@ -72,7 +72,7 @@
                 </label>
 
               </div>
-              <div class="col-4 col-lg-4 col-12 form-group" row="3">
+              <div class="col-xl-5 col-lg-4 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
                     [(ngModel)]="expenseHeadDto.description">
@@ -81,7 +81,7 @@
                 </label>
 
               </div>
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
+              <div class="col-xl-2 col-lg-4 col-12 form-group">
                 <button *ngIf="!this.isUpdate" (click)="addexpensehead()" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
