@@ -1,26 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { StaffAttendanceTypeService } from './staff-attendance-type.service';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
-import { TeachersRatingService } from './teachers-rating.service';
 
 @Component({
-  selector: 'app-teachers-rating',
-  templateUrl: './teachers-rating.component.html',
-  styleUrls: ['./teachers-rating.component.css']
+  selector: 'app-staff-attendance-type',
+  templateUrl: './staff-attendance-type.component.html',
+  styleUrls: ['./staff-attendance-type.component.css']
 })
-export class TeachersRatingComponent implements OnInit {
+export class StaffAttendanceTypeComponent implements OnInit {
 
-  constructor(private datatableservice: DatatableService,
-    private teacherRating: TeachersRatingService) { }
+  constructor(private staffAttendanceType: StaffAttendanceTypeService, private datatableservice: DatatableService) { }
 
-  ratings = [];
+  attenceTypes = [];
   Dto = {
-    "comment": "",
     "id": 0,
     "isActive": "yes",
-    "rate": 0,
-    "role": "",
-    "status": 0,
-    "userId": 0
+    "keyValue": "",
+    "type": ""
   }
 
   isUpdate: boolean = false;
@@ -30,10 +26,10 @@ export class TeachersRatingComponent implements OnInit {
   }
 
   get() {
-    this.teacherRating.get().subscribe((res: any) => {
+    this.staffAttendanceType.get().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
-      this.ratings = content.map((key) => ({ ...key }));
+      this.attenceTypes = content.map((key) => ({ ...key }));
       this.datatableservice.initTable(' Expense head');
     }, (err) => {
       console.log('Error while fetching data');
@@ -42,7 +38,7 @@ export class TeachersRatingComponent implements OnInit {
   }
 
   add() {
-    this.teacherRating.save(this.Dto).subscribe((res: any) => {
+    this.staffAttendanceType.save(this.Dto).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -56,14 +52,11 @@ export class TeachersRatingComponent implements OnInit {
   }
 
   getById(id) {
-    this.teacherRating.getById(id).subscribe((res: any) => {
-      this.Dto.comment = res.data.comment;
+    this.staffAttendanceType.getById(id).subscribe((res: any) => {
+      this.Dto.keyValue = res.data.keyValue;
       this.Dto.id = res.data.id;
       this.Dto.isActive = res.data.isActive;
-      this.Dto.rate = res.data.rate;
-      this.Dto.role = res.data.role;
-      this.Dto.status = res.data.status;
-      this.Dto.userId = res.data.userId;
+      this.Dto.type = res.data.type;
 
     }, (err) => {
       console.log('Error while fetching');
@@ -76,7 +69,7 @@ export class TeachersRatingComponent implements OnInit {
     this.getById(id);
   }
   update(id) {
-    this.teacherRating.update(this.Dto, id).subscribe((res: any) => {
+    this.staffAttendanceType.update(this.Dto, id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
@@ -93,7 +86,7 @@ export class TeachersRatingComponent implements OnInit {
   }
 
   delete(id) {
-    this.teacherRating.delete(id).subscribe((res: any) => {
+    this.staffAttendanceType.delete(id).subscribe((res: any) => {
       if (res.success == true) {
         alert('Deleted Successfully');
       }
@@ -107,13 +100,10 @@ export class TeachersRatingComponent implements OnInit {
   }
 
   clearData() {
-    this.Dto.comment = "";
+    this.Dto.keyValue = "";
     this.Dto.id = 0;
     this.Dto.isActive = "yes";
-    this.Dto.rate = 0;
-    this.Dto.role = "";
-    this.Dto.status = 0;
-    this.Dto.userId = 0;
+    this.Dto.type = "";
     this.isUpdate = false;
   }
 

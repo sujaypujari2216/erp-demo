@@ -15,23 +15,25 @@ import { StaffAttendanceComponent } from './staff-attendance/staff-attendance.co
 import { TeachersRatingComponent } from './teachers-rating/teachers-rating.component';
 import { AddMoreComponent } from './add-more/add-more.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StaffAttendanceTypeComponent } from './staff-attendance-type/staff-attendance-type.component';
 
 
 export const routes: Routes = [
 
-  { path: 'add-s', component: AddSComponent},
-  {path : 'apply-leave', component: ApplyLeaveComponent},
-  { path: 'approve-leave-request', component: ApproveLeaveRequestComponent},
-  { path: 'department', component: DepartmentComponent},
-   {path : 'designation', component: DesignationComponent},
-  {path : 'disabled-staff', component: DisabledStaffComponent},
-  {path : 'import-staff', component: ImportStaffComponent},
-  {path : 'leave-type', component: LeaveTypeComponent},
-  {path : 'payroll', component: PayrollComponent},
-  {path : 'staff-directory', component: StaffDirectoryComponent},
-  {path : 'staff-attendance', component: StaffAttendanceComponent},
-  {path : 'teachers-rating', component: TeachersRatingComponent},
-  {path : 'add-more', component: AddMoreComponent},
+  { path: 'add-s', component: AddSComponent },
+  { path: 'apply-leave', component: ApplyLeaveComponent },
+  { path: 'approve-leave-request', component: ApproveLeaveRequestComponent },
+  { path: 'department', component: DepartmentComponent },
+  { path: 'designation', component: DesignationComponent },
+  { path: 'disabled-staff', component: DisabledStaffComponent },
+  { path: 'import-staff', component: ImportStaffComponent },
+  { path: 'leave-type', component: LeaveTypeComponent },
+  { path: 'payroll', component: PayrollComponent },
+  { path: 'staff-directory', component: StaffDirectoryComponent },
+  { path: 'staff-attendance', component: StaffAttendanceComponent },
+  { path: 'teachers-rating', component: TeachersRatingComponent },
+  { path: 'add-more', component: AddMoreComponent },
+  { path: 'staff-attendance-type', component: StaffAttendanceTypeComponent },
 
 ];
 

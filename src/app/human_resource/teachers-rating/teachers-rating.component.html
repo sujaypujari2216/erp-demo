@@ -9,109 +9,127 @@
 <!-- Breadcubs Area End Here -->
 <div class="card height-auto">
     <div class="card-body">
-        
+        <div class="heading-layout1">
+            <div class="item-title">
+                <h3>Teacher Ratings</h3>
+            </div>
+            <button style="background-color: #000066; width: 7%; height: 10%;" type="button" class="btn btn-info btn-lg"
+                (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add
+            </button>
+        </div>
         <div class="table-responsive">
             <table id="example" class="table display data-table text-nowrap cell-border">
                 <thead>
                     <tr>
                         <th>Staff ID</th>
-                        <th>Name</th>
+                        <th>Role</th>
                         <th>Rating</th>
-                        <th>Comment</th>  
+                        <th>Comment</th>
                         <th>Status</th>
-                        <th>Student Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>S4</td>
-                        
-                        <td>ABC</td>
-                        <td><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span></td>
-                        <td>OK</td>
-                        <td>Pending</td>
-                        <td>XYZ</td>
-                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> 
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>S4</td>
-                        
-                        <td>ABC</td>
-                        <td><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span></td>
-                        <td>OK</td>
-                        <td>Pending</td>
-                        <td>XYZ</td>
-                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> 
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>S4</td>
-                        
-                        <td>ABC</td>
-                        <td><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span></td>
-                        <td>OK</td>
-                        <td>Pending</td>
-                        <td>XYZ</td>
-                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>S4</td>
-                        
-                        <td>ABC</td>
-                        <td><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span></td>
-                        <td>OK</td>
-                        <td>Pending</td>
-                        <td>XYZ</td>
-                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>S4</td>
-                        
-                        <td>ABC</td>
-                        <td><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span></td>
-                        <td>OK</td>
-                        <td>Pending</td>
-                        <td>XYZ</td>
-                        <td> <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-                            <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a> 
-                            <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> 
+                    <tr *ngFor="let rating of ratings">
+                        <td>{{rating.userId}}</td>
+                        <td>{{rating.role}}</td>
+                        <td>{{rating.rate}}</td>
+                        <td>{{rating.comment}}</td>
+                        <td>{{rating.status}}</td>
+                        <td>
+                            <a (click)="setUpdateFileds(rating.id)" data-toggle="modal" data-target="#myModal"><i
+                                    class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                            <a (click)="delete(rating.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Rate Teacher</h5>
+
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" method="post" id="reused_form">
+                            <div class="row">
+                                <div class="col-4 col-lg-4 col-12 form-group" row="3">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="userId" class="form-control" id="inp"
+                                            placeholder="&nbsp;" [(ngModel)]="Dto.userId">
+                                        <span class="label">Staff ID</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-4 col-lg-4 col-12 form-group" row="3">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="role" class="form-control" id="inp"
+                                            placeholder="&nbsp;" [(ngModel)]="Dto.role">
+                                        <span class="label">Role</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-4 col-lg-4 col-12 form-group" row="3">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="rate" class="form-control" id="inp"
+                                            placeholder="&nbsp;" [(ngModel)]="Dto.rate">
+                                        <span class="label">Rate</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-4 col-lg-4 col-12 form-group" row="3">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="comment" class="form-control" id="inp"
+                                            placeholder="&nbsp;" [(ngModel)]="Dto.comment">
+                                        <span class="label">Comment</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-4 col-lg-4 col-12 form-group" row="3">
+                                    <label for="inp" class="inp">
+                                        <input type="text" name="status" class="form-control" id="inp"
+                                            placeholder="&nbsp;" [(ngModel)]="Dto.status">
+                                        <span class="label">Status</span>
+                                        <span class="focus-bg"></span>
+                                    </label>
+
+                                </div>
+
+
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                                        data-target="#myModal">
+                                        Save
+                                    </button>
+                                    <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
+                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                                        data-target="#myModal">
+                                        Update
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
