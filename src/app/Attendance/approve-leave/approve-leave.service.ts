@@ -4,30 +4,25 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class ApproveLeaveService {
-  url = 'http://yamistha.cloudjiffy.net/student apply leave';
-
+  url = `http://yamistha.cloudjiffy.net/student apply leave/`;
   constructor(private http: HttpClient) { }
-
-  save(studentApplyleaveDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/student apply leave', studentApplyleaveDto);
+  save(Dto): any {
+    return this.http.post(this.url, Dto);
   }
 
   getList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/student apply leave');
+    return this.http.get(this.url);
   }
 
   delete(Id): any {
-
-    console.log('http://yamistha.cloudjiffy.net/student apply leave/' + Id);
-    return this.http.delete('http://yamistha.cloudjiffy.net/student apply leave/' + Id);
+    return this.http.delete(this.url + Id);
   }
 
-  update(studentApplyleaveDto, Id): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/student apply leave/' + Id, studentApplyleaveDto);
+  update(Dto, Id): any {
+    return this.http.put(this.url + Id, Dto);
   }
 
   getById(Id): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/student apply leave/' + Id);
+    return this.http.get(this.url + Id);
   }
-
 }

@@ -29,7 +29,6 @@ export class ApproveLeaveComponent implements OnInit {
   constructor(private apprveleaveService: ApproveLeaveService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.datatableservice.initTable("Apply Leave");
     this.getList();
   }
 
@@ -38,7 +37,7 @@ export class ApproveLeaveComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.studentApplyleaves = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('hostels');
+      this.datatableservice.initTable('Student Leaves');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
