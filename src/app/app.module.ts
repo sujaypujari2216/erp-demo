@@ -53,6 +53,7 @@ import { HumanResourceModule } from './human_resource/HumanResourceModule';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,6 +92,7 @@ import { HumanResourceModule } from './human_resource/HumanResourceModule';
     SourceComponent,
     ReferenceComponent,
     ComplainttypeComponent,
+    
   ],
   imports: [
     BrowserModule,
