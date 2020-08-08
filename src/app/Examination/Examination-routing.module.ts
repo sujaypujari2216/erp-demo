@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ExamGroupComponent } from './exam-group/exam-group.component';
 import { ExamScheduleComponent } from './exam-schedule/exam-schedule.component';
@@ -31,9 +32,9 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ExamGroupComponent,ExamResultComponent,ExamScheduleComponent],
   imports: [
-    CommonModule,
+    CommonModule,FormsModule, ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })
