@@ -9,7 +9,7 @@ export class ExamGroupService {
   constructor(private http: HttpClient) { }
   url = `http://yamistha.cloudjiffy.net/exam-group/`;
   save(Dto): any {
-    return this.http.post(this.url, Dto);
+    return this.http.post(`http://yamistha.cloudjiffy.net/exam-group`, Dto);
   }
 
   getList(): any {
