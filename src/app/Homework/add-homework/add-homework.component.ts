@@ -18,6 +18,7 @@ export class AddHomeworkComponent implements OnInit {
 
   homework = [];
   homeworkDto = {
+
     "classId": 0,
     "createDate": "",
     "description": "",
@@ -29,7 +30,6 @@ export class AddHomeworkComponent implements OnInit {
     "sectionId": 0,
     "subjectId": 0,
     "submitDate": ""
-
 
   };
 
@@ -52,10 +52,28 @@ export class AddHomeworkComponent implements OnInit {
     this.getAllSubjectList();
     this.getClassList();
     this.gethomeworkList();
+  }
+ 
 
-
+  getAllSubjectList() {
+    this.subjectService.getAllSubjectList().subscribe((res: any)=>{
+      var data=res['data'];
+      this.subjects=data['content'];
+     },(err)=>{
+      console.log('Error while fetching Class list');
+      console.log(err);
+     });
   }
 
+  getClassList() {
+   this.classservice.getClassList().subscribe((res: any)=>{
+    var data=res['data'];
+    this.classes=data['content'];
+   },(err)=>{
+    console.log('Error while fetching Class list');
+    console.log(err);
+   });
+  }
   getAllSectionList() {
     this.sectionsService.getAllSectionList().subscribe((res: any) => {
       var data = res['data'];
@@ -66,32 +84,7 @@ export class AddHomeworkComponent implements OnInit {
       console.error(err);
     });
   }
-  getAllSubjectList() {
-    this.subjectService.getAllSubjectList().subscribe((res: any) => {
-      var data = res['data'];
-      this.subjects = data['content'];
-      //this.references = content.map((key) => ({ ...key }));
-      //console.log(this.references);
 
-    }, (err) => {
-      console.log('Error while fetching data');
-      console.error(err);
-    });
-  }
-  getClassList() {
-    this.classservice.getClassList().subscribe((res: any) => {
-      var data = res['data'];
-      this.classes = data['content'];
-      //this.classes = content.map((key) => ({ ...key }));
-      // console.log(this.classes);
-    },
-      (err) => {
-        console.log('Error while fetching all Classes');
-        console.error(err);
-      }
-    );
-  }
- 
   gethomeworkList() {
     this.addhomeworkService.gethomeworkList().subscribe((res: any) => {
       var data = res['data'];
@@ -118,85 +111,83 @@ export class AddHomeworkComponent implements OnInit {
     });
   }
 
-  gethwById(hwId) {
-        this.addhomeworkService.gethwById(hwId).subscribe((res: any) => {
-      //console.log(res);
-      this.homeworkDto.createDate = res.data.createDate;
-      this.homeworkDto.description = res.data.description;
-      this.homeworkDto.id = res.data.id;
-      this.homeworkDto.isActive = res.data.isActive;
-      this.homeworkDto.classId = res.data.classId;
-      this.homeworkDto.sectionId = res.data.sectionId;
-      this.homeworkDto.document = res.data.document;
-      this.homeworkDto.evaluationDate = res.data.evaluationDate;
-      this.homeworkDto.homeworkDate = res.data.homeworkDate;
-      this.homeworkDto.subjectId = res.data.subjectId;
-      this.homeworkDto.submitDate = res.data.submitDate;
+    gethwById(hwId) {
+      this.addhomeworkService.gethwById(hwId).subscribe((res: any) => {
+        //console.log(res);
+        this.homeworkDto.createDate = res.data.createDate;
+        this.homeworkDto.description = res.data.description;
+        this.homeworkDto.id = res.data.id;
+        this.homeworkDto.isActive = res.data.isActive;
+        this.homeworkDto.classId = res.data.classId;
+        this.homeworkDto.sectionId = res.data.sectionId;
+        this.homeworkDto.document = res.data.document;
+        this.homeworkDto.evaluationDate = res.data.evaluationDate;
+        this.homeworkDto.homeworkDate = res.data.homeworkDate;
+        this.homeworkDto.subjectId = res.data.subjectId;
+        this.homeworkDto.submitDate = res.data.submitDate;
 
 
-   
 
-      console.log(this.homeworkDto);
 
-    }, (err) => {
-      console.log('Error while fetching');
-      console.error(err);
-    });
-    return this.homeworkDto;
-  }
-  setUpdateFileds(hwId) {
-    console.log(hwId);
-    this.isUpdate = true;
-    this.gethwById(hwId);
-    console.log('setup successfull');
-  }
-  updatehw(hwId) {
+        console.log(this.homeworkDto);
 
-    this.addhomeworkService.updatehw(this.homeworkDto, hwId).subscribe((res: any) => {
-      // tslint:disable-next-line: triple-equals
-      if (res.success == true) {
-        alert(' Updated Successfully');
-      }
-      this.datatableservice.destroy();
+      }, (err) => {
+        console.log('Error while fetching');
+        console.error(err);
+      });
+      return this.homeworkDto;
+    }
+    setUpdateFileds(hwId) {
+      console.log(hwId);
+      this.isUpdate = true;
+      this.gethwById(hwId);
+      console.log('setup successfull');
+    }
+    updatehw(hwId) {
+
+      this.addhomeworkService.updatehw(this.homeworkDto, hwId).subscribe((res: any) => {
+        // tslint:disable-next-line: triple-equals
+        if (res.success == true) {
+          alert(' Updated Successfully');
+        }
+        this.datatableservice.destroy();
+        this.isUpdate = false;
+        this.gethomeworkList();
+        this.clearData();
+      }, (err) => {
+        console.log('Error while Updating');
+        console.error(err);
+      });
+
+    }
+
+    deletehw(hwId) {
+      this.addhomeworkService.deletehw(hwId).subscribe((res: any) => {
+        if (res.success == true) {
+          alert('Deleted Successfully');
+        }
+        this.datatableservice.destroy();
+        this.gethomeworkList();
+        this.clearData();
+      }, (err) => {
+        console.log('Error while deleting ');
+        console.error(err);
+      });
+    }
+
+    clearData() {
+      this.homeworkDto.createDate = "";
+      this.homeworkDto.description = "";
+      this.homeworkDto.id = 0;
+      this.homeworkDto.isActive = "yes";
+      this.homeworkDto.classId = 0;
+      this.homeworkDto.sectionId = 0;
+      this.homeworkDto.document = "";
+      this.homeworkDto.evaluationDate = "";
+      this.homeworkDto.homeworkDate = "";
+      this.homeworkDto.subjectId = 0;
+      this.homeworkDto.submitDate = "";
       this.isUpdate = false;
-      this.gethomeworkList();
-      this.clearData();
-    }, (err) => {
-      console.log('Error while Updating');
-      console.error(err);
-    });
 
+    }
   }
-
-  deletehw(hwId) {
-    this.addhomeworkService.deletehw(hwId).subscribe((res: any) => {
-      if (res.success == true) {
-        alert('Deleted Successfully');
-      }
-      this.datatableservice.destroy();
-      this.gethomeworkList();
-      this.clearData();
-    }, (err) => {
-      console.log('Error while deleting ');
-      console.error(err);
-    });
-  }
-
-  clearData() {
-    this.homeworkDto.createDate = "";
-    this.homeworkDto.description = "";
-    this.homeworkDto.id = 0;
-    this.homeworkDto.isActive = "yes";
-    this.homeworkDto.classId = 0;
-    this.homeworkDto.sectionId = 0;
-    this.homeworkDto.document = "";
-    this.homeworkDto.evaluationDate = "";
-    this.homeworkDto.homeworkDate = "";
-    this.homeworkDto.subjectId = 0;
-    this.homeworkDto.submitDate = "";
-    this.isUpdate = false;
-
-  }
- }
-
-

@@ -15,15 +15,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
-    { path: 'exam-group',component: ExamGroupComponent},
-    { path: 'exam-schedule', component: ExamScheduleComponent},
-    { path: 'exam-result', component: ExamResultComponent},
-    { path: 'design-admit-card', component: DesignAdmitCardComponent},  
-    { path: 'print-admit-card', component: PrintAdmitCardComponent} , 
-    { path: 'design-marksheet', component: DesignMarksheetComponent},  
-    { path: 'print-marksheet', component: PrintMarksheetComponent},  
-    { path: 'marks-grade', component: MarksGradeComponent}  ,
-    { path: 'add-exam', component: AddExamComponent}  ,
+  { path: 'exam-group', component: ExamGroupComponent },
+  { path: 'exam-schedule', component: ExamScheduleComponent },
+  { path: 'exam-result', component: ExamResultComponent },
+  { path: 'design-admit-card', component: DesignAdmitCardComponent },
+  { path: 'print-admit-card', component: PrintAdmitCardComponent },
+  { path: 'design-marksheet', component: DesignMarksheetComponent },
+  { path: 'print-marksheet', component: PrintMarksheetComponent },
+  { path: 'marks-grade', component: MarksGradeComponent },
+  { path: 'add-exam', component: AddExamComponent },
 
 
 ];
@@ -32,7 +32,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [ExamGroupComponent, ExamScheduleComponent, ExamResultComponent, DesignMarksheetComponent,
-    DesignAdmitCardComponent, PrintMarksheetComponent, PrintAdmitCardComponent, MarksGradeComponent,AddExamComponent],
+    DesignAdmitCardComponent, PrintMarksheetComponent, PrintAdmitCardComponent, MarksGradeComponent, AddExamComponent],
   imports: [
     CommonModule,
     FormsModule,
