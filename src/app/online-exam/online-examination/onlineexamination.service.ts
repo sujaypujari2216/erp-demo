@@ -10,7 +10,7 @@ export class OnlineexaminationService {
   url = 'http://yamistha.cloudjiffy.net/online exam/';
 
 
-  addonline(onlineexamDto): any {
+  save(onlineexamDto): any {
     return this.http.post(this.url, onlineexamDto);
   }
 

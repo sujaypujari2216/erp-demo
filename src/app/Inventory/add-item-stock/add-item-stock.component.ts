@@ -60,7 +60,7 @@ export class AddItemStockComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
-      console.error(err);
+      //console.error(err);
     });
   }
   getitemstockById(itemId) {

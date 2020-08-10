@@ -48,7 +48,7 @@ export class RouteComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
-      console.error(err);
+      //console.error(err);
     });
   }
 

@@ -110,31 +110,32 @@
                          <span class="focus-bg"></span>
                        </label>
                      </div>
-                     <!--  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                     <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
                        <label for="inp" class="inp">
-                         <input type="text" name="Description " class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Passing Percentage *</span>
+                        <input type="date" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="onlineexamDto.attempt" name="attempt"
+                          [value]="onlineexamDto.attempt"> 
+                          <span class="label">Passing Percentage *</span>
                          <span class="focus-bg"></span>
                        </label>
                      </div>
                      <div class="col-xl-4 col-lg-6 col-12 form-group">
-                       <div class="checkbox">
-                         <label><input type="checkbox" class="is_active" name="is_active" value="" autocomplete="off">
-                           Publish </label>
-                       </div>
-                       <div class="checkbox">
-                         <label> <input type="checkbox" class="publish_result" name="publish_result" value="">
-                           Publish Result </label>
-                       </div>
+                       
+                       <input type="radio" class="form-check-input" id="customRadio" name="subjectType"
+                         [(ngModel)]="subjectDto.type" value="Theory">&nbsp;&nbsp;
+                       <label class="form-check-label" for="Theory">Theory</label>&nbsp;&nbsp;&nbsp;
+                       <input type="radio" class="form-check-input" id="customRadio" name="subjectType"
+                         [(ngModel)]="subjectDto.type" value="Practicle">&nbsp;&nbsp;
+                       <label class="form-check-label" for="Practicle">Practicle</label>
                      </div>
 
                      <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3">
                        <label for="inp" class="inp">
-                         <input type="text" name="Description " class="form-control" id="inp" placeholder="&nbsp;">
-                         <span class="label">Description *</span>
+                        <input type="date" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="onlineexamDto.attempt" name="attempt"
+                          [value]="onlineexamDto.attempt"> 
+                          <span class="label">Description *</span>
                          <span class="focus-bg"></span>
                        </label>
-                     </div> -->
+                     </div>  -->
                      <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3">
                        <button *ngIf="!this.isUpdate" (click)="addonline()" type="button"
                          class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark form-control" data-toggle="modal"

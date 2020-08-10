@@ -52,7 +52,7 @@ export class OnlineExaminationComponent implements OnInit {
     });
   }
   addonline() {
-    this.onlineexaminationService.addonline(this.onlineexamDto).subscribe((res: any) => {
+    this.onlineexaminationService.save(this.onlineexamDto).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -61,7 +61,7 @@ export class OnlineExaminationComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
-      console.error(err);
+      //console.error(err);
     });
   }
   getByonlineId(onlineId) {
