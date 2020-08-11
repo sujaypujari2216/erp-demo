@@ -51,6 +51,7 @@ import { LibraryModule } from './Library/Library.module';
 import { IncomeModule } from './income/income.module';
 import { HumanResourceModule } from './human_resource/HumanResourceModule';
 import { HomeworkEvaluationComponent } from './Homework/homework-evaluation/homework-evaluation.component';
+import { SesstionSettingComponent } from './system_setting/sesstion-setting/sesstion-setting.component';
 
 
 
@@ -94,6 +95,7 @@ import { HomeworkEvaluationComponent } from './Homework/homework-evaluation/home
     ReferenceComponent,
     ComplainttypeComponent,
     HomeworkEvaluationComponent,
+    SesstionSettingComponent,
     
   ],
   imports: [

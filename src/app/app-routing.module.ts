@@ -6,6 +6,7 @@ import { DownloadRoutingModule } from "./Download-Center/downloadcenter-routing.
 import { CommunicateRoutingModule } from "./Communicate/communicate-routing.module";
 import { HostelRoutingModule } from './Hostel/hostel-routing.module';
 import { InventoryRoutingModule } from "./Inventory/inventory-routing.module";
+import { SystemRoutingModule } from "./system_setting/system-routing.module";
 import { HomeworkRoutingModule } from "./Homework/homework-routing.module";
 import { TransportRoutingModule } from "./Transport/Transport-routing.module";
 import { FrontcmsRoutingModule } from "./Frontcms/Frontcms-routing.module";
@@ -42,6 +43,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }),
     StudentRoutingModule,
     CommunicateRoutingModule,
+    SystemRoutingModule,
     LibraryRoutingModule,
     DownloadRoutingModule,
     InventoryRoutingModule,
