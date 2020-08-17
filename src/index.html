@@ -5,9 +5,12 @@
   <meta charset="utf-8">
   <title>ARTCODE</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <!-- <meta name="description" content=""> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -29,6 +32,7 @@
   <link rel="stylesheet" href="/assets/css/datepicker.min.css">
   <!-- Custom CSS -->
   <link type="text/css" rel="stylesheet" href="styles.css">
+  <link type="text/css" rel="stylesheet" href="login.css">
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
@@ -164,7 +168,7 @@
                   <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a>
                   </li>
                   <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
-                  <li><a href="login.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                  <li><a href="/#/Login" type="button" ><i class="flaticon-turn-off"></i>Log Out</a></li>
                 </ul>
               </div>
             </div>
@@ -1035,12 +1039,20 @@
       </div>
       <!-- Sidebar Area End Here -->
 
+
       <div class="dashboard-content-one">
         <app-root></app-root>
         <div id="globalLoader" class="global-loader">
           <h1>LOADING...</h1>
         </div>
       </div>
+<!-- =================================login window start=======================================-->
+<div id="loginPopup" class="modal fade" role="dialog">
+  
+</div>
+   
+<!-- =================================login window end =========================================-->
+
 
     </div>
 
