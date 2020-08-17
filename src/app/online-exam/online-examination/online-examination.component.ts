@@ -10,7 +10,7 @@ import { OnlineexaminationService } from './onlineexamination.service';
 })
 export class OnlineExaminationComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/expense/`;
+  url = `http://yamistha.cloudjiffy.net/online-exam/`;
 
   onlineexamination = [];
   onlineexamDto = {
@@ -61,7 +61,7 @@ export class OnlineExaminationComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
-      //console.error(err);
+      console.error(err);
     });
   }
   getByonlineId(onlineId) {

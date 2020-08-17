@@ -8,6 +8,9 @@ import { ApproveLeaveService } from './approve-leave.service';
 })
 export class ApproveLeaveComponent implements OnInit {
 
+  url = `http://yamistha.cloudjiffy.net/student apply leave/`;
+
+
   studentApplyleaves = [];
   studentApplyleaveDto = 
     {
@@ -16,7 +19,7 @@ export class ApproveLeaveComponent implements OnInit {
       "docs": "",
       "fromDate": "",
       "id": 0,
-      "isActive": "",
+      "isActive": "yes",
       "reason": "",
       "requestType": 0,
       "status": 0,
@@ -29,11 +32,11 @@ export class ApproveLeaveComponent implements OnInit {
   constructor(private apprveleaveService: ApproveLeaveService, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.geleavetList();
   }
 
-  getList() {
-    this.apprveleaveService.getList().subscribe((res: any) => {
+  geleavetList() {
+    this.apprveleaveService.geleavetList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.studentApplyleaves = content.map((key) => ({ ...key }));
@@ -50,11 +53,11 @@ export class ApproveLeaveComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.geleavetList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
-      console.error(err);
+      //console.error(err);
     });
   }
 
@@ -92,7 +95,7 @@ export class ApproveLeaveComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.geleavetList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -107,7 +110,7 @@ export class ApproveLeaveComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.geleavetList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');
@@ -122,7 +125,7 @@ export class ApproveLeaveComponent implements OnInit {
       this.studentApplyleaveDto.docs = "",
       this.studentApplyleaveDto.fromDate = "",
       this.studentApplyleaveDto.id = 0,
-      this.studentApplyleaveDto.isActive = "",
+      this.studentApplyleaveDto.isActive = "yes",
       this.studentApplyleaveDto.reason= "",
       this.studentApplyleaveDto.requestType= 0,
       this.studentApplyleaveDto.status= 0,

@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 export class OnlineexaminationService {
   constructor(private http: HttpClient) { }
 
-  url = 'http://yamistha.cloudjiffy.net/online exam/';
+  url = 'http://yamistha.cloudjiffy.net/online-exam/';
 
 
   save(onlineexamDto): any {

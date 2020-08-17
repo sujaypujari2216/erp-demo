@@ -25,9 +25,9 @@
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
           <tr>
-            <th>Student Name</th>
+            <!-- <th>Student Name</th>
             <th>Class</th>
-            <th>Section</th>
+            <th>Section</th> -->
             <th>Apply Date</th>
             <th>From Date</th>
             <th>To Date</th>
@@ -41,9 +41,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let leaves of studentApplyleaves">
-            <td>ABC</td>
+            <!-- <td>ABC</td>
             <td>1</td>
-            <td>A</td>
+            <td>A</td> -->
             <td>{{leaves.applyDate}}</td>
             <td>{{leaves.fromDate}}</td>
             <td>{{leaves.toDate}}</td>
@@ -54,7 +54,8 @@
             <th>{{leaves.status}}</th>
             <td>
               <a href="#"><i class="fas fa-check text-orange-blue"></i>&nbsp;</a>
-              <a (click)="setUpdateFileds(leaves.id)"  data-toggle="modal" data-target="#myModal"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="setUpdateFileds(leaves.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
               <a (click)="delete(leaves.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
@@ -83,7 +84,7 @@
             <form role="form" method="post" id="reused_form">
 
               <div class="row">
-               
+
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="slt" class="slt">
                     <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
@@ -96,7 +97,7 @@
                     <span class="focus-bg"></span>
                   </label>
                 </div>
-               
+
                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                   <label for="slt" class="slt">
                     <select name="class" class="form-control" id="slt" placeholder="&nbsp;">
@@ -128,11 +129,11 @@
                     <span class="focus-bg"></span>
                   </label>
                 </div>
-               
+
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="dtp" class="dtp">
-                    <input type="date" id="dtp" placeholder="&nbsp;" name="applyDate" [(ngModel)]="studentApplyleaveDto.applyDate"
-                    [value]="studentApplyleaveDto.applyDate">
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="applyDate"
+                      [(ngModel)]="studentApplyleaveDto.applyDate" [value]="studentApplyleaveDto.applyDate">
                     <span class="label"> Apply Date *</span>
                     <span class="focus-bg"></span>
                   </label>
@@ -140,16 +141,16 @@
 
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="dtp" class="dtp">
-                    <input type="date" id="dtp" placeholder="&nbsp;" name="fromDate" [(ngModel)]="studentApplyleaveDto.fromDate"
-                    [value]="studentApplyleaveDto.fromDate">
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="fromDate"
+                      [(ngModel)]="studentApplyleaveDto.fromDate" [value]="studentApplyleaveDto.fromDate">
                     <span class="label">From Date *</span>
                     <span class="focus-bg"></span>
                   </label>
                 </div>
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="dtp" class="dtp">
-                    <input type="date" id="dtp" placeholder="&nbsp;" name="toDate" [(ngModel)]="studentApplyleaveDto.toDate"
-                    [value]="studentApplyleaveDto.toDate">
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="toDate"
+                      [(ngModel)]="studentApplyleaveDto.toDate" [value]="studentApplyleaveDto.toDate">
                     <span class="label">To Date *</span>
                     <span class="focus-bg"></span>
                   </label>
@@ -157,8 +158,8 @@
 
                 <div class="col-12 col-lg-4 col-12 form-group">
                   <label for="inp" class="inp">
-                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="reason" [(ngModel)]="studentApplyleaveDto.reason"
-                    [value]="studentApplyleaveDto.reason">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="reason"
+                      [(ngModel)]="studentApplyleaveDto.reason" [value]="studentApplyleaveDto.reason">
                     <span class="label"> Reason</span>
                     <span class="focus-bg"></span>
                   </label>
@@ -166,14 +167,14 @@
 
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
-                  <input type="file" class="form-control-file" name="docs" placeholder="" [(ngModel)]="studentApplyleaveDto.docs"
-                  [value]="studentApplyleaveDto.docs">
+                  <input type="file" class="form-control-file" name="docs" placeholder=""
+                    [(ngModel)]="studentApplyleaveDto.docs" [value]="studentApplyleaveDto.docs">
                 </div>
 
                 <div class="col-12 col-lg-4 col-12 form-group">
                   <label for="inp" class="inp">
-                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="requestType" [(ngModel)]="studentApplyleaveDto.requestType"
-                    [value]="studentApplyleaveDto.requestType">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="requestType"
+                      [(ngModel)]="studentApplyleaveDto.requestType" [value]="studentApplyleaveDto.requestType">
                     <span class="label"> Request Type</span>
                     <span class="focus-bg"></span>
                   </label>
@@ -181,8 +182,8 @@
 
                 <div class="col-12 col-lg-4 col-12 form-group">
                   <label for="inp" class="inp">
-                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="approveBy" [(ngModel)]="studentApplyleaveDto.approveBy"
-                    [value]="studentApplyleaveDto.approveBy">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="approveBy"
+                      [(ngModel)]="studentApplyleaveDto.approveBy" [value]="studentApplyleaveDto.approveBy">
                     <span class="label">Approve By</span>
                     <span class="focus-bg"></span>
                   </label>
@@ -190,17 +191,22 @@
 
                 <div class="col-12 col-lg-4 col-12 form-group">
                   <label for="inp" class="inp">
-                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="status" [(ngModel)]="studentApplyleaveDto.status"
-                    [value]="studentApplyleaveDto.status">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="status"
+                      [(ngModel)]="studentApplyleaveDto.status" [value]="studentApplyleaveDto.status">
                     <span class="label">Status</span>
                     <span class="focus-bg"></span>
                   </label>
                 </div>
 
                 <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                  <button *ngIf="!this.isUpdate" (click)="add()" type="button"  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">Save</button>&nbsp;
-                  <button *ngIf="this.isUpdate" (click)="update(studentApplyleaveDto.id)" type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"data-toggle="modal" data-target="#myModal" >Update</button>&nbsp;
-                  <button *ngIf="this.isUpdate" (click)="clearData()" type="button" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Resete</button>&nbsp;
+                  <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">Save</button>&nbsp;
+                  <button *ngIf="this.isUpdate" (click)="update(studentApplyleaveDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">Update</button>&nbsp;
+                  <button *ngIf="this.isUpdate" (click)="clearData()" type="button"
+                    class="btn-fill-lg bg-blue-dark btn-hover-yellow">Resete</button>&nbsp;
                 </div>
               </div>
             </form>

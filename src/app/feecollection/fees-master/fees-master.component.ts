@@ -3,6 +3,8 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
 import { FeemasterService } from './feemaster.service';
 import { FeestypeService } from 'src/app/feecollection/feestype/feestype.service';
 import { FeesGroupService } from 'src/app/feecollection/feesgroup/feesgroup.service';
+import { SessionsettingService } from 'src/app/system_setting/sesstion-setting/sessionsetting.service';
+
 @Component({
   selector: 'app-fees-master',
   templateUrl: './fees-master.component.html',
@@ -10,7 +12,7 @@ import { FeesGroupService } from 'src/app/feecollection/feesgroup/feesgroup.serv
 })
 export class FeesMasterComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/fee-master/`;
+  url = `http://yamistha.cloudjiffy.net/fee-groupr/`;
 
   feesmaster = [];
   requestDto = {
@@ -28,17 +30,19 @@ export class FeesMasterComponent implements OnInit {
   isUpdate: boolean = false;
   feesgroup: any;
   feetypes: any;
+  sessions:any;
 
   constructor(private datatableservice: DatatableService,
     private feemasterService: FeemasterService,
-
     private feetypeservice: FeestypeService,
+    private sessionsettingService: SessionsettingService,
     private feegroupService: FeesGroupService) { }
 
   ngOnInit(): void {
     this.getList();
     this.gettypeList();
     this.getmasterList();
+    this.getsessionList();
 
 
   }
@@ -56,6 +60,17 @@ export class FeesMasterComponent implements OnInit {
     this.feetypeservice.gettypeList().subscribe((res: any) => {
       var data = res['data'];
       this.feetypes = data['content'];
+      //this.visitors = content.map((key) => ({ ...key }));
+      //console.log(this.visitors);
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+    });
+  }
+  getsessionList() {
+    this.sessionsettingService.getsessionList().subscribe((res: any) => {
+      var data = res['data'];
+      this.sessions = data['content'];
       //this.visitors = content.map((key) => ({ ...key }));
       //console.log(this.visitors);
     }, (err) => {

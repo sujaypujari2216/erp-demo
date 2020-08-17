@@ -10,7 +10,7 @@ import { AdditemstockService } from './additemstock.service';
 export class AddItemStockComponent implements OnInit {
 
 
-  url = `http://yamistha.cloudjiffy.net/item issue/`;
+  url = `http://yamistha.cloudjiffy.net/item-stock/`;
 
   itemstocks = [];
   itemStockDto = {

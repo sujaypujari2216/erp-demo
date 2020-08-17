@@ -8,6 +8,7 @@ import { IssueitemService } from './issueitem.service';
   styleUrls: ['./issue-item.component.css']
 })
 export class IssueItemComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/item-issue/`;
 
   constructor(private datatableservice: DatatableService, private IssueitemService: IssueitemService) { }
 

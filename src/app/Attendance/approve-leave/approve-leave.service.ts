@@ -10,7 +10,7 @@ export class ApproveLeaveService {
     return this.http.post(this.url, Dto);
   }
 
-  getList(): any {
+  geleavetList(): any {
     return this.http.get(this.url);
   }
 

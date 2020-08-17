@@ -104,21 +104,22 @@
                      </div>
                      <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3">
                        <label for="inp" class="inp">
-                         <input type="date" class="form-control" id="inp" placeholder="&nbsp;"
+                         <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
                            [(ngModel)]="onlineexamDto.attempt" name="attempt" [value]="onlineexamDto.attempt">
                          <span class="label">Attempt *</span>
                          <span class="focus-bg"></span>
                        </label>
                      </div>
-                     <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
+                     <div class="col-xl-4 col-lg-6 col-12 form-group">
                        <label for="inp" class="inp">
-                        <input type="date" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="onlineexamDto.attempt" name="attempt"
-                          [value]="onlineexamDto.attempt"> 
-                          <span class="label">Passing Percentage *</span>
+                         <input type="number" min="1" max="100" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="onlineexamDto.passingPercentage" name="passingPercentage"
+                           [value]="onlineexamDto.passingPercentage">
+                         <span class="label">Passing Percentage *</span>
                          <span class="focus-bg"></span>
                        </label>
                      </div>
-                     <div class="col-xl-4 col-lg-6 col-12 form-group">
+                     <!--<div class="col-xl-4 col-lg-6 col-12 form-group">
                        
                        <input type="radio" class="form-check-input" id="customRadio" name="subjectType"
                          [(ngModel)]="subjectDto.type" value="Theory">&nbsp;&nbsp;
@@ -136,17 +137,21 @@
                          <span class="focus-bg"></span>
                        </label>
                      </div>  -->
-                     <div class="col-xl-4 col-lg-6 col-12 form-group" rows="3">
-                       <button *ngIf="!this.isUpdate" (click)="addonline()" type="button"
-                         class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark form-control" data-toggle="modal"
-                         data-target="#myModal">
-                         Save
-                       </button>&nbsp;
-                       <button *ngIf="this.isUpdate" (click)="updateonline(onlineexamDto.id)" type="button"
-                         class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
-                         data-target="#myModal">
-                         Update
-                       </button>&nbsp;
+                     <div class="col-xl-4 col-lg-6 col-12 form-group">
+                       <div class="form-group" style="float: left;">
+
+                         <button *ngIf="!this.isUpdate" (click)="addonline()" type="button"
+                           class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                           data-target="#myModal">
+                           Save
+                         </button>&nbsp;
+                         <button *ngIf="this.isUpdate" (click)="updateonline(onlineexamDto.id)" type="button"
+                           class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                           data-target="#myModal">
+                           Update
+                         </button>&nbsp;
+
+                       </div>
                      </div>
 
                    </div>
