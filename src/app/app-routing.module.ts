@@ -28,6 +28,8 @@ import { CreateTtComponent } from "./create-tt/create-tt.component";
 import { AttendanceRoutingModule } from "./Attendance/Attendance-routing.module";
 import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
 
+import { LoginModule } from './login/login.module';
+
 const routes: Routes = [
   { path: "create", component: CreateComponent },
   { path: "create-tt", component: CreateTtComponent },
@@ -35,6 +37,7 @@ const routes: Routes = [
   { path: "addNews", component: AddNewsComponent },
   { path: "addPage", component: AddPageComponent },
   { path: "issue1", component: Issue1Component },
+
 ];
 
 @NgModule({
@@ -61,6 +64,7 @@ const routes: Routes = [
     OnlineExamRoutingModule,
     DashboardRoutingModule,
     AttendanceRoutingModule,
+    LoginModule,
   ],
   exports: [RouterModule],
 })

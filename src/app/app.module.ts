@@ -52,6 +52,9 @@ import { IncomeModule } from './income/income.module';
 import { HumanResourceModule } from './human_resource/HumanResourceModule';
 import { HomeworkEvaluationComponent } from './Homework/homework-evaluation/homework-evaluation.component';
 
+import { LoginModule } from './login/login.module';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -94,6 +97,7 @@ import { HomeworkEvaluationComponent } from './Homework/homework-evaluation/home
     ReferenceComponent,
     ComplainttypeComponent,
     HomeworkEvaluationComponent,
+  
     
   ],
   imports: [
@@ -112,9 +116,11 @@ import { HomeworkEvaluationComponent } from './Homework/homework-evaluation/home
     //BsDatepickerModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+   LoginModule,
     RouterModule.forRoot(
       [
-        { path: "", redirectTo: "admin", pathMatch: "full" },
+        { path: "", redirectTo: "Login", pathMatch: "full" },
+        { path:"Login",component:LoginComponent},
         { path: "admin", component: HomeComponent },
         { path: "parentsdetails", component: ParentsdetailsComponent },
         { path: "addparents", component: AddParentsComponent },
