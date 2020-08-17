@@ -12,6 +12,7 @@ export class AddExamComponent implements OnInit {
   constructor(private datatableservice: DatatableService, private addexamxamService: AddExamService) { }
 
   Exams = [];
+  
   examDto = {
     "dateFrom": "",
   "dateTo": "",

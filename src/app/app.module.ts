@@ -53,6 +53,9 @@ import { HumanResourceModule } from './human_resource/HumanResourceModule';
 import { HomeworkEvaluationComponent } from './Homework/homework-evaluation/homework-evaluation.component';
 import { SesstionSettingComponent } from './system_setting/sesstion-setting/sesstion-setting.component';
 
+import { LoginModule } from './login/login.module';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -95,7 +98,9 @@ import { SesstionSettingComponent } from './system_setting/sesstion-setting/sess
     ReferenceComponent,
     ComplainttypeComponent,
     HomeworkEvaluationComponent,
-    SesstionSettingComponent,
+
+SesstionSettingComponent,
+
     
   ],
   imports: [
@@ -114,9 +119,11 @@ import { SesstionSettingComponent } from './system_setting/sesstion-setting/sess
     //BsDatepickerModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+   LoginModule,
     RouterModule.forRoot(
       [
-        { path: "", redirectTo: "admin", pathMatch: "full" },
+        { path: "", redirectTo: "Login", pathMatch: "full" },
+        { path:"Login",component:LoginComponent},
         { path: "admin", component: HomeComponent },
         { path: "parentsdetails", component: ParentsdetailsComponent },
         { path: "addparents", component: AddParentsComponent },
