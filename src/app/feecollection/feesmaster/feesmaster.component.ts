@@ -37,14 +37,14 @@ export class FeesmasterComponent implements OnInit {
               private feegroupService: FeesGroupService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getgroupList();
     this.gettypeList();
     this.getmasterList();
 
 
   }
-  getList() {
-    this.feegroupService.getList().subscribe((res: any) => {
+  getgroupList() {
+    this.feegroupService.getgroupList().subscribe((res: any) => {
       var data = res['data'];
       this.feesgroup = data['content'];
       // console.log(this.sources);

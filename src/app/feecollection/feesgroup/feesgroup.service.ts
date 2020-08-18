@@ -14,7 +14,7 @@ export class FeesGroupService {
         return this.http.post(this.url, Dto);
     }
 
-    getList(): any {
+    getgroupList(): any {
         return this.http.get(this.url);
     }
 

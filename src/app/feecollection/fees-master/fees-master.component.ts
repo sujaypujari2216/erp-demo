@@ -12,7 +12,7 @@ import { SessionsettingService } from 'src/app/system_setting/sesstion-setting/s
 })
 export class FeesMasterComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/fee-groupr/`;
+  url = `http://yamistha.cloudjiffy.net/feemaster/`;
 
   feesmaster = [];
   requestDto = {
@@ -39,15 +39,15 @@ export class FeesMasterComponent implements OnInit {
     private feegroupService: FeesGroupService) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getgroupList();
     this.gettypeList();
     this.getmasterList();
     this.getsessionList();
 
 
   }
-  getList() {
-    this.feegroupService.getList().subscribe((res: any) => {
+  getgroupList() {
+    this.feegroupService.getgroupList().subscribe((res: any) => {
       var data = res['data'];
       this.feesgroup = data['content'];
       // console.log(this.sources);
@@ -83,12 +83,13 @@ export class FeesMasterComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.feesmaster = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('fees master');
+      this.datatableservice.initTable('Fees Master');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
     });
   }
+  
 
   addmaster() {
     this.feemasterService.addmaster(this.requestDto).subscribe((res: any) => {

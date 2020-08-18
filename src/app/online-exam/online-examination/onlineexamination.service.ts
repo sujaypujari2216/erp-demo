@@ -26,7 +26,7 @@ export class OnlineexaminationService {
     return this.http.put(this.url + onlineId, onlineexamDto);
   }
 
-  getByonlineId(onlineId): any {
+  getonlineById(onlineId): any {
     return this.http.get(this.url + onlineId);
   }
 }
