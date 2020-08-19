@@ -1,0 +1,168 @@
+<div class="breadcrumbs-area">
+  <ul>
+    <li>
+      <a href="/#/admin">Home</a>
+
+    </li>
+    <li>Fees Master 2019-20</li>
+  </ul>
+</div>
+<div class="card height-auto">
+  <div class="card-body">
+    <div class="heading-layout1">
+      <div class="item-title">
+        <h3>Fees Master List</h3>
+      </div>
+      <button style="background-color: #000066; width: 7%; height: 10%;" type="button" class="btn btn-info btn-lg"
+        data-toggle="modal" data-target="#myModal">+ Add
+      </button>
+    </div>
+    <div class="table-responsive">
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
+          <tr>
+            <!--  <th>Fees Group</th>
+            <th>Fees Code</th> -->
+            <th>Amount</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feemast of feesmaster">
+            <!-- <td>{{ feemast.feeGroupId }}</td>
+            <td>{{ feemast.feetypeId }}</td> -->
+            <td>{{ feemast.amount }}</td>
+
+
+            <td>
+              <i class="fas fa-align-justify "></i>&nbsp;
+              <a (click)="setUpdateFileds(feemast.id)" data-toggle="modal" data-target="#myModal"><i
+                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+              <a (click)="deletemaster(feemast.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="item-title">
+
+            <h5> Add Fee Master</h5>
+          </div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form role="form" method="post" id="reused_form">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.sessionId"
+                    name="sessionId">
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let session of this.sessions" [value]="session.session"
+                      [selected]="requestDto.sessionId == session.session">{{ session.session }}
+                    </option>
+                  </select>
+                  <span class="label">Session*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feeGroupId"
+                    name="feeGroupId">
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let group of feesgroup" [value]="group.name"
+                      [selected]="requestDto.feeGroupId == group.name">{{ group.name }}
+                    </option>
+                  </select>
+                  <span class="label">Fees Group*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feetypeId"
+                    name="feetypeId">
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let feetype of feetypes" [value]="feetype.type"
+                      [selected]="requestDto.feetypeId == feetype.type">
+                      {{ feetype.type }}
+                    </option>
+                  </select>
+                  <span class="label">Fees Type*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="requestDto.amount"
+                    name="amount" [value]="requestDto.amount">
+                  <span class="label">Amount *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="date" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="requestDto.dueDate"
+                    name="dueDate" [value]="requestDto.dueDate">
+                  <span class="label">Due Date *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-12 col-lg-6 col-12 form-group">
+                <div class="row">&nbsp;&nbsp;&nbsp;
+                  <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" id="customRadio" name="fineType"
+                      [(ngModel)]="requestDto.fineType" value="None">&nbsp;&nbsp;
+                    None
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" id="customRadio" name="Percentage"
+                      [(ngModel)]="requestDto.fineType" value="Percentage">&nbsp;&nbsp;
+                    Percentage
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" id="customRadio" name="Fixamount"
+                      [(ngModel)]="requestDto.fineType" value="Fixamount">&nbsp;&nbsp;
+                    Fixamount
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="form-group" style="float: right;">
+                  <button *ngIf="!this.isUpdate" (click)="addmaster()" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
+                    Save
+                  </button>
+                  <button *ngIf="this.isUpdate" (click)="updatemaster(requestDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
+                    Update
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
