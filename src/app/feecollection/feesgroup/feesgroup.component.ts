@@ -10,6 +10,7 @@ import { FeesGroupService } from './feesgroup.service';
 })
 export class FeesgroupComponent implements OnInit {
   url = `http://yamistha.cloudjiffy.net/fee-group/`;
+  
 
 
   constructor(private feesgoupService: FeesGroupService, private datatableservice: DatatableService) { }
