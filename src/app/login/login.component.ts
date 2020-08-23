@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     this.authloginservice.isLogin(this.loginRequest).then((success) => {      
 
       //This is where its broke - below:     
-      //this navigation works      
+      
       this.router.navigateByUrl('/admin');
 
    });
@@ -47,7 +47,8 @@ export class LoginComponent implements OnInit {
 
   login2()
   {
-
+    //works this navigation
+    this.router.navigate(['/admin']);
   }
  
 }
