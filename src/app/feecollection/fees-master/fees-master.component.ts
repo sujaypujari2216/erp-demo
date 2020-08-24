@@ -36,15 +36,15 @@ export class FeesMasterComponent implements OnInit {
     private feemasterService: FeemasterService,
     private feetypeservice: FeestypeService,
     private sessionsettingService: SessionsettingService,
-    private feegroupService: FeesGroupService) { }
+    private feegroupService: FeesGroupService) { 
+      this.getmasterList();
+    }
 
   ngOnInit(): void {
+    this.getmasterList();
     this.getgroupList();
     this.gettypeList();
-    this.getmasterList();
     this.getsessionList();
-
-
   }
   getgroupList() {
     this.feegroupService.getgroupList().subscribe((res: any) => {
