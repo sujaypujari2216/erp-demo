@@ -18,37 +18,19 @@ export class LoginComponent implements OnInit {
 
   constructor( private authloginservice: AuthLoginService,  private router: Router,) { }
 
-  ngOnInit(): void {
-  }
-  login = ()=>{
-   
-    // this.authloginservice.isLogin(this.loginRequest).subscribe((res: any) => {
-    //   if (res.success == true) {
-      //here is a problem to navigate
-    //     this.router.navigateByUrl('/admin');
-    //     alert('Login Successfully');
-    //     console.log(this.loginRequest);
-        
-        
-    //   }
-    // }, (err) => {
-    //   console.log('Error While Login');
-    //   console.error(err);
-    //   console.log(this.loginRequest);
-    // });
-    this.authloginservice.isLogin(this.loginRequest).then((success) => {      
+  ngOnInit(): void {}
 
-      //This is where its broke - below:     
-      
-      this.router.navigateByUrl('/admin');
-
-   });
+  login(){
+    this.authloginservice.isLogin(this.loginRequest).subscribe((res: any) => {
+      //console.log(res);
+      if (res.email == "admin@gmail.com") {
+      this.router.navigate(['/admin']);
+      console.log('success');
+      alert('Login Successfull');
+      }
+    }, (err) => {
+      console.log('Error While Login');
+      console.error(err);
+    });
   }
-
-  login2()
-  {
-    //works this navigation
-    this.router.navigate(['/admin']);
-  }
- 
 }
