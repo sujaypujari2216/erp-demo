@@ -13,7 +13,7 @@ export class OnlineExaminationComponent implements OnInit {
 
   url = `http://yamistha.cloudjiffy.net/online-exam/`;
 
-  onlineexamination = [];
+  onlineexaminations = [];
   onlineexamDto = {
     "attempt": 0,
     "description": "",
@@ -59,13 +59,14 @@ export class OnlineExaminationComponent implements OnInit {
     this.onlineexaminationService.getonlineList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
-      this.onlineexamination = content.map((key) => ({ ...key }));
+      this.onlineexaminations = content.map((key) => ({ ...key }));
       this.datatableservice.initTable('Online Examination');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
     });
   }
+   
   addonline() {
     this.onlineexaminationService.save(this.onlineexamDto).subscribe((res: any) => {
       if (res.success == true) {

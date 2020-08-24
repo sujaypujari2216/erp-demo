@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class FeesGroupService {
     constructor(private http: HttpClient) { }
 
-    url = `http://yamistha.cloudjiffy.net/fee-group/`;
+   url = `http://yamistha.cloudjiffy.net/fee-group/`;
+   
 
 
     save(Dto): any {
