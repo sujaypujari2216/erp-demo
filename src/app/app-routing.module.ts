@@ -28,8 +28,8 @@ import { AddPageComponent } from "./add-page/add-page.component";
 import { CreateTtComponent } from "./create-tt/create-tt.component";
 import { AttendanceRoutingModule } from "./Attendance/Attendance-routing.module";
 import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
-
 import { LoginModule } from './login/login.module';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 const routes: Routes = [
   { path: "create", component: CreateComponent },
@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: "addNews", component: AddNewsComponent },
   { path: "addPage", component: AddPageComponent },
   { path: "issue1", component: Issue1Component },
+
 
 ];
 

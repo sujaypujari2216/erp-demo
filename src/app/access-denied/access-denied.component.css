@@ -1,0 +1,22 @@
+.lock-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    margin:5px 5px 5px 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.message > p{
+    padding-top: 40%;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;    
+}
+
+.imge > img{
+    margin-top: 20%;
+    margin-bottom: 100%;
+}
+

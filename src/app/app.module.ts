@@ -55,6 +55,7 @@ import { SesstionSettingComponent } from './system_setting/sesstion-setting/sess
 
 import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 
 
@@ -101,6 +102,8 @@ import { LoginComponent } from './login/login.component';
 
 SesstionSettingComponent,
 
+AccessDeniedComponent,
+
     
   ],
   imports: [
@@ -128,6 +131,7 @@ SesstionSettingComponent,
         { path: "parentsdetails", component: ParentsdetailsComponent },
         { path: "addparents", component: AddParentsComponent },
         { path: "add-more-stud", component: AddMoreStudComponent },
+        { path:"app-access-denied",component:AccessDeniedComponent},
       ],
       { useHash: true }
     ),
