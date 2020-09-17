@@ -56,6 +56,8 @@ import { SesstionSettingComponent } from './system_setting/sesstion-setting/sess
 import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -104,6 +106,10 @@ SesstionSettingComponent,
 
 AccessDeniedComponent,
 
+SidebarComponent,
+
+NavbarComponent,
+
     
   ],
   imports: [
@@ -137,6 +143,6 @@ AccessDeniedComponent,
     ),
   ],
   providers: [DatatableService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent,SidebarComponent,NavbarComponent],
 })
 export class AppModule { }

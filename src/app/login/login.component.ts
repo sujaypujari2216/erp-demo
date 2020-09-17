@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { AuthLoginService } from 'src/app/login/auth-login.service';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     "password": "",
     "username": ""
   }
-
+  role:string;
  
 
   constructor( private authloginservice: AuthLoginService,  private router: Router,) { }
@@ -25,14 +26,21 @@ export class LoginComponent implements OnInit {
   login(){
     this.authloginservice.isLogin(this.loginRequest).subscribe((res: any) => {
       //console.log(res);
-      if (res.email == "admin@gmail.com") {
+      if (res.roles[0] == "ROLE_ADMIN") {
+        this.role=res.roles[0];
       this.router.navigate(['/admin']);
       console.log('success');
+      console.log(res);
       alert('Login Successfull');
+      
       }
     }, (err) => {
       console.log('Error While Login');
       console.error(err);
     });
+  }
+
+  getRole(){
+    return this.role;
   }
 }
