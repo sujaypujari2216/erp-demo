@@ -30,6 +30,8 @@
                    <th>Exam From</th>
                    <th>Exam To</th>
                    <th>Duration</th>
+                   <th>Exam Publish</th>
+
                    <th>Result Publish</th>
                    <th>Action</th>
                  </tr>
@@ -41,6 +43,8 @@
                    <td>{{ online.examFrom }}</td>
                    <td>{{ online.examTo }}</td>
                    <td>{{ online.duration }}</td>
+                   <td>{{ online.publishResult }}</td>
+
                    <td>{{ online.publishResult }}</td>
 
                    <td> <a (click)="setUpdateFileds(online.id)" data-toggle="modal" data-target="#myModal"><i
@@ -150,12 +154,26 @@
                      </div>
                      <div class="col-xl-4 col-lg-6 col-12 form-group">
 
-                       <input type="checkbox" class="form-check-input" id="customRadio" name="publishResult"
-                         [(ngModel)]="onlineexamDto.publishResult">&nbsp;&nbsp;
+                       &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="customRadio"
+                         name="publish">&nbsp;&nbsp;
+                       <label class="form-check-label" for="publishResult">Publish </label>&nbsp;&nbsp;&nbsp;
+                       <br>
+
+                       &nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="customRadio"
+                         name="publishResult" [(ngModel)]="onlineexamDto.publishResult">&nbsp;&nbsp;
                        <label class="form-check-label" for="publishResult">Publish Result</label>&nbsp;&nbsp;&nbsp;
 
                      </div>
 
+                     <div class="col-xl-4 col-lg-6 col-12 form-group">
+                       <label for="inp" class="inp">
+                         <input type="number" min="1" max="100" class="form-control" id="inp" placeholder="&nbsp;"
+                           [(ngModel)]="onlineexamDto.passingPercentage" name="passingPercentage"
+                           [value]="onlineexamDto.passingPercentage">
+                         <span class="label">Description</span>
+                         <span class="focus-bg"></span>
+                       </label>
+                     </div>
 
                      <div class="col-xl-4 col-lg-6 col-12 form-group">
                        <div class="form-group" style="float: left;">

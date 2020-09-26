@@ -5,6 +5,7 @@ import { FeestypeService } from 'src/app/feecollection/feestype/feestype.service
 import { FeesGroupService } from 'src/app/feecollection/feesgroup/feesgroup.service';
 import { SessionsettingService } from 'src/app/system_setting/sesstion-setting/sessionsetting.service';
 
+
 @Component({
   selector: 'app-fees-master',
   templateUrl: './fees-master.component.html',
@@ -36,7 +37,8 @@ export class FeesMasterComponent implements OnInit {
     private feemasterService: FeemasterService,
     private feetypeservice: FeestypeService,
     private sessionsettingService: SessionsettingService,
-    private feegroupService: FeesGroupService) { 
+    private feegroupService: FeesGroupService,
+     ) { 
       this.getmasterList();
     }
 

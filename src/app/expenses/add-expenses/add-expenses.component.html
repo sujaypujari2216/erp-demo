@@ -137,20 +137,15 @@
 
               </div> -->
               <div class="col-4 col-lg-4 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="expenseDto.documents" name="documents" [value]="expenseDto.documents">
-                  <span class="label">documents</span>
-                  <span class="focus-bg"></span>
-                </label>
-                <!--  <div class="alert alert-danger" *ngIf="invoiceNo.touched && !invoiceNo.valid">
-                                Please Enter Invlice Number.
-                              </div> -->
+                <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
+                <input type="file" class="form-control-file" name="documents" placeholder="Attach Document"
+                  [(ngModel)]="expenseDto.documents" [value]="expenseDto.documents">
               </div>
               <div class="col-4 col-lg-4 col-12 form-group" row="3">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="expenseDto.note"
-                    name="note" [value]="expenseDto.note"> <span class="label">Description</span>
+                  <input type="textArea" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="expenseDto.note" name="note" [value]="expenseDto.note"> <span
+                    class="label">Description</span>
                   <span class="focus-bg"></span>
                 </label>
 

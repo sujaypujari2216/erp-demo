@@ -64,19 +64,7 @@
         <div class="modal-body">
           <form role="form" method="post" id="reused_form">
             <div class="row">
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.sessionId"
-                    name="sessionId">
-                    <option selected>Please Select *</option>
-                    <option *ngFor="let session of this.sessions" [value]="session.session"
-                      [selected]="requestDto.sessionId == session.session">{{ session.session }}
-                    </option>
-                  </select>
-                  <span class="label">Session*</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feeGroupId"
@@ -122,8 +110,24 @@
                   <span class="focus-bg"></span>
                 </label>
               </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="requestDto.finePercentage" name="finePercentage" [value]="requestDto.finePercentage">
+                  <span class="label">Percentage *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="requestDto.fineAmount" name="fineAmount" [value]="requestDto.fineAmount">
+                  <span class="label">Fine Amount *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
 
-              <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <div class="row">&nbsp;&nbsp;&nbsp;
                   <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="form-check-input" id="customRadio" name="fineType"
@@ -136,7 +140,7 @@
                     &nbsp;&nbsp;&nbsp;
                     <input type="radio" class="form-check-input" id="customRadio" name="Fixamount"
                       [(ngModel)]="requestDto.fineType" value="Fixamount">&nbsp;&nbsp;
-                    Fixamount
+                    FixAmount
                   </label>
                 </div>
               </div>
