@@ -42,7 +42,8 @@
 
 
             <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+              <a (click)="getcomplainById(complain.id)" data-toggle="modal" data-target="#show"><i
+                  class="fas fa-align-justify text-blue"></i>&nbsp;</a>
               <a (click)="setUpdateFileds(complain.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
               <a (click)="deleteComplain(complain.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
@@ -171,6 +172,54 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div id="show" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Details</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <table class="table display data-table text-wrap cell-border">
+            <tbody>
+              <tr>
+                <th>Complain #</th>
+                <td>{{ complaint.id }}</td>
+                <th>complaintType</th>
+                <td>{{ complaint.complaintType }}</td>
+              </tr>
+              <tr>
+                <th>source</th>
+                <td>{{ complaint.source }}</td>
+                <th>Name</th>
+                <td>{{ complaint.name }}</td>
+              </tr>
+              <tr>
+                <th>Contact</th>
+                <td>{{ complaint.contact }}</td>
+                <th>date</th>
+                <td>{{ complaint.date }}</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td>{{ complaint.description }}</td>
+                <th>ActionTaken</th>
+                <td>{{ complaint.actionTaken }}</td>
+              </tr>
+              <tr>
+                <th>Assigned</th>
+                <td>{{ complaint.assigned }}</td>
+                <th>Note</th>
+                <td>{{ complaint.note }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

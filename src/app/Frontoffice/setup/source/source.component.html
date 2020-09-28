@@ -6,106 +6,105 @@
     <li>Setup Front Office</li>
   </ul>
 </div>
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h5>Source List</h5>
+
+
+<div class="row gutters-20">
+
+  <!-- Add Settings Area Start Here -->
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Add source</h5>
+          </div>
+        </div>
+        <form role="form" method="post" id="reused_form">
+
+          <div class="row">
+
+            <div class="col-xl-12 col-lg-12 col-12 form-desig">
+              <label for="inp" class="inp">
+                <input type="text" name="source" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="Dto.source">
+                <span class="label">Source *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-12 form-desig">
+              <label for="inp" class="inp">
+                <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="Dto.description">
+                <span class="label">Description *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+
+
+            <div class="col-xl-12 col-lg-12 col-12 form-desig">
+              <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="dropdown">
-        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/visitors-purpose'">+ Visitors
-          Purpose</button>
-        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/reference'">+ Reference</button>
-        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/source'">+ Source</button>
-        <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
-          type="button" class="btn btn-info btn-lg" onClick="location.href='/#/complainttype'">+ Complaint Type</button>
-      </div>
-    </div>
-    <div class="table-responsive">
-      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-        class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+ Add</button>
-
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Source</th>
-            <th>Action</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let source of sources">
-            <td>{{ source.source }}</td>
-
-
-            <td>
-              <a (click)="setUpdateFileds(source.id)" data-toggle="modal" data-target="#myModal"><i
-                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(source.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
     </div>
   </div>
-</div>
 
+  <div class="col-xl-8 col-6">
 
-<!-- Add Settings Area Start Here -->
-<div class="container">
-
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5> Add Setup</h5>
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h5>Source List</h5>
+          </div>
+          <div class="dropdown">
+            <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
+              type="button" class="btn btn-info btn-lg" onClick="location.href='/#/visitors-purpose'">+ Visitors
+              Purpose</button>
+            <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
+              type="button" class="btn btn-info btn-lg" onClick="location.href='/#/reference'">+ Reference</button>
+            <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
+              type="button" class="btn btn-info btn-lg" onClick="location.href='/#/source'">+ Source</button>
+            <button style="  background-color: rgb(202, 130, 21); position: relative; top:0; right: 10; float: right;"
+              type="button" class="btn btn-info btn-lg" onClick="location.href='/#/complainttype'">+ Complaint
+              Type</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <form role="form" method="post" id="reused_form">
-
-            <div class="row">
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" name="source" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.source">
-                  <span class="label">Source *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
+        <div class="table-responsive">
 
 
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.description">
-                  <span class="label">Description *</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
+          <table id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let source of sources">
+                <td>{{ source.source }}</td>
 
 
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Save
-                </button>
-                <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Update
-                </button>
-              </div>
-            </div>
-          </form>
+                <td>
+                  <a (click)="setUpdateFileds(source.id)" data-toggle="modal" data-target="#myModal"><i
+                      class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="delete(source.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

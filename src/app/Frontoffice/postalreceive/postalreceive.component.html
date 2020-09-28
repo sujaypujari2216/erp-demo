@@ -349,10 +349,11 @@
             <td>{{ rec.date }}</td>
 
             <td>
-              <a href=""><i class=" fas fa-align-justify "></i>&nbsp;</a>
+              <a (click)="getById(rec.id)" data-toggle="modal" data-target="#show"><i
+                  class="fas fa-align-justify text-blue"></i>&nbsp;</a>
               <a (click)="setUpdateFileds(rec.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="deleterec(rec.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              <a (click)="deleterec(rec.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
           </tr>
 
 
@@ -452,6 +453,43 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div id="show" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Details</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <table class="table display data-table text-wrap cell-border">
+            <tbody>
+              <tr>
+                <th>To Title</th>
+                <td>{{ dispatchReceiveDto.toTitle }}</td>
+                <th>Ref. No</th>
+                <td>{{ dispatchReceiveDto.referenceNo }}</td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td>{{ dispatchReceiveDto.address }}</td>
+                <th>Note</th>
+                <td>{{ dispatchReceiveDto.note }}</td>
+              </tr>
+              <tr>
+                <th>From Title</th>
+                <td>{{ dispatchReceiveDto.fromTitle }}</td>
+                <th>Date</th>
+                <td>{{ dispatchReceiveDto.date }}</td>
+              </tr>
+
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
