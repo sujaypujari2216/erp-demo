@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ARTCODE</title>
+  <base href="/">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <!-- <meta name="description" content=""> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="/assets/css/normalize.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <!-- Flaticon CSS -->
+  <link rel="stylesheet" href="/assets/fonts/flaticon.css">
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="/assets/css/animate.min.css">
+  <!-- Select 2 CSS -->
+  <link rel="stylesheet" href="/assets/css/select2.min.css">
+  <!-- Date Picker CSS -->
+  <link rel="stylesheet" href="/assets/css/datepicker.min.css">
+  <!-- Custom CSS -->
+  <link type="text/css" rel="stylesheet" href="styles.css">
+
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+
+  <!-- Modernize js -->
+  <script src="/assets/js/modernizr-3.6.0.min.js"></script>
+
+  <!-- Export Table CSS -->
+  <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="assets/css/buttons.dataTables.min.css">
+
+
+
+  <style type="text/css">
+    .global-loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1999;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 1;
+      transition: opacity .5s ease-in-out;
+    }
+
+    .global-loader-fade-in {
+      opacity: 0;
+    }
+
+    .global-loader-hidden {
+      display: none;
+    }
+
+    .global-loader h1 {
+      /* font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: normal; */
+      font-size: 44px;
+      letter-spacing: 0.4rem;
+      white-space: pre;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: repeating-linear-gradient(to right,
+          rgb(0, 42, 255), rgb(66, 39, 176), #FF9800, rgb(3, 23, 244), rgb(10, 6, 120), #FF9800);
+      background-size: 750% auto;
+      background-position: 0 100%;
+      animation: gradient 20s infinite;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -750% 0;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper bg-ash">
+    <!-- Header Menu Area Start Here -->
+    <div class="navbar navbar-expand-md header-menu-one bg-light">
+      <div class="nav-bar-header-one">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="" alt="VISION_ERP">
+          </a>
+        </div>
+        <div class="toggle-button sidebar-toggle">
+          <button type="button" class="item-link">
+            <span class="btn-icon-wrap">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="d-md-none mobile-nav-bar">
+        <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar"
+          aria-expanded="false">
+          <i class="far fa-arrow-alt-circle-down"></i>
+        </button>
+        <button type="button" class="navbar-toggler sidebar-toggle-mobile">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
+        <ul class="navbar-nav">
+          <!--<li class="navbar-item header-search-bar">
+                        <div class="input-group stylish-input-group">
+                            <span class="input-group-addon">
+                                <button type="submit">
+                                    <span class="flaticon-search" aria-hidden="true"></span>
+                                </button>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Find Something . . .">
+                        </div>
+                    </li>-->
+        </ul>
+        <ul class="navbar-nav">
+          <li class="navbar-item dropdown header-admin">
+            <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              <div class="admin-title">
+                <h5 class="item-title">Stevne Zone</h5>
+                <span>Admin</span>
+              </div>
+              <div class="admin-img">
+                <img src="../assets/img/figure/admin.jpg" alt="Admin">
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="item-header">
+                <h6 class="item-title">Steven Zone</h6>
+              </div>
+              <div class="item-content">
+                <ul class="settings-list">
+                  <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
+                  <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
+                  <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a>
+                  </li>
+                  <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                  <li><a href="/#/Login" type="button"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="navbar-item dropdown header-message">
+            <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              <i class="far fa-envelope"></i>
+              <div class="item-title d-md-none text-16 mg-l-10">Message</div>
+              <span>5</span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="item-header">
+                <h6 class="item-title">05 Message</h6>
+              </div>
+              <div class="item-content">
+                <div class="media">
+                  <div class="item-img bg-skyblue author-online">
+                    <img src="../assets/img/figure/student11.png" alt="img">
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="item-title">
+                      <a href="#">
+                        <span class="item-name">Maria Zaman</span>
+                        <span class="item-time">18:30</span>
+                      </a>
+                    </div>
+                    <p>What is the reason of buy this item.
+                      Is it usefull for me.....</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="item-img bg-yellow author-online">
+                    <img src="../assets/img/figure/student12.png" alt="img">
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="item-title">
+                      <a href="#">
+                        <span class="item-name">Benny Roy</span>
+                        <span class="item-time">10:35</span>
+                      </a>
+                    </div>
+                    <p>What is the reason of buy this item.
+                      Is it usefull for me.....</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="item-img bg-pink">
+                    <img src="../assets/img/figure/student13.png" alt="img">
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="item-title">
+                      <a href="#">
+                        <span class="item-name">Steven</span>
+                        <span class="item-time">02:35</span>
+                      </a>
+                    </div>
+                    <p>What is the reason of buy this item.
+                      Is it usefull for me.....</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="item-img bg-violet-blue">
+                    <img src="../assets/img/figure/student11.png" alt="img">
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="item-title">
+                      <a href="#">
+                        <span class="item-name">Joshep Joe</span>
+                        <span class="item-time">12:35</span>
+                      </a>
+                    </div>
+                    <p>What is the reason of buy this item.
+                      Is it usefull for me.....</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="navbar-item dropdown header-notification">
+            <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              <i class="far fa-bell"></i>
+              <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
+              <span>8</span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="item-header">
+                <h6 class="item-title">03 Notifiacations</h6>
+              </div>
+              <div class="item-content">
+                <div class="media">
+                  <div class="item-icon bg-skyblue">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="post-title">Complete Today Task</div>
+                    <span>1 Mins ago</span>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="item-icon bg-orange">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="post-title">Director Metting</div>
+                    <span>20 Mins ago</span>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="item-icon bg-violet-blue">
+                    <i class="fas fa-cogs"></i>
+                  </div>
+                  <div class="media-body space-sm">
+                    <div class="post-title">Update Password</div>
+                    <span>45 Mins ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="navbar-item dropdown header-language">
+            <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">Spanish</a>
+              <a class="dropdown-item" href="#">Franchis</a>
+              <a class="dropdown-item" href="#">Chiness</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dashboard-page-one">
+      <!-- Sidebar Area Start Here -->
+      <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+        <div class="mobile-sidebar-header d-md-none">
+          <div class="header-logo">
+            <a href="index.html"><img src="../assets/img/logo1.png" alt="logo"></a>
+          </div>
+        </div>
+        <div class="sidebar-menu-content ">
+          <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+            <li class="nav-item">
+              <a class="nav-link" href="/#/sesstion-setting"><i class="fas fa-pen-alt text-orange-peel">
+                </i></a>
+            </li>
+          </ul>
+          <ul class=" nav nav-sidebar-menu sidebar-toggle-view">
+            <li class="nav-item sidebar-nav-item ">
+              <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+
+              <ul class="nav sub-group-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="/#/home"><i class="fas fa-angle-right"></i>Admin</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="/#/studentinfo"><i class="fas fa-angle-right"></i>Students</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/parentinfo" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/teacherinfo" class="nav-link ">
+                    <i class="fas fa-angle-right "></i>Teachers</a>
+                </li>
+              </ul>
+
+            </li>
+            <!--fornt office module start here-->
+
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-script"></i><span>Front office</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/Admission" class="nav-link"><i class="fas fa-angle-right"></i>Admission Enquiry</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/visitorbook" class="nav-link"><i class="fas fa-angle-right"></i>Visitor Book</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/calllog" class="nav-link "><i class="fas fa-angle-right"></i>Phone Call log</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/postaldispatch" class="nav-link"><i class="fas fa-angle-right"></i>Postal Dispatch</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/postalreceive" class="nav-link"><i class="fas fa-angle-right"></i>Postal Receive</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/complain" class="nav-link"><i class="fas fa-angle-right"></i>Complain</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/visitors-purpose" class="nav-link "><i class="fas fa-angle-right"></i>Setup Front
+                    Office</a>
+                </li>
+
+              </ul>
+            </li>
+            <!--fornt office module end here-->
+            <!--Student Module here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students Information</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/studentdetails" class="nav-link"><i class="fas fa-angle-right"></i>Student Details</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/admissionform" class="nav-link"><i class="fas fa-angle-right"></i>Student Admission</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/onlineadmission" class="nav-link "><i class="fas fa-angle-right"></i>Online
+                    Admission</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/disabledstudent" class="nav-link"><i class="fas fa-angle-right"></i>Disabled
+                    Students</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/multiclassstudent" class="nav-link"><i class="fas fa-angle-right"></i>Multi Class
+                    Students</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/bulkdelete" class="nav-link"><i class="fas fa-angle-right"></i>Bulk Delete</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/studentcategories" class="nav-link "><i class="fas fa-angle-right"></i>Student
+                    Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/studenthouse" class="nav-link"><i class="fas fa-angle-right"></i>Student House</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/disablereason" class="nav-link"><i class="fas fa-angle-right"></i>Disable Reason</a>
+                </li>
+              </ul>
+            </li>
+            <!--Income start here-->
+            <!--fee collection module start here-->
+
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Fees Collection</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/collectfees" class="nav-link"><i class="fas fa-angle-right"></i>Collect Fees</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/feespayment" class="nav-link"><i class="fas fa-angle-right"></i>Search Fees Payment</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/duefees" class="nav-link "><i class="fas fa-angle-right"></i>Search Due Fees</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/feesmaster" class="nav-link"><i class="fas fa-angle-right"></i>Fees Master</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/feesgroup" class="nav-link"><i class="fas fa-angle-right"></i>Fees Group</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/feestype" class="nav-link"><i class="fas fa-angle-right"></i>Fees Type</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/feesdiscount" class="nav-link "><i class="fas fa-angle-right"></i>Fees Discount</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/caryforword" class="nav-link "><i class="fas fa-angle-right"></i>Fees Carry Forward</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/reminder" class="nav-link "><i class="fas fa-angle-right"></i>Fees Reminder</a>
+                </li>
+              </ul>
+            </li>
+
+            <!--fee collection module end here-->
+
+
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Income</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/add-income" class="nav-link"><i class="fas fa-angle-right"></i>Add Income</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/income-head" class="nav-link"><i class="fas fa-angle-right"></i>Income Head</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/search-income" class="nav-link">
+                    <!--menu-active--><i class="fas fa-angle-right"></i>Search Income</a>
+                </li>
+              </ul>
+            </li>
+            <!--Income End Here-->
+
+            <!--expense start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Expenses</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/add-expenses" class="nav-link"><i class="fas fa-angle-right"></i>Add Expenses</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/search-expenses" class="nav-link"><i class="fas fa-angle-right"></i>Search Expenses</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/expenses-head" class="nav-link">
+                    <!--menu-active--><i class="fas fa-angle-right"></i>Expeses Head</a>
+                </li>
+              </ul>
+            </li>
+            <!--expense End Here-->
+            <!--Attendance start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Attendance</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/student-attendance" class="nav-link"><i class="fas fa-angle-right"></i>Student
+                    Attendance</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/attendance-by-date" class="nav-link"><i class="fas fa-angle-right"></i>Attendance By
+                    Date</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/approve-leave" class="nav-link">
+                    <!--menu-active--><i class="fas fa-angle-right"></i>Approve Leave</a>
+                </li>
+              </ul>
+            </li>
+            <!--Attendance End Here-->
+            <!--Examination Module start here-->
+
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Examination</span></a>
+              <ul class="nav sub-group-menu">
+                <li class="nav-item">
+                  <a href="/#/exam-group" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                    Group</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/exam-result" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                    Result</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/exam-schedule" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                    Schedule</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/design-admit-card" class="nav-link"><i class="fas fa-angle-right"></i>Design Admit
+                    Card</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/print-admit-card" class="nav-link"><i class="fas fa-angle-right"></i>Print Admit Card
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/design-marksheet" class="nav-link"><i class="fas fa-angle-right"></i>Design
+                    Marksheet</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/print-marksheet" class="nav-link"><i class="fas fa-angle-right"></i>Print Marksheet </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/marks-grade" class="nav-link"><i class="fas fa-angle-right"></i>Marks
+                    Grades</a>
+                </li>
+              </ul>
+            </li>
+
+            <!--Examination Module end here-->
+            <!--Online Examination Module start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-bed"></i><span>Online Examinations</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/onlineexamination" class="nav-link"><i class="fas fa-angle-right">
+
+                    </i>Online Exam</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/questionbank" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Question Bank</a>
+                </li>
+              </ul>
+            </li>
+
+            <!--Online Examination module end here-->
+            <!--Academics Module here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-calendar"></i><span>Academics</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/class-timetable" class="nav-link"><i class="fas fa-angle-right"></i>Class Timetable</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/teachers-timetable" class="nav-link"><i class="fas fa-angle-right"></i>Teachers
+                    Timetable</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/assign-class-teacher" class="nav-link "><i class="fas fa-angle-right"></i>Assign Class
+                    Teacher</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/promote-students" class="nav-link"><i class="fas fa-angle-right"></i>Promote
+                    Students</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/subject-group" class="nav-link"><i class="fas fa-angle-right"></i>Subject Group</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/subjects" class="nav-link"><i class="fas fa-angle-right"></i>Subjects </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/class" class="nav-link "><i class="fas fa-angle-right"></i>Class</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/Sections" class="nav-link"><i class="fas fa-angle-right"></i>Sections</a>
+                </li>
+              </ul>
+            </li>
+            <!-- academics module end here -->
+            <!-- hr module starts here -->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Human Resource</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/staff-directory" class="nav-link"><i class="fas fa-angle-right"></i>Staff Directory</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/staff-attendance-type" class="nav-link"><i class="fas fa-angle-right"></i>Staff
+                    Attendance
+                    Type</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/staff-attendance" class="nav-link"><i class="fas fa-angle-right"></i>Staff
+                    Attendance</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/payroll" class="nav-link">
+                    <!--menu-active--><i class="fas fa-angle-right"></i>Payroll</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/approve-leave-request" class="nav-link"><i class="fas fa-angle-right"></i>Approve Leave
+                    Request</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/apply-leave" class="nav-link"><i class="fas fa-angle-right"></i>Apply Leave</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/leave-type" class="nav-link"><i class="fas fa-angle-right"></i>Leave Type</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/department" class="nav-link"><i class="fas fa-angle-right"></i>Department</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/designation" class="nav-link"><i class="fas fa-angle-right"></i>Designation</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/teachers-rating" class="nav-link"><i class="fas fa-angle-right"></i>Teachers Rating</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/disabled-staff" class="nav-link"><i class="fas fa-angle-right"></i>Disabled Staff</a>
+                </li>
+
+              </ul>
+            </li>
+            <!-- hr ends here -->
+
+            <!--Communicate module here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="fas fa-bullhorn"></i><span>Communicate</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/noticeboard" class="nav-link"><i class="fas fa-angle-right">
+
+                    </i>Notice Board</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/sendemail" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Send Email</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/sendsms" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Send SMS</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/emailsmslog" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Email SMS Log</a>
+                </li>
+              </ul>
+            </li>
+            <!--Comminucate Module End here-->
+            <!--Download center start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="fas fa-bullhorn"></i><span>Download Center</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/app-upload-content" class="nav-link"><i class="fas fa-angle-right">
+
+                    </i>Upload Content</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/app-assignment" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Assignment</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/app-other-downloads" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Other Downloads</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/app-study-material" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Study Material</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/app-syllabus" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Syllabus</a>
+                </li>
+              </ul>
+            </li>
+            <!--Download center end here-->
+            <!--Homework module here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Homework</span></a>
+              <ul class="nav sub-group-menu">
+                <li class="nav-item">
+                  <a href="/#/add-homework" class="nav-link"><i class="fas fa-angle-right"></i>Add Homework</a>
+                </li>
+
+              </ul>
+            </li>
+            <!--homework Module end here-->
+            <!--Library start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Library</span></a>
+              <ul class="nav sub-group-menu ">
+
+                <li class="nav-item">
+                  <a href="/#/book-list" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Book List</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/issue-return" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Issue Return</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/add-student" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Add Student</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/add-staff" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Add Staff</a>
+                </li>
+
+
+
+              </ul>
+            </li>
+
+            <!--Library end-->
+            <!--Inventor Module start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-bed"></i><span>Inventory</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/add-item" class="nav-link"><i class="fas fa-angle-right">
+
+                    </i>Add Item</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/add-item-stock" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Add Item Stock</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/issue-item" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Issue Item</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/item-category" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Item Category</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/item-store" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Item Store</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/item-supplier" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Item Suppiler</a>
+                </li>
+
+              </ul>
+            </li>
+
+            <!--Inventor module end here-->
+
+            <!--transport module here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Transport</span></a>
+              <ul class="nav sub-group-menu">
+                <li class="nav-item">
+                  <a href="/#/route" class="nav-link"><i class="fas fa-angle-right"></i>Add Route</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/vehicle" class="nav-link"><i class="fas fa-angle-right"></i>Add Vehicle</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/assign-vehicle" class="nav-link"><i class="fas fa-angle-right"></i>Assign Vehhicle</a>
+                </li>
+              </ul>
+            </li>
+            <!--transport Module end here-->
+            <!--Hostel Module start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-bed"></i><span>Hostel</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/add-hostel" class="nav-link"><i class="fas fa-angle-right">
+
+                    </i>Add Hostel</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/add-room-type" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Add Room Type</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/add-rooms" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Add Rooms</a>
+                </li>
+
+              </ul>
+            </li>
+
+            <!--Hostel module end here-->
+
+
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Certificate</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/student-certificate" class="nav-link"><i class="fas fa-angle-right"></i>Student
+                    certificate</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/generate-certificate" class="nav-link"><i class="fas fa-angle-right"></i>Generate
+                    Certificate</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/student-id" class="nav-link">
+                    <!--menu-active--><i class="fas fa-angle-right"></i>Student ID Card</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/generate-id" class="nav-link"><i class="fas fa-angle-right"></i>Generate ID Card </a>
+                </li>
+              </ul>
+            </li>
+            <!--FrontCMS start here-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="fas fa-bullhorn"></i><span>Front CMS</span></a>
+              <ul class="nav sub-group-menu ">
+                <li class="nav-item">
+                  <a href="/#/event" class="nav-link"><i class="fas fa-angle-right">
+
+                    </i>Events</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/gallary" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Gallary</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/news" class="nav-link"><i class="fas fa-angle-right">
+                    </i>News</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/media-manager" class="nav-link "><i class="fas fa-angle-right"></i>Media Manager</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/menus" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Menus</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/pages" class="nav-link"><i class="fas fa-angle-right">
+                    </i>Pages</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/banner-images" class="nav-link "><i class="fas fa-angle-right">
+                    </i>Banner Images</a>
+                </li>
+              </ul>
+            </li>
+
+            <!--FrontCMS end here-->
+
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Reports</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/student-information" class="nav-link" routerLinkActive="active"><i
+                      class="fas fa-angle-right"></i>Student Information</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/finance" class="nav-link"><i class="fas fa-angle-right"></i>Finance</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/attendance" class="nav-link">
+                    <!--menu-active--><i class="fas fa-angle-right"></i>Attendance</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/examinations" class="nav-link"><i class="fas fa-angle-right"></i>Examination</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/online-examinations" class="nav-link"><i class="fas fa-angle-right"></i>Online
+                    Examination</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#/human-resources" class="nav-link"><i class="fas fa-angle-right"></i>Human Resource</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/library" class="nav-link"><i class="fas fa-angle-right"></i>Library</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/inventory" class="nav-link"><i class="fas fa-angle-right"></i>Inventory</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/transport" class="nav-link"><i class="fas fa-angle-right"></i>Transport</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/hostel" class="nav-link"><i class="fas fa-angle-right"></i>Hostel</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/user-log" class="nav-link"><i class="fas fa-angle-right"></i>User Log</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/audit-trail-report" class="nav-link"><i class="fas fa-angle-right"></i>Audit Trail
+                    Report</a>
+                </li>
+              </ul>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+            <!--<li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Acconunt</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
+                                    Collection</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="all-expense.html" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Expenses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                    Expenses</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i
+                                class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                    Classes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                    Class</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="all-subject.html" class="nav-link"><i
+                                class="flaticon-open-book"></i><span>Subject</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class
+                                Routine</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="student-attendence.html" class="nav-link"><i
+                                class="flaticon-checklist"></i><span>Attendence</span></a>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                    Schedule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                    Grades</a>
+                            </li>
+                        </ul>
+                    </li>-->
+
+
+
+            <!--<li class="nav-item">
+                        <a href="notice-board.html" class="nav-link"><i
+                                class="flaticon-script"></i><span>Notice</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="messaging.html" class="nav-link"><i
+                                class="flaticon-chat"></i><span>Messeage</span></a>
+                    </li>
+                    <li class="nav-item sidebar-nav-item">
+                        <a href="#" class="nav-link"><i class="flaticon-menu-1"></i><span>UI Elements</span></a>
+                        <ul class="nav sub-group-menu">
+                            <li class="nav-item">
+                                <a href="notification-alart.html" class="nav-link"><i class="fas fa-angle-right"></i>Alart</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="button.html" class="nav-link"><i class="fas fa-angle-right"></i>Button</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="grid.html" class="nav-link"><i class="fas fa-angle-right"></i>Grid</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="modal.html" class="nav-link"><i class="fas fa-angle-right"></i>Modal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="progress-bar.html" class="nav-link"><i class="fas fa-angle-right"></i>Progress Bar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="ui-tab.html" class="nav-link"><i class="fas fa-angle-right"></i>Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="ui-widget.html" class="nav-link"><i
+                                        class="fas fa-angle-right"></i>Widget</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="map.html" class="nav-link"><i
+                                class="flaticon-planet-earth"></i><span>Map</span></a>
+                    </li>-->
+            <li class="nav-item sidebar-nav-item">
+              <a href="#" class="nav-link"><i class="flaticon-settings"></i><span>System Setting</span></a>
+              <ul class="nav sub-group-menu">
+                <!-- sub-group-active-->
+                <li class="nav-item">
+                  <a href="/#/sesstion-setting" class="nav-link" routerLinkActive="active"><i
+                      class="fas fa-angle-right"></i>Sesstion Setting</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/#/roles-permission" class="nav-link" routerLinkActive="active"><i
+                      class="fas fa-angle-right"></i>Roles Permission</a>
+                </li>
+
+
+
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Sidebar Area End Here -->
+
+
+      <div class="dashboard-content-one">
+        <app-root></app-root>
+        <div id="globalLoader" class="global-loader">
+          <h1>LOADING...</h1>
+        </div>
+      </div>
+      <!-- =================================login window start=======================================-->
+      <div id="loginPopup" class="modal fade" role="dialog">
+
+      </div>
+
+      <!-- =================================login window end =========================================-->
+
+
+    </div>
+
+
+
+
+
+    <!-- jquery-->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/assets/js/plugins.js"></script>
+    <!-- Popper js -->
+    <script src="/assets/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Select 2 Js -->
+    <script src="/assets/js/select2.min.js"></script>
+    <!-- Date Picker Js -->
+    <script src="/assets/js/datepicker.min.js"></script>
+    <!-- Scroll Up Js -->
+    <script src="/assets/js/jquery.scrollUp.min.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/js/main.js"></script>
+
+
+    <!--Export table JS-->
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <!-- Buttons -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.buttons.min.js"></script>
+
+    <script src="assets/js/jszip.min.js"></script>
+    <script src="assets/js/pdfmake.min.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>
+    <script src="assets/js/buttons.html5.min.js"></script>
+    <script src="assets/js/buttons.print.min.js"></script>
+    <script src="assets/js/buttons.colVis.min.js"></script>
+</body>
+
+</html>

@@ -9,6 +9,7 @@ import { LoginComponent } from 'src/app/login/login.component';
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  
 
   constructor(private preloader: PreloaderService, private http: HttpClient) {}
   

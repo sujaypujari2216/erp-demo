@@ -21,19 +21,17 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets/"
+              "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-             
+            
+           
+              "src/styles.css"
             
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/tether/dist/js/tether.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
-
+              
+              
             ]
           },
           "configurations": {
@@ -94,13 +92,38 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/assets/css/normalize.css",
+              "src/assets/css/main.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/all.min.css",
+              "src/assets/fonts/flaticon.css",
+              "src/assets/css/animate.min.css",
+              "src/assets/css/select2.min.css",
+              "src/assets/css/datepicker.min.css",
+              "src/assets/js/modernizr-3.6.0.min.js",
+              "src/assets/css/jquery.dataTables.min.css",
+              "src/assets/css/buttons.dataTables.min.css"
               
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/tether/dist/js/tether.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              
+              "src/assets/js/jquery-3.3.1.min.js",
+              "src/assets/js/plugins.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/select2.min.js",
+              "src/assets/js/datepicker.min.js",
+              "src/assets/js/jquery.scrollUp.min.js",
+              "src/assets/js/main.js",
+              "src/assets/js/jquery-3.3.1.js",
+              "src/assets/js/jquery.dataTables.min.js",
+              "src/assets/js/dataTables.buttons.min.js",
+              "src/assets/js/jszip.min.js",
+              "src/assets/js/pdfmake.min.js",
+              "src/assets/js/vfs_fonts.js",
+              "src/assets/js/buttons.html5.min.js",
+              "src/assets/js/buttons.print.min.js",
+              "src/assets/js/buttons.colVis.min.js" 
   ]
           }
         },

@@ -6,8 +6,8 @@
     </div>
     <div class="sidebar-menu-content ">
       <ul class="nav nav-sidebar-menu sidebar-toggle-view active">
-        <li class="nav-item sidebar-nav-item ">
-          <a href="#" class="nav-link" ><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+        <li class="nav-item navbar-collapse sidebar-nav-item ">
+          <a href="#" class="nav-link dropdown-btn" ><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
 
           <ul class="nav sub-group-menu ">
             <li class="nav-item">
@@ -617,4 +617,21 @@
         </li>
       </ul>
     </div>
+    
 </div>
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>

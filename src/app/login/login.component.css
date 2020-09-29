@@ -31,9 +31,14 @@
 
 .content{
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 .image{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
     width: 21em;
 }
 .image > img{

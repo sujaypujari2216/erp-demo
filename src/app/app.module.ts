@@ -143,6 +143,6 @@ NavbarComponent,
     ),
   ],
   providers: [DatatableService],
-  bootstrap: [AppComponent,SidebarComponent,NavbarComponent],
+   bootstrap: [AppComponent],
 })
 export class AppModule { }
