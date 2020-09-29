@@ -66,12 +66,12 @@
                     <label for="inp" class="inp">
                       <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="itemDto.name"
                         name="name" [value]="itemDto.name">
-                      <span class="label">Item Name</span>
+                      <span class="label">Item </span>
                       <span class="focus-bg"></span>
                     </label>
                   </div>
 
-                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                  <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label for="slt" class="slt">
                       <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemStoreId"
                         name="itemStoreId">
@@ -85,31 +85,31 @@
                       <span class="focus-bg"></span>
                     </label>
 
-                  </div>
+                  </div> -->
                   <div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label for="slt" class="slt">
-                      <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemSupplierId"
-                        name="itemSupplierId">
+                      <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemCategoryId"
+                        name="itemCategoryId">
                         <option selected>Please Select *</option>
-                        <option *ngFor="let supplier of suppliers" [value]="supplier.itemSupplier"
-                          [selected]="itemDto.itemSupplierId == supplier.itemSupplier">
-                          {{ supplier.itemSupplier }}
+                        <option *ngFor="let Category of categories" [value]="Category.itemCategoryId"
+                          [selected]="itemDto.itemCategoryId == Category.itemCategoryId">
+                          {{ Category.itemCategoryId }}
                         </option>
                       </select>
-                      <span class="label">Item Supplier*</span>
+                      <span class="label">Item Category*</span>
                       <span class="focus-bg"></span>
                     </label>
 
                   </div>
 
-                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                  <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label for="inp" class="inp">
                       <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
                         [(ngModel)]="itemDto.itemPhoto" name="itemPhoto" [value]="itemDto.itemPhoto">
                       <span class="label">Item Photo</span>
                       <span class="focus-bg"></span>
                     </label>
-                  </div>
+                  </div> -->
 
                   <div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label for="inp" class="inp">
@@ -119,7 +119,7 @@
                       <span class="focus-bg"></span>
                     </label>
                   </div>
-                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                  <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label for="inp" class="inp">
                       <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
                         [(ngModel)]="itemDto.quantity" name="quantity" [value]="itemDto.quantity">
@@ -127,15 +127,15 @@
                       <span class="focus-bg"></span>
                     </label>
                   </div>
-
-                  <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
+ -->
+                  <!-- <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
                     <label for="inp" class="inp">
                       <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="itemDto.date"
                         name="date" [value]="itemDto.date">
                       <span class="label">Date</span>
                       <span class="focus-bg"></span>
                     </label>
-                  </div>
+                  </div> -->
                   <div class="col-xl-4 col-lg-6 col-12 form-group" row="3">
                     <label for="inp" class="inp">
                       <input type="text" class="form-control" id="inp" placeholder="&nbsp;"

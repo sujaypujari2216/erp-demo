@@ -11,7 +11,7 @@ constructor(private http: HttpClient) { }
   url = `http://yamistha.cloudjiffy.net/feemaster/`;
 
 
-  addmaster(requestDto): any {
+addmaster(requestDto): any {
   return this.http.post(this.url, requestDto);
 }
 

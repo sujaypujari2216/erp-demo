@@ -10,227 +10,189 @@
 <!-- Breadcubs Area End Here -->
 <!-- upload Area Start Here -->
 
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="heading-layout1">
-      <div class="item-title">
-        <h3>Admit Card List</h3>
-      </div>
-      <div class="dropdown">
-        <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-          class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add</button>
-      </div>
-    </div>
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Certificate Name</th>
-            <th>Background img</th>
 
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let card of cards">
-            <td>{{ card.template }}</td>
-            <td>{{ card.backgroundImg }}</td>
-
-
-            <td> <a (click)="setUpdateFileds(card.id)" data-toggle="modal" data-target="#myModal"><i
-                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="deleteadmitcard(card.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a></td>
-
-          </tr>
-        </tbody>
-
-      </table>
-    </div>
-  </div>
-</div>
 
 <!-- upload Area End Here -->
-<div class="container">
-
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Add Student Admit Card</h3>
+          </div>
 
         </div>
-        <div class="modal-body">
-          <form role="form" method="post" id="reused_form">
-            <div class="row">
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.template" name="template" [value]="templateAdmitcardDto.template">
-                  <span class="label">Template *</span>
-                  <span class="focus-bg"></span>
+
+        <form role="form" method="post" id="reused_form">
+          <div class="row">
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label for="inp" class="inp">
+                <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.template" name="template" [value]="templateAdmitcardDto.template">
+                <span class="label">Template *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label for="inp" class="inp">
+                <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.title" name="title" [value]="templateAdmitcardDto.title">
+                <span class="label">Heading Title *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label for="inp" class="inp">
+                <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.examName" name="examName" [value]="templateAdmitcardDto.examName">
+                <span class="label">Exam Name *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label for="inp" class="inp">
+                <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.examCenter" name="examCenter"
+                  [value]="templateAdmitcardDto.examCenter">
+                <span class="label">Exam Center *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label class="text-dark-medium" style="font-size: small;">Left Logo</label>
+              <input type="file" class="form-control-file" name="leftLogo" placeholder="left logo"
+                [(ngModel)]="templateAdmitcardDto.leftLogo" required>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label class="text-dark-medium" style="font-size: small;">Right Logo</label>
+              <input type="file" class="form-control-file" name="rightLogo" placeholder="right logo"
+                [(ngModel)]="templateAdmitcardDto.rightLogo" required>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label class="text-dark-medium" style="font-size: small;">Sign</label>
+              <input type="file" class="form-control-file" name="sign" placeholder="sign"
+                [(ngModel)]="templateAdmitcardDto.sign" required>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label class="text-dark-medium" style="font-size: small;">Background Image</label>
+              <input type="file" class="form-control-file" name="backgroundImg" placeholder="Background Image"
+                [(ngModel)]="templateAdmitcardDto.backgroundImg" required>
+            </div><br><br><br>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+
+              <label for="inp" class="inp" style="font-size: small;">Name</label>
+              <div class="onoffswitch">
+
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isName" name="isName" [value]="templateAdmitcardDto.isName">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
                 </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.title" name="title" [value]="templateAdmitcardDto.title">
-                  <span class="label">Heading Title *</span>
-                  <span class="focus-bg"></span>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+
+              <label for="inp" class="inp" style="font-size: small;">Father's Name</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isFatherName" name="isFatherName"
+                  [value]="templateAdmitcardDto.isFatherName">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
                 </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.examName" name="examName" [value]="templateAdmitcardDto.examName">
-                  <span class="label">Exam Name *</span>
-                  <span class="focus-bg"></span>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+
+              <label for="inp" class="inp" style="font-size: small;">Mother's Name</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isMotherName" name="isMotherName"
+                  [value]="templateAdmitcardDto.isMotherName">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
                 </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.examCenter" name="examCenter"
-                    [value]="templateAdmitcardDto.examCenter">
-                  <span class="label">Exam Center *</span>
-                  <span class="focus-bg"></span>
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+
+              <label for="inp" class="inp" style="font-size: small;">Date Of Birth</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isDob" name="isDob" [value]="templateAdmitcardDto.isDob"> <label
+                  class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
                 </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label class="text-dark-medium" style="font-size: small;">Left Logo</label>
-                <input type="file" class="form-control-file" name="leftLogo" placeholder="left logo"
-                  [(ngModel)]="templateAdmitcardDto.leftLogo" required>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label class="text-dark-medium" style="font-size: small;">Right Logo</label>
-                <input type="file" class="form-control-file" name="rightLogo" placeholder="right logo"
-                  [(ngModel)]="templateAdmitcardDto.rightLogo" required>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label class="text-dark-medium" style="font-size: small;">Sign</label>
-                <input type="file" class="form-control-file" name="sign" placeholder="sign"
-                  [(ngModel)]="templateAdmitcardDto.sign" required>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label class="text-dark-medium" style="font-size: small;">Background Image</label>
-                <input type="file" class="form-control-file" name="backgroundImg" placeholder="Background Image"
-                  [(ngModel)]="templateAdmitcardDto.backgroundImg" required>
-              </div><br><br><br>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
 
-                <label for="inp" class="inp" style="font-size: small;">Name</label>
-                <div class="onoffswitch">
-
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isName" name="isName" [value]="templateAdmitcardDto.isName">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
+              <label for="inp" class="inp" style="font-size: small;">Admission No</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isAdmissionNo" name="isAdmissionNo"
+                  [value]="templateAdmitcardDto.isAdmissionNo">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
 
-                <label for="inp" class="inp" style="font-size: small;">Father's Name</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isFatherName" name="isFatherName"
-                    [value]="templateAdmitcardDto.isFatherName">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
+              <label for="inp" class="inp" style="font-size: small;">Roll No</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isRollNo" name="isRollNo" [value]="templateAdmitcardDto.isRollNo">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <label for="inp" class="inp" style="font-size: small;">Gender</label>
 
-                <label for="inp" class="inp" style="font-size: small;">Mother's Name</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isMotherName" name="isMotherName"
-                    [value]="templateAdmitcardDto.isMotherName">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isGender" name="isGender" [value]="templateAdmitcardDto.isGender">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
 
-                <label for="inp" class="inp" style="font-size: small;">Date Of Birth</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isDob" name="isDob" [value]="templateAdmitcardDto.isDob"> <label
-                    class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
+              <label for="inp" class="inp" style="font-size: small;">Address</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isAddress" name="isAddress"
+                  [value]="templateAdmitcardDto.isAddress">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
+            </div>
+            <div class="col-xl-12 col-lg-6 col-12 form-group">
 
-                <label for="inp" class="inp" style="font-size: small;">Admission No</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isAdmissionNo" name="isAdmissionNo"
-                    [value]="templateAdmitcardDto.isAdmissionNo">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
+              <label for="inp" class="inp" style="font-size: small;">Photo</label>
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
+                  [(ngModel)]="templateAdmitcardDto.isPhoto" name="isPhoto" [value]="templateAdmitcardDto.isPhoto">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
               </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-
-                <label for="inp" class="inp" style="font-size: small;">Roll No</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isRollNo" name="isRollNo" [value]="templateAdmitcardDto.isRollNo">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <label for="inp" class="inp" style="font-size: small;">Gender</label>
-
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isGender" name="isGender" [value]="templateAdmitcardDto.isGender">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-
-                <label for="inp" class="inp" style="font-size: small;">Address</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isAddress" name="isAddress"
-                    [value]="templateAdmitcardDto.isAddress">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-
-                <label for="inp" class="inp" style="font-size: small;">Photo</label>
-                <div class="onoffswitch">
-                  <input type="checkbox" class="onoffswitch-checkbox" id="myonoffswitch" placeholder="&nbsp;"
-                    [(ngModel)]="templateAdmitcardDto.isPhoto" name="isPhoto" [value]="templateAdmitcardDto.isPhoto">
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </div>
-              </div>
-              <!-- <clr-main-container>
+            </div>
+            <!-- <clr-main-container>
                 <div class="content-container">
                   <div class="content-area">
                     <form>
@@ -286,19 +248,56 @@
                 </div>
               </clr-main-container> -->
 
-              <br><br><br>
-              <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate" (click)="addadmitcard()"
-                  type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
-                  data-target="#myModal">
-                  Save
-                </button>
-                <button *ngIf="this.isUpdate" (click)="updateadmitcard(templateAdmitcardDto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Update
-                </button>
-              </div>
+            <br><br><br>
+            <div class="col-xl-4 col-lg-6 col-12 form-group"> <button *ngIf="!this.isUpdate" (click)="addadmitcard()"
+                type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updateadmitcard(templateAdmitcardDto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
             </div>
-          </form>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-8 col-6">
+
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Admit Card List</h3>
+          </div>
+
+        </div>
+        <div class="table-responsive">
+          <table id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+                <th>Certificate Name</th>
+                <th>Background img</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let card of cards">
+                <td>{{ card.template }}</td>
+                <td>{{ card.backgroundImg }}</td>
+
+
+                <td> <a (click)="setUpdateFileds(card.id)" data-toggle="modal" data-target="#myModal"><i
+                      class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleteadmitcard(card.id)"><i class=" fas fa-times text-orange-red"></i>&nbsp;</a></td>
+
+              </tr>
+            </tbody>
+
+          </table>
         </div>
       </div>
     </div>
