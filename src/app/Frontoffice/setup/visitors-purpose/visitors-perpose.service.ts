@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VisitorsPerposeService {
 
-  url = `http://yamistha.cloudjiffy.net/visitor-purpose/`;
+  url = `http://yamistha.cloudjiffy.net/api/visitor-purpose/`;
 
   constructor(private http: HttpClient) { }
 

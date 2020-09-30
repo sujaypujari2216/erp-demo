@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class AdmissionService {
-  url = `http://yamistha.cloudjiffy.net/enquiry/`;
+  url = `http://yamistha.cloudjiffy.net/api/enquiry/`;
 
   constructor(private http: HttpClient) { }
 

@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class PostalreceiveService {
-  url = `http://yamistha.cloudjiffy.net/dispatch-receive`;
+  url = `http://yamistha.cloudjiffy.net/api/dispatch-receive`;
 
 
   constructor(private http: HttpClient) { }

@@ -9,7 +9,7 @@ import { FeesGroupService } from './feesgroup.service';
   styleUrls: ['./feesgroup.component.css']
 })
 export class FeesgroupComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/fee-group/`;
+  url = `http://yamistha.cloudjiffy.net/api/fee-group/`;
   
 
 

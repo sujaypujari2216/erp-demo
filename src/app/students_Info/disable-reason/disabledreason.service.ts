@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class DisabledreasonService {
 
   constructor(private http: HttpClient) { }
-  url = `http://yamistha.cloudjiffy.net/disable-reason`;
+  url = `http://yamistha.cloudjiffy.net/api/disable-reason`;
 
   save(disableReason): any {
     return this.http.post(this.url, disableReason);

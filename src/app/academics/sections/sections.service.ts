@@ -9,23 +9,23 @@ export class SectionsService {
 
   constructor(private http: HttpClient) { }
   saveSection(sectionDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/section', sectionDto);
+    return this.http.post('http://yamistha.cloudjiffy.net/api/section', sectionDto);
   }
 
   getAllSectionList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/section/');
+    return this.http.get('http://yamistha.cloudjiffy.net/api/section/');
   }
 
   deleteSection(sectionId): any {
-    return this.http.delete('http://yamistha.cloudjiffy.net/section/' + sectionId);
+    return this.http.delete('http://yamistha.cloudjiffy.net/api/section/' + sectionId);
   }
 
   updateSection(sectionDto, sectionId): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/section/' + sectionId, sectionDto);
+    return this.http.put('http://yamistha.cloudjiffy.net/api/section/' + sectionId, sectionDto);
   }
 
   getSectionById(sectionId): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/section/' + sectionId);
+    return this.http.get('http://yamistha.cloudjiffy.net/api/section/' + sectionId);
   }
 
 }

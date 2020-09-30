@@ -12,7 +12,7 @@ import { SessionsettingService } from 'src/app/system_setting/sesstion-setting/s
 })
 export class FeesmasterComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/feemaster/`;
+  url = `http://yamistha.cloudjiffy.net/api/feemaster/`;
 
   feemasters = [];
   requestDto = {

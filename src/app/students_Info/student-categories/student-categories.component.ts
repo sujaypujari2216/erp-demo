@@ -8,7 +8,7 @@ import { StudcategoryService } from './studcategory.service';
   styleUrls: ['./student-categories.component.css']
 })
 export class StudentCategoriesComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/category/`;
+  url = `http://yamistha.cloudjiffy.net/api/category/`;
 
   students = [];
   categoryDto = {

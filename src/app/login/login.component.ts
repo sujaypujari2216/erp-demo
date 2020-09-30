@@ -22,14 +22,16 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authloginservice.isLogin(this.loginRequest).subscribe((res: any) => {
-      //console.log(res);
-      if (res.email == "admin@gmail.com") {
+      console.log(res);
+   
       this.router.navigate(['/admin']);
+     
       console.log('success');
       alert('Login Successfull');
-      }
+     
     }, (err) => {
       console.log('Error While Login');
+      alert('Wrong Credentials!!!');
       console.error(err);
     });
   }

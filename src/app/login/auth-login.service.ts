@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthLoginService {
- url=`http://yamistha.cloudjiffy.net/login/`;
+ url=`http://yamistha.cloudjiffy.net/auth/login/`;
 
   constructor(private  http:HttpClient) { }
   isLogin(loginRequest): any {

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class CalllogsService {
   constructor(private http: HttpClient) { }
 
-  url = `http://yamistha.cloudjiffy.net/general-call/`;
+  url = `http://yamistha.cloudjiffy.net/api/general-call/`;
 
   save(Dto): any {
     return this.http.post(this.url, Dto);

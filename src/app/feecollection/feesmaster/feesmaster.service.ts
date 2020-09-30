@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class FeesmasterService {
 constructor(private http: HttpClient) { }
 
-  url = `http://yamistha.cloudjiffy.net/feemaster/`;
+  url = `http://yamistha.cloudjiffy.net/api/feemaster/`;
 
 
 addmaster(requestDto): any {

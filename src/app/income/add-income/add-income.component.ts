@@ -11,7 +11,7 @@ import { IncomeheadService } from 'src/app/income/income-head/incomehead.service
 export class AddIncomeComponent implements OnInit {
 
 
-  url = `http://yamistha.cloudjiffy.net/income/`;
+  url = `http://yamistha.cloudjiffy.net/api/income/`;
 
   incomes = [];
   incomeDto = {

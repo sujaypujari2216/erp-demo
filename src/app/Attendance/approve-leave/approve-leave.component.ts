@@ -8,7 +8,7 @@ import { ApproveLeaveService } from './approve-leave.service';
 })
 export class ApproveLeaveComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/student apply leave/`;
+  url = `http://yamistha.cloudjiffy.net/api/student-apply-leave/`;
 
 
   studentApplyleaves = [];

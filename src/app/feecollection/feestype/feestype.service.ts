@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class FeestypeService {
   constructor(private http: HttpClient) { }
 
-  url = 'http://yamistha.cloudjiffy.net/fee-type/';
+  url = 'http://yamistha.cloudjiffy.net/api/fee-type/';
 
 
   save(feeTypeDto): any {

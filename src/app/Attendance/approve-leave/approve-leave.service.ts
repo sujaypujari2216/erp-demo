@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class ApproveLeaveService {
-  url = `http://yamistha.cloudjiffy.net/student apply leave/`;
+  url = `http://yamistha.cloudjiffy.net/api/student-apply-leave/`;
   constructor(private http: HttpClient) { }
   save(Dto): any {
     return this.http.post(this.url, Dto);

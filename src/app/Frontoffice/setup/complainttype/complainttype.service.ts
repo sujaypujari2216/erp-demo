@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ComplainttypeService {
-  url = `http://yamistha.cloudjiffy.net/complaint-type/`;
+  url = `http://yamistha.cloudjiffy.net/api/complaint-type/`;
 
   constructor(private http: HttpClient) { }
 

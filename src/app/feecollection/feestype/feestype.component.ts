@@ -9,7 +9,7 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
   //styleUrls: ['./setup.component.scss']
 })
 export class FeestypeComponent implements OnInit {
-  url = 'http://yamistha.cloudjiffy.net/fee-type/';
+  url = 'http://yamistha.cloudjiffy.net/api/fee-type/';
 
   constructor(private feestypeService: FeestypeService, private datatableservice: DatatableService) { }
 

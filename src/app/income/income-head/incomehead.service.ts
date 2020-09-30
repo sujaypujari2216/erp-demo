@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class IncomeheadService {
   constructor(private http: HttpClient) { }
 
-  url = 'http://yamistha.cloudjiffy.net/income-head/';
+  url = 'http://yamistha.cloudjiffy.net/api/income-head/';
 
 
   save(incomeHeadDto): any {

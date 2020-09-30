@@ -9,23 +9,23 @@ export class ClassService {
   constructor(private http: HttpClient) { }
 
   saveClass(classDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/class/', classDto);
+    return this.http.post('http://yamistha.cloudjiffy.net/api/api/class/', classDto);
   }
 
   getClassList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/class/');
+    return this.http.get('http://yamistha.cloudjiffy.net/api/api/class/');
   }
 
   deleteClass(classId): any {
-    return this.http.delete('http://yamistha.cloudjiffy.net/class/' + classId);
+    return this.http.delete('http://yamistha.cloudjiffy.net/api/api/class/' + classId);
   }
 
   updateClass(classDto, classId): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/class/' + classId, classDto);
+    return this.http.put('http://yamistha.cloudjiffy.net/api/api/class/' + classId, classDto);
   }
 
   getClassById(classId): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/class/' + classId);
+    return this.http.get('http://yamistha.cloudjiffy.net/api/api/class/' + classId);
   }
 
 }

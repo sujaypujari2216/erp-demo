@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class FeediscountService {
   constructor(private http: HttpClient) { }
 
-  url = 'http://yamistha.cloudjiffy.net/fee-discount/';
+  url = 'http://yamistha.cloudjiffy.net/api/fee-discount/';
 
 
   save(feeDiscountDto): any {

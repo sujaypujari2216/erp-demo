@@ -11,7 +11,7 @@ import { ExpenseheadService } from 'src/app/expenses/expenses-head/expensehead.s
 })
 export class AddExpensesComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/expense/`;
+  url = `http://yamistha.cloudjiffy.net/api/expense/`;
 
   expenses = [];
   expenseDto = {

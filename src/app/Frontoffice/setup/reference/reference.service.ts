@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class ReferenceService {
-  url = `http://yamistha.cloudjiffy.net/reference/`;
+  url = `http://yamistha.cloudjiffy.net/api/reference/`;
 
   constructor(private http: HttpClient) { }
 

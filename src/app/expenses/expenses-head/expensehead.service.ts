@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ExpenseheadService {
   constructor(private http: HttpClient) { }
 
-  url = 'http://yamistha.cloudjiffy.net/expense-head/';
+  url = 'http://yamistha.cloudjiffy.net/api/expense-head/';
 
 
   save(expenseHeadDto): any {
