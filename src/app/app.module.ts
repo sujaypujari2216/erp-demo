@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HomeComponent } from "./dashboard/home/home.component";
@@ -55,6 +55,7 @@ import { SesstionSettingComponent } from './system_setting/sesstion-setting/sess
 
 import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login.component';
+import { UniversalAppInterceptorService } from './universal-app-interceptor.service';
 
 
 
@@ -132,7 +133,7 @@ SesstionSettingComponent,
       { useHash: true }
     ),
   ],
-  providers: [DatatableService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: UniversalAppInterceptorService, multi: true },DatatableService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
