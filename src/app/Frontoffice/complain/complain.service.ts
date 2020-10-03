@@ -8,14 +8,9 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 export class ComplainService {
 
   url = `http://yamistha.cloudjiffy.net/api/complaint/`;
-<<<<<<< HEAD
 
-  constructor(private http: HttpClient) { }
-
-=======
   constructor(private http: HttpClient,private awt:JWTTokenServiceService) { }
 	
->>>>>>> 2ab9689127546faf1e22d424d21d3343f73255aa
   addComplain(complaint): any {
     return this.http.post(this.url, complaint);
   }
@@ -39,10 +34,7 @@ export class ComplainService {
     return this.http.get(this.url + complainId);
   }
 
-<<<<<<< HEAD
 }
-=======
 
 
-}
->>>>>>> 2ab9689127546faf1e22d424d21d3343f73255aa
+
