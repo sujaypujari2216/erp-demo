@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode';
+import { JWTTokenServiceService } from '../jwttoken-service.service';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthLoginService {
+  
  url=`http://yamistha.cloudjiffy.net/auth/login/`;
 
  decodedToken:String;
-  jwtToken: any;
-  constructor(private  http:HttpClient) { }
+  jwtToken: string;
+  constructor(private  http:HttpClient,private jwt:JWTTokenServiceService) { }
   isLogin(loginRequest): any {
     return this.http.post(this.url, loginRequest);
   }

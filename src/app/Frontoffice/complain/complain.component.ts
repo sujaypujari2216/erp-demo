@@ -81,6 +81,7 @@ export class ComplainComponent implements OnInit {
       var content = data['content'];
       this.complains = content.map((key) => ({ ...key }));
       this.datatableservice.initTable('Complaint');
+    
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);

@@ -12,6 +12,7 @@ export class ArtcodeAPIService {
 
  httpOptions={
    headers:new HttpHeaders({
+     
      'Content-Type':'application/json'
    })
  }

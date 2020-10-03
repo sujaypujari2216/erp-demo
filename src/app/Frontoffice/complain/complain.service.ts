@@ -7,17 +7,16 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 })
 export class ComplainService {
 
-  url = `http://yamistha.cloudjiffy.net/api/complaint/`;
-  constructor(private http: HttpClient,private awt:JWTTokenServiceService) { }
+  url = `http://yamistha.cloudjiffy.net/api/complaint`;
+  constructor(private http: HttpClient,private jwt:JWTTokenServiceService) { }
 	
   addComplain(complaint): any {
     return this.http.post(this.url, complaint);
   }
-
+  headers=new HttpHeaders().set('Authorization',('Bearer '+this.jwt.jwtToken).toString()).set('Content-Type','application/json').set('sessionid',(this.jwt.getSessionID()).toString());
+  
   getAllComplainList(): any {
-    var header=new HttpHeaders();
-    header.append('sessionid ',this.awt.getSessionID());
-    return this.http.get('http://yamistha.cloudjiffy.net/api/complaint',{headers:header});
+    return this.http.get(this.url,{headers:this.headers});
   }
 
   deleteComplain(complainId): any {
