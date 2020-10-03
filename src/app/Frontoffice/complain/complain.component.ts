@@ -12,7 +12,7 @@ import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 })
 export class ComplainComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/complaint`;
+  url = `http://yamistha.cloudjiffy.net/api/complaint/`;
 
 
   complains = [];
