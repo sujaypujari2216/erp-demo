@@ -6,28 +6,19 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
   providedIn: 'root'
 })
 export class AdmissionService {
-  url = `http://yamistha.cloudjiffy.net/api/enquiry/`;
+  url = `http://yamistha.cloudjiffy.net/api/enquiry`;
 
   constructor(private http: HttpClient,private authservice : AuthLoginService,private jwt:JWTTokenServiceService) { }
-  // private get _authHeader(): string {
-  //   return `Bearer ${this.authservice.jwtToken}`;
-  // }
-  // ,{
-  //   headers: new HttpHeaders().set('', this._authHeader)
-  // }
+ 
   save(enquiry): any {
     return this.http.post(this.url, enquiry);
   }
-
-  getenqList(): any {
-    // const  opts={
-    // headers:new HttpHeaders({
-    //   'X-Requested-With':this.authservice.accessToken
-    // })
-  //};
-  //  HeaderAPI.append('Authorization','Bearer ' + this.authservice.accessToken);
-    
-    return this.http.get(this.url);
+  //this is header file we have to implement in each service where header needs to be pass
+  headers=new HttpHeaders().set('Authorization',('Bearer '+this.jwt.jwtToken).toString()).set('Content-Type','application/json').set('sessionid',(this.jwt.getSessionID()).toString());
+  
+  getList(): any {
+   //here we pass header
+   return this.http.get(this.url,{headers:this.headers});
   }
 
   deleteenq(EnqId): any {

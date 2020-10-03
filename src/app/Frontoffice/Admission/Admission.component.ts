@@ -91,14 +91,16 @@ export class AdmissionComponent implements OnInit {
     );
   } 
   getenqList() {
-    this.admissionenqService.getenqList().subscribe((res: any) => {
+    this.admissionenqService.getList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.enquirys = content.map((key) => ({ ...key }));
       this.datatableservice.initTable('admission');
+      console.log(this.admissionenqService.headers);
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
+      console.log(this.admissionenqService.headers);
     });
   }
   

@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import jwt_decode from 'jwt-decode';
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class JWTTokenServiceService {
   jwtToken: string;
   decodedToken: { [key: string]: string };
-
+  
   constructor() {
   }
+
+  
 
   setToken(token: string) {
     if (token) {
