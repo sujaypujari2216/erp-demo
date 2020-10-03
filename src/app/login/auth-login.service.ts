@@ -14,10 +14,7 @@ export class AuthLoginService {
     return this.http.post(this.url, loginRequest);
   }
   getJWTToken() {
-    if (this.jwtToken) {
       return jwt_decode(this.jwtToken);
-    }
-    return;
   }
   setJWTToken(token:string){
       this.jwtToken=token;

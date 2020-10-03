@@ -8,7 +8,7 @@ export class UniversalAppInterceptorService implements HttpInterceptor {
   constructor( private authService: AuthLoginService) { }
  
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const token = this.authService.getJWTToken();
+    const token = this.authService.jwtToken;
     req = req.clone({
       url:  req.url,
       setHeaders: {

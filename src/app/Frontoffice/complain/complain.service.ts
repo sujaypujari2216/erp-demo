@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComplainService {
 
-  url = `http://yamistha.cloudjiffy.net/complaint/`;
-  constructor(private http: HttpClient) { }
-
+  url = `http://yamistha.cloudjiffy.net/api/complaint/`;
+  constructor(private http: HttpClient,private awt:JWTTokenServiceService) { }
+	
   addComplain(complaint): any {
     return this.http.post(this.url, complaint);
   }
 
   getAllComplainList(): any {
-    return this.http.get(this.url);
+    var header=new HttpHeaders();
+    header.append('sessionid ',this.awt.getSessionID());
+    return this.http.get('http://yamistha.cloudjiffy.net/api/complaint',{headers:header});
   }
 
   deleteComplain(complainId): any {
