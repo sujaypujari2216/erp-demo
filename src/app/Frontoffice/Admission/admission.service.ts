@@ -9,7 +9,12 @@ export class AdmissionService {
   url = `http://yamistha.cloudjiffy.net/api/enquiry/`;
 
   constructor(private http: HttpClient,private authservice : AuthLoginService,private jwt:JWTTokenServiceService) { }
-
+  // private get _authHeader(): string {
+  //   return `Bearer ${this.authservice.jwtToken}`;
+  // }
+  // ,{
+  //   headers: new HttpHeaders().set('', this._authHeader)
+  // }
   save(enquiry): any {
     return this.http.post(this.url, enquiry);
   }
@@ -21,7 +26,7 @@ export class AdmissionService {
     // })
   //};
   //  HeaderAPI.append('Authorization','Bearer ' + this.authservice.accessToken);
-    const session=this.jwt.getSessionID();
+    
     return this.http.get(this.url);
   }
 

@@ -3,6 +3,7 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
 import { ComplainService } from './complain.service';
 import { ComplainttypeService } from 'src/app/Frontoffice/setup/complainttype/complainttype.service';
 import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
+import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 
 
 @Component({
@@ -38,11 +39,11 @@ export class ComplainComponent implements OnInit {
 
 
   constructor(private complainService: ComplainService, private datatableservice: DatatableService,
-    private complainttypeService: ComplainttypeService, private sourceService: SourceService,) { }
+    private complainttypeService: ComplainttypeService, private sourceService: SourceService,private awttoken:JWTTokenServiceService) { }
   // tslint:disable-next-line: align
 
 
-
+    sessionID:string;
   ngOnInit(): void {
     this.getAllComplainList();
     this.getAllComplaintTypeList();
