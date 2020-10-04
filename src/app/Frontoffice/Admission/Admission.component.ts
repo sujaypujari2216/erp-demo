@@ -4,6 +4,8 @@ import { AdmissionService } from './admission.service';
 import { SourceService } from 'src/app/Frontoffice/setup/source/source.service';
 import { ReferenceService } from 'src/app/Frontoffice/setup/reference/reference.service';
 import { ClassService } from 'src/app/academics//class/class.service';
+import { AuthLoginService } from 'src/app/login/auth-login.service';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -45,7 +47,14 @@ export class AdmissionComponent implements OnInit {
     private sourceservice: SourceService,
     private classservice: ClassService,
     private referenceservice: ReferenceService,
-  ) { }
+    private auth:AuthLoginService,
+    private router:Router
+  ) { 
+    if (this.auth.isLoggedIn !== true) {
+      window.alert("Access not allowed!");
+      this.router.navigate(['/Login'])
+    }
+  }
 
   ngOnInit(): void {
     this.getenqList();

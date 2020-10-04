@@ -30,20 +30,21 @@ import { AttendanceRoutingModule } from "./Attendance/Attendance-routing.module"
 import { Issue1Component } from "./Library/issue-return/issue1/issue1.component";
 
 import { LoginModule } from './login/login.module';
+import { HomeComponent } from './dashboard/home/home.component';
+import { AuthGuardGuard } from './auth-guard.guard';
+import { AddMoreStudComponent } from './parents_Info/add-more/add-more.component';
+import { AddParentsComponent } from './parents_Info/add-parents/add-parents.component';
+import { ParentsdetailsComponent } from './parents_Info/parentsdetails/parentsdetails.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: "create", component: CreateComponent },
-  { path: "create-tt", component: CreateTtComponent },
-  { path: "addGallery", component: AddGalleryComponent },
-  { path: "addNews", component: AddNewsComponent },
-  { path: "addPage", component: AddPageComponent },
-  { path: "issue1", component: Issue1Component },
+  
 
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { useHash: true }),
+    // RouterModule.forRoot(routes, { useHash: true }),
     StudentRoutingModule,
     CommunicateRoutingModule,
     SystemRoutingModule,
@@ -67,6 +68,24 @@ const routes: Routes = [
     DashboardRoutingModule,
     AttendanceRoutingModule,
     LoginModule,
+    RouterModule.forRoot(
+      [
+        { path: "", redirectTo: "Login", pathMatch: "full" },
+        { path:"Login",component:LoginComponent},
+        { path: "parentsdetails", component: ParentsdetailsComponent },
+        { path: "addparents", component: AddParentsComponent },
+        { path: "add-more-stud", component: AddMoreStudComponent },
+        { path: "create", component: CreateComponent },
+        { path: "create-tt", component: CreateTtComponent },
+        { path: "addGallery", component: AddGalleryComponent },
+        { path: "addNews", component: AddNewsComponent },
+        { path: "addPage", component: AddPageComponent },
+        { path: "issue1", component: Issue1Component },
+        { path: "admin/:id", component: HomeComponent,canActivate: [AuthGuardGuard] },  
+  
+      ],
+      { useHash: true }
+    ),
   ],
   exports: [RouterModule],
 })
