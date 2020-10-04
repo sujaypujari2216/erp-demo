@@ -13,7 +13,7 @@ import { AdmissionformService } from './admissionform.service';
 })
 export class AdmissionformComponent implements OnInit {
   
-  url = `http://yamistha.cloudjiffy.net/student/`;
+  url = `http://yamistha.cloudjiffy.net/api/student`;
 
 
   admissionforms = [];
@@ -177,6 +177,8 @@ export class AdmissionformComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
+        console.log(this.studentDto);
+
       console.error(err);
     });
   }

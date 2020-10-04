@@ -13,7 +13,7 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 })
 export class ComplainComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/complaint`;
+  url = `http://yamistha.cloudjiffy.net/api/complaint/`;
 
 
   complains = [];

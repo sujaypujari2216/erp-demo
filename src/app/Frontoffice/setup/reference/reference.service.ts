@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { AuthLoginService } from 'src/app/login/auth-login.service';
+import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 
 @Injectable({
   providedIn: "root",
@@ -7,25 +9,24 @@ import { HttpClient } from "@angular/common/http";
 export class ReferenceService {
   url = `http://yamistha.cloudjiffy.net/api/reference/`;
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   save(Dto): any {
-    return this.http.post(this.url, Dto);
+    return this.http.post(this.url, Dto, { headers: this.headers });
   }
-
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
   getrefList(): any {
-    return this.http.get(this.url);
+    return this.http.get(this.url, { headers: this.headers });
   }
 
   delete(Id): any {
-    return this.http.delete(this.url + Id);
+    return this.http.delete(this.url + Id, { headers: this.headers });
   }
 
   update(Dto, Id): any {
-    return this.http.put(this.url + Id, Dto);
+    return this.http.put(this.url + Id, Dto, { headers: this.headers });
   }
 
   getById(Id): any {
-    return this.http.get(this.url + Id);
+    return this.http.get(this.url + Id, { headers: this.headers });
   }
 }

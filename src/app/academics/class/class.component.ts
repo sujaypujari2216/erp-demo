@@ -9,7 +9,7 @@ import { SectionsService } from '../sections/sections.service';
   styleUrls: ['./class.component.css'],
 })
 export class ClassComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/class/`;
+  url = `http://yamistha.cloudjiffy.net/api/ap/class`;
   classes = [];
   classDto = {
     'classses': '',
@@ -77,6 +77,7 @@ export class ClassComponent implements OnInit {
       },
       (err) => {
         console.log('Error While Saving Class');
+        console.log(this.classDto);
         console.error(err);
       }
     );

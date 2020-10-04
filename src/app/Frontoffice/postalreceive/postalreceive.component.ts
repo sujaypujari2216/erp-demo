@@ -7,7 +7,7 @@ import { PostalreceiveService } from './postalreceive.service';
   //styleUrls: ['./postalreceive.component.scss']
 })
 export class PostalreceiveComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/dispatch-receive`;
+  url = `http://yamistha.cloudjiffy.net/api/dispatch-receive`;
 
    postalreceive=[];
   dispatchReceiveDto = {
