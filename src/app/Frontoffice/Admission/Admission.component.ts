@@ -17,7 +17,7 @@ export class AdmissionComponent implements OnInit {
 
   enquirys = [];
   enquiry = {
-    "address": "",
+    'address': "",
     "assigned": "",
     "classId": 0,
     "contact": "",
@@ -115,6 +115,7 @@ export class AdmissionComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
+        console.log(this.enquiry);
       console.error(err);
     });
   }

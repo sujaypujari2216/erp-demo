@@ -11,7 +11,7 @@ export class AdmissionService {
   constructor(private http: HttpClient,private authservice : AuthLoginService,private jwt:JWTTokenServiceService) { }
  
   save(enquiry): any {
-    return this.http.post(this.url, enquiry);
+    return this.http.post(this.url, enquiry,{ headers: this.headers });
   }
   //this is header file we have to implement in each service where header needs to be pass
   headers=new HttpHeaders().set('Authorization',('Bearer '+this.jwt.jwtToken).toString()).set('Content-Type','application/json').set('sessionid',(this.jwt.getSessionID()).toString());
@@ -23,15 +23,15 @@ export class AdmissionService {
 
   deleteenq(EnqId): any {
 
-    return this.http.delete(this.url + EnqId);
+    return this.http.delete(this.url + EnqId, { headers: this.headers });
   }
 
   update(enquiry, EnqId): any {
-    return this.http.put(this.url + EnqId, enquiry);
+    return this.http.put(this.url + EnqId, enquiry, { headers: this.headers });
   }
 
   getById(EnqId): any {
-    return this.http.get(this.url + EnqId);
+    return this.http.get(this.url + EnqId, { headers: this.headers });
   }
 }
 
