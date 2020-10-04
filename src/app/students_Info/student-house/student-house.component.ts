@@ -11,7 +11,7 @@ import { StudentshouseService } from './studentshouse.service';
 export class StudentHouseComponent implements OnInit {
 
 
-  url = 'http://yamistha.cloudjiffy.net/school-house/';
+  url = 'http://yamistha.cloudjiffy.net/api/school-house';
 
   houses = [];
   schoolHous = {

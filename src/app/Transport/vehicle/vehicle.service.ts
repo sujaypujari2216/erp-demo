@@ -1,31 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { AuthLoginService } from 'src/app/login/auth-login.service';
+import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleService {
 
-  constructor(private http: HttpClient) { }
-  url = `http://yamistha.cloudjiffy.net/vehicle/`;
+  constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
+
+  url = `http://yamistha.cloudjiffy.net/api/vehicle`;
 
   save(vehicleDto): any {
-    return this.http.post(this.url, vehicleDto);
+    return this.http.post(this.url, vehicleDto, { headers: this.headers });
   }
 
   getvehList(): any {
-    return this.http.get(this.url);
+    return this.http.get(this.url, { headers: this.headers });
   }
 
   deleteveh(vehId): any {
-    return this.http.delete(this.url + vehId);
+    return this.http.delete(this.url + vehId, { headers: this.headers });
   }
 
   updateveh(vehicleDto, vehId): any {
-    return this.http.put(this.url + vehId, vehicleDto);
+    return this.http.put(this.url + vehId, vehicleDto, { headers: this.headers });
   }
 
   getvehById(vehId): any {
-    return this.http.get(this.url + vehId);
+    return this.http.get(this.url + vehId, { headers: this.headers });
   }
 }
