@@ -7,7 +7,7 @@ import { SessionsettingService } from './sessionsetting.service';
   styleUrls: ['./sesstion-setting.component.css']
 })
 export class SesstionSettingComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/session/`;
+  url = `http://yamistha.cloudjiffy.net/api/session`;
 
 
   constructor(private datatableservice: DatatableService, private sessionsettingService: SessionsettingService) { }
