@@ -28,7 +28,7 @@ export class AdmissionComponent implements OnInit {
     "id": 0,
     "isActive": "yes",
     "name": "",
-    "noOfChild": 0,
+    "noOfChild": "",
     "note": "",
     "reference": "",
     "source": "",
@@ -163,9 +163,11 @@ export class AdmissionComponent implements OnInit {
       this.isUpdate = false;
       this.getenqList();
       this.clearData();
+      console.log(this.enquiry);
     }, (err) => {
       console.log('Error while Updating');
       console.error(err);
+      console.log(this.enquiry);
     });
 
   }
@@ -196,7 +198,7 @@ export class AdmissionComponent implements OnInit {
     this.enquiry.email = "";
     this.enquiry.followUpDate = "";
     this.enquiry.name = "";
-    this.enquiry.noOfChild = 0;
+    this.enquiry.noOfChild = "";
     this.enquiry.note = "";
     this.enquiry.reference = "";
     this.enquiry.source = "";
