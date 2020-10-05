@@ -7,7 +7,7 @@ import { SessionsettingService } from './sessionsetting.service';
   styleUrls: ['./sesstion-setting.component.css']
 })
 export class SesstionSettingComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/api/session`;
+  url = `http://yamistha.cloudjiffy.net/api/session/`;
 
 
   constructor(private datatableservice: DatatableService, private sessionsettingService: SessionsettingService) { }
@@ -16,7 +16,7 @@ export class SesstionSettingComponent implements OnInit {
   sessionDto = {
     "session": "",
     "id": 0,
-    "isActive": "yes"
+    "isActive": "no"
   }
 
   isUpdate: boolean = false;
@@ -99,7 +99,7 @@ export class SesstionSettingComponent implements OnInit {
   clearData() {
     this.sessionDto.session = "";
     this.sessionDto.id = 0;
-    this.sessionDto.isActive = "yes";
+    this.sessionDto.isActive = "no";
     this.isUpdate = false;
   }
 

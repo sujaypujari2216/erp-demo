@@ -43,7 +43,8 @@
             <td>{{veh.driverContact}}</td>
 
 
-            <td><a (click)="setUpdateFileds(veh.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+            <td><a (click)="setUpdateFileds(veh.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
+                  data-target="#myModal"></i>&nbsp;</a>
               <a (click)="deleteveh(veh.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>

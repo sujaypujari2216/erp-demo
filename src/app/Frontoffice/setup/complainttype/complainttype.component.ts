@@ -8,6 +8,7 @@ import { ComplainttypeService } from './complainttype.service';
   styleUrls: ['./complainttype.component.css']
 })
 export class ComplainttypeComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/api/complaint-type/`;
 
   complainttypes = [];
   complaintType = {

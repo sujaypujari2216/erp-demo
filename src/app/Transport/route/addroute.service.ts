@@ -11,7 +11,7 @@ export class AddrouteService {
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 
-  url = `http://yamistha.cloudjiffy.net/api/transport-route`;
+  url = `http://yamistha.cloudjiffy.net/api/transport-route/`;
   
   save(transportRouteDto): any {
     return this.http.post(this.url, transportRouteDto, { headers: this.headers });

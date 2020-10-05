@@ -10,7 +10,7 @@ import { RoomTypeService } from './room-type.service';
 })
 export class AddRoomTypeComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/api/room-type`;
+  url = `http://yamistha.cloudjiffy.net/api/room-type/`;
 
   hostelsroomtype = [];
 
@@ -44,7 +44,7 @@ export class AddRoomTypeComponent implements OnInit {
   addRoomType() {
     this.roomtypeService.save(this.roomType).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section Saved Successfully');
+        alert(' Saved Successfully');
       }
       this.datatableservice.destroy();
       this.getroomtypeList();
@@ -77,7 +77,7 @@ export class AddRoomTypeComponent implements OnInit {
     this.roomtypeService.update(this.roomType, roomtypeId).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
-        alert('section Updated Successfully');
+        alert(' Updated Successfully');
       }
       this.datatableservice.destroy();
       this.getroomtypeList();
@@ -91,7 +91,7 @@ export class AddRoomTypeComponent implements OnInit {
   deleteRoomType(roomtypeId) {
     this.roomtypeService.delete(roomtypeId).subscribe((res: any) => {
       if (res.success == true) {
-        alert('section deleted Successfully');
+        alert(' deleted Successfully');
       }
       this.datatableservice.destroy();
       this.getroomtypeList();

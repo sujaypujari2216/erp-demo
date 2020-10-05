@@ -13,7 +13,7 @@ import { VehicleService } from 'src/app/Transport/vehicle/vehicle.service';
 export class AssignVehicleComponent implements OnInit {
 
 
-  url = `http://yamistha.cloudjiffy.net/api/vehicle-route`;
+  url = `http://yamistha.cloudjiffy.net/api/vehicle-route/`;
 
   assigns = [];
   vehicleRouteDto = {

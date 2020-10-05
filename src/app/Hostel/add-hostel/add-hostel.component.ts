@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { AddhostelService } from './addhostel.service';
-import { HttpClient } from "@angular/common/http";
+import { RoomTypeService } from 'src/app/Hostel/add-room-type/room-type.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./add-hostel.component.css']
 })
 export class AddHostelComponent implements OnInit {
-  url = 'http://yamistha.cloudjiffy.net/api/hostel';
+  url = 'http://yamistha.cloudjiffy.net/api/hostel/';
 
 
   hostels = [];
@@ -25,10 +25,25 @@ export class AddHostelComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  constructor(private addhostelService: AddhostelService, private datatableservice: DatatableService) { }
+  hostelsroomtype: any;
+
+  constructor(private addhostelService: AddhostelService, private datatableservice: DatatableService, private roomtypeservice: RoomTypeService) { }
 
   ngOnInit(): void {
     this.gethostelList();
+    this.getroomtypeList();
+
+  }
+
+  getroomtypeList() {
+    this.roomtypeservice.getroomtypeList().subscribe((res: any) => {
+      var data = res['data'];
+      this.hostelsroomtype = data['content'];
+    }, (err) => {
+      console.log('Error while fetching ');
+      console.error(err);
+
+    });
   }
 
   gethostelList() {

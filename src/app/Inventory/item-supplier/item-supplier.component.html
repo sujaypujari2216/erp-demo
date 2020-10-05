@@ -35,7 +35,8 @@
             <td>{{supplier.contactPersonName}}</td>
             <td>{{supplier.address}}</td>
 
-            <td><a (click)="setUpdateFileds(supplier.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+            <td><a (click)="setUpdateFileds(supplier.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
+                  data-target="#myModal"></i>&nbsp;</a>
               <a (click)="deletesupplier(supplier.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>

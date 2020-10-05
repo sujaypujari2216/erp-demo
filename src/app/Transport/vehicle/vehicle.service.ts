@@ -12,7 +12,7 @@ export class VehicleService {
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 
-  url = `http://yamistha.cloudjiffy.net/api/vehicle`;
+  url = `http://yamistha.cloudjiffy.net/api/vehicle/`;
 
   save(vehicleDto): any {
     return this.http.post(this.url, vehicleDto, { headers: this.headers });
@@ -27,7 +27,7 @@ export class VehicleService {
   }
 
   updateveh(vehicleDto, vehId): any {
-    return this.http.put(this.url + vehId, vehicleDto, { headers: this.headers });
+    return this.http.put(this.url + vehId, { headers: this.headers }, vehicleDto);
   }
 
   getvehById(vehId): any {
