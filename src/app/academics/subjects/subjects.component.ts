@@ -12,7 +12,7 @@ import { SubjectService } from './subject.service';
 export class SubjectsComponent implements OnInit {
 
 
-  url = `http://yamistha.cloudjiffy.net/subject`;
+  url = `http://yamistha.cloudjiffy.net/api/subject`;
 
   subjects = [];
   subjectDto = {
@@ -74,7 +74,7 @@ export class SubjectsComponent implements OnInit {
   getSubjectById(subjectId) {
     this.subjectService.getSubjectById(subjectId).subscribe((res: any) => {
       this.subjectDto.name = res.data.name;
-      this.subjectDto.id = res.data.id;
+      this.subjectDto.id = res.data.subjectId;
       this.subjectDto.isActive = res.data.isActive;
       this.subjectDto.code = res.data.code;
       this.subjectDto.type = res.data.type;

@@ -1,31 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { AuthLoginService } from 'src/app/login/auth-login.service';
+import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 @Injectable({
   providedIn: 'root'
 })
 export class AddhomeworkService {
-  url = `http://yamistha.cloudjiffy.net/homework/`;
+  url = `http://yamistha.cloudjiffy.net/api/homework/`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
+
 
   save(homeworkDto): any {
-    return this.http.post(this.url, homeworkDto);
+    return this.http.post(this.url, homeworkDto, { headers: this.headers });
   }
 
   gethomeworkList(): any {
-    return this.http.get(this.url);
+    return this.http.get(this.url, { headers: this.headers });
   }
 
   deletehw(hwId): any {
-    return this.http.delete(this.url + hwId);
+    return this.http.delete(this.url + hwId, { headers: this.headers });
   }
 
   updatehw(homeworkDto, hwId): any {
-    return this.http.put(this.url + hwId, homeworkDto);
+    return this.http.put(this.url + hwId, homeworkDto, { headers: this.headers });
   }
 
   gethwById(hwId): any {
-    return this.http.get(this.url + hwId);
+    return this.http.get(this.url + hwId, { headers: this.headers });
   }
 }

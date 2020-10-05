@@ -8,7 +8,7 @@ import { ItemstoreService } from './itemstore.service';
   styleUrls: ['./item-store.component.css']
 })
 export class ItemStoreComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/item-Store/`;
+  url = `http://yamistha.cloudjiffy.net/api/item-Store/`;
 
   constructor(private datatableservice: DatatableService, private ItemstoreService: ItemstoreService) { }
 

@@ -12,7 +12,7 @@ export class SectionsService {
   saveSection(sectionDto): any {
     return this.http.post('http://yamistha.cloudjiffy.net/api/section', sectionDto, { headers: this.headers });
   }
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 
   getAllSectionList(): any {
     return this.http.get('http://yamistha.cloudjiffy.net/api/section/', { headers: this.headers });

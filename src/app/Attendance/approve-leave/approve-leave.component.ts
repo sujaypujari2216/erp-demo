@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { ApproveLeaveService } from './approve-leave.service';
+import { ClassService } from 'src/app/academics/class/class.service';
+import { SectionsService } from 'src/app/academics/sections/sections.service';
+
 @Component({
   selector: 'app-approve-leave',
   templateUrl: './approve-leave.component.html',
@@ -29,12 +32,40 @@ export class ApproveLeaveComponent implements OnInit {
   
 
   isUpdate: boolean = false;
-  constructor(private apprveleaveService: ApproveLeaveService, private datatableservice: DatatableService) { }
+  sections: any;
+  classes: any;
+  
+  constructor(private apprveleaveService: ApproveLeaveService, private datatableservice: DatatableService, private sectionsService: SectionsService,
+    private classservice: ClassService,) { }
 
   ngOnInit(): void {
     this.geleavetList();
+    this.getAllSectionList();
+    this.getClassList();
   }
-
+  getClassList() {
+    this.classservice.getClassList().subscribe((res: any) => {
+      var data = res['data'];
+      this.classes = data['content'];
+      //this.classes = content.map((key) => ({ ...key }));
+      // console.log(this.classes);
+    },
+      (err) => {
+        console.log('Error while fetching all Classes');
+        console.error(err);
+      }
+    );
+  }
+  getAllSectionList() {
+    this.sectionsService.getAllSectionList().subscribe((res: any) => {
+      var data = res['data'];
+      this.sections = data['content'];
+      // console.log(this.sources);
+    }, (err) => {
+      console.log('Error while fetching all sections');
+      console.error(err);
+    });
+  }
   geleavetList() {
     this.apprveleaveService.geleavetList().subscribe((res: any) => {
       var data = res['data'];

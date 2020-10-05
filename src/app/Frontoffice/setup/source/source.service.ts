@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { AuthLoginService } from 'src/app/login/auth-login.service';
 import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
+import { AuthLoginService } from 'src/app/login/auth-login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,10 @@ export class SourceService {
   url = `http://yamistha.cloudjiffy.net/api/source/`;
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
   save(Dto): any {
     return this.http.post(this.url, Dto, { headers: this.headers });
   }
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
   getAllSourceList(): any {
     return this.http.get(this.url, { headers: this.headers });
   }

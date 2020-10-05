@@ -13,6 +13,9 @@ import { ClassService } from 'src/app/academics/class/class.service';
   styleUrls: ['./subject-group.component.css']
 })
 export class SubjectGroupComponent implements OnInit {
+  
+  url = `http://yamistha.cloudjiffy.net/api/subject group/`;
+
   constructor(private datatableservice: DatatableService, private subjectgroupService: SubjectgroupService,
     private subjectService: SubjectService, private classService: ClassService,
     private sectionsService: SectionsService,

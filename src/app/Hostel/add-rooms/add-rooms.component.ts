@@ -12,7 +12,7 @@ import { AddhostelService } from 'src/app/Hostel/add-hostel/addhostel.service';
 })
 export class AddRoomsComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/hostel-room/`;
+  url = `http://yamistha.cloudjiffy.net/api/hostel-room/`;
 
   hostelrooms = [];
   hostelroomDto = {

@@ -9,7 +9,7 @@ import { IncomeheadService } from './incomehead.service';
 })
 export class IncomeHeadComponent implements OnInit {
 
-  url = 'http://yamistha.cloudjiffy.net/api/expense-head/';
+  url = 'http://yamistha.cloudjiffy.net/api/income-head/';
 
   constructor(private datatableservice: DatatableService,private incomeheadService: IncomeheadService, ) { }
 

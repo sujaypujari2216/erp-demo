@@ -12,7 +12,7 @@ export class LeaveTypeComponent implements OnInit {
   constructor(private datatableservice: DatatableService, 
     private leavetypeService: LeavetypeService) { }
     
-  url = `http://yamistha.cloudjiffy.net/leave-type/`;
+  url = `http://yamistha.cloudjiffy.net/api/leave-type/`;
 
   leaves = [];
   leaveTypeDto = {

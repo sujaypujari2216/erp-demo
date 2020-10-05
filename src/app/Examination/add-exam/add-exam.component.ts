@@ -8,6 +8,7 @@ import { AddExamService } from './add-exam.service';
   styleUrls: ['./add-exam.component.css']
 })
 export class AddExamComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/api/exam/`;
 
   constructor(private datatableservice: DatatableService, private addexamxamService: AddExamService) { }
 

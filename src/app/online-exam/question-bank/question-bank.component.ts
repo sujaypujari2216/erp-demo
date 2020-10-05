@@ -9,7 +9,7 @@ import { QuestionbankService } from './questionbank.service';
 })
 export class QuestionBankComponent implements OnInit {
 
-  url = 'http://yamistha.cloudjiffy.net/question/';
+  url = 'http://yamistha.cloudjiffy.net/api/question/';
 
   constructor(private datatableservice: DatatableService, private questionbankService: QuestionbankService,) { }
 

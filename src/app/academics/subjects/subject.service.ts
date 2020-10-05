@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { AuthLoginService } from 'src/app/login/auth-login.service';
+
+import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
+
 
 
 @Injectable({
@@ -8,26 +12,30 @@ import { HttpClient } from '@angular/common/http';
 export class SubjectService {
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
+
+
+  url = 'http://yamistha.cloudjiffy.net/api/subject/';
 
   saveSubject(subjectDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/subject', subjectDto);
+    return this.http.post(this.url, subjectDto, { headers: this.headers });
   }
 
   getAllSubjectList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/subject');
+    return this.http.get(this.url, { headers: this.headers });
   }
 
   deleteSubject(subjectId): any {
-    return this.http.delete('http://yamistha.cloudjiffy.net/subject/' + subjectId);
+    return this.http.delete(this.url + subjectId, { headers: this.headers });
   }
 
   updateSubject(subjectDto, subjectId): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/subject/' + subjectId, subjectDto);
+    return this.http.put(this.url + subjectId, subjectDto, { headers: this.headers });
   }
 
   getSubjectById(subjectId): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/subject/' + subjectId);
+    return this.http.get(this.url + subjectId, { headers: this.headers });
   }
 
 }

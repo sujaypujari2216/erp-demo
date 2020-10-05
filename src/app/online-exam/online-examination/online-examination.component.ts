@@ -11,7 +11,7 @@ import { SessionsettingService } from 'src/app/system_setting/sesstion-setting/s
 })
 export class OnlineExaminationComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/online-exam/`;
+  url = `http://yamistha.cloudjiffy.net/api/online-exam/`;
 
   onlineexaminations = [];
   onlineexamDto = {

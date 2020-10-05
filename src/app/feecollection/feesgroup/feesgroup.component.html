@@ -6,92 +6,80 @@
     <li>Fees Group</li>
   </ul>
 </div>
-<div class="card height-auto">
-  <div class="card-body">
-    <div class="modal-header">
-      <h5> Fee Group List</h5>
+<!-- Breadcubs Area End Here -->
+<div class="row gutters-20">
+  <div class="col-xl-4 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Add Fee Group</h3>
+          </div>
+        </div>
+        <form class="new-added-form">
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-12 form-group">
+              <label for="inp" class="inp">
+                <input type="text" name="name" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="Dto.name">
+                <span class="label">Name*</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-12 form-group">
+              <label for="inp" class="inp">
+                <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
+                  [(ngModel)]="Dto.description">
+                <span class="label">Description*</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-12 form-group">
 
-      <button
-        style="  background-color: #000066; position: relative; top:0; right: 10; float: right; width: 7%; height: 10%;"
-        type="button" class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal">+
-        Add</button>
+              <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                Update
+              </button>
+            </div>
+          </div>
 
-    </div>
-
-    <div class="table-responsive">
-      <table id="example" class="table display data-table text-nowrap cell-border">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let group of feesgroup">
-            <td>{{ group.name }}</td>
-            <td>
-              <a (click)="setUpdateFileds(group.id)" data-toggle="modal" data-target="#myModal"><i
-                  class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="delete(group.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
-          </tr>
-        </tbody>
-      </table>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
+  <div class="col-xl-8 col-6">
+    <div class="card height-auto">
+      <div class="card-body">
 
-
-<!-- Fees Group Area Start Here -->
-<div class="container">
-
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5>Add Fee group</h5>
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
+        <div class="heading-layout1">
+          <div class="item-title">
+            <h3>Fee Group List</h3>
+          </div>
         </div>
-        <div class="modal-body">
-          <form role="form" method="post" id="reused_form">
-            <div class="row">
 
-
-              <div class="col-xl-4 col-lg-4 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" name="name" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.name">
-                  <span class="label">Name*</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-
-              <div class="col-xl-4 col-lg-4 col-12 form-group">
-                <label for="inp" class="inp">
-                  <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.description">
-                  <span class="label">Description*</span>
-                  <span class="focus-bg"></span>
-                </label>
-              </div>
-
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
-                <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Save
-                </button>
-                <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
-                  class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
-                  Update
-                </button>
-              </div>
-            </div>
-          </form>
+        <div class="table-responsive">
+          <table id="example" class="table display data-table text-nowrap cell-border">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let group of feesgroup">
+                <td>{{ group.name }}</td>
+                <td>
+                  <a (click)="setUpdateFileds(group.id)" data-toggle="modal" data-target="#myModal"><i
+                      class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="delete(group.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

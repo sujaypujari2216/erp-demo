@@ -7,7 +7,7 @@ import { ExamGroupService } from './exam-group.service';
   styleUrls: ['./exam-group.component.css']
 })
 export class ExamGroupComponent implements OnInit {
-
+  url = `http://yamistha.cloudjiffy.net/api/exam-group/`;
   
   constructor(private datatableservice: DatatableService, private examgroupService: ExamGroupService) { }
 

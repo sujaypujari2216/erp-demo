@@ -13,7 +13,7 @@ import { AddhomeworkService } from './addhomework.service';
 })
 export class AddHomeworkComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/homework/`;
+  url = `http://yamistha.cloudjiffy.net/api/homework/`;
 
 
   homework = [];

@@ -9,8 +9,8 @@ import { AuthLoginService } from 'src/app/login/auth-login.service';
 })
 export class ComplainService {
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
-  //this is header file we have to implement in each service where header needs to be pass
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
+
 
   url = `http://yamistha.cloudjiffy.net/api/complaint/`;
   

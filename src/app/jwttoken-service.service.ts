@@ -32,7 +32,7 @@ export class JWTTokenServiceService {
 
   getSessionID(){
     this.decodeToken();
-    return this.decodedToken ? this.decodedToken.sessionId : null;
+    return this.decodedToken ? this.decodedToken.SessionID : null;
   }
 
   getUser() {
