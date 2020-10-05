@@ -12,9 +12,6 @@ import { VehicleService } from 'src/app/Transport/vehicle/vehicle.service';
 })
 export class AssignVehicleComponent implements OnInit {
 
-
-  url = `http://yamistha.cloudjiffy.net/api/vehicle-route`;
-
   assigns = [];
   vehicleRouteDto = {
     "id": 0,
@@ -80,7 +77,7 @@ export class AssignVehicleComponent implements OnInit {
       this.getassignList();
       this.clearData();
     }, (err) => {
-      console.log('Error While Saving');
+      console.log('Error While Saving',this.vehicleRouteDto);
       console.error(err);
     });
   }

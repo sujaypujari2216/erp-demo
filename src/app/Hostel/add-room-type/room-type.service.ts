@@ -9,7 +9,7 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
   providedIn: 'root'
 })
 export class RoomTypeService {
-  url = `http://yamistha.cloudjiffy.net/api/room-type`;
+  url = `http://yamistha.cloudjiffy.net/api/room-type/`;
 
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }

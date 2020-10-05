@@ -10,7 +10,7 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./add-hostel.component.css']
 })
 export class AddHostelComponent implements OnInit {
-  url = 'http://yamistha.cloudjiffy.net/api/hostel';
+  url = 'http://yamistha.cloudjiffy.net/api/hostel/';
 
 
   hostels = [];

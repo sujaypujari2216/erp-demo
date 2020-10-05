@@ -8,10 +8,6 @@ import { VehicleService } from './vehicle.service';
   styleUrls: ['./vehicle.component.css']
 })
 export class VehicleComponent implements OnInit {
-
-  url = `http://yamistha.cloudjiffy.net/api/vehicle`;
-
-
   constructor(private datatableservice: DatatableService, private vehicleService: VehicleService) { }
 
   vehs = [];
