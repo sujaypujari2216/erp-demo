@@ -12,12 +12,6 @@ import { VehicleService } from 'src/app/Transport/vehicle/vehicle.service';
 })
 export class AssignVehicleComponent implements OnInit {
 
-<<<<<<< HEAD
-=======
-
-  url = `http://yamistha.cloudjiffy.net/api/vehicle-route/`;
-
->>>>>>> d586b40fdc18ca5328ce4528b74c032e22daf0ea
   assigns = [];
   vehicleRouteDto = {
     "id": 0,

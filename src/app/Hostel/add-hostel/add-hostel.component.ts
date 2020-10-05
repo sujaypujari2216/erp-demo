@@ -25,7 +25,7 @@ export class AddHostelComponent implements OnInit {
   }
 
   isUpdate: boolean = false;
-  hostelsroomtype: any;
+  hostelsroomtypes: any;
 
   constructor(private addhostelService: AddhostelService, private datatableservice: DatatableService, private roomtypeservice: RoomTypeService) { }
 
@@ -38,7 +38,7 @@ export class AddHostelComponent implements OnInit {
   getroomtypeList() {
     this.roomtypeservice.getroomtypeList().subscribe((res: any) => {
       var data = res['data'];
-      this.hostelsroomtype = data['content'];
+      this.hostelsroomtypes = data['content'];
     }, (err) => {
       console.log('Error while fetching ');
       console.error(err);
@@ -48,6 +48,7 @@ export class AddHostelComponent implements OnInit {
 
   gethostelList() {
     this.addhostelService.gethostelList().subscribe((res: any) => {
+      console.log(res);
       var data = res['data'];
       var content = data['content'];
       this.hostels = content.map((key) => ({ ...key }));

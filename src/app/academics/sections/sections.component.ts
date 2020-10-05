@@ -36,6 +36,7 @@ export class SectionsComponent implements OnInit {
 
   getSectionList() {
     this.sectionsService.getAllSectionList().subscribe((res: any) => {
+      console.log(res);
       var data = res['data'];
       var content = data['content'];
       this.sections = content.map((key) => ({ ...key }));

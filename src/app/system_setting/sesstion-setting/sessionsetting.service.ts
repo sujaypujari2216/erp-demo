@@ -11,10 +11,6 @@ export class SessionsettingService {
 
   constructor(private http: HttpClient, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
-<<<<<<< HEAD
-=======
-  
->>>>>>> d586b40fdc18ca5328ce4528b74c032e22daf0ea
   url = `http://yamistha.cloudjiffy.net/api/session/`;
 
   save(Dto): any {

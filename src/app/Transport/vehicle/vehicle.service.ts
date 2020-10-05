@@ -9,7 +9,7 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 })
 export class VehicleService {
 
-  constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  constructor(private http: HttpClient, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 
   url = `http://yamistha.cloudjiffy.net/api/vehicle/`;
