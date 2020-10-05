@@ -38,7 +38,11 @@ export class ComplainComponent implements OnInit {
 
 
   constructor(private complainService: ComplainService, private datatableservice: DatatableService,
+<<<<<<< HEAD
     private complainttypeService: ComplainttypeService, private sourceService: SourceService,) { }
+=======
+    private complainttypeService: ComplainttypeService, private sourceService: SourceService) { }
+>>>>>>> e2f95ac462fd1ba9b6057dc112a74438c86eee5b
   // tslint:disable-next-line: align
 
 

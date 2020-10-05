@@ -56,6 +56,7 @@ import { SesstionSettingComponent } from './system_setting/sesstion-setting/sess
 import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login.component';
 import { UniversalAppInterceptorService } from './universal-app-interceptor.service';
+import { AuthGuardGuard } from './auth-guard.guard';
 
 
 
@@ -121,17 +122,17 @@ SesstionSettingComponent,
     FormsModule,
     ReactiveFormsModule,
    LoginModule,
-    RouterModule.forRoot(
-      [
-        { path: "", redirectTo: "Login", pathMatch: "full" },
-        { path:"Login",component:LoginComponent},
-        { path: "admin", component: HomeComponent },
-        { path: "parentsdetails", component: ParentsdetailsComponent },
-        { path: "addparents", component: AddParentsComponent },
-        { path: "add-more-stud", component: AddMoreStudComponent },
-      ],
-      { useHash: true }
-    ),
+    // RouterModule.forRoot(
+    //   [
+    //     { path: "", redirectTo: "Login", pathMatch: "full" },
+    //     { path:"Login",component:LoginComponent},
+    //     { path: "admin/:id", component: HomeComponent,canActivate: [AuthGuardGuard] },  
+    //     { path: "parentsdetails", component: ParentsdetailsComponent },
+    //     { path: "addparents", component: AddParentsComponent },
+    //     { path: "add-more-stud", component: AddMoreStudComponent },
+    //   ],
+    //   { useHash: true }
+    // ),
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: UniversalAppInterceptorService, multi: true },DatatableService],
   bootstrap: [AppComponent],

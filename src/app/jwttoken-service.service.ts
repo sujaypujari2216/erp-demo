@@ -10,9 +10,10 @@ export class JWTTokenServiceService {
   
   constructor() {
   }
-
-  
-
+   clearsession(){
+     this.jwtToken="";
+     this.decodedToken={};
+   }
   setToken(token: string) {
     if (token) {
       this.jwtToken = token;
