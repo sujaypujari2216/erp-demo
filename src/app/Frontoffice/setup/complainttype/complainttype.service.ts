@@ -8,7 +8,7 @@ import { AuthLoginService } from 'src/app/login/auth-login.service';
   providedIn: 'root'
 })
 export class ComplainttypeService {
-  url = `http://yamistha.cloudjiffy.net/api/complaint-type`;
+  url = `http://yamistha.cloudjiffy.net/api/complaint-type/`;
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 

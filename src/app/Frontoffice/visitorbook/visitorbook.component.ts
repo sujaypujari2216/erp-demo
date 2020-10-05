@@ -100,7 +100,7 @@ export class VisitorbookComponent implements OnInit {
       this.visitorsBook.date = res.data.date;
       this.visitorsBook.id = res.data.VbId;
       this.visitorsBook.isActive = res.data.isActive;
-      this.visitorsBook.idProof = res.data.VbIdProof;
+      this.visitorsBook.idProof = res.data.idProof;
       this.visitorsBook.image = res.data.image;
       this.visitorsBook.inTime = res.data.inTime;
       this.visitorsBook.email = res.data.email;

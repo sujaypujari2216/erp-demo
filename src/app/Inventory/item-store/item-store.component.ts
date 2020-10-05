@@ -56,7 +56,7 @@ export class ItemStoreComponent implements OnInit {
 
   getstoreById(storeId) {
     this.ItemstoreService.getstoreById(storeId).subscribe((res: any) => {
-      this.itemStoreDto.itemStore= res.data.itemCategory;
+      this.itemStoreDto.itemStore = res.data.itemStore;
       this.itemStoreDto.description = res.data.description;
       this.itemStoreDto.code = res.data.code;
       this.itemStoreDto.id = res.data.id;

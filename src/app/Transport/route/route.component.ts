@@ -8,7 +8,11 @@ import { AddrouteService } from './addroute.service';
   styleUrls: ['./route.component.css']
 })
 export class RouteComponent implements OnInit {
+<<<<<<< HEAD
  
+=======
+  url = `http://yamistha.cloudjiffy.net/api/transport-route/`;
+>>>>>>> d586b40fdc18ca5328ce4528b74c032e22daf0ea
 
   constructor(private datatableservice: DatatableService, private addrouteService: AddrouteService) { }
 
