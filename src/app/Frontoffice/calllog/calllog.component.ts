@@ -9,10 +9,12 @@ import { calllogService } from './calllog.service';
   styleUrls: ['./calllog.component.css'],
 })
 export class calllogComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/api/general-call`;
+
   constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
 
   calllogs = [];
-  Dto = {
+  generalCall = {
     "callDureation": '',
     "callType": '',
     "contact": "",
@@ -45,7 +47,7 @@ export class calllogComponent implements OnInit {
   }
 
   add() {
-    this.calllogService.save(this.Dto).subscribe((res: any) => {
+    this.calllogService.save(this.generalCall).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -60,28 +62,28 @@ export class calllogComponent implements OnInit {
 
   getById(Id) {
     this.calllogService.getById(Id).subscribe((res: any) => {
-      this.Dto.callDureation = res.data.callDureation;
-      this.Dto.callType = res.data.callType;
-      this.Dto.contact = res.data.contact;
-      this.Dto.date = res.data.date;
-      this.Dto.description = res.data.description;
-      this.Dto.followUpDate = res.data.followUpDate;
-      this.Dto.id = res.data.id;
-      this.Dto.isActive = res.data.isActive;
-      this.Dto.name = res.data.name;
-      this.Dto.note = res.data.note;
+      this.generalCall.callDureation = res.data.callDureation;
+      this.generalCall.callType = res.data.callType;
+      this.generalCall.contact = res.data.contact;
+      this.generalCall.date = res.data.date;
+      this.generalCall.description = res.data.description;
+      this.generalCall.followUpDate = res.data.followUpDate;
+      this.generalCall.id = res.data.id;
+      this.generalCall.isActive = res.data.isActive;
+      this.generalCall.name = res.data.name;
+      this.generalCall.note = res.data.note;
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
     });
-    return this.Dto;
+    return this.generalCall;
   }
   setUpdateFileds(Id) {
     this.isUpdate = true;
     this.getById(Id);
   }
   update(Id) {
-    this.calllogService.update(this.Dto, Id).subscribe((res: any) => {
+    this.calllogService.update(this.generalCall, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
@@ -112,16 +114,16 @@ export class calllogComponent implements OnInit {
   }
 
   clearData() {
-    this.Dto.callDureation = "";
-    this.Dto.callType = "";
-    this.Dto.contact = "";
-    this.Dto.date = "";
-    this.Dto.description = "";
-    this.Dto.followUpDate = "";
-    this.Dto.id = 0;
-    this.Dto.isActive = "yes";
-    this.Dto.name = "";
-    this.Dto.note = "";
+    this.generalCall.callDureation = "";
+    this.generalCall.callType = "";
+    this.generalCall.contact = "";
+    this.generalCall.date = "";
+    this.generalCall.description = "";
+    this.generalCall.followUpDate = "";
+    this.generalCall.id = 0;
+    this.generalCall.isActive = "yes";
+    this.generalCall.name = "";
+    this.generalCall.note = "";
     this.isUpdate = false;
   }
 }

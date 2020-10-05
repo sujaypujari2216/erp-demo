@@ -10,7 +10,7 @@ export class DisabledreasonService {
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
-  url = `http://yamistha.cloudjiffy.net/api/disable-reason`;
+  url = `http://yamistha.cloudjiffy.net/api/disable-reason/`;
 
   save(disableReason): any {
     return this.http.post(this.url, disableReason, { headers: this.headers });

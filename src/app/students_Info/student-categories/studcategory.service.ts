@@ -7,13 +7,14 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
   providedIn: "root",
 })
 export class StudcategoryService {
-  url = `http://yamistha.cloudjiffy.net/api/category`;
+  url = `http://yamistha.cloudjiffy.net/api/category/`;
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
+
   save(categoryDto): any {
     return this.http.post(this.url, categoryDto, { headers: this.headers });
   }
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
   getcategoryList(): any {
     return this.http.get(this.url, { headers: this.headers });
   }

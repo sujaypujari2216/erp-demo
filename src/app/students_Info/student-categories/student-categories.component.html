@@ -34,12 +34,13 @@
             </div>
 
             <div class="col-xl-12 col-lg-12 col-12 form-desig">
+
               <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                 Save
               </button>
               <button *ngIf="this.isUpdate" (click)="update(categoryDto.id)" type="button"
-                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
                 Update
               </button>
             </div>

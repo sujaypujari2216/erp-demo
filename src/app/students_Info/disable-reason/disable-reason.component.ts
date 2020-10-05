@@ -11,7 +11,7 @@ import { DisabledreasonService } from './disabledreason.service';
 export class DisableReasonComponent implements OnInit {
 
  
-  url =`http://yamistha.cloudjiffy.net/api/disable-reason`;
+  url =`http://yamistha.cloudjiffy.net/api/disable-reason/`;
 
   constructor(private datatableservice: DatatableService, private disabledreasonService: DisabledreasonService) { }
 

@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
+import { AuthLoginService } from 'src/app/login/auth-login.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComplainService {
-  constructor(private http: HttpClient,private jwt:JWTTokenServiceService) { }
+  constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  //this is header file we have to implement in each service where header needs to be pass
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
-  url = `http://yamistha.cloudjiffy.net/api/complaint`;
+  url = `http://yamistha.cloudjiffy.net/api/complaint/`;
   
 	
   addComplain(complaint): any {
     return this.http.post(this.url, complaint, { headers: this.headers });
   }
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
   getAllComplainList(): any {
     return this.http.get(this.url,{headers:this.headers});
@@ -26,7 +29,7 @@ export class ComplainService {
   }
 
   updateComplain(complaint, complainId): any {
-    return this.http.put(this.url + complainId, complaint, { headers: this.headers });
+    return this.http.put(this.url + complainId,complaint,{ headers: this.headers });
   }
 
   getcomplainById(complainId): any {

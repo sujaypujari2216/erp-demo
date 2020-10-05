@@ -64,7 +64,7 @@
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="name" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.name">
+                    [(ngModel)]="generalCall.name">
                   <span class="label">Name *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -73,7 +73,7 @@
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="phone" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.contact">
+                    [(ngModel)]="generalCall.contact">
                   <span class="label">Phone*</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -83,7 +83,7 @@
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="Dto.date">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="generalCall.date">
                   <span class="label">Choose Date*</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -92,7 +92,8 @@
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
-                  <input type="date" id="dtp" placeholder="&nbsp;" name="followUpDate" [(ngModel)]="Dto.followUpDate">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="followUpDate"
+                    [(ngModel)]="generalCall.followUpDate">
                   <span class="label">Next Follow Up Date *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -102,7 +103,7 @@
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="callDuration" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.callDureation">
+                    [(ngModel)]="generalCall.callDureation">
                   <span class="label">Call Dureation *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -112,7 +113,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="note" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.note">
+                    [(ngModel)]="generalCall.note">
                   <span class="label">Note*</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -121,7 +122,7 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
                   <input type="text" name="description" class="form-control" id="inp" placeholder="&nbsp;"
-                    [(ngModel)]="Dto.description">
+                    [(ngModel)]="generalCall.description">
                   <span class="label">Description *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -130,10 +131,10 @@
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label style="padding-left: 5px;padding-right: 20px;"><b>Call Type</b></label>
 
-                <input type="radio" name="call" value="Incoming" [(ngModel)]="Dto.callType">
+                <input type="radio" name="call" value="Incoming" [(ngModel)]="generalCall.callType">
                 <label style="padding-left: 5px;padding-right: 20px;"> Incoming</label>
 
-                <input type="radio" name="call" value="Outgoing" [(ngModel)]="Dto.callType">
+                <input type="radio" name="call" value="Outgoing" [(ngModel)]="generalCall.callType">
                 <label style="padding-left: 5px;padding-right: 20px;"> Outgoing</label>
               </div>
 
@@ -143,7 +144,7 @@
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Save
                 </button>
-                <button *ngIf="this.isUpdate" (click)="update(Dto.id)" type="button"
+                <button *ngIf="this.isUpdate" (click)="update(generalCall.id)" type="button"
                   class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
                   Update
                 </button>
@@ -171,27 +172,27 @@
             <tbody>
               <tr>
                 <th>Name</th>
-                <td>{{ Dto.name }}</td>
+                <td>{{ generalCall.name }}</td>
                 <th>Phone</th>
-                <td>{{ Dto.contact }}</td>
+                <td>{{ generalCall.contact }}</td>
               </tr>
               <tr>
                 <th>Date</th>
-                <td>{{ Dto.date }}</td>
+                <td>{{ generalCall.date }}</td>
                 <th>Next Follow Up Date</th>
-                <td>{{ Dto.followUpDate }}</td>
+                <td>{{ generalCall.followUpDate }}</td>
               </tr>
               <tr>
                 <th>Call Dureation</th>
-                <td>{{ Dto.callDureation }}</td>
+                <td>{{ generalCall.callDureation }}</td>
                 <th>Note</th>
-                <td>{{ Dto.note }}</td>
+                <td>{{ generalCall.note }}</td>
               </tr>
               <tr>
                 <th>Description</th>
-                <td>{{ Dto.description }}</td>
+                <td>{{ generalCall.description }}</td>
                 <th>Call Type</th>
-                <td>{{ Dto.callType }}</td>
+                <td>{{ generalCall.callType }}</td>
               </tr>
             </tbody>
           </table>

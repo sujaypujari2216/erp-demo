@@ -11,7 +11,7 @@ import { VisitorsPerposeService } from 'src/app/Frontoffice/setup/visitors-purpo
 })
 export class VisitorbookComponent implements OnInit {
   
-  url = `http://yamistha.cloudjiffy.net/visitors-book/`;
+  url = `http://yamistha.cloudjiffy.net/api/visitors-book/`;
 
   visitorsbook = [];
   visitorsBook = {

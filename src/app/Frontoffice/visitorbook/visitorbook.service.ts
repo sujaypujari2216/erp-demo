@@ -10,10 +10,12 @@ export class VisitorbookService {
   url = `http://yamistha.cloudjiffy.net/api/visitors-book/`;
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
-  save(Dto): any {
-    return this.http.post(this.url, Dto, { headers: this.headers });
-  }
+  //this is header file we have to implement in each service where header needs to be pass
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
+    
+  save(visitorsBook): any {
+    return this.http.post(this.url, visitorsBook, { headers: this.headers });
+  }
   getvisitorList(): any {
     return this.http.get(this.url, { headers: this.headers });
   }
@@ -22,8 +24,8 @@ export class VisitorbookService {
     return this.http.delete(this.url + VbId, { headers: this.headers });
   }
 
-  updatevb(Dto, VbId): any {
-    return this.http.put(this.url + VbId, Dto, { headers: this.headers });
+  updatevb(visitorsBook, VbId): any {
+    return this.http.put(this.url + VbId, { headers: this.headers },visitorsBook);
   }
 
   getByVbId(VbId): any {

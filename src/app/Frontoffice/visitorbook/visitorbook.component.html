@@ -86,7 +86,19 @@
                   Please Select Option.
                 </div>
               </div>
-
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="visitorsBook.source"
+                    name="source">
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let source of this.sources" [value]="source.source"
+                      [selected]="visitorsBook.source ==source.source">{{ source.source }}
+                    </option>
+                  </select>
+                  <span class="label">Source*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">

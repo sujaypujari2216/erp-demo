@@ -7,14 +7,14 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 })
 export class calllogService {
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
   url = `http://yamistha.cloudjiffy.net/api/general-call`;
 
-  save(Dto): any {
-    return this.http.post(this.url, Dto, { headers: this.headers });
+  save(generalCall): any {
+    return this.http.post(this.url, generalCall, { headers: this.headers });
   }
 
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
   getList(): any {
     return this.http.get(this.url, { headers: this.headers });
@@ -24,8 +24,8 @@ export class calllogService {
     return this.http.delete(this.url + Id, { headers: this.headers });
   }
 
-  update(Dto, Id): any {
-    return this.http.put(this.url + Id, Dto, { headers: this.headers });
+  update(generalCall, Id): any {
+    return this.http.put(this.url + Id,generalCall,{ headers: this.headers });
   }
 
   getById(Id): any {

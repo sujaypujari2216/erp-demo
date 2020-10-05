@@ -10,7 +10,7 @@ import { ComplainttypeService } from './complainttype.service';
 export class ComplainttypeComponent implements OnInit {
 
   complainttypes = [];
-  Dto = {
+  complaintType = {
     "complaintType": "",
     "description": "",
     "id": 0,
@@ -38,7 +38,7 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   add() {
-    this.complainttypeService.save(this.Dto).subscribe((res: any) => {
+    this.complainttypeService.save(this.complaintType).subscribe((res: any) => {
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -53,17 +53,17 @@ export class ComplainttypeComponent implements OnInit {
 
   getById(Id) {
     this.complainttypeService.getById(Id).subscribe((res: any) => {
-      this.Dto.description = res.data.description;
-      this.Dto.complaintType = res.data.complaintType;
-      this.Dto.id = res.data.id;
-      this.Dto.isActive = res.data.isActive;
-      // console.log(this.Dto);
+      this.complaintType.description = res.data.description;
+      this.complaintType.complaintType = res.data.complaintType;
+      this.complaintType.id = res.data.id;
+      this.complaintType.isActive = res.data.isActive;
+      // console.log(this.complaintType);
 
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
     });
-    return this.Dto;
+    return this.complaintType;
   }
   setUpdateFileds(Id) {
     this.isUpdate = true;
@@ -71,7 +71,7 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   update(Id) {
-    this.complainttypeService.update(this.Dto, Id).subscribe((res: any) => {
+    this.complainttypeService.update(this.complaintType, Id).subscribe((res: any) => {
       // tslint:disable-next-line: triple-equals
       if (res.success == true) {
         alert(' Updated Successfully');
@@ -102,10 +102,10 @@ export class ComplainttypeComponent implements OnInit {
   }
 
   clearData() {
-    this.Dto.description = "";
-    this.Dto.id = 0;
-    this.Dto.isActive = "yes";
-    this.Dto.complaintType = "";
+    this.complaintType.description = "";
+    this.complaintType.id = 0;
+    this.complaintType.isActive = "yes";
+    this.complaintType.complaintType = "";
     this.isUpdate = false;
   }
 }
