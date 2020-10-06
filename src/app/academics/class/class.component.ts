@@ -9,12 +9,7 @@ import { SectionsService } from '../sections/sections.service';
   styleUrls: ['./class.component.css'],
 })
 export class ClassComponent implements OnInit {
-<<<<<<< HEAD
   
-=======
-  url = `http://yamistha.cloudjiffy.net/api/class/`;
-
->>>>>>> d3acd47d8124d8e47c20f5412643f35656d56e97
   classes = [];
   classDto = {
     'classses': '',

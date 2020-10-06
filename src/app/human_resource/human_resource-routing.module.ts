@@ -13,12 +13,12 @@ import { PayrollComponent } from './payroll/payroll.component';
 import { StaffDirectoryComponent } from './staff-directory/staff-directory.component';
 import { StaffAttendanceComponent } from './staff-attendance/staff-attendance.component';
 import { TeachersRatingComponent } from './teachers-rating/teachers-rating.component';
-import { AddMoreComponent } from './add-more/add-more.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffAttendanceTypeComponent } from './staff-attendance-type/staff-attendance-type.component';
 
 
-export const routes: Routes = [
+ const routes: Routes = [
 
   { path: 'add-s', component: AddSComponent },
   { path: 'apply-leave', component: ApplyLeaveComponent },
@@ -32,14 +32,26 @@ export const routes: Routes = [
   { path: 'staff-directory', component: StaffDirectoryComponent },
   { path: 'staff-attendance', component: StaffAttendanceComponent },
   { path: 'teachers-rating', component: TeachersRatingComponent },
-  { path: 'add-more', component: AddMoreComponent },
   { path: 'staff-attendance-type', component: StaffAttendanceTypeComponent },
 
 ];
 
 
 @NgModule({
-  declarations: [],
+  declarations: [AddSComponent,
+    ApproveLeaveRequestComponent,
+    ApplyLeaveComponent,
+    DepartmentComponent,
+    DesignationComponent,
+    DisabledStaffComponent,
+    ImportStaffComponent,
+    LeaveTypeComponent,
+    PayrollComponent,
+    StaffDirectoryComponent,
+    StaffAttendanceComponent,
+    TeachersRatingComponent,
+    StaffAttendanceTypeComponent
+    ],
   imports: [
     CommonModule,
     FormsModule,

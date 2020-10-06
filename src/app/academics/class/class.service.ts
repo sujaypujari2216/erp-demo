@@ -6,13 +6,9 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
   providedIn: 'root'
 })
 export class ClassService {
-<<<<<<< HEAD
-url=`http://yamistha.cloudjiffy.net/api/class/`;
-=======
 
-    url = `http://yamistha.cloudjiffy.net/api/class/`;
+  url=`http://yamistha.cloudjiffy.net/api/class/`;
 
->>>>>>> d3acd47d8124d8e47c20f5412643f35656d56e97
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
