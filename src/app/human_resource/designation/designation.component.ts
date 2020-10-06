@@ -21,10 +21,10 @@ export class DesignationComponent implements OnInit {
   isUpdate: boolean = false;
 
   ngOnInit(): void {
-    this.getList();
+    this.getdesList();
   }
-  getList() {
-    this.designationService.getList().subscribe((res: any) => {
+  getdesList() {
+    this.designationService.getdesList().subscribe((res: any) => {
       var data = res['data'];
       var content = data['content'];
       this.designations = content.map((key) => ({ ...key }));
@@ -41,7 +41,7 @@ export class DesignationComponent implements OnInit {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getdesList();
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
@@ -72,7 +72,7 @@ export class DesignationComponent implements OnInit {
       }
       this.datatableservice.destroy();
       this.isUpdate = false;
-      this.getList();
+      this.getdesList();
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
@@ -87,7 +87,7 @@ export class DesignationComponent implements OnInit {
         alert('Deleted Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
+      this.getdesList();
       this.clearData();
     }, (err) => {
       console.log('Error while deleting ');

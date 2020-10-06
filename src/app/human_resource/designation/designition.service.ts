@@ -18,7 +18,7 @@ export class DesignitionService {
     return this.http.post(this.url, Dto, { headers: this.headers });
   }
 
-  getList(): any {
+  getdesList(): any {
     return this.http.get(this.url, { headers: this.headers });
   }
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AddstaffService } from './addstaff.service';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
+import { DepartmentService } from 'src/app/human_resource/department/department.service';
+import { DesignitionService } from 'src/app/human_resource/designation/designition.service';
+
 
 @Component({
   selector: 'app-add-s',
@@ -25,11 +28,11 @@ export class AddSComponent implements OnInit {
     "basicSalary": "",
     "contactNo": "",
     "contractType": "",
-    "dateOfJoining": "2020-10-06T12:20:42.401Z",
-    "dateOfLeaving": "2020-10-06T12:20:42.401Z",
+    "dateOfJoining": "",
+    "dateOfLeaving": "",
     "departmentId": 0,
     "departmentName": "",
-    "dob": "2020-10-06T12:20:42.401Z",
+    "dob": "",
     "email": "",
     "emergencyContactNo": "",
     "employeeId": "",
@@ -41,7 +44,7 @@ export class AddSComponent implements OnInit {
     "ifscCode": "",
     "image": "",
     "instagram": "",
-    "isActive": "",
+    "isActive": "yes",
     "joiningLetter": "",
     "langId": 0,
     "linkedin": "",
@@ -72,19 +75,47 @@ export class AddSComponent implements OnInit {
     "workExp": ""
   }
 
+  depts:any;
+  designations:any;
   isUpdate: boolean = false;
  
 
-  constructor(private addstaffService: AddstaffService, private datatableservice: DatatableService) { }
+  constructor(private addstaffService: AddstaffService, private datatableservice: DatatableService,
+    private DepartmentService: DepartmentService,private DesignitionService: DesignitionService) { }
 
   ngOnInit(): void {
     this.getList();
+    this.getdesList();
+    this.getdeptList();
   
 
   }
 
   
+getdeptList() {
+    this.DepartmentService.getdeptList().subscribe((res: any) => {
+      var data = res['data'];
+      this.depts = data['content'];
+      //this.references = content.map((key) => ({ ...key }));
+      //console.log(this.references);
 
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+    });
+  }
+  getdesList() {
+    this.DesignitionService.getdesList().subscribe((res: any) => {
+      var data = res['data'];
+      this.designations = data['content'];
+      //this.references = content.map((key) => ({ ...key }));
+      //console.log(this.references);
+
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+    });
+  }
   getList() {
     this.addstaffService.getList().subscribe((res: any) => {
       console.log(res);
@@ -124,7 +155,7 @@ export class AddSComponent implements OnInit {
       this.staffDto.contractType = res.data.contractType;
       this.staffDto.dateOfJoining = res.data.dateOfJoining;
       this.staffDto.dateOfLeaving = res.data.dateOfLeaving;
-      this.staffDto.departmentId = res.data.departmentId
+      this.staffDto.departmentId = res.data.departmentId;
       this.staffDto.departmentName = res.data.departmentName;
       this.staffDto.dob = res.data.dob;
       this.staffDto.email = res.data.email;
@@ -223,11 +254,11 @@ export class AddSComponent implements OnInit {
       this.staffDto.basicSalary = "",
       this.staffDto.contactNo = "",
       this.staffDto.contractType = "",
-      this.staffDto.dateOfJoining = "2020-10-06T12:20:42.401Z",
-      this.staffDto.dateOfLeaving = "2020-10-06T12:20:42.401Z",
+      this.staffDto.dateOfJoining = "",
+      this.staffDto.dateOfLeaving = "",
       this.staffDto.departmentId = 0,
       this.staffDto.departmentName = "",
-      this.staffDto.dob = "2020-10-06T12:20:42.401Z",
+      this.staffDto.dob = "",
       this.staffDto.email = "",
       this.staffDto.emergencyContactNo = "",
       this.staffDto.employeeId = "",
@@ -239,7 +270,7 @@ export class AddSComponent implements OnInit {
       this.staffDto.ifscCode = "",
       this.staffDto.image = "",
       this.staffDto.instagram = "",
-      this.staffDto.isActive = "",
+      this.staffDto.isActive = "yes",
       this.staffDto.joiningLetter = "",
       this.staffDto.langId = 0,
       this.staffDto.linkedin="",
