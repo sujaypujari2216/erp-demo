@@ -12,19 +12,17 @@ import { AddhostelService } from 'src/app/Hostel/add-hostel/addhostel.service';
 })
 export class AddRoomsComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/api/hostel-room/`;
-
   hostelrooms = [];
   hostelroomDto = {
-    'costPerBed': 0,
-    'description': '',
-    'hostelId': 0,
-    'id': 0,
-    'noOfBed': 0,
-    'roomNo': '',
-    'roomTypeId': 0,
-    'title': '' ,
-    "isActive":"yes",
+    "costPerBed": 0,
+  "description": "",
+  "hostelId": 0,
+  "id": 0,
+  "isActive": "",
+  "noOfBed": 0,
+  "roomNo": "",
+  "roomTypeId": 0,
+  "title": ""
   }
   isUpdate: boolean = false;
   hostels: any;
@@ -154,6 +152,7 @@ export class AddRoomsComponent implements OnInit {
   
 
   clearData() {
+    this.hostelroomDto.title="",
     this.hostelroomDto.hostelId = 0,
       this.hostelroomDto.roomNo = '',
       this.hostelroomDto.noOfBed = 0,

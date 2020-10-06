@@ -13,9 +13,6 @@ import { AddhomeworkService } from './addhomework.service';
 })
 export class AddHomeworkComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/api/homework/`;
-
-
   homework = [];
   homeworkDto = {
 
@@ -30,6 +27,7 @@ export class AddHomeworkComponent implements OnInit {
     "sectionId": 0,
     "subjectId": 0,
     "submitDate": ""
+
 
   };
 
@@ -108,6 +106,7 @@ export class AddHomeworkComponent implements OnInit {
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
+      console.log(this.homeworkDto);
     });
   }
 

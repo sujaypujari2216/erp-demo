@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { StudentRoutingModule } from "./students_Info/student-routing.module";
 import { LibraryRoutingModule } from "./Library/Library-routing.module";
 import { DownloadRoutingModule } from "./Download-Center/downloadcenter-routing.module";
@@ -37,14 +37,10 @@ import { AddParentsComponent } from './parents_Info/add-parents/add-parents.comp
 import { ParentsdetailsComponent } from './parents_Info/parentsdetails/parentsdetails.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
-  
-
-];
 
 @NgModule({
   imports: [
-    // RouterModule.forRoot(routes, { useHash: true }),
+  
     StudentRoutingModule,
     CommunicateRoutingModule,
     SystemRoutingModule,
@@ -81,7 +77,7 @@ const routes: Routes = [
         { path: "addNews", component: AddNewsComponent },
         { path: "addPage", component: AddPageComponent },
         { path: "issue1", component: Issue1Component },
-        { path: "admin/:id", component: HomeComponent,canActivate: [AuthGuardGuard] },  
+        { path: "admin", component: HomeComponent,canActivate: [AuthGuardGuard] },  
   
       ],
       { useHash: true }

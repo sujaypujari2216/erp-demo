@@ -10,8 +10,6 @@ import { RoomTypeService } from './room-type.service';
 })
 export class AddRoomTypeComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/api/room-type/`;
-
   hostelsroomtype = [];
 
   roomType = {
@@ -100,6 +98,7 @@ export class AddRoomTypeComponent implements OnInit {
       console.error(err);
     });
   }
+  
   clearData() {
     this.roomType.id = 0,
       this.roomType.isActive = 'yes',

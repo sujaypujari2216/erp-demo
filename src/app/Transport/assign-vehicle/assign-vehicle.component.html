@@ -53,11 +53,11 @@
           <div class="col-xl-4 col-lg-6 col-12 form-group">
             <div class="row">
               <button *ngIf="!this.isUpdate" (click)="addassign()" type="button"
-                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" >
                 Save
               </button>
               <button *ngIf="this.isUpdate" (click)="updateassign(vehicleRouteDto.id)" type="button"
-                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" >
                 Update
               </button>
 
@@ -94,7 +94,7 @@
                 <td>{{assign.vehicleId}}</td>
 
 
-                <td><a (click)="setUpdateFileds(assign.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <td><a (click)="setUpdateFileds(assign.id)"data-toggle="modal" data-target="#myModal"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
                   <a (click)="deleteasign(assign.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                 </td>
               </tr>

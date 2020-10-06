@@ -84,7 +84,7 @@
                 <td>{{route.fare}}</td>
                 <td>{{route.noOfVehicle}}</td>
 
-                <td><a (click)="setUpdateFileds(route.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                <td><a (click)="setUpdateFileds(route.id)" data-toggle="modal" data-target="#myModal"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
                   <a (click)="deleteroute(route.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                 </td>
               </tr>

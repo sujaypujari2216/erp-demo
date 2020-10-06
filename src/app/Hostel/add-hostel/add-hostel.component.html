@@ -69,7 +69,7 @@
             <div class="row">
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="hostelName" class="form-control" id="inp" placeholder="&nbsp;"
+                  <input type="text" name="hostelName" class="form-control"  placeholder="&nbsp;"
                     [(ngModel)]="hostelDto.hostelName" [value]="hostelDto.hostelName">
                   <span class="label">Hostel Name *</span>
                   <span class="focus-bg"></span>
@@ -78,9 +78,9 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
+                  <select class="form-control"  placeholder="&nbsp;" [(ngModel)]="hostelDto.type" name="type">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let hostelroomtype of hostelsroomtype" [value]="hostelroomtype.roomType"
+                    <option *ngFor="let hostelroomtype of hostelsroomtypes" [value]="hostelroomtype.roomType"
                       [selected]="hostelDto.type == hostelroomtype.roomType">{{ hostelroomtype.roomType }}
                     </option>
                   </select>
@@ -91,7 +91,7 @@
 
               <div class="col-xl-4 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" name="intake" class="form-control" id="inp" placeholder="&nbsp;"
+                  <input type="text" name="intake" class="form-control" placeholder="&nbsp;"
                     [(ngModel)]="hostelDto.intake" [value]="hostelDto.intake">
                   <span class="label">Intake</span>
                   <span class="focus-bg"></span>
