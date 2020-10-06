@@ -8,13 +8,15 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
   providedIn: 'root'
 })
 export class AdmissionformService {
-  url = `http://yamistha.cloudjiffy.net/api/student`;
+  url = `http://yamistha.cloudjiffy.net/api/student/`;
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
+   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
+
+ 
   addadmisssionform(studentDto): any {
     return this.http.post(this.url, studentDto, { headers: this.headers });
   }
-  headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
   getadmissionformList(): any {
     return this.http.get(this.url, { headers: this.headers });
   }

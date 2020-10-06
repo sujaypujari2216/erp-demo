@@ -34,20 +34,18 @@
                 </div> -->
           </div>
           <div class="col-xl-12 col-lg-12 col-12 form-desig">
-            <label>
-
-              <label for="slt" class="slt">
-                <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="vehicleRouteDto.vehicleId"
-                  name="vehicleId">
-                  <option selected>Please Select *</option>
-                  <option *ngFor="let veh of vehs" [value]="veh.vehicleNo"
-                    [selected]="vehicleRouteDto.vehicleId == veh.vehicleNo">{{ veh.vehicleNo }}
-                  </option>
-                </select>
-                <span class="label">Vehicle Number *</span>
-                <span class="focus-bg"></span>
-              </label>
-              <!-- <div class="alert alert-danger" *ngIf="expHeadId.touched && !expHeadId.valid">
+            <label for="slt" class="slt">
+              <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="vehicleRouteDto.vehicleId"
+                name="vehicleId">
+                <option selected>Please Select *</option>
+                <option *ngFor="let veh of vehs" [value]="veh.vehicleNo"
+                  [selected]="vehicleRouteDto.vehicleId == veh.vehicleNo">{{ veh.vehicleNo }}
+                </option>
+              </select>
+              <span class="label">Vehicle Number *</span>
+              <span class="focus-bg"></span>
+            </label>
+            <!-- <div class="alert alert-danger" *ngIf="expHeadId.touched && !expHeadId.valid">
                   Please Enter Expense Head.
                 </div> -->
           </div>

@@ -55,7 +55,7 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.classId" name="classId"
               #classId="ngModel" required>
               <option selected>Please Select *</option>
-              <option *ngFor="let class of this.classes" [value]="class.classses"
+              <option *ngFor="let class of this.classes" [value]="class.id"
                 [selected]="studentDto.classId == class.classses">
                 {{ class.classses }}
               </option>
@@ -73,7 +73,7 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.sectionId"
               name="sectionId" required>
               <option selected>Please Select *</option>
-              <option *ngFor="let section of this.sections" [value]="section.section"
+              <option *ngFor="let section of this.sections" [value]="section.id"
                 [selected]="studentDto.sectionId ==section.section">{{ section.section }}
               </option>
             </select>
@@ -139,7 +139,7 @@
             <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.categoryId"
               name="categoryId" required>
               <option selected>Please Select *</option>
-              <option *ngFor="let student of this.students" [value]="student.category"
+              <option *ngFor="let student of this.students" [value]="student.id"
                 [selected]="studentDto.categoryId ==student.category">{{ student.category }}
               </option>
             </select>
@@ -635,14 +635,16 @@
 
       <h3>Transport Details</h3>
       <div class="row">
-        <div class="col-xl-6 col-lg-12 col-12 form-group">
-          <label for="slt" class="slt" style="float: left;">
-            <select name="House" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Route*</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
+        <div class="col-xl-6 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.routeId" name="routeId"
+              required>
+              <option selected>Please Select *</option>
+              <option *ngFor="let route of routes" [value]="route.id"
+                [selected]="studentDto.routeId ==route.routeTitle">{{route.routeTitle}}
+              </option>
             </select>
-            <span class="label">Route List *</span>
+            <span class="label">Section *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
@@ -652,26 +654,17 @@
 
       <h3>Hostel Details</h3>
       <div class="row">
-        <div class="col-xl-6 col-lg-12 col-12 form-group">
-          <label for="slt" class="slt" style="float: left;">
-            <select name="House" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Hostel*</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
-            <span class="label">Hostel *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
 
-        <div class="col-xl-6 col-lg-12 col-12 form-group">
-          <label for="slt" class="slt" style="float: left;">
-            <select name="House" class="form-control" id="slt" placeholder="&nbsp;">
-              <option selected>Please Select Room*</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
+        <div class="col-xl-6 col-lg-6 col-12 form-group">
+          <label for="slt" class="slt">
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="studentDto.hostelRoomId"
+              name="hostelRoomId" required>
+              <option selected>Please Select *</option>
+              <option *ngFor="let hostelroom  of hostelrooms" [value]="hostelroom.id"
+                [selected]="studentDto.hostelRoomId ==hostelroom.roomNo">{{ hostelroom.roomNo }}
+              </option>
             </select>
-            <span class="label">Room *</span>
+            <span class="label">Section *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
@@ -726,10 +719,10 @@
 
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label class="control-label">RTE&nbsp;&nbsp;<br>
-            <input type="radio" id="call1" name="rte" [(ngModel)]="studentDto.rte" value="Incoming">
-            Incoming&nbsp;
-            <input type="radio" id="call1" name="rte" [(ngModel)]="studentDto.rte" value="Outgoing">
-            Outgoing
+            <input type="radio" id="call1" name="rte" [(ngModel)]="studentDto.rte" value="Yes">
+            Yes&nbsp;
+            <input type="radio" id="call1" name="rte" [(ngModel)]="studentDto.rte" value="No">
+            No
           </label>
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">

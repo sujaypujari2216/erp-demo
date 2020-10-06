@@ -7,28 +7,30 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 })
 export class ClassService {
 
+    url = `http://yamistha.cloudjiffy.net/api/class/`;
+
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
   saveClass(classDto): any {
-    return this.http.post('http://yamistha.cloudjiffy.net/api/api/class/', classDto, { headers: this.headers });
+    return this.http.post(this.url, classDto, { headers: this.headers });
   }
 
 
   getClassList(): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/api/api/class/', { headers: this.headers });
+    return this.http.get(this.url, { headers: this.headers });
   }
 
   deleteClass(classId): any {
-    return this.http.delete('http://yamistha.cloudjiffy.net/api/api/class/' + classId, { headers: this.headers });
+    return this.http.delete(this.url + classId, { headers: this.headers });
   }
 
   updateClass(classDto, classId): any {
-    return this.http.put('http://yamistha.cloudjiffy.net/api/api/class/' + classId, classDto, { headers: this.headers });
+    return this.http.put(this.url + classId, classDto, { headers: this.headers });
   }
 
   getClassById(classId): any {
-    return this.http.get('http://yamistha.cloudjiffy.net/api/api/class/' + classId, { headers: this.headers });
+    return this.http.get(this.url + classId, { headers: this.headers });
   }
 
 }
