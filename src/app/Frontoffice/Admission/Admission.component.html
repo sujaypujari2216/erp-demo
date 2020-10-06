@@ -229,24 +229,28 @@
                 </label>
               </div>
 
+
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.classId"
                     name="classId">
-                    <option value="">select</option>
-                    <option *ngFor="let class of this.classes" [value]="class.class"
-                      [selected]="enquiry.classId == class.class">{{ class.class}}</option>
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let class of this.classes" [value]="class.id"
+                      [selected]="enquiry.classId == class.classses">
+                      {{ class.classses }}
+                    </option>
                   </select>
                   <span class="label">Class *</span>
                   <span class="focus-bg"></span>
                 </label>
+
               </div>
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="enquiry.source" name="source">
                     <option selected>Please Select *</option>
                     <option *ngFor="let source of this.sources" [value]="source.source"
-                      [selected]="enquiry.source ==source.source">{{ source.source }}
+                      [selected]="enquiry.source == source.source">{{ source.source }}
                     </option>
                   </select>
                   <span class="label">Source*</span>

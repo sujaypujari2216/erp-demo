@@ -26,29 +26,28 @@
             </label>
           </div><br>
 
-          <div class="col-xl-12 col-lg-6 col-12 form-group">
-            <label for="slt" class="slt">
-              <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="classDto.section[0].section"
-                name="studentSection">
-                <option value="">select</option>
-                <option *ngFor="let sections of this.sectionDto" [value]="sections.section"
-                  [selected]="classDto.section[0].section == sections.section">{{ sections.section }}</option>
-              </select>
-              <span class="label">Section *</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-          <!--  <div class="col-xl-12 col-lg-12 col-12 form-group">
-            &nbsp;&nbsp;<span class="label">Section *</span>
-          
+
+          <div class="col-xl-12 col-lg-12 col-12 form-group">
+            <!--  &nbsp;&nbsp;<span class="label">Section *</span>
+
             <div class="" *ngFor="let sections of this.sectionDto">
               <label>
+                <input type="checkbox" name="" id="" [(ngModel)]="sections.isChecked"
+                  (change)="changeSelection()">{{ sections.section }}
                 &nbsp;&nbsp;<input type="checkbox" [(ngModel)]="classDto.section[0].section" [value]="sections.section"
                   [name]="sections.section" (change)="getSectionId($event,sections.section)">{{ sections.section }}
               </label>
+            </div> -->
+
+            <div class="form-check" *ngFor="let sections of this.sectionDto">
+              <input class="form-check-input" [(ngModel)]="sections.id" name="{{ sections.section }}" type="checkbox"
+                id="{{ sections.section }}" (change)="onChangeCategory($event, sections)">
+              <label class="form-check-label" for="{{ sections.section }}">
+                {{ sections.section }}
+              </label>
             </div>
-                   
-          </div> -->
+
+          </div>
           <div class="col-xl-4 col-lg-6 col-12 form-group">
             <div class="form-group" style="float: right;">
               <button *ngIf="!this.isUpdate" (click)="addClass()" type="button"

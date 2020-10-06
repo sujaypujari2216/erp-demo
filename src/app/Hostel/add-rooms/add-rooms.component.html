@@ -85,7 +85,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelroomDto.hostelId"
                     name="hostelId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let hostel of hostels" [value]="hostel.hostelName"
+                    <option *ngFor="let hostel of hostels" [value]="hostel.id"
                       [selected]="hostelroomDto.hostelId == hostel.hostelName">{{ hostel.hostelName }}
                     </option>
                   </select>
@@ -98,7 +98,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="hostelroomDto.roomTypeId"
                     name="roomTypeId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let hostelroomtype of hostelsroomtype" [value]="hostelroomtype.roomType"
+                    <option *ngFor="let hostelroomtype of hostelsroomtype" [value]="hostelroomtype.id"
                       [selected]="hostelroomDto.roomTypeId == hostelroomtype.roomType">{{ hostelroomtype.roomType }}
                     </option>
                   </select>

@@ -4,6 +4,9 @@ import { ClassService } from 'src/app/academics/class/class.service';
 import { SectionsService } from 'src/app/academics/sections/sections.service';
 import { StudcategoryService } from 'src/app/students_Info/student-categories/studcategory.service';
 import { StudentshouseService } from 'src/app/students_Info/student-house/studentshouse.service';
+import { AddrouteService } from 'src/app/Transport/route/addroute.service';
+import {RoomsService} from 'src/app/Hostel/add-rooms/rooms.service'
+
 import { AdmissionformService } from './admissionform.service';
 
 @Component({
@@ -13,68 +16,74 @@ import { AdmissionformService } from './admissionform.service';
 })
 export class AdmissionformComponent implements OnInit {
   
-  url = `http://yamistha.cloudjiffy.net/api/student`;
+  url = `http://yamistha.cloudjiffy.net/api/student/`;
 
 
   admissionforms = [];
   studentDto = {
-    "admissionNo": "",
-    "rollNo": "",
-    "classId": 0,
-    "sectionId": 0,
-    "firstname": "",
-    "lastname": "",
-    "email": "",
-    "gender": "",
-    "id": 0,
-    "isActive": "yes",
-    "dob": "",
-    "categoryId": 0,
-    "religion": "",
-    "cast": "",
-    "mobileno": "",
-    "admissionDate": "",
-    "image": "",
-    "bloodGroup": "",
-    "schoolHouseId": 0,
-    "measurementDate": "",
-    "weight": "",
-    "adharNo": "",
-    "height": "",
-    "": "",
-    "guardianAddress": "",
-    "fatherName": "",
-    "parentId": 0,
-    "fatherOccupation": "",
-    "fatherPhone": "",
-    "fatherPic": "",
-    "guardianEmail": "",
-    "guardianIs": "",
-    "guardianName": "",
-    //"isActive": "yes",
-    "guardianOccupation": "",
-    "guardianPhone": "",
-    "guardianPic": "",
-    "guardianRelation": "",
-    "motherName": "",
-    "motherOccupation": "",
-    "motherPhone": "",
-    "motherPic": "",
-    "note": "",
-    "permanentAddress": "",
-    "pincode": 0,
-    "previousSchool": "",
-    "routeId": 0,
-    "rte": "",
-    "samagraId": "",
-    "sessionId": 0,
-    "state": "",
-    "transportFees": 0,
-    "vehrouteId": 0,
-    "currentAddress":"",
-    "bankAccountNo":"",
-    "bankName": "",
-    "ifscCode": "",
+    'adharNo': '',
+  'admissionDate': '',
+  'admissionNo': '',
+  'appKey': '',
+  'bankAccountNo': '',
+  'bankName': '',
+  'batchId': 0,
+  'bloodGroup': '',
+  'cast': '',
+  'categoryId': 0,
+  'city': '',
+  'classId': 0,
+  'currentAddress': '',
+  'disNote': '',
+  'disReasonId': 0,
+  'disableAt': '',
+  'dob': '',
+  'email': '',
+  'fatherName': '',
+  'fatherOccupation': '',
+  'fatherPhone': '',
+  'fatherPic': '',
+  'feesDiscount': 0,
+  'firstname': '',
+  'gender': '',
+  'guardianAddress': '',
+  'guardianEmail': '',
+  'guardianIs': '',
+  'guardianName': '',
+  'guardianOccupation': '',
+  'guardianPhone': '',
+  'guardianPic': '',
+  'guardianRelation': '',
+  'height': '',
+  'hostelRoomId': 0,
+  'id': 0,
+  'ifscCode': '',
+  'image': '',
+  'isActive': 'yes',
+  'lastname': '',
+  'measurementDate': '',
+  'mobileno': '',
+  'motherName': '',
+  'motherOccupation': '',
+  'motherPhone': '',
+  'motherPic': '',
+  'note': '',
+  'parentId': 0,
+  'permanentAddress': '',
+  'pincode': 0,
+  'previousSchool': '',
+  'religion': '',
+  'rollNo': '',
+  'routeId': 0,
+  'rte': '',
+  'samagraId': '',
+  'schoolHouseId': 0,
+  'sectionId': 0,
+  'siblingId': 0,
+  'state': '',
+  'transportFees': 0,
+  'vehrouteId': 0,
+  'weight': ''
     
 
     
@@ -86,6 +95,8 @@ export class AdmissionformComponent implements OnInit {
   sections: any;
   classes: any;
   students:any;
+  routes:any;
+  hostelrooms:any;
 
   constructor(private admissionformService: AdmissionformService,
     private datatableservice: DatatableService,
@@ -93,6 +104,9 @@ export class AdmissionformComponent implements OnInit {
     private classservice: ClassService,
     private studcategoryService: StudcategoryService,
     private studentshouseService: StudentshouseService,
+    private AddrouteService:AddrouteService,
+        private RoomsService:RoomsService,
+
 
   ) { }
 
@@ -102,6 +116,8 @@ export class AdmissionformComponent implements OnInit {
     this.getClassList();
     this.getHouseList();
     this.getadmissionformList();
+    this.getrouteList();
+    this.getHostelRoomList();
 
 
   }
@@ -145,6 +161,32 @@ export class AdmissionformComponent implements OnInit {
     this.studentshouseService.getHouseList().subscribe((res: any) => {
       var data = res['data'];
       this.houses = data['content'];
+      //this.classes = content.map((key) => ({ ...key }));
+      // console.log(this.classes);
+    },
+      (err) => {
+        console.log('Error while fetching all houses');
+        console.error(err);
+      }
+    );
+  }
+  getrouteList() {
+    this.AddrouteService.getrouteList().subscribe((res: any) => {
+      var data = res['data'];
+      this.routes = data['content'];
+      //this.classes = content.map((key) => ({ ...key }));
+      // console.log(this.classes);
+    },
+      (err) => {
+        console.log('Error while fetching all houses');
+        console.error(err);
+      }
+    );
+  }
+  getHostelRoomList() {
+    this.RoomsService.getHostelRoomList().subscribe((res: any) => {
+      var data = res['data'];
+      this.hostelrooms = data['content'];
       //this.classes = content.map((key) => ({ ...key }));
       // console.log(this.classes);
     },
@@ -234,7 +276,6 @@ export class AdmissionformComponent implements OnInit {
       this.studentDto.routeId = res.data.routeId;
       this.studentDto.rte = res.data.rte;
       this.studentDto.samagraId = res.data.samagraId;
-      this.studentDto.sessionId = res.data.sessionId;
       this.studentDto.state= res.data.guardianOccupation;
       this.studentDto.transportFees = res.data.transportFees;
       this.studentDto.vehrouteId = res.data.vehrouteId;
@@ -290,61 +331,60 @@ export class AdmissionformComponent implements OnInit {
   }
 
   clearData() {
-    this.studentDto.admissionNo = "";
-    this.studentDto.rollNo = "";
+    this.studentDto.admissionNo = '';
+    this.studentDto.rollNo = '';
     this.studentDto.id = 0;
-    this.studentDto.isActive = "yes";
+    this.studentDto.isActive = 'yes';
     this.studentDto.classId = 0;
     this.studentDto.sectionId = 0;
-    this.studentDto.firstname = "";
-    this.studentDto.lastname = "";
-    this.studentDto.email = "";
-    this.studentDto.gender = "";
-    this.studentDto.dob = "";
+    this.studentDto.firstname = '';
+    this.studentDto.lastname = '';
+    this.studentDto.email = '';
+    this.studentDto.gender = '';
+    this.studentDto.dob = '';
     this.studentDto.categoryId = 0;
-    this.studentDto.religion = "";
-    this.studentDto.cast = "";
-    this.studentDto.mobileno = "";
-    this.studentDto.admissionDate = "";
-    this.studentDto.image = "";
-    this.studentDto.bloodGroup = "";
+    this.studentDto.religion = '';
+    this.studentDto.cast = '';
+    this.studentDto.mobileno = '';
+    this.studentDto.admissionDate = '';
+    this.studentDto.image = '';
+    this.studentDto.bloodGroup = '';
     this.studentDto.schoolHouseId = 0;
-    this.studentDto.measurementDate = "";
-    this.studentDto.weight = "";
-    this.studentDto.adharNo = "";
-    this.studentDto.height = "";
-    this.studentDto.guardianAddress = "";
-    this.studentDto.fatherName = "";
+    this.studentDto.measurementDate = '';
+    this.studentDto.weight = '';
+    this.studentDto.adharNo = '';
+    this.studentDto.height = '';
+    this.studentDto.guardianAddress = '';
+    this.studentDto.fatherName = '';
     this.studentDto.parentId = 0;
-    this.studentDto.fatherOccupation = "";
-    this.studentDto.fatherPhone = "";
-    this.studentDto.fatherPic = "";
-    this.studentDto.guardianEmail = "";
-    this.studentDto.guardianIs = "";
-    this.studentDto.guardianName = "";
-    this.studentDto.guardianOccupation = "";
-    this.studentDto.guardianPhone = "";
-    this.studentDto.guardianPic = "";
-    this.studentDto.guardianRelation = "";
-    this.studentDto.motherName = "";
-    this.studentDto.motherOccupation = "";
-    this.studentDto.motherPhone = "";
-    this.studentDto.motherPic = "";
-    this.studentDto.note = "";
-    this.studentDto.permanentAddress = "";
+    this.studentDto.fatherOccupation = '';
+    this.studentDto.fatherPhone = '';
+    this.studentDto.fatherPic = '';
+    this.studentDto.guardianEmail = '';
+    this.studentDto.guardianIs = '';
+    this.studentDto.guardianName = '';
+    this.studentDto.guardianOccupation = '';
+    this.studentDto.guardianPhone = '';
+    this.studentDto.guardianPic = '';
+    this.studentDto.guardianRelation = '';
+    this.studentDto.motherName = '';
+    this.studentDto.motherOccupation = '';
+    this.studentDto.motherPhone = '';
+    this.studentDto.motherPic = '';
+    this.studentDto.note = '';
+    this.studentDto.permanentAddress = '';
     this.studentDto.pincode = 0;
-    this.studentDto.previousSchool = "";
+    this.studentDto.previousSchool = '';
     this.studentDto.routeId = 0;
-    this.studentDto.rte = "";
-    this.studentDto.samagraId = "";
-    this.studentDto.sessionId = 0;
-    this.studentDto.state = "";
+    this.studentDto.rte = '';
+    this.studentDto.samagraId = '';
+    this.studentDto.state = '';
     this.studentDto.transportFees = 0;
     this.studentDto.vehrouteId = 0;
-    this.studentDto.bankAccountNo = "";
-    this.studentDto.bankName = "";
-    this.studentDto.currentAddress ="";
-    this.studentDto.ifscCode = "";
+    this.studentDto.bankAccountNo = '';
+    this.studentDto.bankName = '';
+    this.studentDto.currentAddress ='';
+    this.studentDto.ifscCode = '';
     this.isUpdate = false;
 
   }

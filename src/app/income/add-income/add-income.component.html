@@ -74,7 +74,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="incomeDto.incHeadId"
                     name="expHeadId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let incomehead of incomeheads" [value]="incomehead.incomeCategory"
+                    <option *ngFor="let incomehead of incomeheads" [value]="incomehead.id"
                       [selected]="incomeDto.incHeadId == incomehead.incomeCategory">{{ incomehead.incomeCategory }}
                     </option>
                   </select>

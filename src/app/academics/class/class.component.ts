@@ -9,7 +9,12 @@ import { SectionsService } from '../sections/sections.service';
   styleUrls: ['./class.component.css'],
 })
 export class ClassComponent implements OnInit {
+<<<<<<< HEAD
   
+=======
+  url = `http://yamistha.cloudjiffy.net/api/class/`;
+
+>>>>>>> d3acd47d8124d8e47c20f5412643f35656d56e97
   classes = [];
   classDto = {
     'classses': '',
@@ -35,11 +40,11 @@ export class ClassComponent implements OnInit {
 
   ngOnInit(): void {
     this.getClassList();
-    this.getSectionList();
+    this.getAllSectionList();
 
   }
 
-  getSectionList() {
+  getAllSectionList() {
     this.sectionsService.getAllSectionList().subscribe((res: any) => {
       var data = res.data;
       this.sectionDto = data.content;
@@ -147,4 +152,13 @@ export class ClassComponent implements OnInit {
     this.isUpdate = false;
 
   }
+
+tempArr: any = { "section": [] };
+
+    onChangeCategory($event, sections: any){ // Use appropriate model type instead of any
+      this.tempArr.section.push(sections.section);
+
+    }
+
+
 }
