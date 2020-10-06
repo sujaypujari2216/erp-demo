@@ -13,8 +13,7 @@
         <h3>Fees Master List</h3>
       </div>
       <button style="background-color: #000066; width: 7%; height: 10%;" type="button" class="btn btn-info btn-lg"
-        data-toggle="modal" data-target="#myModal">+ Add
-      </button>
+        data-toggle="modal" data-target="#myModal">+ Add</button>
     </div>
     <div class="table-responsive">
       <table id="example" class="table display data-table text-nowrap cell-border">
@@ -29,11 +28,15 @@
             <!-- <td>{{ feemast.feeGroupId }}</td>
             <td>{{ feemast.feetypeId }}</td> -->
             <td>{{ feemast.amount }}</td>
+            <td>{{ feemast.amount }}</td>
+            <td>{{ feemast.amount }}</td>
+            <td>{{ feemast.amount }}</td>
+
             <td>
               <i class="fas fa-align-justify "></i>&nbsp;
               <a (click)="setUpdateFileds(feemast.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a (click)="deletemaster(feemast.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a> 
+              <a (click)="deletemaster(feemast.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
 
           </tr>
@@ -61,7 +64,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.sessionId"
                     name="sessionId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let session of this.sessions" [value]="session.session"
+                    <option *ngFor="let session of this.sessions" [value]="session.id"
                       [selected]="requestDto.sessionId == session.session">{{ session.session }}
                     </option>
                   </select>
@@ -74,7 +77,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feeGroupId"
                     name="feeGroupId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let group of feesgroup" [value]="group.name"
+                    <option *ngFor="let group of feesgroup" [value]="group.id"
                       [selected]="requestDto.feeGroupId == group.name">{{ group.name }}
                     </option>
                   </select>
@@ -88,7 +91,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feetypeId"
                     name="feetypeId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let feetype of feetypes" [value]="feetype.type"
+                    <option *ngFor="let feetype of feetypes" [value]="feetype.id"
                       [selected]="requestDto.feetypeId == feetype.type">
                       {{ feetype.type }}
                     </option>
@@ -116,7 +119,7 @@
                 </label>
               </div>
 
-              <div class="col-xl-12 col-lg-6 col-12 form-group">
+              <div class="col-xl-6 col-lg-6 col-12 form-group">
                 <div class="row">&nbsp;&nbsp;&nbsp;
                   <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="form-check-input" id="customRadio" name="fineType"

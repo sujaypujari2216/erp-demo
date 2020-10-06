@@ -110,6 +110,23 @@
                   <span class="focus-bg"></span>
                 </label>
               </div>
+              <div class="col-xl-6 col-lg-6 col-12 form-group">
+                <div class="row">&nbsp;&nbsp;&nbsp;
+                  <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" id="customRadio" name="fineType"
+                      [(ngModel)]="requestDto.fineType" value="None">&nbsp;&nbsp;
+                    None
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" id="customRadio" name="Percentage"
+                      [(ngModel)]="requestDto.fineType" value="Percentage">&nbsp;&nbsp;
+                    Percentage
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" id="customRadio" name="Fixamount"
+                      [(ngModel)]="requestDto.fineType" value="Fixamount">&nbsp;&nbsp;
+                    FixAmount
+                  </label>
+                </div>
+              </div>
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="dtp" class="dtp">
                   <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
@@ -127,23 +144,7 @@
                 </label>
               </div>
 
-              <div class="col-xl-3 col-lg-6 col-12 form-group">
-                <div class="row">&nbsp;&nbsp;&nbsp;
-                  <label class="control-label">Fine type:&nbsp;&nbsp;&nbsp;
-                    <input type="radio" class="form-check-input" id="customRadio" name="fineType"
-                      [(ngModel)]="requestDto.fineType" value="None">&nbsp;&nbsp;
-                    None
-                    &nbsp;&nbsp;&nbsp;
-                    <input type="radio" class="form-check-input" id="customRadio" name="Percentage"
-                      [(ngModel)]="requestDto.fineType" value="Percentage">&nbsp;&nbsp;
-                    Percentage
-                    &nbsp;&nbsp;&nbsp;
-                    <input type="radio" class="form-check-input" id="customRadio" name="Fixamount"
-                      [(ngModel)]="requestDto.fineType" value="Fixamount">&nbsp;&nbsp;
-                    FixAmount
-                  </label>
-                </div>
-              </div>
+
 
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <div class="form-group" style="float: right;">

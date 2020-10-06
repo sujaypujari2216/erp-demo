@@ -13,10 +13,11 @@ import { SessionsettingService } from 'src/app/system_setting/sesstion-setting/s
 })
 export class FeesMasterComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/feemaster/`;
+  url = `http://yamistha.cloudjiffy.net/api/feemaster/`;
 
   feesmaster = [];
   requestDto = {
+
     "amount": 0,
     "dueDate": "",
     "feeGroupId": "",
@@ -28,6 +29,7 @@ export class FeesMasterComponent implements OnInit {
     "isActive": "yes",
     "sessionId": 0
   };
+
   isUpdate: boolean = false;
   feesgroup: any;
   feetypes: any;
@@ -37,8 +39,7 @@ export class FeesMasterComponent implements OnInit {
     private feemasterService: FeemasterService,
     private feetypeservice: FeestypeService,
     private sessionsettingService: SessionsettingService,
-    private feegroupService: FeesGroupService,
-     ) { 
+    private feegroupService: FeesGroupService) { 
       this.getmasterList();
     }
 

@@ -18,8 +18,8 @@ export class FeesmasterComponent implements OnInit {
   requestDto = {
     "amount": 0,
     "dueDate": "",
-    "feeGroupId": "",
-    "feetypeId": "",
+    "feeGroupId": 0,
+    "feetypeId": 0,
     "fineAmount": 0,
     "finePercentage": 0,
     "fineType": "",
@@ -100,7 +100,9 @@ export class FeesmasterComponent implements OnInit {
       this.clearData();
     }, (err) => {
       console.log('Error While Saving');
-      //console.error(err);
+            console.log(this.requestDto);
+
+      console.error(err);
     });
   }
   getmasterById(masterId) {
@@ -164,8 +166,8 @@ export class FeesmasterComponent implements OnInit {
     this.requestDto.dueDate = "";
     this.requestDto.id = 0;
     this.requestDto.isActive = "yes";
-    this.requestDto.feeGroupId = "";
-    this.requestDto.feetypeId = "";
+    this.requestDto.feeGroupId = 0;
+    this.requestDto.feetypeId = 0;
     this.requestDto.fineAmount = 0;
     this.requestDto.finePercentage = 0;
     this.requestDto.fineType = "";
