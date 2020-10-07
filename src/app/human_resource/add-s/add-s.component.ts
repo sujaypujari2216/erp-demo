@@ -126,20 +126,24 @@ getdeptList() {
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);
+      console.log(this.staffDto);
     });
   }
 
   add() {
     this.addstaffService.save(this.staffDto).subscribe((res: any) => {
+      console.log(this.staffDto);
+      console.log(res);
       if (res.success == true) {
         alert('Saved Successfully');
       }
       this.datatableservice.destroy();
-      this.getList();
-      this.clearData();
+      //this.getList();
+      // this.clearData();
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
+      console.log(this.staffDto);
     });
   }
 
@@ -203,6 +207,7 @@ getdeptList() {
     }, (err) => {
       console.log('Error while fetching');
       console.error(err);
+      console.log(this.staffDto);
     });
     return this.staffDto;
   }
@@ -220,10 +225,12 @@ getdeptList() {
       this.datatableservice.destroy();
       this.isUpdate = false;
       this.getList();
+      console.log(this.staffDto);
       this.clearData();
     }, (err) => {
       console.log('Error while Updating');
       console.error(err);
+      console.log(this.staffDto);
     });
 
   }
