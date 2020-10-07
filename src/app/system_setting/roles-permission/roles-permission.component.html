@@ -52,13 +52,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Admin</td>
-                <td>System</td>
+              <tr *ngFor="let role of roles">
+                <td>{{role.roleName}}</td>
+                <td>{{role.isSystem}}</td>
                 <td>
                   <a href="/#/assign-permission"><i class="fas fa-tag "></i></a>&nbsp;
-                  <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-                  <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                  <a (click)="setUpdateFileds(role.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleterole(role.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
                 </td>
               </tr>
             </tbody>
