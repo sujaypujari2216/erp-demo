@@ -65,14 +65,16 @@
         <tbody>
           <tr *ngFor="let staff of staffs">
 
-            <td><a href="/#/staffprofile">{{ staff.id }}</a></td>
-            <td>{{ staff. name}}</td>
+            <td>{{ staff.id }}</td>
+            <td><a href="/#/staffprofile">{{ staff. name}}</a></td>
             <td>{{ staff. roleId}</td>
             <td>{{ staff. departmentName}}</td>
             <td>{{ staff. staffDesignation}}</td>
             <td>{{ staff. contactNo}}</td>
 
             <td>
+              <a (click)="getById(staff.id)" data-toggle="modal" data-target="#show"><i
+                  class="fas fa-align-justify text-blue"></i>&nbsp;</a>
               <a (click)="setUpdateFileds(staff.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
                   data-target="#myModal"></i>&nbsp;</a>
               <a (click)="delete(staff.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
@@ -85,9 +87,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 <div class="container">
   <!-- Modal -->
@@ -543,6 +542,514 @@
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="show" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Call Details</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-3-xxxl col-lg-6 col-xl-3">
+              <div class="card height-auto">
+                <div class="card-body">
+                  <div class="user-details-box">
+                    <div class="item-img text-center">
+                      <img style="border-radius: 50%;" src="../../assets/img/figure/user.jpg" alt="user">
+                    </div>
+                    <h3 class="font-medium text-dark-medium text-center">{{ staffDto.roleName }}</h3>
+                    <table class="table text-wrap">
+                      <tbody>
+                        <tr>
+                          <td>Staff ID</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.id }}</td>
+                        </tr>
+                        <tr>
+                          <td>Role</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.roleName }}</td>
+                        </tr>
+                        <tr>
+                          <td>Designation</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto. staffDesignation }}</td>
+                        </tr>
+                        <tr>
+                          <td>Department</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.departmentName  }}</td>
+                        </tr>
+                        <tr>
+                          <td>EPF No.</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.epfNo }}</td>
+                        </tr>
+                        <tr>
+                          <td>Basic Salary</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.basicSalary}}</td>
+                        </tr>
+                        <tr>
+                          <td>Contract Type</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.contractType }}</td>
+                        </tr>
+                        <tr>
+                          <td>Work Shift</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.shift }}</td>
+                        </tr>
+                        <tr>
+                          <td>Location</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.location }}</td>
+                        </tr>
+                        <tr>
+                          <td>Date Of Joining</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.dateOfJoining }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-9-xxxl col-xl-9">
+              <div class="card height-auto">
+                <div class="card-body">
+                  <div class="custom-tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab"
+                          aria-selected="true">Profile</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#payroll" data-toggle="tab"
+                          aria-selected="true">Payroll</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#leaves" data-toggle="tab"
+                          aria-selected="true">Leaves</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#attendance" data-toggle="tab"
+                          aria-selected="true">Attendance</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#documents" data-toggle="tab"
+                          aria-selected="true">Documents</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#timelineh" data-toggle="tab"
+                          aria-selected="true">Timeline</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#"><i style="color: rgb(81, 81, 81);"
+                            class="fas fa-pencil-alt"></i></a></li>
+                      <li class="nav-item"><a class="nav-link" href="#"><i
+                            class="fas fa-key text-dark-pastel-green"></i></a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane fade show active" id="activity" role="tabpanel">
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped" style="border: 1px solid rgb(180, 180, 180);">
+                            <tbody>
+                              <tr>
+                                <td>Phone</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.contactNo }}</td>
+                              </tr>
+                              <tr>
+                                <td>Emergency Contact Number</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.emergencyContactNo }}</td>
+                              </tr>
+                              <tr>
+                                <td>Email</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.email }}</td>
+                              </tr>
+                              <tr>
+                                <td>Gender</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.gender }}</td>
+                              </tr>
+                              <tr>
+                                <td>Date of Birth</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.dob }}</td>
+                              </tr>
+                              <tr>
+                                <td>Marital Status</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.maritalStatus }}</td>
+                              </tr>
+                              <tr>
+                                <td>Father Name</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.fatherName }}</td>
+                              </tr>
+                              <tr>
+                                <td>Mother Name</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.motherName }}</td>
+                              </tr>
+                              <tr>
+                                <td>Qualification</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.qualification }}</td>
+                              </tr>
+                              <tr>
+                                <td>Work Experience</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.workExp }}</td>
+                              </tr>
+                              <tr>
+                                <td>Note</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.note }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <h3>Address </h3>
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped" style="border: 1px solid rgb(180, 180, 180)">
+                            <tbody>
+                              <tr>
+                                <td>Current Address</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.localAddress }}</td>
+                              </tr>
+                              <tr>
+                                <td>Permanent Address</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.permanentAddress }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <h3>Bank Details</h3>
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped" style="border: 1px solid rgb(180, 180, 180)">
+                            <tbody>
+                              <tr>
+                                <td>Account Title</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.accountTitle }}</td>
+                              </tr>
+                              <tr>
+                                <td>Bank Name</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.bankName }}</td>
+                              </tr>
+                              <tr>
+                                <td>Bank Branch Name</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.bankBranch }}</td>
+                              </tr>
+                              <tr>
+                                <td>Bank Account Number</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.bankAccountNo }}</td>
+                              </tr>
+                              <tr>
+                                <td>IFSC Code</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.ifscCode }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <h3>Socila Media Link</h3>
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped" style="border: 1px solid rgb(180, 180, 180)">
+                            <tbody>
+                              <tr>
+                                <td>Facebook</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.instagram }}</td>
+                              </tr>
+                              <tr>
+                                <td>Twitter</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.twitter }}</td>
+                              </tr>
+                              <tr>
+                                <td>LinkedIn</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.linkedin }}</td>
+                              </tr>
+                              <tr>
+                                <td>Instagram</td>
+                                <td class="font-medium text-dark-medium">{{ staffDto.instagram }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="payroll" role="tabpanel">
+                        <div class="row gutters-20">
+                          <div class="col-xl-6 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="far fa-money-bill-alt text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Net Salary Paid</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">60</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-6 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="far fa-money-bill-alt text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Gross Salary</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">20</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-6 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="far fa-money-bill-alt text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Earning</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">6000</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-6 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="far fa-money-bill-alt text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Deduction</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">4000</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                          <table id="example" class="table table-hover table-striped cell-border"
+                            style="border: 1px solid rgb(180, 180, 180)">
+                            <thead>
+                              <tr>
+                                <th>Payslip #</th>
+                                <th>Month-Year</th>
+                                <th>Date</th>
+                                <th>Mode</th>
+                                <th>Status</th>
+                                <th>Net Salary</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>General</td>
+                                <td>07/02/2020</td>
+                                <td>07</td>
+                                <td>06/02/2020</td>
+                                <td>Pending</td>
+                                <td>Pending</td>
+                                <td>541651</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="leaves" role="tabpanel">
+                        <div class="table-responsive">
+                          <table id="example" class="table table-hover table-striped cell-border"
+                            style="border: 1px solid rgb(180, 180, 180)">
+                            <thead>
+                              <tr>
+                                <th>Leave Type</th>
+                                <th>Leave Date</th>
+                                <th>Days</th>
+                                <th>Apply Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Medical</td>
+                                <td></td>
+                                <td>{{ staffDto.numberOfLeaves }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="timelineh" role="tabpanel">
+                        <h3>Timeline</h3>
+                      </div>
+
+                      <div class="tab-pane fade" id="documents" role="tabpanel">
+                        <button type="button" class="btn btn-xs btn-primary">
+                          <i class="fas fa-upload"></i> Upload Documents
+                        </button>
+
+                        <div class="table-responsive">
+                          <table id="example" class="table table-hover table-striped cell-border"
+                            style="border: 1px solid rgb(180, 180, 180)">
+                            <thead>
+                              <tr>
+                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="attendance" role="tabpanel">
+                        <div class="row gutters-20">
+                          <div class="col-xl-4 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="fas fa-check-circle text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Present</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">10</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="fas fa-check-circle text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Late</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">10</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="fas fa-check-circle text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Absent</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">10</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="fas fa-check-circle text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Half Day</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">10</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-6">
+                            <div
+                              style="margin-top: 10px; margin-bottom: 10px; background-color: #f0f1f3; padding: 10px 10px;"
+                              class="dashboard-summery-one">
+                              <div class="row align-items-right">
+                                <div class="col-3">
+                                  <div style="height: 44px; width: 44px; line-height: 10px;"
+                                    class="item-icon bg-light-green ">
+                                    <i class="fas fa-check-circle text-green"></i>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="item-content">
+                                    <div style="color: #111;" class="item-title">Total Holiday</div>
+                                    <div class="item-number"><span class="counter" data-num="150000">10</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                          <table id="example" class="table table-hover table-striped cell-border"
+                            style="border: 1px solid rgb(180, 180, 180)">
+                            <thead>
+                              <tr>
+                                <th>Attendance Table</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

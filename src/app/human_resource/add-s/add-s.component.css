@@ -277,7 +277,35 @@ body {
 }
 
 
+/*************popup************************/
 
+.container {
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-box {
+  display: inline-block;
+  padding: 10px;
+
+  background: rgba(136, 82, 82, 0.8);
+  border: 1px solid #fff;
+  position: fixed;
+  top: 55%;
+  left: 0;
+
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  margin-top: 60%;
+
+  width: 200%;
+  transform: translate(-25%, -25%);
+}
 
 /*************add more details************************/
 .block {
