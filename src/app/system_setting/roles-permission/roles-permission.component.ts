@@ -42,6 +42,7 @@ export class RolesPermissionComponent implements OnInit {
 
   addrole() {
     this.RolespermissionService.save(this.rolesDto).subscribe((res: any) => {
+      console.log(res);
       if (res.success == true) {
         alert('Saved Successfully');
       }
@@ -51,6 +52,7 @@ export class RolesPermissionComponent implements OnInit {
     }, (err) => {
       console.log('Error While Saving');
       console.error(err);
+      console.log(this.rolesDto);
     });
   }
 

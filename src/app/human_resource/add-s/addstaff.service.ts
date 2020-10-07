@@ -6,14 +6,14 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
   providedIn: 'root'
 })
 export class AddstaffService {
-  url = 'http://yamistha.cloudjiffy.net/api/staff/';
+  url = `http://yamistha.cloudjiffy.net/api/staff/`;
 
   constructor(private http: HttpClient, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 
 
   save(staffDto): any {
-    return this.http.post(this.url, staffDto, { headers: this.headers });
+    return this.http.post(`http://yamistha.cloudjiffy.net/api/staff`, staffDto, { headers: this.headers });
   }
 
   getList(): any {

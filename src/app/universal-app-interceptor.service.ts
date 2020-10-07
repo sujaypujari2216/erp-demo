@@ -4,7 +4,7 @@ import { AuthLoginService } from './login/auth-login.service';
 import { JWTTokenServiceService } from './jwttoken-service.service';
 
 @Injectable()
-export class UniversalAppInterceptorService implements HttpInterceptor {
+export class UniversalAppInterceptorService  {
  
   constructor( private authService: JWTTokenServiceService) { }
  
