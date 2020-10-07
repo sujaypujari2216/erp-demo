@@ -57,6 +57,7 @@ import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login.component';
 import { UniversalAppInterceptorService } from './universal-app-interceptor.service';
 import { AuthGuardGuard } from './auth-guard.guard';
+import { SystemModule } from './system_setting/system.module';
 
 
 
@@ -101,7 +102,7 @@ import { AuthGuardGuard } from './auth-guard.guard';
     ComplainttypeComponent,
     HomeworkEvaluationComponent,
 
-SesstionSettingComponent,
+
 
 
     
@@ -123,6 +124,7 @@ SesstionSettingComponent,
     FormsModule,
     ReactiveFormsModule,
    LoginModule,
+   SystemModule
     // RouterModule.forRoot(
     //   [
     //     { path: "", redirectTo: "Login", pathMatch: "full" },
