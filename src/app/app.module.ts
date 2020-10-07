@@ -57,7 +57,6 @@ import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login.component';
 import { UniversalAppInterceptorService } from './universal-app-interceptor.service';
 import { AuthGuardGuard } from './auth-guard.guard';
-import { StaffdirComponent } from './human_resource/add-s/staffdir/staffdir.component';
 
 
 
@@ -104,7 +103,6 @@ import { StaffdirComponent } from './human_resource/add-s/staffdir/staffdir.comp
 
 SesstionSettingComponent,
 
-StaffdirComponent,
 
     
   ],

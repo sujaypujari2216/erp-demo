@@ -8,15 +8,21 @@ import { DatatableService } from 'src/app/shared/datatableservice/datatable.serv
   styleUrls: ['./staff-attendance-type.component.css']
 })
 export class StaffAttendanceTypeComponent implements OnInit {
+  
+    url = 'http://yamistha.cloudjiffy.net/api/attendance-type/';
+
 
   constructor(private staffAttendanceType: StaffAttendanceTypeService, private datatableservice: DatatableService) { }
 
   attenceTypes = [];
   Dto = {
-    "id": 0,
-    "isActive": "yes",
-    "keyValue": "",
-    "type": ""
+   
+  "createdAt": "",
+  "id": 0,
+  "isActive": "yes",
+  "type": "",
+  "updatedAt": ""
+
   }
 
   isUpdate: boolean = false;
@@ -53,7 +59,8 @@ export class StaffAttendanceTypeComponent implements OnInit {
 
   getById(id) {
     this.staffAttendanceType.getById(id).subscribe((res: any) => {
-      this.Dto.keyValue = res.data.keyValue;
+      this.Dto.createdAt = res.data.createdAt;
+      this.Dto.updatedAt = res.data.updatedAt;
       this.Dto.id = res.data.id;
       this.Dto.isActive = res.data.isActive;
       this.Dto.type = res.data.type;
@@ -100,7 +107,8 @@ export class StaffAttendanceTypeComponent implements OnInit {
   }
 
   clearData() {
-    this.Dto.keyValue = "";
+    this.Dto.createdAt = "";
+    this.Dto.updatedAt ="";
     this.Dto.id = 0;
     this.Dto.isActive = "yes";
     this.Dto.type = "";

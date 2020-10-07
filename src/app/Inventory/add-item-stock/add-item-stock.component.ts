@@ -10,20 +10,25 @@ import { AdditemstockService } from './additemstock.service';
 export class AddItemStockComponent implements OnInit {
 
 
-  url = `http://yamistha.cloudjiffy.net/item-stock/`;
+  url = `http://yamistha.cloudjiffy.net/api/item-stock/`;
 
   itemstocks = [];
   itemStockDto = {
     "attachment": "",
-    "date": "",
-    "description": "",
-    "id": 0,
-    "isActive": "yes",
-    "itemPhoto": "",
-    "purchasePrice": "",
-    "quantity": 0,
-    "symbol": "",
-    "name": ""
+  "date": "",
+  "description": "",
+  "id": 0,
+  "isActive": "yes",
+  "itemId": 0,
+  "itemName": "",
+  "itemPhoto": "",
+  "itemStore": "",
+  "itemStoreId": 0,
+  "itemSupplier": "",
+  "itemSupplierId": 0,
+  "purchasePrice": "",
+  "quantity": 0,
+  "symbol": ""
   };
 
   isUpdate: boolean = false;
@@ -63,6 +68,8 @@ export class AddItemStockComponent implements OnInit {
       //console.error(err);
     });
   }
+  
+  
   getitemstockById(itemId) {
     this.AdditemstockService.getitemstockById(itemId).subscribe((res: any) => {
       this.itemStockDto.date = res.data.date;
@@ -70,11 +77,15 @@ export class AddItemStockComponent implements OnInit {
       this.itemStockDto.isActive = res.data.isActive;
       this.itemStockDto.attachment = res.data.attachment;
       this.itemStockDto.description = res.data.description;
-      this.itemStockDto.name = res.data.name;
+      this.itemStockDto.itemSupplierId = res.data.itemSupplierId;
+      this.itemStockDto.itemName = res.data.itemName;
       this.itemStockDto.itemPhoto = res.data.itemPhoto;
       this.itemStockDto.purchasePrice = res.data.purchasePrice;
       this.itemStockDto.quantity = res.data.quantity;
       this.itemStockDto.symbol = res.data.symbol;
+      this.itemStockDto.itemStoreId = res.data.itemStoreId;
+      this.itemStockDto.itemId = res.data.itemId;
+
 
       console.log(this.itemStockDto);
 
@@ -121,15 +132,18 @@ export class AddItemStockComponent implements OnInit {
   }
   clearData() {
     this.itemStockDto.date = "";
-    this.itemStockDto.id = 0;
-    this.itemStockDto.isActive = "yes";
-    this.itemStockDto.attachment = "";
-    this.itemStockDto.description = "";
-    this.itemStockDto.name = "";
-    this.itemStockDto.itemPhoto = "";
-    this.itemStockDto.purchasePrice = "";
-    this.itemStockDto.quantity = 0;
-    this.itemStockDto.symbol = "";
+      this.itemStockDto.id = 0;
+      this.itemStockDto.isActive = "yes";
+      this.itemStockDto.attachment = "";
+      this.itemStockDto.description = "";
+      this.itemStockDto.itemSupplierId = 0;
+      this.itemStockDto.itemName = "";
+      this.itemStockDto.itemPhoto = "";
+      this.itemStockDto.purchasePrice = "";
+      this.itemStockDto.quantity = 0;
+      this.itemStockDto.symbol = "";
+      this.itemStockDto.itemStoreId = 0;
+      this.itemStockDto.itemId = 0;
     this.isUpdate = false;
   }
 }

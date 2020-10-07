@@ -14,7 +14,7 @@ import { ItemcategoryService } from 'src/app/Inventory/item-category/itemcategor
 })
 export class AddItemComponent implements OnInit {
 
-  url = `http://yamistha.cloudjiffy.net/item/`;
+  url = `http://yamistha.cloudjiffy.net/api/item/`;
 
   items = [];
   itemDto = {

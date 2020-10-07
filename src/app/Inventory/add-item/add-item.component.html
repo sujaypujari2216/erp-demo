@@ -54,6 +54,7 @@
         <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
+
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -86,20 +87,19 @@
                     </label>
 
                   </div> -->
+
                   <div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label for="slt" class="slt">
                       <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="itemDto.itemCategoryId"
-                        name="itemCategoryId">
+                        name="itemCategoryId" required>
                         <option selected>Please Select *</option>
-                        <option *ngFor="let Category of categories" [value]="Category.itemCategoryId"
-                          [selected]="itemDto.itemCategoryId == Category.itemCategoryId">
-                          {{ Category.itemCategoryId }}
+                        <option *ngFor="let category of categories" [value]="category.id"
+                          [selected]="itemDto.itemCategoryId ==category.itemCategory">{{category.itemCategory}}
                         </option>
                       </select>
-                      <span class="label">Item Category*</span>
+                      <span class="label">Item Categoryy *</span>
                       <span class="focus-bg"></span>
                     </label>
-
                   </div>
 
                   <!-- <div class="col-xl-4 col-lg-6 col-12 form-group">

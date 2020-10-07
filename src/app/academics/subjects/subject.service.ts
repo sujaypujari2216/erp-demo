@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { AuthLoginService } from 'src/app/login/auth-login.service';
-
 import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 
 

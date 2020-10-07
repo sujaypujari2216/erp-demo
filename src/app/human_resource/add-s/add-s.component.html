@@ -10,22 +10,11 @@
 <!-- Admit Form Area Start Here -->
 <div class="card height-auto">
   <div class="card-body">
-
     <form class="new-added-form">
       <div class="row">
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="id" [(ngModel)]="staffDto.id"
-              [value]="staffDto.id">
-            <span class="label">Staff ID *</span>
-            <span class="focus-bg"></span>
-          </label>
-
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.roleName" name="roleName">
+            <select name="Section" class="form-control" id="slt" placeholder="&nbsp;">
               <option value="">select</option>
               <option value="1">Admin</option>
               <option value="2">Teacher</option>
@@ -40,416 +29,524 @@
         </div>
 
 
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.staffDesignationId"
-              name="staffDesignationId" required>
-              <option selected>Please Select *</option>
-              <option *ngFor="let desig of designations" [value]="desig.id"
-                [selected]="staffDto.staffDesignationId ==desig.designation">{{desig.designation}}
-              </option>
-            </select>
-            <span class="label">Designation *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.departmentId"
-              name="departmentId" required>
-              <option selected>Please Select *</option>
-              <option *ngFor="let dept of depts" [value]="dept.id"
-                [selected]="staffDto.departmentId == dept.departmentName">{{dept.departmentName}}
-              </option>
-            </select>
-            <span class="label">Deaprtment *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-
-
-
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="name"
-              [(ngModel)]="staffDto.name" [value]="staffDto.name">
-            <span class="label">First Name *</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="surname"
-              [(ngModel)]="staffDto.surname" [value]="staffDto.surname">
-            <span class="label">Last Name *</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="fatherName"
-              [(ngModel)]="staffDto.fatherName" [value]="staffDto.fatherName">
-            <span class="label">Father Name*</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="motherName"
-              [(ngModel)]="staffDto.motherName" [value]="staffDto.motherName">
-            <span class="label">Mother Name*</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="email" class="form-control" id="inp" placeholder="&nbsp;" name="email"
-              [(ngModel)]="staffDto.email" [value]="staffDto.email">
-            <span class="label">E-Mail*</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.gender" name="gender">
-              <option selected>Please Select Gender *</option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
-            </select>
-            <span class="label">Gender *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="dob" [(ngModel)]="staffDto.dob"
-              [value]="staffDto.dob">
-            <span class="label">Birthdate *</span>
+            <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+            <span class="label"> Date *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="dateOfJoining" [(ngModel)]="staffDto.dateOfJoining"
-              [value]="staffDto.dateOfJoining">
-            <span class="label">Date Of Joining *</span>
-            <span class="focus-bg"></span>
-          </label>
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <div class="form-group">
+            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+              style="float: right;">Search</button>
+          </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="contactNo"
-              [(ngModel)]="staffDto.contactNo" [value]="staffDto.contactNo">
-            <span class="label">Mobile No *</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="emergencyContactNo"
-              [(ngModel)]="staffDto.emergencyContactNo" [value]="staffDto.emergencyContactNo">
-            <span class="label">Emergency Contact No </span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="slt" class="slt">
-            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.maritalStatus"
-              name="maritalStatus">
-              <option selected>Please Select *</option>
-              <option value="1">Married</option>
-              <option value="2">Unmarried</option>
-            </select>
-            <span class="label">Married Status*</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label class="text-dark-medium" style="font-size: smaller;">Upload Staff Photo (150px X 150px)</label>
-          <input type="file" class="form-control-file" name="image" [(ngModel)]="staffDto.image"
-            [value]="staffDto.image">
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="staffDto.qualification"
-              name="qualification" [value]="staffDto.qualification">
-            <span class="label">Qualification</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="workExp"
-              [(ngModel)]="staffDto.workExp" [value]="staffDto.workExp">
-            <span class="label">Work Experiance</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="note"
-              [(ngModel)]="staffDto.note" [value]="staffDto.note">
-            <span class="label">Note </span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-3 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="localAddress"
-              [(ngModel)]="staffDto.localAddress" [value]="staffDto.localAddress">
-            <span class="label">Current Address</span>
-            <span class="focus-bg"></span>
-          </label>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <label for="inp" class="inp">
-            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="permanentAddress"
-              [(ngModel)]="staffDto.permanentAddress" [value]="staffDto.permanentAddress">
-            <span class="label">Permanent Address *</span>
-            <span class="focus-bg"></span>
-          </label>
-        </div>
-
       </div>
     </form>
-    <br>
+    <div class="table-responsive">
+      <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
+        class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="location.href='/#/add-s'">+
+        Add</button>
+      <table id="example" class="table display data-table text-nowrap cell-border">
+        <thead>
 
-    <button (click)=toggleDisplay() type="button" class="block"><b>Add More Details</b></button>
-  </div>
+          <tr>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Mobile No.</th>
+            <th>Action</th>
 
-  <div class="card height-auto" [hidden]="isShow">
-    <div class="card-body">
-      <form class="new-added-form">
-        <h4>Payroll</h4>
-        <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;"
-      onClick="location.href='/#/add-s'">Back</button> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let staff of staffs">
 
-        <div class="row">
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="epfNo"
-                [(ngModel)]="staffDto.epfNo" [value]="staffDto.epfNo">
-              <span class="label">ERP No.</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
+            <td><a href="/#/staffprofile">{{ staff.id }}</a></td>
+            <td>{{ staff. name}}</td>
+            <td>{{ staff. roleId}</td>
+            <td>{{ staff. departmentName}}</td>
+            <td>{{ staff. staffDesignation}}</td>
+            <td>{{ staff. contactNo}}</td>
 
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="basicSalary"
-                [(ngModel)]="staffDto.basicSalary" [value]="staffDto.basicSalary">
-              <span class="label">Basic Salary</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-          <!-- dropdown required -->
+            <td>
+              <a (click)="setUpdateFileds(staff.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
+                  data-target="#myModal"></i>&nbsp;</a>
+              <a (click)="delete(staff.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+            </td>
+          </tr>
 
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="slt" class="slt">
-              <select class="form-control" id="slt" placeholder="&nbsp;" name="contractType"
-                [(ngModel)]="staffDto.contractType" [value]="staffDto.contractType">
-                <option selected>select *</option>
-                <option value="Permanent" [selected]="staffDto.contractType == 'Permanent'">Permanent</option>
-                <option value="Probation" [selected]="staffDto.contractType == 'Probation'">Probation</option>
+        </tbody>
+      </table>
 
-              </select>
-              <span class="label">Contract Type*</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="location"
-                [(ngModel)]="staffDto.location" [value]="staffDto.location">
-              <span class="label">Location</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-          <hr>
-
-        </div>
-        <hr><br>
-        <h4>Leaves</h4>
-        <div class="row">
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="leaveType">
-              <span class="label">Leave Type</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-
-
-        </div>
-        <hr><br>
-
-        <h4>Bank Account Details</h4>
-        <div class="row">
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="accountTitle"
-                [(ngModel)]="staffDto.accountTitle" [value]="staffDto.accountTitle">
-              <span class="label">Account Title</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankAccountNo"
-                [(ngModel)]="staffDto.bankAccountNo" [value]="staffDto.bankAccountNo">
-              <span class="label">Bank Account No. *</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankName"
-                [(ngModel)]="staffDto.bankName" [value]="staffDto.bankName">
-              <span class="label">Bank Name</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="ifscCode"
-                [(ngModel)]="staffDto.ifscCode" [value]="staffDto.ifscCode">
-              <span class="label">IFSC Code *</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankBranch"
-                [(ngModel)]="staffDto.bankBranch" [value]="staffDto.bankBranch">
-              <span class="label">Bank Branch Name * </span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-
-
-        </div>
-        <hr><br>
-
-        <h4>Social Media Link</h4>
-        <div class="row">
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="facebook"
-                [(ngModel)]="staffDto.facebook" [value]="staffDto.facebook">
-              <span class="label">Facebook URL</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="twitter"
-                [(ngModel)]="staffDto.twitter" [value]="staffDto.twitter">
-              <span class="label">Twitter URL *</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankName"
-                [(ngModel)]="staffDto.bankName" [value]="staffDto.bankName">
-              <span class="label">Bank Name</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="instagram"
-                [(ngModel)]="staffDto.instagram" [value]="staffDto.instagram">
-              <span class="label">Instagram URL*</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-12 form-group">
-            <label for="inp" class="inp">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="linkedin"
-                [(ngModel)]="staffDto.linkedin" [value]="staffDto.linkedin">
-              <span class="label">Linkedin URL * </span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-
-        </div>
-        <hr>
-        <h3>Upload Content</h3>
-        <div class="row">
-          <div class="col-xl-3 col-lg-12 col-12 form-group">
-            <label for="inp" class="inp" style="float: left;">Resume
-
-            </label>
-          </div>
-          <div class="col-xl-3 col-lg-12 col-12 form-group">
-            <label class="text-dark-medium" style="font-size: small;">Document</label>
-            <input type="file" class="form-control-file" name="resume" placeholder="Document"
-              [(ngModel)]="staffDto.resume">
-          </div>
-          <div class="col-xl-3 col-lg-12 col-12 form-group">
-            <label for="inp" class="inp" style="float: left;">Joining Letter
-
-            </label>
-          </div>
-          <div class="col-xl-3 col-lg-12 col-12 form-group">
-            <label class="text-dark-medium" style="font-size: small;">Document</label>
-            <input type="file" class="form-control-file" name="joiningLetter" placeholder="Document"
-              [(ngModel)]="staffDto.joiningLetter">
-          </div>
-          <div class="col-xl-3 col-lg-12 col-12 form-group">
-            <label for="inp" class="inp" style="float: left;">
-              <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="otherDocumentName"
-                [(ngModel)]="staffDto.otherDocumentName"> <span class="label">Other Documents</span>
-              <span class="focus-bg"></span>
-            </label>
-          </div>
-          <div class="col-xl-3 col-lg-12 col-12 form-group">
-            <label class="text-dark-medium" style="font-size: small;">Document</label>
-            <input type="file" class="form-control-file" name="photo" placeholder="otherDocumentFile"
-              [(ngModel)]="staffDto.otherDocumentFile">
-          </div>
-
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
-              onClick="location.href='/#/admissionform'">+ Prev</button> -->
-          <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-            class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-            Save
-          </button>
-          <button *ngIf="this.isUpdate" (click)="update(staffDto.id)" type="button"
-            class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
-            Update
-          </button>
-        </div>
-      </form>
     </div>
   </div>
+</div>
+
+
+
+
+<div class="container">
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Add Staff </h5>
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <form class="new-added-form">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="id"
+                    [(ngModel)]="staffDto.id" [value]="staffDto.id">
+                  <span class="label">Staff ID *</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.roleName"
+                    name="roleName">
+                    <option value="">select</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Teacher</option>
+                    <option value="3">Accountant</option>
+                    <option value="4">Librarian</option>
+                    <option value="5">Receptionist</option>
+                    <option value="5">Super Admin</option>
+                  </select>
+                  <span class="label">Role *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.staffDesignationId"
+                    name="staffDesignationId" required>
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let desig of designations" [value]="desig.id"
+                      [selected]="staffDto.staffDesignationId ==desig.designation">{{desig.designation}}
+                    </option>
+                  </select>
+                  <span class="label">Designation *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.departmentId"
+                    name="departmentId" required>
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let dept of depts" [value]="dept.id"
+                      [selected]="staffDto.departmentId == dept.departmentName">{{dept.departmentName}}
+                    </option>
+                  </select>
+                  <span class="label">Deaprtment *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+
+
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="name"
+                    [(ngModel)]="staffDto.name" [value]="staffDto.name">
+                  <span class="label">First Name *</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="surname"
+                    [(ngModel)]="staffDto.surname" [value]="staffDto.surname">
+                  <span class="label">Last Name *</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="fatherName"
+                    [(ngModel)]="staffDto.fatherName" [value]="staffDto.fatherName">
+                  <span class="label">Father Name*</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="motherName"
+                    [(ngModel)]="staffDto.motherName" [value]="staffDto.motherName">
+                  <span class="label">Mother Name*</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="email" class="form-control" id="inp" placeholder="&nbsp;" name="email"
+                    [(ngModel)]="staffDto.email" [value]="staffDto.email">
+                  <span class="label">E-Mail*</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.gender"
+                    name="gender">
+                    <option selected>Please Select Gender *</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                  </select>
+                  <span class="label">Gender *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="dob" [(ngModel)]="staffDto.dob"
+                    [value]="staffDto.dob">
+                  <span class="label">Birthdate *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="dtp" class="dtp">
+                  <input type="date" id="dtp" placeholder="&nbsp;" name="dateOfJoining"
+                    [(ngModel)]="staffDto.dateOfJoining" [value]="staffDto.dateOfJoining">
+                  <span class="label">Date Of Joining *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="contactNo"
+                    [(ngModel)]="staffDto.contactNo" [value]="staffDto.contactNo">
+                  <span class="label">Mobile No *</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="emergencyContactNo"
+                    [(ngModel)]="staffDto.emergencyContactNo" [value]="staffDto.emergencyContactNo">
+                  <span class="label">Emergency Contact No </span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.maritalStatus"
+                    name="maritalStatus">
+                    <option selected>Please Select *</option>
+                    <option value="1">Married</option>
+                    <option value="2">Unmarried</option>
+                  </select>
+                  <span class="label">Married Status*</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label class="text-dark-medium" style="font-size: smaller;">Upload Staff Photo (150px X 150px)</label>
+                <input type="file" class="form-control-file" name="image" [(ngModel)]="staffDto.image"
+                  [value]="staffDto.image">
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;"
+                    [(ngModel)]="staffDto.qualification" name="qualification" [value]="staffDto.qualification">
+                  <span class="label">Qualification</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="workExp"
+                    [(ngModel)]="staffDto.workExp" [value]="staffDto.workExp">
+                  <span class="label">Work Experiance</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="note"
+                    [(ngModel)]="staffDto.note" [value]="staffDto.note">
+                  <span class="label">Note </span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-3 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="localAddress"
+                    [(ngModel)]="staffDto.localAddress" [value]="staffDto.localAddress">
+                  <span class="label">Current Address</span>
+                  <span class="focus-bg"></span>
+                </label>
+
+              </div>
+              <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="inp" class="inp">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="permanentAddress"
+                    [(ngModel)]="staffDto.permanentAddress" [value]="staffDto.permanentAddress">
+                  <span class="label">Permanent Address *</span>
+                  <span class="focus-bg"></span>
+                </label>
+              </div>
+
+            </div>
+          </form>
+          <br>
+
+          <button (click)=toggleDisplay() type="button" class="block"><b>Add More Details</b></button>
+
+          <div class="card height-auto" [hidden]="isShow">
+            <div class="card-body">
+              <form class="new-added-form">
+                <h4>Payroll</h4>
+                <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" style="float: right;"
+      onClick="location.href='/#/add-s'">Back</button> -->
+
+                <div class="row">
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="epfNo"
+                        [(ngModel)]="staffDto.epfNo" [value]="staffDto.epfNo">
+                      <span class="label">ERP No.</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="basicSalary"
+                        [(ngModel)]="staffDto.basicSalary" [value]="staffDto.basicSalary">
+                      <span class="label">Basic Salary</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+                  <!-- dropdown required -->
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="slt" class="slt">
+                      <select class="form-control" id="slt" placeholder="&nbsp;" name="contractType"
+                        [(ngModel)]="staffDto.contractType" [value]="staffDto.contractType">
+                        <option selected>select *</option>
+                        <option value="Permanent" [selected]="staffDto.contractType == 'Permanent'">Permanent</option>
+                        <option value="Probation" [selected]="staffDto.contractType == 'Probation'">Probation</option>
+
+                      </select>
+                      <span class="label">Contract Type*</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="location"
+                        [(ngModel)]="staffDto.location" [value]="staffDto.location">
+                      <span class="label">Location</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+                  <hr>
+
+                </div>
+                <hr><br>
+                <h4>Leaves</h4>
+                <div class="row">
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="leaveType">
+                      <span class="label">Leave Type</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+
+
+                </div>
+                <hr><br>
+
+                <h4>Bank Account Details</h4>
+                <div class="row">
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="accountTitle"
+                        [(ngModel)]="staffDto.accountTitle" [value]="staffDto.accountTitle">
+                      <span class="label">Account Title</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankAccountNo"
+                        [(ngModel)]="staffDto.bankAccountNo" [value]="staffDto.bankAccountNo">
+                      <span class="label">Bank Account No. *</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankName"
+                        [(ngModel)]="staffDto.bankName" [value]="staffDto.bankName">
+                      <span class="label">Bank Name</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="ifscCode"
+                        [(ngModel)]="staffDto.ifscCode" [value]="staffDto.ifscCode">
+                      <span class="label">IFSC Code *</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankBranch"
+                        [(ngModel)]="staffDto.bankBranch" [value]="staffDto.bankBranch">
+                      <span class="label">Bank Branch Name * </span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+
+
+                </div>
+                <hr><br>
+
+                <h4>Social Media Link</h4>
+                <div class="row">
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="facebook"
+                        [(ngModel)]="staffDto.facebook" [value]="staffDto.facebook">
+                      <span class="label">Facebook URL</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="twitter"
+                        [(ngModel)]="staffDto.twitter" [value]="staffDto.twitter">
+                      <span class="label">Twitter URL *</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="bankName"
+                        [(ngModel)]="staffDto.bankName" [value]="staffDto.bankName">
+                      <span class="label">Bank Name</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="instagram"
+                        [(ngModel)]="staffDto.instagram" [value]="staffDto.instagram">
+                      <span class="label">Instagram URL*</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="inp" class="inp">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="linkedin"
+                        [(ngModel)]="staffDto.linkedin" [value]="staffDto.linkedin">
+                      <span class="label">Linkedin URL * </span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+
+                </div>
+                <hr>
+                <h3>Upload Content</h3>
+                <div class="row">
+                  <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <label for="inp" class="inp" style="float: left;">Resume
+
+                    </label>
+                  </div>
+                  <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <label class="text-dark-medium" style="font-size: small;">Document</label>
+                    <input type="file" class="form-control-file" name="resume" placeholder="Document"
+                      [(ngModel)]="staffDto.resume">
+                  </div>
+                  <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <label for="inp" class="inp" style="float: left;">Joining Letter
+
+                    </label>
+                  </div>
+                  <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <label class="text-dark-medium" style="font-size: small;">Document</label>
+                    <input type="file" class="form-control-file" name="joiningLetter" placeholder="Document"
+                      [(ngModel)]="staffDto.joiningLetter">
+                  </div>
+                  <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <label for="inp" class="inp" style="float: left;">
+                      <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="otherDocumentName"
+                        [(ngModel)]="staffDto.otherDocumentName"> <span class="label">Other Documents</span>
+                      <span class="focus-bg"></span>
+                    </label>
+                  </div>
+                  <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <label class="text-dark-medium" style="font-size: small;">Document</label>
+                    <input type="file" class="form-control-file" name="photo" placeholder="otherDocumentFile"
+                      [(ngModel)]="staffDto.otherDocumentFile">
+                  </div>
+
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                  <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
+              onClick="location.href='/#/admissionform'">+ Prev</button> -->
+                  <button *ngIf="!this.isUpdate" (click)="add()" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                    Save
+                  </button>
+                  <button *ngIf="this.isUpdate" (click)="update(staffDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+                    Update
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
