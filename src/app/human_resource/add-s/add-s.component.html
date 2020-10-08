@@ -12,41 +12,44 @@
   <div class="card-body">
     <form class="new-added-form">
       <div class="row">
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select name="Section" class="form-control" id="slt" placeholder="&nbsp;">
-              <option value="">select</option>
-              <option value="1">Admin</option>
-              <option value="2">Teacher</option>
-              <option value="3">Accountant</option>
-              <option value="4">Librarian</option>
-              <option value="5">Receptionist</option>
-              <option value="5">Super Admin</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.roleId" name="roleId">
+              <option selected>Please Select *</option>
+              <option *ngFor="let role of roles" [value]="role.id" [selected]="staffDto.roleId == role.name">
+                {{role.name}}
+              </option>
             </select>
-            <span class="label">Role *</span>
+            <span class="label">Roles *</span>
             <span class="focus-bg"></span>
           </label>
         </div>
 
 
-        <div class="col-xl-4 col-lg-6 col-12 form-group">
-          <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
-            <span class="label"> Date *</span>
+        <div class="col-xl-3 col-lg-6 col-12 form-group">
+          <label for="inp" class="inp">
+            <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="id">
+            <span class="label">Search By Keyword *</span>
             <span class="focus-bg"></span>
           </label>
+
+
         </div>
         <div class="col-xl-4 col-lg-6 col-12 form-group">
           <div class="form-group">
-            <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
-              style="float: right;">Search</button>
+
+            <button (click)="search_staff()" type="button" style="float: right;"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+              Search
+            </button>
           </div>
         </div>
       </div>
     </form>
     <div class="table-responsive">
       <button style="  background-color: #000066; position: relative; top:0; right: 10; float: right;" type="button"
-        class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal" onclick="location.href='/#/add-s'">+
+        class="btn btn-info btn-lg" (click)="clearData()" data-toggle="modal" data-target="#myModal"
+        onclick="location.href='/#/add-s'">+
         Add</button>
       <table id="example" class="table display data-table text-nowrap cell-border">
         <thead>
@@ -62,22 +65,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let staff of staffs">
+          <tr *ngFor="let staff of staffs ">
 
-<<<<<<< HEAD
-            <td><a href="/#/staffprofile">{{ staff.id }}</a></td>
-            <td>{{ staff.name}}</td>
-            <td>{{ staff.roleId}}</td>
-            <td>{{ staff.departmentName}}</td>
-            <td>{{ staff.staffDesignation}}</td>
-            <td>{{ staff.contactNo}}</td>
-
-            <td>
-              <a (click)="setUpdateFileds(staff.id)" data-toggle="modal" data-target="#myModal" onclick="location.href='/#/add-s'"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-=======
-            <td>{{ staff.id }}</td>
-            <td><a href="/#/staffprofile">{{ staff. name}}</a></td>
-            <td>{{ staff. roleId}</td>
+            <td>{{ staff.employeeId }}</td>
+            <td><a href="getById(staff.id)" data-toggle="modal" data-target="#show">{{ staff. name}}</a></td>
+            <td>{{ staff. roleName}</td>
             <td>{{ staff. departmentName}}</td>
             <td>{{ staff. staffDesignation}}</td>
             <td>{{ staff. contactNo}}</td>
@@ -87,7 +79,6 @@
                   class="fas fa-align-justify text-blue"></i>&nbsp;</a>
               <a (click)="setUpdateFileds(staff.id)"><i class="fas fa-pen-alt text-orange-peel" data-toggle="modal"
                   data-target="#myModal"></i>&nbsp;</a>
->>>>>>> 7c6e10b27dc77455a7d64abc1eb3db6b20fbb4ff
               <a (click)="delete(staff.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
             </td>
           </tr>
@@ -115,8 +106,8 @@
             <div class="row">
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="inp" class="inp">
-                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="id"
-                    [(ngModel)]="staffDto.id" [value]="staffDto.id">
+                  <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="employeeId"
+                    [(ngModel)]="staffDto.id" [value]="staffDto.employeeId">
                   <span class="label">Staff ID *</span>
                   <span class="focus-bg"></span>
                 </label>
@@ -125,17 +116,14 @@
               </div>
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
-                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.roleName"
-                    name="roleName">
-                    <option value="">select</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Teacher</option>
-                    <option value="3">Accountant</option>
-                    <option value="4">Librarian</option>
-                    <option value="5">Receptionist</option>
-                    <option value="5">Super Admin</option>
+                  <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.roleId"
+                    name="roleId">
+                    <option selected>Please Select *</option>
+                    <option *ngFor="let role of roles" [value]="role.id" [selected]="staffDto.roleId == role.name">
+                      {{role.name}}
+                    </option>
                   </select>
-                  <span class="label">Role *</span>
+                  <span class="label">Roles *</span>
                   <span class="focus-bg"></span>
                 </label>
               </div>
@@ -144,7 +132,7 @@
               <div class="col-xl-3 col-lg-6 col-12 form-group">
                 <label for="slt" class="slt">
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.staffDesignationId"
-                    name="staffDesignationId" >
+                    name="staffDesignationId">
                     <option selected>Please Select *</option>
                     <option *ngFor="let desig of designations" [value]="desig.id"
                       [selected]="staffDto.staffDesignationId ==desig.designation">{{desig.designation}}
@@ -219,8 +207,8 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.gender"
                     name="gender">
                     <option selected>Please Select Gender *</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                   <span class="label">Gender *</span>
                   <span class="focus-bg"></span>
@@ -266,8 +254,8 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.maritalStatus"
                     name="maritalStatus">
                     <option selected>Please Select *</option>
-                    <option value="1">Married</option>
-                    <option value="2">Unmarried</option>
+                    <option value="Married">Married</option>
+                    <option value="Unmarried">Unmarried</option>
                   </select>
                   <span class="label">Married Status*</span>
                   <span class="focus-bg"></span>
@@ -343,7 +331,7 @@
                     <label for="inp" class="inp">
                       <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="epfNo"
                         [(ngModel)]="staffDto.epfNo" [value]="staffDto.epfNo">
-                      <span class="label">ERP No.</span>
+                      <span class="label">EPF No.</span>
                       <span class="focus-bg"></span>
                     </label>
                   </div>
@@ -504,7 +492,7 @@
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 col-12 form-group">
                     <label for="inp" class="inp" style="float: left;">Resume</label>
-                  <!-- </div>
+                    <!-- </div>
                   <div class="col-xl-3 col-lg-12 col-12 form-group"> -->
                     <label class="text-dark-medium" style="font-size: small;">Document</label>
                     <input type="file" class="form-control-file" name="resume" placeholder="Document"
@@ -513,7 +501,7 @@
 
                   <div class="col-xl-3 col-lg-6 col-12 form-group">
                     <label for="inp" class="inp" style="float: left;">Joining Letter</label>
-                  <!-- </div>
+                    <!-- </div>
                   <div class="col-xl-3 col-lg-12 col-12 form-group"> -->
                     <label class="text-dark-medium" style="font-size: small;">Document</label>
                     <input type="file" class="form-control-file" name="joiningLetter" placeholder="Document"
@@ -526,7 +514,7 @@
                         [(ngModel)]="staffDto.otherDocumentName"> <span class="label">Other Documents</span>
                       <span class="focus-bg"></span>
                     </label>
-                  <!-- </div>
+                    <!-- </div>
                   <div class="col-xl-3 col-lg-12 col-12 form-group"> -->
                     <label class="text-dark-medium" style="font-size: small;">Document</label>
                     <input type="file" class="form-control-file" name="photo" placeholder="otherDocumentFile"
@@ -538,11 +526,13 @@
                   <!-- <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
               onClick="location.href='/#/admissionform'">+ Prev</button> -->
                   <button *ngIf="!this.isUpdate" (click)="add()" type="button"
-                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
                     Save
                   </button>
-                  <button *ngIf="this.isUpdate" (click)="update(staffDto.id)"  type="button"
-                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal" >
+                  <button *ngIf="this.isUpdate" (click)="update(staffDto.id)" type="button"
+                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal"
+                    data-target="#myModal">
                     Update
                   </button>
                 </div>
@@ -577,7 +567,7 @@
                       <tbody>
                         <tr>
                           <td>Staff ID</td>
-                          <td class="font-medium text-dark-medium">{{ staffDto.id }}</td>
+                          <td class="font-medium text-dark-medium">{{ staffDto.employeeId }}</td>
                         </tr>
                         <tr>
                           <td>Role</td>

@@ -20,7 +20,8 @@
         <form class="new-added-form">
           <div class="col-xl-12 col-lg-12 col-12 form-desig">
             <label for="inp" class="inp">
-              <input type="text" name="roleName" class="form-control" id="inp" placeholder="&nbsp;" [(ngModel)]="rolesDto.roleName" [value]="rolesDto.roleName">
+              <input type="text" name="roleName" class="form-control" id="inp" placeholder="&nbsp;"
+                [(ngModel)]="rolesDto.roleName" [value]="rolesDto.roleName">
               <span class="label">Name</span>
               <span class="focus-bg"></span>
             </label>
@@ -53,7 +54,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let role of roles">
-                <td>{{role.roleName}}</td>
+                <td>{{role.name}}</td>
                 <td>{{role.isSystem}}</td>
                 <td>
                   <a href="/#/assign-permission"><i class="fas fa-tag "></i></a>&nbsp;

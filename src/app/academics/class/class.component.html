@@ -40,8 +40,8 @@
             </div> -->
 
             <div class="form-check" *ngFor="let sections of this.sectionDto">
-              <input class="form-check-input" [(ngModel)]="sections.id" name="{{ sections.section }}" type="checkbox"
-                id="{{ sections.section }}" (change)="onChangeCategory($event, sections)">
+              <input class="form-check-input" [(ngModel)]="classDto.section[0].id" name="{{ sections.section }}"
+                type="checkbox" id="{{ sections.section }}" (change)="onChangeCategory($event, sections)">
               <label class="form-check-label" for="{{ sections.section }}">
                 {{ sections.section }}
               </label>

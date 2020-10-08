@@ -10,32 +10,38 @@
   <div class="card-body">
     <form class="new-added-form">
       <div class="row">
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
+
+        <!--he role api mdhun ghe[compo.ts mdhe role service call kr]   <div class="col-xl-5 col-lg-6 col-12 form-group">
           <label for="slt" class="slt">
-            <select name="Section" class="form-control" id="slt" placeholder="&nbsp;">
-              <option value="">select</option>
-              <option value="1">Admin</option>
-              <option value="2">Teacher</option>
-              <option value="3">Accountant</option>
-              <option value="4">Librarian</option>
-              <option value="5">Receptionist</option>
-              <option value="5">Super Admin</option>
+            <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffDto.roleId" name="roleId">
+              <option selected>Please Select *</option>
+              <option *ngFor="let role of roles" [value]="role.id" [selected]="staffDto.roleId == role.name">
+                {{role.name}}
+              </option>
             </select>
-            <span class="label">Role *</span>
+            <span class="label">Roles *</span>
             <span class="focus-bg"></span>
           </label>
-        </div>
+        </div> -->
 
 
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
+        <!--  <div class="col-xl-5 col-lg-6 col-12 form-group">
           <label for="dtp" class="dtp">
-            <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
-            <span class="label"> Date *</span>
+            <input type="date" id="dtp" placeholder="&nbsp;" name="dob" [(ngModel)]="staffDto.dob"
+              [value]="staffDto.dob">
+            <span class="label">Birthdate *</span>
             <span class="focus-bg"></span>
           </label>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12 form-group">
-          <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Search</button>
+        </div> -->
+
+        <div class="col-xl-4 col-lg-6 col-12 form-group">
+          <div class="form-group">
+
+            <!-- <button (click)="search_staff()" type="button" style="float: right;"
+              class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">
+              Search
+            </button> -->
+          </div>
         </div>
 
       </div>

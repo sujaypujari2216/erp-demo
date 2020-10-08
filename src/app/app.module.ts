@@ -124,7 +124,8 @@ import { SystemModule } from './system_setting/system.module';
     FormsModule,
     ReactiveFormsModule,
    LoginModule,
-   SystemModule
+   SystemModule,
+   
     // RouterModule.forRoot(
     //   [
     //     { path: "", redirectTo: "Login", pathMatch: "full" },

@@ -30,14 +30,20 @@
         </thead>
         <tbody>
           <tr *ngFor="let feemaster of feemasters">
-            <td>{{ feemaster.feeGroupId }}</td>
-            <td>{{ feemaster.feetypeId }}</td>
-            <td>{{ feemaster.amount }}</td>
-
-            <td><a (click)="setUpdateFileds(feemaster.id)" data-toggle="modal" data-target="#myModal"><i
+            <td>{{ feemaster.feeGroupId}}</td>
+            <td>
+              {{ feemaster.feeGroupId +&nbsp;&nbsp;&nbsp; '-'&nbsp;&nbsp;&nbsp; + feemaster.amount }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a (click)="setUpdateFileds(feemaster.id)" data-toggle="modal" data-target="#myModal"><i
                   class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
 
-              <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign'"></i>&nbsp;
+
+              <a (click)="deletemaster(feemaster.id)"><i class="fas fa-times text-black"></i>&nbsp;</a>
+            </td>
+
+            <td>{{ feemaster.amount }}</td>
+
+            <td>
+              <i class="fas fa-eye " onClick="location.href='/#/fees-group-assign '"></i>&nbsp;
               <a (click)="deletemaster(feemaster.id)"><i class="fas fa-times text-black"></i>&nbsp;</a></td>
           </tr>
         </tbody>
@@ -70,7 +76,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feeGroupId"
                     name="feeGroupId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let group of feesgroup" [value]="group.name"
+                    <option *ngFor="let group of feesgroup" [value]="group.id"
                       [selected]="requestDto.feeGroupId == group.name">{{ group.name }}
                     </option>
                   </select>
@@ -83,7 +89,7 @@
                   <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="requestDto.feetypeId"
                     name="feetypeId">
                     <option selected>Please Select *</option>
-                    <option *ngFor="let feetype of feetypes" [value]="feetype.type"
+                    <option *ngFor="let feetype of feetypes" [value]="feetype.id"
                       [selected]="requestDto.feetypeId == feetype.type">
                       {{ feetype.type }}
                     </option>

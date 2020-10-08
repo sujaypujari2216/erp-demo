@@ -13,11 +13,16 @@ export class AddstaffService {
 
 
   save(staffDto): any {
-    return this.http.post(`http://yamistha.cloudjiffy.net/api/staff`, staffDto, { headers: this.headers });
+    return this.http.post(this.url, staffDto, { headers: this.headers });
   }
 
   getList(): any {
     return this.http.get(this.url, { headers: this.headers });
+  }
+
+  getList_search(pageNo = 0, pageSize = 10, roleId = 0): any {
+    //?pageNo=0&pageSize=10&roleId=5&sortBy=id
+    return this.http.get(this.url + '?pageNo=' + pageNo + '&pageSize=' + pageSize + '&roleId=' + roleId + '&sortBy=id', { headers: this.headers });
   }
 
   delete(Id): any {

@@ -3,6 +3,7 @@ import { AddstaffService } from './addstaff.service';
 import { DatatableService } from 'src/app/shared/datatableservice/datatable.service';
 import { DepartmentService } from 'src/app/human_resource/department/department.service';
 import { DesignitionService } from 'src/app/human_resource/designation/designition.service';
+import { RolespermissionService } from 'src/app/system_setting/roles-permission/rolespermission.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { DesignitionService } from 'src/app/human_resource/designation/designiti
   styleUrls: ['./add-s.component.css']
 })
 export class AddSComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/api/staff/`;
 
 
   isShow = true;
@@ -75,24 +77,37 @@ export class AddSComponent implements OnInit {
     "workExp": ""
   }
 
-  depts:any;
-  designations:any;
+  depts: any;
+  designations: any;
+  roles: any;
   isUpdate: boolean = false;
- 
+
 
   constructor(private addstaffService: AddstaffService, private datatableservice: DatatableService,
-    private DepartmentService: DepartmentService,private DesignitionService: DesignitionService) { }
+    private DepartmentService: DepartmentService, private DesignitionService: DesignitionService,
+    private RolespermissionService: RolespermissionService) { }
 
   ngOnInit(): void {
     this.getList();
     this.getdesList();
     this.getdeptList();
-  
+    this.getroleList();
 
   }
 
-  
-getdeptList() {
+  getroleList() {
+    this.RolespermissionService.getroleList().subscribe((res: any) => {
+      var data = res['data'];
+      this.roles = data['content'];
+      //this.references = content.map((key) => ({ ...key }));
+      //console.log(this.references);
+
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+    });
+  }
+  getdeptList() {
     this.DepartmentService.getdeptList().subscribe((res: any) => {
       var data = res['data'];
       this.depts = data['content'];
@@ -124,7 +139,7 @@ getdeptList() {
       this.staffs = content.map((key) => ({ ...key }));
       this.datatableservice.initTable('staffs');
     }, (err) => {
-      console.log('Error while fetching data');
+      //console.log('Error while fetching data');
       console.error(err);
       console.log(this.staffDto);
     });
@@ -147,13 +162,28 @@ getdeptList() {
     });
   }
 
+  search_staff() {
+    this.addstaffService.getList_search(0, 10, this.staffDto.roleId).subscribe(res => {
+      this.staffs = [];
+      console.log(res);
+      var data = res['data'];
+      var content = data['content'];
+      this.staffs = content.map((key) => ({ ...key }));
+      this.datatableservice.initTable('staffs');
+    }, (err) => {
+      console.log('Error while fetching data');
+      console.error(err);
+      console.log(this.staffDto);
+    });
+  }
+
   getById(Id) {
     this.addstaffService.getById(Id).subscribe((res: any) => {
       this.staffDto.accountTitle = res.data.accountTitle;
       this.staffDto.amount = res.data.amount;
       this.staffDto.bankAccountNo = res.data.bankAccountNo;
       this.staffDto.bankBranch = res.data.bankBranch,
-      this.staffDto.bankName = res.data.bankName;
+        this.staffDto.bankName = res.data.bankName;
       this.staffDto.basicSalary = res.data.basicSalary;
       this.staffDto.contactNo = res.data.contactNo;
       this.staffDto.contractType = res.data.contractType;
@@ -176,32 +206,32 @@ getdeptList() {
       this.staffDto.isActive = res.data.isActive;
       this.staffDto.joiningLetter = res.data.joiningLetter;
       this.staffDto.langId = res.data.langId;
-      this.staffDto.linkedin=res.data.linkedin;
-  this.staffDto.localAddress= res.data.localAddress;
-  this.staffDto.location=res.data.location;
-  this.staffDto.maritalStatus= res.data.maritalStatus;
-  this.staffDto.motherName= res.data.motherName;
-  this.staffDto.name= res.data.name;
-  this.staffDto.note= res.data.note;
-  this.staffDto.numberOfLeaves= res.data.numberOfLeaves;
-  this.staffDto.otherDocumentFile=res.data.otherDocumentFile;
-  this.staffDto.otherDocumentName=res.data.otherDocumentName;
-  this.staffDto.password=res.data.password;
-  this.staffDto.payscale= res.data.payscale;
-  this.staffDto.permanentAddress= res.data.permanentAddress;
-  this.staffDto.qualification= res.data.qualification;
-  this.staffDto.resignationLetter= res.data.resignationLetter;
-  this.staffDto.resume=res.data.resume;
-  this.staffDto.roleId= res.data.roleId;
-  this.staffDto.roleName= res.data.roleName;
-  this.staffDto.shift= res.data.shift;
-  this.staffDto.staffDesignation= res.data.staffDesignation;
-  this.staffDto.staffDesignationId= res.data.staffDesignationId;
-  this.staffDto.surname=res.data.surname;
-  this.staffDto.twitter= res.data.twitter;
-  this.staffDto.userId= res.data.userId;
-  this.staffDto.verificationCode= res.data.verificationCode;
-  this.staffDto.workExp=res.data.workExp;
+      this.staffDto.linkedin = res.data.linkedin;
+      this.staffDto.localAddress = res.data.localAddress;
+      this.staffDto.location = res.data.location;
+      this.staffDto.maritalStatus = res.data.maritalStatus;
+      this.staffDto.motherName = res.data.motherName;
+      this.staffDto.name = res.data.name;
+      this.staffDto.note = res.data.note;
+      this.staffDto.numberOfLeaves = res.data.numberOfLeaves;
+      this.staffDto.otherDocumentFile = res.data.otherDocumentFile;
+      this.staffDto.otherDocumentName = res.data.otherDocumentName;
+      this.staffDto.password = res.data.password;
+      this.staffDto.payscale = res.data.payscale;
+      this.staffDto.permanentAddress = res.data.permanentAddress;
+      this.staffDto.qualification = res.data.qualification;
+      this.staffDto.resignationLetter = res.data.resignationLetter;
+      this.staffDto.resume = res.data.resume;
+      this.staffDto.roleId = res.data.roleId;
+      this.staffDto.roleName = res.data.roleName;
+      this.staffDto.shift = res.data.shift;
+      this.staffDto.staffDesignation = res.data.staffDesignation;
+      this.staffDto.staffDesignationId = res.data.staffDesignationId;
+      this.staffDto.surname = res.data.surname;
+      this.staffDto.twitter = res.data.twitter;
+      this.staffDto.userId = res.data.userId;
+      this.staffDto.verificationCode = res.data.verificationCode;
+      this.staffDto.workExp = res.data.workExp;
       // console.log(this.Dto);
 
     }, (err) => {
@@ -280,33 +310,33 @@ getdeptList() {
       this.staffDto.isActive = "yes",
       this.staffDto.joiningLetter = "",
       this.staffDto.langId = 0,
-      this.staffDto.linkedin="",
-  this.staffDto.localAddress= "",
-  this.staffDto.location="",
-  this.staffDto.maritalStatus= "",
-  this.staffDto.motherName= "",
-  this.staffDto.name= "",
-  this.staffDto.note= "",
-  this.staffDto.numberOfLeaves= 0,
-  this.staffDto.otherDocumentFile="",
-  this.staffDto.otherDocumentName="",
-  this.staffDto.password="",
-  this.staffDto.payscale= "",
-  this.staffDto.permanentAddress= "",
-  this.staffDto.qualification= "",
-  this.staffDto.resignationLetter= "",
-  this.staffDto.resume="",
-  this.staffDto.roleId= 0,
-  this.staffDto.roleName= "",
-  this.staffDto.shift= "",
-  this.staffDto.staffDesignation= "",
-  this.staffDto.staffDesignationId= 0,
-  this.staffDto.surname="",
-  this.staffDto.twitter= "",
-  this.staffDto.userId= 0,
-  this.staffDto.verificationCode= "",
-  this.staffDto.workExp= ""
-      this.isUpdate = false;
+      this.staffDto.linkedin = "",
+      this.staffDto.localAddress = "",
+      this.staffDto.location = "",
+      this.staffDto.maritalStatus = "",
+      this.staffDto.motherName = "",
+      this.staffDto.name = "",
+      this.staffDto.note = "",
+      this.staffDto.numberOfLeaves = 0,
+      this.staffDto.otherDocumentFile = "",
+      this.staffDto.otherDocumentName = "",
+      this.staffDto.password = "",
+      this.staffDto.payscale = "",
+      this.staffDto.permanentAddress = "",
+      this.staffDto.qualification = "",
+      this.staffDto.resignationLetter = "",
+      this.staffDto.resume = "",
+      this.staffDto.roleId = 0,
+      this.staffDto.roleName = "",
+      this.staffDto.shift = "",
+      this.staffDto.staffDesignation = "",
+      this.staffDto.staffDesignationId = 0,
+      this.staffDto.surname = "",
+      this.staffDto.twitter = "",
+      this.staffDto.userId = 0,
+      this.staffDto.verificationCode = "",
+      this.staffDto.workExp = ""
+    this.isUpdate = false;
   }
 
 }
