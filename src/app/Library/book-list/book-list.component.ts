@@ -8,6 +8,8 @@ import { AddbookService } from './addbook.service';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
+  url = `http://yamistha.cloudjiffy.net/api/book`;
+
 
   books = [];
   Dto = {
