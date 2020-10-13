@@ -9,7 +9,7 @@ import { calllogService } from './calllog.service';
   styleUrls: ['./calllog.component.css'],
 })
 export class calllogComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/api/general-call`;
+  url = `http://yamistha.cloudjiffy.net/api/general-call/`;
 
   constructor(private calllogService: calllogService, private datatableservice: DatatableService) { }
 

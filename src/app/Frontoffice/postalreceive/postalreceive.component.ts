@@ -7,9 +7,9 @@ import { PostalreceiveService } from './postalreceive.service';
   //styleUrls: ['./postalreceive.component.scss']
 })
 export class PostalreceiveComponent implements OnInit {
-  url = `http://yamistha.cloudjiffy.net/api/dispatch-receive`;
+  url = `http://yamistha.cloudjiffy.net/api/dispatch-receive/`;
 
-   postalreceive=[];
+  postalreceive = [];
   dispatchReceiveDto = {
     "address": "",
     "date": "",
@@ -41,23 +41,23 @@ export class PostalreceiveComponent implements OnInit {
       console.error(err);
     });
   }
-  
+
 
   add() {
- this.postalService.save(this.dispatchReceiveDto).subscribe(
-  (res: any) => {
-    if (res.success == true) {
-      alert(' Saved Successfully');
-    }
-    //destroy dataTable
-    this.datatableservice.destroy();
-    this.getAllList();
-    this.clearData();
-  },
-  (err) => {
-    console.log('Error While Saving Class');
-    console.error(err);
-  });
+    this.postalService.save(this.dispatchReceiveDto).subscribe(
+      (res: any) => {
+        if (res.success == true) {
+          alert(' Saved Successfully');
+        }
+        //destroy dataTable
+        this.datatableservice.destroy();
+        this.getAllList();
+        this.clearData();
+      },
+      (err) => {
+        console.log('Error While Saving Class');
+        console.error(err);
+      });
   }
 
 
@@ -83,7 +83,7 @@ export class PostalreceiveComponent implements OnInit {
     return this.dispatchReceiveDto;
   }
 
- 
+
   setUpdateFileds(Id) {
     this.isUpdate = true;
     this.getById(Id);
@@ -106,8 +106,8 @@ export class PostalreceiveComponent implements OnInit {
     });
 
   }
-  
- 
+
+
   deleterec(Id) {
     this.postalService.deleterec(Id).subscribe((res: any) => {
       if (res.success == true) {
@@ -122,7 +122,7 @@ export class PostalreceiveComponent implements OnInit {
       console.error(err);
     });
   }
-  
+
   clearData() {
     this.dispatchReceiveDto.address = "";
     this.dispatchReceiveDto.date = "";
@@ -132,8 +132,8 @@ export class PostalreceiveComponent implements OnInit {
     this.dispatchReceiveDto.referenceNo = "";
     this.dispatchReceiveDto.toTitle = "";
     this.dispatchReceiveDto.isActive = "yes";
-    this.dispatchReceiveDto.type ="";
-    this.dispatchReceiveDto.fromTitle ="";
+    this.dispatchReceiveDto.type = "";
+    this.dispatchReceiveDto.fromTitle = "";
     this.isUpdate = false;
   }
 }

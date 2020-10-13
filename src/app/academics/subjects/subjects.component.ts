@@ -110,7 +110,7 @@ export class SubjectsComponent implements OnInit {
     });
 
   }
-  
+
   deleteSubject(subjectId) {
     this.subjectService.deleteSubject(subjectId).subscribe((res: any) => {
       if (res.success == true) {
@@ -127,16 +127,16 @@ export class SubjectsComponent implements OnInit {
     });
 
   }
-  
 
 
-clearData() {
-  this.subjectDto.name = "";
-  this.subjectDto.id = 0;
-  this.subjectDto.isActive = "yes";
-  this.subjectDto.code = "";
-  this.subjectDto.type = "";
-  this.isUpdate = false;
 
-}
+  clearData() {
+    this.subjectDto.name = "";
+    this.subjectDto.id = 0;
+    this.subjectDto.isActive = "yes";
+    this.subjectDto.code = "";
+    this.subjectDto.type = "";
+    this.isUpdate = false;
+
+  }
 }

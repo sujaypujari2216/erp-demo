@@ -32,20 +32,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>ABC</td>
-            <td>Medical</td>
-            <td>07/02/2020</td>
-            <td>7</td>
-            <td>06/02/2020</td>
-            <td>Approved</td>
-            <td>
-              <a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
-              <a href="#"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
-            </td>
-          </tr>
+         <tr *ngFor="let apply of applyleaves">
+                <td>{{apply.staffId}}</td>
+                <td>{{apply.leaveType}}</td>
+                <td>{{apply.date}}</td>
+                <td>{{apply.leaveDays}}</td>
+                <td>{{apply.leaveFrom}}</td>
+                <td>{{apply.status}}</td>
 
+                <td><a href="#"><i class="fas fa-align-justify "></i>&nbsp;</a>
+                  <a (click)="setUpdateFileds(apply.id)"><i class="fas fa-pen-alt text-orange-peel"></i>&nbsp;</a>
+                  <a (click)="deleteleave(apply.id)"><i class="fas fa-times text-orange-red"></i>&nbsp;</a>
+                </td>
+              </tr>
+              
+             
 
         </tbody>
       </table>
@@ -69,34 +70,51 @@
               <div class="row">
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="dtp" class="dtp">
-                    <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="date" [(ngModel)]="staffLeaveRequestDto.date">
                     <span class="label"> Apply Date *</span>
                     <span class="focus-bg"></span>
                   </label>
                 </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <label for="slt" class="slt">
+                <select class="form-control" id="slt" placeholder="&nbsp;" [(ngModel)]="staffLeaveRequestDto.leaveTypeId"
+                  name="sectionId" required>
+                  <option selected>Please Select *</option>
+                  <option *ngFor="let leave of leaves" [value]="leave.id"
+                    [selected]="staffLeaveRequestDto.leaveTypeId == leave.type">{{ leave.type }}
+                  </option>
+                </select>
+                <span class="label">Available Leave *</span>
+                <span class="focus-bg"></span>
+              </label>
+            </div>
                 <div class="col-6 col-lg-4 col-12 form-group">
-                  <label for="slt" class="slt">
-                    <select name="religion" class="form-control" id="slt" placeholder="&nbsp;">
-                      <option selected>Please Select *</option>
-                      <option value="">select</option>
-                      <option value="1"></option>
-                      <option value="2"></option>
-                      <option value="3"></option>
-                    </select>
-                    <span class="label">Available Leave *</span>
+                  <label for="dtp" class="dtp">
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="leaveFrom" [(ngModel)]="staffLeaveRequestDto.leaveFrom"
+                    name="subjectName">
+                    <span class="label">Leave From *</span>
                     <span class="focus-bg"></span>
                   </label>
                 </div>
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="dtp" class="dtp">
-                    <input type="date" id="dtp" placeholder="&nbsp;" name="admission">
-                    <span class="label">Leave Date *</span>
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="leaveTo" [(ngModel)]="staffLeaveRequestDto.leaveTo"
+                    name="subjectName">
+                    <span class="label">Leave To *</span>
+                    <span class="focus-bg"></span>
+                  </label>
+                </div>
+                <div class="col-6 col-lg-4 col-12 form-group">
+                  <label for="dtp" class="dtp">
+                    <input type="date" id="dtp" placeholder="&nbsp;" name="leaveDays" [(ngModel)]="staffLeaveRequestDto.leaveDays"
+                    name="subjectName">
+                    <span class="label">Leave Days *</span>
                     <span class="focus-bg"></span>
                   </label>
                 </div>
                 <div class="col-6 col-lg-4 col-12 form-group">
                   <label for="inp" class="inp">
-                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;">
+                    <input type="text" class="form-control" id="inp" placeholder="&nbsp;" name="reason" [(ngModel)]="staffLeaveRequestDto.reason" >
                     <span class="label"> Reason</span>
                     <span class="focus-bg"></span>
                   </label>
@@ -104,15 +122,23 @@
                 </div>
 
                 <div class="col-6 col-lg-4 col-12 form-group">
-                  <label class="text-dark-medium" style="font-size: small;">Attach Document</label>
-                  <input type="file" class="form-control-file" name="photo" placeholder="">
+                  <label class="text-dark-medium" style="font-size: small;" [(ngModel)]="staffLeaveRequestDto.documentFile">Attach Document</label >
+                  <input type="file" class="form-control-file" name="documentFile" placeholder="">
                 </div>
 
 
-                <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                  <button type="submit"
-                    class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>&nbsp;&nbsp;&nbsp;
-                </div>
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+            
+              <button *ngIf="!this.isUpdate" (click)="addleave()" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Save
+              </button>
+              <button *ngIf="this.isUpdate" (click)="updateleave(staffLeaveRequestDto.id)" type="button"
+                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" data-toggle="modal" data-target="#myModal">
+                Update
+              </button>
+
+          </div>
               </div>
             </form>
           </div>
@@ -120,4 +146,5 @@
       </div>
     </div>
 
+  </div>
   </div>

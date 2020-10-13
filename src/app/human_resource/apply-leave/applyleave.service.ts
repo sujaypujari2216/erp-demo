@@ -7,30 +7,32 @@ import { JWTTokenServiceService } from 'src/app/jwttoken-service.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PostalreceiveService {
-  url = `http://yamistha.cloudjiffy.net/api/dispatch-receive/`;
-
+export class ApplyleaveService {
 
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('SessionID', (this.jwt.getSessionID()).toString());
 
-  save(dispatchReceiveDto): any {
-    return this.http.post(this.url, dispatchReceiveDto, { headers: this.headers });
+
+  url = `http://yamistha.cloudjiffy.net/api/staff-leave/`;
+
+
+  save(leaveTypeDto): any {
+    return this.http.post(this.url, leaveTypeDto, { headers: this.headers });
   }
-  getAllList(): any {
+
+  getapplyleaveList(): any {
     return this.http.get(this.url, { headers: this.headers });
   }
 
-  deleterec(Id): any {
-
-    return this.http.delete(this.url + Id, { headers: this.headers });
+  deleteleave(leavetypeId): any {
+    return this.http.delete(this.url + leavetypeId, { headers: this.headers });
   }
 
-  update(dispatchReceiveDto, Id): any {
-    return this.http.put(this.url + Id, dispatchReceiveDto, { headers: this.headers });
+  updateleave(leaveTypeDto, leavetypeId): any {
+    return this.http.put(this.url + leavetypeId, leaveTypeDto, { headers: this.headers });
   }
 
-  getById(Id): any {
-    return this.http.get(this.url + Id, { headers: this.headers });
+  getleaveById(leavetypeId): any {
+    return this.http.get(this.url + leavetypeId, { headers: this.headers });
   }
 }

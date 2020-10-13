@@ -169,7 +169,7 @@ export class AddSComponent implements OnInit {
       var data = res['data'];
       var content = data['content'];
       this.staffs = content.map((key) => ({ ...key }));
-      this.datatableservice.initTable('staffs');
+      //this.datatableservice.initTable('staffs');
     }, (err) => {
       console.log('Error while fetching data');
       console.error(err);

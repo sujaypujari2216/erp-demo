@@ -8,27 +8,27 @@ import { HttpClient } from "@angular/common/http";
 })
 export class PostaldispatchComponent implements OnInit {
 
-  url=`http://yamistha.cloudjiffy.net/dispatch-receive`;
-  
-  postaldispatch=[];
+  url = `http://yamistha.cloudjiffy.net/dispatch-receive/`;
 
-  constructor(private http:HttpClient,private datatableservice:DatatableService) { }
+  postaldispatch = [];
+
+  constructor(private http: HttpClient, private datatableservice: DatatableService) { }
 
   ngOnInit(): void {
     this.http
-    .get(this.url)
-    .toPromise()
-    .then((res) =>{
-      var data = res['data'];
-      var content = data['content'];
+      .get(this.url)
+      .toPromise()
+      .then((res) => {
+        var data = res['data'];
+        var content = data['content'];
 
-      this.postaldispatch = content.map(key=>({...key}))
-      this.datatableservice.initTable("Posatal Receive");
+        this.postaldispatch = content.map(key => ({ ...key }))
+        this.datatableservice.initTable("Posatal Receive");
 
-    });
+      });
   }
 
-  
+
 
 }
 

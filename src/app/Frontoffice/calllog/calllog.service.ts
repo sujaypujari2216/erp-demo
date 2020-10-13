@@ -9,7 +9,7 @@ export class calllogService {
   constructor(private http: HttpClient, private authservice: AuthLoginService, private jwt: JWTTokenServiceService) { }
   headers = new HttpHeaders().set('Authorization', ('Bearer ' + this.jwt.jwtToken).toString()).set('Content-Type', 'application/json').set('sessionid', (this.jwt.getSessionID()).toString());
 
-  url = `http://yamistha.cloudjiffy.net/api/general-call`;
+  url = `http://yamistha.cloudjiffy.net/api/general-call/`;
 
   save(generalCall): any {
     return this.http.post(this.url, generalCall, { headers: this.headers });
@@ -25,7 +25,7 @@ export class calllogService {
   }
 
   update(generalCall, Id): any {
-    return this.http.put(this.url + Id,generalCall,{ headers: this.headers });
+    return this.http.put(this.url + Id, generalCall, { headers: this.headers });
   }
 
   getById(Id): any {
