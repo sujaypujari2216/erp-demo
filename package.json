@@ -23,7 +23,7 @@
     "@types/jwt-decode": "^2.2.1",
     "angular-tabs-component": "^1.0.6",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jwt-decode": "^3.0.0",
     "ngx-bootstrap": "^5.6.1",
     "popper": "^1.0.1",
